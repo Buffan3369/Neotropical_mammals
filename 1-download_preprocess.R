@@ -1,5 +1,5 @@
 #####################################################################
-######### Script for data preparation towards PyRate input ##########
+############ Script for data accession and preparation ##############
 #####################################################################
 
 library(reticulate)
