@@ -5,6 +5,8 @@
 library(reticulate) #source python scripts in R
 library(palaeoverse) #data preparation facilities
 library(readxl) #read excel documents
+library(tidyverse) #data management tools
+library(hash) #dictionnary
 
 #amahuacatherium peruvium = flan
 
@@ -17,7 +19,7 @@ data_2020_raw <- read.table("./data_2020/Mammalia.txt", header = TRUE, sep = '\t
 data_2020_clean <- readxl::read_xlsx("./data_2020/Mammalia.xlsx") #dataset cleaned by Fabien, 7,7670 occurrences
 data_2023 <- read.csv("./data_2023/Neotropical_Mammals_raw_2023.csv", header = TRUE) #9,750 occurrences
 
-## Erase occurrences from the 2023 dataset that have been entered or modified before March 2020 -----------------------------------------
+## Erase occurrences from the 2023 dataset that have been entered or modified before March 2020 -------------------------------------------
 get_old <- function(x){
   year_modified <- as.numeric(strsplit(data_2023$modified[x], split = "-")[[1]][1])
   month_modified <- as.numeric(strsplit(data_2023$modified[x], split = "-")[[1]][2])
@@ -27,51 +29,83 @@ get_old <- function(x){
 }
 to_drop <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_old)) #7,382 occurrences 
 data_2023 <- data_2023[-to_drop, ]
+rownames(data_2023) <- 1:nrow(data_2023)
+rm(to_drop)
 
-## Check and correct potential mis-spellings between the three datasets -------------------------------------------------------------------
-names_old_raw <- unique(paste(data_2020_raw$occurrence.genus_name, data_2020_raw$occurrence.species_name, sep = " "))
-names_old_clean <- unique(paste(data_2020_clean$Genus, data_2020_clean$Species, sep = " "))
+## Harmonise names among datasets --------------------------------------------------------------------------------------------------------
+#Erase species name with "sp."  (2 functions, otherwise is a shit)
+  #in data_2020_raw
+
+get_sp_raw <- function(x){
+  if( ("sp." %in% strsplit(data_2020_raw$occurrence.species_name[x], split = " ")[[1]]) |
+      (data_2020_raw$occurrence.species_name[x] == "morphotype 2") ){
+    return(x)
+  }
+}
+problematic_indices <- unlist(lapply(X = 1:nrow(data_2020_raw), 
+                                     FUN = get_sp_raw))
+data_2020_raw$occurrence.species_name[problematic_indices] <- NA
+  #in data_2020_clean
+get_sp_clean <- function(x){
+  if( ("sp." %in% strsplit(data_2020_clean$Species[x], split = " ")[[1]]) |
+      ("sp.." %in% strsplit(data_2020_clean$Species[x], split = " ")[[1]]) |
+      (data_2020_clean$Species[x] == "morphotype 2") ){
+    return(x)
+  }
+}
+problematic_indices <- unlist(lapply(X = 1:nrow(data_2020_clean), 
+                                     FUN = get_sp_clean))
+data_2020_clean$Species[problematic_indices] <- NA
+rm(problematic_indices)
+
+## Spot and correct potential mis-spellings between the three datasets -------------------------------------------------------------------
+assemble_gen_sp <- function(x, dataset, sp_col, gen_col){
+  if(is.na(dataset[x, c(sp_col)]) == TRUE){ #if species is NA
+    return(dataset[x, c(gen_col)])
+  }
+  else{
+    return(paste(dataset[x, c(gen_col)], dataset[x, c(sp_col)], sep = " "))
+  }
+}
+names_old_raw <- unique(unlist(lapply(X = 1:nrow(data_2020_raw), 
+                                      FUN = assemble_gen_sp, 
+                                      dataset = data_2020_raw, 
+                                      sp_col = "occurrence.species_name",
+                                      gen_col = "occurrence.genus_name")))
+names_old_clean <- unique(unlist(lapply(X = 1:nrow(data_2020_clean), 
+                                        FUN = assemble_gen_sp, 
+                                        dataset = data_2020_clean, 
+                                        sp_col = "Species",
+                                        gen_col = "Genus")))
 names_new <- unique(data_2023$accepted_name)
 taxdf <- data.frame(accepted_names = c(names_old_raw, names_old_clean, names_new))
 rm(names_old_raw, names_old_clean, names_new)
 #check spelling mistakes between all the names that we are dealing qith (from the 3 datasets)
 check_spell_mistake <- palaeoverse::tax_check(taxdf, name = "accepted_names") 
 synonyms <- check_spell_mistake$synonyms
-#correct a bit (some were highlighted as synonyms whereas actually different, e.g sp.1 vs sp.2
-not_syn <- c(2,4,13:15,
-             25, #Megatherium americanum and Megatherium americium seem to be two different species
-             26:31,
-             35, #Oligoryzomys flavescens and Oligoryzomys fulvescens two different species
-             37, #a matter of "sp." vs nothing among this lovely palaeo-tattoo
-             38, #Parutaetus chilensis and chicoensis are two different species
-             39:44,
-             50:52,
-             56:58,
-             60:62,
-             69:71,
-             76, #Scelidotheridium and Scelinotherium are different genera
-             77:78,
-             84)
+#correct a bit (some were highlighted as synonyms whereas actually different)
+not_syn <- c(16, #Megatherium americanum and Megatherium americium seem to be two different species
+             20, #Oligoryzomys flavescens and Oligoryzomys fulvescens two different species
+             22, #Parutaetus chilensis and chicoensis are two different species
+             34, #Protosteiromys asmodeophilus and aesmeodeophilus both seem to exist (to be checked)
+             40 #Scelidotheridium and Scelinotherium are different genera
+             )
 synonyms1 <- synonyms[-not_syn, ]
 row.names(synonyms1) <- 1:nrow(synonyms1)
 #check one by one and create the "actual names" and "wrong names" vectors
-actual_names <- c("Adianthus bucatus",
-                  "Andinomys edax",
+actual_names <- c("Andinomys edax",
                   "Chorobates villosissimus",
                   "Cladosictis patagonica",
                   "Didelphis brachiodonta",
                   "Eocardia excavata",
                   "Eosclerocalyptus tapinocephalus",
                   "Eucelophorus chapalmalensis",
-                  "Glossotherium",
                   "Gyrinodon quassus",
                   "Herpailurus yagouaroundi",
                   "Holochilus brasiliensis",
-                  "Homalodontotherium sp.",
                   "Inia geoffrensis",
                   "Interatherium robustum",
                   "Lagostomus incisus",
-                  "Luanthus initialis",
                   "Macrochorobates chapalmalensis",
                   "Macroeuphractus moreni",
                   "Megatherium tarijense",
@@ -82,24 +116,20 @@ actual_names <- c("Adianthus bucatus",
                   "Phlyctaenopyga ameghinoi",
                   "Phugatherium cataclisticum",
                   "Platygonus chapadmalensis", #to be verified!!
-                  "Platygonus scagliae",
                   "Pontoporia blainvillei",
                   "Proborhyaena gigantea",
                   "Procyon cancrivorus",
                   "Prolagostomus pusillus",
-                  "Protamandua rothi", #both seem to exist though
+                  "Protamandua rothi", #both seem to be used though
                   "Prothoatherium colombianus",
                   "Protocyon scagliarum",
-                  "Protosteiromys asmeodeophilus",
                   "Protypotherium attenuatum",
                   "Protypotherium praerutilum",
-                  "Prozaedyus planus",
                   "Pyrotherium romeroi",
                   "Salladolodus deuterotherioides", #to be checked
                   "Scelidodon chiliense",
                   "Smilodon riggii",
                   "Stegotherium tessellatum",
-                  "Tapirus oliverasi",
                   "Thylamys zettii",
                   "Thylophorops chapadmalensis")
 get_the_other <- function(x){
@@ -176,50 +206,48 @@ data_2023$accepted_name <- replace(x = data_2023$accepted_name,
                                         list = index_to_replace,
                                         values = actual_names[index_in_wrong_names]) #replacement
 rm(index_in_wrong_names, index_to_replace, values_to_replace, GenSp, GenSp_split, value, wrong_names, actual_names)
+write.csv(data_2020_raw, file = "./data_2020/Neotropical_Mammals_harmonised_2020.csv") #save raw dataset in case
 
-## Harmonise names among datasets ---------------------------------------------------------------------
-get_taxo <- function(x, level = c("species", "genus")){ #function to return vector of either genus or species of data_2023
+## Match data_2023 occurrences with data_2020_clean ---------------------------------------------------------------------------------------
+  #get rid of unuseful columns
+data_2020_clean <- data_2020_clean[, -c(2, 4, 11, 14, 16)]
+data_2023 <- data_2023[, -c(1:4, 6:9, 11:14, 17:19, 25:29, 32:35)]
+  #Add "Order" (1) and "Reference" (16) columns to data_2020_clean
+data_2020_clean <- data_2020_clean %>% add_column(Order = rep(NA, nrow(data_2020_clean)), .before = "Family")
+data_2020_clean <- data_2020_clean %>% add_column(Reference = rep(NA, nrow(data_2020_clean)), .after = "Collection authorizer")
+data_2020_clean <- rename(data_2020_clean, Status = "Status...6")
+  #Create Species and Genus columns in data_2023, erase "accepted_name" one and create 
+get_taxo <- function(x){ #function to return vector of species of data_2023
   tot_name <- data_2023$accepted_name[x]
-  if(level == "genus"){
-    return(unlist(strsplit(tot_name, split = " "))[1])
-  }
-  else if(level == "species"){
-    return(unlist(strsplit(tot_name, split = " "))[2])
-  }
+  return(unlist(strsplit(tot_name, split = " "))[2])
 }
-  #Erase names between parenthesis in data_2023
-species_2023 <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo, level = "species"))
-get_par <- function(x){ #get position of parenthesis
-  if("(" %in% strsplit(species_2023[x], split = "")[[1]]){
-    return(x)
-  }
+data_2023$Species <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo))
+data_2023 <- data_2023[, -c(2)]
+  #Create "Status" column in data_2023
+data_2023$Status <- unlist(lapply(X = data_2023$`Min age`, 
+                                  FUN = function(x){if(x == 0){return("extant")}else{return("extinct")}}))
+  #Rename data_2023 columns based on data_2020
+new_names <- c(`Collection number` = "collection_no",
+               `Max age` = "max_ma",
+               `Min age` = "min_ma",
+               Order = "order",
+               Family = "family",
+               Genus = "genus",
+               Country = "cc",
+               State = 'state',
+               Reference = "primary_reference",
+               `Collection authorizer` = "authorizer")
+data_2023 <- rename(data_2023, all_of(new_names))
+  #Solve Country issue
+country_dict <- hash(keys = unique(data_2023$Country),
+                     values = c("Argentina", "Brazil", "Chile", "Bolivia", "Uruguay", "Peru", "Venezuela", "Ecuador", "Colombia"))
+for(abbrev in keys(country_dict)){
+  data_2023$Country[which(data_2023$Country == abbrev)] <- as.character(values(country_dict[abbrev]))
 }
-for(i in unlist(lapply(X = 1:length(species_2023), FUN = get_par))){ #for each position where we detected a parenthesis
-  name <- data_2023$accepted_name[i]
-  if(length(strsplit(name, split = " ")) == 2){ #if name = "Genus (Genus)"
-    data_2023$accepted_name[i] <- strsplit(name, split = " ")[[1]][1] #genus name only
-  }
-  else{ #name = Genus (~Genus) species
-    data_2023$accepted_name[i] <- paste(strsplit(name, split = " ")[[1]][1], #genus
-                                        strsplit(name, split = " ")[[1]][length(strsplit(name, split = " ")[[1]])], #last element, species
-                                        sep = " ")
-  }
-}
-    #Erase species name when "sp." in data_2020_raw
-problematic_indices <- which(data_2020_raw$occurrence.species_name == "sp.")
-data_2020_raw$occurrence.species_name[problematic_indices] <- NA
+ #reorder columns
+data_2023$Period <- rep(NA, nrow(data_2023))
+data_2023$Epoch <- rep(NA, nrow(data_2023))
+data_2023 <- data_2023[, colnames(data_2020_clean)]
 
-  #Create species and genus columns in data_2023
-data_2023$genus <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo, level = "genus"))
-data_2023$species <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo, level = "species"))
-
-  #Create full name column in data_2020
-data_2020_raw$accepted_name <- paste(data_2020_raw$occurrence.genus_name, data_2020_raw$occurrence.species_name, sep = " ")
-no_space <- which(is.na(data_2020_raw$occurrence.species_name))
-data_2020_raw$accepted_name[no_space] <- data_2020_raw$occurrence.genus_name[no_space] #from "Genus " to "Genus"
-
-
-
-## Combine by columns and save the results -----------------------------------------------------------------------------------------------------------------------
-write.csv(data_2020_raw, file = "./data_2020/Neotropical_Mammals_harmonised_2020.csv")
-write.csv(data_2023, file = "./data_2023/Neotropical_Mammals_harmonised_2023.csv")
+## Combine by rows and save the results ------------------------------------------------------------------------------------------------
+write.csv(rbind(data_2020_clean, data_2023), file = "./data_2023/Neotropical_Mammals_COMBINED.csv")
