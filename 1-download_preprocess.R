@@ -225,7 +225,9 @@ data_2023$Species <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo))
 data_2023 <- data_2023[, -c(2)]
   #Create "Status" column in data_2023
 data_2023$Status <- unlist(lapply(X = data_2023$min_ma, 
-                                  FUN = function(x){if(x == 0){return("extant")}else{return("extinct")}}))
+                                  FUN = function(x){if(x < 5){return(NA)} #if the lower bound of the occurrence is older than 5My, we consider the species extinct (quite likely), else we don't know
+                                    else if(x == 0){return("extant")} #if this bound is equal to 0, the species is extant
+                                    else{return("extinct")}})) 
   #Rename data_2023 columns based on data_2020
 new_names <- c(`Collection number` = "collection_no",
                `Max age` = "max_ma",
