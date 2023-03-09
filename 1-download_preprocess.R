@@ -206,7 +206,7 @@ data_2023$accepted_name <- replace(x = data_2023$accepted_name,
                                         list = index_to_replace,
                                         values = actual_names[index_in_wrong_names]) #replacement
 rm(index_in_wrong_names, index_to_replace, values_to_replace, GenSp, GenSp_split, value, wrong_names, actual_names)
-write.csv(data_2020_raw, file = "./data_2020/Neotropical_Mammals_harmonised_2020.csv") #save raw dataset in case
+#write.csv(data_2020_raw, file = "./data_2020/Neotropical_Mammals_harmonised_2020.csv") #save raw dataset in case
 
 ## Match data_2023 occurrences with data_2020_clean ---------------------------------------------------------------------------------------
   #get rid of unuseful columns
@@ -224,7 +224,7 @@ get_taxo <- function(x){ #function to return vector of species of data_2023
 data_2023$Species <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo))
 data_2023 <- data_2023[, -c(2)]
   #Create "Status" column in data_2023
-data_2023$Status <- unlist(lapply(X = data_2023$`Min age`, 
+data_2023$Status <- unlist(lapply(X = data_2023$min_ma, 
                                   FUN = function(x){if(x == 0){return("extant")}else{return("extinct")}}))
   #Rename data_2023 columns based on data_2020
 new_names <- c(`Collection number` = "collection_no",
@@ -250,4 +250,6 @@ data_2023$Epoch <- rep(NA, nrow(data_2023))
 data_2023 <- data_2023[, colnames(data_2020_clean)]
 
 ## Combine by rows and save the results ------------------------------------------------------------------------------------------------
-write.csv(rbind(data_2020_clean, data_2023), file = "./data_2023/Neotropical_Mammals_COMBINED.csv")
+write.csv(rbind(data_2020_clean, data_2023),
+          file = "./data_2023/Neotropical_Mammals_COMBINED.csv",
+          row.names = FALSE)
