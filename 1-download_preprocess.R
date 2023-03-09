@@ -9,29 +9,24 @@ library(readxl) #read excel documents
 #amahuacatherium peruvium = flan
 
 ## Download all south american genus-level Mammalia occurrences from pdbd ----------------------------------------------------------------
-download.file(url = "https://paleobiodb.org/data1.2/occs/list.tsv?datainfo&rowcount&base_name=Mammalia&taxon_reso=genus&cc=SOA",
-              destfile = "./data_2023/Neotropical_Mammals_raw_2023.tsv")
-
-## Get rid of of metadata by sourcing simple python scripts (watch working directory) ---------------------------------------------------
-reticulate::source_python("unhead_mini.py")
+download.file(url = "https://paleobiodb.org/data1.2/occs/list.csv?base_name=Mammalia&taxon_reso=genus&cc=SOA&show=class,genus,loc,ref,entname,crmod",
+              destfile = "./data_2023/Neotropical_Mammals_raw_2023.csv")
 
 ## Open the old and new datasets --------------------------------------------------------------------------------------------------------
-data_2020_raw <- read.table("./data_2020/Mammalia.txt", header = TRUE, sep = '\t', fill = TRUE)
-data_2020_clean <- readxl::read_xlsx("./data_2020/Mammalia.xlsx") #dataset cleaned by Fabien
-data_2023 <- read.table("./data_2023/Neotropical_Mammals_unheaded_2023.tsv", header = TRUE, sep = '\t', fill = TRUE)
+data_2020_raw <- read.table("./data_2020/Mammalia.txt", header = TRUE, sep = '\t', fill = TRUE) #8,009 occurrences
+data_2020_clean <- readxl::read_xlsx("./data_2020/Mammalia.xlsx") #dataset cleaned by Fabien, 7,7670 occurrences
+data_2023 <- read.csv("./data_2023/Neotropical_Mammals_raw_2023.csv", header = TRUE) #9,750 occurrences
 
-## Create a "genus" and "species" column in the 2023 dataset ---------------------------------------------------------------------
-get_taxo <- function(x, level = c("species", "genus")){
-  tot_name <- data_2023$accepted_name[x]
-  if(level == "genus"){
-    return(unlist(strsplit(tot_name, split = " "))[1])
-  }
-  else if(level == "species"){
-    return(unlist(strsplit(tot_name, split = " "))[2])
+## Erase occurrences from the 2023 dataset that have been entered or modified before March 2020 -----------------------------------------
+get_old <- function(x){
+  year_modified <- as.numeric(strsplit(data_2023$modified[x], split = "-")[[1]][1])
+  month_modified <- as.numeric(strsplit(data_2023$modified[x], split = "-")[[1]][2])
+  if( (year_modified < 2020) | (month_modified < 03) ){
+    return(x)
   }
 }
-data_2023$genus <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo, level = "genus"))
-data_2023$species <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo, level = "species"))
+to_drop <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_old)) #7,382 occurrences 
+data_2023 <- data_2023[-to_drop, ]
 
 ## Check and correct potential mis-spellings between the three datasets -------------------------------------------------------------------
 names_old_raw <- unique(paste(data_2020_raw$occurrence.genus_name, data_2020_raw$occurrence.species_name, sep = " "))
@@ -161,7 +156,7 @@ GenSp <- replace(x = GenSp,
 GenSp_split <- lapply(X = GenSp, FUN = strsplit, split = " ")
 genus <- c()
 species <- c()
-for(i in 1:7670){
+for(i in 1:length(GenSp)){
   genus <- c(genus, GenSp_split[[i]][[1]][1])
   species <- c(species, GenSp_split[[i]][[1]][2])
 }
@@ -182,37 +177,49 @@ data_2023$accepted_name <- replace(x = data_2023$accepted_name,
                                         values = actual_names[index_in_wrong_names]) #replacement
 rm(index_in_wrong_names, index_to_replace, values_to_replace, GenSp, GenSp_split, value, wrong_names, actual_names)
 
-## Identify and erase common occurrences --------------------------------------------------------------------------------------------------
-  #between 2020_raw and 2023 datasets 
-find_redundancy <- function(index, ds){ #function returning duplicate indices between 2023 and 2020 datasets
-  return(
-    which( (ds[, c('collection_no')] == data_2020$`Collection number`[index]) & 
-             (ds[, c('min_ma')] == data_2020$`Min age`[index]) & 
-             (ds[, c('max_ma')] == data_2020$`Max age`[index]) & 
-             (ds[, c('genus')] == data_2020$Genus[index]) )
-  )
+## Harmonise names among datasets ---------------------------------------------------------------------
+get_taxo <- function(x, level = c("species", "genus")){ #function to return vector of either genus or species of data_2023
+  tot_name <- data_2023$accepted_name[x]
+  if(level == "genus"){
+    return(unlist(strsplit(tot_name, split = " "))[1])
+  }
+  else if(level == "species"){
+    return(unlist(strsplit(tot_name, split = " "))[2])
+  }
 }
-redundant_indices_maxi <- unique(unlist(lapply(X = 1:nrow(data_2020), FUN = find_redundancy, ds = data_2023_maxi)))
-data_2023_maxi <- data_2023_maxi[-redundant_indices_maxi, ]
-
-redundant_indices_mini <- unique(unlist(lapply(X = 1:nrow(data_2020), FUN = find_redundancy, ds = data_2023)))
-data_2023 <- data_2023[-redundant_indices_mini, ]
-rm(redundant_indices_maxi, redundant_indices_mini)
-  #between the two 2023 datasets
-find_redundancy <- function(index){ 
- return(which((data_2023_maxi$collection_no data_2020$Species <- species
-== data_2023$collection_no[index]) & 
-                    (data_2023_maxi$min_ma == data_2023$min_ma[index]) & 
-                    (data_2023_maxi$max_ma == data_2023$max_ma[index]) & 
-                    (data_2023_maxi$accepted_name == data_2023$accepted_name[index])))
+  #Erase names between parenthesis in data_2023
+species_2023 <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo, level = "species"))
+get_par <- function(x){ #get position of parenthesis
+  if("(" %in% strsplit(species_2023[x], split = "")[[1]]){
+    return(x)
+  }
 }
-red_min_max <- unique(unlist(lapply(X = 1:nrow(data_2023),
-                                    FUN = find_redundancy)))
-data_2023_maxi <- data_2023_maxi[-red_min_max, ]
+for(i in unlist(lapply(X = 1:length(species_2023), FUN = get_par))){ #for each position where we detected a parenthesis
+  name <- data_2023$accepted_name[i]
+  if(length(strsplit(name, split = " ")) == 2){ #if name = "Genus (Genus)"
+    data_2023$accepted_name[i] <- strsplit(name, split = " ")[[1]][1] #genus name only
+  }
+  else{ #name = Genus (~Genus) species
+    data_2023$accepted_name[i] <- paste(strsplit(name, split = " ")[[1]][1], #genus
+                                        strsplit(name, split = " ")[[1]][length(strsplit(name, split = " ")[[1]])], #last element, species
+                                        sep = " ")
+  }
+}
+    #Erase species name when "sp." in data_2020_raw
+problematic_indices <- which(data_2020_raw$occurrence.species_name == "sp.")
+data_2020_raw$occurrence.species_name[problematic_indices] <- NA
 
+  #Create species and genus columns in data_2023
+data_2023$genus <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo, level = "genus"))
+data_2023$species <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo, level = "species"))
+
+  #Create full name column in data_2020
+data_2020_raw$accepted_name <- paste(data_2020_raw$occurrence.genus_name, data_2020_raw$occurrence.species_name, sep = " ")
+no_space <- which(is.na(data_2020_raw$occurrence.species_name))
+data_2020_raw$accepted_name[no_space] <- data_2020_raw$occurrence.genus_name[no_space] #from "Genus " to "Genus"
 
 
 
 ## Combine by columns and save the results -----------------------------------------------------------------------------------------------------------------------
-write.table(data_2023_maxi, file = "./data_2023/Neotropical_Mammals_unheaded_typo_corrected_maxi_2023.tsv", sep = "\t")
-write.table(data_2023, file = "./data_2023/Neotropical_Mammals_unheaded_typo_corrected_mini_2023.tsv", sep = "\t")
+write.csv(data_2020_raw, file = "./data_2020/Neotropical_Mammals_harmonised_2020.csv")
+write.csv(data_2023, file = "./data_2023/Neotropical_Mammals_harmonised_2023.csv")
