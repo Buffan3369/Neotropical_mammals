@@ -181,7 +181,7 @@ data_2020_raw$occurrence.species_name <- species
   #data_2020_clean
 GenSp <- unlist(lapply(X = 1:nrow(data_2020_clean),
                        FUN = assemble_gen_sp,
-                       dataset = data_2020_raw,
+                       dataset = data_2020_clean,
                        sp_col = "Species",
                        gen_col = "Genus"))
 index_to_replace <- which(GenSp %in% wrong_names) #indices of the names to replace in the dataframe's accepted names
