@@ -19,15 +19,21 @@ data_2020_raw <- read.table("./data_2020/Mammalia.txt", header = TRUE, sep = '\t
 data_2020_clean <- readxl::read_xlsx("./data_2020/Mammalia.xlsx") #dataset cleaned by Fabien, 7,7670 occurrences
 data_2023 <- read.csv("./data_2023/Neotropical_Mammals_raw_2023.csv", header = TRUE) #9,750 occurrences
 
-## Erase occurrences from the 2023 dataset that have been entered or modified before March 2020 -------------------------------------------
+## Erase occurrences from the 2023 dataset that have been entered or modified before 19 May 2020 -------------------------------------------
 get_old <- function(x){
-  year_modified <- as.numeric(strsplit(data_2023$modified[x], split = "-")[[1]][1])
-  month_modified <- as.numeric(strsplit(data_2023$modified[x], split = "-")[[1]][2])
-  if( (year_modified < 2020) | (month_modified < 03) ){
+  #date is in "YYYY-MM-DD hh:mm:ss" format. We first split using "-" as separator
+  mod <- strsplit(data_2023$modified[x], split = "-")[[1]]
+  year_modified <- as.numeric(mod[1])
+  month_modified <- as.numeric(mod[2])
+  day_modified <- as.numeric(strsplit(mod[3], split = " ")[[1]][1]) #we split the third element using " " as separator and take the first element
+  if(year_modified < 2020){
+    return(x)
+  }
+  else if( (year_modified == 2020) & (month_modified <= 05) & (day_modified < 19)){
     return(x)
   }
 }
-to_drop <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_old)) #7,382 occurrences 
+to_drop <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_old)) #7,272 occurrences 
 data_2023 <- data_2023[-to_drop, ]
 rownames(data_2023) <- 1:nrow(data_2023)
 rm(to_drop)
@@ -35,7 +41,6 @@ rm(to_drop)
 ## Harmonise names among datasets --------------------------------------------------------------------------------------------------------
 #Erase species name with "sp."  (2 functions, otherwise is a shit)
   #in data_2020_raw
-
 get_sp_raw <- function(x){
   if( ("sp." %in% strsplit(data_2020_raw$occurrence.species_name[x], split = " ")[[1]]) |
       (data_2020_raw$occurrence.species_name[x] == "morphotype 2") ){
@@ -144,7 +149,11 @@ wrong_names <- unlist(lapply(X = actual_names, FUN = get_the_other))
 rm(taxdf, check_spell_mistake, synonyms, synonyms1, not_syn)
 #replace wrong names in the 3 datasets
   #data_2020_raw
-GenSp <- paste(data_2020_raw$occurrence.genus_name, data_2020_raw$occurrence.species_name, sep = " ")
+GenSp <- unlist(lapply(X = 1:nrow(data_2020_raw),
+                       FUN = assemble_gen_sp,
+                       dataset = data_2020_raw,
+                       sp_col = "occurrence.species_name",
+                       gen_col = "occurrence.genus_name"))
 index_to_replace <- which(GenSp %in% wrong_names) #indices of the names to replace in the dataframe's accepted names
 values_to_replace <- GenSp[which(GenSp %in% wrong_names)] #names to replace in the dataframe's accepted names
 i = 1
@@ -170,7 +179,11 @@ data_2020_raw$occurrence.species_name <- species
 #paste(data_2020_raw$occurrence.genus_name[index_to_replace], data_2020_raw$occurrence.species_name[index_to_replace], sep = " ") == values_to_replace
 ################
   #data_2020_clean
-GenSp <- paste(data_2020_clean$Genus, data_2020_clean$Species, sep = " ")
+GenSp <- unlist(lapply(X = 1:nrow(data_2020_clean),
+                       FUN = assemble_gen_sp,
+                       dataset = data_2020_raw,
+                       sp_col = "Species",
+                       gen_col = "Genus"))
 index_to_replace <- which(GenSp %in% wrong_names) #indices of the names to replace in the dataframe's accepted names
 values_to_replace <- GenSp[which(GenSp %in% wrong_names)] #names to replace in the dataframe's accepted names
 i = 1
