@@ -29,5 +29,7 @@
 .Rhistory
 #Unuseful files
 ./data_2020/Mammalia.txt
+#Our data
+./data_2023/species_list.xlsx
 #mac files
 .DS_Store
