@@ -551,7 +551,7 @@
 "550",NA,"Camelidae","Palaeolama",NA,"extinct","Bolivia","Tarija","Quaternary","Pleistocene",100,0.02084,0.02084,142160,"C. Jaramillo",NA
 "551",NA,"Camelidae","Palaeolama",NA,"extinct","Bolivia",NA,"Quaternary","Pleistocene",100,0.781,1.2,71322,"J. Alroy",NA
 "552",NA,"Camelidae","Palaeolama",NA,"extinct","Bolivia",NA,"Quaternary","Pleistocene",100,0.781,1.2,71323,"J. Alroy",NA
-"553",NA,"Camelidae","Palaeolama",NA,"extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.204,0.0291,71295,"J. Alroy",NA
+"553",NA,"Camelidae","Palaeolama",NA,"extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.0291,0.204,71295,"J. Alroy",NA
 "554",NA,"Camelidae","Palaeolama",NA,"extinct","Brazil","Piaui","Quaternary","Pleistocene",100,0.012,0.126,71335,"J. Alroy",NA
 "555",NA,"Camelidae","Palaeolama",NA,"extinct","Chile",NA,"Quaternary","Pleistocene",100,0.012,0.126,71265,"J. Alroy",NA
 "556",NA,"Camelidae","Palaeolama",NA,"extinct","Ecuador","Chimborazo","Quaternary","Pleistocene",99.68,0.012,2.588,133656,"C. Jaramillo",NA
@@ -983,7 +983,7 @@
 "982",NA,"Cervidae","Mazama","americana","extant","Peru",NA,"Quaternary","Holocene",97.5,0,0.012,21689,"A. Behrensmeyer",NA
 "983",NA,"Cervidae","Mazama","andina","extinct","Peru",NA,"Quaternary","Pleistocene",100,0.012,0.126,71296,"J. Alroy",NA
 "984",NA,"Cervidae","Mazama",NA,NA,"Argentina","Santiago del Estero","Quaternary","Holocene",100,0.00038,0.00158,187627,"E. Vlachos",NA
-"985",NA,"Cervidae","Mazama",NA,NA,"Brazil","Bahia","Quaternary","Pleistocene",100,0.204,0.0291,71295,"J. Alroy",NA
+"985",NA,"Cervidae","Mazama",NA,NA,"Brazil","Bahia","Quaternary","Pleistocene",100,0.0291,0.204,71295,"J. Alroy",NA
 "986",NA,"Cervidae","Mazama",NA,NA,"Brazil","Ceara","Quaternary","Pleistocene",99.68,0.012,2.588,71301,"J. Alroy",NA
 "987",NA,"Cervidae","Mazama",NA,NA,"Brazil","Ceara","Quaternary","Pleistocene",99.68,0.012,2.588,71302,"J. Alroy",NA
 "988",NA,"Cervidae","Mazama",NA,NA,"Brazil","Mato Grosso do Sul","Quaternary","Pleistocene",99.23,0,2.588,92814,"J. Alroy",NA
@@ -1295,7 +1295,7 @@
 "1294",NA,"Ctenomyidae","Eucelophorus","cabrerai","extinct","Argentina","Buenos Aires","Neogene","Miocene",52.39,4,6.8,140627,"C. Jaramillo",NA
 "1295",NA,"Ctenomyidae","Eucelophorus","cabrerai","extinct","Argentina","Buenos Aires","Neogene","Miocene",52.39,4,6.8,198863,"P. Mannion",NA
 "1296",NA,"Ctenomyidae","Eucelophorus","chapalmalensis","extinct","Argentina","Buenos Aires","Neogene","Pliocene",61.39,3,6.8,206622,"P. Mannion",NA
-"1297",NA,"Cuniculidae","Cuniculus","paca","extant","Brazil","Bahia","Quaternary","Pleistocene",100,0.204,0.0291,71295,"J. Alroy",NA
+"1297",NA,"Cuniculidae","Cuniculus","paca","extant","Brazil","Bahia","Quaternary","Pleistocene",100,0.0291,0.204,71295,"J. Alroy",NA
 "1298",NA,"Cuniculidae","Cuniculus","paca","extant","Brazil","Districto Agropecura","Quaternary","Holocene",97.5,0,0.012,21687,"A. Behrensmeyer",NA
 "1299",NA,"Cuniculidae","Cuniculus","paca","extant","Brazil","Sao Paulo","Quaternary","Holocene",100,0.00489,0.00493,71269,"J. Alroy",NA
 "1300",NA,"Cuniculidae","Cuniculus","paca","extant","Panama",NA,"Quaternary","Holocene",97.5,0,0.012,21691,"A. Behrensmeyer",NA
@@ -1723,7 +1723,7 @@
 "1722",NA,"Dasypodidae","Propraopus","sulcatus","extinct","Argentina","Entre Ríos","Quaternary","Pleistocene",100,0.012,0.781,203955,"P. Holroyd",NA
 "1723",NA,"Dasypodidae","Propraopus","sulcatus","extinct","Bolivia","Tarija","Quaternary","Pleistocene",99.55,0.781,2.588,70673,"D. Croft",NA
 "1724",NA,"Dasypodidae","Propraopus","sulcatus","extinct","Bolivia","Tarija","Quaternary","Pleistocene",99.55,0.781,2.588,142016,"C. Jaramillo",NA
-"1725",NA,"Dasypodidae","Propraopus","sulcatus","extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.204,0.0291,71295,"J. Alroy",NA
+"1725",NA,"Dasypodidae","Propraopus","sulcatus","extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.0291,0.204,71295,"J. Alroy",NA
 "1726",NA,"Dasypodidae","Propraopus","sulcatus","extinct","Brazil","Rio Grande do Sul","Quaternary","Pleistocene",100,0.012,0.126,124384,"M. Uhen",NA
 "1727",NA,"Dasypodidae","Propraopus","sulcatus","extinct","Brazil","Rio Grande do Sul","Quaternary","Pleistocene",100,0.012,0.126,124714,"M. Uhen",NA
 "1728",NA,"Dasypodidae","Propraopus","sulcatus","extinct","Brazil","Rio Grande do Sul","Quaternary","Pleistocene",100,0.012,0.126,124715,"M. Uhen",NA
@@ -2563,7 +2563,7 @@
 "2562",NA,"Equidae","Hippidion",NA,"extinct","Argentina",NA,"Quaternary","Holocene",100,0.008639,0.008639,71343,"J. Alroy",NA
 "2563",NA,"Equidae","Hippidion",NA,"extinct","Bolivia","Chuquisaca","Quaternary","Pleistocene",100,0.126,0.781,70704,"D. Croft",NA
 "2564",NA,"Equidae","Hippidion",NA,"extinct","Bolivia",NA,"Quaternary","Pleistocene",100,0.781,1.2,71322,"J. Alroy",NA
-"2565",NA,"Equidae","Hippidion",NA,"extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.204,0.0291,71295,"J. Alroy",NA
+"2565",NA,"Equidae","Hippidion",NA,"extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.0291,0.204,71295,"J. Alroy",NA
 "2566",NA,"Equidae","Hippidion",NA,"extinct","Brazil","Ceara","Quaternary","Pleistocene",99.68,0.012,2.588,71301,"J. Alroy",NA
 "2567",NA,"Equidae","Hippidion",NA,"extinct","Brazil","Ceara","Quaternary","Pleistocene",99.68,0.012,2.588,71302,"J. Alroy",NA
 "2568",NA,"Equidae","Hippidion",NA,"extinct","Brazil","Rio Grande do Norte","Quaternary","Pleistocene",90.71,0,0.126,148309,"C. Jaramillo",NA
@@ -3937,7 +3937,7 @@
 "3936",NA,"Macraucheniidae","Macrauchenia",NA,"extinct","Argentina","Cordoba","Quaternary","Pleistocene",100,0.012,0.781,197918,"P. Mannion",NA
 "3937",NA,"Macraucheniidae","Macrauchenia",NA,"extinct","Argentina","Santiago del Estero","Quaternary","Pleistocene",99.68,0.012,2.588,191153,"E. Vlachos",NA
 "3938",NA,"Macraucheniidae","Macrauchenia",NA,"extinct","Bolivia","La Paz","Quaternary","Pleistocene",99.68,0.012,2.588,71585,"D. Croft",NA
-"3939",NA,"Macraucheniidae","Macrauchenia",NA,"extinct","Bolivia","Oruro","Neogene","Miocene",100,5.97,5.42,70643,"D. Croft",NA
+"3939",NA,"Macraucheniidae","Macrauchenia",NA,"extinct","Bolivia","Oruro","Neogene","Miocene",100,5.42,5.97,70643,"D. Croft",NA
 "3940",NA,"Macraucheniidae","Macrauchenia",NA,"extinct","Bolivia",NA,"Quaternary","Pleistocene",100,0.781,1.2,71322,"J. Alroy",NA
 "3941",NA,"Macraucheniidae","Macrauchenia",NA,"extinct","Brazil","Paraiba","Quaternary","Pleistocene",99.68,0.012,2.588,71298,"J. Alroy",NA
 "3942",NA,"Macraucheniidae","Macrauchenia",NA,"extinct","Brazil","Paraiba","Quaternary","Pleistocene",99.68,0.012,2.588,71299,"J. Alroy",NA
@@ -3971,7 +3971,7 @@
 "3970",NA,"Macraucheniidae","Promacrauchenia",NA,"extinct","Bolivia","La Paz","Neogene","Pliocene",100,3.6,5.332,70641,"D. Croft",NA
 "3971",NA,"Macraucheniidae","Promacrauchenia",NA,"extinct","Bolivia","La Paz","Neogene","Pliocene",100,3.6,5.332,70642,"D. Croft",NA
 "3972",NA,"Macraucheniidae","Promacrauchenia",NA,"extinct","Bolivia","Linares","Neogene","Pliocene",100,3.3,4,71112,"J. Alroy",NA
-"3973",NA,"Macraucheniidae","Promacrauchenia",NA,"extinct","Bolivia","Oruro","Neogene","Miocene",100,5.97,5.42,70643,"D. Croft",NA
+"3973",NA,"Macraucheniidae","Promacrauchenia",NA,"extinct","Bolivia","Oruro","Neogene","Miocene",100,5.42,5.97,70643,"D. Croft",NA
 "3974",NA,"Macraucheniidae","Promacrauchenia",NA,"extinct","Bolivia","Oruro","Neogene","Pliocene",100,3.6,5.332,70644,"D. Croft",NA
 "3975",NA,"Macraucheniidae","Pseudomacrauchenia","yepesi","extinct","Argentina","Jujuy","Quaternary","Pleistocene",100,0.781,1.2,141898,"C. Jaramillo",NA
 "3976",NA,"Macraucheniidae","Rutimeyeria","conulifera","extinct","Argentina","Chubut","Paleogene","Eocene",100,37.2,48.6,13779,"J. Alroy",NA
@@ -4075,7 +4075,7 @@
 "4074",NA,"Megalonychidae","Torcellia","paranense","extinct","Argentina","Entre Rios","Neogene","Miocene",100,6.8,9,204596,"P. Mannion",NA
 "4075",NA,"Megatheriidae","Eomegatherium","nanum","extinct","Argentina","Entre Rios","Neogene","Miocene",100,6.8,9,55600,"M. Uhen",NA
 "4076",NA,"Megatheriidae","Eremotherium","elenense","extinct","Ecuador","Santa Elena","Quaternary","Pleistocene",100,0.012,0.781,133630,"C. Jaramillo",NA
-"4077",NA,"Megatheriidae","Eremotherium","laurillardi","extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.204,0.0291,71295,"J. Alroy",NA
+"4077",NA,"Megatheriidae","Eremotherium","laurillardi","extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.0291,0.204,71295,"J. Alroy",NA
 "4078",NA,"Megatheriidae","Eremotherium","laurillardi","extinct","Brazil","Bahia","Quaternary","Pleistocene",90.71,0,0.126,136498,"C. Jaramillo",NA
 "4079",NA,"Megatheriidae","Eremotherium","laurillardi","extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.012,0.126,137121,"C. Jaramillo",NA
 "4080",NA,"Megatheriidae","Eremotherium","laurillardi","extinct","Brazil","Bahia","Quaternary","Holocene",97.5,0,0.012,147605,"C. Jaramillo",NA
@@ -4129,7 +4129,7 @@
 "4128",NA,"Megatheriidae","Megathericulus",NA,"extinct","Peru","Ucayali","Neogene","Miocene",100,11.8,13.8,144950,"C. Jaramillo",NA
 "4129",NA,"Megatheriidae","Megatherium","altiplanicum","extinct","Bolivia","La Paz","Neogene","Miocene",52.39,4,6.8,142380,"C. Jaramillo",NA
 "4130",NA,"Megatheriidae","Megatherium","altiplanicum","extinct","Bolivia","La Paz","Neogene","Pliocene",100,3.6,5.332,142381,"C. Jaramillo",NA
-"4131",NA,"Megatheriidae","Megatherium","altiplanicum","extinct","Bolivia","Oruro","Neogene","Miocene",100,5.97,5.42,70643,"D. Croft",NA
+"4131",NA,"Megatheriidae","Megatherium","altiplanicum","extinct","Bolivia","Oruro","Neogene","Miocene",100,5.42,5.97,70643,"D. Croft",NA
 "4132",NA,"Megatheriidae","Megatherium","altiplanicum","extinct","Bolivia","Oruro","Neogene","Pliocene",100,3.6,5.332,142382,"C. Jaramillo",NA
 "4133",NA,"Megatheriidae","Megatherium","americanum","extinct","Argentina","Buenos Aires","Quaternary","Pleistocene",100,0.126,0.781,63335,"D. Croft",NA
 "4134",NA,"Megatheriidae","Megatherium","americanum","extinct","Argentina","Buenos Aires","Quaternary","Pleistocene",100,0.012,0.781,71279,"J. Alroy",NA
@@ -4695,7 +4695,7 @@
 "4694",NA,"Mylodontidae","Scelidotherium",NA,"extinct","Argentina","Cordoba","Quaternary","Pleistocene",100,0.012,0.781,197919,"P. Mannion",NA
 "4695",NA,"Mylodontidae","Scelidotherium",NA,"extinct","Argentina","Cordoba","Quaternary","Pleistocene",100,0.012,0.781,197921,"P. Mannion",NA
 "4696",NA,"Mylodontidae","Scelidotherium",NA,"extinct","Argentina","Jujuy","Quaternary","Pleistocene",100,0.781,1.2,141898,"C. Jaramillo",NA
-"4697",NA,"Mylodontidae","Scelidotherium",NA,"extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.204,0.0291,71295,"J. Alroy",NA
+"4697",NA,"Mylodontidae","Scelidotherium",NA,"extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.0291,0.204,71295,"J. Alroy",NA
 "4698",NA,"Mylodontidae","Scelidotherium",NA,"extinct","Paraguay",NA,"Quaternary","Pleistocene",99.68,0.012,2.588,71292,"J. Alroy",NA
 "4699",NA,"Mylodontidae","Scelidotherium",NA,"extinct","Peru","Pasco","Quaternary","Pleistocene",99.68,0.012,2.588,145577,"C. Jaramillo",NA
 "4700",NA,"Mylodontidae","Scelidotherium",NA,"extinct","Peru",NA,"Quaternary","Pleistocene",100,0.012,0.126,71296,"J. Alroy",NA
@@ -5159,7 +5159,7 @@
 "5158",NA,"Pampatheriidae","Kraglievichia",NA,"extinct","Argentina","Salta","Neogene","Miocene",73.34,4,9,206042,"P. Mannion",NA
 "5159",NA,"Pampatheriidae","Kraglievichia",NA,"extinct","Brazil","Acre","Neogene","Miocene",100,7.246,11.608,55602,"M. Uhen",NA
 "5160",NA,"Pampatheriidae","Pampatherium","humboldtii","extinct","Bolivia","Tarija","Quaternary","Pleistocene",99.55,0.781,2.588,70673,"D. Croft",NA
-"5161",NA,"Pampatheriidae","Pampatherium","humboldtii","extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.204,0.0291,71295,"J. Alroy",NA
+"5161",NA,"Pampatheriidae","Pampatherium","humboldtii","extinct","Brazil","Bahia","Quaternary","Pleistocene",100,0.0291,0.204,71295,"J. Alroy",NA
 "5162",NA,"Pampatheriidae","Pampatherium","humboldtii","extinct","Brazil","Piaui","Quaternary","Pleistocene",100,0.012,0.126,71332,"J. Alroy",NA
 "5163",NA,"Pampatheriidae","Pampatherium","humboldtii","extinct","Brazil","Piaui","Quaternary","Pleistocene",100,0.012,0.126,71334,"J. Alroy",NA
 "5164",NA,"Pampatheriidae","Pampatherium","humboldtii","extinct","Brazil","Piaui","Quaternary","Pleistocene",100,0.012,0.126,71335,"J. Alroy",NA
@@ -5200,7 +5200,7 @@
 "5199",NA,"Pampatheriidae","Plaina",NA,"extinct","Argentina","Jujuy","Neogene","Pliocene",100,3,4,141894,"C. Jaramillo",NA
 "5200",NA,"Pampatheriidae","Plaina",NA,"extinct","Bolivia","La Paz","Neogene","Pliocene",100,3.6,5.332,70641,"D. Croft",NA
 "5201",NA,"Pampatheriidae","Plaina",NA,"extinct","Bolivia","Linares","Neogene","Pliocene",100,3.3,4,71112,"J. Alroy",NA
-"5202",NA,"Pampatheriidae","Plaina",NA,"extinct","Bolivia","Oruro","Neogene","Miocene",100,5.97,5.42,70643,"D. Croft",NA
+"5202",NA,"Pampatheriidae","Plaina",NA,"extinct","Bolivia","Oruro","Neogene","Miocene",100,5.42,5.97,70643,"D. Croft",NA
 "5203",NA,"Pampatheriidae","Scirrotherium","carinatum","extinct","Argentina","Chubut","Neogene","Miocene",100,9.41,9.41,122079,"C. Jaramillo",NA
 "5204",NA,"Pampatheriidae","Scirrotherium","carinatum","extinct","Argentina","Entre Rios","Neogene","Miocene",100,6.8,9,55600,"M. Uhen",NA
 "5205",NA,"Pampatheriidae","Scirrotherium","carinatum","extinct","Brazil","Acre","Neogene","Miocene",99.98,5.332,11.608,136714,"C. Jaramillo",NA
@@ -5774,7 +5774,7 @@
 "5773",NA,"Tayassuidae","Tayassu","pecari","extant","Argentina","Buenos Aires","Quaternary","Pleistocene",100,0.012,0.781,71347,"J. Alroy",NA
 "5774",NA,"Tayassuidae","Tayassu","pecari","extant","Argentina","Buenos Aires","Quaternary","Pleistocene",90.71,0,0.126,191127,"E. Vlachos",NA
 "5775",NA,"Tayassuidae","Tayassu","pecari","extant","Argentina","Santa Fe","Quaternary","Pleistocene",100,0.012,0.781,181869,"J. Marcot",NA
-"5776",NA,"Tayassuidae","Tayassu","pecari","extant","Brazil","Bahia","Quaternary","Pleistocene",100,0.204,0.0291,71295,"J. Alroy",NA
+"5776",NA,"Tayassuidae","Tayassu","pecari","extant","Brazil","Bahia","Quaternary","Pleistocene",100,0.0291,0.204,71295,"J. Alroy",NA
 "5777",NA,"Tayassuidae","Tayassu","pecari","extant","Brazil","Districto Agropecura","Quaternary","Holocene",97.5,0,0.012,21687,"A. Behrensmeyer",NA
 "5778",NA,"Tayassuidae","Tayassu","pecari","extant","Brazil","Piaui","Quaternary","Pleistocene",100,0.012,0.126,71332,"J. Alroy",NA
 "5779",NA,"Tayassuidae","Tayassu","pecari","extant","Brazil","Piaui","Quaternary","Pleistocene",100,0.012,0.126,71334,"J. Alroy",NA
@@ -5944,12 +5944,12 @@
 "5943",NA,"Toxodontidae","Posnanskytherium","desaguaderoi","extinct","Bolivia","La Paz","Neogene","Pliocene",100,3.6,5.332,70641,"D. Croft",NA
 "5944",NA,"Toxodontidae","Posnanskytherium","desaguaderoi","extinct","Bolivia","La Paz","Neogene","Pliocene",100,3.6,5.332,70642,"D. Croft",NA
 "5945",NA,"Toxodontidae","Posnanskytherium","desaguaderoi","extinct","Bolivia","Linares","Neogene","Pliocene",100,3.3,4,71112,"J. Alroy",NA
-"5946",NA,"Toxodontidae","Posnanskytherium","desaguaderoi","extinct","Bolivia","Oruro","Neogene","Miocene",100,5.97,5.42,70643,"D. Croft",NA
+"5946",NA,"Toxodontidae","Posnanskytherium","desaguaderoi","extinct","Bolivia","Oruro","Neogene","Miocene",100,5.42,5.97,70643,"D. Croft",NA
 "5947",NA,"Toxodontidae","Posnanskytherium","inchasense","extinct","Bolivia","Linares","Neogene","Pliocene",100,3.3,4,71112,"J. Alroy",NA
 "5948",NA,"Toxodontidae","Posnanskytherium",NA,"extinct","Bolivia","Linares","Neogene","Pliocene",100,3.3,4,71112,"J. Alroy",NA
 "5949",NA,"Toxodontidae","Posnanskytherium",NA,"extinct","Bolivia","Oruro","Neogene","Pliocene",100,3.6,5.332,70644,"D. Croft",NA
 "5950",NA,"Toxodontidae","Posnanskytherium","viscachanense","extinct","Bolivia","La Paz","Neogene","Miocene",52.39,4,6.8,142380,"C. Jaramillo",NA
-"5951",NA,"Toxodontidae","Posnanskytherium","viscachanense","extinct","Bolivia","Oruro","Neogene","Miocene",100,5.97,5.42,70643,"D. Croft",NA
+"5951",NA,"Toxodontidae","Posnanskytherium","viscachanense","extinct","Bolivia","Oruro","Neogene","Miocene",100,5.42,5.97,70643,"D. Croft",NA
 "5952",NA,"Toxodontidae","Proadinotherium","leptognathus","extinct","Argentina","Chubut",NA,"Oligocene",74.62,21,29,14211,"J. Alroy",NA
 "5953",NA,"Toxodontidae","Proadinotherium","muensteri","extinct","Argentina","Neuquén","Neogene","Miocene",100,17.5,21,89029,"D. Croft",NA
 "5954",NA,"Toxodontidae","Proadinotherium","muensteri","extinct","Argentina","Neuquén","Neogene","Miocene",100,17.5,21,197285,"P. Mannion",NA
@@ -6295,7 +6295,7 @@
 "6294",NA,NA,"Australogale","leptognathus",NA,"Bolivia","Tarija","Neogene","Miocene",100,12.9,13.2,38071,"D. Croft",NA
 "6295",NA,NA,"Austrotriconodon","mckennai","no","Argentina","Río Negro","Cretaceous","Upper Cretaceous",100,66.043,84.9,45087,"M. Carrano",NA
 "6296",NA,NA,"Austrotriconodon","sepulvedai","no","Argentina","Río Negro","Cretaceous","Upper Cretaceous",100,66.043,84.9,45087,"M. Carrano",NA
-"6297",NA,NA,"Aymaratherium","jeani",NA,"Bolivia","Oruro","Neogene","Miocene",100,5.97,5.42,70643,"D. Croft",NA
+"6297",NA,NA,"Aymaratherium","jeani",NA,"Bolivia","Oruro","Neogene","Miocene",100,5.42,5.97,70643,"D. Croft",NA
 "6298",NA,NA,"Barberenia","allenensis","no","Argentina","Rio Negro","Cretaceous","Upper Cretaceous",100,66.043,84.9,48999,"J. Alroy",NA
 "6299",NA,NA,"Barberenia","araujoae","no","Argentina","Río Negro","Cretaceous","Upper Cretaceous",100,66.043,84.9,45087,"M. Carrano",NA
 "6300",NA,NA,"Bardalestes","hunco","no","Argentina","Chubut","Paleogene","Eocene",100,40.4,48.6,133039,"P. Mannion",NA
@@ -7435,7 +7435,7 @@
 "7434",NA,NA,"Simia","albifrons",NA,"Peru",NA,"Quaternary","Holocene",97.5,0,0.012,21689,"A. Behrensmeyer",NA
 "7435",NA,NA,"Simomylodon","uccasamamensis",NA,"Bolivia","La Paz","Neogene","Miocene",52.39,4,6.8,142380,"C. Jaramillo",NA
 "7436",NA,NA,"Simomylodon","uccasamamensis",NA,"Bolivia","Linares","Neogene","Pliocene",100,3.3,4,71112,"J. Alroy",NA
-"7437",NA,NA,"Simomylodon","uccasamamensis",NA,"Bolivia","Oruro","Neogene","Miocene",100,5.97,5.42,70643,"D. Croft",NA
+"7437",NA,NA,"Simomylodon","uccasamamensis",NA,"Bolivia","Oruro","Neogene","Miocene",100,5.42,5.97,70643,"D. Croft",NA
 "7438",NA,NA,"Simomylodon","uccasamamensis",NA,"Bolivia","Potosí","Neogene","Pliocene",61.39,3,6.8,68791,"D. Croft",NA
 "7439",NA,NA,"Sipalocyon","externus","no","Argentina","Chubut","Neogene","Miocene",100,17.5,21,141368,"C. Jaramillo",NA
 "7440",NA,NA,"Sipalocyon","gracilis","no","Argentina","Santa Cruz","Neogene","Miocene",100,11.608,15.97,27313,"J. Head",NA

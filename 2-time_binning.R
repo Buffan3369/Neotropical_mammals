@@ -2,12 +2,41 @@
 ############################### Teporal binning ################################
 ################################################################################
 library(palaeoverse)
-library(xlsx)
 library(tibble)
+library(readxl)
 
 ## Generate time bins covering the whole Cenozoic + Cretaceous by Epoch -----
 Cnz_Mz <- palaeoverse::time_bins(interval = c("Cenozoic","Mesozoic"),
                                        rank = "epoch")
+
+data <- readxl::read_xlsx("E:/Internship_ISEM/Neotropical_Mammals/species_list.xlsx")
+age_range <- data.frame(max_ma = unlist(lapply(X = data$`Max age`, FUN = as.numeric)),
+                        min_ma = unlist(lapply(X = data$`Min age`, FUN = as.numeric)))
+binning <- bin_time(occdf = age_range,
+                    bins = Cnz_Mz,
+                    method = "majority")
+write.csv(binning, "E:/Internship_ISEM/Neotropical_Mammals/binning.csv")
+
+
+
+
+time_insconsistency <- function(x){
+  if(data$`Min age` > data$`Max age`){
+    return(x)
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Temporal binning of our occurrences -----------------------------------------
 data_2023 <- read.csv("./data_2023/Neotropical_Mammals_COMBINED.csv")
