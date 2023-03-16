@@ -2,7 +2,6 @@
 ############ Script for data accession and preparation ##############
 #####################################################################
 
-library(reticulate) #source python scripts in R
 library(palaeoverse) #data preparation facilities
 library(readxl) #read excel documents
 library(tidyverse) #data management tools
@@ -267,4 +266,5 @@ data_2023 <- data_2023[, colnames(data_2020_clean)]
 ## Combine by rows and save the results ------------------------------------------------------------------------------------------------
 write.csv(rbind(data_2020_clean, data_2023),
           file = "./data_2023/Neotropical_Mammals_COMBINED.csv",
-          row.names = FALSE)
+          row.names = FALSE,
+          na = "")
