@@ -37,4 +37,4 @@ data_2023$Epoch <- unlist(lapply(X = binning$bin_assignment,
 data_2023 <- data_2023 %>% add_column(Pct_age_range_in_Epoch = binning$overlap_percentage, .after = "Epoch")
 
 ## Save ------------------------------------------------------------------------
-write.csv(x = data_2023, file = "./data_2023/Neotropical_Mammals_COMBINED_BINNED.csv")
+write.csv(x = data_2023, file = "./data_2023/Neotropical_Mammals_COMBINED_BINNED.csv", row.names = FALSE)
