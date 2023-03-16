@@ -257,9 +257,11 @@ country_dict <- hash(keys = unique(data_2023$Country),
 for(abbrev in keys(country_dict)){
   data_2023$Country[which(data_2023$Country == abbrev)] <- as.character(values(country_dict[abbrev]))
 }
- #reorder columns
+  #add missing columns
 data_2023$Period <- rep(NA, nrow(data_2023))
 data_2023$Epoch <- rep(NA, nrow(data_2023))
+data_2023$Note <- rep(NA, nrow(data_2023))
+  #reorder columns
 data_2023 <- data_2023[, colnames(data_2020_clean)]
 
 ## Combine by rows and save the results ------------------------------------------------------------------------------------------------

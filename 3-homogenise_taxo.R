@@ -19,5 +19,14 @@ for(genus in unique(raw_taxo$Genus)){
       raw_taxo$Order[occ_indices] <- ord_names[which(is.na(ord_names) == FALSE)]
   }
 }
+#Clean stringged NAs
+na_seek_destroy <- function(vect){
+  vect[which(vect == "NA")] <- ""
+  return(vect)
+}
+clean_taxo <- apply(X = raw_taxo,
+                    MARGIN = 2,
+                    FUN = na_seek_destroy)
+
 #Save
-write.csv(raw_taxo, "./data_2023/homogenised_taxo.csv")
+write.csv(clean_taxo, "./data_2023/homogenised_taxo.csv", row.names = FALSE, na = "")
