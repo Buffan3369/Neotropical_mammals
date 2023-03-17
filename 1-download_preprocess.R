@@ -108,7 +108,7 @@ actual_names <- c("Andinomys edax",
                   "Inia geoffrensis",
                   "Interatherium robustum",
                   "Lagostomus incisus",
-                  "Macrochorobates chapalmalensis",
+                  "Macrochorobates chapadmalensis", #Chapadmal es una provincia argentina
                   "Macroeuphractus moreni",
                   "Megatherium tarijense",
                   "Mylodon darwinii", #both actually seem to be used
