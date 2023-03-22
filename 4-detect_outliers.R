@@ -12,6 +12,7 @@ raw_input <- data.frame(Species = occdf$Genus,
 write.table(raw_input, 
             file = "./data_2023/PyRate/raw_input_10138_occ.txt",
             row.names = FALSE,
+            quote = FALSE,
             sep = "\t",
             na = "")
 
