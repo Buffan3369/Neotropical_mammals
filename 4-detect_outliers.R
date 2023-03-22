@@ -9,8 +9,10 @@ raw_input <- data.frame(Species = occdf$Genus,
                         Status = occdf$Status,
                         MinT = occdf$`Min age`,
                         MaxT = occdf$`Max age`)
+unassigned_status <- which(is.na(raw_input$Status)) #exclude occurrences with unassigned status
+raw_input <- raw_input[-unassigned_status, ]
 write.table(raw_input, 
-            file = "./data_2023/PyRate/raw_input_10138_occ.txt",
+            file = "./data_2023/PyRate/raw_input_9478_occ.txt",
             row.names = FALSE,
             quote = FALSE,
             sep = "\t",

@@ -17,9 +17,6 @@ Abrocoma	extinct	6.8	9
 Abrocoma	extinct	7.14	7.7
 Abrocoma	extinct	6.8	9
 Abrocoma	extinct	7.14	8
-Abrocoma		0.0117	0.126
-Abrocoma		0.0117	0.126
-Abrocoma		0.0117	0.126
 Ameghinomys	extinct	16.3	17.5
 Ameghinomys	extinct	16.3	17.5
 Ameghinomys	extinct	16.3	17.5
@@ -533,7 +530,6 @@ Alouatta	extant	0	0.012
 Alouatta	extant	0	0.012
 Alouatta	extant	0	0.012
 Alouatta	extant	0	0.012
-Alouatta		0.00489	0.00493
 Ateles	extant	0	0.012
 Ateles	extant	0	0.012
 Ateles	extant	0	0.012
@@ -558,11 +554,8 @@ Austrotriconodon	extinct	66.043	84.9
 Austrotriconodon	extinct	66.043	84.9
 Balaena	extinct	5.333	11.608
 Eubalaena	extant	0.0117	0.126
-Eubalaena		0.0117	0.781
 Archaebalaenoptera	extinct	7.246	11.62
 Balaenoptera	extant	5.333	7.246
-Balaenoptera		2.588	3.6
-Balaenoptera		0.0117	0.781
 Notiocetus	extinct	0.781	1.2
 Protororqualus	extinct	15.97	23.03
 Barberenia	extinct	66.043	84.9
@@ -934,34 +927,6 @@ Lama	extinct	0.781	2.588
 Lama	extinct	0.781	2.588
 Lama	extinct	0.781	2.588
 Lama	extinct	0.781	2.588
-Lama		0.012	2.588
-Lama		0.126	0.781
-Lama		0.012	0.781
-Lama		0.781	2.588
-Lama		0.012	0.781
-Lama		0.012	0.781
-Lama		0.012	0.781
-Lama		0	0.0117
-Lama		0	0.0117
-Lama		0.012	0.781
-Lama		0.012	0.781
-Lama		0.012	0.781
-Lama		0.012	2.588
-Lama		2.588	3.6
-Lama		3	4
-Lama		0.00832	0.0092
-Lama		0.00051	0.00347
-Lama		0.00038	0.00158
-Lama		0.012	2.588
-Lama		0.012	0.126
-Lama		0.02084	0.02084
-Lama		0.012	2.588
-Lama		0.012	2.588
-Lama		0.012	2.588
-Lama		0.012	0.126
-Lama		0.0111	0.0111
-Lama		0.01415	0.01962
-Lama		0.012	2.588
 Palaeolama	extinct	0.012	0.781
 Palaeolama	extinct	0.012	2.588
 Palaeolama	extinct	0.781	2.588
@@ -1013,7 +978,6 @@ Vicugna	extant	0.012	0.781
 Vicugna	extant	0.012	0.781
 Vicugna	extant	0.012	0.781
 Vicugna	extant	0.0117	0.126
-Vicugna		0.0117	0.126
 Campanorco	extinct	37.2	48.6
 Campanorco	extinct	37.2	48.6
 Campanorco	extinct	37.2	48.6
@@ -1032,30 +996,15 @@ Canis	extinct	0.012	0.781
 Canis	extinct	0.781	2.588
 Canis	extinct	0.781	1.2
 Canis	extinct	0.781	2.588
-Canis		0.012	0.126
-Canis		0.781	2.588
-Canis		0.126	0.781
-Canis		0.012	2.588
-Canis		0.012	0.126
-Canis		2.588	3.6
-Canis		0.012	0.126
-Canis		0.008639	0.008639
-Canis		0.126	0.781
-Canis		0.012	0.126
-Canis		0.01415	0.01962
-Canis		0.015	0.025
-Canis		0.012	0.126
 Cerdocyon	extant	0.02006	0.02006
 Cerdocyon	extant	0	0.126
 Cerdocyon	extant	0	0.012
 Cerdocyon	extant	0.012	0.781
-Cerdocyon		0.0117	0.126
 Chrysocyon	extant	0.781	2.588
 Chrysocyon	extant	0.781	2.588
 Chrysocyon	extant	0	0.126
 Chrysocyon	extant	0	0.126
 Chrysocyon	extant	0	2.588
-Chrysocyon		0	2.588
 Dusicyon	extinct	0.012	0.781
 Dusicyon	extinct	0.012	0.781
 Dusicyon	extinct	0.012	0.126
@@ -1088,9 +1037,6 @@ Dusicyon	extinct	0.781	1.2
 Dusicyon	extinct	0.00775	0.00808
 Dusicyon	extinct	0.0066	0.0066
 Dusicyon	extinct	0.012	0.126
-Lycalopex		0.012	0.781
-Lycalopex		0.0117	0.126
-Lycalopex		0.0117	0.126
 Pseudalopex	extant	0.012	0.781
 Protocyon	extinct	0.012	0.781
 Protocyon	extinct	0.012	2.588
@@ -1219,17 +1165,6 @@ Cavia	extinct	0.0117	2.588
 Cavia	extant	0	0.0117
 Cavia	extant	0.008225	0.008225
 Cavia	extant	0	0.126
-Cavia		0.01758	0.0276
-Cavia		0	2.588
-Cavia		0.00958	0.010535
-Cavia		0.012	0.781
-Cavia		0.012	0.781
-Cavia		0	0.0117
-Cavia		0	0.0117
-Cavia		0.012	0.781
-Cavia		0.012	0.781
-Cavia		0	2.588
-Cavia		0	2.588
 Caviodon	extinct	6.9	7.14
 Caviodon	extinct	3.6	5.332
 Caviodon	extinct	3.6	5.332
@@ -1261,17 +1196,6 @@ Dolichotis	extant	0.0117	0.126
 Dolichotis	extant	0.00775	0.00808
 Dolichotis	extant	0.012	0.781
 Dolichotis	extant	2.588	3.6
-Dolichotis		0.012	2.588
-Dolichotis		0.781	2.588
-Dolichotis		0.012	0.781
-Dolichotis		0	0.0117
-Dolichotis		2.588	3.6
-Dolichotis		2.588	3.6
-Dolichotis		6.8	9
-Dolichotis		7.14	8
-Dolichotis		4.9	4.9
-Dolichotis		2.588	5.332
-Dolichotis		0.012	1.2
 Eodolichotis	extinct	11.8	13.8
 Eodolichotis	extinct	11.8	13.8
 Eodolichotis	extinct	11.8	13.8
@@ -1293,20 +1217,6 @@ Galea	extant	0.012	0.781
 Galea	extant	0.0066	0.0066
 Galea	extant	0.0117	0.126
 Galea	extant	0.0117	0.126
-Galea		0.126	0.781
-Galea		0.012	0.126
-Galea		0.0117	0.126
-Galea		0.0117	0.126
-Galea		0	0.0117
-Galea		0.0117	0.126
-Galea		0.0117	0.126
-Galea		0	2.588
-Galea		0.012	0.781
-Galea		0.0117	0.126
-Galea		0.012	0.126
-Galea		6.8	9
-Galea		0.012	0.781
-Galea		0.012	1.2
 Galea	extant	0	2.588
 Hydrochoeropsis	extinct	2.588	3.6
 Hydrochoeropsis	extinct	2.588	3.6
@@ -1337,16 +1247,6 @@ Hydrochoerus	extant	0	0.0117
 Hydrochoerus	extant	0.012	0.781
 Hydrochoerus	extant	0	0.126
 Hydrochoerus	extant	0	0.0117
-Hydrochoerus		0.0117	2.588
-Hydrochoerus		0.781	2.588
-Hydrochoerus		4	6.8
-Hydrochoerus		0.012	0.126
-Hydrochoerus		0.012	0.781
-Hydrochoerus		0.781	2.588
-Hydrochoerus		0.781	1.2
-Hydrochoerus		0.012	0.781
-Hydrochoerus		0.012	0.126
-Hydrochoerus		0.012	0.781
 Kerodon	extant	0.0117	0.126
 Kerodon	extant	0	0.0117
 Kerodon	extant	0.0117	0.126
@@ -1366,21 +1266,6 @@ Microcavia	extant	0	0.0117
 Microcavia	extant	0	0.0117
 Microcavia	extinct	2.588	3.6
 Microcavia	extinct	0.012	0.781
-Microcavia		0.012	0.781
-Microcavia		0.781	2.588
-Microcavia		0.0117	0.126
-Microcavia		0.012	0.781
-Microcavia		0.012	0.781
-Microcavia		0.0117	0.126
-Microcavia		2.588	5.332
-Microcavia		0.126	0.781
-Microcavia		0.012	2.588
-Microcavia		0.012	0.781
-Microcavia		4	6.8
-Microcavia		3	4
-Microcavia		3	4
-Microcavia		3	4
-Microcavia		2.588	3.6
 Molinodus	extinct	61.7	66.043
 Molinodus	extinct	61.7	66.043
 Neocavia	extinct	4	6.8
@@ -1548,14 +1433,11 @@ Carlocebus	extinct	16	18
 Carlocebus	extinct	15.97	23.03
 Carlocebus	extinct	15.97	23.03
 Carlocebus	extinct	16	18
-Cebuella		10	11.8
 Cebus	extant	0	0.012
 Cebus	extant	0	0.012
 Cebus	extant	0	0.012
 Cebus	extant	0	0.012
 Cebus	extant	0	0.012
-Cebus		10	11.8
-Cebus		0.5	1
 Dolichocebus	extinct	17.5	21
 Leontopithecus	extant	0	0.012
 Micodon	extinct	11.8	13.8
@@ -1571,7 +1453,6 @@ Saimiri	extinct	11.8	13.8
 Saimiri	extinct	11.8	13.8
 Saimiri	extinct	11.8	13.8
 Saimiri	extant	0	0.012
-Saimiri		16.3	17.5
 Tremacebus	extinct	17.5	21
 Banderomys	extinct	17.5	21
 Banderomys	extinct	17.5	21
@@ -1622,19 +1503,12 @@ Antifer	extinct	0.012	0.781
 Antifer	extinct	0.012	0.781
 Blastocerus	extant	0.012	2.588
 Blastocerus	extant	0	0.0117
-Blastocerus		0.0117	0.126
-Blastocerus		0.012	0.781
 Charitoceros	extinct	0.781	2.588
 Cervus	extinct	0.012	0.126
 Epieurycerus	extinct	0.126	0.781
 Epieurycerus	extinct	0.781	1.2
 Epieurycerus	extinct	0.012	0.781
 Hippocamelus	extinct	0.012	0.126
-Hippocamelus		0.781	2.588
-Hippocamelus		0.781	1.2
-Hippocamelus		0.012	2.588
-Hippocamelus		0.0117	0.126
-Hippocamelus		0.012	0.126
 Mazama	extant	0	0.012
 Mazama	extant	0.012	2.588
 Mazama	extant	0.012	2.588
@@ -1647,26 +1521,6 @@ Mazama	extant	0	0.012
 Mazama	extant	0	0.012
 Mazama	extant	0	0.126
 Mazama	extant	0	0.126
-Mazama		0.0117	0.126
-Mazama		0.0117	0.126
-Mazama		0.0117	0.126
-Mazama		0	2.588
-Mazama		0.0117	0.126
-Mazama		0	2.588
-Mazama		0.00038	0.00158
-Mazama		0.0291	0.204
-Mazama		0.012	2.588
-Mazama		0.012	2.588
-Mazama		0	2.588
-Mazama		0.012	2.588
-Mazama		0.012	0.126
-Mazama		0.012	0.126
-Mazama		0.012	0.126
-Mazama		0.00489	0.00493
-Mazama		0	2.588
-Mazama		0.012	0.781
-Mazama		0.012	0.126
-Mazama		0.0255	0.02798
 Morenelaphus	extinct	0.012	0.781
 Morenelaphus	extinct	0.01644	0.01644
 Morenelaphus	extinct	0.012	0.781
@@ -1702,9 +1556,6 @@ Odocoileus	extinct	0.012	0.126
 Odocoileus	extinct	0.0117	0.126
 Odocoileus	extant	0	0.012
 Odocoileus	extant	0	0.012
-Odocoileus		0.015	0.025
-Odocoileus		0.012	0.126
-Odocoileus		0.0255	0.02798
 Ozotoceros	extant	0	0.012
 Ozotoceros	extant	0	0.012
 Ozotoceros	extant	0.012	0.126
@@ -1717,13 +1568,8 @@ Ozotoceros	extant	0.012	0.781
 Ozotoceros	extant	0.012	0.781
 Ozotoceros	extant	0.0117	0.126
 Ozotoceros	extant	0	0.0117
-Ozotoceros		0	2.588
 Paraceros	extinct	0.012	2.588
 Paraceros	extinct	0.012	0.781
-Pudu		0.012	0.781
-Pudu		0.0117	0.126
-Pudu		0.012	0.781
-Herpetocetus		5.333	7.246
 Pelocetus	extinct	11.608	15.97
 Piscocetus	extinct	5.332	7.246
 Tiucetus	extinct	7.246	13.65
@@ -1744,9 +1590,6 @@ Lagidium	extant	0	0.012
 Lagidium	extant	0.00958	0.010535
 Lagidium	extant	0.00773	0.00773
 Lagidium	extant	0.008225	0.008225
-Lagidium		0.01415	0.01962
-Lagidium		0	0.0117
-Lagidium		0.012	0.781
 Lagostomus	extinct	6.8	9
 Lagostomus	extinct	3	4
 Lagostomus	extinct	4	6.8
@@ -1781,47 +1624,6 @@ Lagostomus	extant	0.0066	0.0066
 Lagostomus	extinct	6.8	9
 Lagostomus	extinct	6.8	9
 Lagostomus	extinct	9	10
-Lagostomus		2.588	3.6
-Lagostomus		6.8	9
-Lagostomus		6.8	9
-Lagostomus		4	6.8
-Lagostomus		0.012	2.588
-Lagostomus		0.126	0.781
-Lagostomus		0.126	0.781
-Lagostomus		0.012	2.588
-Lagostomus		0.012	0.781
-Lagostomus		4	6.8
-Lagostomus		6.8	9
-Lagostomus		3	4
-Lagostomus		0.781	2.588
-Lagostomus		2.588	3.6
-Lagostomus		0.0117	0.126
-Lagostomus		0	0.0117
-Lagostomus		2.588	3.6
-Lagostomus		0.012	0.781
-Lagostomus		2.588	3.6
-Lagostomus		2.588	3.6
-Lagostomus		3	4
-Lagostomus		0.012	0.781
-Lagostomus		6.8	9
-Lagostomus		7.14	7.7
-Lagostomus		6.8	9
-Lagostomus		7.14	8
-Lagostomus		6.8	9
-Lagostomus		0.012	0.781
-Lagostomus		0.012	0.781
-Lagostomus		2.588	5.332
-Lagostomus		6.8	9
-Lagostomus		6.8	9
-Lagostomus		6.8	9
-Lagostomus		4	9
-Lagostomus		6.8	9
-Lagostomus		9	10
-Lagostomus		6.8	9
-Lagostomus		6.8	9
-Lagostomus		2.588	5.332
-Lagostomus		5.332	11.608
-Lagostomus		0.012	2.588
 Miochinchilla	extinct	16.3	17.5
 Miochinchilla	extinct	11.8	13.8
 Miochinchilla	extinct	11.8	13.8
@@ -1888,7 +1690,6 @@ Prolagostomus	extinct	14.5	14.5
 Scotamys	extinct	21	29
 Scotamys	extinct	21	29
 Cabassous	extant	0	0.012
-Cabassous		0	2.588
 Chaetophractus	extinct	0.781	2.588
 Chaetophractus	extant	0	0.012
 Chaetophractus	extant	0	0.0117
@@ -1913,11 +1714,6 @@ Chaetophractus	extant	0.012	0.781
 Chaetophractus	extant	0.012	0.781
 Chaetophractus	extant	0	0.0117
 Chaetophractus	extant	0.012	2.588
-Chaetophractus		0.0117	0.126
-Chaetophractus		6.8	9
-Chaetophractus		0.0066	0.0066
-Chaetophractus		0.781	2.588
-Chaetophractus		0.0117	0.126
 Chlamydophractus	extinct	9	10
 Euphractus	extant	0	0.012
 Euphractus	extant	0.781	2.588
@@ -1931,8 +1727,6 @@ Euphractus	extant	0.781	2.588
 Euphractus	extant	0.0117	0.126
 Euphractus	extant	0	0.126
 Euphractus	extant	0	0.0117
-Euphractus		0.0117	0.126
-Euphractus		0.012	0.126
 Priodontes	extant	0	0.012
 Priodontes	extant	0	0.012
 Proeutatus	extinct	16.3	17.5
@@ -1989,17 +1783,6 @@ Tolypeutes	extant	0.012	0.781
 Tolypeutes	extant	0	0.126
 Tolypeutes	extant	0.0066	0.0066
 Tolypeutes	extant	0.012	0.781
-Tolypeutes		0.126	0.781
-Tolypeutes		0.012	0.781
-Tolypeutes		0.012	0.126
-Tolypeutes		0	0.126
-Tolypeutes		0	0.126
-Tolypeutes		0.012	0.126
-Tolypeutes		0.012	2.588
-Tolypeutes		0.012	0.126
-Tolypeutes		0.0117	0.126
-Tolypeutes		0.012	0.781
-Tolypeutes		0.0117	0.126
 Cimolestes	extinct	61.7	66.043
 Eosteiromys	extinct	16	18
 Eosteiromys	extinct	16	18
@@ -2025,10 +1808,8 @@ Eosteiromys	extinct	17.5	21
 Eosteiromys	extinct	15.97	23.03
 Proticia	extinct	48.6	55.8
 Abrothrix	extant	0.01758	0.0276
-Abrothrix		2.588	3.6
 Abrothrix	extant	0.0117	0.126
 Abrothrix	extinct	2.588	3.6
-Abrothrix		0	0.126
 Agathaeromys	extinct	0.012	2.588
 Agathaeromys	extinct	0.012	2.588
 Agathaeromys	extinct	0.012	2.588
@@ -2041,22 +1822,6 @@ Akodon	extant	0.012	0.126
 Akodon	extant	0	0.012
 Akodon	extant	0.0117	0.126
 Akodon	extant	0.0117	0.126
-Akodon		2.588	3.6
-Akodon		0.0117	0.126
-Akodon		0	0.0117
-Akodon		0	2.588
-Akodon		0.0117	0.126
-Akodon		0	0.0117
-Akodon		0	0.0117
-Akodon		0	0.0117
-Akodon		0.012	0.781
-Akodon		0.0117	0.126
-Akodon		0.0117	0.126
-Akodon		0	0.126
-Akodon		0	0.0117
-Akodon		0.01758	0.0276
-Akodon		0	2.588
-Akodon		0	2.588
 Akodon	extant	0.126	0.781
 Akodon	extant	0.126	0.781
 Akodon	extinct	2.588	3.6
@@ -2071,7 +1836,6 @@ Andinomys	extant	0.01758	0.0276
 Andinomys	extinct	0.781	2.588
 Andinomys	extant	0.0117	0.126
 Andinomys	extant	0	0.126
-Andinomys		0.781	2.588
 Auliscomys	extinct	4	6.8
 Auliscomys	extinct	3.6	5.332
 Auliscomys	extinct	4	6.8
@@ -2094,16 +1858,6 @@ Calomys	extant	0	0.126
 Calomys	extant	0.781	2.588
 Calomys	extant	0	2.588
 Calomys	extant	0.0117	0.126
-Calomys		0.781	2.588
-Calomys		0	0.0117
-Calomys		0	0.0117
-Calomys		0	0.012
-Calomys		0.012	0.781
-Calomys		0.01758	0.0276
-Calomys		0	0.012
-Calomys		0.0066	0.0066
-Calomys		0	2.588
-Calomys		0.012	2.588
 Chukimys	extinct	2.588	3.6
 Chukimys	extinct	3	4
 Chinchillula	extant	0.012	0.781
@@ -2116,22 +1870,16 @@ Dankomys	extinct	2.588	5.332
 Dankomys	extinct	3	6.8
 Dankomys	extant	2.588	3.6
 Dankomys	extant	2.588	3.6
-Delomys		0	0.0117
 Dushimys	extinct	0.012	2.588
 Eligmodontia	extant	0.012	0.781
 Eligmodontia	extant	0.012	0.781
 Eligmodontia	extant	0	0.0117
-Eligmodontia		0.0117	0.126
-Eligmodontia		0	0.0117
-Eligmodontia		0	0.0117
 Euneomys	extant	0.012	0.126
 Graomys	extinct	3	4
 Graomys	extant	0.0117	0.126
 Graomys	extant	0	0.0117
 Graomys	extant	0	0.0117
 Graomys	extant	0	0.0117
-Graomys		0	0.012
-Gyldenstolpia		0	0.0117
 Holochilus	extant	0	0.012
 Holochilus	extant	0.012	0.781
 Holochilus	extant	0	0.126
@@ -2144,55 +1892,31 @@ Holochilus	extant	0.0117	0.126
 Holochilus	extant	0.0066	0.0066
 Holochilus	extant	0	0.126
 Holochilus	extant	0.0255	0.02798
-Holochilus		0.012	0.781
-Holochilus		0	0.0117
-Holochilus		0.0117	0.126
-Holochilus		0	0.0117
-Holochilus		0.012	0.781
 Kunsia	extant	0.781	2.588
 Kunsia	extant	0.781	2.588
 Kunsia	extant	0	2.588
 Kunsia	extant	0	0.0117
-Lundomys		0.012	0.781
-Lundomys		0.012	0.781
-Lundomys		0.126	0.781
 Neacomys	extant	0	0.012
 Necromys	extant	0.01758	0.0276
 Necromys	extant	0.0066	0.0066
 Necromys	extant	0	0.0117
 Necromys	extant	0	0.012
-Necromys		0	2.588
-Necromys		0	2.588
-Necromys		0.0117	0.126
-Necromys		0	2.588
 Nectomys	extant	0.781	2.588
 Nectomys	extant	0	0.012
 Nectomys	extant	0.781	2.588
-Nectomys		0.781	1.2
-Nectomys		0.0117	0.126
 Neotomys	extant	0.01758	0.0276
 Neotomys	extant	0.012	0.781
 Noronhomys	extinct	0	0.012
 Oecomys	extant	0	0.012
 Oecomys	extant	0	0.012
-Oecomys		0	2.588
 Oligoryzomys	extant	0	0.0117
 Oligoryzomys	extant	0.01758	0.0276
 Oligoryzomys	extant	0	0.012
 Oligoryzomys	extant	0.01758	0.0276
 Oligoryzomys	extant	0	0.012
-Oligoryzomys		0	0.0117
-Oligoryzomys		0	2.588
-Oligoryzomys		0.0117	0.126
-Oligoryzomys		0	0.126
-Oligoryzomys		0	0.126
-Oligoryzomys		0	2.588
 Olympicomys	extinct	0.781	3.6
 Olympicomys	extinct	0.781	2.588
 Olympicomys	extinct	0.781	2.588
-Oxymycterus		0.781	2.588
-Oxymycterus		0	0.0117
-Oxymycterus		0	0.126
 Oryzomys	extinct	0	0.012
 Oryzomys	extinct	0	0.012
 Oryzomys	extinct	0	0.012
@@ -2208,16 +1932,7 @@ Oryzomys	extant	0	2.588
 Oryzomys	extant	0.0117	0.126
 Oryzomys	extant	0.0117	0.126
 Oryzomys	extant	0.0117	0.126
-Oryzomys		0.0117	0.126
-Oryzomys		0.0117	0.126
-Oryzomys		0.0117	0.126
-Oryzomys		0	2.588
-Oryzomys		0.0117	0.126
-Oryzomys		0.0117	0.126
-Oryzomys		0	2.588
 Oxymycterus	extant	0.781	2.588
-Oxymycterus		0.01758	0.0276
-Oxymycterus		0.126	0.781
 Panchomys	extinct	0.781	3.6
 Pardinamys	extinct	2.588	3.6
 Phyllotis	extant	0.01758	0.0276
@@ -2225,15 +1940,6 @@ Phyllotis	extant	0.781	2.588
 Phyllotis	extant	0.0117	0.126
 Phyllotis	extant	0	0.0117
 Phyllotis	extant	0	0.0117
-Phyllotis		0.781	2.588
-Phyllotis		0.012	0.781
-Phyllotis		0.0117	0.126
-Phyllotis		0.126	0.781
-Phyllotis		0.0066	0.0066
-Phyllotis		0.012	0.126
-Phyllotis		0.0111	0.0111
-Phyllotis		0.01415	0.01962
-Phyllotis		0.012	0.126
 Pseudoryzomys	extant	0	0.0117
 Pseudoryzomys	extant	0	2.588
 Pseudoryzomys	extant	0.0117	0.126
@@ -2260,18 +1966,15 @@ Reithrodon	extant	0	0.0117
 Reithrodon	extant	0	0.0117
 Reithrodon	extant	0.0117	0.126
 Reithrodon	extant	0	0.126
-Reithrodon		0.012	0.781
 Reithrodon	extinct	0.012	0.781
 Reithrodon	extinct	0.012	0.126
 Rhipidomys	extant	0	0.012
 Rhipidomys	extant	0	0.012
 Scapteromys	extinct	3	4
 Scapteromys	extant	0	2.588
-Scapteromys		0	0.0117
 Sigmodon	extant	0	0.012
 Sigmodon	extant	0	0.012
 Sigmodon	extant	0.0255	0.02798
-Sigmodon		0.012	0.126
 Sooretamys	extant	0	0.0117
 Tafimys	extinct	0.0117	0.126
 Tafimys	extinct	0	0.126
@@ -2281,7 +1984,6 @@ Wilfredomys	extant	0.012	0.781
 Zygodontomys	extant	0	0.012
 Zygodontomys	extant	0	0.012
 Zygodontomys	extinct	0	0.012
-Zygodontomys		0.0066	0.0066
 Actenomys	extinct	4	6.8
 Actenomys	extinct	4	6.8
 Actenomys	extinct	4	6.8
@@ -2343,33 +2045,6 @@ Ctenomys	extinct	0.781	1.2
 Ctenomys	extinct	0.781	1.2
 Ctenomys	extinct	3	4
 Ctenomys	extinct	0	0.0117
-Ctenomys		0.781	2.588
-Ctenomys		0.012	0.781
-Ctenomys		0	0.0117
-Ctenomys		0	0.0117
-Ctenomys		0.0117	0.126
-Ctenomys		0	0.0117
-Ctenomys		0	0.0117
-Ctenomys		0	0.0117
-Ctenomys		2.588	3.6
-Ctenomys		0.0117	0.126
-Ctenomys		0	0.126
-Ctenomys		0.012	0.781
-Ctenomys		0	0.012
-Ctenomys		0	0.126
-Ctenomys		0.012	0.781
-Ctenomys		0.012	0.781
-Ctenomys		0.012	0.781
-Ctenomys		0	0.012
-Ctenomys		0.781	1.2
-Ctenomys		0.012	0.781
-Ctenomys		0.012	0.781
-Ctenomys		2.588	3.6
-Ctenomys		0.012	0.126
-Ctenomys		0.00038	0.00158
-Ctenomys		0.01758	0.0276
-Ctenomys		0	0.012
-Ctenomys		0.0066	0.0066
 Eucelophorus	extinct	4	6.8
 Eucelophorus	extinct	4	6.8
 Eucelophorus	extinct	2.588	3.6
@@ -2418,9 +2093,6 @@ Cuniculus	extinct	0.0117	0.126
 Cuniculus	extinct	0.0117	2.588
 Cuniculus	extinct	0.0117	0.126
 Cuniculus	extinct	0.0117	0.126
-Cuniculus		0.012	0.126
-Cuniculus		0.0117	0.126
-Cuniculus		0.012	0.126
 Cyclopes	extant	0	0.012
 Cyclopes	extant	0	0.012
 Cyclopes	extant	0	0.012
@@ -2554,28 +2226,6 @@ Dasypus	extinct	16.3	17.5
 Dasypus	extinct	16.3	17.5
 Dasypus	extinct	16.3	17.5
 Dasypus	extant	0.0255	0.02798
-Dasypus		0.0117	0.126
-Dasypus		0.0117	0.126
-Dasypus		0.0117	0.126
-Dasypus		0.0117	0.126
-Dasypus		0	2.588
-Dasypus		0.0117	0.126
-Dasypus		0.0117	0.126
-Dasypus		0.012	0.781
-Dasypus		0.0117	0.126
-Dasypus		0.0117	0.126
-Dasypus		0	2.588
-Dasypus		0	2.588
-Dasypus		0.781	1.2
-Dasypus		0.012	0.126
-Dasypus		0	2.588
-Dasypus		0.012	0.126
-Dasypus		0.012	0.126
-Dasypus		0.012	0.126
-Dasypus		0.012	2.588
-Dasypus		0.012	2.588
-Dasypus		0.012	0.126
-Dasypus		6.8	9
 Doellotatus	extinct	6.8	9
 Doellotatus	extinct	2.588	3.6
 Doellotatus	extinct	4	6.8
@@ -3083,9 +2733,6 @@ Zaedyus	extant	0.00775	0.00808
 Zaedyus	extant	0	0.012
 Zaedyus	extant	0.0066	0.0066
 Zaedyus	extant	0	0.0117
-Zaedyus		2.588	3.6
-Zaedyus		0.012	0.126
-Zaedyus		6.8	9
 Australoprocta	extinct	17.5	21
 Alloiomys	extinct	15.5	16.3
 Alloiomys	extinct	15.5	16.3
@@ -3103,15 +2750,6 @@ Dasyprocta	extant	0	0.012
 Dasyprocta	extant	0.00489	0.00493
 Dasyprocta	extant	0	0.012
 Dasyprocta	extinct	0	0.012
-Dasyprocta		0	2.588
-Dasyprocta		0	0.0117
-Dasyprocta		0.0117	2.588
-Dasyprocta		0.0117	0.126
-Dasyprocta		0.0117	0.126
-Dasyprocta		0.0117	0.126
-Dasyprocta		0	2.588
-Dasyprocta		0.0117	0.126
-Dasyprocta		0	2.588
 Incamys	extinct	21	29
 Incamys	extinct	21	29
 Incamys	extinct	21	29
@@ -3200,7 +2838,6 @@ Neoreomys	extinct	21	29
 Neoreomys	extinct	19.8	19.8
 Neoreomys	extinct	16.3	17.5
 Tursiops	extant	0	0.0117
-Stenella		2.588	3.6
 Coona	extinct	37.2	48.6
 Coona	extinct	37.2	48.6
 Coona	extinct	37.2	48.6
@@ -3220,10 +2857,7 @@ Caluromys	extant	0	0.012
 Caluromysiops	extant	0	0.012
 Chironectes	extant	0	2.588
 Chironectes	extant	0	0.012
-Chironectes		7.246	11.608
-Chironectes		6.8	9
 Chulpasia	extinct	48.6	58.7
-Cryptonanus		0	0.0117
 Didelphis	extant	0.0117	0.126
 Didelphis	extant	0.012	0.781
 Didelphis	extant	0.012	0.781
@@ -3240,21 +2874,9 @@ Didelphis	extinct	3	4
 Didelphis	extinct	3	4
 Didelphis	extinct	3	4
 Didelphis	extinct	7.246	11.608
-Didelphis		0.012	2.588
-Didelphis		2.588	3.6
-Didelphis		0	0.126
-Didelphis		0.781	2.588
-Didelphis		2.588	3.6
-Didelphis		0.00489	0.00493
-Didelphis		0.5	1
-Didelphis		0.0255	0.02798
 Eobrasilia	extinct	48.6	58.7
 Gaylordia	Gaylordia	48.6	58.7
 Gaylordia	Gaylordia	48.6	58.7
-Gracilinanus		0	2.588
-Gracilinanus		0	2.588
-Gracilinanus		0.0117	0.126
-Gracilinanus		0	2.588
 Hesperocynus	extinct	6.8	9
 Hyperdidelphys	extinct	3	4
 Hyperdidelphys	extinct	3	4
@@ -3298,10 +2920,6 @@ Lestodelphys	extant	0.012	0.781
 Lestodelphys	extant	0	0.012
 Lestodelphys	extinct	0.012	0.126
 Lestodelphys	extinct	0	0.126
-Lestodelphys		0.126	0.781
-Lestodelphys		0.0117	0.126
-Lestodelphys		0.012	0.126
-Lestodelphys		0.781	2.588
 Lutreolina	extinct	4	6.8
 Lutreolina	extant	0.781	2.588
 Lutreolina	extant	0	0.0117
@@ -3312,29 +2930,12 @@ Lutreolina	extinct	5.332	11.608
 Lutreolina	extinct	4	6.8
 Lutreolina	extinct	3	4
 Lutreolina	extinct	3	4
-Lutreolina		4	6.8
-Lutreolina		2.588	3.6
-Lutreolina		0.781	1.2
-Lutreolina		0.781	1.2
-Lutreolina		3.6	5.332
-Lutreolina		2.588	5.332
-Lutreolina		6.8	9
 Marmosa	extinct	0	0.012
 Marmosa	extinct	4	6.8
 Marmosa	extant	0	0.012
 Marmosa	extinct	0	0.012
 Marmosa	extant	0	0.012
 Marmosa	extant	0	0.012
-Marmosa		0.781	1.2
-Marmosa		0	2.588
-Marmosa		11.8	13.8
-Marmosa		0	0.0117
-Marmosa		0.0117	0.126
-Marmosa		0.0117	0.126
-Marmosa		0.00958	0.010535
-Marmosa		0.00773	0.00773
-Marmosa		0.008225	0.008225
-Marmosa		0.012	0.126
 Marmosops	extinct	0	0.012
 Marmosopsis	extinct	48.6	58.7
 Marmosopsis	extinct	40.4	48.6
@@ -3342,9 +2943,7 @@ Marmosopsis	extinct	57	59
 Metachirus	extant	0	0.012
 Metachirus	extant	0	0.012
 Metachirus	extant	0	0.012
-Metachirus		0.008225	0.008225
 Micoureus	extant	0.0117	0.126
-Micoureus		0	0.012
 Micoureus	extinct	11.8	13.8
 Micoureus	extinct	11.8	13.8
 Micoureus	extinct	11.8	13.8
@@ -3364,8 +2963,6 @@ Monodelphis	extant	0.0117	0.126
 Monodelphis	extant	0.0117	0.126
 Monodelphis	extant	0	2.588
 Monodelphis	extant	0.0117	0.126
-Monodelphis		0	0.0117
-Monodelphis		0	0.0117
 Paradidelphys	extinct	3	6.8
 Peradectes	extinct	61.7	66.043
 Peradectes	extinct	48.6	58.7
@@ -3413,13 +3010,6 @@ Thylamys	extant	0	0.012
 Thylamys	extant	4	6.8
 Thylamys	extinct	6.8	9
 Thylamys	extinct	6.8	9
-Thylamys		6.8	9
-Thylamys		0	0.0117
-Thylamys		0	2.588
-Thylamys		0.0117	0.126
-Thylamys		0.0117	0.126
-Thylamys		0.0117	0.126
-Thylamys		0	2.588
 Thylatheridium	extinct	2.588	3.6
 Thylatheridium	extinct	6.8	9
 Thylatheridium	extinct	6.8	9
@@ -3816,7 +3406,6 @@ Adelphomys	extinct	16.3	17.5
 Adelphomys	extinct	15.97	23.03
 Adelphomys	extinct	16.3	17.5
 Brotomys	extinct	0	0.126
-Callistomys		0.0117	2.588
 Carterodon	extant	0	2.588
 Carterodon	extant	0.0117	2.588
 Carterodon	extant	0	2.588
@@ -3839,13 +3428,7 @@ Clyomys	extinct	0	0.0117
 Clyomys	extinct	0	0.0117
 Clyomys	extinct	0	0.0117
 Clyomys	extinct	0	0.0117
-Clyomys		0.781	1.2
-Clyomys		6.8	9
-Clyomys		0	2.588
-Clyomys		0	2.588
-Clyomys		0.0117	2.588
 Dactylomys	extant	0	0.012
-Dactylomys		0	0.0117
 Deseadomys	extinct	21	29
 Deseadomys	extinct	23.03	28.4
 Dicolpomys	extinct	0.0117	2.588
@@ -3856,8 +3439,6 @@ Dicolpomys	extinct	0	0.0117
 Dicolpomys	extinct	0	0.0117
 Diplomys	extant	0	0.012
 Echimys	extinct	0	0.012
-Echimys		0	0.0117
-Echimys		0.0255	0.02798
 Eodelphomys	extinct	33.9	37.2
 Eoespina	extinct	33.9	37.2
 Eoespina	extinct	40.94	41.6
@@ -3952,18 +3533,11 @@ Eumysops	extinct	2.588	3.6
 Eumysops	extinct	0.012	2.588
 Eumysops	extinct	5.332	11.608
 Euryzygomatomys	extinct	0.781	2.588
-Euryzygomatomys		0.781	2.588
-Euryzygomatomys		0	0.0117
 Gaimanomys	extinct	17.5	21
 Haplostropha	extinct	6.8	9
 Haplostropha	extinct	6.8	9
 Heteropsomys	extinct	0.012	2.588
 Isothrix	extant	0	0.012
-Kannabateomys		0	2.588
-Kannabateomys		0.0117	2.588
-Kannabateomys		0.0117	0.126
-Kannabateomys		0	0.0117
-Makalata		0.0117	0.126
 Maruchito	extinct	13.8	15.5
 Maruchito	extinct	11.8	17.5
 Maruchito	extinct	15.5	17.5
@@ -4000,13 +3574,7 @@ Myocastor	extinct	0.781	1.2
 Myocastor	extinct	2.588	3.6
 Myocastor	extinct	0.012	0.781
 Myocastor	extinct	6.8	9
-Myocastor		0.126	0.781
-Myocastor		0.781	1.2
-Myocastor		0.012	0.781
-Myocastor		0.0117	0.126
-Myocastor		0.0117	0.126
 Myocastor	extinct	6.8	9
-Myocastor		0.012	0.781
 Pampamys	extinct	6.8	9
 Pampamys	extinct	6.8	9
 Pampamys	extinct	4	9
@@ -4028,18 +3596,6 @@ Paramyocastor	extinct	2.588	3.6
 Paramyocastor	extinct	2.588	3.6
 Paramyocastor	extinct	2.588	5.332
 Paramyocastor	extinct	2.588	5.332
-Phyllomys		0	2.588
-Phyllomys		0	0.0117
-Phyllomys		0.0117	2.588
-Phyllomys		0	0.0117
-Phyllomys		0	0.0117
-Phyllomys		0	0.0117
-Phyllomys		0	0.0117
-Phyllomys		0.0117	0.126
-Phyllomys		0	0.0117
-Phyllomys		5.333	11.608
-Phyllomys		0	0.0117
-Phyllomys		0	2.588
 Proatherura	extinct	2.588	3.6
 Proclinodontomys	extinct	0.126	2.588
 Proclinodontomys	extinct	0.126	2.588
@@ -4054,14 +3610,6 @@ Proechimys	extant	0.0255	0.02798
 Proechimys	extant	0	0.012
 Proechimys	extant	0	0.012
 Proechimys	extant	0	0.012
-Proechimys		0	2.588
-Proechimys		0	0.0117
-Proechimys		0.0117	0.126
-Proechimys		0	2.588
-Proechimys		0.0117	0.126
-Proechimys		0	2.588
-Proechimys		0.012	0.781
-Proechimys		0.5	1
 Prostichomys	extinct	15.97	20.44
 Prostichomys	extinct	17.5	21
 Prostichomys	extinct	17.5	21
@@ -4129,21 +3677,6 @@ Theridomysops	extinct	3.6	7.246
 Theridomysops	extinct	3.6	11.608
 Theridomysops	extinct	6.8	9
 Thrichomys	extant	0	2.588
-Thrichomys		0.0117	2.588
-Thrichomys		0.0117	0.126
-Thrichomys		0	0.0117
-Thrichomys		0.0117	0.126
-Thrichomys		0.0117	0.126
-Thrichomys		0.0117	0.126
-Thrichomys		0	2.588
-Thrichomys		0	2.588
-Thrichomys		0	2.588
-Thrichomys		0.0117	0.126
-Thrichomys		0	2.588
-Thrichomys		0.0117	0.126
-Thrichomys		0.0117	0.126
-Thrichomys		0	2.588
-Trinomys		0	0.0117
 Ullumys	extinct	6.8	9
 Ullumys	extinct	9	10
 Discolomys	extinct	6.8	9
@@ -4318,47 +3851,6 @@ Equus	extinct	0.012	2.588
 Equus	extinct	0.015	0.025
 Equus	extinct	0.0255	0.02798
 Equus	extinct	0.0117	0.126
-Equus		0.012	0.781
-Equus		0	2.588
-Equus		0.0117	0.126
-Equus		0.012	0.781
-Equus		0.0117	0.126
-Equus		0.781	2.588
-Equus		0.0117	0.126
-Equus		0.0117	0.126
-Equus		0.012	0.781
-Equus		0.012	0.781
-Equus		0.012	0.781
-Equus		0.012	0.781
-Equus		0.012	0.781
-Equus		0.012	0.126
-Equus		0.012	0.781
-Equus		0.012	0.781
-Equus		0.012	0.781
-Equus		0.012	23.03
-Equus		0.012	0.781
-Equus		0.012	0.126
-Equus		0.012	2.588
-Equus		0.012	0.126
-Equus		0.781	2.588
-Equus		0.012	0.126
-Equus		0.02084	0.02084
-Equus		0.781	1.2
-Equus		0.012	2.588
-Equus		0.012	2.588
-Equus		0	2.588
-Equus		0.012	2.588
-Equus		0.012	2.588
-Equus		0.012	2.588
-Equus		0.012	2.588
-Equus		0.012	0.126
-Equus		0.0111	0.0111
-Equus		0.01415	0.01962
-Equus		0.012	0.126
-Equus		0.012	0.126
-Equus		0.012	0.126
-Equus		0.01266	0.01401
-Equus		0.012	0.126
 Hippidion	extinct	0.781	2.588
 Hippidion	extinct	0.012	0.126
 Hippidion	extinct	0.012	0.126
@@ -4484,11 +3976,6 @@ Coendou	extant	0	0.012
 Coendou	extant	0	0.012
 Coendou	extant	0	0.012
 Coendou	extant	0	0.012
-Coendou		2.588	3.6
-Coendou		0.781	2.588
-Coendou		0	0.126
-Coendou		0.781	2.588
-Coendou		0.012	0.126
 Disteiromys	extinct	15.5	16.3
 Disteiromys	extinct	15.5	16.3
 Eopululo	extinct	33.9	37.2
@@ -4604,8 +4091,6 @@ Felis	extinct	0.01326	0.01326
 Felis	extinct	0.012	0.126
 Felis	extinct	0.781	2.588
 Felis	extinct	0.012	2.588
-Felis		0.012	2.588
-Felis		0.781	2.588
 Felis	extinct	2.588	3.6
 Herpailurus	extant	0.126	0.781
 Herpailurus	extant	0.781	2.588
@@ -4661,9 +4146,6 @@ Panthera	extant	0.012	2.588
 Panthera	extant	0	0.012
 Panthera	extant	0.012	2.588
 Panthera	extant	0	0.012
-Panthera		0.012	0.781
-Panthera		0.012	0.781
-Panthera		0.012	0.781
 Puma	extant	0.781	2.588
 Puma	extant	0.012	0.781
 Puma	extant	0.012	0.781
@@ -4686,9 +4168,6 @@ Puma	extant	0	0.012
 Puma	extinct	0.0117	0.126
 Puma	extinct	0.0117	0.126
 Puma	extinct	0.0117	0.126
-Puma		0	0.012
-Puma		0.0117	0.126
-Puma		0.012	2.588
 Smilodon	extinct	0.781	1.2
 Smilodon	extinct	0.781	1.2
 Smilodon	extinct	0.012	0.781
@@ -4757,7 +4236,6 @@ Uncia	extinct	0.0117	0.126
 Uncia	extinct	0.0117	0.126
 Texomys	extinct	18.81	19.12
 Texomys	extinct	19.7	19.7
-Furipterus		0	0.0117
 Periakros	extinct	28.4	33.9
 Reigia	extinct	33.9	37.2
 Aspidocalyptus	extinct	6.8	9
@@ -6366,7 +5844,6 @@ Sylvilagus	extant	0.00773	0.00773
 Sylvilagus	extant	0.008225	0.008225
 Sylvilagus	extant	0.012	0.781
 Sylvilagus	extant	0	0.012
-Sylvilagus		0	2.588
 Heterolophodon	extinct	33.9	37.2
 Heterolophodon	extinct	42	48
 Trilobodon	extinct	33.9	37.2
@@ -6960,12 +6437,6 @@ Conepatus	extant	0	0.012
 Conepatus	extant	0.781	2.588
 Conepatus	extant	0.781	2.588
 Conepatus	extant	0.781	2.588
-Conepatus		0.0117	0.126
-Conepatus		0.0117	0.126
-Conepatus		0.781	1.2
-Conepatus		0.01415	0.01962
-Conepatus		0.0117	0.126
-Conepatus		0.0117	0.126
 Merycochoerus	extinct	18.81	19.12
 Merycochoerus	extinct	19.7	19.7
 Coelosoma	extinct	6.8	9
@@ -7139,8 +6610,6 @@ Eumops	extant	0	0.012
 Eumops	extant	0	0.012
 Eumops	extant	0	0.012
 Eumops	extant	0.0066	0.0066
-Eumops		12.2	12.2
-Eumops		11.8	13.8
 Kiotomops	extinct	11.8	13.8
 Molossops	extant	0	0.012
 Molossops	extant	0	0.012
@@ -7161,12 +6630,8 @@ Mormoops	extant	0	0.0117
 Pteronotus	extant	0.0117	0.126
 Pteronotus	extant	0.0117	0.126
 Pteronotus	extant	0	0.0117
-Pteronotus		0.0117	0.126
-Pteronotus		0	0.0117
 Machaeromeryx	extinct	18.81	19.12
 Parablastomeryx	extinct	18.81	19.12
-Colomys		0.012	0.126
-Colomys		0.0117	0.126
 Heteromys	extant	0	0.012
 Heteromys	extant	0.0255	0.02798
 Heteromys	extant	0	0.012
@@ -7178,8 +6643,6 @@ Necromys	extinct	3	4
 Rattus	extant	0	0.012
 Rattus	extant	0	0.012
 Rattus	extant	0	0.012
-Rattus		0	0.012
-Rattus		0	0.012
 Eira	extant	0.012	0.781
 Eira	extant	0	0.126
 Eira	extant	0	2.588
@@ -7189,7 +6652,6 @@ Eira	extant	0	0.012
 Eira	extant	0	0.012
 Eira	extant	0	0.012
 Eira	extant	0	0.012
-Galictis		0.781	2.588
 Galictis	extinct	0.012	2.588
 Galictis	extinct	2.588	3.6
 Galictis	extant	0	0.012
@@ -7201,9 +6663,7 @@ Lontra	extant	0	0.126
 Lontra	extant	0	0.012
 Lontra	extant	0	0.012
 Lontra	extant	0	0.012
-Lutra		0.012	0.126
 Lyncodon	extant	0.012	0.781
-Lyncodon		0.012	0.781
 Pteronura	extant	0.012	0.126
 Pteronura	extant	0.012	0.781
 Pteronura	extant	0.012	0.126
@@ -7701,9 +7161,6 @@ Tamandua	extant	0	0.012
 Tamandua	extant	0	0.012
 Tamandua	extant	0	0.012
 Natalus	extant	0.00256	0.0043
-Natalus		0.0117	0.126
-Natalus		0	2.588
-Natalus		0	0.126
 Necrolestes	extinct	17.5	21
 Necrolestes	extinct	15.97	23.03
 Necrolestes	extinct	13.65	20.43
@@ -7913,33 +7370,10 @@ Rhynchippus	extinct	21	29
 Rhynchippus	extinct	15.97	28.4
 Rhynchippus	extinct	21	29
 Rhynchippus	extinct	21	29
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		37.2	48.6
-Antepithecus		33.9	37.2
-Antepithecus		33.9	48.6
-Antepithecus		33.9	48.6
-Antepithecus		33.9	48.6
-Antepithecus		37.2	48.6
-Antepithecus		48	55.8
 Antepithecus	extinct	38	41.3
 Antepithecus	extinct	38	41.3
 Antepithecus	extinct	38	41.3
-Antepithecus		37.2	48.6
 Antepithecus	extinct	38	41.3
-Antepithecus		57	59
-Antepithecus		33.9	40.4
 Guilielmoscottia	extinct	42	48
 Guilielmoscottia	extinct	37.2	48.6
 Guilielmoscottia	extinct	33.9	37.2
@@ -8134,9 +7568,6 @@ Neophanomys	extinct	7.14	8
 Neophanomys	extinct	2.588	3.6
 Neophanomys	extinct	6.8	9
 Octodon	extant	0.0117	0.126
-Octodon		0.0117	0.126
-Octodon		0.0117	0.126
-Octodon		0.0117	0.126
 Palaeoctodon	extinct	6.8	9
 Palaeoctodon	extinct	6.8	9
 Phtoramys	extinct	6.8	9
@@ -8206,10 +7637,6 @@ Sciamys	extinct	16.3	17.5
 Sciamys	extinct	16.3	17.5
 Sciamys	extinct	16.3	17.5
 Sciamys	extinct	5.332	11.608
-Spalacopus		0.0117	0.126
-Tympanoctomys		0.0117	0.126
-Tympanoctomys		0	0.0117
-Tympanoctomys		0	0.0117
 Xenodontomys	extinct	2.588	3.6
 Monotrematum	extinct	61.7	66.043
 Octodontobradys	extinct	7.246	11.608
@@ -8221,8 +7648,6 @@ Arctocephalus	extant	0	0.0117
 Arctocephalus	extant	0	0.012
 Arctocephalus	extant	0.012	0.126
 Arctocephalus	extant	0	0.012
-Arctocephalus		0	0.0117
-Arctocephalus		2.588	3.6
 Eumetopias	extant	2.588	23.03
 Hydrarctos	extinct	5.47	6.35
 Hydrarctos	extinct	5.332	7.246
@@ -8232,8 +7657,6 @@ Otaria	extant	0	0.012
 Otaria	extant	0	0.012
 Otaria	extant	0.012	0.126
 Otaria	extant	0	0.012
-Otaria		0	0.012
-Otaria		0	0.012
 Neoglyptatelus	extinct	5.332	11.608
 Pachyarmatherium	extinct	0	0.126
 Pachyarmatherium	extinct	0.02	0.02
@@ -8551,15 +7974,9 @@ Acrophoca	extinct	5.333	11.62
 Piscophoca	extinct	5.333	11.62
 Piscophoca	extinct	5.333	11.62
 Acrophoca	extinct	5.333	11.62
-Anoura		0.0117	0.126
 Artibeus	extant	0	0.012
-Artibeus		0.0117	0.126
-Artibeus		0.0117	0.126
-Artibeus		0.0117	0.126
 Brachyphylla	extant	0.00256	0.0043
 Carollia	extant	0	0.012
-Carollia		0.0117	0.126
-Carollia		0	2.588
 Chrotopterus	extant	0.02006	0.02006
 Chrotopterus	extant	0	2.588
 Chrotopterus	extant	0	0.0117
@@ -8571,25 +7988,15 @@ Desmodus	extant	0.0117	0.126
 Desmodus	extant	0.0117	0.126
 Desmodus	extant	0.012	0.126
 Desmodus	extant	0	0.012
-Desmodus		0	2.588
-Desmodus		0.0117	0.126
-Desmodus		0	2.588
-Desmodus		0.0117	0.126
 Glossophaga	extant	0	0.012
-Glossophaga		0.0117	0.126
 Glossophaga	extant	0	0.012
 Leptonycteris	extant	0	0.012
 Lonchophylla	extant	0.02006	0.02006
 Lophostoma	extant	0.0255	0.02798
-Macrophyllum		0.0117	0.126
-Macrophyllum		0	2.588
 Micronycteris	extant	0	0.012
 Micronycteris	extant	0	0.012
 Micronycteris	extinct	0	0.012
-Micronycteris		0.0117	0.126
-Micronycteris		0.0255	0.02798
 Mimon	extant	0.0117	0.126
-Mimon		0.0117	0.126
 Notonycteris	extinct	11.8	13.8
 Notonycteris	extinct	11.8	13.8
 Notonycteris	extinct	12.2	12.2
@@ -8597,33 +8004,16 @@ Notonycteris	extinct	15.5	16.3
 Notonycteris	extinct	12.2	12.2
 Notonycteris	extinct	15.5	16.3
 Palynephyllum	extinct	15.5	16.3
-Phylloderma		0	2.588
 Phyllostomus	extant	0	0.012
 Phyllostomus	extant	0	0.012
 Phyllostomus	extant	0	0.012
-Phyllostomus		0.0117	0.126
-Phyllostomus		0.0117	0.126
-Phyllostomus		0	2.588
-Phyllostomus		0.0117	0.126
-Platyrrhinus		0.0117	0.126
 Sturnira	extant	0	0.012
 Sturnira	extant	0	0.012
-Sturnira		0	2.588
-Sturnira		0.0117	0.126
-Sturnira		0	2.588
 Tonatia	extinct	0	0.012
 Tonatia	extinct	0	0.012
-Tonatia		0	2.588
-Tonatia		0.0117	0.126
-Tonatia		0.0117	0.126
-Tonatia		0	0.126
-Tonatia		11.8	13.8
-Tonatia		15.5	16.3
-Trachops		0.0117	0.126
 Trachops	extant	0	0.126
 Trachops	extant	0	0.012
 Trachops	extant	0.0255	0.02798
-Uroderma		0.0117	0.126
 Diaphorocetus	extinct	15.97	20.43
 Idiorophus	extinct	5.333	11.608
 Diaphorocetus	extinct	15.97	20.44
@@ -8779,13 +8169,11 @@ Proborhyaena	extinct	21	29
 Proborhyaena	extinct	21	29
 Proborhyaena	extinct	21	29
 Proborhyaena	extinct	15.97	48.6
-Amphinasua		2.588	3.6
 Bassaricyon	extant	0	0.012
 Bassaricyon	extant	0	0.012
 Bassaricyonoides	extinct	18.81	19.12
 Chapalmalania	extinct	3	6.8
 Chapalmalania	extinct	3.2	3.2
-Chapalmalania		0.781	1.806
 Cyonasua	extinct	6.8	9
 Cyonasua	extinct	3	6.8
 Cyonasua	extinct	6.8	9
@@ -8807,7 +8195,6 @@ Nasua	extant	0	0.012
 Nasua	extant	0.00489	0.00493
 Nasua	extant	0	0.012
 Nasua	extant	0	0.012
-Nasua		0.781	2.588
 Nasua	extant	0.781	2.588
 Potos	extant	0	0.012
 Potos	extant	0	0.012
@@ -8819,7 +8206,6 @@ Procyon	extant	0	0.012
 Procyon	extant	0	0.012
 Procyon	extant	0	0.012
 Procyon	extant	0	0.012
-Procyon		0.00489	0.00493
 Tetraprothomo	extinct	4	6.8
 Cochlops	extinct	16.3	17.5
 Cochlops	extinct	16.3	17.5
@@ -9232,7 +8618,6 @@ Sciurus	extant	0	0.012
 Roberthoffstetteria	extinct	61.7	66.043
 Sillustania	extinct	48.6	58.7
 Solenodon	extant	0	0.126
-Cryptotis		0.012	0.781
 Sparnotheriodon	extinct	37.2	48.6
 Furcacetus	extinct	18.02	19.25
 Furcacetus	extinct	15.97	20.44
@@ -9296,39 +8681,12 @@ Tapirus	extant	0.0117	0.126
 Tapirus	extant	0.0117	0.126
 Tapirus	extant	0.0117	0.126
 Tapirus	extant	0	0.126
-Tapirus		0.012	0.781
-Tapirus		0.0117	0.126
-Tapirus		0.012	0.126
-Tapirus		0.012	0.126
-Tapirus		0	2.588
-Tapirus		0	2.588
-Tapirus		0.3	1.8
-Tapirus		0.012	0.126
-Tapirus		0.012	0.126
-Tapirus		0.012	0.781
-Tapirus		0	0.126
-Tapirus		0	0.126
-Tapirus		0	0.0117
-Tapirus		0.0117	2.588
-Tapirus		0	0.0117
-Tapirus		0.126	3.6
 Argyrohyus	extinct	3	4
 Argyrohyus	extinct	3	4
 Brasiliochoerus	extinct	0.012	2.588
 Catagonus	extinct	0.781	1.2
 Catagonus	extinct	0.012	0.781
 Catagonus	extinct	0.02	0.02
-Catagonus		0.012	2.588
-Catagonus		0.012	0.126
-Catagonus		0.012	0.126
-Catagonus		0.012	0.781
-Catagonus		0.012	2.588
-Catagonus		0.012	0.126
-Catagonus		0.012	0.781
-Catagonus		0.012	0.781
-Catagonus		0.781	2.588
-Catagonus		0.012	0.781
-Catagonus		0.012	0.781
 Cynorca	extinct	19.7	19.7
 Cynorca	extinct	15.97	20.43
 Cynorca	extinct	15.97	20.43
@@ -9409,16 +8767,6 @@ Tayassu	extant	0.012	0.126
 Tayassu	extant	0.126	3.6
 Tayassu	extant	0.012	0.126
 Tayassu	extant	0	0.126
-Tayassu		0.126	0.781
-Tayassu		0.012	2.588
-Tayassu		0	2.588
-Tayassu		0.00775	0.00808
-Tayassu		0.012	2.588
-Tayassu		0.012	2.588
-Tayassu		0	2.588
-Tayassu		0.012	2.588
-Tayassu		0.00489	0.00493
-Tayassu		0.5	1
 Waldochoerus	extinct	5.332	11.608
 Waldochoerus	extinct	5.332	11.608
 Waldochoerus	extinct	5.332	11.608
@@ -9757,8 +9105,6 @@ Xotodon	extinct	4	9
 Plesiocetopsis	extinct	15.97	23.03
 Argentoconodon	extinct	168.4	180.1
 Trichechus	extinct	0	0.126
-Trichechus		0.0117	2.588
-Trichechus		0	66
 Potamosiren	extinct	15.97	20.44
 Albertogaudrya	extinct	37.2	48.6
 Albertogaudrya	extinct	42	48
@@ -9898,13 +9244,10 @@ Eptesicus	extant	0.02006	0.02006
 Eptesicus	extant	0	0.012
 Eptesicus	extant	0.0255	0.02798
 Eptesicus	extant	0.012	0.126
-Histiotus		0.0117	0.126
 Lasiurus	extant	0	0.012
 Lasiurus	extant	0	0.012
 Myotis	extant	0	0.012
 Myotis	extant	0	0.012
-Myotis		0.0117	0.126
-Myotis		0.0117	0.126
 Rhogeessa	extant	0.0255	0.02798
 Rhogeessa	extant	0	0.012
 Woodburnodon	extinct	57	59
@@ -9914,7 +9257,6 @@ Acrophyseter	extinct	11.608	13.65
 Acrophyseter	extinct	5.333	7.246
 Acrophyseter	extinct	11.608	13.65
 Acrophyseter	extinct	5.332	7.246
-Aenigmys		0.012	2.588
 Anathitus	extinct	16.3	17.5
 Aondelphis	extinct	15.97	20.43
 Apeirodon	extinct	33.9	38
@@ -9984,7 +9326,6 @@ Guiomys	extinct	11.608	15.97
 Guiomys	extinct	11.608	15.97
 Guiomys	extinct	12.9	13.2
 Guiomys	extinct	12.8	13.2
-Hippidium		0.012	2.588
 Hiskatherium	extinct	12.9	13.2
 Kichkasteiromys	extinct	28.4	33.9
 Lapazomys	extinct	21	29
@@ -10020,7 +9361,6 @@ Palangania	extinct	55.8	58.7
 Palangania	extinct	40.4	48.6
 Palangania	extinct	48.6	55.8
 Palangania	extinct	40.4	48.6
-Paractenomys		0.781	2.588
 Paraungulatum	extinct	66.043	84.9
 Parvimico	extinct	16.3	17.5
 Patagonia	extinct	17.5	21
