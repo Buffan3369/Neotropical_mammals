@@ -4,7 +4,7 @@
 library(readxl)
 
 occdf <- read_xlsx("E:/Internship_ISEM/Neotropical_Mammals/species_list.xlsx")
-## Create and save PyRate raw genus-level input based on occdf -----------------------------
+## Create and save PyRate raw genus-level input based on occdf -----------------
 raw_input <- data.frame(Species = occdf$Genus,
                         Status = occdf$Status,
                         MinT = occdf$`Min age`,
