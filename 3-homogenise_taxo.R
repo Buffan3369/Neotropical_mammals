@@ -1,7 +1,11 @@
-# Homogenise taxonomic assignations in our dataset -----------------------------
+################################################################################
+######################## Homogenise taxo in our dataset ########################
+################################################################################
+
 library(readxl)
+
 raw_taxo <- readxl::read_xlsx("./data_2023/raw_taxo.xlsx")
-#Family
+## Family ----------------------------------------------------------------------
 for(genus in unique(raw_taxo$Genus)){
   occ_indices <- which(raw_taxo$Genus == genus)
   fam_names <- unique(raw_taxo$Family[occ_indices])
@@ -11,7 +15,7 @@ for(genus in unique(raw_taxo$Genus)){
     }
   }
 }
-#Order
+## Order -----------------------------------------------------------------------
 for(genus in unique(raw_taxo$Genus)){
   occ_indices <- which(raw_taxo$Genus == genus)
   ord_names <- unique(raw_taxo$Order[occ_indices])
@@ -19,7 +23,7 @@ for(genus in unique(raw_taxo$Genus)){
       raw_taxo$Order[occ_indices] <- ord_names[which(is.na(ord_names) == FALSE)]
   }
 }
-#Clean stringged NAs
+## Clean stringged NAs ---------------------------------------------------------
 na_seek_destroy <- function(vect){
   vect[which(vect == "NA")] <- ""
   return(vect)
@@ -28,5 +32,5 @@ clean_taxo <- apply(X = raw_taxo,
                     MARGIN = 2,
                     FUN = na_seek_destroy)
 
-#Save
+## Save ------------------------------------------------------------------------
 write.csv(clean_taxo, "./data_2023/homogenised_taxo.csv", row.names = FALSE, na = "")
