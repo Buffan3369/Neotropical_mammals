@@ -37,7 +37,7 @@ rm(to_drop)
 
 ## Harmonise names among datasets --------------------------------------------------------------------------------------------------------
 #Erase species name with "sp."  (2 functions, otherwise is a shit)
-  #in data_2020_raw
+#in data_2020_raw
 get_sp_raw <- function(x){
   if( ("sp." %in% strsplit(data_2020_raw$occurrence.species_name[x], split = " ")[[1]]) |
       (data_2020_raw$occurrence.species_name[x] == "morphotype 2") ){
@@ -47,7 +47,7 @@ get_sp_raw <- function(x){
 problematic_indices <- unlist(lapply(X = 1:nrow(data_2020_raw), 
                                      FUN = get_sp_raw))
 data_2020_raw$occurrence.species_name[problematic_indices] <- NA
-  #in data_2020_clean
+#in data_2020_clean
 get_sp_clean <- function(x){
   if( ("sp." %in% strsplit(data_2020_clean$Species[x], split = " ")[[1]]) |
       ("sp.." %in% strsplit(data_2020_clean$Species[x], split = " ")[[1]]) |
@@ -91,17 +91,17 @@ not_syn <- c(16, #Megatherium americanum and Megatherium americium seem to be tw
              22, #Parutaetus chilensis and chicoensis are two different species
              34, #Protosteiromys asmodeophilus and aesmeodeophilus both seem to exist (to be checked)
              40 #Scelidotheridium and Scelinotherium are different genera
-             )
+)
 synonyms1 <- synonyms[-not_syn, ]
 row.names(synonyms1) <- 1:nrow(synonyms1)
 #check one by one and create the "actual names" and "wrong names" vectors
 actual_names <- c("Andinomys edax",
                   "Chorobates villosissimus",
-                  "Cladosictis patagonica",
+                  "Cladosictis patagonicus",
                   "Didelphis brachiodonta",
                   "Eocardia excavata",
                   "Eosclerocalyptus tapinocephalus",
-                  "Eucelophorus chapalmalensis",
+                  "Eucelophorus chapadmalensis",
                   "Gyrinodon quassus",
                   "Herpailurus yagouaroundi",
                   "Holochilus brasiliensis",
@@ -123,13 +123,13 @@ actual_names <- c("Andinomys edax",
                   "Procyon cancrivorus",
                   "Prolagostomus pusillus",
                   "Protamandua rothi", #both seem to be used though
-                  "Prothoatherium colombianus",
+                  "Prothoatherium colombianum",
                   "Protocyon scagliarum",
                   "Protypotherium attenuatum",
                   "Protypotherium praerutilum",
                   "Pyrotherium romeroi",
                   "Salladolodus deuterotherioides", #to be checked
-                  "Scelidodon chiliense",
+                  "Scelidodon chiliensis",
                   "Smilodon riggii",
                   "Stegotherium tessellatum",
                   "Thylamys zettii",
@@ -145,7 +145,7 @@ get_the_other <- function(x){
 wrong_names <- unlist(lapply(X = actual_names, FUN = get_the_other))
 rm(taxdf, check_spell_mistake, synonyms, synonyms1, not_syn)
 #replace wrong names in the 3 datasets
-  #data_2020_raw
+#data_2020_raw
 GenSp <- unlist(lapply(X = 1:nrow(data_2020_raw),
                        FUN = assemble_gen_sp,
                        dataset = data_2020_raw,
@@ -175,7 +175,7 @@ data_2020_raw$occurrence.species_name <- species
 ###Validation###
 #paste(data_2020_raw$occurrence.genus_name[index_to_replace], data_2020_raw$occurrence.species_name[index_to_replace], sep = " ") == values_to_replace
 ################
-  #data_2020_clean
+#data_2020_clean
 GenSp <- unlist(lapply(X = 1:nrow(data_2020_clean),
                        FUN = assemble_gen_sp,
                        dataset = data_2020_clean,
@@ -202,7 +202,7 @@ for(i in 1:length(GenSp)){
 }
 data_2020_clean$Genus <- genus
 data_2020_clean$Species <- species
-  #data_2023
+#data_2023
 index_to_replace <- which(data_2023$accepted_name %in% wrong_names) #indices of the names to replace in the dataframe's accepted names
 values_to_replace <- data_2023$accepted_name[which(data_2023$accepted_name %in% wrong_names)] #names to replace in the dataframe's accepted names
 i = 1
@@ -213,32 +213,32 @@ while(i <= length(index_to_replace)){
   i = i+1
 }
 data_2023$accepted_name <- replace(x = data_2023$accepted_name,
-                                        list = index_to_replace,
-                                        values = actual_names[index_in_wrong_names]) #replacement
+                                   list = index_to_replace,
+                                   values = actual_names[index_in_wrong_names]) #replacement
 rm(index_in_wrong_names, index_to_replace, values_to_replace, GenSp, GenSp_split, value, wrong_names, actual_names)
 #write.csv(data_2020_raw, file = "./data_2020/Neotropical_Mammals_harmonised_2020.csv") #save raw dataset in case
 
 ## Match data_2023 occurrences with data_2020_clean ---------------------------------------------------------------------------------------
-  #get rid of unuseful columns
+#get rid of unuseful columns
 data_2020_clean <- data_2020_clean[, -c(2, 4, 11, 14, 16)]
 data_2023 <- data_2023[, -c(1:4, 6:9, 11:14, 17:19, 25:29, 32:35)]
-  #Add "Order" (1) and "Reference" (16) columns to data_2020_clean
+#Add "Order" (1) and "Reference" (16) columns to data_2020_clean
 data_2020_clean <- data_2020_clean %>% add_column(Order = rep(NA, nrow(data_2020_clean)), .before = "Family")
 data_2020_clean <- data_2020_clean %>% add_column(Reference = rep(NA, nrow(data_2020_clean)), .after = "Collection authorizer")
 data_2020_clean <- rename(data_2020_clean, Status = "Status...6")
-  #Create Species and Genus columns in data_2023, erase "accepted_name" one and create 
+#Create Species and Genus columns in data_2023, erase "accepted_name" one and create 
 get_taxo <- function(x){ #function to return vector of species of data_2023
   tot_name <- data_2023$accepted_name[x]
   return(unlist(strsplit(tot_name, split = " "))[2])
 }
 data_2023$Species <- unlist(lapply(X = 1:nrow(data_2023), FUN = get_taxo))
 data_2023 <- data_2023[, -c(2)]
-  #Create "Status" column in data_2023
+#Create "Status" column in data_2023
 data_2023$Status <- unlist(lapply(X = data_2023$min_ma, 
                                   FUN = function(x){if(x < 5){return(NA)} #if the lower bound of the occurrence is older than 5My, we consider the species extinct (quite likely), else we don't know
                                     else if(x == 0){return("extant")} #if this bound is equal to 0, the species is extant
                                     else{return("extinct")}})) 
-  #Rename data_2023 columns based on data_2020
+#Rename data_2023 columns based on data_2020
 new_names <- c(`Collection number` = "collection_no",
                `Max age` = "max_ma",
                `Min age` = "min_ma",
@@ -250,17 +250,17 @@ new_names <- c(`Collection number` = "collection_no",
                Reference = "primary_reference",
                `Collection authorizer` = "authorizer")
 data_2023 <- rename(data_2023, all_of(new_names))
-  #Solve Country issue
+#Solve Country issue
 country_dict <- hash(keys = unique(data_2023$Country),
                      values = c("Argentina", "Brazil", "Chile", "Bolivia", "Uruguay", "Peru", "Venezuela", "Ecuador", "Colombia"))
 for(abbrev in keys(country_dict)){
   data_2023$Country[which(data_2023$Country == abbrev)] <- as.character(values(country_dict[abbrev]))
 }
-  #add missing columns
+#add missing columns
 data_2023$Period <- rep(NA, nrow(data_2023))
 data_2023$Epoch <- rep(NA, nrow(data_2023))
 data_2023$Note <- rep(NA, nrow(data_2023))
-  #reorder columns
+#reorder columns
 data_2023 <- data_2023[, colnames(data_2020_clean)]
 
 ## Combine by rows and save the results ------------------------------------------------------------------------------------------------
