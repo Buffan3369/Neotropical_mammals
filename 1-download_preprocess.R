@@ -7,8 +7,10 @@ library(readxl) #read excel documents
 library(tidyverse) #data management tools
 library(hash) #dictionnary
 
+source("0-options.R")
+
 ## Download all south american genus-level Mammalia occurrences from pdbd ----------------------------------------------------------------
-download.file(url = "https://paleobiodb.org/data1.2/occs/list.csv?base_name=Mammalia&taxon_reso=genus&cc=SOA&show=class,genus,loc,ref,entname,crmod",
+download.file(url = params$pbdb_api,
               destfile = "./data_2023/Neotropical_Mammals_raw_2023.csv")
 
 ## Open the old and new datasets --------------------------------------------------------------------------------------------------------
