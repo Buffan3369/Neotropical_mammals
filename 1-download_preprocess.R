@@ -264,9 +264,13 @@ data_2023$Epoch <- rep(NA, nrow(data_2023))
 data_2023$Note <- rep(NA, nrow(data_2023))
 #reorder columns
 data_2023 <- data_2023[, colnames(data_2020_clean)]
+TOT <- rbind(data_2020_clean, data_2023)
+#remove occurrences from islands and north american localities
+TOT <- TOT[-which(TOT$Country %in% params$Islands), ]
+TOT <- TOT[-which(TOT$Country %in% params$North_american_localities), ]
 
 ## Combine by rows and save the results ------------------------------------------------------------------------------------------------
-write.csv(rbind(data_2020_clean, data_2023),
+write.csv(TOT,
           file = "./data_2023/Neotropical_Mammals_COMBINED.csv",
           row.names = FALSE,
           na = "")
