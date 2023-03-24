@@ -3,27 +3,11 @@
 ################################################################################
 library(readxl)
 
+source("./0-options.R")
 occdf <- read_xlsx("E:/Internship_ISEM/Neotropical_Mammals/species_list.xlsx")
 ## GABI ------------------------------------------------------------------------
-  # List of the migrant families from North America that arrived with GABI
-migrants <- c("Equidae",
-              "Rhinocerotidae",
-              "Tapiridae",
-              "Camelidae",
-              "Tayassuidae",
-              "Gomphoteriidae",
-              "Elephantidae",
-              "Mammutidae",
-              "Mephitidae",
-              "Mustelidae",
-              "Canidae",
-              "Felidae",
-              "Procyonidae",
-              "Ursidae",
-              "Sciuridae",
-              "Leporidae")
-  # Match their max time with beginning of Pleistocene (can't be arrived before)
-for(migrant in migrants){
+  # Match migrant max time with beginning of Pleistocene (can't be arrived before)
+for(migrant in params$migrants){
   migrant_index <- which(occdf$Family == migrant)
   disruptors <- migrant_index[which(occdf$`Max age`[migrant_index] > 2.58)]
   occdf$`Max age`[disruptors] <- 2.58
