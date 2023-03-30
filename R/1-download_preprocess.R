@@ -268,6 +268,8 @@ TOT <- rbind(data_2020_clean, data_2023)
 #remove occurrences from islands and north american localities
 TOT <- TOT[-which(TOT$Country %in% params$Islands), ]
 TOT <- TOT[-which(TOT$Country %in% params$North_american_localities), ]
+#remove Mesozoic occurrences
+TOT <- TOT[-which(TOT$Period %in% c("Jurassic", "Cretaceous")), ]
 
 ## Combine by rows and save the results ------------------------------------------------------------------------------------------------
 write.csv(TOT,
