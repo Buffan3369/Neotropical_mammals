@@ -5,8 +5,8 @@ library(palaeoverse)
 library(tibble)
 library(readxl)
 
-## Generate time bins covering the whole Cenozoic + Cretaceous by Epoch --------
-Cnz_Mz <- palaeoverse::time_bins(interval = c("Cenozoic","Mesozoic"),
+## Generate time bins covering the whole Cenozoic by Epoch ---------------------
+Cnz <- palaeoverse::time_bins(interval = "Cenozoic",
                                        rank = "epoch")
 
 ## Load data and extract age range of each occurrence --------------------------
@@ -30,7 +30,7 @@ for(pos in incons){
 ## Temporal binning of our occurrences -----------------------------------------
 binning <- bin_time(occdf = data.frame(max_ma = data_2023$Max.age,
                                        min_ma = data_2023$Min.age),
-                    bins = Cnz_Mz,
+                    bins = Cnz,
                     method = "majority")
 data_2023$Epoch <- unlist(lapply(X = binning$bin_assignment,
                                  FUN = function(x){return(Cnz_Mz$interval_name[which(Cnz_Mz$bin == x)])}))
