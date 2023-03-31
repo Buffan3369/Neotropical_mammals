@@ -33,7 +33,7 @@ binning <- bin_time(occdf = data.frame(max_ma = data_2023$Max.age,
                     bins = Cnz,
                     method = "majority")
 data_2023$Epoch <- unlist(lapply(X = binning$bin_assignment,
-                                 FUN = function(x){return(Cnz_Mz$interval_name[which(Cnz_Mz$bin == x)])}))
+                                 FUN = function(x){return(Cnz$interval_name[which(Cnz$bin == x)])}))
 data_2023 <- data_2023 %>% add_column(Pct_age_range_in_Epoch = binning$overlap_percentage, .after = "Epoch")
 
 ## Save ------------------------------------------------------------------------
