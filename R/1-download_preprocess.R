@@ -270,6 +270,11 @@ TOT <- TOT[-which(TOT$Country %in% params$Islands), ]
 TOT <- TOT[-which(TOT$Country %in% params$North_american_localities), ]
 #remove Mesozoic occurrences
 TOT <- TOT[-which(TOT$Period %in% c("Jurassic", "Cretaceous")), ]
+#re-date collections from Santa Rosa, dpt Ucayali, Peru, from Eocene to Oligocene (according to Campbell et al. (2021))
+index_to_modify <- which(as.numeric(TOT$`Collection number`) == 149523)
+TOT$Epoch[index_to_modify] <- "Oligocene"
+TOT$`Min age`[index_to_modify] <- 27.2
+TOT$`Max age`[index_to_modify] <- 31.1
 
 ## Combine by rows and save the results ------------------------------------------------------------------------------------------------
 write.csv(TOT,
