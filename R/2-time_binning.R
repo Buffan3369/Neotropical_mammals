@@ -26,6 +26,8 @@ for(pos in incons){
   data_2023$Min.age[pos] <- max
   data_2023$Max.age[pos] <- min
 }
+#set to 66 Ma the upper bound of each occurrence going a bit above Palaeocene
+data_2023$`Max age`[which(data_2023$`Max age` > 66)] <- 66
 
 ## Temporal binning of our occurrences -----------------------------------------
 binning <- bin_time(occdf = data.frame(max_ma = data_2023$Max.age,
