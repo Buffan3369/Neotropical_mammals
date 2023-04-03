@@ -71,7 +71,7 @@ dpl_spl <- function(genus){
         }
       }
     }
-    #We don't have pbdb refs among the duplicates : arbitrary fill tmp until 
+    #We don't have pbdb refs among the duplicates : arbitrary fill tmp until we get the same number of occurrences belonging to the collection as in the raw dataset
     else{
       i <- 1
       while(length(tmp) < count_raw[idx]){
@@ -83,3 +83,24 @@ dpl_spl <- function(genus){
   }
   return(to_drop)
 }
+  #remove
+to_drop <- unlist(lapply(X = unique(raw_2023$genus),
+                         FUN = dpl_spl))
+
+## Save results ----------------------------------------------------------------
+write.csv(sp_l[-to_drop, ], "./data_2023/species_list_without_duplicates.csv", na = "", row.names = FALSE)
+
+no_dup <- sp_l[-to_drop, ]
+
+for(i in 1:nrow(no_dup)){
+  if(no_dup$`Max age`[i] == no_dup$`Min age`[i]){
+    no_dup$`Max age`[i] <- no_dup$`Max age`[i] + 0.0001
+  }
+}
+binning <- bin_time(occdf = data.frame(max_ma = no_dup$`Max age`,
+                                       min_ma = no_dup$`Min age`),
+                    bins = Cnz,
+                    method = "majority")
+no_dup$Epoch <- unlist(lapply(X = binning$bin_assignment,
+                                 FUN = function(x){return(Cnz$interval_name[which(Cnz$bin == x)])}))
+no_dup$overlap_percentage <- binning$overlap_percentage
