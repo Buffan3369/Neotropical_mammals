@@ -17,5 +17,32 @@ for(migrant in params$migrants){
   occdf$`Min age`[migrant_index[disruptors_min]] <- 0.0117
 }
 
-write.csv(occdf, "E:/Internship_ISEM/Neotropical_Mammals/DATA/adjusted_GABI.csv", na="", row.names=FALSE)
+#write.csv(occdf, "E:/Internship_ISEM/Neotropical_Mammals/DATA/adjusted_GABI.csv", na="", row.names=FALSE)
 
+## Prepare an intermediate cleaning PyRate input -------------------------------
+occdf_not_cet <- occdf[-which(occdf$Order == "Cetacea"),]
+
+gen_level_status <- function(genus){
+  rpz_status <- occdf_not_cet$Status[which(occdf_not_cet$Genus == genus)] #vector of the status of the genus representatives in our species list
+  if("extant" %in% rpz_status){
+    return("extant")
+  }
+  else if( ("extant" %in% rpz_status == FALSE) & ("extinct" %in% rpz_status) ){ #rpz_status = c("extinct", ....) or c("extinct", ..., NA, ...)
+    return("extinct")
+  }
+  else{ #rpz_status = c(NA, ....) => means species-level occurrences we couldn't associate a status to, as genus extant but species unspecified, hence we don't know if extinct or extant
+    return("extant")
+  }
+}
+
+int_clean <- data.frame(Species = occdf_not_cet$Genus,
+                        Status = unlist(lapply(X = occdf_not_cet$Genus,
+                                               FUN = gen_level_status)),
+                        MinT = occdf_not_cet$`Min age`,
+                        MaxT = occdf_not_cet$`Max age`)
+write.table(int_clean, 
+            file = "./data_2023/PyRate/intermediate_cleaning_04_04.txt",
+            row.names = FALSE,
+            quote = FALSE,
+            sep = "\t",
+            na = "")

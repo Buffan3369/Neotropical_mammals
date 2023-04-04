@@ -17,7 +17,7 @@ gen_level_status <- function(genus){
     else if( ("extant" %in% rpz_status == FALSE) & ("extinct" %in% rpz_status) ){ #rpz_status = c("extinct", ....) or c("extinct", ..., NA, ...)
       return("extinct")
     }
-    else{ #rpz_status = c(NA, ....) => means species-level occurrences we couldn't associate a status to as genus extant but species unspecified, hence we don't know if extinct or extant
+    else{ #rpz_status = c(NA, ....) => means species-level occurrences we couldn't associate a status to, as genus extant but species unspecified, hence we don't know if extinct or extant
       return("extant")
     }
   }
