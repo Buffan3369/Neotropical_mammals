@@ -7,7 +7,7 @@ library(readxl)
 
 ## Generate time bins covering the whole Cenozoic by Epoch ---------------------
 Cnz <- palaeoverse::time_bins(interval = "Cenozoic",
-                                       rank = "epoch")
+                              rank = "epoch")
 
 ## Load data and extract age range of each occurrence --------------------------
 data_2023 <- read.csv("./data_2023/Neotropical_Mammals_COMBINED.csv")
