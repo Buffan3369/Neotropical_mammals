@@ -36,5 +36,5 @@ params <- list(
                 "Procyonidae",
                 "Ursidae",
                 "Sciuridae",
-                "Leporidae")
+                "Leporidae") #nb: Cricetidae are not precised here as they may have reached South America earlier than GABI
 )
