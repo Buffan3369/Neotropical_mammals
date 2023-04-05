@@ -34,3 +34,18 @@ clean_taxo <- apply(X = raw_taxo,
 
 ## Save ------------------------------------------------------------------------
 write.csv(clean_taxo, "./data_2023/homogenised_taxo.csv", row.names = FALSE, na = "")
+
+
+## Split tables from the different orders --------------------------------------
+setwd("E:/Internship_ISEM/Neotropical_Mammals/DATA")
+species_list <- read_xlsx("species_list_without_duplicates.xlsx")
+for(order in unique(species_list$Order)){
+  tmp_order <- species_list[which(species_list$Order == order), ]
+  write.table(x = tmp_order,
+              file = paste0("order_level/", order, ".txt"),
+              sep = "\t",
+              na = "",
+              row.names = FALSE,
+              quote = FALSE,
+              dec = ",")
+}
