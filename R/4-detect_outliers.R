@@ -20,10 +20,11 @@ for(migrant in params$migrants){
 #write.csv(occdf, "E:/Internship_ISEM/Neotropical_Mammals/DATA/adjusted_GABI.csv", na="", row.names=FALSE)
 
 ## Prepare an intermediate cleaning PyRate input -------------------------------
-occdf_not_cet <- occdf[-which(occdf$Order == "Cetacea"),]
+marine_idx <- which((occdf$Order %in% c("Cetacea", "Sirenia")) | (occdf$Family %in% c("Otariidae", "Phocidae", "Odobenidae")))
+occdf_terrestrial <- occdf[-marine_idx,] #remove marine occurrences
 
 gen_level_status <- function(genus){
-  rpz_status <- occdf_not_cet$Status[which(occdf_not_cet$Genus == genus)] #vector of the status of the genus representatives in our species list
+  rpz_status <- occdf_terrestrial$Status[which(occdf_terrestrial$Genus == genus)] #vector of the status of the genus representatives in our species list
   if("extant" %in% rpz_status){
     return("extant")
   }
@@ -35,13 +36,13 @@ gen_level_status <- function(genus){
   }
 }
 
-int_clean <- data.frame(Species = occdf_not_cet$Genus,
-                        Status = unlist(lapply(X = occdf_not_cet$Genus,
+int_clean <- data.frame(Species = occdf_terrestrial$Genus,
+                        Status = unlist(lapply(X = occdf_terrestrial$Genus,
                                                FUN = gen_level_status)),
-                        MinT = occdf_not_cet$`Min age`,
-                        MaxT = occdf_not_cet$`Max age`)
+                        MinT = occdf_terrestrial$`Min age`,
+                        MaxT = occdf_terrestrial$`Max age`)
 write.table(int_clean, 
-            file = "./data_2023/PyRate/intermediate_cleaning_04_04.txt",
+            file = "./data_2023/PyRate/intermediate_cleaning_05_04.txt",
             row.names = FALSE,
             quote = FALSE,
             sep = "\t",
