@@ -780,8 +780,8 @@ Stilotherium	extinct	16.3	17.5
 Stilotherium	extinct	16.3	17.5
 Stilotherium	extinct	16.3	17.5
 Stilotherium	extinct	17.5	21
-"Aotus"	extinct	13	13.2
-"Aotus"	extinct	11.8	13.8
+cf. Aotus	extinct	13	13.2
+cf. Aotus	extinct	11.8	13.8
 Patasola	extinct	11.8	13.8
 Eulamaops	extinct	0.0117	0.781
 Hemiauchenia	extinct	0.781	1.2
