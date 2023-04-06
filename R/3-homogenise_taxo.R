@@ -56,13 +56,13 @@ gen_level_status <- function(genus, df=species_list){
 for(order in unique(species_list$Order)){
   tmp_order <- species_list[which(species_list$Order == order), ]
   #save order-level table
-  write.table(x = tmp_order,
-              file = paste0("order_level/", order, ".txt"),
-              sep = "\t",
-              na = "",
-              row.names = FALSE,
-              quote = FALSE,
-              dec = ",")
+  #write.table(x = tmp_order,
+              # file = paste0("order_level/", order, ".txt"),
+              # sep = "\t",
+              # na = "",
+              # row.names = FALSE,
+              # quote = FALSE,
+              # dec = ",")
   #write and save order-level PyRate input
   raw_input <- data.frame(Species = tmp_order$Genus,
                           Status = unlist(lapply(X = tmp_order$Genus,
@@ -72,12 +72,10 @@ for(order in unique(species_list$Order)){
                           MaxT = tmp_order$`Max age`)
   #save
   write.table(raw_input, 
-              file = paste0("intermediate_cleaning_logs_05_04/",order,"_int_cleaning_05_04.txt"),
+              file = paste0("order_level/PyRate_inputs/",order,"_int_cleaning_05_04.txt"),
               row.names = FALSE,
               quote = FALSE,
               sep = "\t",
               na = "")
   
 }
-
-## Order-level PyRate inputs ---------------------------------------------------
