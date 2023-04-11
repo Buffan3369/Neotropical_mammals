@@ -37,8 +37,8 @@ write.csv(clean_taxo, "./data_2023/homogenised_taxo.csv", row.names = FALSE, na 
 
 
 ## Split tables from the different orders --------------------------------------
-setwd("E:/Internship_ISEM/Neotropical_Mammals/DATA/")
-species_list <- read_xlsx("species_list_without_duplicates.xlsx")
+setwd("E:/Internship_ISEM/Neotropical_Mammals/DATA")
+species_list <- read_xlsx("species_list_without_duplicates_true.xlsx")
 #function returning genus-level status
 gen_level_status <- function(genus, df=species_list){
   rpz_status <- df[which(df[, "Genus"] == genus), c("Status")] #vector of the status of the genus representatives in our species list (where we stored)
