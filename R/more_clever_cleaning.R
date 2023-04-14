@@ -1,5 +1,4 @@
 library(readxl)
-library(tibble)
 
 setwd("E:/Internship_ISEM/Neotropical_Mammals/DATA/raw_order_level")
 semi_not <- read_xlsx("semi_Not.xlsx")
@@ -57,5 +56,12 @@ for(abbrev in keys(country_dict)){
 right_order <- c("order", "family", "genus", "Species", "Status", "cc", "state", "county", "Formation", "Period", "Epoch",
                  "early_interval", "overlap_percentage", "min_ma", "max_ma", "collection_no", "authorizer", "primary_reference", "Note")
 semi_not <- semi_not[, right_order]
+#match families
+ref_not <- read_xlsx("BACKUP.xlsx")
+for(genus in unique(ref_not$Genus)){
+  corr_fam <- unique(ref_not$Family[which(ref_not$Genus == genus)])
+  semi_not$family[which(semi_not$genus == genus)] <- corr_fam
+}
+
 #save
-write.table(semi_not, file = "semi_not.tsv", sep = "\t", dec = ",", quote = FALSE, na = "")
+write.table(semi_not, file = "semi_not.txt", sep = "\t", dec = ",", quote = FALSE, na = "", row.names = FALSE)
