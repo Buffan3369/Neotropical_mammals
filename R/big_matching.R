@@ -14,10 +14,9 @@ salma_bins <- data.frame(read_xlsx("./data_2023/time_bins/SALMA.xlsx")) #SALMA
 source("./R/matching_functions.R")
 
 #Matching loop for all orders
-for(file in list.files("../../DATA/raw/order_level/")){
+for(file in list.files("../../DATA/raw/order_level/")[2:length(list.files("../../DATA/raw/order_level/"))]){
   order <- stringr::str_remove(file, pattern = ".xlsx")
   print(order)
-  file <- list.files("../../DATA/raw/order_level/")[1]
   ## 1 Matching with Tarquini's expertise ----------------------------------------
   #raw data
   raw <- read_xlsx(paste0("../../DATA/raw/order_level/", file))
@@ -79,8 +78,11 @@ for(file in list.files("../../DATA/raw/order_level/")){
   #Set to "Holocene" all rows with stage "Recent"
   raw$stage[which(raw$stage == "Recent")] <- "Holocene"
   raw$stage[which(raw$stage == "Quaternary")] <- "Pleistocene-Holocene"
-  raw$stage[which(raw$stage == "Late Pleistocene-Holocene")] <- "Late Pleistocene-Late Holocene"
+  raw$stage[which(raw$stage %in% c("Late Pleistocene-Holocene", "Late Pleistocene - Holocene"))] <- "Late Pleistocene-Late Holocene"
   raw$stage[which(raw$stage == "Pliocene-Middle Pleistocene")] <- "Early Pliocene-Middle Pleistocene"
+  raw$stage[which(raw$stage == "lower “Huayquerian”")] <- "Huayquerian"
+  raw$stage[which(raw$stage == "upper “Huayquerian”")] <- "Huayquerian"
+  raw$stage[which(raw$stage %in% c("Barran", "Vorohuean", "Sanandresian", "Vorohuean - Sanandresian"))] <- "Marplatan"
   
   ## 2 Matching with GTS and SALMA scales -------------------------------------------------
   for(i in 1:nrow(raw)){
