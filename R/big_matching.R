@@ -58,7 +58,7 @@ for(i in 1:nrow(xen_tarq)){
 }
 
 #backtrace doublons by collection nb
-unmatched <- which(is.na(xen$stage)) #if the `stage` column hasn't been filled, the row hasn't been matched. We therefore look for columns with similar featues that have been matched 
+unmatched <- which(is.na(xen$stage)) #if the `stage` column hasn't been filled, the row hasn't been matched. We therefore look for columns with similar features that have been matched 
 rescued <- c()
 for(calimero in unmatched){
   dbl <- which((xen$accepted_name[-calimero] == xen$accepted_name[calimero]) & #name
@@ -94,17 +94,35 @@ gts_bins <- palaeoverse::time_bins(interval = "Cenozoic", rank = "stage") #GTS
 gts_early_late <- read_xlsx("./data_2023/EarlyMidLate_epochs.xlsx") #GTS with Early/Mid/Late epochs
 salma_bins <- read_xlsx("./data_2023/SALMA.xlsx") #SALMA
 #matching
+  #Remove white space before interval names in the "Int1 - Int2" case
+no_blank <- function(str){
+  spl <- strsplit(str, split = "")[[1]]
+  if(spl[1] == " "){
+    to_drop <- 1
+  }
+  if(spl[nchar(str)] == " "){
+    to_drop <- nchar(str)
+  }
+  cleaned_str <- "" 
+  for(i in (1:9)[-to_drop]){
+    cleaned_str <- paste0(cleaned_str, spl[i])
+  }
+  return(cleaned_str)
+}
+  #Proper Matching fucntion
 matching <- function(i, ds){
   #Occurrence between two stages?
-  if(length(strsplit(xen$stage[i], split = "-")) == 2){ # Int1-Int2, where Int1 older than Int2
+  if(length(strsplit(xen$stage[i], split = "-")[[1]]) == 2){ # Int1-Int2, where Int1 older than Int2
     int <- strsplit(xen$stage[i], split = "-")[[1]]
-    ref_min <- ds[which(ds[, "interval_name"] == int[2]), "min_ma"]
-    if(length(strsplit(int[2], split = " ")) == 2){ #e.g. "Middle-Late Paleocene": int = ["Middle", "Late Paleocene"] => strsplit(int[2], split = " ")) = ["Late", "Paleocene"]
-      epoch <- strsplit(int[2], split = " ")[[1]][2]
-      ref_max <- ds[which(ds[, "interval_name"] == paste(int[1], epoch, sep = " ")), "max_ma"]
+    int1 <- no_blank(int[1])
+    int2 <- no_blank(int[2])
+    ref_min <- ds[which(ds[, "interval_name"] == int2), "min_ma"]
+    if(length(strsplit(int2, split = " ")[[1]]) == 2){ #e.g. "Middle-Late Paleocene": int1 = "Middle", int2 = "Late Paleocene" => strsplit(int2, split = " ")) = ["Late", "Paleocene"]
+      epoch <- strsplit(int2, split = " ")[[1]][2]
+      ref_max <- ds[which(ds[, "interval_name"] == paste(int1, epoch, sep = " ")), "max_ma"]
     }
     else{
-      ref_max <- ds[which(ds[, "interval_name"] == int[1]), "max_ma"]
+      ref_max <- ds[which(ds[, "interval_name"] == int1), "max_ma"]
     }
   }
   else{
@@ -129,15 +147,16 @@ matching <- function(i, ds){
 
 for(i in 1:nrow(xen)){
   print(i)
-  if(xen$stage[i] %in% gts_bins$interval_name){
+  hyphen_split <- strsplit(xen$stage[i], split = "-")[[1]] #split according to hyphen, otherwise mixed intervals (e.g. "Danian-Selandian") won't be recognised
+  if(hyphen_split[length(hyphen_split)] %in% gts_bins$interval_name){
     print("gts_bins")
     new_MinMax <- matching(i, gts_bins)
   }
-  else if(xen$stage[i] %in% gts_early_late$interval_name){
+  else if(hyphen_split[length(hyphen_split)] %in% gts_early_late$interval_name){
     print("gts_early_late")
     new_MinMax <- matching(i, gts_early_late)
   }
-  else if(xen$stage[i] %in% salma_bins$interval_name){
+  else if(hyphen_split[length(hyphen_split)] %in% salma_bins$interval_name){
     print("salma_bins")
     new_MinMax <- matching(i, salma_bins)
   }
