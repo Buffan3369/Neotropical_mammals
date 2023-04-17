@@ -1,165 +1,122 @@
-## MATCHING TEST: XENUNGULATES
+## TEMPORAL CORRECTIONS OF THE RAW DATA ##
 
 library(readxl)
 library(palaeoverse)
+library(stringr)
 
-## 1 Matching with Tarquini's expertise ----------------------------------------
+#Time bins for matching
+gts_stage_bins <- palaeoverse::time_bins(interval = "Cenozoic", rank = "stage") #GTS stages
+gts_early_late <- data.frame(read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")) #GTS with Early/Mid/Late epochs
+gts_epoch_bins <- palaeoverse::time_bins(interval = "Cenozoic", rank = "epoch") #GTS epochs
+salma_bins <- data.frame(read_xlsx("./data_2023/time_bins/SALMA.xlsx")) #SALMA
+
+#Accessory functions
+source("./R/matching_functions.R")
+
+#Matching loop for all orders
+for(file in list.files("../../DATA/raw/order_level/")){
+  order <- stringr::str_remove(file, pattern = ".xlsx")
+  print(order)
+  file <- list.files("../../DATA/raw/order_level/")[1]
+  ## 1 Matching with Tarquini's expertise ----------------------------------------
   #raw data
-xen <- read.table("../../DATA/raw_order_level/Xenungulata.txt", sep = "\t", header = TRUE, dec = ",", na.strings = "")
+  raw <- read_xlsx(paste0("../../DATA/raw/order_level/", file))
   #Tarquini et al. 2022 dataset
-xen_tarq <- read_xlsx("../../DATA/raw_order_level/Xenungulata_Tarquini.xlsx")
-  #substitute separator in our accepted names (from " " to "_")
-underscore <- function(name){
-  split <- strsplit(name, split = " ")
-  return(paste0(split[[1]][1], "_", split[[1]][2]))
-}
-xen$accepted_name <- unlist(lapply(X = xen$accepted_name, FUN = underscore))
+  tarq <- read_xlsx(paste0("../../Tarquini_etal_2022_SI/Order_level/", file))
+  #change names in raw dataset for matching with Tarquini
+  sp_rank <- which(raw$accepted_rank == "species")
+  raw$accepted_name[sp_rank] <- unlist(lapply(X = raw$accepted_name[sp_rank], FUN = underscore))
   #create locality and formation columns
-xen$locality <- NA
-xen$formation <- NA
-xen$stage <- NA
-  #function to process a reference
-process_ref <- function(reference){
-  #split according to dots to pick up the year (first numeric)
-  dot_split <- strsplit(reference, split = "[.]")
-  dot_split_num <- lapply(dot_split, as.numeric)[[1]]
-  year_index <- which(is.na(dot_split_num) == FALSE)[1]
-  year <- dot_split_num[year_index]
-  return(year)
-}
- #loop
-for(i in 1:nrow(xen_tarq)){
-  #target
-  in_our_ds <- which((xen$accepted_name == xen_tarq$Taxon_name[i]) & 
-                       (xen$cc == xen_tarq$Co[i]) & 
-                       (xen$state == xen_tarq$State[i]) &
-                       (unlist(lapply(xen$primary_reference, process_ref)) == process_ref(xen_tarq$Reference[i])))
-  if(length(in_our_ds) > 0){
-    #arbitrarily select one index among the possibly modifiable ones, in case more in tarq ds than ours
-    index <- in_our_ds[which((is.na(xen$locality[in_our_ds])) &
-                     (is.na(xen$formation[in_our_ds])) &
-                     (is.na(xen$stage[in_our_ds])))[1]]
-    #modify
-    xen$locality[index] <- xen_tarq$Locality[i]
-    xen$formation[index] <- xen_tarq$`Formation (mb)`[i]
-    xen$stage[index] <- xen_tarq$Age[i]
-    
-    if(xen$min_ma[index] < xen_tarq$MinAge[i]){
-      xen$min_ma[index] <- xen_tarq$MinAge[i]
-    }
-    if(xen$max_ma[index] > xen_tarq$MaxAge[i]){
-      xen$max_ma[index] <- xen_tarq$MaxAge[i]
-    }
-    if(as.numeric(xen$min_ma[index]) > as.numeric(xen$max_ma[index])){
-      xen$min_ma[index] <- xen_tarq$MinAge[i]
-      xen$max_ma[index] <- xen_tarq$MaxAge[i]
+  raw$locality <- NA
+  raw$formation <- NA
+  raw$stage <- NA
+  #Assigning occurrences in our ds to some in Tarquini's dataset
+  for(i in 1:nrow(tarq)){
+    #target
+    in_our_ds <- which((raw$accepted_name == tarq$Taxon_name[i]) & 
+                         (raw$cc == tarq$Co[i]) & 
+                         (raw$state == tarq$State[i]) &
+                         (unlist(lapply(raw$primary_reference, process_ref)) == process_ref(tarq$Reference[i])))
+    if(length(in_our_ds) > 0){
+      #arbitrarily select one index among the possibly modifiable ones, in case more in tarq ds than ours
+      index <- in_our_ds[which((is.na(raw$locality[in_our_ds])) &
+                                 (is.na(raw$formation[in_our_ds])) &
+                                 (is.na(raw$stage[in_our_ds])))[1]]
+      if(is.na(index) == FALSE){
+        #modify
+        raw$locality[index] <- tarq$Locality[i]
+        raw$formation[index] <- tarq$`Formation (mb)`[i]
+        raw$stage[index] <- tarq$Age[i]
+        
+        if(raw$min_ma[index] < tarq$MinAge[i]){
+          raw$min_ma[index] <- tarq$MinAge[i]
+        }
+        if(raw$max_ma[index] > tarq$MaxAge[i]){
+          raw$max_ma[index] <- tarq$MaxAge[i]
+        }
+        if(as.numeric(raw$min_ma[index]) > as.numeric(raw$max_ma[index])){
+          raw$min_ma[index] <- tarq$MinAge[i]
+          raw$max_ma[index] <- tarq$MaxAge[i]
+        }
+      }
     }
   }
-}
-
-#backtrace doublons by collection nb
-unmatched <- which(is.na(xen$stage)) #if the `stage` column hasn't been filled, the row hasn't been matched. We therefore look for columns with similar features that have been matched 
-rescued <- c()
-for(calimero in unmatched){
-  dbl <- which((xen$accepted_name[-calimero] == xen$accepted_name[calimero]) & #name
-                 (xen$cc[-calimero] == xen$cc[calimero]) & #country
-                 (xen$state[-calimero] == xen$state[calimero]) & #state
-                 (xen$primary_reference[-calimero] == xen$primary_reference[calimero]) & #ref
-                 (xen$collection_no[-calimero] == xen$collection_no[calimero])) #collection number
-  if(length(dbl) > 0){
-    saver <- dbl[which(is.na(xen$stage[dbl]) == FALSE)][1]
-    xen[calimero, c("min_ma", "max_ma", "locality", "formation", "stage")] <- xen[saver, c("min_ma", "max_ma", "locality", "formation", "stage")]
-    rescued <- c(rescued, calimero)
-  }
-}
-#add early-late age to stage column, for those who are not in Tarquini's ds
-unmatched <- unmatched[!(unmatched %in% rescued)]
-for(remaining in unmatched){
-  xen$locality[remaining] <- xen$county[remaining]
-  if(is.na(xen$late_interval[remaining]) == FALSE){
-    xen$stage[remaining] <- paste(xen$early_interval[remaining],
-                                  xen$late_interval[remaining],
-                                  sep = "-")
-  }
-  else{
-    xen$stage[remaining] <- xen$early_interval[remaining]
-  }
-}
-#drop unuseful columns
-xen <- xen[, !(colnames(xen) %in% c("county", "early_interval", "late_interval", "created", "modified"))]
-
-## 2 Matching with GTS and SALMA scales -------------------------------------------------
-#build time bins
-gts_bins <- palaeoverse::time_bins(interval = "Cenozoic", rank = "stage") #GTS
-gts_early_late <- read_xlsx("./data_2023/EarlyMidLate_epochs.xlsx") #GTS with Early/Mid/Late epochs
-salma_bins <- read_xlsx("./data_2023/SALMA.xlsx") #SALMA
-#matching
-  #Remove white space before interval names in the "Int1 - Int2" case
-no_blank <- function(str){
-  spl <- strsplit(str, split = "")[[1]]
-  if(spl[1] == " "){
-    to_drop <- 1
-  }
-  if(spl[nchar(str)] == " "){
-    to_drop <- nchar(str)
-  }
-  cleaned_str <- "" 
-  for(i in (1:9)[-to_drop]){
-    cleaned_str <- paste0(cleaned_str, spl[i])
-  }
-  return(cleaned_str)
-}
-  #Proper Matching fucntion
-matching <- function(i, ds){
-  #Occurrence between two stages?
-  if(length(strsplit(xen$stage[i], split = "-")[[1]]) == 2){ # Int1-Int2, where Int1 older than Int2
-    int <- strsplit(xen$stage[i], split = "-")[[1]]
-    int1 <- no_blank(int[1])
-    int2 <- no_blank(int[2])
-    ref_min <- ds[which(ds[, "interval_name"] == int2), "min_ma"]
-    if(length(strsplit(int2, split = " ")[[1]]) == 2){ #e.g. "Middle-Late Paleocene": int1 = "Middle", int2 = "Late Paleocene" => strsplit(int2, split = " ")) = ["Late", "Paleocene"]
-      epoch <- strsplit(int2, split = " ")[[1]][2]
-      ref_max <- ds[which(ds[, "interval_name"] == paste(int1, epoch, sep = " ")), "max_ma"]
+  #add early-late age to stage column, for those who are not in Tarquini's ds
+  unmatched <- which(is.na(raw$stage)) #if the `stage` column hasn't been filled, the row hasn't been matched. We therefore look for columns with similar features that have been matched 
+  for(remaining in unmatched){ #not in Tarquini, according to our criteria
+    raw$locality[remaining] <- raw$county[remaining]
+    if(is.na(raw$late_interval[remaining]) == FALSE){
+      raw$stage[remaining] <- paste(raw$early_interval[remaining],
+                                    raw$late_interval[remaining],
+                                    sep = "-")
     }
     else{
-      ref_max <- ds[which(ds[, "interval_name"] == int1), "max_ma"]
+      raw$stage[remaining] <- raw$early_interval[remaining]
     }
   }
-  else{
-    ref_min <- ds[which(ds[, "interval_name"] == xen$stage[i]), "min_ma"]
-    ref_max <- ds[which(ds[, "interval_name"] == xen$stage[i]), "max_ma"]
+  #drop unuseful columns
+  raw <- raw[, !(colnames(raw) %in% c("county", "early_interval", "late_interval", "created", "modified"))]
+  #Set to "Holocene" all rows with stage "Recent"
+  raw$stage[which(raw$stage == "Recent")] <- "Holocene"
+  raw$stage[which(raw$stage == "Quaternary")] <- "Pleistocene-Holocene"
+  raw$stage[which(raw$stage == "Late Pleistocene-Holocene")] <- "Late Pleistocene-Late Holocene"
+  raw$stage[which(raw$stage == "Pliocene-Middle Pleistocene")] <- "Early Pliocene-Middle Pleistocene"
+  
+  ## 2 Matching with GTS and SALMA scales -------------------------------------------------
+  for(i in 1:nrow(raw)){
+    #print(i)
+    hyphen_split <- strsplit(raw$stage[i], split = "-")[[1]] #split according to hyphen, otherwise mixed intervals (e.g. "Danian-Selandian") won't be recognised
+    if(no_blank(hyphen_split[length(hyphen_split)]) %in% gts_stage_bins$interval_name){
+      # print("gts_stage_bins")
+      new_MinMax <- matching(i, time_ds=gts_stage_bins, match_ds=raw)
+    }
+    else if(no_blank(hyphen_split[length(hyphen_split)]) %in% gts_early_late$interval_name){
+      #print("gts_early_late")
+      new_MinMax <- matching(i, time_ds=gts_early_late, match_ds=raw)
+    }
+    else if(no_blank(hyphen_split[length(hyphen_split)]) %in% gts_epoch_bins$interval_name){
+      #print("gts_epoch_bins")
+      new_MinMax <- matching(i, time_ds=gts_epoch_bins, match_ds=raw)
+    }
+    else if(no_blank(hyphen_split[length(hyphen_split)]) %in% salma_bins$interval_name){
+      #print("salma_bins")
+      new_MinMax <- matching(i, time_ds=salma_bins, match_ds=raw)
+    }
+    else{
+      print(i)
+      print(paste0("Unknown interval: ", raw$stage[i]))
+      new_MinMax[1] <- raw$min_ma[i]
+      new_MinMax[2] <- raw$max_ma[i]  
+    }
+    raw$min_ma[i] <- new_MinMax[1]
+    raw$max_ma[i] <- new_MinMax[2]
   }
-  #compare current boundaries to reference
-  new_min <- as.numeric(xen$min_ma[i])
-  new_max <- as.numeric(xen$max_ma[i])
-  if(new_min < ref_min){
-    new_min <- ref_min
-  }
-  if(new_max > ref_max){
-    new_max <- ref_max
-  }
-  if(new_min > new_max){
-    new_min <- ref_min
-    new_max <- ref_max
-  }
-  return(c(new_min, new_max))
+  write.table(x = raw,
+              file = paste0("../../DATA/order_level/matched_order_level/", order, ".txt"),
+              sep = "\t",
+              na = "",
+              row.names = FALSE,
+              quote = FALSE,
+              dec = ",")
 }
 
-for(i in 1:nrow(xen)){
-  print(i)
-  hyphen_split <- strsplit(xen$stage[i], split = "-")[[1]] #split according to hyphen, otherwise mixed intervals (e.g. "Danian-Selandian") won't be recognised
-  if(hyphen_split[length(hyphen_split)] %in% gts_bins$interval_name){
-    print("gts_bins")
-    new_MinMax <- matching(i, gts_bins)
-  }
-  else if(hyphen_split[length(hyphen_split)] %in% gts_early_late$interval_name){
-    print("gts_early_late")
-    new_MinMax <- matching(i, gts_early_late)
-  }
-  else if(hyphen_split[length(hyphen_split)] %in% salma_bins$interval_name){
-    print("salma_bins")
-    new_MinMax <- matching(i, salma_bins)
-  }
-  xen$min_ma[i] <- new_MinMax[1]
-  xen$max_ma[i] <- new_MinMax[2]
-}
