@@ -22,7 +22,9 @@ for(file in list.files("../../DATA/raw/order_level/")[2:length(list.files("../..
   raw <- read_xlsx(paste0("../../DATA/raw/order_level/", file))
   #Tarquini et al. 2022 dataset
   tarq <- read_xlsx(paste0("../../Tarquini_etal_2022_SI/Order_level/", file))
-  #change names in raw dataset for matching with Tarquini
+  tarq$Taxon_name <- unlist(lapply(X = tarq$Taxon_name,
+                                   FUN = clean_dub)) #clean potential annotations in the taxon name (e.g. "nomen_dubium")
+  #change name separator in raw dataset for matching with Tarquini
   sp_rank <- which(raw$accepted_rank == "species")
   raw$accepted_name[sp_rank] <- unlist(lapply(X = raw$accepted_name[sp_rank], FUN = underscore))
   #create locality and formation columns
@@ -88,30 +90,14 @@ for(file in list.files("../../DATA/raw/order_level/")[2:length(list.files("../..
   for(i in 1:nrow(raw)){
     #print(i)
     hyphen_split <- strsplit(raw$stage[i], split = "-")[[1]] #split according to hyphen, otherwise mixed intervals (e.g. "Danian-Selandian") won't be recognised
-    if(no_blank(hyphen_split[length(hyphen_split)]) %in% gts_stage_bins$interval_name){
-      # print("gts_stage_bins")
-      new_MinMax <- matching(i, time_ds=gts_stage_bins, match_ds=raw)
+    if(length(hyphen_split) == 1){ #single stage specified
+      new_MinMax <- matching(i, match_ds = raw, combined_stages = FALSE)
     }
-    else if(no_blank(hyphen_split[length(hyphen_split)]) %in% gts_early_late$interval_name){
-      #print("gts_early_late")
-      new_MinMax <- matching(i, time_ds=gts_early_late, match_ds=raw)
+    else if(length(hyphen_split) == 2){ #combined stages
+      new_MinMax <- matching(i, match_ds = raw, combined_stages = TRUE)
     }
-    else if(no_blank(hyphen_split[length(hyphen_split)]) %in% gts_epoch_bins$interval_name){
-      #print("gts_epoch_bins")
-      new_MinMax <- matching(i, time_ds=gts_epoch_bins, match_ds=raw)
-    }
-    else if(no_blank(hyphen_split[length(hyphen_split)]) %in% salma_bins$interval_name){
-      #print("salma_bins")
-      new_MinMax <- matching(i, time_ds=salma_bins, match_ds=raw)
-    }
-    else{
-      print(i)
-      print(paste0("Unknown interval: ", raw$stage[i]))
-      new_MinMax[1] <- raw$min_ma[i]
-      new_MinMax[2] <- raw$max_ma[i]  
-    }
-    raw$min_ma[i] <- new_MinMax[1]
-    raw$max_ma[i] <- new_MinMax[2]
+    raw$min_ma[i] <- new_MinMax[[1]]
+    raw$max_ma[i] <- new_MinMax[[2]]
   }
   write.table(x = raw,
               file = paste0("../../DATA/order_level/matched_order_level/", order, ".txt"),
