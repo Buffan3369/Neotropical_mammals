@@ -38,7 +38,11 @@ raw_2023$order[which(raw_2023$genus %in% c("Pseudoplohophorus", "Plohophorops", 
                                            "Stromaphorus", "Phlyctaenopyga", "Plohophoroides", "Stromaphoropsis"))] <- "Cingulata"
 raw_2023$order[which((raw_2023$genus %in% unique(Pilosa$Genus)) | (raw_2023$family %in% unique(Pilosa$Family)) )] <- "Pilosa"
 raw_2023$order[which(raw_2023$genus == "Anathitus")] <- "Pilosa"
-
+#Solve Panameriungulata: extract Litopterna
+Litopterna <- read.table("../../DATA/order_level/Litopterna.txt", sep = "\t", header = TRUE, fill = TRUE, dec = ",")
+raw_2023$order[which((raw_2023$genus %in% unique(Litopterna$Genus)) | (raw_2023$family %in% unique(Litopterna$Family)) )] <- "Litopterna"
+raw_2023$order[which(raw_2023$genus == "Thoatheriopsis")] <- "Litopterna"
+raw_2023$family[which(raw_2023$genus == "Thoatheriopsis")] <- "Proterotheriidae"
 #write and save order-level lists
 for(order in unique(raw_2023$order)){
   tmp_order <- raw_2023[which(raw_2023$order == order), ]
