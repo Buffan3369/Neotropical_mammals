@@ -14,56 +14,57 @@ salma_bins <- data.frame(read_xlsx("./data_2023/time_bins/SALMA.xlsx")) #SALMA
 source("./R/matching_functions.R")
 
 #Matching loop for all orders
-for(file in list.files("../../DATA/raw/order_level/")[2:length(list.files("../../DATA/raw/order_level/"))]){
+for(file in list.files("../../DATA/raw/order_level/")){
   order <- stringr::str_remove(file, pattern = ".xlsx")
   print(order)
-  ## 1 Matching with Tarquini's expertise ----------------------------------------
+  ## 1 Matching with Tarquini's expertise (for all but Primates) ----------------------------------------
   #raw data
   raw <- read_xlsx(paste0("../../DATA/raw/order_level/", file))
-  #Tarquini et al. 2022 dataset
-  tarq <- read_xlsx(paste0("../../Tarquini_etal_2022_SI/Order_level/", file))
-  #Remove Dubius names
-  tarq <- tarq[-which(lapply(X = tarq$Taxon_name, FUN = no_dub) == TRUE), ]
-  #change name separator in raw dataset for matching with Tarquini
-  sp_rank <- which(raw$accepted_rank == "species")
-  raw$accepted_name[sp_rank] <- unlist(lapply(X = raw$accepted_name[sp_rank], FUN = underscore))
   #create locality and formation columns
   raw$locality <- NA
   raw$formation <- NA
   raw$stage <- NA
-  #Assigning occurrences in our ds to some in Tarquini's dataset
-  for(i in 1:nrow(tarq)){
-    #target
-    in_our_ds <- which((raw$accepted_name == tarq$Taxon_name[i]) & 
-                         (raw$cc == tarq$Co[i]) & 
-                         (raw$state == tarq$State[i]) &
-                         (unlist(lapply(raw$primary_reference, process_ref)) == process_ref(tarq$Reference[i])))
-    if(length(in_our_ds) > 0){
-      #arbitrarily select one index among the possibly modifiable ones, in case more in tarq ds than ours
-      index <- in_our_ds[which((is.na(raw$locality[in_our_ds])) &
-                                 (is.na(raw$formation[in_our_ds])) &
-                                 (is.na(raw$stage[in_our_ds])))[1]]
-      if(is.na(index) == FALSE){
-        #modify
-        raw$locality[index] <- tarq$Locality[i]
-        raw$formation[index] <- tarq$`Formation (mb)`[i]
-        raw$stage[index] <- tarq$Age[i]
-        
-        if(raw$min_ma[index] < tarq$MinAge[i]){
-          raw$min_ma[index] <- tarq$MinAge[i]
-        }
-        if(raw$max_ma[index] > tarq$MaxAge[i]){
-          raw$max_ma[index] <- tarq$MaxAge[i]
-        }
-        if(as.numeric(raw$min_ma[index]) > as.numeric(raw$max_ma[index])){
-          raw$min_ma[index] <- tarq$MinAge[i]
-          raw$max_ma[index] <- tarq$MaxAge[i]
+  #All but Primates (not in Tarquini's data)
+  if(order != "Primates"){
+    #Tarquini et al. 2022 dataset
+    tarq <- read_xlsx(paste0("../../Tarquini_etal_2022_SI/Order_level/", file))
+    #change names in raw dataset for matching with Tarquini
+    sp_rank <- which(raw$accepted_rank == "species")
+    raw$accepted_name[sp_rank] <- unlist(lapply(X = raw$accepted_name[sp_rank], FUN = underscore))
+    #loop
+    for(i in 1:nrow(tarq)){
+      #target
+      in_our_ds <- which((raw$accepted_name == tarq$Taxon_name[i]) & 
+                           (raw$cc == tarq$Co[i]) & 
+                           (raw$state == tarq$State[i]) &
+                           (unlist(lapply(raw$primary_reference, process_ref)) == process_ref(tarq$Reference[i])))
+      if(length(in_our_ds) > 0){
+        #arbitrarily select one index among the possibly modifiable ones, in case more in tarq ds than ours
+        index <- in_our_ds[which((is.na(raw$locality[in_our_ds])) &
+                                   (is.na(raw$formation[in_our_ds])) &
+                                   (is.na(raw$stage[in_our_ds])))[1]]
+        if(is.na(index) == FALSE){
+          #modify
+          raw$locality[index] <- tarq$Locality[i]
+          raw$formation[index] <- tarq$`Formation (mb)`[i]
+          raw$stage[index] <- tarq$Age[i]
+          
+          if(raw$min_ma[index] < tarq$MinAge[i]){
+            raw$min_ma[index] <- tarq$MinAge[i]
+          }
+          if(raw$max_ma[index] > tarq$MaxAge[i]){
+            raw$max_ma[index] <- tarq$MaxAge[i]
+          }
+          if(as.numeric(raw$min_ma[index]) > as.numeric(raw$max_ma[index])){
+            raw$min_ma[index] <- tarq$MinAge[i]
+            raw$max_ma[index] <- tarq$MaxAge[i]
+          }
         }
       }
     }
   }
+  unmatched <- which(is.na(raw$stage)) #if the `stage` column hasn't been filled, the row hasn't been matched. We therefore look for columns with similar features that have been matched
   #add early-late age to stage column, for those who are not in Tarquini's ds
-  unmatched <- which(is.na(raw$stage)) #if the `stage` column hasn't been filled, the row hasn't been matched. We therefore look for columns with similar features that have been matched 
   for(remaining in unmatched){ #not in Tarquini, according to our criteria
     raw$locality[remaining] <- raw$county[remaining]
     if(is.na(raw$late_interval[remaining]) == FALSE){
@@ -77,7 +78,7 @@ for(file in list.files("../../DATA/raw/order_level/")[2:length(list.files("../..
   }
   #drop unuseful columns
   raw <- raw[, !(colnames(raw) %in% c("county", "early_interval", "late_interval", "created", "modified"))]
-  #Set to "Holocene" all rows with stage "Recent"
+  #Period adjustment
   raw$stage[which(raw$stage == "Recent")] <- "Holocene"
   raw$stage[which(raw$stage == "Quaternary")] <- "Pleistocene-Holocene"
   raw$stage[which(raw$stage %in% c("Late Pleistocene-Holocene", "Late Pleistocene - Holocene"))] <- "Late Pleistocene-Late Holocene"
@@ -85,8 +86,7 @@ for(file in list.files("../../DATA/raw/order_level/")[2:length(list.files("../..
   raw$stage[which(raw$stage == "lower “Huayquerian”")] <- "Huayquerian"
   raw$stage[which(raw$stage == "upper “Huayquerian”")] <- "Huayquerian"
   raw$stage[which(raw$stage %in% c("Barran", "Vorohuean", "Sanandresian", "Vorohuean - Sanandresian"))] <- "Marplatan"
-  
-  ## 2 Matching with GTS and SALMA scales -------------------------------------------------
+  ## 2 Matching with GTS and SALMA scales ---------------------------------------------------------------
   for(i in 1:nrow(raw)){
     #print(i)
     hyphen_split <- strsplit(raw$stage[i], split = "-")[[1]] #split according to hyphen, otherwise mixed intervals (e.g. "Danian-Selandian") won't be recognised
