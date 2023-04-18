@@ -34,8 +34,8 @@ for(file in list.files("../../DATA/raw/order_level/")){
     #loop
     for(i in 1:nrow(tarq)){
       #target
-      in_our_ds <- which((raw$accepted_name == tarq$Taxon_name[i]) & 
-                           (raw$cc == tarq$Co[i]) & 
+      in_our_ds <- which((raw$accepted_name == tarq$Taxon_name[i]) &
+                           (raw$cc == tarq$Co[i]) &
                            (raw$state == tarq$State[i]) &
                            (unlist(lapply(raw$primary_reference, process_ref)) == process_ref(tarq$Reference[i])))
       if(length(in_our_ds) > 0){
@@ -48,7 +48,7 @@ for(file in list.files("../../DATA/raw/order_level/")){
           raw$locality[index] <- tarq$Locality[i]
           raw$formation[index] <- tarq$`Formation (mb)`[i]
           raw$stage[index] <- tarq$Age[i]
-          
+
           if(raw$min_ma[index] < tarq$MinAge[i]){
             raw$min_ma[index] <- tarq$MinAge[i]
           }
@@ -99,6 +99,37 @@ for(file in list.files("../../DATA/raw/order_level/")){
     raw$min_ma[i] <- new_MinMax[[1]]
     raw$max_ma[i] <- new_MinMax[[2]]
   }
+  ## 3-Reorganising columns ----------------------------------------------------------------------------
+  #reorder columns
+  raw$status <- NA
+  raw <- raw[, c("order", "family", "genus", "accepted_name", "status", "cc", "state", "locality",
+                 "formation", "stage", "min_ma", "max_ma", "collection_no", "authorizer", "primary_reference")]
+  #adjust families
+  raw$family[which(raw$family == "NO_FAMILY_SPECIFIED")] <- NA
+  ref_taxo <- read.table(paste0("../../DATA/order_level/from_2020_2023_data_combination/", order, ".txt"), header = TRUE, dec = ",", sep = "\t", quote = "", fill = TRUE)
+  for(genus in unique(raw$genus)){
+    if(genus %in% ref_taxo$Genus){
+      raw$family[which(raw$genus == genus)] <- unique(ref_taxo$Family[which(ref_taxo$Genus == genus)])[1] #[1] to simplify
+    }
+  }
+  #adjust status
+  for(i in 1:nrow(raw)){
+    spl <- strsplit(raw$accepted_name[i], split = "_")[[1]]
+    gen <- spl[1]
+    sp <- spl[2]
+    st <- ref_taxo$Status[which((ref_taxo$Genus == gen) & (ref_taxo$Species == sp))]
+    if(length(st) > 0){
+      raw$status[i] <- st[1]
+    }
+  }
+  #sort based on several columns
+  raw <- raw[order(raw$family, raw$accepted_name, raw$cc, raw$locality), ]
+  #all occurrence with time range above 20My are removed
+  over_thr <- which((raw$max_ma - raw$min_ma) > 20)
+  if(length(over_thr) > 0){
+    raw <- raw[-over_thr, ]
+  }
+  #save
   write.table(x = raw,
               file = paste0("../../DATA/order_level/matched_order_level/", order, ".txt"),
               sep = "\t",
