@@ -3,10 +3,15 @@ underscore <- function(name){
   split <- strsplit(name, split = " ")
   return(paste0(split[[1]][1], "_", split[[1]][2]))
 }
-## Clean denominations after name (e.g. "Pseudocladosictis_determinabile_(nomen_dubius)") ----------
-clean_dub <- function(name){
+## Is the taxon name doubtful ? ----------------------------------------------------------------------
+no_dub <- function(name){
   spl <- strsplit(name, split = "_")[[1]]
-  return(paste(spl[1], spl[2], sep = "_"))
+  if("(nomen" %in% spl){
+    return(TRUE)
+  }
+  else{
+    return(FALSE)
+  }
 }
 ## Process a reference (returns the publication year) ----------------------------------------------
 process_ref <- function(reference){

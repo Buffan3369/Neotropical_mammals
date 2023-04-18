@@ -22,8 +22,8 @@ for(file in list.files("../../DATA/raw/order_level/")[2:length(list.files("../..
   raw <- read_xlsx(paste0("../../DATA/raw/order_level/", file))
   #Tarquini et al. 2022 dataset
   tarq <- read_xlsx(paste0("../../Tarquini_etal_2022_SI/Order_level/", file))
-  tarq$Taxon_name <- unlist(lapply(X = tarq$Taxon_name,
-                                   FUN = clean_dub)) #clean potential annotations in the taxon name (e.g. "nomen_dubium")
+  #Remove Dubius names
+  tarq <- tarq[-which(lapply(X = tarq$Taxon_name, FUN = no_dub) == TRUE), ]
   #change name separator in raw dataset for matching with Tarquini
   sp_rank <- which(raw$accepted_rank == "species")
   raw$accepted_name[sp_rank] <- unlist(lapply(X = raw$accepted_name[sp_rank], FUN = underscore))
