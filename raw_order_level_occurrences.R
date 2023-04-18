@@ -1,5 +1,4 @@
 ###### Order-level split from raw dataset ######
-library(readxl)
 library(hash)
 raw_2023 <- read.csv("./data_2023/Neotropical_Mammals_raw_2023.csv") 
 #remove occurrences out of time coverage
@@ -29,6 +28,17 @@ cols_to_drop <- c("occurrence_no","record_type","reid_no","flags","identified_na
                   "accepted_no","reference_no","phylum","class","latlng_basis","latlng_precision","geogscale","geogcomments",
                   "enterer","modifier")
 raw_2023 <- raw_2023[, !(names(raw_2023) %in% cols_to_drop)]
+#solve Xenarthra issue: split Pilosa and Cingulata properely
+Cingulata <- read.table("../../DATA/order_level/Cingulata.txt", sep = "\t", header = TRUE, fill = TRUE, dec = ",")
+Pilosa <- read.table("../../DATA/order_level/Pilosa.txt", sep = "\t", header = TRUE, dec = ",")
+raw_2023$order[which((raw_2023$genus %in% unique(Cingulata$Genus)) | (raw_2023$family %in% unique(Cingulata$Family)) )] <- "Cingulata"
+raw_2023$order[which(raw_2023$family %in% c("Pampatheriidae", "Panochthidae"))] <- "Cingulata"
+raw_2023$order[which(raw_2023$genus %in% c("Pseudoplohophorus", "Plohophorops", "Zaphilus", "Trachycalyptus", "Trachycalyptoides",
+                                           "Urotherium", "Protoglyptodon", "Parahoplophorus", "Stromaphorus", "Phlyctaenopyga",
+                                           "Stromaphorus", "Phlyctaenopyga", "Plohophoroides", "Stromaphoropsis"))] <- "Cingulata"
+raw_2023$order[which((raw_2023$genus %in% unique(Pilosa$Genus)) | (raw_2023$family %in% unique(Pilosa$Family)) )] <- "Pilosa"
+raw_2023$order[which(raw_2023$genus == "Anathitus")] <- "Pilosa"
+
 #write and save order-level lists
 for(order in unique(raw_2023$order)){
   tmp_order <- raw_2023[which(raw_2023$order == order), ]
