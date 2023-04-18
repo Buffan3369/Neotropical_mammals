@@ -29,8 +29,8 @@ cols_to_drop <- c("occurrence_no","record_type","reid_no","flags","identified_na
                   "enterer","modifier")
 raw_2023 <- raw_2023[, !(names(raw_2023) %in% cols_to_drop)]
 #solve Xenarthra issue: split Pilosa and Cingulata properely
-Cingulata <- read.table("../../DATA/order_level/Cingulata.txt", sep = "\t", header = TRUE, fill = TRUE, dec = ",")
-Pilosa <- read.table("../../DATA/order_level/Pilosa.txt", sep = "\t", header = TRUE, dec = ",")
+Cingulata <- read.table("../../DATA/order_level/from_2020_2023_data_combination/Cingulata.txt", sep = "\t", header = TRUE, fill = TRUE, dec = ",")
+Pilosa <- read.table("../../DATA/order_level/from_2020_2023_data_combination/Pilosa.txt", sep = "\t", header = TRUE, dec = ",")
 raw_2023$order[which((raw_2023$genus %in% unique(Cingulata$Genus)) | (raw_2023$family %in% unique(Cingulata$Family)) )] <- "Cingulata"
 raw_2023$order[which(raw_2023$family %in% c("Pampatheriidae", "Panochthidae"))] <- "Cingulata"
 raw_2023$order[which(raw_2023$genus %in% c("Pseudoplohophorus", "Plohophorops", "Zaphilus", "Trachycalyptus", "Trachycalyptoides",
@@ -39,10 +39,16 @@ raw_2023$order[which(raw_2023$genus %in% c("Pseudoplohophorus", "Plohophorops", 
 raw_2023$order[which((raw_2023$genus %in% unique(Pilosa$Genus)) | (raw_2023$family %in% unique(Pilosa$Family)) )] <- "Pilosa"
 raw_2023$order[which(raw_2023$genus == "Anathitus")] <- "Pilosa"
 #Solve Panameriungulata: extract Litopterna
-Litopterna <- read.table("../../DATA/order_level/Litopterna.txt", sep = "\t", header = TRUE, fill = TRUE, dec = ",")
+Litopterna <- read.table("../../DATA/order_level/from_2020_2023_data_combination/Litopterna.txt", sep = "\t", header = TRUE, fill = TRUE, dec = ",")
 raw_2023$order[which((raw_2023$genus %in% unique(Litopterna$Genus)) | (raw_2023$family %in% unique(Litopterna$Family)) )] <- "Litopterna"
 raw_2023$order[which(raw_2023$genus == "Thoatheriopsis")] <- "Litopterna"
 raw_2023$family[which(raw_2023$genus == "Thoatheriopsis")] <- "Proterotheriidae"
+#set country abbreviation to its actual name
+country_dict <- hash(keys = unique(raw_2023$cc)[order(unique(raw_2023$cc))],
+                     values = c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Peru", "Paraguay", "Surinam", "Uruguay", "Venezuela"))
+for(abbrev in keys(country_dict)){
+  raw_2023$cc[which(raw_2023$cc == abbrev)] <- as.character(values(country_dict[abbrev]))
+}
 #write and save order-level lists
 for(order in unique(raw_2023$order)){
   tmp_order <- raw_2023[which(raw_2023$order == order), ]
