@@ -5,6 +5,17 @@ raw_2023 <- read.csv("./data_2023/Neotropical_Mammals_raw_2023.csv")
 #remove occurrences out of time coverage
 too_old <- which(raw_2023$min_ma >= 66)
 raw_2023 <- raw_2023[-too_old, ]
+#exclude occurrences with doubtful name
+no_dub <- function(name){
+  spl <- strsplit(name, split = " ")[[1]]
+  if("nomen" %in% spl){
+    return(TRUE)
+  }
+  else{
+    return(FALSE)
+  }
+}
+raw_2023 <- raw_2023[-which(lapply(X = raw_2023$difference, FUN = no_dub) == TRUE), ]
 #remove genera introduced by or extinct because of humans
 raw_2023 <- raw_2023[-which(raw_2023$genus %in% c("Lepus", "Neomonachus", "Mus", "Sus")),]
 #correct typos
@@ -23,7 +34,7 @@ for(order in unique(raw_2023$order)){
   tmp_order <- raw_2023[which(raw_2023$order == order), ]
   #save order-level table
   write.table(x = tmp_order,
-              file = paste0("E:/Internship_ISEM/Neotropical_Mammals/DATA/raw_order_level/", order, ".txt"),
+              file = paste0("E:/Internship_ISEM/Neotropical_Mammals/DATA/raw/order_level_txt/", order, ".txt"),
               sep = "\t",
               na = "",
               row.names = FALSE,
