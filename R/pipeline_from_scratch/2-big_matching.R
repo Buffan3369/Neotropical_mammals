@@ -26,13 +26,13 @@ for(file in list.files("../../DATA/raw/order_level/")){
   raw$locality <- NA
   raw$formation <- NA
   raw$stage <- NA
+  #change name separator in raw dataset for matching with Tarquini
+  sp_rank <- which(raw$accepted_rank == "species")
+  raw$accepted_name[sp_rank] <- unlist(lapply(X = raw$accepted_name[sp_rank], FUN = underscore))
   #All but Primates (not in Tarquini's data)
-  if(order != "Primates"){
+  if((order %in% c("Primates", "Cetacea", "Others")) == FALSE){
     #Tarquini et al. 2022 dataset
     tarq <- read_xlsx(paste0("../../Tarquini_etal_2022_SI/Order_level/", file))
-    #change names in raw dataset for matching with Tarquini
-    sp_rank <- which(raw$accepted_rank == "species")
-    raw$accepted_name[sp_rank] <- unlist(lapply(X = raw$accepted_name[sp_rank], FUN = underscore))
     #loop
     for(i in 1:nrow(tarq)){
       #target
@@ -125,7 +125,7 @@ for(file in list.files("../../DATA/raw/order_level/")){
     }
   }
   #sort based on several columns
-  raw <- raw[order(raw$family, raw$accepted_name, raw$cc, raw$locality), ]
+  raw <- raw[order(raw$order, raw$family, raw$accepted_name, raw$cc, raw$locality), ]
   #all occurrence with time range above 20My are removed
   over_thr <- which((raw$max_ma - raw$min_ma) > 20)
   if(length(over_thr) > 0){
