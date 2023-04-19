@@ -113,13 +113,13 @@ for(file in list.files("../../DATA/raw/order_level/")){
     }
   }
   #adjust status
-  for(i in 1:nrow(raw)){
-    spl <- strsplit(raw$accepted_name[i], split = "_")[[1]]
+  for(name in unique(raw$accepted_name)){
+    spl <- strsplit(name, split = "_")[[1]]
     gen <- spl[1]
     sp <- spl[2]
-    st <- ref_taxo$Status[which((ref_taxo$Genus == gen) & (ref_taxo$Species == sp))]
+    st <- unique(ref_taxo$Status[which((ref_taxo$Genus == gen) & (ref_taxo$Species == sp))])
     if(length(st) > 0){
-      raw$status[i] <- st[1]
+      raw$status[which(raw$accepted_name == name)] <- st
     }
   }
   #sort based on several columns
