@@ -4,13 +4,13 @@
 
 ## 1-Open the two datasets -----------------------------------------------------
 #dataset revised by Laurent but temporally-unmatched
-primates_cleaned <- read.table("../../DATA/order_level/from_2020_2023_data_combination/Primates.txt",
+primates_cleaned <- read.table("../../../DATA/order_level/from_2020_2023_data_combination/Primates.txt",
                               sep = "\t",
                               header = TRUE, 
                               fill = TRUE, 
                               dec = ",")
 #Temporally-matched rodent dataset
-primates_matched <- read.table("../../DATA/order_level/matched_order_level/Primates.txt",
+primates_matched <- read.table("../../../DATA/order_level/matched_order_level/Primates.txt",
                               sep = "\t",
                               header = TRUE, 
                               fill = TRUE, 

@@ -1,4 +1,7 @@
-###### Order-level split from raw dataset ######
+#################################################################################
+###################### Separate raw occurrences by order ########################
+#################################################################################
+
 library(hash)
 raw_2023 <- read.csv("./data_2023/Neotropical_Mammals_raw_2023.csv") 
 #remove occurrences out of time coverage

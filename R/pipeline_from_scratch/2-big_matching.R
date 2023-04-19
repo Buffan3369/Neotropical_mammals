@@ -1,4 +1,6 @@
-## TEMPORAL CORRECTIONS OF THE RAW DATA ##
+#################################################################################
+#################### Proper stage binning of the raw data #######################
+#################################################################################
 
 library(readxl)
 library(palaeoverse)
@@ -11,7 +13,7 @@ gts_epoch_bins <- palaeoverse::time_bins(interval = "Cenozoic", rank = "epoch") 
 salma_bins <- data.frame(read_xlsx("./data_2023/time_bins/SALMA.xlsx")) #SALMA
 
 #Accessory functions
-source("./R/matching_functions.R")
+source("./R/pipeline_from_scratch/2b-matching_functions.R")
 
 #Matching loop for all orders
 for(file in list.files("../../DATA/raw/order_level/")){

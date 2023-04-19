@@ -3,7 +3,7 @@
 ################################################################################
 library(readxl)
 
-species_list <- read_xlsx("E:/Internship_ISEM/Neotropical_Mammals/species_list.xlsx")
+species_list <- read_xlsx("E:/Internship_ISEM/Neotropical_Mammals/DATA/species_list_without_duplicates_true.xlsx")
 occdf <- read.csv("./data_2023/Neotropical_Mammals_raw_2023.csv")
 
 ## Create and save PyRate raw genus-level input based on occdf -----------------
