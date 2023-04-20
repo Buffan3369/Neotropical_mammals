@@ -1,0 +1,79 @@
+---
+title: "Details for fossil data hand-cleaning based on authors' expertise."
+author:
+  - "---"
+  - Lucas Buffan^1,2^, Laurent Marivaux^2^, Pierre-Olivier Antoine^2^ and Fabien L. Condamine^2^
+  - "---"
+  - "^1^Département de Biologie, École Normale Supérieure de Lyon, Université Claude Bernard Lyon 1, 69342 Lyon Cedex 07, France."
+  - "^2^CNRS, UMR 5554 Institut des Sciences de l’Évolution de Montpellier, Place Eugène Bataillon, 34095 Montpellier, France."
+  - "---"
+  - "**Corresponding author:** Lucas.L.Buffan@gmail.com"
+format:
+  docx:
+    reference-doc: template.docx
+    highlight-style: github
+bibliography: references.bib
+csl: biology-letters.csl
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Artiodactyla
+
+# Astrapotheria
+
+# Carnivora
+
+# Cetacea
+
+# Cingulata
+
+# Chiroptera
+
+# Didelphimorphia
+
+# Litopterna
+
+*Archaeohyracotherium mediale* (*Didolodontidae*, coll. nb. 176164, [@simpson1967]) was synonymised with *Asmithwoodwardia subtrigona* (*Protolipternidae*) by Gelfo (2006)[@gelfo2006].  
+*Argyrolambda conidens* was synonimised with *Didolodus multicuspis* [@gelfo2006].  
+*Didolodus sp.* (coll. nb. 199563, [@antoine2021]) was removed as associated to "unidentified *Didolontidae*" in the paper.
+*Enneoconus parvidens* (coll. nb 176164, [@simpson1948]) was synonimised with *Ernestokokenia nitida* by Gelfo (2006)[@gelfo2006].
+
+# Microbiotheria
+
+# Notoungulata
+
+# Paucituberculata
+
+# Perissodactyla
+
+*Equus sp.* (coll. nb. 142016, [@boule1920]) was set to *Equus (Amerhippus)*. Together with *Equus sp.* (coll. nb. 71275, [@rolim1974]; coll. nb. 70673, [@oliveira2017]; coll. nb. 92814, [@salles2006]), *Equus (Amerhippus)* (coll. nb. 70673, [@marshall1991]) and *Hippidion sp.* (coll. nb. 70673, [@marshall1991]), their upper time boundary were set to 0.99 Ma, according to MacFadden (2013) [@macfadden2013].  
+*Equus sp.* (coll. nb. 142158 and 142160, [@coltorti2007]) were both set to *Equus (Amerhippus)*.   
+*Equus asinus* (coll. nb. 190844, [@steadman1986]) was removed as introduced by humans.  
+*Equus caballus* (coll. nb. 63337, [@deschamps2005]) was set *Equus (Amerhippus) neogeus* by Alberdi and Prado (1992) [@alberdi1992].  
+*Equus caballus* (coll. nb. 70704, [@marshall1991]) time range was set to Holocene.  
+*Equus caballus* (coll. nb. 142016, [@boule1920]) was set to *Equus (Amerhippus) insulatus*.  
+*Equus caballus* (coll. nb. 73842, [@oliver1935]) time range was set to Pleistocene by [@canto2010].  
+*Equus santaeelenae* (coll. nb. 144922, 145506, [@pujos2004]) time ranges were adjusted to Late Pleistocene.  
+*Hippidium (Plagiohippus)* (coll. nb. 71304, [@reig1957]) name was set to *Hippidion* [@alberdi1992].  
+*Hypohippidium humahuaquense* (coll. nb. 210722, [@de1957]) was synonimised with *Hippidion devillei* by [@alberdi1992]
+*Hippidion sp.* (coll. nb. 73842, [@oliver1935]; coll. nb. 199157, [@cione1996]; coll. nb. 53926, [@rusconi1934], 2 occurrences) time ranges were adjusted to Pleistocene.  
+*Tapirus (Tapilarum)* (coll. nb. 53928, [@rusconi1934]) name was shortened to *Tapirus*, and age set to Early Pleistocene.  
+*Tapirus tarijensis* (coll. nb. 70673, [@marshall1991]) lower age boundary was set to 1.06 Ma.  
+
+
+# Pilosa
+
+# Primates
+
+# Proboscidea
+
+# Rodentia 
+
+# Sparassodonta 
+
+# Xenungulata
+
+\newpage
+# References
