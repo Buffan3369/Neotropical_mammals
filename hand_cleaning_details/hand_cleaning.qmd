@@ -31,8 +31,9 @@ All *Bos taurus* and *Ovis* occurrences were removed, as representatives were in
 
 *Grypolophodon imperfectus* (coll. numb. 176290, [@simpson1967]) was removed as nomen dubium.  
 *Parastrapotherium holmbergi* (coll. numb. 176290, [@roth1904]) formation was set to Sarmiento, stage to Deseadan-Colehuehuappian, and age range to 20-29 Ma.  
-*Xenastrapotherium sp.* (coll. numb. 55602, [@frailey1986]) and *Xenastrapotherium amazonense* (coll. numb. 55602, [@ribeiro2013]) were reassigned to Laventan stage (11.8-13.8 Ma).
-
+*Xenastrapotherium sp.* (coll. numb. 55602, [@frailey1986]) and *Xenastrapotherium amazonense* (coll. numb. 55602, [@ribeiro2013]) were reassigned to Laventan stage (11.8-13.8 Ma) according [@goillot2011].  
+*Notorhinus denticulatus* (coll. numb. 176290, [@roth1904]) removed as nomen dubium.
+*Astrapotherium* (coll. numb. 50074, [@tournouer1903]) re-assigned to Santacrucian.
 
 # Carnivora
 
