@@ -87,6 +87,12 @@ All *Bos taurus* and *Ovis* occurrences were removed, as representatives were in
 All mentions of *Mammut* were removed.
 
 # Rodentia 
+## Added Occurrences
+*Ricardomys longidens*, Laventan age, San Martín department, Peru [@bovin2021].  
+*Microscleromys sp.* (two occurrences), *Microscleromys cribriphilus*, *Microscleromys paradoxalis*, *Microsteiromys jacobsi*, *Nuyayomys chinqaska*, *Scleromys*, Laventan age, San Martín department, Peru [@bovin2021].  
+
+## Corrections
+
 
 # Sparassodonta 
 

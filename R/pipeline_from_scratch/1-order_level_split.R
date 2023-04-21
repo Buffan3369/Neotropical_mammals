@@ -2,12 +2,14 @@
 ###################### Separate raw occurrences by order ########################
 #################################################################################
 
+## Libraries -----------------------------------------------------------
 library(hash)
+## Open raw data -------------------------------------------------------
 raw_2023 <- read.csv("./data_2023/Neotropical_Mammals_raw_2023.csv") 
-#remove occurrences out of time coverage
+## Remove occurrences out of time coverage -----------------------------
 too_old <- which(raw_2023$min_ma >= 66)
 raw_2023 <- raw_2023[-too_old, ]
-#exclude occurrences with doubtful name
+## Exclude occurrences with doubtful name ------------------------------
 no_dub <- function(name){
   spl <- strsplit(name, split = " ")[[1]]
   if("nomen" %in% spl){
@@ -18,14 +20,41 @@ no_dub <- function(name){
   }
 }
 raw_2023 <- raw_2023[-which(lapply(X = raw_2023$difference, FUN = no_dub) == TRUE), ]
-#remove genera introduced by or extinct because of humans
+## Remove genera introduced by or extinct because of humans ------------
 raw_2023 <- raw_2023[-which(raw_2023$genus %in% c("Lepus", "Neomonachus", "Mus", "Sus")),]
-#correct typos
+## Correct typos -------------------------------------------------------
 dict_typo_corr <- hash(keys = c("Epieuryceros", "Bolomys", "Pithiculites", "Glossotheridium", "Plesioxotodon", "Hippidium"), #in raw dataset
                        values = c("Epieurycerus", "Necromys", "Pitheculites", "Glossotherium", "Plesiotoxodon", "Hippidion")) #corrected names
-for(key in keys(dict_typo_corr)){
-  raw_2023$genus[which(raw_2023$genus == key)] <- dict_typo_corr[[key]]
+#sometimes, genera have more than one component, e.g. "Hippidium (Plagiohippus)"
+splitted_genera <- lapply(X = raw_2023$genus, FUN = function(x){return(strsplit(x, split = " ")[[1]][1])})
+#function to replace the first compound of a name
+rpl_first <- function(full_name, new_first, split = " "){
+  spl <- strsplit(full_name, split = split)[[1]]
+  spl[1] <- new_first
+  replaced <- ""
+  for(i in spl){
+    replaced <- paste(replaced, i)
+  }
+  return(replaced)
 }
+#apply
+for(key in keys(dict_typo_corr)){
+  raw_2023$genus[which(splitted_genera == key)] <- dict_typo_corr[[key]]
+  raw_2023$accepted_name[which(splitted_genera == key)] <- rpl_first(full_name = raw_2023$accepted_name[which(splitted_genera == key)],
+                                                                     new_first = dict_typo_corr[[key]])
+}
+#typo on family names
+raw_2023$family[which(raw_2023$family == "Pyrotheridae")] <- "Pyrotheriidae"
+## Assign orders to occurrences with unknown order ----------------------
+#Polydolopimorphia
+raw_2023$order[which( (raw_2023$family %in% c("Argyrolagidae", "Bonapartheriidae", "Polydolopidae", "Prepidolopidae"))) |
+                 (raw_2023$genus %in% c("Wamradolops", "Roberthoffstetteria"))] <- "Polydolopimorphia"
+#Pyrotheria
+raw_2023$order[which((raw_2023$family %in% c("Pyrotheriidae", "Rosendolopidae")) |
+                       raw_2023$genus == "Griphodon")] <- "Pyrotheria"
+#Gondwanatheria
+raw_2023$order[which(raw_2023$family == "Sudamericidae")] <- "Gondwanatheria"
+
 #remove unuseful columns
 cols_to_drop <- c("occurrence_no","record_type","reid_no","flags","identified_name","identified_rank","identified_no","difference",
                   "accepted_no","reference_no","phylum","class","latlng_basis","latlng_precision","geogscale","geogcomments",
