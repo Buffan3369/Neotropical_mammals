@@ -90,8 +90,10 @@ All mentions of *Mammut* were removed.
 ## Added Occurrences
 *Ricardomys longidens*, Laventan age, San Martín department, Peru [@bovin2021].  
 *Microscleromys sp.* (two occurrences), *Microscleromys cribriphilus*, *Microscleromys paradoxalis*, *Microsteiromys jacobsi*, *Nuyayomys chinqaska*, *Scleromys*, Laventan age, San Martín department, Peru [@bovin2021].  
+*Balsayacuy huallagaensis*, Rupelian age (restricted to the 27.2-31.1 Ma interval), Departamento de Ucayali, Peru [@arnal2022].
 
 ## Corrections
+*Kichkasteiromys raimondii*: age range set to 34-35 Ma.
 
 
 # Sparassodonta 
