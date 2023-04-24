@@ -21,19 +21,19 @@ editor:
 
 # Artiodactyla
 
-*Palaeolama sp.* (coll. numb. 213138, [@rusconi1949]), *Lama castelnaudi* (coll. numb. 213136, [@rusconi1949]) and *Palaeolama weddeli* (coll. numb. 213136, [@rusconi1949]) age ranges were set to Early Pleistocene, according to [@pascual1965].  
+*Palaeolama sp.* (coll. nb. 213138, [@rusconi1949]), *Lama castelnaudi* (coll. nb. 213136, [@rusconi1949]) and *Palaeolama weddeli* (coll. nb. 213136, [@rusconi1949]) age ranges were set to Early Pleistocene, according to [@pascual1965].  
 All *Bos taurus* and *Ovis* occurrences were removed, as representatives were introduced by humans.  
-*Antifer crassus* (coll. numb. 53926, [@rusconi1934]) time range was set to Pleistocene according to [@croitor2022].
-*Platygonus narinoensis* (coll. numb. 133585, [@stirton1947]) was renamed *Platygonus cf. marplatensis* according to [@gasparini2021].
+*Antifer crassus* (coll. nb. 53926, [@rusconi1934]) time range was set to Pleistocene according to [@croitor2022].
+*Platygonus narinoensis* (coll. nb. 133585, [@stirton1947]) was renamed *Platygonus cf. marplatensis* according to [@gasparini2021].
 
 
 # Astrapotheria
 
-*Grypolophodon imperfectus* (coll. numb. 176290, [@simpson1967]) was removed as nomen dubium.  
-*Parastrapotherium holmbergi* (coll. numb. 176290, [@roth1904]) formation was set to Sarmiento, stage to Deseadan-Colehuehuappian, and age range to 20-29 Ma.  
-*Xenastrapotherium sp.* (coll. numb. 55602, [@frailey1986]) and *Xenastrapotherium amazonense* (coll. numb. 55602, [@ribeiro2013]) were reassigned to Laventan stage (11.8-13.8 Ma) according [@goillot2011].  
-*Notorhinus denticulatus* (coll. numb. 176290, [@roth1904]) removed as nomen dubium.
-*Astrapotherium* (coll. numb. 50074, [@tournouer1903]) re-assigned to Santacrucian.
+*Grypolophodon imperfectus* (coll. nb. 176290, [@simpson1967]) was removed as nomen dubium.  
+*Parastrapotherium holmbergi* (coll. nb. 176290, [@roth1904]) formation was set to Sarmiento, stage to Deseadan-Colehuehuappian, and age range to 20-29 Ma.  
+*Xenastrapotherium sp.* (coll. nb. 55602, [@frailey1986]) and *Xenastrapotherium amazonense* (coll. nb. 55602, [@ribeiro2013]) were reassigned to Laventan stage (11.8-13.8 Ma) according [@goillot2011].  
+*Notorhinus denticulatus* (coll. nb. 176290, [@roth1904]) removed as nomen dubium.
+*Astrapotherium* (coll. nb. 50074, [@tournouer1903]) re-assigned to Santacrucian.
 
 # Carnivora
 
@@ -82,18 +82,27 @@ All *Bos taurus* and *Ovis* occurrences were removed, as representatives were in
 
 # Proboscidea
 
-*Mastotherium hyodon* (coll. numb. 142016, [@boule1920] and 145181, [@schneider1927]) genus named was set to *Cuvieronius*.   
-*Stegomastodon sp.* (coll. numb. 211646, [@ubilla2009]) was synonymised with *Notiomastodon platensis*.  
+*Mastotherium hyodon* (coll. nb. 142016, [@boule1920] and 145181, [@schneider1927]) genus named was set to *Cuvieronius*.   
+*Stegomastodon sp.* (coll. nb. 211646, [@ubilla2009]) was synonymised with *Notiomastodon platensis*.  
 All mentions of *Mammut* were removed.
 
 # Rodentia 
 ## Added Occurrences
-*Ricardomys longidens*, Laventan age, San Martín department, Peru [@bovin2021].  
-*Microscleromys sp.* (two occurrences), *Microscleromys cribriphilus*, *Microscleromys paradoxalis*, *Microsteiromys jacobsi*, *Nuyayomys chinqaska*, *Scleromys*, Laventan age, San Martín department, Peru [@bovin2021].  
-*Balsayacuy huallagaensis*, Rupelian age (restricted to the 27.2-31.1 Ma interval), Departamento de Ucayali, Peru [@arnal2022].
+*Ricardomys longidens*, Laventan age, San Martín department, Peru [@boivin2021].  
+*Microscleromys sp.* (two occurrences), *Microscleromys cribriphilus*, *Microscleromys paradoxalis*, *Microsteiromys jacobsi*, *Nuyayomys chinqaska*, *Scleromys*, Laventan age, San Martín department, Peru [@boivin2021].  
+*Balsayacuy sp.*, Rupelian age (restricted to the 27.82-31.1 Ma interval), Departamento de Ucayali, Santa Rosa locality, Peru [@arnal2022]. Described as an occurrence of *Balsayacuy huallagaensis*, but species attribution doubtful. Hence, restricted to genus level. From the same paper (same locality and same age), we also add one occurrence of *Shapajamys minor*, one of *Ucayalimys amahuacensis* and one of *Vucetichimys pterilophodonica*.
 
 ## Corrections
 *Kichkasteiromys raimondii*: age range set to 34-35 Ma.
+Time boundaries of all *Cachiacuy contamanensis* occurrences (six in total) were set to Late Eocene (33.9-41.2 Ma). 
+
+Time boundaries of four *Cachiacuy kummeli* occurrences (coll. nb. 144474, [@antoine2012]; 176136, [@boivin2017], 207067 and 207062 [@assemat2019]) were set to Late Eocene (33.9-41.2 Ma). Same for all occurrences from the 144474 collection, including one *Chachapoyamys kathetos* [@boivin2021], one *Eoespina sp.* [@antoine2012], one *Canaanimys maquiensis* [@antoine2012] and one *Eobranisamys javierpardoi* [@boivin2017].      
+Ages of all occurrences from the collection 149523 were restricted to Rupelian. These included two *Cachiacuy kummeli* occurrences [@arnal2020], one *Canaanimys maquiensis* [@arnal2020], one *Eobranisamys riverai*, one *Eobranisamys romeropittmanae*, one *Eoespina woodi*, one *Eoincamys ameghinoi*, one *Eoincamys pascuali*, one *Eopicure kraglievichi*, one *Eosachacui lavocati*, one *Eosallamys paulacoutoi*, one *Eosallamys simpsoni* [@frailey2004], one *Pozomys sp.*, two *Pozomys ucayalensis* [@arnal2020], one *Eodelphomys almeidacomposi*, one *Eopululo wigmorei* [@frailey2004].  
+Ages of two *Sallamys pascuali* occurrences (coll. nb. 95688, [@lavocat1976]; 133539, [@patterson1982]), three *Branisamys luribayensis* (coll. nb. 95688 [@lavocat1976]; 95688 [@hartenberger1975]; 133539 [@patterson1982]) were sharpened to the 25-26 Ma interval.  
+Ages of one *Pozomys ucayalensis* (coll. nb. 176129, [@boivin2017]) were set to Late Eocene (33.9-41.2 Ma). 
+Ages of two *Eoespina sp.* occurrences (coll. nb. 176140, [@boivin2017]) was restricted to Late Eocene.  
+Age of two *Eoespina sp.* occurrences (coll. nb. 207062 and 207065, [@assemat2019]) was set to Rupelian.
+
 
 
 # Sparassodonta 
