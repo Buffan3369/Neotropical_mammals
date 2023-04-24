@@ -90,7 +90,8 @@ All mentions of *Mammut* were removed.
 ## Added Occurrences
 *Ricardomys longidens*, Laventan age, San Martín department, Peru [@boivin2021].  
 *Microscleromys sp.* (two occurrences), *Microscleromys cribriphilus*, *Microscleromys paradoxalis*, *Microsteiromys jacobsi*, *Nuyayomys chinqaska*, *Scleromys*, Laventan age, San Martín department, Peru [@boivin2021].  
-*Balsayacuy sp.*, Rupelian age (restricted to the 27.82-31.1 Ma interval), Departamento de Ucayali, Santa Rosa locality, Peru [@arnal2022]. Described as an occurrence of *Balsayacuy huallagaensis*, but species attribution doubtful. Hence, restricted to genus level. From the same paper (same locality and same age), we also add one occurrence of *Shapajamys minor*, one of *Ucayalimys amahuacensis* and one of *Vucetichimys pterilophodonica*.
+*Balsayacuy sp.*, Rupelian age (restricted to the 27.82-31.1 Ma interval), Departamento de Ucayali, Santa Rosa locality, Peru [@arnal2022]. Described as an occurrence of *Balsayacuy huallagaensis*, but species attribution doubtful. Hence, restricted to genus level. From the same paper (same locality and same age), we also add one occurrence of *Shapajamys minor*, one of *Ucayalimys amahuacensis* and one of *Vucetichimys pterilophodonica*.  
+*Erethizon sp.*, Vorohuean (Marplatan) age, Uquía formation, Quebrada de Humahuaca locality, Jujuy state, Argentina [@reguero2007].
 
 ## Corrections
 *Kichkasteiromys raimondii*: age range set to 34-35 Ma.
@@ -102,8 +103,6 @@ Ages of two *Sallamys pascuali* occurrences (coll. nb. 95688, [@lavocat1976]; 13
 Ages of one *Pozomys ucayalensis* (coll. nb. 176129, [@boivin2017]) were set to Late Eocene (33.9-41.2 Ma). 
 Ages of two *Eoespina sp.* occurrences (coll. nb. 176140, [@boivin2017]) was restricted to Late Eocene.  
 Age of two *Eoespina sp.* occurrences (coll. nb. 207062 and 207065, [@assemat2019]) was set to Rupelian.
-
-
 
 # Sparassodonta 
 
