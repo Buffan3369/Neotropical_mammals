@@ -117,7 +117,7 @@ matching <- function(i, match_ds, combined_stages=FALSE){
   if(new_max > ref_max){
     new_max <- ref_max
   }
-  if(new_min > new_max){
+  if(new_min >= new_max){
     new_min <- ref_min
     new_max <- ref_max
   }
