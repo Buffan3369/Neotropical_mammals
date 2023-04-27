@@ -84,7 +84,8 @@ All *Bos taurus* and *Ovis* occurrences were removed, as representatives were in
 
 *Mastotherium hyodon* (coll. nb. 142016, [@boule1920] and 145181, [@schneider1927]) genus named was set to *Cuvieronius*.   
 *Stegomastodon sp.* (coll. nb. 211646, [@ubilla2009]) was synonymised with *Notiomastodon platensis*.  
-All mentions of *Mammut* were removed.
+All mentions of *Mammut* were removed.  
+*Notiomastodon platensis* (coll. nb. 144515, [@campbell2000]), formerly described as *Amahuacatherium peruvianum* was removed as its age was questioned in [@negri2009].
 
 # Rodentia 
 ## Added Occurrences
