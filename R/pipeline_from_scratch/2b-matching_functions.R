@@ -86,17 +86,22 @@ matching <- function(i, match_ds, combined_stages=FALSE){
   #Belongs to La Venta site ?
   if(match_ds$state[i] == "Huila"){
     loc <- match_ds$locality[i]
-    if(strsplit(loc, split = " ")[[1]][2] == "Victoria"){ #can only be "La Victoria"
+    if(strsplit(loc, split = " ")[[1]][2] == "Victoria"){ #"La Victoria" locality 
       ref_min <- 12.58
       ref_max <- 16
     }
-    if(loc %in% c("Villavieja", "Villa Vieja")){
+    if(loc %in% c("Villavieja", "Villa Vieja")){ #Villavieja" locality
       ref_min <- 10.52
       ref_max <- 12.58
     }
   }
-  #Occurrence between two stages?
+  #Belongs to Salla formation?
+  else if(match_ds$formation[i] == "Salla"){
+    ref_min <- 24.5
+    ref_max <- 26
+  }
   else{
+    #Occurrence between two stages?
     if(combined_stages == TRUE){ # Int1-Int2, where Int1 older than Int2
       int <- strsplit(match_ds$stage[i], split = "-")[[1]]
       int1 <- no_blank(int[1])

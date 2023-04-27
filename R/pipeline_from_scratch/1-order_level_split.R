@@ -75,12 +75,19 @@ Litopterna <- read.table("../../DATA/order_level/from_2020_2023_data_combination
 raw_2023$order[which((raw_2023$genus %in% unique(Litopterna$Genus)) | (raw_2023$family %in% unique(Litopterna$Family)) )] <- "Litopterna"
 raw_2023$order[which(raw_2023$genus == "Thoatheriopsis")] <- "Litopterna"
 raw_2023$family[which(raw_2023$genus == "Thoatheriopsis")] <- "Proterotheriidae"
-#set country abbreviation to its actual name
+#set country abbreviation to its actual name ----------------------------
 country_dict <- hash(keys = unique(raw_2023$cc)[order(unique(raw_2023$cc))],
                      values = c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Peru", "Paraguay", "Surinam", "Uruguay", "Venezuela"))
 for(abbrev in keys(country_dict)){
   raw_2023$cc[which(raw_2023$cc == abbrev)] <- as.character(values(country_dict[abbrev]))
 }
+#Assign status ----------------------------------------------------------
+  #extinct orders (nb. Microbiotheria, Paucituberculata, Proboscidea are extant orders but without extant representative in our ds)
+extinct_orders <- c("Litopterna", "Notoungulata", "Xenungulata", "Sparassodonta", "Pyrotheria", "Cimolesta",
+                    "Gondwanatheria", "Polydolopimorphia", "Proboscidea", "Astrapotheria", "Microbiotheria", "Paucituberculata")
+gns$status[which(gns$order %in% extinct_orders)] <- "extinct"
+#for the rest, by hand
+
 #write and save order-level lists
 for(order in unique(raw_2023$order)){
   tmp_order <- raw_2023[which(raw_2023$order == order), ]
