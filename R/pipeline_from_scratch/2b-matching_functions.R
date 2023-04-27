@@ -83,30 +83,44 @@ get_ref <- function(int){ #pick the reference boundaries from a stage
   }
 }
 matching <- function(i, match_ds, combined_stages=FALSE){
+  #Belongs to La Venta site ?
+  if(match_ds$state[i] == "Huila"){
+    loc <- match_ds$locality[i]
+    if(strsplit(loc, split = " ")[[1]][2] == "Victoria"){ #can only be "La Victoria"
+      ref_min <- 12.58
+      ref_max <- 16
+    }
+    if(loc %in% c("Villavieja", "Villa Vieja")){
+      ref_min <- 10.52
+      ref_max <- 12.58
+    }
+  }
   #Occurrence between two stages?
-  if(combined_stages == TRUE){ # Int1-Int2, where Int1 older than Int2
-    int <- strsplit(match_ds$stage[i], split = "-")[[1]]
-    int1 <- no_blank(int[1])
-    int2 <- no_blank(int[2])
-    ref_min <- get_ref(int2)[[2]]
-    if((length(strsplit(int2, split = " ")[[1]]) == 2) & (int1 %in% c("Early", "Middle", "Late"))){ #e.g. "Middle-Late Paleocene": int1 = "Middle", int2 = "Late Paleocene" => strsplit(int2, split = " ")) = ["Late", "Paleocene"]
-      epoch <- strsplit(int2, split = " ")[[1]][2]
-      ref_max <- get_ref(paste(int1, epoch, sep = " "))[[1]]
-    }
-    else{ #either e.g. "Late Pleistocene-Late Holocene" or "Pleistocene-Holocene"
-      ref_max <- get_ref(int1)[[1]]
-    }
-  }
   else{
-    ref_min <- get_ref(match_ds$stage[i])[[2]]
-    ref_max <- get_ref(match_ds$stage[i])[[1]]
-  }
-  #Fix the case where NAs are returned (unknown interval)
-  if(is.na(ref_min)){
-    ref_min <- as.numeric(match_ds$min_ma[i])
-  }
-  if(is.na(ref_max)){
-    ref_max <- as.numeric(match_ds$max_ma[i])
+    if(combined_stages == TRUE){ # Int1-Int2, where Int1 older than Int2
+      int <- strsplit(match_ds$stage[i], split = "-")[[1]]
+      int1 <- no_blank(int[1])
+      int2 <- no_blank(int[2])
+      ref_min <- get_ref(int2)[[2]]
+      if((length(strsplit(int2, split = " ")[[1]]) == 2) & (int1 %in% c("Early", "Middle", "Late"))){ #e.g. "Middle-Late Paleocene": int1 = "Middle", int2 = "Late Paleocene" => strsplit(int2, split = " ")) = ["Late", "Paleocene"]
+        epoch <- strsplit(int2, split = " ")[[1]][2]
+        ref_max <- get_ref(paste(int1, epoch, sep = " "))[[1]]
+      }
+      else{ #either e.g. "Late Pleistocene-Late Holocene" or "Pleistocene-Holocene"
+        ref_max <- get_ref(int1)[[1]]
+      }
+    }
+    else{
+      ref_min <- get_ref(match_ds$stage[i])[[2]]
+      ref_max <- get_ref(match_ds$stage[i])[[1]]
+    }
+    #Fix the case where NAs are returned (unknown interval)
+    if(is.na(ref_min)){
+      ref_min <- as.numeric(match_ds$min_ma[i])
+    }
+    if(is.na(ref_max)){
+      ref_max <- as.numeric(match_ds$max_ma[i])
+    }
   }
   #Compare current boundaries to reference
   new_min <- as.numeric(match_ds$min_ma[i])
