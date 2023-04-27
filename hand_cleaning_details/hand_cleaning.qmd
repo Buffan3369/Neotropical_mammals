@@ -24,7 +24,8 @@ editor:
 *Palaeolama sp.* (coll. nb. 213138, [@rusconi1949]), *Lama castelnaudi* (coll. nb. 213136, [@rusconi1949]) and *Palaeolama weddeli* (coll. nb. 213136, [@rusconi1949]) age ranges were set to Early Pleistocene, according to [@pascual1965].  
 All *Bos taurus* and *Ovis* occurrences were removed, as representatives were introduced by humans.  
 *Antifer crassus* (coll. nb. 53926, [@rusconi1934]) time range was set to Pleistocene according to [@croitor2022].
-*Platygonus narinoensis* (coll. nb. 133585, [@stirton1947]) was renamed *Platygonus cf. marplatensis* according to [@gasparini2021].
+*Platygonus narinoensis* (coll. nb. 133585, [@stirton1947]) was renamed *Platygonus cf. marplatensis* according to [@gasparini2021].  
+All occurrences of *Cervus gouazoubira* were renamed *Mazama gouazoubira*.
 
 
 # Astrapotheria
@@ -36,6 +37,8 @@ All *Bos taurus* and *Ovis* occurrences were removed, as representatives were in
 *Astrapotherium* (coll. nb. 50074, [@tournouer1903]) re-assigned to Santacrucian.
 
 # Carnivora
+
+Removed *Felis domesticus* (coll. nb. 190846, [@steadman1986]) as introduced by humans.
 
 # Cetacea
 
@@ -109,7 +112,8 @@ Ages of two *Eoespina sp.* occurrences (coll. nb. 176140, [@boivin2017]) was res
 Ages of one *Eoespina* and one *cf. Eoespina* occurrence (coll. nb. 207062 and 207065, [@assemat2019]) were set to Rupelian.  
 *Eoincamys pascuali* (coll. nb. 207064, [@assemat2019]) was renamed *Eonincamys sp.*.
 Age range of all Late Oligocene occurrences from the Salla formation, La Paz, Bolivia, was set to 24.5-26 Ma.
-*Eopululo wigmorei* (coll. nb. 225588, [@antoine2021]) species name was set to *Eopululo sp.* according to [@boivin2021].
+*Eopululo wigmorei* (coll. nb. 225588, [@antoine2021]) species name was set to *Eopululo sp.* according to [@boivin2021].  
+Names of all *Eumysops chapalmalensis* occurrences were set to *Eumysops chapadmalensis*.
 
 ## Removed occurrences
 *Cachiyacuy kummeli* (coll. nb. 207067, [@assemat2019]), renamed *C. cf. kummeli* (doublon) according to [@boivin2021].  
@@ -119,7 +123,8 @@ Age range of all Late Oligocene occurrences from the Salla formation, La Paz, Bo
 Four Brazilian occurrences of the genera *Eobranisamys* (two) and *Eoincamys* (two) with absurd ages (coll. nb. 57989, [@kerber2017]; coll. nb. 217834, [@lacerda2021]).  
 *Tarapotomys sp.* (2 occurrences) (coll. nb. 199560, [@boivin2018]; coll. nb. 199563, [@antoine2021]), respectively re-described as *aff. Tarapotomys sp.* and *Tarapotomys subandinus* in [@boivin2021].  
 *Incamys bolivianus* (coll. nb. 95688, [@lavocat1976]), doulon.  
-*Asteromys bolivianus* (coll. nb. 133591, [@perez2019]), doublon.
+*Asteromys bolivianus* (coll. nb. 133591, [@perez2019]), doublon.  
+All *Rattus rattus* occurrences, as introduced by humans.
 
 # Sparassodonta 
 
