@@ -19,8 +19,7 @@ write.table(x = all_in,
             sep = "\t",
             na = "",
             row.names = FALSE,
-            quote = FALSE,
-            dec = ",")
+            quote = FALSE)
 ## One place, one time, one occurrence -----------------------------------------
 # (several occurrences of the same genus in the same place at the same time will be considered as one)
 just_one <- function(genus, sp_ds){
@@ -85,8 +84,7 @@ write.table(x = final_unique,
             sep = "\t",
             na = "",
             row.names = FALSE,
-            quote = FALSE,
-            dec = ",")
+            quote = FALSE)
 ## Order-level split -----------------------------------------------------------
   #we exclude orders with too few occurrences
 for(order in unique(species_list$order)[!(unique(species_list$order) %in% c("Lagomorpha","Dasyuromorphia", "Eulypotyphla", "Monotremata", "Xenungulata", "Cimolesta", "Gondwanatheria"))]){
@@ -99,8 +97,7 @@ for(order in unique(species_list$order)[!(unique(species_list$order) %in% c("Lag
                 sep = "\t",
                 na = "",
                 row.names = FALSE,
-                quote = FALSE,
-                dec = ",")
+                quote = FALSE)
   }
 }
 ## Infra-order split -----------------------------------------------------------
@@ -117,8 +114,7 @@ for(key in keys(dict)){
               sep = "\t",
               na = "",
               row.names = FALSE,
-              quote = FALSE,
-              dec = ",")
+              quote = FALSE)
 }
 ## Marine taxa -----------------------------------------------------------------
 marine <- read_xlsx("../../DATA/order_level/matched_order_level/species_list.xlsx")[marine_idx, ]
@@ -130,8 +126,7 @@ write.table(x = all_mar,
             sep = "\t",
             na = "",
             row.names = FALSE,
-            quote = FALSE,
-            dec = ",")
+            quote = FALSE)
   #One place, one time, one occurrence
 apply_unique_mar <- lapply(X = unique(marine$genus),
                            FUN = just_one,
@@ -147,8 +142,7 @@ write.table(x = final_unique_mar,
             sep = "\t",
             na = "",
             row.names = FALSE,
-            quote = FALSE,
-            dec = ",")
+            quote = FALSE)
   #Order-level
 for(order in c("Sirenia", "Cetacea")){
   order_split <- marine[which(marine$order == order), ]
@@ -159,6 +153,21 @@ for(order in c("Sirenia", "Cetacea")){
               sep = "\t",
               na = "",
               row.names = FALSE,
-              quote = FALSE,
-              dec = ",")
+              quote = FALSE)
+}
+
+## Extract ages using Silvestro et al. function (for PyRate output) ------------
+source("../../pyrate_utilities.R")
+for(file in c("./data_2023/PyRate/cleaning_20-04/all_in_one.txt",
+              "./data_2023/PyRate/cleaning_20-04/one_place-one_time-one_occ.txt")){
+  extract.ages(file, replicates = 10)
+}
+for(file in list.files("./data_2023/PyRate/cleaning_20-04/order_level/")){
+  extract.ages(paste0("./data_2023/PyRate/cleaning_20-04/order_level/", file), replicates = 10)
+}
+for(file in list.files("./data_2023/PyRate/cleaning_20-04/infra_order_level/")){
+  extract.ages(paste0("./data_2023/PyRate/cleaning_20-04/infra_order_level/", file), replicates = 10)
+}
+for(file in list.files("./data_2023/PyRate/cleaning_20-04/marine/")){
+  extract.ages(paste0("./data_2023/PyRate/cleaning_20-04/marine/", file), replicates = 10)
 }
