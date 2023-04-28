@@ -89,6 +89,7 @@ for(file in list.files("../../DATA/raw/order_level/")){
   raw$stage[which(raw$stage == "upper “Huayquerian”")] <- "Huayquerian"
   raw$stage[which(raw$stage %in% c("Barran", "Vorohuean", "Sanandresian", "Vorohuean - Sanandresian"))] <- "Marplatan"
   ## 2 Matching with GTS and SALMA scales ---------------------------------------------------------------
+  #Big matching
   for(i in 1:nrow(raw)){
     #print(i)
     hyphen_split <- strsplit(raw$stage[i], split = "-")[[1]] #split according to hyphen, otherwise mixed intervals (e.g. "Danian-Selandian") won't be recognised
@@ -100,6 +101,12 @@ for(file in list.files("../../DATA/raw/order_level/")){
     }
     raw$min_ma[i] <- new_MinMax[[1]]
     raw$max_ma[i] <- new_MinMax[[2]]
+  }
+  #Backtracing La Venta and Salla age boundaries (based on Mora-Rojas et al. 2023)
+  for(idx in which(raw$state %in% c("Huila", "La Paz"))){
+    MinMax <- VentaSalla(idx, match_ds = raw)
+    raw$min_ma[idx] <- MinMax[[1]]
+    raw$max_ma[idx] <- MinMax[[2]]
   }
   ## 3-Reorganising columns ----------------------------------------------------------------------------
   #reorder columns

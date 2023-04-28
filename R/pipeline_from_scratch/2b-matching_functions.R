@@ -83,49 +83,30 @@ get_ref <- function(int){ #pick the reference boundaries from a stage
   }
 }
 matching <- function(i, match_ds, combined_stages=FALSE){
-  #Belongs to La Venta site ?
-  if(match_ds$state[i] == "Huila"){
-    loc <- match_ds$locality[i]
-    if(strsplit(loc, split = " ")[[1]][2] == "Victoria"){ #"La Victoria" locality 
-      ref_min <- 12.58
-      ref_max <- 16
+  #Occurrence between two stages?
+  if(combined_stages == TRUE){ # Int1-Int2, where Int1 older than Int2
+    int <- strsplit(match_ds$stage[i], split = "-")[[1]]
+    int1 <- no_blank(int[1])
+    int2 <- no_blank(int[2])
+    ref_min <- get_ref(int2)[[2]]
+    if((length(strsplit(int2, split = " ")[[1]]) == 2) & (int1 %in% c("Early", "Middle", "Late"))){ #e.g. "Middle-Late Paleocene": int1 = "Middle", int2 = "Late Paleocene" => strsplit(int2, split = " ")) = ["Late", "Paleocene"]
+      epoch <- strsplit(int2, split = " ")[[1]][2]
+      ref_max <- get_ref(paste(int1, epoch, sep = " "))[[1]]
     }
-    if(loc %in% c("Villavieja", "Villa Vieja")){ #Villavieja" locality
-      ref_min <- 10.52
-      ref_max <- 12.58
+    else{ #either e.g. "Late Pleistocene-Late Holocene" or "Pleistocene-Holocene"
+      ref_max <- get_ref(int1)[[1]]
     }
-  }
-  #Belongs to Salla formation?
-  else if(match_ds$formation[i] == "Salla"){
-    ref_min <- 24.5
-    ref_max <- 26
   }
   else{
-    #Occurrence between two stages?
-    if(combined_stages == TRUE){ # Int1-Int2, where Int1 older than Int2
-      int <- strsplit(match_ds$stage[i], split = "-")[[1]]
-      int1 <- no_blank(int[1])
-      int2 <- no_blank(int[2])
-      ref_min <- get_ref(int2)[[2]]
-      if((length(strsplit(int2, split = " ")[[1]]) == 2) & (int1 %in% c("Early", "Middle", "Late"))){ #e.g. "Middle-Late Paleocene": int1 = "Middle", int2 = "Late Paleocene" => strsplit(int2, split = " ")) = ["Late", "Paleocene"]
-        epoch <- strsplit(int2, split = " ")[[1]][2]
-        ref_max <- get_ref(paste(int1, epoch, sep = " "))[[1]]
-      }
-      else{ #either e.g. "Late Pleistocene-Late Holocene" or "Pleistocene-Holocene"
-        ref_max <- get_ref(int1)[[1]]
-      }
-    }
-    else{
-      ref_min <- get_ref(match_ds$stage[i])[[2]]
-      ref_max <- get_ref(match_ds$stage[i])[[1]]
-    }
-    #Fix the case where NAs are returned (unknown interval)
-    if(is.na(ref_min)){
-      ref_min <- as.numeric(match_ds$min_ma[i])
-    }
-    if(is.na(ref_max)){
-      ref_max <- as.numeric(match_ds$max_ma[i])
-    }
+    ref_min <- get_ref(match_ds$stage[i])[[2]]
+    ref_max <- get_ref(match_ds$stage[i])[[1]]
+  }
+  #Fix the case where NAs are returned (unknown interval)
+  if(is.na(ref_min)){
+    ref_min <- as.numeric(match_ds$min_ma[i])
+  }
+  if(is.na(ref_max)){
+    ref_max <- as.numeric(match_ds$max_ma[i])
   }
   #Compare current boundaries to reference
   new_min <- as.numeric(match_ds$min_ma[i])
@@ -142,4 +123,57 @@ matching <- function(i, match_ds, combined_stages=FALSE){
   }
   return(list(new_min, new_max))
 }
-
+VentaSalla <- function(i, match_ds){
+  #Belongs to La Venta site or Salla formation?
+  if(match_ds$state[i] %in% c("Huila", "La Paz")){
+    #formation scanning
+    if(is.na(match_ds$formation[i]) == FALSE){
+      if("Victoria" %in% strsplit(match_ds$formation[i], split = " ")[[1]]){ #"La Victoria" 
+        new_min <- 12.58
+        new_max <- 16
+      }
+      else if( ("Villavieja" %in% strsplit(match_ds$formation[i], split = " ")[[1]]) |
+               ("Vieja" %in% strsplit(match_ds$formation[i], split = " ")[[1]]) ){ #"Villavieja"
+        new_min <- 10.52
+        new_max <- 12.58
+      }
+      else if(match_ds$formation[i] == "Salla"){
+        new_min <- 24.5
+        new_max <- 26
+      }
+      else{
+        new_min <- as.numeric(match_ds$min_ma[i])
+        new_max <- as.numeric(match_ds$max_ma[i])
+      }
+    }
+    #locality scanning
+    if(is.na(match_ds$locality[i]) == FALSE){
+      if("Victoria" %in% strsplit(match_ds$locality[i], split = " ")[[1]]){ #"La Victoria" 
+        new_min <- 12.58
+        new_max <- 16
+      }
+      else if( ("Villavieja" %in% strsplit(match_ds$locality[i], split = " ")[[1]]) |
+               ("Vieja" %in% strsplit(match_ds$locality[i], split = " ")[[1]]) ){ #"Villavieja"
+        new_min <- 10.52
+        new_max <- 12.58
+      }
+      else if(match_ds$locality[i] == "Salla"){
+        new_min <- 24.5
+        new_max <- 26
+      }
+      else{
+        new_min <- as.numeric(match_ds$min_ma[i])
+        new_max <- as.numeric(match_ds$max_ma[i])
+      } 
+    }
+    else{
+      new_min <- as.numeric(match_ds$min_ma[i])
+      new_max <- as.numeric(match_ds$max_ma[i])
+    }
+    return(list(new_min, new_max))
+  }
+  else{
+    warning(paste0("Unappropriate site: ", match_ds$cc[i], ", ", match_ds$state[i]))
+    return(list(as.numeric(match_ds$min_ma[i]), as.numeric(match_ds$max_ma[i])))
+  }
+}
