@@ -87,6 +87,8 @@ for(file in list.files("../../DATA/raw/order_level/")){
   raw$stage[which(raw$stage == "Pliocene-Middle Pleistocene")] <- "Early Pliocene-Middle Pleistocene"
   raw$stage[which(raw$stage == "lower “Huayquerian”")] <- "Huayquerian"
   raw$stage[which(raw$stage == "upper “Huayquerian”")] <- "Huayquerian"
+  raw$stage[which(raw$stage == "Divisaderan")] <- "Middle Eocene"
+  raw$stage[which(raw$stage == "Casamayoran")] <- "Middle Eocene"
   raw$stage[which(raw$stage %in% c("Barran", "Vorohuean", "Sanandresian", "Vorohuean - Sanandresian"))] <- "Marplatan"
   ## 2 Matching with GTS and SALMA scales ---------------------------------------------------------------
   #Big matching
