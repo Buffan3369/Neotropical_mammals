@@ -11,6 +11,7 @@ gts_stage_bins <- palaeoverse::time_bins(interval = "Cenozoic", rank = "stage") 
 gts_early_late <- data.frame(read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")) #GTS with Early/Mid/Late epochs
 gts_epoch_bins <- palaeoverse::time_bins(interval = "Cenozoic", rank = "epoch") #GTS epochs
 salma_bins <- data.frame(read_xlsx("./data_2023/time_bins/SALMA.xlsx")) #SALMA
+salma_bins <- salma_bins[-which(salma_bins$interval_name == "GAP"), ] #remove gaps
 
 #Accessory functions
 source("./R/pipeline_from_scratch/2b-matching_functions.R")
