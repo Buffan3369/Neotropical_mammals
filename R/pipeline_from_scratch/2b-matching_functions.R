@@ -29,22 +29,7 @@ process_ref <- function(reference){
 ## Remove white space(s) before/after interval names in "Int1 - Int2"-like cases --------------------
 no_blank <- function(str){
   spl <- strsplit(str, split = "")[[1]]
-  to_drop <- c()
-  if(spl[1] == " "){
-    i <- 1
-    while(spl[i] == " "){ #in case several successive spaces
-      to_drop <- c(to_drop, i)
-      i <- i+1
-    }
-  }
-  if(spl[nchar(str)] == " "){ #same
-    i <- nchar(str)
-    to_drop <- c(i)
-    while(spl[i] == " "){
-      to_drop <- c(to_drop, i)
-      i <- i-1
-    }
-  }
+  to_drop <- which(spl == " ")
   cleaned_str <- "" 
   for(i in (1:nchar(str))[!((1:nchar(str)) %in% to_drop)]){
     cleaned_str <- paste0(cleaned_str, spl[i])
