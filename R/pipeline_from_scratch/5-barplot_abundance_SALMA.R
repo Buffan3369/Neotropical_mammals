@@ -15,10 +15,6 @@ SALMA$max_ma <- unlist(lapply(X = SALMA$max_ma, FUN = round))
 
 spl <- read_xlsx("../../DATA/order_level/matched_order_level/Full_species_list_former_SALMA.xlsx")
 
-  #add all south-american extant genera
-  #bin at the sub-epoch level
-
-
 spl$stage <- unlist(lapply(spl$stage, no_blank))
 
 in_SALMA <- function(stage){
