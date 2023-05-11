@@ -1,7 +1,13 @@
-# Flag the files we want to keep for plotting with the "KEEP" key
-#setwd("/media/lucas/SAMSUNG/Internship_ISEM/Neotropical_Mammals/PyRate_outputs/20_04/")
-library(readxl)
+################################################################################
+######################## PyRate outputs treatment ##############################
+################################################################################
 
+library(readxl)
+library(dplyr)
+library(palaeoverse)
+
+## Flag the files we want to keep for plotting with the "KEEP" key -------------
+  #renaming funtion
 rename_file <- function(name, drop_idx){
   spl <- strsplit(x = name, split = "_")[[1]]
   if("KEEP" %in% spl){
@@ -26,9 +32,9 @@ rename_file <- function(name, drop_idx){
     }
   }
 }
-
+  #IDs of the runs to exclude
 runs_to_exclude <- read_xlsx(file = "./data_2023/excluded_runs.xlsx")[, -c(1)] #rows represent replicate number
-
+  #execute
 for(i in 1:length(colnames(runs_to_exclude))){
   #target selected clade
   key <- colnames(runs_to_exclude)[i]
