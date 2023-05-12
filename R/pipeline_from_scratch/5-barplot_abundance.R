@@ -1,12 +1,13 @@
 ################################################################################
 ################ Barplots for occurrence abundance in SALMA ####################
 ################################################################################
-
 library(readxl)
 library(ggplot2)
 library(deeptime)
 library(dplyr)
-
+#############
+### SALMA ###
+#############
 source("./R/pipeline_from_scratch/2b-matching_functions.R")
 
 SALMA <- data.frame(read_xlsx("./data_2023/time_bins/SALMA.xlsx"))
@@ -58,7 +59,7 @@ bplt <- function(count_df, name, ymax){
          y = "Number of occurrences") +
     ggtitle(name) +
     geom_segment(aes(x = 0, xend = 66, y = 0, yend = 0)) + 
-    geom_segment(aes(x = 66, xend = 66, y = 0, yend = 1200)) +
+    geom_segment(aes(x = 66, xend = 66, y = 0, yend = ymax)) +
     theme(plot.margin = margin(5, 10, 5, 10, "mm"),
           title = element_text(size = 18, hjust = 0.5),
           axis.title.x = element_text(size = 14),
@@ -208,3 +209,113 @@ ggsave("C:/Users/lucas/OneDrive/Bureau/Internship_ISEM/presentations/results_11-
        units = "mm",
        dpi = 600)
 
+#################
+### Sub-epoch ###
+#################
+rm(list = ls())
+## Load Sub-Epoch bins ---------------------------------------------------------
+Sub_Epochs_bins <- data.frame(read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx"))
+  #Collapse Holocene and Pleistocene 
+Sub_Epochs_bins[1,] <- c("Holocene", 0, 0.0117)
+Sub_Epochs_bins[2,] <- c("Pleistocene", 0.0117, 2.58)
+Sub_Epochs_bins <- Sub_Epochs_bins[-c(3:6), ]
+row.names(Sub_Epochs_bins) <- 1:nrow(Sub_Epochs_bins)
+  #fix weird issue
+Sub_Epochs_bins$min_ma <- unlist(lapply(X = Sub_Epochs_bins$min_ma, FUN = as.numeric))
+Sub_Epochs_bins$max_ma <- unlist(lapply(X = Sub_Epochs_bins$max_ma, FUN = as.numeric))
+  #add abbreviation column
+Sub_Epochs_bins <- Sub_Epochs_bins %>% add_column(abbr = c("H", "Ple", "L.Pl", "E.Pl", "L.M", "M.M", "E.M", "L.O",
+                                                           "E.O", "L.E", "M.E", "E.E", "L.Pal", "M.Pal", "E.Pal"))
+Sub_Epochs_bins <- Sub_Epochs_bins %>% add_column(color = c("#FDECE4", "#FFF2C7", "#FFFFBF", "#FFFFB3", "#FFFF66","#FFFF4D",
+                                                            "#FFFF33", "#FEE6AA", "#FED99A", "#FDC091", "#FDB482", "#FCA773",
+                                                            "#FDBF6F", "#FEBF65", "#FDB462"))
+  #rename
+Sub_Epochs_bins <- Sub_Epochs_bins %>% rename(name = "interval_name", max_age = "max_ma", min_age = "min_ma")
+  #round ages at the 10^-2 level for plotting
+Sub_Epochs_bins$min_age <- unlist(lapply(X = Sub_Epochs_bins$min_age, FUN = round, digits = 2))
+Sub_Epochs_bins$max_age <- unlist(lapply(X = Sub_Epochs_bins$max_age, FUN = round, digits = 2))
+## Barplot function ------------------------------------------------------------
+bplt <- function(count_df, name, ymax){
+  p <- ggplot(data = count_df, aes(x = time, y = count)) +
+    geom_bar(stat = "identity", width = 1, fill = "black") +
+    scale_x_reverse(limits = c(66, -1),
+                    breaks = c(66, 61.6, 59.2, 56, 47.8, 41.2, 33.9, 27.82, 23.03, 15.97, 11.63, 5.33, 3.6, 2.58, 0.01),
+                    labels = c(66, 61.6, 59.2, 56, 47.8, 41.2, 33.9, 27.82, 23.03, 15.97, 11.63, 5.333, 3.6, 2.58, 0.0117)) +
+    scale_y_continuous(breaks = seq(from = 0, to = ymax, by = 200)) +
+    labs(x = "Time (Ma)",
+         y = "Number of occurrences") +
+    ggtitle(name) +
+    geom_segment(aes(x = 0, xend = 66, y = 0, yend = 0)) + 
+    geom_segment(aes(x = 66, xend = 66, y = 0, yend = ymax)) +
+    theme(plot.margin = margin(5, 10, 5, 10, "mm"),
+          title = element_text(size = 18, hjust = 0.5),
+          axis.title.x = element_text(size = 14),
+          axis.title.y = element_text(size = 14),
+          axis.text = element_text(size = 12),
+          panel.background = element_blank()) +
+    deeptime::coord_geo(pos = "bottom", dat = Sub_Epochs_bins, size = 4, height = unit(1.5, "line"), skip = c("Gelasian", "Calabrian", "Chibanian", "Upper Pleistocene", "LP", "Greenlandian", "Northgrippian", "Meghalayan"))
+  return(p)
+}
+
+## Create abundance plot -------------------------------------------------------
+spl <- read.table(file = "../../DATA/order_level/Sub_Epoch_Binning/full_list_SUBEPOCH_without_Xenarthra.txt",
+                  header = TRUE,
+                  quote = "",
+                  sep = "\t",
+                  na = "",
+                  dec = ",")
+count_df <- data.frame(cat = NA,
+                       count = rep(0, 6601),
+                       time = seq(from = 0, to = 66, by = 0.01))
+  #remove the 609 occurrences on a hybrid interval (for facility, won't change the overall result)
+hybrid_spotter <- function(stage){
+  spl <- strsplit(stage, split = "-")[[1]]
+  if(length(spl) > 1){
+    return(stage)
+  }
+}
+hyb <- unlist(lapply(X = spl$stage, FUN = hybrid_spotter))
+spl <- spl[-which(spl$stage %in% unique(hyb)), ]
+  #fill the "cat" column
+for(t in seq(from = 0, to = 65.99, by = 0.01)){
+  mid <- (2*t+0.01)/2
+  count_df$cat[t*100] <- Sub_Epochs_bins$name[which((Sub_Epochs_bins$min_age < mid) & (Sub_Epochs_bins$max_age > mid))]
+}
+count_df$cat[1] <- "Holocene"
+count_df$cat[c(6599, 6600, 6601)] <- "Early Paleocene"
+  #erase the last "NAs"
+for(i in which(is.na(count_df$cat))){
+  if((is.na(count_df$cat[i-1]) == FALSE) & (is.na(count_df$cat[i+1]) == FALSE)){
+    count_df$cat[i] <- count_df$cat[i-1]
+  }
+}
+  #fill the "count" column (6797 occ un total)
+for(sub_ep in unique(spl$Sub_epoch)){
+  idx <- which(count_df$cat == sub_ep)
+  count_df$count[idx] <- count_df$count[idx] + length(which(spl$Sub_epoch == sub_ep))
+}
+  #fill the "count" column in the genus case (number of genera through time, 1142 in total)
+count_df_gen <- count_df
+count_df_gen$count <- rep(0, 6601)
+for(sub_ep in unique(spl$Sub_epoch)){
+  unique_gen <- unique(spl$genus[which(spl$Sub_epoch == sub_ep)])
+  idx <- which(count_df_gen$cat == sub_ep)
+  count_df_gen$count[idx] <- count_df_gen$count[idx] + length(unique_gen)
+#  print(paste0(length(unique_gen), " genera in the ", sub_ep))
+}
+ #plots
+p_occ <- bplt(count_df = count_df, name = "All Occurrences", ymax = 1600)
+ggsave("./figures/Sub_Epoch_binned_occurrences_without_Xenarthra.png",
+       plot = p_occ,
+       height = 220,
+       width = 400,
+       units = "mm",
+       dpi = 600)
+
+p_gen <- bplt(count_df = count_df_gen, name = "All Genera", ymax = 300)
+ggsave("./figures/Sub_Epoch_binned_genera_without_Xenarthra.png",
+       plot = p_gen,
+       height = 220,
+       width = 400,
+       units = "mm",
+       dpi = 600)
