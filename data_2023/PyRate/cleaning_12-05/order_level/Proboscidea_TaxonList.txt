@@ -1,0 +1,3 @@
+Species	Status
+Cuvieronius	extinct
+Notiomastodon	extinct

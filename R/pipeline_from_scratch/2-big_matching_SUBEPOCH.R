@@ -9,7 +9,7 @@ library(palaeoverse)
 ## Load and custom species list ------------------------------------------------
 spl <- data.frame(read_xlsx("../../DATA/order_level/matched_order_level/Full_species_list_former_SALMA.xlsx"))
   #re-create "period" column
-period_bins <- time_bins(interval = "Cenozoic", rank = "period")
+period_bins <- palaeoverse::time_bins(interval = "Cenozoic", rank = "period") #creates time bins based on the GTS2020 at the period
 binning <- palaeoverse::bin_time(occdf = data.frame(max_ma = spl$max_ma,
                                                     min_ma = spl$min_ma),
                                  bins = period_bins,

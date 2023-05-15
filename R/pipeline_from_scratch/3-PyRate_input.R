@@ -5,8 +5,21 @@
 ## Load libraries --------------------------------------------------------------
 library(readxl)
 library(hash)
+#date <- "20-04"
+date <- "12-05"
+
 ## Species list (non-marine) ---------------------------------------------------
-species_list <- read_xlsx("../../DATA/order_level/matched_order_level/species_list.xlsx")
+if(date == "20-04"){
+  species_list <- read_xlsx("../../DATA/order_level/matched_order_level/Full_species_list_former_SALMA.xlsx") 
+}
+if(date == "12-05"){
+  species_list <- read.table("../../DATA/order_level/Sub_Epoch_Binning/full_list_SUBEPOCH_without_Xenarthra.txt",
+                             header = TRUE, 
+                             dec = ",", 
+                             sep = "\t", 
+                             quote = "", 
+                             fill = TRUE)
+}
   #exclude marine taxa
 marine_idx <- which((species_list$order %in% c("Cetacea", "Sirenia")) |
                       (species_list$family %in% c("Otariidae", "Phocidae", "Odobenidae")))
@@ -15,7 +28,7 @@ species_list <- species_list[-marine_idx, ]
 all_in <- species_list[, c("genus", "gen_lvl_status", "min_ma", "max_ma")]
 colnames(all_in) <- c("Species", "Status", "min_age", "max_age")
 write.table(x = all_in,
-            file = "./data_2023/PyRate/cleaning_20-04/all_in_one.txt",
+            file = paste0("./data_2023/PyRate/cleaning_", date, "/all_in_one.txt"),
             sep = "\t",
             na = "",
             row.names = FALSE,
@@ -80,11 +93,12 @@ for(i in 2:length(apply_unique)){
 final_unique <- final_unique[, c("genus", "gen_lvl_status", "min_ma", "max_ma")]
 colnames(final_unique) <- c("Species", "Status", "min_age", "max_age")
 write.table(x = final_unique,
-            file = "./data_2023/PyRate/cleaning_20-04/one_place-one_time-one_occ.txt",
+            file = paste0("./data_2023/PyRate/cleaning_", date, "/one_place-one_time-one_occ.txt"),
             sep = "\t",
             na = "",
             row.names = FALSE,
             quote = FALSE)
+
 ## Order-level split -----------------------------------------------------------
   #we exclude orders with too few occurrences
 for(order in unique(species_list$order)[!(unique(species_list$order) %in% c("Lagomorpha","Dasyuromorphia", "Eulypotyphla", "Monotremata", "Xenungulata", "Cimolesta", "Gondwanatheria"))]){
@@ -93,7 +107,7 @@ for(order in unique(species_list$order)[!(unique(species_list$order) %in% c("Lag
     pyrate_input <- order_split[, c("genus", "gen_lvl_status", "min_ma", "max_ma")]
     colnames(pyrate_input) <- c("Species", "Status", "min_age", "max_age")
     write.table(x = pyrate_input,
-                file = paste0("./data_2023/PyRate/cleaning_20-04/order_level/", order, ".txt"),
+                file = paste0("./data_2023/PyRate/cleaning_", date, "/order_level/", order, ".txt"),
                 sep = "\t",
                 na = "",
                 row.names = FALSE,
@@ -110,7 +124,7 @@ for(key in keys(dict)){
   pyrate_input <- group_split[, c("genus", "gen_lvl_status", "min_ma", "max_ma")]
   colnames(pyrate_input) <- c("Species", "Status", "min_age", "max_age")
   write.table(x = pyrate_input,
-              file = paste0("./data_2023/PyRate/cleaning_20-04/infra_order_level/", key, ".txt"),
+              file = paste0("./data_2023/PyRate/cleaning_", date, "/infra_order_level/", key, ".txt"),
               sep = "\t",
               na = "",
               row.names = FALSE,
@@ -158,15 +172,15 @@ for(order in c("Sirenia", "Cetacea")){
 
 ## Extract ages using Silvestro et al. function (for PyRate output) ------------
 source("../../pyrate_utilities.R")
-for(file in c("./data_2023/PyRate/cleaning_20-04/all_in_one.txt",
-              "./data_2023/PyRate/cleaning_20-04/one_place-one_time-one_occ.txt")){
+for(file in c(paste0("./data_2023/PyRate/cleaning_", date, "/all_in_one.txt"),
+              paste0("./data_2023/PyRate/cleaning_", date, "/one_place-one_time-one_occ.txt"))){
   extract.ages(file, replicates = 10)
 }
-for(file in list.files("./data_2023/PyRate/cleaning_20-04/order_level/")){
-  extract.ages(paste0("./data_2023/PyRate/cleaning_20-04/order_level/", file), replicates = 10)
+for(file in list.files(paste0("./data_2023/PyRate/cleaning_", date, "/order_level/"))){
+  extract.ages(paste0("./data_2023/PyRate/cleaning_", date, "/order_level/", file), replicates = 10)
 }
-for(file in list.files("./data_2023/PyRate/cleaning_20-04/infra_order_level/")){
-  extract.ages(paste0("./data_2023/PyRate/cleaning_20-04/infra_order_level/", file), replicates = 10)
+for(file in list.files("./data_2023/PyRate/cleaning_", date, "/infra_order_level/")){
+  extract.ages(paste0("./data_2023/PyRate/cleaning_", date, "/infra_order_level/", file), replicates = 10)
 }
 for(file in list.files("./data_2023/PyRate/cleaning_20-04/marine/")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_20-04/marine/", file), replicates = 10)
