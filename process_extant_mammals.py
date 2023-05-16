@@ -8,7 +8,12 @@ https://en.wikipedia.org/wiki/List_of_mammals_of_South_America
 """
 import pandas as pd
 import os
-os.chdir("E:/Internship_ISEM/Neotropical_Mammals/DATA")
+
+dir = "/Internship_ISEM/Neotropical_Mammals/DATA
+if platform.system() == "Windows":
+    os.chdir("E:"+dir)
+else:
+    os.chdir("/media/lucas/SAMSUNG"+dir)
 
 # Genera seeker
 genera_nosep = []
