@@ -5,8 +5,10 @@
 ## Load libraries --------------------------------------------------------------
 library(readxl)
 library(hash)
-#date <- "20-04"
-date <- "12-05"
+
+#date <- "20-04"      #Intermediate cleaning
+#date <- "12-05"      #Too stringent smoothing
+date <- "16-05"       #Less stringent smoothing
 
 ## Species list (non-marine) ---------------------------------------------------
 if(date == "20-04"){
@@ -14,6 +16,14 @@ if(date == "20-04"){
 }
 if(date == "12-05"){
   species_list <- read.table("../../DATA/order_level/Sub_Epoch_Binning/full_list_SUBEPOCH_without_Xenarthra.txt",
+                             header = TRUE, 
+                             dec = ",", 
+                             sep = "\t", 
+                             quote = "", 
+                             fill = TRUE)
+}
+if(date == "16-05"){
+  species_list <- read.table("../../DATA/order_level/Sub_Epoch_Binning/full_list_SALMA_ONLY_SUBEPOCH_without_Xenarthra.txt",
                              header = TRUE, 
                              dec = ",", 
                              sep = "\t", 
@@ -41,6 +51,7 @@ just_one <- function(genus, sp_ds){
   if(nrow(tmp) == 1){
     return(tmp)
   }
+  #if no state indication
   else if(length(is.na(tmp$state) == nrow(tmp))){
     #country level
     retained <- c()
@@ -91,7 +102,8 @@ for(i in 2:length(apply_unique)){
   final_unique <- rbind(final_unique, apply_unique[[i]])
 }
 final_unique <- final_unique[, c("genus", "gen_lvl_status", "min_ma", "max_ma")]
-colnames(final_unique) <- c("Species", "Status", "min_age", "max_age")
+colnames(final_unique) <- c("Species", "Status", "min_age", "max_age") 
+#print(length(unique(final_unique$Species)) == length(unique(all_in$Species))) #VERIFICATION
 write.table(x = final_unique,
             file = paste0("./data_2023/PyRate/cleaning_", date, "/one_place-one_time-one_occ.txt"),
             sep = "\t",
