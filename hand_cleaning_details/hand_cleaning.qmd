@@ -44,6 +44,8 @@ Removed *Felis domesticus* (coll. nb. 190846, [@steadman1986]) as introduced by 
 
 # Cingulata
 
+Cleaning was made based on the expertise of F. Pujos, and details of the procedure are available in the `./data_2023/cleaning_Xenarthra/Cingulata_FP_2.0.xlsx` table. Rows highlighted in red (n=208) have been further removed for the rest of the study. Taxon names, ages, localities and formations were updated in red when needed.
+
 # Chiroptera
 
 # Didelphimorphia
