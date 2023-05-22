@@ -68,8 +68,10 @@ raw_2023$order[which(raw_2023$family %in% c("Pampatheriidae", "Panochthidae"))] 
 raw_2023$order[which(raw_2023$genus %in% c("Pseudoplohophorus", "Plohophorops", "Zaphilus", "Trachycalyptus", "Trachycalyptoides",
                                            "Urotherium", "Protoglyptodon", "Parahoplophorus", "Stromaphorus", "Phlyctaenopyga",
                                            "Stromaphorus", "Phlyctaenopyga", "Plohophoroides", "Stromaphoropsis"))] <- "Cingulata"
-raw_2023$order[which((raw_2023$genus %in% unique(Pilosa$Genus)) | (raw_2023$family %in% unique(Pilosa$Family)) )] <- "Pilosa"
-raw_2023$order[which(raw_2023$genus == "Anathitus")] <- "Pilosa"
+raw_2023$order[which((raw_2023$genus %in% unique(Pilosa$Genus)) | 
+                       (raw_2023$family %in% unique(Pilosa$Family)) |
+                       which(raw_2023$genus == "Anathitus") )] <- "Pilosa"
+
 #Solve Panameriungulata: extract Litopterna
 Litopterna <- read.table("../../DATA/order_level/from_2020_2023_data_combination/Litopterna.txt", sep = "\t", header = TRUE, fill = TRUE, dec = ",")
 raw_2023$order[which((raw_2023$genus %in% unique(Litopterna$Genus)) | (raw_2023$family %in% unique(Litopterna$Family)) )] <- "Litopterna"
@@ -82,11 +84,13 @@ for(abbrev in keys(country_dict)){
   raw_2023$cc[which(raw_2023$cc == abbrev)] <- as.character(values(country_dict[abbrev]))
 }
 #Assign status ----------------------------------------------------------
-  #extinct orders (nb. Microbiotheria, Paucituberculata, Proboscidea are extant orders but without extant representative in our ds)
-extinct_orders <- c("Litopterna", "Notoungulata", "Xenungulata", "Sparassodonta", "Pyrotheria", "Cimolesta",
-                    "Gondwanatheria", "Polydolopimorphia", "Proboscidea", "Astrapotheria", "Microbiotheria", "Paucituberculata")
-gns$status[which(gns$order %in% extinct_orders)] <- "extinct"
-#for the rest, by hand
+  #Genus-level
+extant_mammals <- read.csv("./data_2023/extant_mammals.csv")
+raw_2023$gen_lvl_status <- NA
+raw_2023$gen_lvl_status[which(raw_2023$genus %in% extant_mammals)] <- "extant"
+raw_2023$gen_lvl_status[which(raw_2023$genus %in% extant_mammals == FALSE)] <- "extinct"
+  #Species-level
+#by hand, so far
 
 #write and save order-level lists
 for(order in unique(raw_2023$order)){
