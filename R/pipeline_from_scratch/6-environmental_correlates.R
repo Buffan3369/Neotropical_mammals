@@ -105,18 +105,21 @@ sea_lvl$age_calkaBP <- unlist(lapply(X = sea_lvl$age_calkaBP, FUN = function(x){
 selected_indices <- unlist(lapply(X = seq(from = 0, to = 660, by = 1), FUN = select_closer, age_vect = sea_lvl$age_calkaBP))
 #there are some intervals with lacks => interpolate
 ages <- unlist(lapply(X = sea_lvl$age_calkaBP[selected_indices], FUN = round))
-spot_lacks <- function(pos){
-  if(pos == 661){
-    return(FALSE)
-  }
-  else{
-    if(ages[pos+1]-ages[pos] > 1){
-      return(TRUE)
-    }
+sel_sea_lvl <- sea_lvl$sealevel[selected_indices]
+
+for(pos in seq(from = length(ages)-1, to = 1, by = -1)){
+  if(ages[pos+1]-ages[pos] > 1){
+    print(pos)
+    n_add <- ages[pos+1] - ages[pos] + 2
+    to_add <- approx(x = ages[pos:(pos+1)], sel_sea_lvl[pos:(pos+1)], n = n_add)$y
+    sel_sea_lvl <- append(sel_sea_lvl, values = to_add[2:(length(to_add)-1)], after = pos)
   }
 }
-for(pos in unlist(lapply(X = ages, FUN = spot_lacks))){
-  
-}
+
+pos = 635
+n_add <- ages[pos+1] - ages[pos] + 2
+to_add <- approx(x = ages[pos:(pos+1)], sel_sea_lvl[pos:(pos+1)], n = n_add)$y
+
+
 sea_lvl_100ky <- data.frame(Age = seq(0,66,.1),
                            sea_level = sea_lvl$sealevel[selected_indices])
