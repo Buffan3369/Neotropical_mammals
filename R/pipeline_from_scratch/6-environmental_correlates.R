@@ -9,18 +9,48 @@ fragmentation <- read.csv("../../DATA/ENVIRONMENT_CORRELATES/continental_fragmen
 fragmentation$Age <- seq(from = 0, to = 540, by = 1)
 fragmentation_cnz <- fragmentation[1:67, c("Age", "fragmentation.index")] #cenozoic only
 #Linear interpolation and save a dataset of the covariate with a 100ky time step
-interpol_frag <- approx(x = fragmentation_cnz$Age[1:2], y = fragmentation_cnz$fragmentation.index[1:2], n=10)$y
+interpol_frag <- approx(x = fragmentation_cnz$Age[1:2], y = fragmentation_cnz$fragmentation.index[1:2], n=11)$y
 for(i in 2:66){
   interpol_frag <- c(interpol_frag,
-                     approx(x = fragmentation_cnz$Age[i:(i+1)], y = fragmentation_cnz$fragmentation.index[i:(i+1)], n=10)$y)
+                     approx(x = fragmentation_cnz$Age[i:(i+1)], y = fragmentation_cnz$fragmentation.index[i:(i+1)], n=11)$y[-c(1)])
 }
-write.table(data.frame(Age = seq(from = 0, to = 65.9, by = 0.1),
+# par(mfrow = c(1,2))
+# plot(x = fragmentation_cnz$Age, y = fragmentation_cnz$fragmentation.index)
+# title("Original data")
+# plot(x = seq(from = 0, to = 66, by = 0.1), y = interpol_frag)
+# title("Interpolated data")
+write.table(data.frame(Age = seq(from = 0, to = 66, by = 0.1),
                        fragmentation.index = interpol_frag),
           file = "./data_2023/predictors_MBD/fragmentation_cenozoic_100ky_step.txt",
           row.names = FALSE,
           sep = "\t",
           quote = FALSE)
 rm(list = ls())
+
+## Andean Uplift (from Boschman and Condamine 2022) -----------------------------------------------------------------------------
+Uplift <- read.table("../../DATA/ENVIRONMENT_CORRELATES/andean_uplift/Andes_mean_elevations_no_basins_ALL.txt",
+                     sep = " ",
+                     header = TRUE)
+#Write and save a dataset of the covariate with a 100ky time step
+average_elevation <- data.frame(Age = 0:66,
+                                Altitude = unlist(lapply(X = 0:66, FUN = function(x){return(mean(Uplift$Altitude[which(Uplift$Age == x)]))})))
+interpol_av_el <- approx(x = average_elevation$Age[1:2], y = average_elevation$Altitude[1:2], n=11)$y
+for(i in 2:66){
+  interpol_av_el <- c(interpol_av_el,
+                      approx(x = average_elevation$Age[i:(i+1)], y = average_elevation$Altitude[i:(i+1)], n=11)$y[-c(1)])
+}
+# par(mfrow = c(1,2))
+# plot(x = average_elevation$Age, y = average_elevation$Altitude)
+# title("Original data")
+# plot(x = seq(from = 0, to = 66, by = 0.1), y = interpol_av_el)
+# title("Interpolated data")
+write.table(data.frame(Age = seq(from = 0, to = 66, by = 0.1),
+                       Altitude = interpol_av_el),
+            file = "./data_2023/predictors_MBD/Andes_mean_elevations_no_basins_100ky_step.txt",
+            sep = "\t",
+            row.names = FALSE,
+            quote = FALSE)
+
 
 ## Palaeotemperature (assembled by Boschman and Condamine 2022 using Cenozoic data from Westerhold et al. 2020) ----------------
 Temp <- read.table("../../DATA/ENVIRONMENT_CORRELATES/palaeotemperature/merged_veizer_westerhold_Ts.txt",
@@ -54,7 +84,7 @@ full_data <- read.table("../../DATA/ENVIRONMENT_CORRELATES/d13C/Westerhold-etal_
 # plot(full_data$Tuned.time..Ma., full_data$Foram.benth.δ13C....PDB...VPDB.Corr.)
 # plot(full_data$Tuned.time..Ma., full_data$Foram.benth.δ13C....PDB...VPDB.CorrAdjusted.)
 # plot(full_data$Tuned.time..Ma., full_data$Foram.benth.δ13C....PDB...smoothLoess10.)
-# dev.off()
+
 #Write and save a dataset of the covariate with a 100ky time step
 full_data$Tuned.time..Ma. <- full_data$Tuned.time..Ma.*10
 selected_indices <- unlist(lapply(X = 0:660, FUN = select_closer, age_vect = full_data$Tuned.time..Ma.))
@@ -71,22 +101,22 @@ write.table(x = d13_C,
 sea_lvl <- read.table("../../DATA/ENVIRONMENT_CORRELATES/sea_level/Miller_2020_sea_level_data.txt",
                       sep = "\t",
                       header = TRUE)
-sea_lvl$age_calkaBP <- unlist(lapply(X = sea_lvl$age_calkaBP, FUN = function(x){x/1000}))
-sea_lvl <- sea_lvl %>% rename(Age = "age_calkaBP")
-selected_indices <- unlist(lapply(X = seq(from = 0, to = 66, by = 0.1), FUN = select_closer, age_vect = sea_lvl$Age, d = 1))
-sea_lvl_100ky <- data.frame(Age = sea_lvl$Age[selected_indices],
+sea_lvl$age_calkaBP <- unlist(lapply(X = sea_lvl$age_calkaBP, FUN = function(x){x/100}))
+selected_indices <- unlist(lapply(X = seq(from = 0, to = 660, by = 1), FUN = select_closer, age_vect = sea_lvl$age_calkaBP))
+#there are some intervals with lacks => interpolate
+ages <- unlist(lapply(X = sea_lvl$age_calkaBP[selected_indices], FUN = round))
+spot_lacks <- function(pos){
+  if(pos == 661){
+    return(FALSE)
+  }
+  else{
+    if(ages[pos+1]-ages[pos] > 1){
+      return(TRUE)
+    }
+  }
+}
+for(pos in unlist(lapply(X = ages, FUN = spot_lacks))){
+  
+}
+sea_lvl_100ky <- data.frame(Age = seq(0,66,.1),
                            sea_level = sea_lvl$sealevel[selected_indices])
-
-## Andean Uplift (from Boschman and Condamine 2022) -----------------------------------------------------------------------------
-Uplift <- read.table("../../DATA/ENVIRONMENT_CORRELATES/andean_uplift/Andes_mean_elevations_no_basins_ALL.txt",
-                     sep = " ",
-                     header = TRUE)
-#Write and save a dataset of the covariate with a 100ky time step
-average_elevation <- data.frame(Age = 0:66,
-                                Altitude = unlist(lapply(X = 0:66, FUN = function(x){return(mean(Uplift$Altitude[which(Uplift$Age == x)]))})))
-
-write.table(average_elevation,
-            file = "./data_2023/predictors_MBD/Andes_mean_elevations_no_basins_100ky_step.txt",
-            sep = "\t",
-            row.names = FALSE,
-            quote = FALSE)
