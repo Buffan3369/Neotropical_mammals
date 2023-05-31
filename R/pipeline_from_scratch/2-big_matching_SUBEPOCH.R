@@ -7,7 +7,7 @@ library(tibble)
 library(palaeoverse)
 
 ## Load and custom species list ------------------------------------------------
-spl <- data.frame(read_xlsx("../../DATA/order_level/matched_order_level/Full_species_list_former_SALMA.xlsx"))
+spl <- data.frame(read_xlsx("../../DATA/order_level/matched_order_level/Full_species_list.xlsx"))
   #re-create "period" column
 period_bins <- palaeoverse::time_bins(interval = "Cenozoic", rank = "period") #creates time bins based on the GTS2020 at the period
 binning <- palaeoverse::bin_time(occdf = data.frame(max_ma = spl$max_ma,
@@ -51,10 +51,6 @@ for(genus in absent){
                          primary_reference = "https://en.wikipedia.org/wiki/List_of_mammals_of_South_America")
 }
 rm(extant_mammals, absent, corr_family, corr_order, genus)
-
-## Remove Xenarthrans ----------------------------------------------------------
-spl <- spl[-which(spl$order %in% c("Pilosa", "Cingulata")), ]
-row.names(spl) <- 1:nrow(spl)
 
 ## Bin SALMA stages at the sub-epoch level -------------------------------------
 Sub_Epochs_bins <- data.frame(read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx"))
@@ -119,7 +115,7 @@ enlarge_pleist_hol <- function(stage){
 }
 spl$stage <- unlist(lapply(X = spl$stage, FUN = enlarge_pleist_hol))
 
-to_sub_epoch <- function(stage, bin_ICC = TRUE){
+to_sub_epoch <- function(stage, bin_ICC = FALSE){ #bin_ICC option allows to bin occurrences assigned to a stage from the ICC
   hyphen_split <- strsplit(stage, split = "-")[[1]]
   if(length(hyphen_split) > 1){ #combined intervals (e.g. "Priabonian-Rupelian")
     return(stage) #wide enough, we just return the combined stage (normally already matched previously in `2-big_matching.R`)
@@ -150,11 +146,11 @@ to_sub_epoch <- function(stage, bin_ICC = TRUE){
 }
 
   #Don't bin ICC
-spl_no_ICC <- spl %>% add_column(Sub_epoch = unlist(lapply(X = spl$stage, FUN = to_sub_epoch, bin_ICC = FALSE)), 
+spl_no_ICC <- spl %>% add_column(Sub_epoch = unlist(lapply(X = spl$stage, FUN = to_sub_epoch)), 
                                  .before = "stage")
   #Bin ICC
-spl <- spl %>% add_column(Sub_epoch = unlist(lapply(X = spl$stage, FUN = to_sub_epoch)),
-                          .before = "stage")
+# spl <- spl %>% add_column(Sub_epoch = unlist(lapply(X = spl$stage, FUN = to_sub_epoch, bin_ICC = TRUE)),
+#                           .before = "stage")
 
 ## Time matching at the sub-epoch level ----------------------------------------
 matching <- function(sub_epoch){
@@ -162,12 +158,12 @@ matching <- function(sub_epoch){
   return(list(Sub_Epochs_bins$min_ma[idx],
               Sub_Epochs_bins$max_ma[idx]))
 }
-for(sub_epoch in Sub_Epochs_bins$interval_name){
-  MinMax <- matching(sub_epoch = sub_epoch)
-  idx_ep <- which(spl$Sub_epoch == sub_epoch)
-  spl$min_ma[idx_ep] <- MinMax[[1]]
-  spl$max_ma[idx_ep] <- MinMax[[2]]
-}
+# for(sub_epoch in Sub_Epochs_bins$interval_name){
+#   MinMax <- matching(sub_epoch = sub_epoch)
+#   idx_ep <- which(spl$Sub_epoch == sub_epoch)
+#   spl$min_ma[idx_ep] <- MinMax[[1]]
+#   spl$max_ma[idx_ep] <- MinMax[[2]]
+# }
 #Without ICC occurrences
 for(sub_epoch in Sub_Epochs_bins$interval_name){
   MinMax <- matching(sub_epoch = sub_epoch)
@@ -175,20 +171,20 @@ for(sub_epoch in Sub_Epochs_bins$interval_name){
   spl_no_ICC$min_ma[idx_ep] <- MinMax[[1]]
   spl_no_ICC$max_ma[idx_ep] <- MinMax[[2]]
 }
-  # Correct for SALMA formation in spl_no_ICC
+  # Correct for Salla formation in spl_no_ICC
 spl_no_ICC[which((spl_no_ICC$formation == "Salla") & (spl_no_ICC$stage == "Deseadan")), c("min_ma", "max_ma")] <- c(24.5, 26)
 
 ## Save ------------------------------------------------------------------------
-write.table(x = spl,
-            file = "../../DATA/order_level/Sub_Epoch_Binning/full_list_SUBEPOCH_without_Xenarthra.txt",
-            sep = "\t",
-            na = "",
-            row.names = FALSE,
-            quote = FALSE,
-            dec = ",")
+# write.table(x = spl,
+#             file = "../../DATA/order_level/Sub_Epoch_Binning/full_list_SUBEPOCH_without_Xenarthra.txt",
+#             sep = "\t",
+#             na = "",
+#             row.names = FALSE,
+#             quote = FALSE,
+#             dec = ",")
 
 write.table(x = spl_no_ICC,
-            file = "../../DATA/order_level/Sub_Epoch_Binning/full_list_SALMA_ONLY_SUBEPOCH_without_Xenarthra.txt",
+            file = "../../DATA/order_level/Sub_Epoch_Binning/full_list_SALMA_ONLY_SUBEPOCH.txt",
             sep = "\t",
             na = "",
             row.names = FALSE,
