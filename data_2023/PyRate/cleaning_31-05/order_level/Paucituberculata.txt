@@ -3,7 +3,7 @@ Bardalestes	extinct	47.8	56
 Bardalestes	extinct	47	47.8
 Evolestes	extinct	28.1	33.9
 Evolestes	extinct	23.03	27.82
-Evolestes	extinct	26	24.5
+Evolestes	extinct	24.5	24.5
 Riolestes	extinct	47.8	56
 Abderites	extinct	15.97	23.03
 Abderites	extinct	23.03	27.82
@@ -83,7 +83,7 @@ Acdestis	extinct	15.97	23.03
 Acdestodon	extinct	23.03	27.82
 Acdestoides	extinct	23.03	27.82
 Antawallathentes	extinct	23.03	27.82
-Antawallathentes	extinct	24.5	26
+Antawallathentes	extinct	26	26
 Carlothentes	extinct	23.03	27.82
 Carlothentes	extinct	23.03	27.82
 Palaeothentes	extinct	15.97	23.03

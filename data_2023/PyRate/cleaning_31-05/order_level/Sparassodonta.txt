@@ -44,7 +44,7 @@ Borhyaena	extinct	15.97	23.03
 Borhyaena	extinct	15.97	23.03
 Borhyaena	extinct	15.97	23.03
 Borhyaena	extinct	15.97	23.03
-Fredszalaya	extinct	24.5	26
+Fredszalaya	extinct	26	26
 Acyon	extinct	11.63	15.97
 Acyon	extinct	15.97	23.03
 Acyon	extinct	15.97	23.03

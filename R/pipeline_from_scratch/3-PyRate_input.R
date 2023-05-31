@@ -8,7 +8,7 @@ library(hash)
 
 #date <- "20-04"      #Intermediate cleaning
 #date <- "12-05"      #Too stringent smoothing
-date <- "16-05"       #Less stringent smoothing
+date <- "31-05"       #Less stringent smoothing, Xenarthra added 
 
 ## Species list (non-marine) ---------------------------------------------------
 if(date == "20-04"){
@@ -22,8 +22,8 @@ if(date == "12-05"){
                              quote = "", 
                              fill = TRUE)
 }
-if(date == "16-05"){
-  species_list <- read.table("../../DATA/order_level/Sub_Epoch_Binning/full_list_SALMA_ONLY_SUBEPOCH_without_Xenarthra.txt",
+if(date == "31-05"){
+  species_list <- read.table("../../DATA/order_level/Sub_Epoch_Binning/full_list_SALMA_ONLY_SUBEPOCH.txt",
                              header = TRUE, 
                              dec = ",", 
                              sep = "\t", 

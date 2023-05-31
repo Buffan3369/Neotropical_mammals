@@ -110,7 +110,7 @@ Archaeohyrax	extinct	23.03	27.82
 Archaeohyrax	extinct	30.617	30.77
 Archaeohyrax	extinct	23.03	27.82
 Archaeohyrax	extinct	23.03	27.82
-Archaeohyrax	extinct	26	24.5
+Archaeohyrax	extinct	24.5	24.5
 Archaeohyrax	extinct	23.03	27.82
 Archaeohyrax	extinct	23.03	27.82
 Archaeohyrax	extinct	23.03	27.82
@@ -395,7 +395,7 @@ Prohegetotherium	extinct	28.1	33.9
 Prohegetotherium	extinct	23.03	27.82
 Prohegetotherium	extinct	23.03	27.82
 Prohegetotherium	extinct	23.03	27.82
-Prohegetotherium	extinct	24.5	26
+Prohegetotherium	extinct	26	26
 Prohegetotherium	extinct	23.03	27.82
 Prohegetotherium	extinct	23.03	27.82
 Prohegetotherium	extinct	15.97	23.03
@@ -422,7 +422,7 @@ Prosotherium	extinct	23.03	27.82
 Pseudohegetotherium	extinct	5.333	11.63
 Pseudohegetotherium	extinct	5.333	11.63
 Pseudohegetotherium	extinct	23.03	27.82
-Sallatherium	extinct	26	24.5
+Sallatherium	extinct	24.5	24.5
 Sallatherium	extinct	23.03	27.82
 Tremacyllus	extinct	5.333	11.63
 Tremacyllus	extinct	0.0117	2.58
@@ -565,7 +565,7 @@ Argyrohyrax	extinct	23.03	27.82
 Argyrohyrax	extinct	23.03	27.82
 Boleatherium	extinct	13.82	20.44
 Brucemacfaddenia	extinct	23.03	27.82
-Brucemacfaddenia	extinct	24.5	26
+Brucemacfaddenia	extinct	26	26
 Brucemacfaddenia	extinct	23.03	27.82
 Brucemacfaddenia	extinct	23.03	27.82
 Cochilius	extinct	23.03	27.82
@@ -583,7 +583,7 @@ Eopachyrucos	extinct	28.1	33.9
 Eopachyrucos	extinct	33.9	37.71
 Eopachyrucos	extinct	23.03	27.82
 Eopachyrucos	extinct	23.03	27.82
-Federicoanaya	extinct	26	24.5
+Federicoanaya	extinct	24.5	24.5
 Federicoanaya	extinct	23.03	27.82
 Fiandraia	extinct	23.03	27.82
 Ignigena	extinct	37.71	47.8
@@ -909,9 +909,9 @@ Thomashuxleya	extinct	37.71	47.8
 Trimerostephanos	extinct	23.03	27.82
 Termastherium	extinct	27.82	33.9
 Anayatherium	extinct	23.03	27.82
-Anayatherium	extinct	24.5	26
+Anayatherium	extinct	26	26
 Anayatherium	extinct	23.03	27.82
-Anayatherium	extinct	26	24.5
+Anayatherium	extinct	24.5	24.5
 Ancylocoelus	extinct	23.03	27.82
 Ancylocoelus	extinct	23.03	27.82
 Ancylocoelus	extinct	23.03	27.82
@@ -1050,7 +1050,7 @@ Trachytherus	extinct	23.03	27.82
 Trachytherus	extinct	23.03	27.82
 Trachytherus	extinct	28.1	33.9
 Trachytherus	extinct	23.03	27.82
-Trachytherus	extinct	24.5	26
+Trachytherus	extinct	26	26
 Trachytherus	extinct	23.03	27.82
 Trachytherus	extinct	23.03	27.82
 Trachytherus	extinct	23.03	27.82
@@ -1095,7 +1095,7 @@ Eomorphippus	extinct	33.9	37.71
 Eomorphippus	extinct	33.9	37.71
 Eurygenium	extinct	23.03	27.82
 Eurygenium	extinct	23.03	27.82
-Eurygenium	extinct	26	24.5
+Eurygenium	extinct	24.5	24.5
 Mendozahippus	extinct	23.03	27.82
 Mendozahippus	extinct	23.03	27.82
 Mendozahippus	extinct	23.03	27.82
@@ -1119,7 +1119,7 @@ Pampahippus	extinct	47.8	52.5
 Pampahippus	extinct	37.71	47.8
 Pascualihippus	extinct	23.03	27.82
 Pascualihippus	extinct	23.03	27.82
-Pascualihippus	extinct	24.5	26
+Pascualihippus	extinct	26	26
 Patagonhippus	extinct	30.617	30.77
 Patagonhippus	extinct	30.617	30.77
 Rhynchippus	extinct	23.03	27.82
@@ -1130,7 +1130,7 @@ Rhynchippus	extinct	23.03	27.82
 Rhynchippus	extinct	23.03	27.82
 Rhynchippus	extinct	23.03	27.82
 Rhynchippus	extinct	23.03	27.82
-Rhynchippus	extinct	26	24.5
+Rhynchippus	extinct	24.5	24.5
 Rhynchippus	extinct	23.03	27.82
 Rhynchippus	extinct	23.03	27.82
 Rhynchippus	extinct	23.03	27.82
@@ -1497,7 +1497,7 @@ Proadinotherium	extinct	15.97	23.03
 Proadinotherium	extinct	23.03	27.82
 Proadinotherium	extinct	15.97	23.03
 Proadinotherium	extinct	15.97	23.03
-Proadinotherium	extinct	24.5	26
+Proadinotherium	extinct	26	26
 Prototrigodon	extinct	11.63	15.97
 Stenotephanos	extinct	5.333	11.63
 Toxodon	extinct	0.0117	2.58

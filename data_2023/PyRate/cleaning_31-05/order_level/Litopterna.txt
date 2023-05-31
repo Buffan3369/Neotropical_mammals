@@ -11,11 +11,11 @@ Proadiantus	extinct	23.03	27.82
 Proheptaconus	extinct	15.97	23.03
 Proheptaconus	extinct	15.97	23.03
 Thadanius	extinct	23.03	27.82
-Thadanius	extinct	24.5	26
+Thadanius	extinct	26	26
 Tricoelodus	extinct	23.03	27.82
 Tricoelodus	extinct	23.03	27.82
 Tricoelodus	extinct	23.03	27.82
-Tricoelodus	extinct	26	24.5
+Tricoelodus	extinct	24.5	24.5
 Didolodus	extinct	41.3	47.8
 Didolodus	extinct	37.71	47.8
 Didolodus	extinct	37.71	47.8
@@ -85,7 +85,7 @@ Coniopternium	extinct	23.03	27.82
 Coniopternium	extinct	23.03	27.82
 Coniopternium	extinct	23.03	27.82
 Coniopternium	extinct	23.03	27.82
-Coniopternium	extinct	24.5	26
+Coniopternium	extinct	26	26
 Cramauchenia	extinct	15.97	23.03
 Cramauchenia	extinct	23.03	27.82
 Cramauchenia	extinct	15.97	23.03
