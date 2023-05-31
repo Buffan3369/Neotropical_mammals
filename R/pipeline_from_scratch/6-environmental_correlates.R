@@ -21,7 +21,7 @@ for(i in 2:66){
 # title("Interpolated data")
 write.table(data.frame(Age = seq(from = 0, to = 66, by = 0.1),
                        fragmentation.index = interpol_frag),
-          file = "./data_2023/predictors_MBD/fragmentation_cenozoic_100ky_step.txt",
+          file = "./data_2023/predictors_MBD/1-fragmentation_cenozoic_100ky_step.txt",
           row.names = FALSE,
           sep = "\t",
           quote = FALSE)
@@ -46,7 +46,7 @@ for(i in 2:66){
 # title("Interpolated data")
 write.table(data.frame(Age = seq(from = 0, to = 66, by = 0.1),
                        Altitude = interpol_av_el),
-            file = "./data_2023/predictors_MBD/Andes_mean_elevations_no_basins_100ky_step.txt",
+            file = "./data_2023/predictors_MBD/2-Andes_mean_elevations_no_basins_100ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -68,13 +68,13 @@ selected_indices <- unlist(lapply(X = 0:660, FUN = select_closer, age_vect = Tem
 Temp_Cnz$Age <- unlist(lapply(X = Temp_Cnz$Age,
                               FUN = function(x){return(round(x/10, digits = 1))}))
 write.table(Temp_Cnz[selected_indices,],
-            file = "./data_2023/predictors_MBD/Cenozoic_Temp_100ky_step.txt",
+            file = "./data_2023/predictors_MBD/3-Cenozoic_Temp_100ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
 
 ## Delta 13 C (from Westerhold et al. 2020) ------------------------------------------------------------------------------------
-full_data <- read.table("../../DATA/ENVIRONMENT_CORRELATES/d13C/Westerhold-etal_2020/datasets/TableS33.tab",
+full_data <- read.table("../../DATA/ENVIRONMENT_CORRELATES/atmospheric_carbon_d13C/Westerhold-etal_2020/datasets/TableS33.tab",
                         sep = "\t",
                         fill = TRUE,
                         header = TRUE)
@@ -92,7 +92,55 @@ d13_C <- data.frame(Age = unlist(lapply(X = full_data$Tuned.time..Ma.[selected_i
                                         FUN = function(x){return(round(x/10, digits = 1))})),
                     d13C_corr_adj = full_data$Foram.benth.δ13C....PDB...VPDB.CorrAdjusted.[selected_indices])
 write.table(x = d13_C,
-            file = "./data_2023/predictors_MBD/delta13_C_100ky_step.txt",
+            file = "./data_2023/predictors_MBD/4-Atmospheric_delta13_C_100ky_step.txt",
+            sep = "\t",
+            row.names = FALSE,
+            quote = FALSE)
+
+## Organic d13C from Falkowski et al. (2005) and Katz et al. (2005) -------------------------------------------------------------
+d13C_org <- read.table("../../DATA/ENVIRONMENT_CORRELATES/organic_carbon/organic_carbon.txt",
+                       sep = "\t",
+                       fill = TRUE,
+                       header = TRUE)
+d13C_org <- d13C_org[-which(d13C_org$Age > 66.15),]
+#interpolate every 10ky
+interpolated <- data.frame(Age = c(NA), C13organic = c(NA))
+for(t in seq(from = 0, to = 66.15, by = 0.01)){
+  if(t %in% d13C_org$Age){
+    ind <- which(d13C_org$Age == t)
+    interpolated <- rbind(interpolated, 
+                          d13C_org[ind,])
+  }
+  else{
+    interpolated <- rbind(interpolated,
+                          c(t, NA))
+  }
+}
+interpolated <- interpolated[-c(1),]
+row.names(interpolated) <- 1:nrow(interpolated)
+
+i = 1
+while(i < nrow(interpolated-1)){
+  if(is.na(interpolated$C13organic[i])){ #i is the first na postition
+    D = 0
+    while(is.na(interpolated$C13organic[i+D])){
+      D = D+1
+    }
+    interpolated$C13organic[i:(i+D-1)] <- approx(x = c(interpolated$Age[(i-1)], interpolated$Age[(i+D)]),
+                                               y = c(interpolated$C13organic[(i-1)], interpolated$C13organic[(i+D)]),
+                                               n = D)$y
+    i = i+D
+  }
+  else{
+    i = i+1
+  }
+}
+interpolated <- interpolated[-which(interpolated$Age > 66), ]
+#now downscale at a 100ky resolution
+selected_indices <- unlist(lapply(X = seq(from = 0, to = 66, by = 0.1), FUN = select_closer, age_vect = interpolated$))
+
+write.table(x = interpolated,
+            file = "./data_2023/predictors_MBD/5-organic_carbon.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -119,7 +167,7 @@ for(pos in seq(from = length(ages)-1, to = 1, by = -1)){
 plot(x = seq(from = 0, to = 66, by = .1), y = sel_sea_lvl)
 
 write.table(x = sel_sea_lvl,
-            file = "./data_2023/predictors_MBD/sea_level.txt",
+            file = "./data_2023/predictors_MBD/6-sea_level.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
