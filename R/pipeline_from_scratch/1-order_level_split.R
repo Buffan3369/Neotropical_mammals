@@ -87,8 +87,8 @@ for(abbrev in keys(country_dict)){
   #Genus-level
 extant_mammals <- read.csv("./data_2023/extant_mammals.csv")
 raw_2023$gen_lvl_status <- NA
-raw_2023$gen_lvl_status[which(raw_2023$genus %in% extant_mammals)] <- "extant"
-raw_2023$gen_lvl_status[which(raw_2023$genus %in% extant_mammals == FALSE)] <- "extinct"
+raw_2023$gen_lvl_status[which(raw_2023$genus %in% extant_mammals$Genus)] <- "extant"
+raw_2023$gen_lvl_status[which(raw_2023$genus %in% extant_mammals$Genus == FALSE)] <- "extinct"
   #Species-level
 #by hand, so far
 
