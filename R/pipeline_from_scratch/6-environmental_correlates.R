@@ -92,7 +92,7 @@ full_data$Tuned.time..Ma. <- full_data$Tuned.time..Ma.*10
 selected_indices <- unlist(lapply(X = 0:660, FUN = select_closer, age_vect = full_data$Tuned.time..Ma.))
 d13_C <- data.frame(Age = unlist(lapply(X = full_data$Tuned.time..Ma.[selected_indices],
                                         FUN = function(x){return(round(x/10, digits = 1))})),
-                    d13C_corr_adj = full_data$Foram.benth.δ13C....PDB...VPDB.CorrAdjusted.[selected_indices])
+                    d13C_atmospheric = full_data$Foram.benth.δ13C....PDB...VPDB.CorrAdjusted.[selected_indices])
 write.table(x = d13_C,
             file = "./data_2023/predictors_MBD/4-Atmospheric_delta13_C_100ky_step.txt",
             sep = "\t",
@@ -167,7 +167,8 @@ for(pos in seq(from = length(ages)-1, to = 1, by = -1)){
 
 plot(x = seq(from = 0, to = 66, by = .1), y = sel_sea_lvl)
 
-write.table(x = sel_sea_lvl,
+write.table(x = data.frame(Age = seq(from = 0, to = 66, by = .1),
+                           Sea_level = sel_sea_lvl),
             file = "./data_2023/predictors_MBD/6-sea_level.txt",
             sep = "\t",
             row.names = FALSE,
