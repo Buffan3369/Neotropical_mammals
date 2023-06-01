@@ -137,9 +137,9 @@ while(i < nrow(interpolated-1)){
     i = i+1
   }
 }
-interpolated <- interpolated[-which(interpolated$Age > 66), ]
 #now downscale at a 100ky resolution
 selected_indices <- 100 * seq(from = 0, to = 66, by = 0.1) + 1
+colnames(interpolated) <- c("Age", "d13C_organic")
 write.table(x = interpolated[selected_indices,],
             file = "./data_2023/predictors_MBD/5-organic_carbon.txt",
             sep = "\t",
