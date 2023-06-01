@@ -4,6 +4,13 @@
 
 library(dplyr)
 
+## Function to select the closest 'age_vect' element to the integer 'int_age' --------------------------------------------------
+select_closer <- function(int_age, age_vect, d = 0){
+  corr <- which(unlist(lapply(X = age_vect, FUN = round, digits = d)) == int_age)
+  diff <- lapply(X = age_vect[corr], FUN = function(x){return(abs(x-int_age))})
+  return(corr[which.min(diff)])
+}
+
 ## Continental fragmentation (from Zaffos et al. 2018) -------------------------------------------------------------------------
 fragmentation <- read.csv("../../DATA/ENVIRONMENT_CORRELATES/continental_fragmentation/ContinuousTimeSeries.csv")
 fragmentation$Age <- seq(from = 0, to = 540, by = 1)
@@ -58,11 +65,6 @@ Temp <- read.table("../../DATA/ENVIRONMENT_CORRELATES/palaeotemperature/merged_v
                    header = TRUE)
 Temp_Cnz <- Temp[which(Temp$Age <= 66), ]
 #Write and save a dataset of the covariate with a 100ky time step
-select_closer <- function(int_age, age_vect, d = 0){
-  corr <- which(unlist(lapply(X = age_vect, FUN = round, digits = d)) == int_age)
-  diff <- lapply(X = age_vect[corr], FUN = function(x){return(abs(x-int_age))})
-  return(corr[which.min(diff)])
-}
 Temp_Cnz$Age <- Temp_Cnz$Age*10
 selected_indices <- unlist(lapply(X = 0:660, FUN = select_closer, age_vect = Temp_Cnz$Age))
 Temp_Cnz$Age <- unlist(lapply(X = Temp_Cnz$Age,
@@ -138,7 +140,6 @@ while(i < nrow(interpolated-1)){
 interpolated <- interpolated[-which(interpolated$Age > 66), ]
 #now downscale at a 100ky resolution
 selected_indices <- 100 * seq(from = 0, to = 66, by = 0.1) + 1
-
 write.table(x = interpolated[selected_indices,],
             file = "./data_2023/predictors_MBD/5-organic_carbon.txt",
             sep = "\t",
