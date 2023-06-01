@@ -2,10 +2,12 @@
 title: "Details for fossil data hand-cleaning based on authors' expertise."
 author:
   - "---"
-  - Lucas Buffan^1,2^, Laurent Marivaux^2^, Pierre-Olivier Antoine^2^ and Fabien L. Condamine^2^
+  - Lucas Buffan^1,2^, Fabien L. Condamine^2^, Laurent Marivaux^2^, François Pujos^3,4^ and Pierre-Olivier Antoine^2^
   - "---"
   - "^1^Département de Biologie, École Normale Supérieure de Lyon, Université Claude Bernard Lyon 1, 69342 Lyon Cedex 07, France."
   - "^2^CNRS, UMR 5554 Institut des Sciences de l’Évolution de Montpellier, Place Eugène Bataillon, 34095 Montpellier, France."
+  - "^3^Consejo Nacional de Investigaciones Científicas y T ́ecnicas (CONICET), Argentina"
+  - "^4^Instituto Argentino de Nivología, Glaciología y Ciencias Ambientales (IANIGLA), CCT-CONICET-Mendoza, Av. Ruiz Leal s/n, ParqueGral, San Martín 5500, Mendoza, Argentina"  
   - "---"
   - "**Corresponding author:** Lucas.L.Buffan@gmail.com"
 format:
@@ -44,7 +46,7 @@ Removed *Felis domesticus* (coll. nb. 190846, [@steadman1986]) as introduced by 
 
 # Cingulata
 
-Cleaning was made based on the expertise of F. Pujos, and details of the procedure are available in the `./data_2023/cleaning_Xenarthra/Cingulata_FP_2.0.xlsx` table. Rows highlighted in red (n=208) have been further removed for the rest of the study. Taxon names, ages, localities and formations were updated in red when needed.
+Cleaning was made based on the expertise of F. Pujos, and details of the procedure are available in the `./data_2023/cleaning_Xenarthra/Xenarthra_FP_2.0.xlsx` table, sheet *Cingulata*. Rows highlighted in red (n=261) have been further removed for the rest of the study. Taxon names, ages, localities and formations were updated in red when needed.
 
 # Chiroptera
 
@@ -80,8 +82,9 @@ Cleaning was made based on the expertise of F. Pujos, and details of the procedu
 *Tapirus oliverasi* (coll. nb. 146534, [@ubilla1983]) species name was removed as doubtful [@holanda2012], occurrence therefore renamed *Tapirus*.
 *Tapirus tarijensis* (coll. nb. 70673, [@marshall1991]) lower age boundary was set to 1.06 Ma.  
 
-
 # Pilosa
+
+Cleaning was made based on the expertise of F. Pujos, and details of the procedure are available in the `./data_2023/cleaning_Xenarthra/Xenarthra_FP_2.0.xlsx` table, sheet *Pilosa*. Rows highlighted in red (n=180) have been further removed for the rest of the study. Taxon names, ages, localities and formations were updated in red when needed.
 
 # Primates
 
