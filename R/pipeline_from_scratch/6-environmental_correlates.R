@@ -2,8 +2,6 @@
 ################## Process environmental correlates for MBD ####################
 ################################################################################
 
-library(dplyr)
-
 ## Function to select the closest 'age_vect' element to the integer 'int_age' --------------------------------------------------
 select_closer <- function(int_age, age_vect, d = 0){
   corr <- which(unlist(lapply(X = age_vect, FUN = round, digits = d)) == int_age)
@@ -190,7 +188,7 @@ for(pos in rev(to_add)){
   }
 }
 
-plot(x = seq(from = 0, to = 66, by = .5), y = sel_sea_lvl)
+#plot(x = seq(from = 0, to = 66, by = .5), y = sel_sea_lvl)
 
 write.table(x = data.frame(Age = seq(from = 0, to = 66, by = .1),
                            Sea_level = sel_sea_lvl),
