@@ -173,3 +173,65 @@ write.table(x = data.frame(Age = seq(from = 0, to = 66, by = .1),
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
+
+## Diversity estimates at the order level --------------------------------------
+for(order in c("Astrapotheria", "Carnivora", "Didelphimorphia", "Litopterna", "Notoungulata",
+               "Paucituberculata", "Polydolopimorphia", "Pyrotheria", "Rodentia", "Sparassodonta")){
+  order_div <- read.table(paste0("../../DATA/ENVIRONMENT_CORRELATES/estimated_diversities/", order, "_diversity_ltt.txt"),
+                        header = TRUE)[, 1:2]
+  #Remove -Inf estimates
+  order_div$diversity[which(order_div$diversity == -Inf)] <- 0
+  #Define timescale (100ky time step)
+  minT <- min(order_div$time)
+  maxT <- max(order_div$time)
+  round_seq <- seq(from = round(minT, digits = 1),
+                   to = round(maxT, digits = 1),
+                   by = 0.1)
+  #sample diversity estimates inside this timescale
+  selected_indices <- unlist(lapply(X = round_seq, FUN = select_closer, age_vect = order_div$time, d = 1))
+  order_div <- order_div[selected_indices, ]
+  order_div$time <- unlist(lapply(X = order_div$time,
+                                FUN = round,
+                                digits = 1))
+  #Create dataset with interpolated times
+  interpolated <- data.frame(Age = NA, Diversity = NA)
+  for(t in round_seq){
+    if(t %in% order_div$time){
+      ind <- which(order_div$time == t)
+      interpolated <- rbind(interpolated, 
+                            c(t, order_div$diversity[ind]))
+    }
+    else{
+      interpolated <- rbind(interpolated,
+                            c(t, NA))
+    }
+  }
+  interpolated <- interpolated[-c(1),]
+  row.names(interpolated) <- 1:nrow(interpolated)
+  #Fill the gaps
+  i = 1
+  while(i < nrow(interpolated)-1){
+    if(is.na(interpolated$Diversity[i])){ #i is the first na postition
+      D = 0
+      while(is.na(interpolated$Diversity[i+D])){
+        D = D+1
+      }
+      interpolated$Diversity[i:(i+D-1)] <- approx(x = c(interpolated$Age[(i-1)], interpolated$Age[(i+D)]),
+                                                  y = c(interpolated$Diversity[(i-1)], interpolated$Diversity[(i+D)]),
+                                                  n = D)$y
+      i = i+D
+    }
+    else{
+      i = i+1
+    }
+  }
+  #Rescale between 0 and 1
+  maxD <- max(interpolated$Diversity)
+  interpolated$Diversity <- interpolated$Diversity / maxD
+  #Save
+  write.table(x = interpolated,
+              file = paste0("./data_2023/predictors_MBD/", order, "_diversity_ltt.txt"),
+              sep = "\t",
+              quote = FALSE,
+              row.names = FALSE)
+}
