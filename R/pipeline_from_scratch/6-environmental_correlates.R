@@ -66,7 +66,7 @@ Temp_Cnz <- Temp[which(Temp$Age <= 66), ]
 selected_indices <- unlist(lapply(X = seq(from = 0, to = 66, by = 0.5), FUN = select_closer, age_vect = Temp_Cnz$Age, d = 1))
 Temp_Cnz <- Temp_Cnz[selected_indices, ]
 Temp_Cnz$Age <- unlist(lapply(X = Temp_Cnz$Age, FUN = round, digits = 1))
-write.table(Temp_Cnz[selected_indices,],
+write.table(Temp_Cnz,
             file = "./data_2023/predictors_MBD/3-Cenozoic_Temp_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
