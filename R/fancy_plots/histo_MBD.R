@@ -12,11 +12,11 @@ phylopic_sp_names <- hash("Sparassodonta" = "Thylacosmilus atrox",
                           "Pilosa" = "Megatherium americanum",
                           "Notoungulata" = "Mixotoxodon larensis",
                           "Rodentia" = "Hydrochoerus hydrochaeris")
-img_aest <- hash("Sparassodonta" = c(2.5, 0.75), # y, ysize
-                 "Cingulata" = c(-1, 1.5),
-                 "Pilosa" = c(-1, 1),
+img_aest <- hash("Sparassodonta" = c(2.5, 0.5), # y, ysize
+                 "Cingulata" = c(-2, 1.8),
+                 "Pilosa" = c(-2, 1.3),
                  "Notoungulata" = c(2, 0.85),
-                 "Rodentia" = c(2.5, 1.5)
+                 "Rodentia" = c(2, 2.5)
                  )
 ## With fragmentation ----------------------------------------------------------
 for(order in c("Sparassodonta", "Cingulata", "Pilosa", "Notoungulata", "Rodentia")){
