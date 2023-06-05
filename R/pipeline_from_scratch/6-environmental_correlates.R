@@ -16,19 +16,19 @@ fragmentation <- read.csv("../../DATA/ENVIRONMENT_CORRELATES/continental_fragmen
 fragmentation$Age <- seq(from = 0, to = 540, by = 1)
 fragmentation_cnz <- fragmentation[1:67, c("Age", "fragmentation.index")] #cenozoic only
 #Linear interpolation and save a dataset of the covariate with a 100ky time step
-interpol_frag <- approx(x = fragmentation_cnz$Age[1:2], y = fragmentation_cnz$fragmentation.index[1:2], n=11)$y
+interpol_frag <- approx(x = fragmentation_cnz$Age[1:2], y = fragmentation_cnz$fragmentation.index[1:2], n=3)$y
 for(i in 2:66){
   interpol_frag <- c(interpol_frag,
-                     approx(x = fragmentation_cnz$Age[i:(i+1)], y = fragmentation_cnz$fragmentation.index[i:(i+1)], n=11)$y[-c(1)])
+                     approx(x = fragmentation_cnz$Age[i:(i+1)], y = fragmentation_cnz$fragmentation.index[i:(i+1)], n=3)$y[-c(1)])
 }
 # par(mfrow = c(1,2))
 # plot(x = fragmentation_cnz$Age, y = fragmentation_cnz$fragmentation.index)
 # title("Original data")
 # plot(x = seq(from = 0, to = 66, by = 0.1), y = interpol_frag)
 # title("Interpolated data")
-write.table(data.frame(Age = seq(from = 0, to = 66, by = 0.1),
+write.table(data.frame(Age = seq(from = 0, to = 66, by = 0.5),
                        fragmentation.index = interpol_frag),
-          file = "./data_2023/predictors_MBD/1-fragmentation_cenozoic_100ky_step.txt",
+          file = "./data_2023/predictors_MBD/1-fragmentation_cenozoic_500ky_step.txt",
           row.names = FALSE,
           sep = "\t",
           quote = FALSE)
@@ -41,19 +41,19 @@ Uplift <- read.table("../../DATA/ENVIRONMENT_CORRELATES/andean_uplift/Andes_mean
 #Write and save a dataset of the covariate with a 100ky time step
 average_elevation <- data.frame(Age = 0:66,
                                 Altitude = unlist(lapply(X = 0:66, FUN = function(x){return(mean(Uplift$Altitude[which(Uplift$Age == x)]))})))
-interpol_av_el <- approx(x = average_elevation$Age[1:2], y = average_elevation$Altitude[1:2], n=11)$y
+interpol_av_el <- approx(x = average_elevation$Age[1:2], y = average_elevation$Altitude[1:2], n=3)$y
 for(i in 2:66){
   interpol_av_el <- c(interpol_av_el,
-                      approx(x = average_elevation$Age[i:(i+1)], y = average_elevation$Altitude[i:(i+1)], n=11)$y[-c(1)])
+                      approx(x = average_elevation$Age[i:(i+1)], y = average_elevation$Altitude[i:(i+1)], n=3)$y[-c(1)])
 }
 # par(mfrow = c(1,2))
 # plot(x = average_elevation$Age, y = average_elevation$Altitude)
 # title("Original data")
 # plot(x = seq(from = 0, to = 66, by = 0.1), y = interpol_av_el)
 # title("Interpolated data")
-write.table(data.frame(Age = seq(from = 0, to = 66, by = 0.1),
+write.table(data.frame(Age = seq(from = 0, to = 66, by = 0.5),
                        Altitude = interpol_av_el),
-            file = "./data_2023/predictors_MBD/2-Andes_mean_elevations_no_basins_100ky_step.txt",
+            file = "./data_2023/predictors_MBD/2-Andes_mean_elevations_no_basins_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -64,13 +64,12 @@ Temp <- read.table("../../DATA/ENVIRONMENT_CORRELATES/palaeotemperature/merged_v
                    sep = "\t",
                    header = TRUE)
 Temp_Cnz <- Temp[which(Temp$Age <= 66), ]
-#Write and save a dataset of the covariate with a 100ky time step
-Temp_Cnz$Age <- Temp_Cnz$Age*10
-selected_indices <- unlist(lapply(X = 0:660, FUN = select_closer, age_vect = Temp_Cnz$Age))
-Temp_Cnz$Age <- unlist(lapply(X = Temp_Cnz$Age,
-                              FUN = function(x){return(round(x/10, digits = 1))}))
+#Write and save a dataset of the covariate with a 500ky time step
+selected_indices <- unlist(lapply(X = seq(from = 0, to = 66, by = 0.5), FUN = select_closer, age_vect = Temp_Cnz$Age, d = 1))
+Temp_Cnz <- Temp_Cnz[selected_indices, ]
+Temp_Cnz$Age <- unlist(lapply(X = Temp_Cnz$Age, FUN = round, digits = 1))
 write.table(Temp_Cnz[selected_indices,],
-            file = "./data_2023/predictors_MBD/3-Cenozoic_Temp_100ky_step.txt",
+            file = "./data_2023/predictors_MBD/3-Cenozoic_Temp_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -87,14 +86,12 @@ full_data <- read.table("../../DATA/ENVIRONMENT_CORRELATES/atmospheric_carbon_d1
 # plot(full_data$Tuned.time..Ma., full_data$Foram.benth.δ13C....PDB...VPDB.CorrAdjusted.)
 # plot(full_data$Tuned.time..Ma., full_data$Foram.benth.δ13C....PDB...smoothLoess10.)
 
-#Write and save a dataset of the covariate with a 100ky time step
-full_data$Tuned.time..Ma. <- full_data$Tuned.time..Ma.*10
-selected_indices <- unlist(lapply(X = 0:660, FUN = select_closer, age_vect = full_data$Tuned.time..Ma.))
-d13_C <- data.frame(Age = unlist(lapply(X = full_data$Tuned.time..Ma.[selected_indices],
-                                        FUN = function(x){return(round(x/10, digits = 1))})),
+#Write and save a dataset of the covariate with a 500ky time step
+selected_indices <- unlist(lapply(X = seq(0, 66, 0.5), FUN = select_closer, age_vect = full_data$Tuned.time..Ma., d = 1))
+d13_C <- data.frame(Age = seq(0, 66, 0.5),
                     d13C_atmospheric = full_data$Foram.benth.δ13C....PDB...VPDB.CorrAdjusted.[selected_indices])
 write.table(x = d13_C,
-            file = "./data_2023/predictors_MBD/4-Atmospheric_delta13_C_100ky_step.txt",
+            file = "./data_2023/predictors_MBD/4-Atmospheric_delta13_C_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -137,11 +134,11 @@ while(i < nrow(interpolated-1)){
     i = i+1
   }
 }
-#now downscale at a 100ky resolution
-selected_indices <- 100 * seq(from = 0, to = 66, by = 0.1) + 1
+#now downscale at a 500ky resolution
+selected_indices <- 100 * seq(from = 0, to = 66, by = 0.5) + 1
 colnames(interpolated) <- c("Age", "d13C_organic")
 write.table(x = interpolated[selected_indices,],
-            file = "./data_2023/predictors_MBD/5-organic_carbon.txt",
+            file = "./data_2023/predictors_MBD/5-organic_carbon_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -150,26 +147,54 @@ write.table(x = interpolated[selected_indices,],
 sea_lvl <- read.table("../../DATA/ENVIRONMENT_CORRELATES/sea_level/Miller_2020_sea_level_data.txt",
                       sep = "\t",
                       header = TRUE)
-sea_lvl$age_calkaBP <- unlist(lapply(X = sea_lvl$age_calkaBP, FUN = function(x){x/100}))
-selected_indices <- unlist(lapply(X = seq(from = 0, to = 660, by = 1), FUN = select_closer, age_vect = sea_lvl$age_calkaBP))
+sea_lvl$age_calkaBP <- unlist(lapply(X = sea_lvl$age_calkaBP, FUN = function(x){x/1000}))
+selected_indices <- unlist(lapply(X = seq(from = 0, to = 66, by = 0.5), FUN = select_closer, age_vect = sea_lvl$age_calkaBP, d=1))
 #there are some intervals with lacks => interpolate
-ages <- unlist(lapply(X = sea_lvl$age_calkaBP[selected_indices], FUN = round))
+ages <- unlist(lapply(X = sea_lvl$age_calkaBP[selected_indices], FUN = round, digits = 1))
 sel_sea_lvl <- sea_lvl$sealevel[selected_indices]
 
-for(pos in seq(from = length(ages)-1, to = 1, by = -1)){
-  if(ages[pos+1]-ages[pos] > 1){
-#    print(pos)
-    n_add <- ages[pos+1] - ages[pos] + 1
-    to_add <- approx(x = ages[pos:(pos+1)], sel_sea_lvl[pos:(pos+1)], n = n_add)$y
-    sel_sea_lvl <- append(sel_sea_lvl, values = to_add[2:(length(to_add)-1)], after = pos)
+to_add <- seq(0,66,0.5)[which(seq(0,66,0.5) %in% ages == FALSE)]
+for(pos in rev(to_add)){
+  n_add <- 1
+  n_add_left <- 0
+  n_add_right <- 0
+  bf <- pos + 0.5
+  af <- pos - 0.5
+  if(bf %in% ages == FALSE){
+    bf <- bf + 0.5
+    n_add_right <- 1
+    while(bf %in% ages == FALSE){
+      bf <- bf + 0.5
+      n_add_right <- n_add_right + 1
+    }
+    n_add <- n_add + n_add_right
+  }
+  if(af %in% ages == FALSE){
+    af <- af - 0.5
+    n_add_left <- 1
+    while(af %in% ages == FALSE){
+    af <- af - 0.5
+      n_add_left <- n_add_left + 1
+    }
+    n_add <- n_add + n_add_left
+  }
+  
+  interpol <- approx(x = ages[which(ages == af):which(ages == bf)],
+                     sel_sea_lvl[which(ages == af):which(ages == bf)],
+                     n = n_add+2)$y
+  if((n_add_left == 0) & (n_add_right != 0)){
+    sel_sea_lvl <- append(sel_sea_lvl, values = to_add[(length(to_add)-1)], after = which(ages == af))
+  }
+  else {
+    sel_sea_lvl <- append(sel_sea_lvl, values = to_add[2], after = which(ages == bf))
   }
 }
 
-plot(x = seq(from = 0, to = 66, by = .1), y = sel_sea_lvl)
+plot(x = seq(from = 0, to = 66, by = .5), y = sel_sea_lvl)
 
 write.table(x = data.frame(Age = seq(from = 0, to = 66, by = .1),
                            Sea_level = sel_sea_lvl),
-            file = "./data_2023/predictors_MBD/6-sea_level.txt",
+            file = "./data_2023/predictors_MBD/6-sea_level_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -186,7 +211,7 @@ for(order in c("Astrapotheria", "Carnivora", "Didelphimorphia", "Litopterna", "N
   maxT <- max(order_div$time)
   round_seq <- seq(from = round(minT, digits = 1),
                    to = round(maxT, digits = 1),
-                   by = 0.1)
+                   by = 0.5)
   #sample diversity estimates inside this timescale
   selected_indices <- unlist(lapply(X = round_seq, FUN = select_closer, age_vect = order_div$time, d = 1))
   order_div <- order_div[selected_indices, ]
@@ -230,7 +255,7 @@ for(order in c("Astrapotheria", "Carnivora", "Didelphimorphia", "Litopterna", "N
   interpolated$Diversity <- interpolated$Diversity / maxD
   #Save
   write.table(x = interpolated,
-              file = paste0("./data_2023/predictors_MBD/", order, "_diversity_ltt.txt"),
+              file = paste0("./data_2023/predictors_MBD/", order, "_diversity_ltt_500ky_step.txt"),
               sep = "\t",
               quote = FALSE,
               row.names = FALSE)
