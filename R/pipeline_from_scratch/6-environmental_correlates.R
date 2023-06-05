@@ -190,7 +190,7 @@ for(pos in rev(to_add)){
 
 #plot(x = seq(from = 0, to = 66, by = .5), y = sel_sea_lvl)
 
-write.table(x = data.frame(Age = seq(from = 0, to = 66, by = .1),
+write.table(x = data.frame(Age = seq(from = 0, to = 66, by = .5),
                            Sea_level = sel_sea_lvl),
             file = "./data_2023/predictors_MBD/6-sea_level_500ky_step.txt",
             sep = "\t",
