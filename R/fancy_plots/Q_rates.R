@@ -30,11 +30,11 @@ Q_plot <- ggplot(data = Q_rates, aes(x = Age, y = mean_Q))+
                   alpha = 0.2) +
   geom_step(aes(x = Age, y = mean_Q),
             linewidth = 1, colour = "#260154") +
-  labs(x = NULL,
-       y = "Preservation rate (lineage/Myr)") +
-  theme(axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text = element_text(size = 12),
+  labs(x = "Time (Ma)",
+       y = "Preservation rate (occurrence/lineage/Myr)") +
+  theme(axis.title.x = element_text(size = 15),
+        axis.title.y = element_text(size = 15),
+        axis.text = element_text(size = 18),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
   coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 4)
@@ -71,11 +71,11 @@ Q_plot <- ggplot(data = Q_rates, aes(x = Age, y = mean_Q))+
                   alpha = 0.2) +
   geom_step(aes(x = Age, y = mean_Q),
             linewidth = 1, colour = "#260154") +
-  labs(x = NULL,
-       y = "Preservation rate (lineage/Myr)") +
-  theme(axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text = element_text(size = 12),
+  labs(x = "Time (Ma)",
+       y = "Preservation rate (occurrence/lineage/Myr)") +
+  theme(axis.title.x = element_text(size = 15),
+        axis.title.y = element_text(size = 15),
+        axis.text = element_text(size = 18),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
   coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 4)
