@@ -100,13 +100,14 @@ net_plot <- ggplot(data = net_rate_df, aes(x = time, y = net_rate))+
 ltt_tbl <- read.table(file = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/LTT/all_in_one/combined_6_KEEP_se_est_ltt.txt",header = T)
 ltt_plot <- ggplot(data = ltt_tbl, aes(x = time, y = diversity)) +
   scale_x_reverse(breaks = c(2.58, 5.33, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+  scale_y_continuous(breaks = seq(0,250,50),
+                     limits = c(0,250)) +
   annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
   annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
   annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
   geom_line(linewidth = 1, colour = "#a1d99b") +
   xlab("Time (Ma)") +
   ylab("Diversity (nb. lineages)") +
-  ylim(c(0, 350)) +
   theme(axis.title.x = element_text(size = 14),
         axis.title.y = element_text(size = 14),
         axis.text = element_text(size = 12),
@@ -233,13 +234,14 @@ net_plot <- ggplot(data = net_rate_df, aes(x = time, y = net_rate))+
 ltt_tbl <- read.table(file = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/LTT/one_place-one_time-one_occ/combined_4_KEEP_se_est_ltt.txt",header = T)
 ltt_plot <- ggplot(data = ltt_tbl, aes(x = time, y = diversity)) +
   scale_x_reverse(breaks = c(2.58, 5.33, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+  scale_y_continuous(breaks = seq(0,250,50),
+                     limits = c(0,250)) +
   annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
   annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
   annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
   geom_line(linewidth = 1, colour = "#a1d99b") +
   xlab("Time (Ma)") +
   ylab("Diversity (nb. lineages)") +
-  ylim(c(0, 350)) +
   theme(axis.title.x = element_text(size = 14),
         axis.title.y = element_text(size = 14),
         axis.text = element_text(size = 12),
