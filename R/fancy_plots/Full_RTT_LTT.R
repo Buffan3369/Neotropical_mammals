@@ -51,15 +51,15 @@ sp_ex <- ggplot(data = rates, aes(x = time, y = sp_rate)) +
             linewidth = 1, colour = "#4c4cec",) +
   geom_line(aes(x = time, y = ex_rate),
             linewidth = 1, colour = "#e34a33") +
-  labs(x = NULL,
+  labs(x = "Time (Ma)",
        y = "Rate (event/lineage/Myr)") +
-  theme(axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text = element_text(size = 12),
+  theme(axis.title.x = element_text(size = 22),
+        axis.title.y = element_text(size = 22),
+        axis.text = element_text(size = 18),
         legend.text = element_text(size = 10),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
-  coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 4)
+  coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 5)
 
   #Net diversification rate
 net_rate <- c(0.540835671789807, 0.540835671789807,0.04487921971846373,0.04780616092467681,0.2695312486964541,-0.06412911261073807,-0.06734009589463773,-0.06966934747293507,-0.06987014928574893,-0.049879654555964964,-0.026522047737185774,-0.002062497422479562,0.00592859223979105,0.029019695047278606,0.038799675687891715,0.04783539844663078,0.09944391037073887,0.33392711313045353,0.17375106283903455,-0.15192366741663213,-0.05415677243037935,-0.04720026852654614,-0.04676919491389166,0.009027401591279323,0.010706858040415022,-0.013059942879818766,-0.036350806684596955,-0.028255206116690017,0.031244748036830722,0.040693677479221334,0.04154791709606955,0.04177815379645152,0.041635203097259196,0.11713033560841322,0.5249309945510371,-0.03942865530772961,-0.6292723600527492,-0.07942163726366955,0.00028030756232263457,-0.0005313484394616019,0.2361564147057873,0.2526497642775196,0.39261165198669923,0.20929211005668505,-0.02739962227416205,-0.05495496078530707,-0.054587845153523246,-0.05444149248679402,-0.05444432947320285,-0.05455845494579912,-0.05474208741258427,-0.055200472943484076,-0.05549315176954241,-0.0555206523748313,-0.05555552233541388,-0.05565128525121478,-0.056470986122443605,-0.057276930576423066,-0.03200542593897328,0.023766295550452537,0.04793153778235491,0.05035626376815373,0.053234901541946655,0.05333656023194375,0.05330986987926572,0.05321677529477295,0.05315496655752857,0.053040559391115565,0.05291544892205826,0.0525801881308974,0.05250865510316121,0.05256747286489365,0.05260399394048628,0.05268176607871693,0.05265196487110631,0.05274471635094895,0.053027157445749463,0.05333428061969426,0.05508827007421227,0.05977013560749419,0.07402242053921289,0.10737829319505414,0.17163467455856493,0.22926945148663222,0.2955133708183274,0.30891989792013974,0.31087389599683485,0.2993907943111726,0.29600417098146,0.2911316403060792,0.2810799877044595,0.2553695535813776,0.18304055795684662,-0.0521534943214918,-0.14925292642937868,-0.0747348819134653,0.008973768340408058,0.09299916332977942,0.30248795505395637,1.0897337870868993)
@@ -87,14 +87,14 @@ net_plot <- ggplot(data = net_rate_df, aes(x = time, y = net_rate))+
             linewidth = 1, colour = "#504A4B") +
   geom_hline(yintercept = 0,
              linetype = "dashed", colour = "red") +
-  labs(x = NULL,
+  labs(x = "Time (Ma)",
        y = "Rate (event/lineage/Myr)") +
-  theme(axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text = element_text(size = 12),
+  theme(axis.title.x = element_text(size = 22),
+        axis.title.y = element_text(size = 22),
+        axis.text = element_text(size = 18),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
-  coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 4)
+  coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 5)
 
 #LTT : FROM COMBINED ONLY
 # ltt_tbl <- read.table(file = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/LTT/all_in_one/combined_6_KEEP_se_est_ltt.txt",header = T)
@@ -166,12 +166,12 @@ ltt_plot <- ggplot(data = LTT, aes(x = Age, y = Diversity)) +
   geom_line(linewidth = 1, colour = "#329507") +
   xlab("Time (Ma)") +
   ylab("Diversity (nb. lineages)") +
-  theme(axis.title.x = element_text(size = 14),
-        axis.title.y = element_text(size = 14),
-        axis.text = element_text(size = 12),
+  theme(axis.title.x = element_text(size = 22),
+        axis.title.y = element_text(size = 22),
+        axis.text = element_text(size = 18),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
-  coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 4)
+  coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 5)
 
 #Combine
 top_row <- cowplot::plot_grid(sp_ex, net_plot,
