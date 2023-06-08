@@ -5,6 +5,7 @@
 library(ggplot2)
 library(rphylopic)
 library(ggpubr)
+library(psych)
 library(hash)
 
 phylopic_sp_names <- hash("Sparassodonta" = "Thylacosmilus atrox",
@@ -20,32 +21,18 @@ img_aest <- hash("Sparassodonta" = c(2.5, 0.5), # y, ysize
                  )
 
 ## Computing Bayes factor to decide which of the linear or exponential model is the best 
-
-#Expo
+order <- "Sparassodonta"
+#Open MBD outputs
 MBD_expo <- read.table(paste0("../../MBD/", order, "/", order, "_combined_se_est_0_exp_MBD.log"), header = TRUE)
+MBD_lin <- read.table(paste0("../../MBD/", order, "/", order, "_combined_se_est_0_lin_MBD.log"), header = TRUE)
 #Remove burn-in
 burn_in <- 100
 MBD_expo <- MBD_expo[burn_in:nrow(MBD_expo),]
-#Linear (157 first iterations lost => no burn-in to remove)
-order = "all_in_one"
-df <- read.table(paste0("../../MBD/", order, "/", order, "_combined_se_est_0_lin_MBD.log"),
-                 sep = " ",
-                 header = TRUE)
-colnames_fixed <- strsplit(colnames(df), split = "\\.")[[1]]
-mat <- matrix(data = strsplit(df[2,], split = "\t")[[1]],
-              nrow = 1, ncol = length(colnames_fixed))
-for(i in 3:nrow(df)){
-  spl <- strsplit(df[i,], split = "\t")[[1]]
-  mat <- rbind(mat, spl)
-}
-mat <- apply(X = mat, MARGIN = c(1,2), FUN = as.numeric)
-MBD_lin <- data.frame(mat) 
-colnames(MBD_lin) <- colnames_fixed
-row.names(MBD_lin) <- 1:nrow(MBD_lin)
+MBD_lin <- MBD_lin[burn_in:nrow(MBD_lin),]
 
-#Mean marginal likelihoods
-LK_lin <- mean(MBD_lin$likelihood)
-LK_expo <- mean(MBD_expo$likelihood)
+#Harmonic mean of likelihoods of the two models
+LK_lin <- harmonic.mean(MBD_lin$likelihood)
+LK_expo <- harmonic.mean(MBD_expo$likelihood)
 
 #Bayes factor
 BF <- 2*(LK_expo - LK_lin)
