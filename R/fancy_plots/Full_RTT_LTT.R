@@ -35,7 +35,7 @@ rates <- data.frame(time = time,
 sp_ribbon$max[which(sp_ribbon$max > 1.4)] <- 1.4
   #plot
 sp_ex <- ggplot(data = rates, aes(x = time, y = sp_rate)) +
-  scale_x_reverse(breaks = c(2.58, 5.33, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+  scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
   scale_y_continuous(breaks = seq(from = 0, to = 1.4, by = 0.2),
                      limits = c(0, 1.4)) +
   annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
@@ -74,7 +74,7 @@ net_ribbon <- data.frame(time = time,
   #restrict ribbon
 net_ribbon$max[which(net_ribbon$max > 1.4)] <- 1.4
 net_plot <- ggplot(data = net_rate_df, aes(x = time, y = net_rate))+
-  scale_x_reverse(breaks = c(2.58, 5.33, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+  scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
   scale_y_continuous(breaks = seq(from = -1, to = 1.4, by = 0.2),
                      limits = c(-1, 1.4)) +
   annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
@@ -96,16 +96,74 @@ net_plot <- ggplot(data = net_rate_df, aes(x = time, y = net_rate))+
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
   coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 4)
 
-#LTT
-ltt_tbl <- read.table(file = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/LTT/all_in_one/combined_6_KEEP_se_est_ltt.txt",header = T)
-ltt_plot <- ggplot(data = ltt_tbl, aes(x = time, y = diversity)) +
-  scale_x_reverse(breaks = c(2.58, 5.33, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+#LTT : FROM COMBINED ONLY
+# ltt_tbl <- read.table(file = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/LTT/all_in_one/combined_6_KEEP_se_est_ltt.txt",header = T)
+# ltt_plot <- ggplot(data = ltt_tbl, aes(x = time, y = diversity)) +
+#   scale_x_reverse(breaks = c(2.58, 5.33, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+#   scale_y_continuous(breaks = seq(0,250,50),
+#                      limits = c(0,250)) +
+#   annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+#   annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+#   annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+#   geom_line(linewidth = 1, colour = "#a1d99b") +
+#   xlab("Time (Ma)") +
+#   ylab("Diversity (nb. lineages)") +
+#   theme(axis.title.x = element_text(size = 14),
+#         axis.title.y = element_text(size = 14),
+#         axis.text = element_text(size = 12),
+#         panel.background = element_blank(),
+#         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+#   coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 4)
+
+# LTT from all replicates
+dir <- "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/LTT/all_in_one/"
+files <- Sys.glob(paste0(dir, "all_in_one_*_ltt.txt"))
+
+ltt <- read.table(files[1], header = TRUE)
+ltt$time <- unlist(lapply(X = ltt$time, FUN = round, digits = 1))
+ltt <- ltt[-which(ltt$time > 66.0), c("time", "diversity")]
+ltt <- ltt %>% rename(diversity_1 = "diversity")
+
+i = 2
+for(file in files[2:length(files)]){
+  f <- read.table(file, header = TRUE)
+  if(length(which(ltt$time > 66.0)) > 0){
+    f <- f[-which(f$time > 66.0), c("time", "diversity")]
+  }
+  else{
+    f <- f[, c("time", "diversity")]
+  }
+  f$time <- unlist(lapply(X = f$time, FUN = round, digits = 1))
+  colnames(f) <- c("time", paste0("diversity_", i))
+  ltt <- merge(ltt, f, by = "time", all = T)
+  i <- i+1
+}
+
+LTT <- data.frame(Age = ltt$time,
+                  Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+                                    MARGIN = 1,
+                                    FUN = mean,
+                                    na.rm = TRUE),
+                  min_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+                                        MARGIN = 1,
+                                        FUN = min,
+                                        na.rm = TRUE),
+                  max_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+                                        MARGIN = 1,
+                                        FUN = max,
+                                        na.rm = TRUE))
+
+ltt_plot <- ggplot(data = LTT, aes(x = Age, y = Diversity)) +
+  scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
   scale_y_continuous(breaks = seq(0,250,50),
                      limits = c(0,250)) +
   annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
   annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
   annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
-  geom_line(linewidth = 1, colour = "#a1d99b") +
+  geom_ribbon(aes(x = Age, ymin = min_Diversity, ymax = max_Diversity), 
+              fill = "#a1d99b",
+              alpha = 0.8) +
+  geom_line(linewidth = 1, colour = "#329507") +
   xlab("Time (Ma)") +
   ylab("Diversity (nb. lineages)") +
   theme(axis.title.x = element_text(size = 14),
@@ -166,7 +224,7 @@ ex_ribbon$max[which(ex_ribbon$max > 1.4)] <- 1.4
 rates$ex_rate[which(rates$ex_rate > 1.4)] <- 1.4
 #plot
 sp_ex <- ggplot(data = rates, aes(x = time, y = sp_rate)) +
-  scale_x_reverse(breaks = c(2.58, 5.33, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+  scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
   scale_y_continuous(breaks = seq(from = 0, to = 1.4, by = 0.2),
                      limits = c(0, 1.4)) +
   annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
@@ -208,7 +266,7 @@ net_ribbon$min[which(net_ribbon$min < -1)] <- -1
 net_rate_df$net_rate[which(net_rate_df$net_rate > 1.4)] <- 1.4
 #plot
 net_plot <- ggplot(data = net_rate_df, aes(x = time, y = net_rate))+
-  scale_x_reverse(breaks = c(2.58, 5.33, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+  scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
   scale_y_continuous(breaks = seq(from = -1, to = 1.4, by = 0.2),
                      limits = c(-1, 1.4)) +
   annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
@@ -230,16 +288,74 @@ net_plot <- ggplot(data = net_rate_df, aes(x = time, y = net_rate))+
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
   coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 4)
 
-#LTT
-ltt_tbl <- read.table(file = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/LTT/one_place-one_time-one_occ/combined_4_KEEP_se_est_ltt.txt",header = T)
-ltt_plot <- ggplot(data = ltt_tbl, aes(x = time, y = diversity)) +
-  scale_x_reverse(breaks = c(2.58, 5.33, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+#LTT from combined
+# ltt_tbl <- read.table(file = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/LTT/one_place-one_time-one_occ/combined_4_KEEP_se_est_ltt.txt",header = T)
+# ltt_plot <- ggplot(data = ltt_tbl, aes(x = time, y = diversity)) +
+#   scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+#   scale_y_continuous(breaks = seq(0,250,50),
+#                      limits = c(0,250)) +
+#   annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+#   annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+#   annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+#   geom_line(linewidth = 1, colour = "#a1d99b") +
+#   xlab("Time (Ma)") +
+#   ylab("Diversity (nb. lineages)") +
+#   theme(axis.title.x = element_text(size = 14),
+#         axis.title.y = element_text(size = 14),
+#         axis.text = element_text(size = 12),
+#         panel.background = element_blank(),
+#         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+#   coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 4)
+
+#LTT from all replicates
+dir <- "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/LTT/one_place-one_time-one_occ/"
+files <- Sys.glob(paste0(dir, "one_place-one_time-one_occ_*_ltt.txt"))
+
+ltt <- read.table(files[1], header = TRUE)
+ltt$time <- unlist(lapply(X = ltt$time, FUN = round, digits = 1))
+ltt <- ltt[, c("time", "diversity")]
+ltt <- ltt %>% rename(diversity_1 = "diversity")
+
+i = 2
+for(file in files[2:length(files)]){
+  f <- read.table(file, header = TRUE)
+  if(length(which(ltt$time > 66.0)) > 0){
+    f <- f[-which(f$time > 66.0), c("time", "diversity")]
+  }
+  else{
+    f <- f[, c("time", "diversity")]
+  }
+  f$time <- unlist(lapply(X = f$time, FUN = round, digits = 1))
+  colnames(f) <- c("time", paste0("diversity_", i))
+  ltt <- merge(ltt, f, by = "time", all = T)
+  i <- i+1
+}
+
+LTT <- data.frame(Age = ltt$time,
+                  Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+                                    MARGIN = 1,
+                                    FUN = mean,
+                                    na.rm = TRUE),
+                  min_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+                                        MARGIN = 1,
+                                        FUN = min,
+                                        na.rm = TRUE),
+                  max_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+                                        MARGIN = 1,
+                                        FUN = max,
+                                        na.rm = TRUE))
+
+ltt_plot <- ggplot(data = LTT, aes(x = Age, y = Diversity)) +
+  scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
   scale_y_continuous(breaks = seq(0,250,50),
                      limits = c(0,250)) +
   annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
   annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
   annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
-  geom_line(linewidth = 1, colour = "#a1d99b") +
+  geom_ribbon(aes(x = Age, ymin = min_Diversity, ymax = max_Diversity),
+              fill = "#a1d99b",
+              alpha = 0.8) +
+  geom_line(linewidth = 1, colour = "#329507") +
   xlab("Time (Ma)") +
   ylab("Diversity (nb. lineages)") +
   theme(axis.title.x = element_text(size = 14),
