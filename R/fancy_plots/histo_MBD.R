@@ -18,7 +18,7 @@ img_aest <- hash("Sparassodonta" = c(2.5, 0.5), # y, ysize
                  "Pilosa" = c(-2, 1.3),
                  "Notoungulata" = c(2, 0.85),
                  "Rodentia" = c(2, 2.5)
-                 )
+)
 
 ## Computing Bayes factor to decide which of the linear or exponential model is the best 
 order <- "Sparassodonta"
@@ -60,7 +60,7 @@ for(order in c("Sparassodonta", "Cingulata", "Pilosa", "Notoungulata", "Rodentia
   burn_in <- 40
   MBD <- MBD[40:nrow(MBD),]
   #Prepare plot dataset
-  plot_df <- data.frame(rate_type = rep(c("Speciation", "Extinction"), 7),
+  plot_df <- data.frame(rate_type = rep(c("Origination", "Extinction"), 7),
                         var = c("Self-diversity", "Self-diversity", "Fragmentation", "Fragmentation",
                                 "Andean Uplift", "Andean Uplift", "Temperature", "Temperature",
                                 "Atmospheric Carbon", "Atmospheric Carbon", "Organic Carbon", "Organic Carbon",
@@ -70,14 +70,14 @@ for(order in c("Sparassodonta", "Cingulata", "Pilosa", "Notoungulata", "Rodentia
   #Incorporate correlation parameter values and shrinkage weights
   for(i in 0:6){
     #mean posterior estimate for correlation parameters
-    speciation_r <- mean(MBD[, paste0("Gl0_",i)])
+    Origination_r <- mean(MBD[, paste0("Gl0_",i)])
     extinction_r <- mean(MBD[, paste0("Gm0_",i)])
     #mean posterior estimate for shrinkage weights
-    speciation_w <- mean(MBD[, paste0("Wl0_",i)])
+    Origination_w <- mean(MBD[, paste0("Wl0_",i)])
     extinction_w <- mean(MBD[, paste0("Wm0_",i)])
     #add to plot dataset
-    plot_df$correlation_parameter[(2*i+1):(2*i+2)] <- c(speciation_r, extinction_r)
-    plot_df$shrinkage_weight[(2*i+1):(2*i+2)] <- c(speciation_w, extinction_w)
+    plot_df$correlation_parameter[(2*i+1):(2*i+2)] <- c(Origination_r, extinction_r)
+    plot_df$shrinkage_weight[(2*i+1):(2*i+2)] <- c(Origination_w, extinction_w)
   }
   #Incorporate significance levels
   plot_df$signif <- NA
@@ -107,7 +107,7 @@ for(order in c("Sparassodonta", "Cingulata", "Pilosa", "Notoungulata", "Rodentia
                  x = 7,
                  y = values(img_aest[order])[1],
                  ysize = values(img_aest[order])[2]
-                 )
+    )
   
   ggsave(paste0("./figures/MBD_outputs/", order, ".png"),
          plot = p,
@@ -126,7 +126,7 @@ for(order in c("Sparassodonta", "Cingulata", "Pilosa", "Notoungulata", "Rodentia
   #Remove fragmentation
   MBD <- MBD[, !(colnames(MBD) %in% c("Gl0_1", "Gm0_1", "Wl0_1", "Wm0_1"))]
   #Prepare plot dataset
-  plot_df <- data.frame(rate_type = rep(c("Speciation", "Extinction"), 6),
+  plot_df <- data.frame(rate_type = rep(c("Origination", "Extinction"), 6),
                         var = c("Self-diversity", "Self-diversity",
                                 "Andean Uplift", "Andean Uplift", "Temperature", "Temperature",
                                 "Atmospheric Carbon", "Atmospheric Carbon", "Organic Carbon", "Organic Carbon",
@@ -136,20 +136,20 @@ for(order in c("Sparassodonta", "Cingulata", "Pilosa", "Notoungulata", "Rodentia
   #Incorporate correlation parameter values and shrinkage weights
   for(i in c(0, 2:6)){
     #mean posterior estimate for correlation parameters
-    speciation_r <- mean(MBD[, paste0("Gl0_",i)])
+    Origination_r <- mean(MBD[, paste0("Gl0_",i)])
     extinction_r <- mean(MBD[, paste0("Gm0_",i)])
     #mean posterior estimate for shrinkage weights
-    speciation_w <- mean(MBD[, paste0("Wl0_",i)])
+    Origination_w <- mean(MBD[, paste0("Wl0_",i)])
     extinction_w <- mean(MBD[, paste0("Wm0_",i)])
     #add to plot dataset
     if(i > 0){
       j <- i-1
-      plot_df$correlation_parameter[(2*j+1):(2*j+2)] <- c(speciation_r, extinction_r)
-      plot_df$shrinkage_weight[(2*j+1):(2*j+2)] <- c(speciation_w, extinction_w)
+      plot_df$correlation_parameter[(2*j+1):(2*j+2)] <- c(Origination_r, extinction_r)
+      plot_df$shrinkage_weight[(2*j+1):(2*j+2)] <- c(Origination_w, extinction_w)
     }
     else{
-      plot_df$correlation_parameter[(2*i+1):(2*i+2)] <- c(speciation_r, extinction_r)
-      plot_df$shrinkage_weight[(2*i+1):(2*i+2)] <- c(speciation_w, extinction_w)
+      plot_df$correlation_parameter[(2*i+1):(2*i+2)] <- c(Origination_r, extinction_r)
+      plot_df$shrinkage_weight[(2*i+1):(2*i+2)] <- c(Origination_w, extinction_w)
     }
   }
   #Incorporate significance levels
