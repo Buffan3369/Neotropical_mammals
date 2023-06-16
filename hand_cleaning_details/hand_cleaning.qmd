@@ -2,12 +2,13 @@
 title: "Details for fossil data hand-cleaning based on authors' expertise."
 author:
   - "---"
-  - Lucas Buffan^1,2^, Fabien L. Condamine^2^, Laurent Marivaux^2^, François Pujos^3,4^ and Pierre-Olivier Antoine^2^
+  - Lucas Buffan^1,2^, Fabien L. Condamine^2^, Laurent Marivaux^2^, François Pujos^3,4^, Narla S. Stutz ^2,5^, and Pierre-Olivier Antoine^2^
   - "---"
   - "^1^Département de Biologie, École Normale Supérieure de Lyon, Université Claude Bernard Lyon 1, 69342 Lyon Cedex 07, France."
   - "^2^CNRS, UMR 5554 Institut des Sciences de l’Évolution de Montpellier, Place Eugène Bataillon, 34095 Montpellier, France."
   - "^3^Consejo Nacional de Investigaciones Científicas y T ́ecnicas (CONICET), Argentina"
-  - "^4^Instituto Argentino de Nivología, Glaciología y Ciencias Ambientales (IANIGLA), CCT-CONICET-Mendoza, Av. Ruiz Leal s/n, ParqueGral, San Martín 5500, Mendoza, Argentina"  
+  - "^4^Instituto Argentino de Nivología, Glaciología y Ciencias Ambientales (IANIGLA), CCT-CONICET-Mendoza, Av. Ruiz Leal s/n, ParqueGral, San Martín 5500, Mendoza, Argentina"
+  - "^5^Programa de P ́os-Graduaç ̃ ao em Geociˆencias, Universidade Federal do Rio Grande do Sul (PPGGEO UFRGS), Avenida Bento Gonçalves, 9500, 91501-970, Porto Alegre, Brazil"
   - "---"
   - "**Corresponding author:** Lucas.L.Buffan@gmail.com"
 format:
@@ -63,6 +64,11 @@ Cleaning was made based on the expertise of F. Pujos, and details of the procedu
 
 # Notoungulata
 
+#No order
+*Wirunodon chanku* (coll. nb. 149523, [@goin2004]) age range was set to Early Oligocene (28.7-33.9 Ma).
+The three occurrences of the *Rumiodon* genus were attributed to Early Oligocene (28.7-33.9 Ma)
+All occurrences of the *Protodidelphis* genus were attributed to Late Palaeocene-Early Eocene (47.8-59.2 Ma), just like all occurrences from the *Carolopaulacoutoia* and *Didelphopsis* genera.
+
 # Paucituberculata
 
 # Perissodactyla
@@ -86,13 +92,20 @@ Cleaning was made based on the expertise of F. Pujos, and details of the procedu
 
 Cleaning was made based on the expertise of F. Pujos, and details of the procedure are available in the `./data_2023/cleaning_Xenarthra/Xenarthra_FP_2.0.xlsx` table, sheet *Pilosa*. Rows highlighted in red (n=180) have been further removed for the rest of the study. Taxon names, ages, localities and formations were updated in red when needed.
 
+# Polydolopimorphia
+
+*Chulpasia sp.* (coll. nb. 132938, [@sige2004]) was removed as only one record of *Chulpasia* (species *mattaueri*) has been found in Peru.
+*Groeberia minoprioi* (coll. nb. 92669, [@simpson1962]) age range was set to Late Eocene-Early Oligocene (27.82-37.71 Ma).
+*Marmosopsis sp.* (coll. nb. 133039, [@tejedor2009]) age range was set to Late Palaeocene-Early Eocene (47.8-59.2 Ma).
+*Patagonia peregrina* (coll. nb. 27311, [@goin2013]) age range was set to Chattian (23.03-27.82 Ma).
+
 # Primates
 
 # Proboscidea
 
 *Mastotherium hyodon* (coll. nb. 142016, [@boule1920] and 145181, [@schneider1927]) genus named was set to *Cuvieronius*.   
 *Stegomastodon sp.* (coll. nb. 211646, [@ubilla2009]) was synonymised with *Notiomastodon platensis*.  
-All mentions of *Mammut* were removed.  
+All mentions of *Mammut* were removed.
 *Notiomastodon platensis* (coll. nb. 144515, [@campbell2000]), formerly described as *Amahuacatherium peruvianum* was removed as its age was questioned in [@negri2009].
 
 # Rodentia 

@@ -48,10 +48,11 @@ raw_2023$family[which(raw_2023$family == "Pyrotheridae")] <- "Pyrotheriidae"
 ## Assign orders to occurrences with unknown order ----------------------
 #Polydolopimorphia
 raw_2023$order[which( (raw_2023$family %in% c("Argyrolagidae", "Bonapartheriidae", "Polydolopidae", "Prepidolopidae"))) |
-                 (raw_2023$genus %in% c("Wamradolops", "Roberthoffstetteria"))] <- "Polydolopimorphia"
+                 (raw_2023$genus %in% c("Wamradolops", "Roberthoffstetteria", "Apeirodon", "Bobbschaefferia",
+                                        "Cocatherium", "Epiklohnia", "Gashternia", "Palangania", "Patagonia"))] <- "Polydolopimorphia"
 #Pyrotheria
 raw_2023$order[which((raw_2023$family %in% c("Pyrotheriidae", "Rosendolopidae")) |
-                       raw_2023$genus == "Griphodon")] <- "Pyrotheria"
+                       raw_2023$genus %in% c("Griphodon", "Carolozittelia"))] <- "Pyrotheria"
 #Gondwanatheria
 raw_2023$order[which(raw_2023$family == "Sudamericidae")] <- "Gondwanatheria"
 
