@@ -53,12 +53,18 @@ Cleaning was made based on the expertise of F. Pujos, and details of the procedu
 
 # Didelphimorphia
 
+Added one occurrence of the extant genus *Chacodelphys* [@teta2006].  
+All occurrences assigned to the *Micoureus* genus were re-assigned to the *Marmosa* genus, the former being a sub-genus of the latter [@stutz2022].  
+Based on [@marivaux2020], we added a new occurrence of Marmosa in the TAR-31 locality of Shapaja, Peru, Middle-Late Miocene (11.67-15.63 Ma).  
+*Paradidelphys sp.* (coll. nb. 157795, [@reguero2011]) was synonymised with *Thylophorops*.  
+Added one occurrence of *Thylamys cf. colombianus* from the TAR-31 locality of Shapaja, Peru [@stutz2022].  
+
 # Litopterna
 
 *Archaeohyracotherium mediale* (*Didolodontidae*, coll. nb. 176164, [@simpson1967]) was synonymised with *Asmithwoodwardia subtrigona* (*Protolipternidae*) by Gelfo (2006)[@gelfo2006].  
 *Argyrolambda conidens* was synonymised with *Didolodus multicuspis* [@gelfo2006].  
 *Didolodus sp.* (coll. nb. 199563, [@antoine2021]) was removed as associated to "unidentified *Didolontidae*" in the paper.
-*Enneoconus parvidens* (coll. nb 176164, [@simpson1948]) was synonymised with *Ernestokokenia nitida* by Gelfo (2006)[@gelfo2006].
+*Enneoconus parvidens* (coll. nb. 176164, [@simpson1948]) was synonymised with *Ernestokokenia nitida* by Gelfo (2006)[@gelfo2006].
 
 # Microbiotheria
 
@@ -67,9 +73,13 @@ Cleaning was made based on the expertise of F. Pujos, and details of the procedu
 #No order
 *Wirunodon chanku* (coll. nb. 149523, [@goin2004]) age range was set to Early Oligocene (28.7-33.9 Ma).
 The three occurrences of the *Rumiodon* genus were attributed to Early Oligocene (28.7-33.9 Ma)
-All occurrences of the *Protodidelphis* genus were attributed to Late Palaeocene-Early Eocene (47.8-59.2 Ma), just like all occurrences from the *Carolopaulacoutoia* and *Didelphopsis* genera.
+All occurrences of the *Protodidelphis* genus were attributed to Late Palaeocene-Early Eocene (47.8-59.2 Ma), just like all occurrences from the *Carolopaulacoutoia* and *Didelphopsis* genera.  
 
 # Paucituberculata
+
+*Actestodon* genus was synonimised with *Actestis* 
+Added one occurrence *aff. Palaeothentes* from the TAR-31 locality of Shapaja, Peru [@stutz2022].
+*Propalaeothentes* was synonimised with *Palaeothentes*.
 
 # Perissodactyla
 
@@ -94,10 +104,15 @@ Cleaning was made based on the expertise of F. Pujos, and details of the procedu
 
 # Polydolopimorphia
 
-*Chulpasia sp.* (coll. nb. 132938, [@sige2004]) was removed as only one record of *Chulpasia* (species *mattaueri*) has been found in Peru.
-*Groeberia minoprioi* (coll. nb. 92669, [@simpson1962]) age range was set to Late Eocene-Early Oligocene (27.82-37.71 Ma).
-*Marmosopsis sp.* (coll. nb. 133039, [@tejedor2009]) age range was set to Late Palaeocene-Early Eocene (47.8-59.2 Ma).
+*Chulpasia sp.* (coll. nb. 132938, [@sige2004]) was removed as only one record of *Chulpasia* (species *mattaueri*) has been found in Peru.  
+*Groeberia minoprioi* (coll. nb. 92669, [@simpson1962]) age range was set to Late Eocene-Early Oligocene (27.82-37.71 Ma).  
+*Marmosopsis sp.* (coll. nb. 133039, [@tejedor2009]) age range was set to Late Palaeocene-Early Eocene (47.8-59.2 Ma).  
 *Patagonia peregrina* (coll. nb. 27311, [@goin2013]) age range was set to Chattian (23.03-27.82 Ma).
+All occurrences of *Polydolops clavulus* were renamed *Archaeodolops clavulus*, according to [@chornogubsky2021]. Added one occurence of *Archaeodolops clavulus*, according to the same paper.  
+All occurrences of *Proargyrolagus bolivianus* were attributed to the Salla formation, Bolivia. Hence, their age boundaries were restricted to 24.5-26 Ma.  
+*Amphidolops serrula* (coll. nb. 13779, [@ameghino1902]) was re-assigned to Late Palaeocene (oldest recorded Polydolopid).  
+*Polydolops sp.* (coll. nb. 14208, [@marshall1982]) was removed as age boundaries (Early Miocene) were way outside known boundaries for records of this genus (Middle Eocene).  
+Added occurrence from a newly described genus of the Peridolopidae family from the TAR-74 locality of San Martín, named *Peridolopidae_gen_A* [@antoine2021].
 
 # Primates
 
@@ -145,6 +160,9 @@ Four Brazilian occurrences of the genera *Eobranisamys* (two) and *Eoincamys* (t
 All *Rattus rattus* occurrences, as introduced by humans.
 
 # Sparassodonta 
+
+Cleaning was highly based on Tarquini et al. 2022 [@tarquini2022].
+In addition, we removed our single *Argyrolestes peralestinus* occurrence (coll. nb. 176285, [@marshall1978]) as nomen nubidum [@prevosti2018]
 
 # Xenungulata
 
