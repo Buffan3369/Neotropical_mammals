@@ -8,7 +8,8 @@ library(hash)
 
 #date <- "20-04"      #Intermediate cleaning
 #date <- "12-05"      #Too stringent smoothing
-date <- "31-05"       #Less stringent smoothing, Xenarthra added 
+#date <- "31-05"      #Less stringent smoothing, Xenarthra added 
+date <- "21-06"       #Marsupials cleaned
 
 ## Species list (non-marine) ---------------------------------------------------
 if(date == "20-04"){
@@ -24,6 +25,14 @@ if(date == "12-05"){
 }
 if(date == "31-05"){
   species_list <- read.table("../../DATA/order_level/Sub_Epoch_Binning/full_list_SALMA_ONLY_SUBEPOCH.txt",
+                             header = TRUE, 
+                             dec = ",", 
+                             sep = "\t", 
+                             quote = "", 
+                             fill = TRUE)
+}
+if(date == "21-06"){
+  species_list <- read.table("../../DATA/Cleaning_Narla/full_list_marsu_cleaned.txt",
                              header = TRUE, 
                              dec = ",", 
                              sep = "\t", 
@@ -113,7 +122,12 @@ write.table(x = final_unique,
 
 ## Order-level split -----------------------------------------------------------
   #we exclude orders with too few occurrences
-for(order in unique(species_list$order)[!(unique(species_list$order) %in% c("Lagomorpha","Dasyuromorphia", "Eulypotyphla", "Monotremata", "Xenungulata", "Cimolesta", "Gondwanatheria"))]){
+
+#excluded <- c("Lagomorpha","Dasyuromorphia", "Eulipotyphla", "Monotremata", "Xenungulata", "Cimolesta", "Gondwanatheria")
+excluded <- unique(species_list$order)[!(unique(species_list$order) %in% c("Paucituberculata", "Polydolopimorphia",
+                                                                           "Microbiotheria", "Sparassodonta", "Didelphimorphia"))]
+
+for(order in unique(species_list$order)[!(unique(species_list$order) %in% excluded)]){
   if(is.na(order) == FALSE){
     order_split <- species_list[which(species_list$order == order), ]
     pyrate_input <- order_split[, c("genus", "gen_lvl_status", "min_ma", "max_ma")]
@@ -131,8 +145,24 @@ marsupials <- c("Paucituberculata", "Microbiotheria", "Polydolopimorphia", "Dide
 SANUs <- c("Xenungulata", "Astrapotheria", "Litopterna", "Notoungulata", "Pyrotheria")
 xenarthra <- c("Pilosa", "Cingulata")
 dict <- hash("marsupials" = marsupials, "SANUs" = SANUs, "xenarthra" = xenarthra)
+
+  #marsupial genera with no order specified
+marsu_genera <- c("Chulpasia", "Fieratherium", "Marmosopsis", "Monodelphosis",
+                  "Zeusdelphys", "Coona", "Derorhynchus", "Diogenesia", "Pauladelphys",
+                  "Periakros", "Reigia", "Rumiodon", "Jaskhadelphys", "Kiruwamaq", 
+                  "Minusculodelphis", "Canchadelphys", "Caroloameghinia", "Peradectes",
+                  "Procaroloameghinia", "Bergqvistherium", "Carolocoutoia", "Guggenheimia",
+                  "Periprotodidelphis", "Protodidelphis", "Andinodelphys", "Mayulestes",
+                  "Eobrasilia", "Carolopaulacoutoia", "Didelphopsis", "Itaboraidelphys",
+                  "Szalinia", "Gaylordia", "Acdestoides", "Incadelphys", "Khasia",
+                  "Mirandatherium", "Mizquedelphys", "Progarzonia")
+
 for(key in keys(dict)){
   group_split <- species_list[which(species_list$order %in% values(dict[key])), ]
+  if(key == "marsupials"){
+    group_split <- cbind(group_split,
+                         species_list[which(species_list$genus %in% marsu_genera), ])
+  }
   pyrate_input <- group_split[, c("genus", "gen_lvl_status", "min_ma", "max_ma")]
   colnames(pyrate_input) <- c("Species", "Status", "min_age", "max_age")
   write.table(x = pyrate_input,
@@ -182,12 +212,80 @@ for(order in c("Sirenia", "Cetacea")){
               quote = FALSE)
 }
 
+########################### SPECIES-LEVEL ANALYSIS #############################
+  ## All in one ----------------------------------------------------------------
+all_in_sp <- species_list[-which(species_list$status == ""), ]
+#Add species name as genus name when unprecised
+all_in_sp$accepted_name[which(all_in_sp$accepted_name == "")] <- all_in_sp$genus[which(all_in_sp$accepted_name == "")]
+#Target species names that are same as genus names: if several per genus, rename as different species if coming from different countries
+for(genus in unique(all_in_sp$genus)){
+  idx <- which(all_in_sp$accepted_name == genus)
+  if((length(idx) > 0) & (length(unique(all_in_sp$cc[idx])) > 1)){
+#    print(genus)
+    df <- data.frame(name = all_in_sp$accepted_name[idx],
+                     country = all_in_sp$cc[idx])
+    df$letter <- NA
+    i = 1
+    for(cc in unique(df$country)){
+      df$letter[which(df$country == cc)] <- letters[i]
+      i = i+1
+    }
+    all_in_sp$accepted_name[idx] <- paste0(df$name, "_", df$letter)
+  }
+}
+#Format
+all_in_sp <- all_in_sp[, c("accepted_name", "status", "min_ma", "max_ma")]
+colnames(all_in_sp) <- c("Species", "Status", "min_age", "max_age")
+write.table(x = all_in_sp,
+            file = paste0("./data_2023/PyRate/cleaning_", date, "/SPECIES_LEVEL/all_in_one_SPECIES.txt"),
+            sep = "\t",
+            na = "",
+            row.names = FALSE,
+            quote = FALSE)
+  ## Spatially weighted --------------------------------------------------------
+apply_unique <- lapply(X = unique(species_list$accepted_name),
+                       FUN = just_one,
+                       sp_ds = species_list)
+final_unique <- apply_unique[[1]]
+for(i in 2:length(apply_unique)){
+  final_unique <- rbind(final_unique, apply_unique[[i]])
+}
+for(genus in unique(final_unique$genus)){
+  idx <- which(final_unique$accepted_name == genus)
+  if((length(idx) > 0) & (length(unique(final_unique$cc[idx])) > 1)){
+#    print(genus)
+    df <- data.frame(name = final_unique$accepted_name[idx],
+                     country = final_unique$cc[idx])
+    df$letter <- NA
+    i = 1
+    for(cc in unique(df$country)){
+      df$letter[which(df$country == cc)] <- letters[i]
+      i = i+1
+    }
+    final_unique$accepted_name[idx] <- paste0(df$name, "_", df$letter)
+  }
+}
+final_unique_sp <- final_unique[-which(final_unique$status == ""), c("accepted_name", "status", "min_ma", "max_ma")]
+colnames(final_unique_sp) <- c("Species", "Status", "min_age", "max_age") 
+write.table(x = final_unique_sp,
+            file = paste0("./data_2023/PyRate/cleaning_", date, "/SPECIES_LEVEL/one_place-one_time-one_occ-SPECIES.txt"),
+            sep = "\t",
+            na = "",
+            row.names = FALSE,
+            quote = FALSE)
+
 ## Extract ages using Silvestro et al. function (for PyRate output) ------------
 source("../../pyrate_utilities.R")
 for(file in c(paste0("./data_2023/PyRate/cleaning_", date, "/all_in_one.txt"),
               paste0("./data_2023/PyRate/cleaning_", date, "/one_place-one_time-one_occ.txt"))){
   extract.ages(file, replicates = 10)
 }
+
+for(file in c(paste0("./data_2023/PyRate/cleaning_", date, "/SPECIES_LEVEL/all_in_one_SPECIES.txt"),
+              paste0("./data_2023/PyRate/cleaning_", date, "/SPECIES_LEVEL/one_place-one_time-one_occ-SPECIES.txt"))){
+  extract.ages(file, replicates = 10)
+}
+
 for(file in list.files(paste0("./data_2023/PyRate/cleaning_", date, "/order_level/"))){
   extract.ages(paste0("./data_2023/PyRate/cleaning_", date, "/order_level/", file), replicates = 10)
 }

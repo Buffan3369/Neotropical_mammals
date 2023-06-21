@@ -1,0 +1,10 @@
+Species	Status
+Clenia	extinct
+Dromiciops	extant
+Eomicrobiotherium	extinct
+Kirutherium	extinct
+Microbiotherium	extinct
+Mirandatherium	extinct
+Oligobiotherium	extinct
+Pachybiotherium	extinct
+Woodburnodon	extinct
