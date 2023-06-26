@@ -56,7 +56,7 @@ Cleaning was made based on the expertise of F. Pujos, and details of the procedu
 Added one occurrence of the extant genus *Chacodelphys* [@teta2006].  
 All occurrences assigned to the *Micoureus* genus were re-assigned to the *Marmosa* genus, the former being a sub-genus of the latter [@stutz2022].  
 Based on [@marivaux2020], we added a new occurrence of Marmosa in the TAR-31 locality of Shapaja, Peru, Middle-Late Miocene (11.67-15.63 Ma).  
-*Paradidelphys sp.* (coll. nb. 157795, [@reguero2011]) was synonymised with *Thylophorops*.  
+*Paradidelphys sp.* (coll. nb. 157795, [@reguero2011]) was synonymised with *Thylophorops* [@goin1996].  
 Added one occurrence of *Thylamys cf. colombianus* from the TAR-31 locality of Shapaja, Peru [@stutz2022].  
 
 # Litopterna
@@ -68,6 +68,8 @@ Added one occurrence of *Thylamys cf. colombianus* from the TAR-31 locality of S
 
 # Microbiotheria
 
+*Clenia brevis* was excluded from the *Clenia* genus by Goin and Abello (2013) [@goin2013]. Hence, we rename the genus *aff_Clenia*.
+
 # Notoungulata
 
 #No order
@@ -77,9 +79,10 @@ All occurrences of the *Protodidelphis* genus were attributed to Late Palaeocene
 
 # Paucituberculata
 
-*Actestodon* genus was synonimised with *Actestis* 
+*Actestodon* genus was synonimised with *Actestis* [@abello2007].
 Added one occurrence *aff. Palaeothentes* from the TAR-31 locality of Shapaja, Peru [@stutz2022].
-*Propalaeothentes* was synonimised with *Palaeothentes*.
+*Propalaeothentes* was synonimised with *Palaeothentes* [@abello2007].
+Added *Palaeopanorthus primus* from the Colhuehuappuian of Chubut, Argentina [@abello2007].
 
 # Perissodactyla
 
