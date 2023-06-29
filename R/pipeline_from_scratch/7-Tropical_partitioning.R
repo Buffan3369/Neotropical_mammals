@@ -133,7 +133,7 @@ to_rot <- palaeorotate(occdf = to_rot,
                        uncertainty = FALSE)
 
 ## Palaeolatitudinal binning ---------------------------------------------------
-  #Quick and dirty tropical assignation
+  #Quick and dirty low/high latitudes assignation
 bins <- data.frame(bin = c(1,2),
                    max = c(12, -30),
                    mid = c(-9, -45),
