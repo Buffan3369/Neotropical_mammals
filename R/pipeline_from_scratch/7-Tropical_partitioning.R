@@ -122,7 +122,8 @@ occdf <- occdf[-which(is.na(occdf$lat) & is.na(occdf$lng)),] #remove occurrences
 
 to_rot <- data.frame(lng = occdf$lng,
                      lat = occdf$lat,
-                     age = occdf$age)
+                     age = occdf$age,
+                     genus = occdf$genus)
 
 to_rot <- palaeorotate(occdf = to_rot,
                        lng = "lng",
@@ -138,12 +139,61 @@ bins <- data.frame(bin = c(1,2),
                    max = c(12, -30),
                    mid = c(-9, -45),
                    min = c(-30, -60))
-to_rot <- bin_lat(occdf = to_rot,
-                  bins = bins,
-                  lat = "p_lat")
+  #Fix the issue of the genera distributed between both bins
+assign_mean <- function(genus, coord){ #coord = "lat" or "lng"
+  coord_list <- to_rot[which(to_rot$genus == genus), c(coord)]
+  return(mean(coord_list, na.rm = TRUE))
+}
+assign_sd <- function(genus, coord){ #coord = "lat" or "lng"
+  coord_list <- to_rot[which(to_rot$genus == genus), c(coord)]
+  return(sd(coord_list, na.rm = TRUE))
+}
+assign_len <- function(genus){
+  return(length(which(to_rot$genus == genus)))
+}
 
-## Merge and save binned palaeorotated occurrences dataframe --------------------
-occdf <- cbind.data.frame(occdf, to_rot[,!(colnames(to_rot) %in% c("lng", "lat", "age"))])
+mean_loc <- data.frame(genus = unique(to_rot$genus),
+                       mean_lat = unlist(lapply(X = unique(to_rot$genus),
+                                           FUN = assign_mean,
+                                           coord = "lat")),
+                       sd_lat = unlist(lapply(X = unique(to_rot$genus),
+                                              FUN = assign_sd,
+                                              coord = "lat")),
+                       N = unlist(lapply(X = unique(to_rot$genus),
+                                         FUN = assign_len)))
+  # Target genera with mean+sd and mean only binned into different bins
+mean_loc_binned <- mean_loc[which(mean_loc$N > 1),]
+row.names(mean_loc_binned) <- 1:nrow(mean_loc_binned)
+mean_loc_binned <- bin_lat(occdf = mean_loc_binned,
+                           bins = bins,
+                           lat = "mean_lat")
+IC_loc <- mean_loc[which(mean_loc$N > 1),]
+row.names(IC_loc) <- 1:nrow(IC_loc)
+IC_loc$IC <- IC_loc$lat - IC_loc$sd_lat
+IC_loc <- bin_lat(occdf = IC_loc,
+                           bins = bins,
+                           lat = "IC")
+  
+bin <- mean_loc_binned$lat_bin + IC_loc$lat_bin
+retained_genera <- mean_loc_binned$genus[which(bin != 3)] # 3 = 2+1 or 1+2 => different bins
+  # Exclude them
+mean_loc <- mean_loc[which( (mean_loc$genus %in% retained_genera) |
+                              (mean_loc$N == 1)), ]
+mean_loc <- bin_lat(occdf = mean_loc,
+                    bins = bins,
+                    lat = "mean_lat")
+
+## Merge and save binned palaeorotated occurrences dataframe -------------------
+occdf$lat_bin <- NA
+for(genus in occdf$genus){
+  idx <- which(occdf$genus == genus)
+  if(genus %in% mean_loc$genus){
+    occdf$lat_bin[idx] <- mean_loc$lat_bin[which(mean_loc$genus == genus)]
+  }
+  else{
+    occdf$lat_bin[idx] <- "UNASSIGNED"
+  }
+}
 write.table(occdf,
             file = "../../DATA/lat_binning/full_list_palaeorotated_binned.txt",
             sep = "\t",
