@@ -5,6 +5,7 @@
 library(ggplot2)
 library(deeptime)
 library(cowplot)
+library(dplyr)
 
 ## Set Cenozoic epochs dataset for plotting facilities -------------------------
 cnz_epochs <- deeptime::epochs[1:7, ]
