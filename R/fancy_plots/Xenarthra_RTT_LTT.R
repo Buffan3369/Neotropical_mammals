@@ -109,7 +109,7 @@ bottom_row <- cowplot::plot_grid(NULL, ltt_plot, NULL,
 p <- cowplot::plot_grid(top_row, bottom_row, nrow = 2)
 
   #Save
-ggsave("./figures/Pilosa_RTT_LTT.png",
+ggsave("./figures/LTT_order_level/Pilosa_RTT_LTT.png",
        plot = p,
        height = 300,
        width = 400,
@@ -224,7 +224,7 @@ bottom_row <- cowplot::plot_grid(NULL, ltt_plot, NULL,
 p <- cowplot::plot_grid(top_row, bottom_row, nrow = 2)
 
 #Save
-ggsave("./figures/Cingulata_RTT_LTT.png",
+ggsave("./figures/LTT_order_level/Cingulata_RTT_LTT.png",
        plot = p,
        height = 300,
        width = 400,
