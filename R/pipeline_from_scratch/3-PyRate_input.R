@@ -274,6 +274,20 @@ write.table(x = final_unique_sp,
             row.names = FALSE,
             quote = FALSE)
 
+################################ FOCUS ON EOT ##################################
+Eot_occ <- species_list[which(species_list$epoch %in% c("Oligocene", "Eocene")),
+                        c("genus", "gen_lvl_status", "min_ma", "max_ma")]
+colnames(Eot_occ) <- c("Species", "Status", "min_age", "max_age")
+write.table(x = Eot_occ,
+            file = paste0("./data_2023/PyRate/cleaning_", 
+                          date, 
+                          "/Eocene_Oligocene/Eocene_Oligocene_occurrences.txt"),
+            sep = "\t",
+            na = "",
+            row.names = FALSE,
+            quote = FALSE)
+
+
 ## Extract ages using Silvestro et al. function (for PyRate output) ------------
 source("../../pyrate_utilities.R")
 for(file in c(paste0("./data_2023/PyRate/cleaning_", date, "/all_in_one.txt"),
@@ -295,3 +309,8 @@ for(file in list.files("./data_2023/PyRate/cleaning_", date, "/infra_order_level
 for(file in list.files("./data_2023/PyRate/cleaning_20-04/marine/")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_20-04/marine/", file), replicates = 10)
 }
+#EOT
+extract.ages(paste0("./data_2023/PyRate/cleaning_", 
+                    date, 
+                    "/Eocene_Oligocene/Eocene_Oligocene_occurrences.txt"),
+             replicates = 10)
