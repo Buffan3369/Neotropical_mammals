@@ -168,7 +168,7 @@ bottom_row <- cowplot::plot_grid(NULL, ltt_plot, NULL,
 p <- cowplot::plot_grid(top_row, bottom_row, nrow = 2)
 
 #Save
-ggsave("./figures/EOT_RTT_LTT.png",
+ggsave("./figures/EOT_RTT_LTT_q_epochs.png",
        plot = p,
        height = 300,
        width = 400,
@@ -177,7 +177,7 @@ ggsave("./figures/EOT_RTT_LTT.png",
 
 
 ## Frequency of rate shifts plot
-png("./figures/freq_rate_shifts_EOT.png", height = 500, width = 1000)
+png("./figures/freq_rate_shifts_EOT_q_epochs.png", height = 500, width = 1000)
 par(mfrow = c(1,2))
 bf2 <- 0.029509288326512895
 bf6 <- 0.1834573756453758
