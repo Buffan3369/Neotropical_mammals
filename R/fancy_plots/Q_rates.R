@@ -51,7 +51,7 @@ rm(list = ls())
 cnz_epochs <- deeptime::epochs[1:7, ]
 cnz_epochs$abbr <- c("H", "Ple", "Pli", "Miocene", "Oligocene", "Eocene", "Palaeocene")
 
-## Full ------------------------------------------------------------------------
+## Spatially scaled ------------------------------------------------------------
 Q_rates <- read.csv("../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/Q_shifts/one_place-one_time-one_occ/Parsed_Q_rates.csv")
 Q_rates$Age <- c(66, 56, 33.9, 23.03, 5.33, 2.58, 0.01)
 #restrict holocene preservation to 2 for plotting
@@ -86,3 +86,41 @@ ggsave("./figures/Preservation_rates/Spatially_scaled_Q_rates.png",
        width = 300,
        units = "mm",
        dpi = 600)
+
+## EOT with several q rates ----------------------------------------------------
+cnz_epochs <- deeptime::epochs[5:6, ]
+for(q in c("epochs", "stages")){
+  Q_rates <- read.csv(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE/Q_SHIFTS/q_",
+                             q, "/Parsed_Q_rates.csv"))
+  if(q == "epochs"){
+    Q_rates$Age <- c(56, 33.9, 23.03)
+  }
+  else if(q == "stages"){
+    Q_rates$Age <- c(56, 47.8, 41.2, 37.71, 33.9, 27.82, 23.03)
+  }
+  
+  Q_plot <- ggplot(data = Q_rates, aes(x = Age, y = mean_Q))+
+    scale_x_reverse(breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47,8, 56)) +
+    scale_y_continuous(breaks = seq(from = 0, to = 2, by = 0.2),
+                       limits = c(0, 2)) +
+    geom_stepribbon(data = Q_rates, aes(x = Age, ymin = min_HPD, ymax = max_HPD),
+                    fill = "#260154",
+                    alpha = 0.2) +
+    geom_step(aes(x = Age, y = mean_Q),
+              linewidth = 1, colour = "#260154") +
+    labs(x = "Time (Ma)",
+         y = "Preservation rate (occurrence/lineage/Myr)") +
+    theme(axis.title.x = element_text(size = 15),
+          axis.title.y = element_text(size = 15),
+          axis.text = element_text(size = 18),
+          panel.background = element_blank(),
+          panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+    coord_geo(dat = cnz_epochs, abbrv = FALSE, size = 4)
+  
+  ggsave(paste0("./figures/Preservation_rates/EOT_Q_rates_qShift_", q, ".png"),
+         plot = Q_plot,
+         height = 200,
+         width = 300,
+         units = "mm",
+         dpi = 600)
+}
