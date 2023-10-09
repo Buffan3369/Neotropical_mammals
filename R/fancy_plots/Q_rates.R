@@ -88,8 +88,8 @@ ggsave("./figures/Preservation_rates/Spatially_scaled_Q_rates.png",
        dpi = 600)
 
 ## EOT with several q rates ----------------------------------------------------
-cnz_epochs <- deeptime::epochs[5:6, ]
-for(q in c("epochs", "stages")){
+EOT_epochs <- deeptime::epochs[5:6, ]
+for(q in c("epochs", "stages", "5M")){
   Q_rates <- read.csv(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE/Q_SHIFTS/q_",
                              q, "/Parsed_Q_rates.csv"))
   if(q == "epochs"){
@@ -98,7 +98,9 @@ for(q in c("epochs", "stages")){
   else if(q == "stages"){
     Q_rates$Age <- c(56, 47.8, 41.2, 37.71, 33.9, 27.82, 23.03)
   }
-  
+  else if(q == "5M"){
+    Q_rates$Age <- c(56, 51, 46, 41, 36, 31, 26, 23.03)
+  }
   Q_plot <- ggplot(data = Q_rates, aes(x = Age, y = mean_Q))+
     scale_x_reverse(breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47,8, 56)) +
     scale_y_continuous(breaks = seq(from = 0, to = 2, by = 0.2),
@@ -115,7 +117,7 @@ for(q in c("epochs", "stages")){
           axis.text = element_text(size = 18),
           panel.background = element_blank(),
           panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
-    coord_geo(dat = cnz_epochs, abbrv = FALSE, size = 4)
+    coord_geo(dat = EOT_epochs, abbrv = FALSE, size = 4)
   
   ggsave(paste0("./figures/Preservation_rates/EOT_Q_rates_qShift_", q, ".png"),
          plot = Q_plot,
