@@ -24,6 +24,7 @@ extract_rtt <- function(path){ #path = PATH TO THE .R SCRIPT WRITTEN BY PyRate
   time_all <- raw_script[grepl("time=", raw_script)] #all mentions of the same vector in the scipt (n=4)
   time_str <- time_all[1] #could have been any index between 1 and 4
   time_num <- split_vector(time_str) #convert to numeric
+  time_num <- -time_num #by default, negative
   #Extracting mean estimates for origination, extinction and net diversification rates
   rates <- raw_script[grepl("rate=", raw_script)] #1:origination, 2:extinction, 3:net_diversification, 4:longevity
   sp_rate <- split_vector(rates[1])
@@ -82,5 +83,20 @@ extract_ltt <- function(dir){ #dir = path to the DIRECTORY where LTT PER REPLICA
     ltt <- merge(ltt, f, by = "time", all = T)
     i <- i+1
   }
-  return(ltt)
+  #Assess mean max min
+  LTT <- data.frame(Age = ltt$time,
+                    Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+                                      MARGIN = 1,
+                                      FUN = mean,
+                                      na.rm = TRUE),
+                    min_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+                                          MARGIN = 1,
+                                          FUN = min,
+                                          na.rm = TRUE),
+                    max_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+                                          MARGIN = 1,
+                                          FUN = max,
+                                          na.rm = TRUE))
+  
+  return(LTT)
 }

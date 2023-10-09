@@ -1,0 +1,131 @@
+################################################################################
+################# Accessory functions to plot PyRate outputs ###################
+################################################################################
+
+library(ggplot2)
+library(deeptime)
+library(cowplot)
+
+## Function for Rates Through Time (RTT) plots ---------------------------------
+rtt_plot <- function(data, #has to be formatted as the output of the `extract_rtt()` function from the `extract_param_from_PyRate_outputs.R` script
+                     type = c("sp", "ex", "SpEx", "net"), #type of rates we want to represent ("SpEx" => combined speciation and extinction)
+                     restrict_y = TRUE, restrict_thr = 1.4, #should we restrict y scale to a certain threshold?
+                     x_breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66),
+                     y_breaks = seq(from = -1.4, to = 1.4, by = 0.2),
+                     y_labels = c(-1.4, -1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4),
+                     y_limits = c(-1.5, 1.5),
+                     main=NA,
+                     x_lab = "Time (Ma)",
+                     y_lab = "Rate (event/lineage/Myr)",
+                     geoscale = deeptime::epochs[1:7, ],
+                     abbr = TRUE #geologic times displayed with abbreviations?
+                     ){
+  #Restrict `data` to erase outliers from plotting window
+  if(restrict_y){
+    for(col in colnames(data)[-which(colnames(data) == "time")]){
+      idx <- which(data[, col] > restrict_thr)
+      if(length(idx) > 0){
+        data[idx, col] <- restrict_thr
+      }
+    }
+  }
+  #Plot
+  if(type == "sp"){
+    p <- ggplot(data = data, aes(x = time, y = sp_rate)) +
+      geom_ribbon(data = data, aes(x = time, ymin = sp_minHPD, ymax = sp_maxHPD),
+                  fill = "#4c4cec",
+                  alpha = 0.2) +
+      geom_line(aes(x = time, y = sp_rate),
+                linewidth = 1, colour = "#4c4cec")
+  }
+  else if(type == "ex"){
+    p <- ggplot(data = data, aes(x = time, y = ex_rate)) +
+      geom_ribbon(data = data, aes(x = time, ymin = ex_minHPD, ymax = ex_maxHPD),
+                  fill = "#e34a33",
+                  alpha = 0.2) +
+      geom_line(aes(x = time, y = ex_rate),
+                linewidth = 1, colour = "#e34a33")
+  }
+  else if(type == "SpEx"){
+    p <- ggplot(data = data, aes(x = time, y = sp_rate)) +
+      geom_ribbon(data = data, aes(x = time, ymin = sp_minHPD, ymax = sp_maxHPD),
+                fill = "#4c4cec",
+                alpha = 0.2) +
+      geom_ribbon(data = data, aes(x = time, ymin = ex_minHPD, ymax = ex_maxHPD),
+                  fill = "#e34a33",
+                  alpha = 0.2) +
+      geom_line(aes(x = time, y = sp_rate),
+                linewidth = 1, colour = "#4c4cec",) +
+      geom_line(aes(x = time, y = ex_rate),
+                linewidth = 1, colour = "#e34a33")
+  }
+  else if(type == "net"){
+    p <- ggplot(data = data, aes(x = time, y = net_rate)) +
+      geom_ribbon(data = data, aes(x = time, ymin = net_minHPD, ymax = net_maxHPD),
+                  fill = "#504A4B",
+                  alpha = 0.2) +
+      geom_line(aes(x = time, y = net_rate),
+                linewidth = 1, colour = "#504A4B") +
+      geom_hline(yintercept = 0,
+                 linetype = "dashed", colour = "red")
+  }
+  p <- p +
+    scale_x_reverse(breaks = x_breaks) +
+    scale_y_continuous(breaks = y_breaks,
+                       labels = y_labels,
+                       limits = y_limits) +
+     labs(x = x_lab,
+         y = y_lab) +
+    theme(axis.title.x = element_text(size = 22),
+          axis.title.y = element_text(size = 22),
+          axis.text = element_text(size = 18),
+          panel.background = element_blank(),
+          panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+    coord_geo(dat = geoscale, abbrv = abbr, size = 5)
+  return(p)
+}
+
+## Function for Lineage Through Time (LTT) plot from individual replicates -----
+ltt_plot <- function(ltt_df, #has to be in the format returned by the `extract_ltt()` function from the `extract_param_from_PyRate_outputs.R` script
+                     x_breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66),
+                     y_breaks = seq(0,250,50),
+                     y_labels = seq(0,250,50),
+                     y_limits = c(0, 250),
+                     main=NA,
+                     x_lab = "Time (Ma)",
+                     y_lab = "Diversity (nb. lineages)",
+                     geoscale = deeptime::epochs[1:7, ],
+                     abbr = TRUE){
+  # Proper plot
+  p <- ggplot(data = ltt_df, aes(x = Age, y = Diversity)) +
+    scale_x_reverse(breaks = x_breaks) +
+    scale_y_continuous(breaks = y_breaks,
+                       limits = y_limits) +
+    geom_ribbon(aes(x = Age, ymin = min_Diversity, ymax = max_Diversity), 
+                fill = "#a1d99b",
+                alpha = 0.8) +
+    geom_line(linewidth = 1, colour = "#329507") +
+    xlab(x_lab) +
+    ylab(y_lab) +
+    theme(axis.title.x = element_text(size = 22),
+          axis.title.y = element_text(size = 22),
+          axis.text = element_text(size = 18),
+          panel.background = element_blank(),
+          panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+    coord_geo(dat = geoscale, abbrv = abbr, size = 5)
+    return(p)
+}
+
+## Function to combine RTT and LTT plots in a single figure --------------------
+comb_ltt_rtt <- function(SpEx_plot, net_plot, ltt_plot){
+  top_row <- cowplot::plot_grid(SpEx_plot, net_plot,
+                                ncol = 2,
+                                rel_widths = c(1/2, 1/2))
+  bottom_row <- cowplot::plot_grid(NULL, ltt_plot, NULL,
+                                   ncol = 3,
+                                   rel_widths = c(1, 2.5, 1))
+  p <- cowplot::plot_grid(top_row, bottom_row, nrow = 2)
+  return(p)
+}
+
+
