@@ -58,10 +58,10 @@ rm(list = ls(pattern = "*_one_place_time_occ"))
 for(part in c("regular", "mindt_05", "singleton")){ #option of the code
   for(q in c("epochs", "stages", "5M")){ #preservation rate shift allowed
     if((part == "singleton") && (q == "stages")){
-      break
+      next
     }
     rtt_eot <- extract_rtt(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_", part, "/combined_logs/q_",q,"/RTT_plots.r"))
-    sp_ex_eot <- rtt_plot(data = rtt_eot_epochs,
+    sp_ex_eot <- rtt_plot(data = rtt_eot,
                           type = "SpEx",
                           x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
                           y_breaks = seq(from = -1.4, to = 1.4, by = 0.2),
@@ -69,7 +69,7 @@ for(part in c("regular", "mindt_05", "singleton")){ #option of the code
                           y_limits = c(-1.5, 1.5),
                           geoscale = deeptime::epochs[1:7, ],
                           abbr = FALSE)
-    net_eot <- rtt_plot(data = rtt_eot_epochs,
+    net_eot <- rtt_plot(data = rtt_eot,
                         type = "net",
                         x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
                         y_breaks = seq(from = -1.4, to = 1.4, by = 0.2),
