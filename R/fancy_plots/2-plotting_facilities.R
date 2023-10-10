@@ -4,13 +4,14 @@
 
 library(ggplot2)
 library(deeptime)
+library(pammtools)
 library(cowplot)
 
 ## Function for Rates Through Time (RTT) plots ---------------------------------
 rtt_plot <- function(data, #has to be formatted as the output of the `extract_rtt()` function from the `extract_param_from_PyRate_outputs.R` script
                      type = c("sp", "ex", "SpEx", "net"), #type of rates we want to represent ("SpEx" => combined speciation and extinction)
                      restrict_y = TRUE, restrict_thr = 1.4, #should we restrict y scale to a certain threshold?
-                     x_breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66),
+                     x_breaks = c(2.58, 5.33, 23.03,33.9, 56, 66),
                      y_breaks = seq(from = -1.4, to = 1.4, by = 0.2),
                      y_labels = c(-1.4, -1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4),
                      y_limits = c(-1.5, 1.5),
@@ -87,7 +88,7 @@ rtt_plot <- function(data, #has to be formatted as the output of the `extract_rt
 
 ## Function for Lineage Through Time (LTT) plot from individual replicates -----
 ltt_plot <- function(ltt_df, #has to be in the format returned by the `extract_ltt()` function from the `extract_param_from_PyRate_outputs.R` script
-                     x_breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66),
+                     x_breaks = c(2.58, 5.33, 23.03, 33.9, 56, 66),
                      y_breaks = seq(0,250,50),
                      y_labels = seq(0,250,50),
                      y_limits = c(0, 250),
@@ -128,4 +129,34 @@ comb_ltt_rtt <- function(SpEx_plot, net_plot, ltt_plot){
   return(p)
 }
 
-
+## Preservation rates plot -----------------------------------------------------
+q_plot <- function(data,  #input data containing Q rates assembled from all replicates => output from `parse_Q_rates.py`
+                   x_breaks = c(2.58, 5.33, 23.03, 33.9, 56, 66),
+                   y_breaks = seq(from = 0, to = 2, by = 0.2),
+                   y_labels = seq(from = 0, to = 2, by = 0.2),
+                   y_limits = c(0, 2.1),
+                   x_lab = "Time (Ma)",
+                   y_lab = "Preservation rate (occurrence/lineage/Myr)",
+                   geoscale = deeptime::epochs[1:7, ],
+                   abbr = FALSE
+                   ){
+  q.plot <- ggplot(data, aes(x = Age, y = mean_Q))+
+    scale_x_reverse(breaks = x_breaks) +
+    scale_y_continuous(breaks = y_breaks,
+                       labels = y_labels,
+                       limits = y_limits) +
+    geom_stepribbon(data=data, mapping=aes(x = Age, ymin = min_HPD, ymax = max_HPD),
+                    fill = "#260154",
+                    alpha = 0.2) +
+    geom_step(aes(x = Age, y = mean_Q),
+              linewidth = 1, colour = "#260154") +
+    labs(x = x_lab,
+         y = y_lab) +
+    theme(axis.title.x = element_text(size = 15),
+          axis.title.y = element_text(size = 15),
+          axis.text = element_text(size = 18),
+          panel.background = element_blank(),
+          panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+    coord_geo(dat = geoscale, abbrv = abbr, size = 4)
+  return(q.plot)
+}

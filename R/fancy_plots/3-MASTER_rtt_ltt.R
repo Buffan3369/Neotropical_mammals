@@ -5,8 +5,8 @@
 library(hash)
 
 ## Source accessory functions for plotting -------------------------------------
-source("./R/fancy_plots/extract_param_from_PyRate_outputs.R")
-source("./R/fancy_plots/plotting_facilities.R")
+source("./R/fancy_plots/1-extract_param_from_PyRate_outputs.R")
+source("./R/fancy_plots/2-plotting_facilities.R")
 
 ## Full plots ------------------------------------------------------------------
   ### All in one
