@@ -15,7 +15,7 @@ os.chdir("E:/Internship_ISEM/Neotropical_Mammals/REPO/Neotropical_mammals")
 dir = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/Q_shifts/all_in_one/"
 #dir = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/Q_shifts/one_place-one_time-one_occ/"
 files = os.listdir(dir)
-files = [file for file in files if ".pdf" not in file and ".csv" not in file]
+files = [file for file in files if ".r" in file] #select R scripts written by PyRate where q_rates are stored
 
 mean_q = pd.DataFrame([])
 min_HPD = pd.DataFrame([])
@@ -46,7 +46,6 @@ final = pd.DataFrame([])
 final["mean_Q"] = mean_q.apply(np.mean, axis = 1)
 final["min_HPD"] = min_HPD.apply(np.nanmin, axis = 1)
 final["max_HPD"] = max_HPD.apply(np.nanmax, axis = 1)
-final["epoch"] = ["Palaeocene", "Eocene", "Oligocene", "Miocene", "Pliocene", "Pleistocene", "Holocene"]
 
 final.to_csv(dir+"Parsed_Q_rates.csv",
              index = False)
