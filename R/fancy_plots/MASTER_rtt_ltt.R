@@ -2,6 +2,8 @@
 ################### Masterfile for RTT and LTT plotting ########################
 ################################################################################
 
+library(hash)
+
 ## Source accessory functions for plotting -------------------------------------
 source("./R/fancy_plots/extract_param_from_PyRate_outputs.R")
 source("./R/fancy_plots/plotting_facilities.R")
@@ -53,6 +55,45 @@ rm(list = ls(pattern = "*_one_place_time_occ"))
 
 ## Order-level plots -----------------------------------------------------------
 
+## Tropical/non-tropical plots -------------------------------------------------
+y_max_rtt <- hash("Tropical"=2, "Extra-tropical"=1.4)
+increment_rtt <- hash("Tropical"=0.5, "Extra-tropical"=0.2)
+y_max_ltt <- hash("Tropical"=160, "Extra-tropical"=120)
+for(order in c("Tropical_20M", "Tropical_50M", "Extra-tropical_20M", "Extra-tropical_50M")){
+  W <- strsplit(order, split="_")[[1]][1]
+  #RTT
+  rtt <- extract_rtt(paste0("../../PyRate_outputs/Tropical_analysis/combined_logs/", order, "/RTT_plots.r"))
+  SpEx.plot <- rtt_plot(rtt, 
+                        type = "SpEx",
+                        restrict_thr = values(y_max_rtt[W]),
+                        x_breaks = c(2.58, 5.33, 23.03, 33.9, 56, 66),
+                        y_breaks = seq(from = 0, to = values(y_max_rtt[W]), by = values(increment_rtt[W])),
+                        y_labels = seq(from = 0, to = values(y_max_rtt[W]), by = values(increment_rtt[W])),
+                        y_limits = c(0,values(y_max_rtt[W])+0.1))
+  net.plot <- rtt_plot(rtt, 
+                       type = "net",
+                       restrict_thr = values(y_max_rtt[W]),
+                       x_breaks = c(2.58, 5.33, 23.03, 33.9, 56, 66),
+                       y_breaks = seq(from = -values(y_max_rtt[W]), to = values(y_max_rtt[W]), by = values(increment_rtt[W])),
+                       y_labels = seq(from = -values(y_max_rtt[W]), to = values(y_max_rtt[W]), by = values(increment_rtt[W])),
+                       y_limits = c(-(values(y_max_rtt[W])+0.1),values(y_max_rtt[W])+0.1))
+  #LTT
+  ltt <- extract_ltt(paste0("../../PyRate_outputs/Tropical_analysis/LTT/", order, "/"))
+  ltt.plot <- ltt_plot(ltt,
+                      y_breaks = seq(0,values(y_max_ltt[W]),40),
+                      y_labels = seq(0,values(y_max_ltt[W]),40),
+                      y_limits = c(0, values(y_max_ltt[W])+15))
+  #Combine and save
+  p <- comb_ltt_rtt(SpEx_plot = SpEx.plot, net_plot = net.plot, ltt_plot = ltt.plot)
+  ggsave(paste0("./figures/Tropical_analysis/", W, "/", order, "_RTT_LTT.png"),
+         plot = p,
+         height = 300,
+         width = 400,
+         units = "mm",
+         dpi = 600)
+  
+}
+rm(SpEx.plot, net.plot, p, rtt, ltt, y_max_ltt, ymax_rtt, increment_rtt)
 
 ## Eocene-Oligocene ------------------------------------------------------------
 for(part in c("regular", "mindt_05", "singleton")){ #option of the code
