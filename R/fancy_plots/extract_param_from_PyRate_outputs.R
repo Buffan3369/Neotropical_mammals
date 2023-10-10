@@ -72,7 +72,7 @@ extract_ltt <- function(dir){ #dir = path to the DIRECTORY where LTT PER REPLICA
   i = 2
   for(file in files[2:length(files)]){
     f <- read.table(file, header = TRUE)
-    if(length(which(ltt$time > 66.0)) > 0){
+    if(length(which(f$time > 66.0)) > 0){
       f <- f[-which(f$time > 66.0), c("time", "diversity")]
     }
     else{
