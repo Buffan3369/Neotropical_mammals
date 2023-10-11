@@ -281,8 +281,7 @@ Eot_occ <- species_list[which(species_list$epoch %in% c("Oligocene", "Eocene")),
                         c("genus", "gen_lvl_status", "min_ma", "max_ma")]
 colnames(Eot_occ) <- c("Species", "Status", "min_age", "max_age")
 write.table(x = Eot_occ,
-            file = paste0("./data_2023/PyRate/cleaning_", 
-                          date, 
+            file = paste0("./data_2023/PyRate/cleaning_", date, 
                           "/Eocene_Oligocene/Eocene_Oligocene_occurrences.txt"),
             sep = "\t",
             na = "",
@@ -292,9 +291,26 @@ write.table(x = Eot_occ,
 ct_gen <- Eot_occ %>% count(Species) #remember that the "genus" column was renamed "Species" for PyRate
 message(paste0("Among the ", nrow(ct_gen), " genera present in the Eocene-Oligocene dataset, there are ", length(which(ct_gen == 1)), " singletons."))
 
-  ## Spatially scaled one ------------------------------------------------------
+  ## Taxonomic subdivision -----------------------------------------------------
 Eot_occ1 <- species_list[which(species_list$epoch %in% c("Oligocene", "Eocene")),]
-
+tax_dict <- hash::hash("SANU"=c("Notoungulata", "Pyrotheria", "Astrapotheria", "Xenungulata", "Litopterna"),
+                       "Metatheria"=c("Polydolopimorphia", "Paucituberculata", "Sparassodonta"),
+                       "Rodentia"="Rodentia",
+                       "Xenarthra"=c("Cingulata", "Pilosa"))
+for(taxo in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){
+  tmp <- Eot_occ1[which(Eot_occ1$order %in% values(tax_dict[taxo])), ]
+  tmp <- tmp[,c("genus", "gen_lvl_status", "min_ma", "max_ma")]
+  colnames(tmp) <- c("Species", "Status", "min_age", "max_age")
+  write.table(x = tmp,
+              file = paste0("./data_2023/PyRate/cleaning_", date, 
+                            "/Eocene_Oligocene/Order_level/", taxo, "_EOT.txt"),
+              sep = "\t",
+              na = "",
+              row.names = FALSE,
+              quote = FALSE)
+  
+}
+  ## Spatially scaled dataset ------------------------------------------------------
 apply_unique <- lapply(X = unique(Eot_occ1$genus),
                        FUN = just_one,
                        sp_ds = Eot_occ1)
@@ -302,8 +318,7 @@ final_unique <- Reduce(dplyr::full_join, apply_unique) #drop to 766 occurrences
 final_unique <- final_unique[,c("genus", "gen_lvl_status", "min_ma", "max_ma")]
 colnames(final_unique) <- c("Species", "Status", "min_age", "max_age")
 write.table(x = final_unique,
-            file = paste0("./data_2023/PyRate/cleaning_", 
-                          date, 
+            file = paste0("./data_2023/PyRate/cleaning_", date, 
                           "/Eocene_Oligocene/Eocene_Oligocene_occurrences_spatially_scaled.txt"),
             sep = "\t",
             na = "",
@@ -332,7 +347,11 @@ for(file in list.files("./data_2023/PyRate/cleaning_20-04/marine/")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_20-04/marine/", file), replicates = 10)
 }
 #EOT
-extract.ages(paste0("./data_2023/PyRate/cleaning_", 
-                    date, 
-                    "/Eocene_Oligocene/Eocene_Oligocene_occurrences.txt"),
-             replicates = 10)
+extract.ages(paste0("./data_2023/PyRate/cleaning_", date, 
+                    "/Eocene_Oligocene/Eocene_Oligocene_occurrences.txt"), replicates = 10)
+extract.ages(paste0("./data_2023/PyRate/cleaning_", date, 
+                    "/Eocene_Oligocene/Eocene_Oligocene_occurrences_spatially_scaled.txt"), replicates = 10)
+for(taxo in c("SANU", "Xenarthra", "Metatheria", "Rodentia")){
+  extract.ages(paste0("./data_2023/PyRate/cleaning_", date, 
+                      "/Eocene_Oligocene/Order_level/", taxo, "_EOT.txt"), replicates = 10)
+}
