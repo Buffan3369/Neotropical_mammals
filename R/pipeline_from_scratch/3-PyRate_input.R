@@ -5,6 +5,7 @@
 ## Load libraries --------------------------------------------------------------
 library(readxl)
 library(hash)
+library(dplyr)
 
 #date <- "20-04"      #Intermediate cleaning
 #date <- "12-05"      #Too stringent smoothing
@@ -275,6 +276,7 @@ write.table(x = final_unique_sp,
             quote = FALSE)
 
 ################################ FOCUS ON EOT ##################################
+  ## Full dataset --------------------------------------------------------------
 Eot_occ <- species_list[which(species_list$epoch %in% c("Oligocene", "Eocene")),
                         c("genus", "gen_lvl_status", "min_ma", "max_ma")]
 colnames(Eot_occ) <- c("Species", "Status", "min_age", "max_age")
@@ -286,9 +288,29 @@ write.table(x = Eot_occ,
             na = "",
             row.names = FALSE,
             quote = FALSE)
+#count number of singletons (=genera only represented by one occurrence)
+ct_gen <- Eot_occ %>% count(Species) #remember that the "genus" column was renamed "Species" for PyRate
+message(paste0("Among the ", nrow(ct_gen), " genera present in the Eocene-Oligocene dataset, there are ", length(which(ct_gen == 1)), " singletons."))
 
+  ## Spatially scaled one ------------------------------------------------------
+Eot_occ1 <- species_list[which(species_list$epoch %in% c("Oligocene", "Eocene")),]
 
-## Extract ages using Silvestro et al. function (for PyRate output) ------------
+apply_unique <- lapply(X = unique(Eot_occ1$genus),
+                       FUN = just_one,
+                       sp_ds = Eot_occ1)
+final_unique <- Reduce(dplyr::full_join, apply_unique) #drop to 766 occurrences
+final_unique <- final_unique[,c("genus", "gen_lvl_status", "min_ma", "max_ma")]
+colnames(final_unique) <- c("Species", "Status", "min_age", "max_age")
+write.table(x = final_unique,
+            file = paste0("./data_2023/PyRate/cleaning_", 
+                          date, 
+                          "/Eocene_Oligocene/Eocene_Oligocene_occurrences_spatially_scaled.txt"),
+            sep = "\t",
+            na = "",
+            row.names = FALSE,
+            quote = FALSE)
+
+####### Extract ages using Silvestro et al. function (for PyRate output) #######
 source("../../pyrate_utilities.R")
 for(file in c(paste0("./data_2023/PyRate/cleaning_", date, "/all_in_one.txt"),
               paste0("./data_2023/PyRate/cleaning_", date, "/one_place-one_time-one_occ.txt"))){
