@@ -102,7 +102,7 @@ for(part in c("regular", "mindt_05", "singleton")){
       Q_rates$Age <- c(56, 51, 46, 41, 36, 31, 26, 23.03)
     }
     Q_plot <- q_plot(data = Q_rates,
-                     x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 56),
+                     x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
                      geoscale = deeptime::epochs[5:6, ])
     
     ggsave(paste0("./figures/EOT/", part, "/q_", q, "/Q_shifts_q_", q, ".png"),

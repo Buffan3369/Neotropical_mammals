@@ -122,13 +122,37 @@ for(part in c("regular", "mindt_05", "singleton")){ #option of the code
                              y_limits = c(0, 125),
                              geoscale = deeptime::epochs[5:6, ],
                              abbr = FALSE)
-    p <- comb_ltt_rtt(sp_ex_eot, net_eot, ltt_plot_eot)
-    ggsave(paste0("./figures/EOT/", part, "/q_", q, "/ltt_rtt_q_", q, ".png"),
+    # p <- comb_ltt_rtt(sp_ex_eot, net_eot, ltt_plot_eot, n_plots = 3)
+    # ggsave(paste0("./figures/EOT/", part, "/q_", q, "/ltt_rtt_q_", q, ".png"),
+    #        plot = p,
+    #        height = 300,
+    #        width = 400,
+    #        units = "mm",
+    #        dpi = 600)
+    Q_rates <- read.csv(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_",
+                               part,
+                               "/Q_SHIFTS/q_",
+                               q, "/Parsed_Q_rates.csv"))
+    if(q == "epochs"){
+      Q_rates$Age <- c(56, 33.9, 23.03)
+    }
+    else if(q == "stages"){
+      Q_rates$Age <- c(56, 47.8, 41.2, 37.71, 33.9, 27.82, 23.03)
+    }
+    else if(q == "5M"){
+      Q_rates$Age <- c(56, 51, 46, 41, 36, 31, 26, 23.03)
+    }
+    Q_plot <- q_plot(data = Q_rates,
+                     x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
+                     geoscale = deeptime::epochs[5:6, ])
+    p <- comb_ltt_rtt(sp_ex_eot, net_eot, ltt_plot_eot, Q_plot, n_plots = 4)
+    ggsave(paste0("./figures/EOT/", part, "/q_", q, "/ltt_preservation_rtt_q_", q, ".png"),
            plot = p,
            height = 300,
            width = 400,
            units = "mm",
-           dpi = 600)
+           dpi = 300)
+    
   }
 }
-
+  

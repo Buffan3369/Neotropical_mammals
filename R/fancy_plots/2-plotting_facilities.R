@@ -118,14 +118,25 @@ ltt_plot <- function(ltt_df, #has to be in the format returned by the `extract_l
 }
 
 ## Function to combine RTT and LTT plots in a single figure --------------------
-comb_ltt_rtt <- function(SpEx_plot, net_plot, ltt_plot){
-  top_row <- cowplot::plot_grid(SpEx_plot, net_plot,
-                                ncol = 2,
-                                rel_widths = c(1/2, 1/2))
-  bottom_row <- cowplot::plot_grid(NULL, ltt_plot, NULL,
-                                   ncol = 3,
-                                   rel_widths = c(1, 2.5, 1))
-  p <- cowplot::plot_grid(top_row, bottom_row, nrow = 2)
+comb_ltt_rtt <- function(SpEx_plot, net_plot, ltt_plot, q_plot=NA, n_plots=c(3,4)){ #if n_plots = 4, needs q_plot not to be NA
+  if(n_plots == 3){
+    top_row <- cowplot::plot_grid(SpEx_plot, net_plot,
+                                  ncol = 2,
+                                  rel_widths = c(1/2, 1/2))
+    bottom_row <- cowplot::plot_grid(NULL, ltt_plot, NULL,
+                                     ncol = 3,
+                                     rel_widths = c(1, 2.5, 1))
+    p <- cowplot::plot_grid(top_row, bottom_row, nrow = 2)
+  }
+  else{
+    top_row <- cowplot::plot_grid(SpEx_plot, net_plot,
+                                  ncol = 2,
+                                  rel_widths = c(1/2, 1/2))
+    bottom_row <- cowplot::plot_grid(ltt_plot, q_plot,
+                                     ncol = 2,
+                                     rel_widths = c(1/2, 1/2))
+    p <- cowplot::plot_grid(top_row, bottom_row, nrow = 2)
+  }
   return(p)
 }
 
