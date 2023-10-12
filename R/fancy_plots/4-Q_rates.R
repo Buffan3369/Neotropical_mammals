@@ -88,9 +88,6 @@ ggsave("./figures/Preservation_rates/Spatially_scaled_Q_rates.png",
 ## EOT with several q rates ----------------------------------------------------
 for(part in c("regular", "mindt_05", "singleton")){
   for(q in c("epochs", "stages", "5M")){
-    if((part == "singleton") && (q == "stages")){
-      next
-    }
     Q_rates <- read.csv(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_",
                                part,
                                "/Q_SHIFTS/q_",
