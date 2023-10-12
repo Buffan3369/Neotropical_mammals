@@ -290,6 +290,24 @@ write.table(x = Eot_occ,
 #count number of singletons (=genera only represented by one occurrence)
 ct_gen <- Eot_occ %>% count(Species) #remember that the "genus" column was renamed "Species" for PyRate
 message(paste0("Among the ", nrow(ct_gen), " genera present in the Eocene-Oligocene dataset, there are ", length(which(ct_gen == 1)), " singletons."))
+#get the detail of the data (nb occ, gen and singletons)
+ct_order <- Eot_occ1 %>% count(order)
+ct_order$gen_nb <- NA
+ct_order$singleton <- NA
+for(odr in unique(Eot_occ1$order)){
+  ct_gen <- Eot_occ1[which(Eot_occ1$order == odr),] %>% count(genus)
+  ct_order$gen_nb[which(ct_order$order == odr)] <- nrow(ct_gen)
+  ct_order$singleton[which(ct_order$order == odr)] <- length(which(ct_gen$n == 1))
+}
+ct_order <- ct_order %>% rename("occ_nb" = nb_occurrences)
+ct_order[nrow(ct_order)+1, ] <- c("Total", sum(ct_order$occ_nb), sum(ct_order$gen_nb), sum(ct_order$singleton))
+ct_order$prop_singl <- unlist(lapply(X = 1:nrow(ct_order),
+                                     FUN = function(i){
+                                       p <- as.numeric(ct_order$singleton[i]) / 
+                                         as.numeric(ct_order$gen_nb[i])
+                                       return(round(p, digits = 2))
+                                     }))
+ct_order[,2:ncol(ct_order)] <- apply(X = ct_order[,2:ncol(ct_order)], FUN = as.numeric, MARGIN = 2)
 
   ## Taxonomic subdivision -----------------------------------------------------
 Eot_occ1 <- species_list[which(species_list$epoch %in% c("Oligocene", "Eocene")),]
