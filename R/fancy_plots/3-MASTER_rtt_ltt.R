@@ -97,7 +97,7 @@ rm(SpEx.plot, net.plot, p, rtt, ltt, y_max_ltt, ymax_rtt, increment_rtt)
 
 ## Eocene-Oligocene ------------------------------------------------------------
   # Full dataset
-for(part in c("spatially_scaled")){ #option of the code
+for(part in c("regular", "mindt_05", "singleton", "spatially_scaled")){ #option of the code
   for(q in c("epochs", "stages", "5M")){ #preservation rate shift allowed
     if((part == "spatially_scaled") & (q == "epochs")){
       next
@@ -234,7 +234,7 @@ for(order in c("Xenarthra", "Metatheria", "SANU", "Rodentia")){ #option of the c
            height = 300,
            width = 400,
            units = "mm",
-           dpi = 600)
+           dpi = 300)
   }
 }
 
