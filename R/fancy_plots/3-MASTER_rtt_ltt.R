@@ -106,9 +106,9 @@ for(part in c("regular", "mindt_05", "singleton", "spatially_scaled")){ #option 
     sp_ex_eot <- rtt_plot(data = rtt_eot,
                           type = "SpEx",
                           x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
-                          y_breaks = seq(from = -1.4, to = 1.4, by = 0.2),
-                          y_labels = c(-1.4, -1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4),
-                          y_limits = c(-1.5, 1.5),
+                          y_breaks = seq(from = 0, to = 1.4, by = 0.2),
+                          y_labels = c(0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4),
+                          y_limits = c(0, 1.5),
                           geoscale = deeptime::epochs[1:7, ],
                           abbr = FALSE)
     net_eot <- rtt_plot(data = rtt_eot,
@@ -235,45 +235,5 @@ for(order in c("Xenarthra", "Metatheria", "SANU", "Rodentia")){ #option of the c
            width = 400,
            units = "mm",
            dpi = 300)
-  }
-}
-
-#order level -SINGLETON
-for(order in c("Metatheria", "Xenarthra", "SANU", "Rodentia")){ #option of the code
-  for(q in c("stages", "5M")){ #preservation rate shift allowed
-    if((order == "SANU") & (q == "5M")){ #no convergence for this combination
-      next
-    }
-    rtt_eot <- extract_rtt(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_order/combined_logs/", order, "/q_",q,"/RTT_plots.r"))
-    sp_ex_eot <- rtt_plot(data = rtt_eot,
-                          type = "SpEx",
-                          x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
-                          y_breaks = seq(from = 0, to = 1.4, by = 0.2),
-                          y_labels = c(0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4),
-                          y_limits = c(0, 1.5),
-                          geoscale = deeptime::epochs[5:6, ],
-                          abbr = FALSE)
-    net_eot <- rtt_plot(data = rtt_eot,
-                        type = "net",
-                        x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
-                        y_breaks = seq(from = -1.4, to = 1.4, by = 0.2),
-                        y_labels = c(-1.4, -1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4),
-                        y_limits = c(-1.5, 1.5),
-                        geoscale = deeptime::epochs[5:6, ],
-                        abbr = FALSE)
-    ltt_eot <- extract_ltt(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_order/LTT/", order, "/q_", q, "/per_replicate/"))
-    ltt_plot_eot <- ltt_plot(ltt_eot,
-                             y_breaks = seq(0,60,10),
-                             y_labels = seq(0,60,10),
-                             y_limits = c(0, 65),
-                             geoscale = deeptime::epochs[5:6, ],
-                             abbr = FALSE)
-    p <- comb_ltt_rtt(sp_ex_eot, net_eot, ltt_plot_eot, n_plots = 3)
-    ggsave(paste0("./figures/EOT/order/", order, "/ltt_rtt_", order, "_q_", q, ".png"),
-           plot = p,
-           height = 300,
-           width = 400,
-           units = "mm",
-           dpi = 600)
   }
 }
