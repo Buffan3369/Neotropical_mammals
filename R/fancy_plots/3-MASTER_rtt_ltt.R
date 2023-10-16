@@ -96,8 +96,12 @@ for(order in c("Tropical_20M", "Tropical_50M", "Extra-tropical_20M", "Extra-trop
 rm(SpEx.plot, net.plot, p, rtt, ltt, y_max_ltt, ymax_rtt, increment_rtt)
 
 ## Eocene-Oligocene ------------------------------------------------------------
-for(part in c("regular", "mindt_05", "singleton")){ #option of the code
+  # Full dataset
+for(part in c("spatially_scaled")){ #option of the code
   for(q in c("epochs", "stages", "5M")){ #preservation rate shift allowed
+    if((part == "spatially_scaled") & (q == "epochs")){
+      next
+    }
     rtt_eot <- extract_rtt(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_", part, "/combined_logs/q_",q,"/RTT_plots.r"))
     sp_ex_eot <- rtt_plot(data = rtt_eot,
                           type = "SpEx",
@@ -117,6 +121,7 @@ for(part in c("regular", "mindt_05", "singleton")){ #option of the code
                         abbr = FALSE)
     ltt_eot <- extract_ltt(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_", part, "/LTT/q_", q, "/per_replicate/"))
     ltt_plot_eot <- ltt_plot(ltt_eot,
+                             x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
                              y_breaks = seq(0,120,20),
                              y_labels = seq(0,120,20),
                              y_limits = c(0, 125),
@@ -156,8 +161,89 @@ for(part in c("regular", "mindt_05", "singleton")){ #option of the code
   }
 }
 
+  #order level (toggle-on or off singleton with comment)
+singleton <- TRUE
+#singleton <- FALSE
+for(order in c("Xenarthra", "Metatheria", "SANU", "Rodentia")){ #option of the code
+  for(q in c("stages", "5M")){ #preservation rate shift allowed
+    if(singleton){
+      if((order == "SANU") & (q == "5M")){
+        next
+      }
+      beg <- "../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_order_singleton/"
+      fig_tag <- "singleton_"
+    }
+    else{
+      beg <- "../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_order"
+      fig_tag <- NULL
+    }
+    rtt_eot <- extract_rtt(paste0(beg, "/combined_logs/", order, "/q_",q,"/RTT_plots.r"))
+    sp_ex_eot <- rtt_plot(data = rtt_eot,
+                          type = "SpEx",
+                          x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
+                          y_breaks = seq(from = 0, to = 1.4, by = 0.2),
+                          y_labels = c(0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4),
+                          y_limits = c(0, 1.5),
+                          geoscale = deeptime::epochs[5:6, ],
+                          abbr = FALSE)
+    net_eot <- rtt_plot(data = rtt_eot,
+                        type = "net",
+                        x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
+                        y_breaks = seq(from = -1.4, to = 1.4, by = 0.2),
+                        y_labels = c(-1.4, -1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4),
+                        y_limits = c(-1.5, 1.5),
+                        geoscale = deeptime::epochs[5:6, ],
+                        abbr = FALSE)
+    ltt_eot <- extract_ltt(paste0(beg, "/LTT/", order, "/q_", q, "/per_replicate/"))
+    ltt_plot_eot <- ltt_plot(ltt_eot,
+                             x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
+                             y_breaks = seq(0,60,10),
+                             y_labels = seq(0,60,10),
+                             y_limits = c(0, 65),
+                             geoscale = deeptime::epochs[5:6, ],
+                             abbr = FALSE)
+    Q_rates <- read.csv(paste0(beg, "/Q_SHIFTS/",
+                               order, "/q_",q, "/Parsed_Q_rates.csv"))
+    if(q == "stages"){
+      ages <- c(56, 47.8, 41.2, 37.71, 33.9, 27.82, 23.03)
+      if(nrow(Q_rates) < length(ages)){ #in case the group appeared later than Early Eocene
+        ages <- ages[(length(ages)-nrow(Q_rates)+1): length(ages)]
+      }
+      else if(nrow(Q_rates) > length(ages)){ #stretching below 23.03 Ma
+        Q_rates <- Q_rates[1:length(ages)]
+      }
+      Q_rates$Age <-  ages
+    }
+    if(q == "5M"){
+      ages <- c(56, 51, 46, 41, 36, 31, 26, 23.03)
+      if(nrow(Q_rates) < length(ages)){ #in case the group appeared later than Early Eocene
+        ages <- ages[(length(ages)-nrow(Q_rates)+1): length(ages)]
+      }
+      else if(nrow(Q_rates) > length(ages)){ #stretching below 23.03 Ma
+        Q_rates <- Q_rates[1:length(ages)]
+      }
+      Q_rates$Age <-  ages
+    }
+    
+    Q_plot <- q_plot(data = Q_rates,
+                     x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
+                     geoscale = deeptime::epochs[5:6, ])
+    p <- comb_ltt_rtt(sp_ex_eot, net_eot, ltt_plot_eot, Q_plot, n_plots = 4)
+    ggsave(paste0("./figures/EOT/order/", order, "/ltt_rtt_", order, "_preservation_", fig_tag, "q_", q, ".png"),
+           plot = p,
+           height = 300,
+           width = 400,
+           units = "mm",
+           dpi = 600)
+  }
+}
+
+#order level -SINGLETON
 for(order in c("Metatheria", "Xenarthra", "SANU", "Rodentia")){ #option of the code
   for(q in c("stages", "5M")){ #preservation rate shift allowed
+    if((order == "SANU") & (q == "5M")){ #no convergence for this combination
+      next
+    }
     rtt_eot <- extract_rtt(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_order/combined_logs/", order, "/q_",q,"/RTT_plots.r"))
     sp_ex_eot <- rtt_plot(data = rtt_eot,
                           type = "SpEx",
