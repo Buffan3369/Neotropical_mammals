@@ -20,8 +20,6 @@ files = [file for file in files if ".r" in file] #select R scripts written by Py
 mean_q = pd.DataFrame([])
 min_HPD = pd.DataFrame([])
 max_HPD = pd.DataFrame([])
-min_age = pd.DataFrame([])
-max_age = pd.DataFrame([])
 
 i = 0
 for file in files:
@@ -29,8 +27,6 @@ for file in files:
     tmp_qmean = []
     tmp_minHPD = []
     tmp_maxHPD = []
-    tmp_maxage = [] #oldest
-    tmp_minage = [] #comme nicky
     
     with open(dir+file) as f:
         for line in f:
@@ -43,22 +39,14 @@ for file in files:
             elif "Q_hpd_M = " in line:
                 q = float(line.split(" = ")[1])
                 tmp_maxHPD.append(q)
-            elif "age = " in line:
-                vect_age = line.split(" = ")[1][2:-2] #age vector without "c(" and ")"
-                tmp_minage.append(float(vect_age.split(",")[1]))
-                tmp_maxage.append(float(vect_age.split(",")[0]))
     mean_q["replicate_"+str(i)] = pd.Series(tmp_qmean)
     min_HPD["replicate"+str(i)] = pd.Series(tmp_minHPD)
     max_HPD["replicate"+str(i)] = pd.Series(tmp_maxHPD)
-    min_age["replicate"+str(i)] = pd.Series(tmp_minage)
-    max_HPD["replicate"+str(i)] = pd.Series(tmp_maxage)
 
 final = pd.DataFrame([])
 final["mean_Q"] = mean_q.apply(np.mean, axis = 1)
 final["min_HPD"] = min_HPD.apply(np.nanmin, axis = 1)
 final["max_HPD"] = max_HPD.apply(np.nanmax, axis = 1)
-final["min_age"] = min_age.apply(np.nanmean, axis = 1)
-final["max_age"] = max_age.apply(np.nanmean, axis = 1)
 
 final.to_csv(dir+"Parsed_Q_rates.csv",
              index = False)
