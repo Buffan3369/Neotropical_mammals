@@ -97,9 +97,9 @@ rm(SpEx.plot, net.plot, p, rtt, ltt, y_max_ltt, ymax_rtt, increment_rtt)
 
 ## Eocene-Oligocene ------------------------------------------------------------
   # Full dataset
-for(part in c("regular", "mindt_05", "singleton", "spatially_scaled")){ #option of the code
+for(part in c("regular", "mindt_05", "singleton", "spatially_scaled", "spatially_scaled_singleton")){ #option of the code
   for(q in c("epochs", "stages", "5M")){ #preservation rate shift allowed
-    if((part == "spatially_scaled") & (q == "epochs")){
+    if((part %in% c("spatially_scaled", "spatially_scaled_singleton")) & (q == "epochs")){
       next
     }
     rtt_eot <- extract_rtt(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_", part, "/combined_logs/q_",q,"/RTT_plots.r"))
