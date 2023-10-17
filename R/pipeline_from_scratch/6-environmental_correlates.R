@@ -258,3 +258,16 @@ for(order in c("Astrapotheria", "Carnivora", "Didelphimorphia", "Litopterna", "N
               quote = FALSE,
               row.names = FALSE)
 }
+
+## scale and restrict correlates to EOT ----------------------------------------
+for(file in list.files("./data_2023/predictors_MBD/", pattern = ".txt")){
+  pt_split <- strsplit(file, split = "\\.")[[1]]
+  save.name <- paste0("./data_2023/predictors_MBD/SCALED/", pt_split[1], "_EOT_SCALED.txt")
+  cov <- read.table(paste0("./data_2023/predictors_MBD/", file), sep = "\t", header = TRUE)
+  #scale (center/reduce)
+  cov[,2] <- scale(cov[,2])
+  #only select EOT values
+  cov <- cov[which(cov[,1] %in% seq(from=23, to=56, by=0.5)),]
+  write.table(x = cov, file = save.name, sep = "\t", quote = FALSE, row.names = FALSE)
+}
+
