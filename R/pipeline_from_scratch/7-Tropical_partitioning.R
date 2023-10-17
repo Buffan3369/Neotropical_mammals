@@ -263,10 +263,3 @@ for(bin in keys(bin_sign)){
 }
 
 
-
-
-
-
-
-
-
