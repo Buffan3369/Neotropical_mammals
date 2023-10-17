@@ -204,8 +204,14 @@ write.table(occdf,
 
 ## Split based on palaeolatitudinal bin and save pyrate inputs -----------------
 source("../../pyrate_utilities.R")
-
+occdf <- read.table(file = "../../DATA/lat_binning/full_list_palaeorotated_binned.txt",
+                    header = TRUE, 
+                    dec = ",", 
+                    sep = "\t", 
+                    quote = "", 
+                    fill = TRUE)
 bin_sign <- hash::hash("1"="Tropical", "2"="Extra-tropical")
+  #Entire Cenozoic
 for(bin in keys(bin_sign)){
   tmp <- occdf[which(occdf$lat_bin == as.numeric(bin)), c("genus", "gen_lvl_status", "min_ma", "max_ma")]
   write.table(tmp,
@@ -217,3 +223,50 @@ for(bin in keys(bin_sign)){
   extract.ages(paste0("../../DATA/lat_binning/", values(bin_sign[bin]), "_taxa.txt"),
                replicates = 10)
 }
+  #EOT
+occdf1 <- occdf[which(occdf$epoch %in% c("Eocene", "Oligocene")),]
+    #Full data
+for(bin in keys(bin_sign)){
+  tmp <- occdf1[which(occdf1$lat_bin == as.numeric(bin)), c("genus", "gen_lvl_status", "min_ma", "max_ma")]
+  write.table(tmp,
+              file = paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/lat_partitioning/",
+                            values(bin_sign[bin]), "_taxa.txt"),
+              sep = "\t",
+              na = "",
+              row.names = FALSE,
+              quote = FALSE)
+  extract.ages(paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/lat_partitioning/",
+                      values(bin_sign[bin]), "_taxa.txt"),
+               replicates = 10)
+}
+    #Spatially scaled
+message("Please run the `just_one` function from the `3-PyRate_inputs.R` script")
+for(bin in keys(bin_sign)){
+  apply_unique <- lapply(X = unique(occdf1$genus),
+                         FUN = just_one,
+                         sp_ds = occdf1)
+  final_unique <- apply_unique[[1]]
+  for(i in 2:length(apply_unique)){
+    final_unique <- rbind(final_unique, apply_unique[[i]])
+  }
+  final_unique <- final_unique[, c("genus", "gen_lvl_status", "min_ma", "max_ma")]
+  write.table(final_unique,
+              file = paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/lat_partitioning/",
+                            values(bin_sign[bin]), "_spatially_scaled_taxa.txt"),
+              sep = "\t",
+              na = "",
+              row.names = FALSE,
+              quote = FALSE)
+  extract.ages(paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/lat_partitioning/",
+                      values(bin_sign[bin]), "_spatially_scaled_taxa.txt"),
+               replicates = 10)
+}
+
+
+
+
+
+
+
+
+
