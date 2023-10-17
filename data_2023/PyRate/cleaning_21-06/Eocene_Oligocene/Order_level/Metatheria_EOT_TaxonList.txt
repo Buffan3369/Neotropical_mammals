@@ -17,8 +17,10 @@ Carlothentes	extinct
 cf._Perulestes	extinct
 cf._Proargyrolagus	extinct
 Chlorocyon	extinct
+Clenia	extinct
 Coloradolops	extinct
 Eomakhaira	extinct
+Eomicrobiotherium	extinct
 Epidolops	extinct
 Epiklohnia	extinct
 Eudolops	extinct
@@ -27,8 +29,11 @@ Fredszalaya	extinct
 Gashternia	extinct
 Hypodolops	extinct
 Incadolops	extinct
+Kirutherium	extinct
 Klohnia	extinct
 Kramadolops	extinct
+Microbiotherium	extinct
+Mirandatherium	extinct
 Nemolestes	extinct
 Notogale	extinct
 Palaeothentes	extinct
@@ -57,3 +62,4 @@ Sasawatsu	extinct
 Sillustania	extinct
 Trelewthentes	extinct
 Wamradolops	extinct
+Woodburnodon	extinct

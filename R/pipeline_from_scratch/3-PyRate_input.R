@@ -312,7 +312,7 @@ ct_order[,2:ncol(ct_order)] <- apply(X = ct_order[,2:ncol(ct_order)], FUN = as.n
   ## Taxonomic subdivision -----------------------------------------------------
 Eot_occ1 <- species_list[which(species_list$epoch %in% c("Oligocene", "Eocene")),]
 tax_dict <- hash::hash("SANU"=c("Notoungulata", "Pyrotheria", "Astrapotheria", "Xenungulata", "Litopterna"),
-                       "Metatheria"=c("Polydolopimorphia", "Paucituberculata", "Sparassodonta"),
+                       "Metatheria"=c("Polydolopimorphia", "Paucituberculata", "Sparassodonta", "Microbiotheria"),
                        "Rodentia"="Rodentia",
                        "Xenarthra"=c("Cingulata", "Pilosa"))
 for(taxo in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){
