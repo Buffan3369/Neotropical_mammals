@@ -184,6 +184,8 @@ mean_loc <- bin_lat(occdf = mean_loc,
                     lat = "mean_lat")
 
 ## Merge and save binned palaeorotated occurrences dataframe -------------------
+occdf$p_lat <- to_rot$p_lat
+occdf$p_lng <- to_rot$p_lng
 occdf$lat_bin <- NA
 for(genus in occdf$genus){
   idx <- which(occdf$genus == genus)
