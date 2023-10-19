@@ -40,8 +40,8 @@ for file in files:
                 q = float(line.split(" = ")[1])
                 tmp_maxHPD.append(q)
     mean_q["replicate_"+str(i)] = pd.Series(tmp_qmean)
-    min_HPD["replicate"+str(i)] = pd.Series(tmp_minHPD)
-    max_HPD["replicate"+str(i)] = pd.Series(tmp_maxHPD)
+    min_HPD["replicate_"+str(i)] = pd.Series(tmp_minHPD)
+    max_HPD["replicate_"+str(i)] = pd.Series(tmp_maxHPD)
 
 final = pd.DataFrame([])
 final["mean_Q"] = mean_q.apply(np.mean, axis = 1)
