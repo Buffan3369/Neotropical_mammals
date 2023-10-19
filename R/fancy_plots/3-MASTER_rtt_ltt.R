@@ -303,7 +303,7 @@ for(zn in c("Tropical", "Extra.tropical")){ #option of the code
                      x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
                      geoscale = deeptime::epochs[5:6, ])
     p <- comb_ltt_rtt(sp_ex_eot, net_eot, ltt_plot_eot, Q_plot, n_plots = 4)
-    ggsave(paste0("./figures/EOT/lat_binning/", zn, "/ltt_rtt_preservation_", zn, "_q_", q, "EOT.png"),
+    ggsave(paste0("./figures/EOT/lat_binning/", zn, "/ltt_rtt_preservation_", zn, "_q_", q, "_EOT.png"),
            plot = p,
            height = 300,
            width = 400,
