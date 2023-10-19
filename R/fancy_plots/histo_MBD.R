@@ -25,7 +25,7 @@ img_aest <- hash("Sparassodonta" = c(2.5, 0.5), # y, ysize
   #Function to assess the level of support of one model against the other one based on Bayes Factor table
 assess_support <- function(BF){ #BF has to be absolute
   if((BF > 0)&(BF <= 1/2)){
-    return("Almost not worth mentinoing")
+    return("Almost not worth mentioning")
   }
   else if((BF>1/2)&(BF<=1)){
     return("Substantial support")
@@ -41,14 +41,14 @@ assess_support <- function(BF){ #BF has to be absolute
 #Additional parameters
 params <- hash("BF_test" = TRUE, #If set to TRUE => perform the Bayes factor test and select best between linear and expo
                "burn_in" = 100,
-               "show.fragmentation" = FALSE #If set to TRUE, framentation is displayed on the plots
+               "show.fragmentation" = FALSE #If set to TRUE, fragmentation is displayed on the plots
                )
 #Loop
 for(order in c("Sparassodonta", "Cingulata", "Pilosa", "Notoungulata", "Rodentia", "all_in_one", "one_place-one_time-one_occ")){
   print(order)
   if(params$BF_test == TRUE){
-    MBD_lin <- read.table(paste0("../../MBD/", order, "/", order, "_combined_se_est_0_lin_MBD.log"), header = TRUE)
-    MBD_expo <- read.table(paste0("../../MBD/", order, "/", order, "_combined_se_est_0_exp_MBD.log"), header = TRUE)
+    MBD_lin <- read.table(paste0("../../MBD/June_2023/", order, "/", order, "_combined_se_est_0_lin_MBD.log"), header = TRUE)
+    MBD_expo <- read.table(paste0("../../MBD/June_2023/", order, "/", order, "_combined_se_est_0_exp_MBD.log"), header = TRUE)
     #Remove burn-in
     MBD_expo <- MBD_expo[params$burn_in:nrow(MBD_expo),]
     MBD_lin <- MBD_lin[params$burn_in:nrow(MBD_lin),]

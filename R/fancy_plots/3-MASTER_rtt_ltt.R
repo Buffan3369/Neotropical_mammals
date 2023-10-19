@@ -237,3 +237,77 @@ for(order in c("Xenarthra", "Metatheria", "SANU", "Rodentia")){ #option of the c
            dpi = 300)
   }
 }
+  #Latitudinal partitioning
+for(zn in c("Tropical", "Extra.tropical")){ #option of the code
+  for(q in c("stages", "5M")){ #preservation rate shift allowed
+    #RTT
+    rtt_eot <- extract_rtt(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_LAT_PARTITIONING/combined_logs/",
+                                  zn, "/q_", q, "/RTT_plots.r"))
+    sp_ex_eot <- rtt_plot(data = rtt_eot,
+                          type = "SpEx",
+                          x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
+                          y_breaks = seq(from = 0, to = 1.4, by = 0.2),
+                          y_labels = c(0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4),
+                          y_limits = c(0, 1.5),
+                          geoscale = deeptime::epochs[1:7, ],
+                          abbr = FALSE)
+    net_eot <- rtt_plot(data = rtt_eot,
+                        type = "net",
+                        x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
+                        y_breaks = seq(from = -1.4, to = 1.4, by = 0.2),
+                        y_labels = c(-1.4, -1.2, -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4),
+                        y_limits = c(-1.6, 1.5),
+                        geoscale = deeptime::epochs[5:6, ],
+                        abbr = FALSE)
+    # LTT
+    ltt_eot <- extract_ltt(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_LAT_PARTITIONING/LTT/",
+                                  zn, "/q_", q, "/per_replicate/"))
+    if(zn=="Tropical"){
+      yrange <- seq(0, 50, 10)
+    }
+    else{
+      yrange <- seq(0, 80, 20)
+    }
+    ltt_plot_eot <- ltt_plot(ltt_eot,
+                             x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
+                             y_breaks = yrange,
+                             y_labels = yrange,
+                             y_limits = c(0, max(yrange)+10),
+                             geoscale = deeptime::epochs[5:6, ],
+                             abbr = FALSE)
+    #Q_rate
+    Q_rates <- read.csv(paste0("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOCENE_OLIGOCENE_LAT_PARTITIONING/Q_SHIFTS/",
+                               zn, "/q_",q, "/Parsed_Q_rates.csv"))
+    if(q == "stages"){
+      ages <- c(56, 47.8, 41.2, 37.71, 33.9, 27.82, 23.03)
+      if(nrow(Q_rates) < length(ages)){ #in case the group appeared later than Early Eocene
+        ages <- ages[(length(ages)-nrow(Q_rates)+1): length(ages)]
+      }
+      else if(nrow(Q_rates) > length(ages)){ #stretching below 23.03 Ma
+        Q_rates <- Q_rates[1:length(ages)]
+      }
+      Q_rates$Age <-  ages
+    }
+    if(q == "5M"){
+      ages <- c(56, 51, 46, 41, 36, 31, 26, 23.03)
+      if(nrow(Q_rates) < length(ages)){ #in case the group appeared later than Early Eocene
+        ages <- ages[(length(ages)-nrow(Q_rates)+1): length(ages)]
+      }
+      else if(nrow(Q_rates) > length(ages)){ #stretching below 23.03 Ma
+        Q_rates <- Q_rates[1:length(ages)]
+      }
+      Q_rates$Age <-  ages
+    }
+    
+    Q_plot <- q_plot(data = Q_rates,
+                     x_breaks = c(23.03, 27.82, 33.9, 37.71, 41.2, 47.8, 56),
+                     geoscale = deeptime::epochs[5:6, ])
+    p <- comb_ltt_rtt(sp_ex_eot, net_eot, ltt_plot_eot, Q_plot, n_plots = 4)
+    ggsave(paste0("./figures/EOT/lat_binning/", zn, "/ltt_rtt_preservation_", zn, "_q_", q, "EOT.png"),
+           plot = p,
+           height = 300,
+           width = 400,
+           units = "mm",
+           dpi = 300)
+  }
+}
