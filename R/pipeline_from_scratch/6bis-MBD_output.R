@@ -15,7 +15,6 @@ cov_idx <- hash("0" = "Self-diversity",
                 "4" = "Atmospheric_carbon",
                 "5" = "Organic_carbon",
                 "6" = "Sea_level")
-
 ## Hand scaling ----------------------------------------------------------------
 recap_tbl <- read.table("../../MBD/EOCENE_OLIGOCENE/model_scaling/Full/ESS_summary.txt", 
                         sep = "\t", header = TRUE)
@@ -57,41 +56,48 @@ if(length(mean_SW_sign) == 0){
 # 3) open the combined mcmc.log file and retain the distributions of the selected G
 mcmcLog <- read.table("../../MBD/EOCENE_OLIGOCENE/model_scaling/Full/combined_4MBD.log",
                       header = TRUE, sep = "\t")
-#only retain significant correlation parameters and subsample to make it lighter
-mcmcLog <- mcmcLog %>% select(any_of(corr_vbl))
+#only retain correlation parameters and subsample to make it lighter
+mcmcLog <- mcmcLog %>% select(starts_with("G"))
 mcmcLog1 <- data.frame(apply(X = mcmcLog, FUN = sample, MARGIN = 2, size = 1000))
 colnames(mcmcLog1) <- colnames(mcmcLog)
 #reformat dataset for plotting
-equiv_param <- hash("Gl0_0"=1, "Gm0_0"=2, "Gm0_2"=3, "Gm0_3"=4, "Gm0_4"=5)
 value <- mcmcLog1[, 1]
-param <- rep(1, length(mcmcLog1[, 1]))
+param <- rep(0, 1000)
+col <- rep(colnames(mcmcLog1)[1], 1000)
 if("l" %in% strsplit(colnames(mcmcLog1)[1], "")[[1]]){ #lambda
   rate <- rep("Origination", length(mcmcLog1[, 1]))
 }
-if("m" %in% strsplit(colnames(mcmcLog1)[1], "")[[1]]){ #lambda
+if("m" %in% strsplit(colnames(mcmcLog1)[1], "")[[1]]){ #mu
   rate <- rep("Extinction", length(mcmcLog1[, 1]))
 }
 
 for(i in colnames(mcmcLog1)[-1]){
+  col <- c(col, rep(i, 1000))
   value <- c(value, mcmcLog1[, i])
-  param <- c(param, rep(which(colnames(mcmcLog1) == i), length(mcmcLog1[, i])))
+  p <- strsplit(i, split = "_")[[1]][2]
+  param <- c(param, rep(as.numeric(p), 1000))
   if("l" %in% strsplit(i, "")[[1]]){ #lambda
-    rate <- c(rate, rep("Origination", length(mcmcLog1[, i])))
+    rate <- c(rate, rep("Origination", 1000))
   }
   else if("m" %in% strsplit(i, "")[[1]]){ #mu
-    rate <- c(rate, rep("Extinction", length(mcmcLog1[, i])))
+    rate <- c(rate, rep("Extinction", 1000))
   }
 }
-plot_df <- data.frame(value = value, param = param, rate = rate)
+plot_df <- data.frame(param = param, rate = rate, col = col, value = value)
+#significance dataframe
+signif_df <- plot_df %>% 
+  mutate(col = ifelse(col %in% corr_vbl, "*", NA)) %>%
+  group_by(param, rate, col) %>%
+  summarise(max_val = max(density(value)[[1]]) + 0.5)
 #plot
-
 ggplot(data = plot_df, aes(x = factor(param), y = value)) +
   geom_violin(adjust = .75, draw_quantiles = c(0.025, 0.975), scale = "width", aes(fill = factor(rate))) +
-  stat_summary(fun.y=mean, geom="point", size=1, color = "black") +
+  # geom_text(aes(label = signif), vjust = rep(c(0, 1.5), 7000), size = 10) +
+  # stat_summary(fun=mean, geom="point", size=1, color = "black") +
   scale_color_manual(values = c("#4c4cec", "#e34a33")) +
   scale_y_continuous(limits = c(-8, 3)) +
-  scale_x_discrete(breaks = 1:5,
-                     labels = c(keys(equiv_param))) +
+  scale_x_discrete(breaks = 0:6,
+                   labels = c(values(cov_idx))) +
   geom_hline(yintercept = 0, linetype = "dashed", colour = "grey60") +
   labs(x = NULL,
        y = "Correlation coefficient",
@@ -101,6 +107,21 @@ ggplot(data = plot_df, aes(x = factor(param), y = value)) +
         legend.text = element_text(size = 12),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+  geom_text(data = signif_df,
+            aes(label = col,
+                y = max_val,
+                x = param+0.75,
+                group = col),
+            vjust = rep(c(0.7, #extinction star 
+                          -0.85) #origination star
+                        , 7),
+            size = 10) +
   coord_flip()
 
+ggsave(paste0("C:/Users/lucas/OneDrive/Bureau/MBD.png"),
+       plot = last_plot(),
+       height = 200,
+       width = 350,
+       units = "mm",
+       dpi = 600)
 
