@@ -7,7 +7,8 @@ library(hash)
 library(ggplot2)
 
 ## Useful param for plotting ---------------------------------------------------
-initial_data <- "singleton"
+treatment <- "model_scaling"
+#treatment <- "hand.scale_only"
 kew <- "q_stages"
 
 ## Dictionary containing the corresponding index of the covariates -------------
@@ -20,8 +21,8 @@ cov_idx <- hash("0" = "Self-diversity",
                 "6" = "Sea_level")
 
 ## Big loop ----------------------------------------------------------------
-for(treatment in c("model_scaling", "hand.scale_only")){
-  for(odr in c("Full", "Rodentia", "Xenarthra", "SANU",  "Metatheria")){
+for(initial_data in c("singleton", "entire", "spatially_scaled")){
+  for(odr in c("Full", "Rodentia", "SANU", "Xenarthra", "Metatheria")){
     message(paste0("Analysing ", odr, " outputs..."))
     recap_tbl <- read.table(paste0("../../MBD/EOCENE_OLIGOCENE/", treatment, "/", odr, "/ESS_summary.txt"), 
                             sep = "\t", header = TRUE)
@@ -117,7 +118,7 @@ for(treatment in c("model_scaling", "hand.scale_only")){
     }
     #plot
     MBD_plot <- ggplot(data = plot_df, aes(x = factor(param), y = value)) +
-      geom_violin(adjust = .75, draw_quantiles = c(0.03, 0.97), scale = "width", aes(fill = factor(rate))) +
+      geom_violin(adjust = .75, draw_quantiles = c(0.03, 0.5, 0.97), scale = "width", aes(fill = factor(rate))) +
       # geom_text(aes(label = signif), vjust = rep(c(0, 1.5), 7000), size = 10) +
       # stat_summary(fun=mean, geom="point", size=1, color = "black") +
       scale_color_manual(values = c("#4c4cec", "#e34a33")) +
