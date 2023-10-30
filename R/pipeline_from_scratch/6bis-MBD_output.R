@@ -20,11 +20,14 @@ cov_idx <- hash("0" = "Self-diversity",
                 "5" = "Organic_carbon",
                 "6" = "Sea_level")
 
-## Big loop ----------------------------------------------------------------
-for(initial_data in c("singleton", "entire", "spatially_scaled")){
+## Big loop --------------------------------------------------------------------
+for(initial_data in c( "entire", "singleton", "spatially_scaled")){
   for(odr in c("Full", "Rodentia", "SANU", "Xenarthra", "Metatheria")){
+    if((initial_data %in% c("spatially_scaled", "singleton")) && (odr %in% c("Rodentia", "SANU", "Xenarthra", "Metatheria"))){
+      next #we did not do the analysis for order-singleton data, as RJMCMC convergence levels reached were unsatisfying
+    }
     message(paste0("Analysing ", odr, " outputs..."))
-    recap_tbl <- read.table(paste0("../../MBD/EOCENE_OLIGOCENE/", treatment, "/", odr, "/ESS_summary.txt"), 
+    recap_tbl <- read.table(paste0("../../MBD/EOCENE_OLIGOCENE/", initial_data, "/", treatment, "/", odr, "/ESS_summary.txt"), 
                             sep = "\t", header = TRUE)
     if(length(which(recap_tbl$ESS_posterior < 200)) > 0){
       recap_tbl <- recap_tbl[-which(recap_tbl$ESS_posterior < 200), ]
@@ -70,7 +73,7 @@ for(initial_data in c("singleton", "entire", "spatially_scaled")){
       }
     }
     # 3) open the combined mcmc.log file and retain the distributions of the selected G
-    mcmcLog <- read.table(paste0("../../MBD/EOCENE_OLIGOCENE/", treatment, "/", odr, "/combined_MBD.log"),
+    mcmcLog <- read.table(paste0("../../MBD/EOCENE_OLIGOCENE/", initial_data, "/", treatment, "/", odr, "/combined_MBD.log"),
                           header = TRUE, sep = "\t")
     #only retain correlation parameters and subsample to make it lighter
     mcmcLog <- mcmcLog %>% select(starts_with("G"))
