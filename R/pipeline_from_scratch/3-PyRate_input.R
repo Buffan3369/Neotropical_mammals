@@ -39,6 +39,8 @@ if(date == "21-06"){
                              sep = "\t", 
                              quote = "", 
                              fill = TRUE)
+  species_list$min_ma <- unlist(lapply(X = species_list$min_ma, FUN = as.numeric))
+  species_list$max_ma <- unlist(lapply(X = species_list$max_ma, FUN = as.numeric))
 }
   #exclude marine taxa
 marine_idx <- which((species_list$order %in% c("Cetacea", "Sirenia")) |
@@ -245,7 +247,9 @@ write.table(x = all_in_sp1,
             quote = FALSE)
 #Subset EOT species and proceed to "order-level" subdivision
   #Full
-all_in_sp_EOT <- subset(all_in_sp1, min_age >= 23.03, max_age <= 56)
+all_in_sp_EOT <- subset(all_in_sp1, (min_age >= 23.03 & max_age <= 56))
+message(paste0("Age boundaries of species dataset were restricted to min = ", 
+               min(all_in_sp_EOT$min_age), " Ma and max = ", max(all_in_sp_EOT$max_age), " Ma.")) #verification
 write.table(x = all_in_sp_EOT,
             file = "./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/all_in_one_sp_EOT.txt",
             sep = "\t",
@@ -253,8 +257,8 @@ write.table(x = all_in_sp_EOT,
             row.names = FALSE,
             quote = FALSE)
   #order-level
-full <- subset(all_in_sp, min_ma >= 23.03, max_ma <= 56)
-for(taxo in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){ #needs the "tax_dict dictionary to have been created (l.344)
+full <- subset(all_in_sp, (min_ma >= 23.03 & max_ma <= 56))
+for(taxo in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){ #needs the "tax_dict dictionary to have been created (l.368)
   tmp <- full[which(full$order %in% values(tax_dict[taxo])), ]
   tmp <- tmp[,c("accepted_name", "status", "min_ma", "max_ma")]
   colnames(tmp) <- c("Species", "Status", "min_age", "max_age")
@@ -300,7 +304,10 @@ write.table(x = final_unique_sp,
             quote = FALSE)
 #Subset EOT species
   #Full
-final_unique_sp_EOT <- subset(final_unique_sp1, min_age >= 23.03, max_age <= 56)
+final_unique_sp_EOT <- subset(final_unique_sp1, (min_age >= 23.03 & max_age <= 56))
+message(paste0("Age boundaries of species dataset were restricted to min = ", 
+               min(final_unique_sp_EOT$min_age), " Ma and max = ", max(final_unique_sp_EOT$max_age), " Ma.")) #verification
+
 write.table(x = final_unique_sp_EOT,
             file = "./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/full_spatially_scaled_EOT_species.txt",
             sep = "\t",
@@ -308,8 +315,8 @@ write.table(x = final_unique_sp_EOT,
             row.names = FALSE,
             quote = FALSE)
   #"order"-level
-full_scaled <- subset(final_unique_sp, min_ma >= 23.03, max_ma <= 56)
-for(taxo in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){ #needs the "tax_dict dictionary to have been created (l.344)
+full_scaled <- subset(final_unique_sp, (min_ma >= 23.03 & max_ma <= 56))
+for(taxo in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){ #needs the "tax_dict dictionary to have been created (l.368)
   tmp <- full_scaled[which(full_scaled$order %in% values(tax_dict[taxo])), ]
   tmp <- tmp[,c("accepted_name", "status", "min_ma", "max_ma")]
   colnames(tmp) <- c("Species", "Status", "min_age", "max_age")
@@ -427,7 +434,7 @@ for(odr in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/entire/", odr, "_EOT_species.txt"), replicates = 10)
 }
   #Spatially-scaled
-extract.ages("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/spatially_scaled/full_spatially_scaled_EOT.txt", replicates = 20)
+extract.ages("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/spatially_scaled/full_spatially_scaled_EOT_species.txt", replicates = 20)
 for(odr in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/spatially_scaled/", odr, "_spatially_scaled_EOT_species.txt"), replicates = 10)
 }
