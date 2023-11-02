@@ -310,7 +310,7 @@ write.table(x = final_unique_sp,
             quote = FALSE)
 #Subset EOT species
   #Full
-final_unique_sp_EOT <- subset(final_unique_sp1, (min_age >= 23.03 & max_age <= 56))
+final_unique_sp_EOT <- subset(final_unique_sp1, (min_age >= 23.03 & max_age <= 56)) #784 species in total => normal as we splitted lineages with genus-level description based on their country
 message(paste0("Age boundaries of species dataset were restricted to min = ", 
                min(final_unique_sp_EOT$min_age), " Ma and max = ", max(final_unique_sp_EOT$max_age), " Ma.")) #verification
 
