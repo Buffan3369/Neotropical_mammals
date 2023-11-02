@@ -57,8 +57,13 @@ write.table(x = all_in,
             quote = FALSE)
 ## One place, one time, one occurrence -----------------------------------------
 # (several occurrences of the same genus in the same place at the same time will be considered as one)
-just_one <- function(genus, sp_ds){
-  tmp <- sp_ds[which(sp_ds$genus == genus), ]
+just_one <- function(name, sp_ds, level="genus"){
+  if(level == "genus"){
+    tmp <- sp_ds[which(sp_ds$genus == name), ]
+  }
+  else if(level == "species"){
+    tmp <- sp_ds[which(sp_ds$accepted_name == name), ]
+  }
   #if singleton, spare time
   if(nrow(tmp) == 1){
     return(tmp)
@@ -251,7 +256,7 @@ all_in_sp_EOT <- subset(all_in_sp1, (min_age >= 23.03 & max_age <= 56))
 message(paste0("Age boundaries of species dataset were restricted to min = ", 
                min(all_in_sp_EOT$min_age), " Ma and max = ", max(all_in_sp_EOT$max_age), " Ma.")) #verification
 write.table(x = all_in_sp_EOT,
-            file = "./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/all_in_one_sp_EOT.txt",
+            file = "./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/entire/full_EOT_species.txt",
             sep = "\t",
             na = "",
             row.names = FALSE,
@@ -273,13 +278,14 @@ for(taxo in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){ #needs the "tax_d
   ## Spatially weighted --------------------------------------------------------
 apply_unique <- lapply(X = unique(species_list$accepted_name),
                        FUN = just_one,
-                       sp_ds = species_list)
+                       sp_ds = species_list,
+                       level = "species")
 final_unique <- apply_unique[[1]]
 for(i in 2:length(apply_unique)){
   final_unique <- rbind(final_unique, apply_unique[[i]])
 }
-for(genus in unique(final_unique$genus)){
-  idx <- which(final_unique$accepted_name == genus)
+for(species in unique(final_unique$accepted_name)){
+  idx <- which(final_unique$accepted_name == species)
   if((length(idx) > 0) & (length(unique(final_unique$cc[idx])) > 1)){
 #    print(genus)
     df <- data.frame(name = final_unique$accepted_name[idx],
@@ -309,7 +315,7 @@ message(paste0("Age boundaries of species dataset were restricted to min = ",
                min(final_unique_sp_EOT$min_age), " Ma and max = ", max(final_unique_sp_EOT$max_age), " Ma.")) #verification
 
 write.table(x = final_unique_sp_EOT,
-            file = "./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/full_spatially_scaled_EOT_species.txt",
+            file = "./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/spatially_scaled/full_spatially_scaled_EOT_species.txt",
             sep = "\t",
             na = "",
             row.names = FALSE,
@@ -429,7 +435,7 @@ for(taxo in c("SANU", "Xenarthra", "Metatheria", "Rodentia")){
 }
 #Species (20 replicates for full ds as more param => convergence harder to reach)
   #Entire
-extract.ages("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/entire/all_in_one_sp_EOT.txt", replicates = 20)
+extract.ages("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/entire/full_EOT_species.txt", replicates = 20)
 for(odr in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/entire/", odr, "_EOT_species.txt"), replicates = 10)
 }
