@@ -9,8 +9,16 @@ Parse and save preservation rate estimates from multiple replicates.
 import os
 import pandas as pd
 import numpy as np
+import argparse
 
-os.chdir("E:/Internship_ISEM/Neotropical_Mammals/REPO/Neotropical_mammals")
+### Enable users to specify directory where individual q_rates were assessed and where to store the parsed ouput
+p = argparse.ArgumentParser()
+p.add_argument('-dir', type=str, help='directory of the .r files plotting Q_rates')
+p.add_argument('-out', type=str, help='name and directory of the output .csv file')
+args = p.parse_args()
+dir = args.dir
+out = args.out
+
 
 dir = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/Q_shifts/all_in_one/"
 #dir = "../../PyRate_outputs/BDCS_RJMCMC_ICC_subepoch/Q_shifts/one_place-one_time-one_occ/"
@@ -48,5 +56,5 @@ final["mean_Q"] = mean_q.apply(np.mean, axis = 1)
 final["min_HPD"] = min_HPD.apply(np.nanmin, axis = 1)
 final["max_HPD"] = max_HPD.apply(np.nanmax, axis = 1)
 
-final.to_csv(dir+"Parsed_Q_rates.csv",
+final.to_csv(out,
              index = False)
