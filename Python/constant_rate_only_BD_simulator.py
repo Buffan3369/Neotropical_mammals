@@ -1,5 +1,5 @@
 #!/usr/bin/env python 
-# Adapted from Daniele Silvestro
+# Adapted from Daniele Silvestro, 2017
 
 import numpy as np
 import random
@@ -7,7 +7,7 @@ import os
 
 print("Birth-Death Sampler 18\n")
 
-os.chdir("C:/Users/lucas/OneDrive/Bureau")
+os.chdir("E:/Internship_ISEM/Neotropical_Mammals/REPO/Neotropical_mammals/")
 
 ##########################################################################
 ###########                 SIMULATION SETTINGS                 ##########
@@ -16,17 +16,17 @@ n_reps = 1 # number of simulations
 
 # CONSTRAINTS on DATA SIZE (simulations will run until size requirements are met)
 s_species=1   # number of starting species
-minSP=200     # min size data set
-maxSP=300     # max size data set
+minSP=1200     # min size data set
+maxSP=2200     # max size data set
 minEX_SP=0    # minimum number of extinct lineages allowed
 
 # SETTINGS for BD-SHIFT SIMULATIONS
-root_age = 56
+root_age = 66
 death_age = 5.33
 shift_speciation = []      # specify times of rate shifts (speciation)
 shift_extinction = []       # specify times of rate shifts (extinction)
-speciation_rates = [0.3] # if using rate shifts, the first rate is that closest to the root age
-extinction_rates = [0.25] # 
+speciation_rates = [0.25] # if using rate shifts, the first rate is that closest to the root age
+extinction_rates = [0.2] # 
 
 scale=100. #determines time step of simulation => 10e-2 My here
 
@@ -91,7 +91,7 @@ print(len(LOtrue),len(L),len(M))
 o="clade	species	ts	te\n"
 for i in range(len(FAtrue)):
     o+= "%s\t%s\t%s\t%s\n" % (0,i+1,FAtrue[i],LOtrue[i])
-    write_to_file("sim_%s.txt" % (0), o) 	
+    write_to_file("./data_2023/simulated_data/sim_%s.txt" % (0), o) 	
 
 
 
