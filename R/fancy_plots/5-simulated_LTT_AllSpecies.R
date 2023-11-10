@@ -1,4 +1,6 @@
-## Simulated LTT
+################################################################################
+################################ Simulated LTT #################################
+################################################################################
 
 library(dplyr)
 library(ggplot2)
@@ -9,7 +11,7 @@ library(randomcoloR)
 div_dict <- hash()
 
 for(j in 0:9){
-  simul_lin <- read.table(paste0("C:/Users/lucas/OneDrive/Bureau/Internship_ISEM/BirthDeath_simul/piecewise_constant_rates/sim_", j, ".txt"),
+  simul_lin <- read.table(paste0("./data_2023/simulated_data/All_lineages_TsTe/sim_", j, ".txt"),
                           sep = "\t",
                           header = TRUE)
   ts_count <- simul_lin %>% count(ts)
@@ -45,13 +47,11 @@ plot(x = c(66.5, values(div_dict["time_0"])),
      type = "l", 
      col = randomColor(),
      xlab = "Time (MyBP)",
-     ylab = "Diversity",
-     cex = 1.5)
+     ylab = "Diversity")
 
 for(i in 1:9){
   lines(x = c(66.5, values(div_dict[paste0("time_", i)])), 
         y = values(div_dict[paste0("div_", i)]),
         type = "l",
-        col = randomColor(),
-        cex = 1.5)
+        col = randomColor())
 }

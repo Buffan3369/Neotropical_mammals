@@ -16,20 +16,20 @@ n_reps = 1 # number of simulations
 
 # CONSTRAINTS on DATA SIZE (simulations will run until size requirements are met)
 s_species=1   # number of starting species
-minSP=1200     # min size data set
-maxSP=2200     # max size data set
+minSP=200     # min size data set
+maxSP=300     # max size data set
 minEX_SP=0    # minimum number of extinct lineages allowed
 
 # SETTINGS for BD-SHIFT SIMULATIONS
-root_age = 66
-death_age = 5.33
+root_age = 56
+death_age = 23.03
 shift_speciation = []      # specify times of rate shifts (speciation)
 shift_extinction = []       # specify times of rate shifts (extinction)
-speciation_rates = [0.25] # if using rate shifts, the first rate is that closest to the root age
-extinction_rates = [0.2] # 
+speciation_rates = [0.23] # if using rate shifts, the first rate is that closest to the root age
+extinction_rates = [0.17] # 
 
-scale=100. #determines time step of simulation => 10e-2 My here
-
+scale = 100. #determines time step of simulation => 10e-2 My here
+nreps = 10
 
 ############################ SIMULATION  FUNCTION #############################
 def simulate(L,M,timesL,timesM,root,death,scale,s_species,maxSP,gl=0,gm=0,Dtraj=[0],Tcomp_clade=[0]):
@@ -76,22 +76,24 @@ def write_to_file(f, o):
 	sumfile.close()
 
 ################################# EXECUTION ###################################
-LOtrue=[0]
-n_extinct=-0
-timesL = np.sort(np.array([float(root_age),float(death_age)]+shift_speciation))[::-1]
-timesM = np.sort(np.array([float(root_age),float(death_age)]+shift_extinction))[::-1]
-L = np.array(speciation_rates)
-M = np.array(extinction_rates)
-root = -root_age
-death = -death_age
-FAtrue,LOtrue=simulate(L,M,timesL,timesM,root,death,scale,s_species, maxSP)
-n_extinct = len(LOtrue[LOtrue>0])
-print("L", L, "M",M, "tL",timesL,"tM",timesM)
-print(len(LOtrue),len(L),len(M))
-o="clade	species	ts	te\n"
-for i in range(len(FAtrue)):
-    o+= "%s\t%s\t%s\t%s\n" % (0,i+1,FAtrue[i],LOtrue[i])
-    write_to_file("./data_2023/simulated_data/sim_%s.txt" % (0), o) 	
+for i in range(n_reps):
+    LOtrue=[0]
+    n_extinct=-0
+    timesL = np.sort(np.array([float(root_age),float(death_age)]+shift_speciation))[::-1]
+    timesM = np.sort(np.array([float(root_age),float(death_age)]+shift_extinction))[::-1]
+    L = np.array(speciation_rates)
+    M = np.array(extinction_rates)
+    root = -root_age
+    death = -death_age
+    FAtrue , LOtrue = simulate(L,M,timesL,timesM,root,death,scale,s_species, maxSP)
+    n_extinct = len(LOtrue[LOtrue>0])
+    print("L", L, "M",M, "tL",timesL,"tM",timesM)
+    print(len(LOtrue),len(L),len(M))
+    o="clade	species	ts	te\n"
+    for i in range(len(FAtrue)):
+        o+= "%s\tspecies_%s\t%s\t%s\n" % (0,i+1,FAtrue[i],LOtrue[i])
+#        write_to_file("./data_2023/simulated_data/sim_%s.txt" % (i), o)
+        write_to_file("C:/Users/lucas/OneDrive/Bureau/Internship_ISEM/BirthDeath_simul/sim_%s.txt" % (i), o) 	
 
 
 

@@ -444,3 +444,7 @@ extract.ages("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/s
 for(odr in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/spatially_scaled/", odr, "_spatially_scaled_EOT_species.txt"), replicates = 10)
 }
+## Simulations
+for(i in 0:9){
+  extract.ages(paste0("./data_2023/simulated_data/Simulated_occurrence_datasets/sampled_simulated_occurrences_", i, ".txt"), replicates = 10)
+}
