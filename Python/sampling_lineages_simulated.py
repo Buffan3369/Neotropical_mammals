@@ -58,7 +58,7 @@ def choose_min_max(sp_name):
         while r_max <= r_min:
             r_max = np.random.uniform(low = te, high = ts, size = 1)[0]
 #        print("max_ma = "+str(r_max))
-    str_out += "%s\t%s\t%s\t%s\n" % (sp_name, st, round(r_min, ndigits = 2), round(r_max, ndigits=2))
+        str_out += "%s\t%s\t%s\t%s\n" % (sp_name, st, round(r_min, ndigits = 2), round(r_max, ndigits=2))
     return str_out
 
 for it in range(10):
