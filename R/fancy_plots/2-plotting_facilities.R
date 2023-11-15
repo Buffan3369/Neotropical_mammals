@@ -171,3 +171,31 @@ q_plot <- function(data,  #input data containing Q rates assembled from all repl
     coord_geo(dat = geoscale, abbrv = abbr, size = 4)
   return(q.plot)
 }
+
+## Function for TRUE LTT (obtained from Ts and Te) -----------------------------
+true_ltt <- function(simul_lin){
+  ts_count <- simul_lin %>% count(ts)
+  te_count <- simul_lin %>% count(te)
+  
+  time_ttl <- unique(sort(c(ts_count$ts, te_count$te), decreasing = TRUE))
+  
+  cumul_occ <- c(0)
+  for(i in 1:length(time_ttl)){
+    t <- time_ttl[i]
+    N <- cumul_occ[i] #previous
+    if(t %in% ts_count$ts == FALSE){ #necessarily in te_count
+      idx <- which(te_count$te == t)
+      cumul_occ <- c(cumul_occ, (N - te_count$n[idx])) #counted negatively, min age of the occ(s)
+    }
+    else if(t %in% te_count$te == FALSE){ #necessarily in ts_count
+      idx <- which(ts_count$ts == t)
+      cumul_occ <- c(cumul_occ, (N + ts_count$n[idx])) #counted positively, max age of the occ(s)
+    }
+    else{ #t both in min and max ages
+      idx_min <- which(te_count$te == t)
+      idx_max <- which(ts_count$ts == t)
+      cumul_occ <- c(cumul_occ, (N + ts_count$n[idx_max] - te_count$n[idx_min])) #birth - death
+    }
+  }
+  return(list(time_ttl, cumul_occ))
+}
