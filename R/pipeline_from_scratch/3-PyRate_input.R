@@ -46,6 +46,8 @@ if(date == "21-06"){
 marine_idx <- which((species_list$order %in% c("Cetacea", "Sirenia")) |
                       (species_list$family %in% c("Otariidae", "Phocidae", "Odobenidae")))
 species_list <- species_list[-marine_idx, ]
+
+
 ## All-in-one input ------------------------------------------------------------
 all_in <- species_list[, c("genus", "gen_lvl_status", "min_ma", "max_ma")]
 colnames(all_in) <- c("Species", "Status", "min_age", "max_age")
@@ -254,7 +256,11 @@ write.table(x = all_in_sp1,
   #Full
 all_in_sp_EOT <- subset(all_in_sp1, (min_age >= 23.03 & max_age <= 56))
 message(paste0("Age boundaries of species dataset were restricted to min = ", 
-               min(all_in_sp_EOT$min_age), " Ma and max = ", max(all_in_sp_EOT$max_age), " Ma.")) #verification
+               min(all_in_sp_EOT$min_age), " Ma and max = ", max(all_in_sp_EOT$max_age), " Ma.")) #verificatio
+#Number of singletons
+c_df <- all_in_sp_EOT %>% count(Species)
+message(paste0("The proportion of singleton in the Species EOT dataset is ", 
+               round((length(which(c_df$n == 1))/nrow(c_df)), digits = 2 )))
 write.table(x = all_in_sp_EOT,
             file = "./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/entire/full_EOT_species.txt",
             sep = "\t",
