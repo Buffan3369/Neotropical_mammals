@@ -133,8 +133,10 @@ to_rot <- palaeorotate(occdf = to_rot,
                        method = "point",
                        uncertainty = FALSE)
 
-## Palaeolatitudinal binning ---------------------------------------------------
-  #Quick and dirty low/high latitudes assignation
+#-------------------------------------------------------------------------------
+############## Palaeolatitudinal binning : using a 30° Threshold ###############
+#-------------------------------------------------------------------------------
+
 bins <- data.frame(bin = c(1,2),
                    max = c(12, -30),
                    mid = c(-9, -45),
@@ -265,3 +267,15 @@ for(bin in keys(bin_sign)){
 }
 
 
+#-------------------------------------------------------------------------------
+########## Palaeolatitudinal binning : using tropics palaeo-extent #############
+#-------------------------------------------------------------------------------
+# data source -> Scotese (2021), An Atlas of Phanerozoic Paleogeographic Maps: The Seas Come In and the Seas Go Out
+# data preprocessed by Quintero et al. (2023), The build-up of the present-day tropical diversity of tetrapods
+
+library(raster)
+
+map_dict <- hash()
+for(i in seq(from = 20, to = 60, by = 5)){
+  map_dict[i] <- raster(paste0("../../paleoTropics/paleoTropics/Ma_", i, "_moll.grd"))
+}
