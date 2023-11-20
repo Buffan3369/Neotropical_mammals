@@ -18,13 +18,6 @@ Carolocoutoia	extinct	47.8	56
 Periprotodidelphis	extinct	47.8	56
 Eobrasilia	extinct	47.8	56
 Xenastrapotherium	extinct	23.03	27.82
-Urkudelphis	extinct	23.03	27.82
-Cynthiacetus	extinct	33.9	37.71
-Ocucajea	extinct	38	41.2
-Pachycetus	extinct	38	41.2
-Supayacetus	extinct	38	41.2
-Mystacodon	extinct	33.9	37.71
-Peregocetus	extinct	41.3	47.8
 Proeocoleophorus	extinct	37.71	47.8
 Saltatherium	extinct	40	46
 tegotherium	extinct	46.2	55

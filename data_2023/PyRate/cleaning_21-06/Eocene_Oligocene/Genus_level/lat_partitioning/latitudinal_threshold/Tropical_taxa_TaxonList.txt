@@ -37,7 +37,6 @@ Colombitherium	extinct
 Coloradolops	extinct
 Coniopternium	extinct
 Coquenia	extinct
-Cynthiacetus	extinct
 Diogenesia	extinct
 Dolichostylodon	extinct
 Eobrasilia	extinct
@@ -69,10 +68,7 @@ Migraveramus	extinct
 Miguelsoria	extinct
 Minusculodelphis	extinct
 Moqueguahippus	extinct
-Mystacodon	extinct
 Nanolophodon	extinct
-Ocucajea	extinct
-Pachycetus	extinct
 Palaeocladosictis	extinct
 Palaeosteiromys	extinct
 Pampahippus	extinct
@@ -84,7 +80,6 @@ Paroctodontotherium	extinct
 Pascualihippus	extinct
 Paulacoutomys	extinct
 Peradectes	extinct
-Peregocetus	extinct
 Peridolopidae_gen_A	extinct
 Periprotodidelphis	extinct
 Perulestes	extinct
@@ -116,7 +111,6 @@ Selvamys	extinct
 Shapajamys	extinct
 Sillustania	extinct
 Suniodon	extinct
-Supayacetus	extinct
 Tacheria	extinct
 Tarapotomys	extinct
 Taubatherium	extinct
@@ -125,7 +119,6 @@ Thadanius	extinct
 Ucayalimys	extinct
 Ucayalipithecus	extinct
 Umayodus	extinct
-Urkudelphis	extinct
 Vucetichimys	extinct
 Wamradolops	extinct
 Wirunodon	extinct
