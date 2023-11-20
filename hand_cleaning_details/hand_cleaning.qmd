@@ -41,13 +41,15 @@ All occurrences of *Cervus gouazoubira* were renamed *Mazama gouazoubira*.
 
 # Carnivora
 
-Removed *Felis domesticus* (coll. nb. 190846, [@steadman1986]) as introduced by humans.
+Removed *Felis domesticus* (coll. nb. 190846, [@steadman1986]) as introduced by humans.  
+Added one occurrence of *Cyonasua sp.* from the Maimará formation, Maimará locality, Jujuy, Argentina [@candela2023].
 
 # Cetacea
 
 # Cingulata
 
-Cleaning was made based on the expertise of F. Pujos, and details of the procedure are available in the `./data_2023/cleaning_Xenarthra/Xenarthra_FP_2.0.xlsx` table, sheet *Cingulata*. Rows highlighted in red (n=261) have been further removed for the rest of the study. Taxon names, ages, localities and formations were updated in red when needed.
+Cleaning was made based on the expertise of F. Pujos, and details of the procedure are available in the `./data_2023/cleaning_Xenarthra/Xenarthra_FP_2.0.xlsx` table, sheet *Cingulata*. Rows highlighted in red (n=261) have been further removed for the rest of the study. Taxon names, ages, localities and formations were updated in red when needed.  
+Added one occurrence of *Eosclerocalyptus* (6.4-6.6 Ma), *Doellotatus chapadmalensis* (5.9-6 Ma) and *Macrochorobates scalabrinii* (6.4-6.6 Ma) from the Maimará formation, Maimará locality, Jujuy, Argentina [@candela2023]. 
 
 # Chiroptera
 
@@ -58,6 +60,7 @@ All occurrences assigned to the *Micoureus* genus were re-assigned to the *Marmo
 Based on [@marivaux2020], we added a new occurrence of Marmosa in the TAR-31 locality of Shapaja, Peru, Middle-Late Miocene (11.67-15.63 Ma).  
 *Paradidelphys sp.* (coll. nb. 157795, [@reguero2011]) was synonymised with *Thylophorops* [@goin1996].  
 Added one occurrence of *Thylamys cf. colombianus* from the TAR-31 locality of Shapaja, Peru [@stutz2022].  
+Added one occurrence of *Sparassocynus maimarai* from the Maimará formation, Maimará locality, Jujuy, Argentina [@candela2023].
 
 # Litopterna
 
@@ -103,7 +106,8 @@ Added *Palaeopanorthus primus* from the Colhuehuappuian of Chubut, Argentina [@a
 
 # Pilosa
 
-Cleaning was made based on the expertise of F. Pujos, and details of the procedure are available in the `./data_2023/cleaning_Xenarthra/Xenarthra_FP_2.0.xlsx` table, sheet *Pilosa*. Rows highlighted in red (n=180) have been further removed for the rest of the study. Taxon names, ages, localities and formations were updated in red when needed.
+Cleaning was made based on the expertise of F. Pujos, and details of the procedure are available in the `./data_2023/cleaning_Xenarthra/Xenarthra_FP_2.0.xlsx` table, sheet *Pilosa*. Rows highlighted in red (n=180) have been further removed for the rest of the study. Taxon names, ages, localities and formations were updated in red when needed.  
+Added one occurrence of *Proscelidodon* (Upper Miocene-Lower Pliocene) and one *cf. Pleurolestodon* (5.8-5.9 Ma) from the Maimará formation, Maimará locality, Jujuy, Argentina [@candela2023].
 
 # Polydolopimorphia
 
@@ -133,6 +137,7 @@ All mentions of *Mammut* were removed.
 *Balsayacuy sp.*, Rupelian age (restricted to the 27.82-31.1 Ma interval), Departamento de Ucayali, Santa Rosa locality, Peru [@arnal2022]. Described as an occurrence of *Balsayacuy huallagaensis*, but species attribution doubtful. Hence, restricted to genus level. From the same paper (same locality and same age), we also add one occurrence of *Shapajamys minor*, one of *Ucayalimys amahuacensis* and one of *Vucetichimys pterilophodonica*.  
 *Erethizon sp.*, Vorohuean (Marplatan) age, Uquía formation, Quebrada de Humahuaca locality, Jujuy state, Argentina [@reguero2007].  
 *Eoincamys valverdei* and *Tarapotomys subandinus*, Early Oligocene of resp. TAR-72 and TAR-22, San Martín, Peru [@boivin2018].  
+*?Palaeocavia* (5.8-5.9 Ma), *Pithanotomys? solisae* (5.8-5.9 Ma), *Pithanotomys sp.* (5.8-5.9 Ma) *Palaeocavia sp.* (5.9-6.0 Ma) and *Palaeocavia humahuaquense* (6.4-6.6 Ma) from the Maimará formation, Maimará locality, Jujuy, Argentina [@candela2023].  
 
 ## Corrections
 *Cachiyacuy contamanensis* (coll. nb. 149523, [@arnal2020]) was renamed *Cachiyacuy sp.* as taxonomic assignation under debate. Two *Cachiyacuy contamanensis* occurrences from the same collection, same paper, were renamed *cf. Cachiyacuy contamanensis*, for the same reason.  
