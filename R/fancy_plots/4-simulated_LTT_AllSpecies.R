@@ -8,7 +8,7 @@ library(deeptime)
 library(hash)
 library(randomcoloR)
 
-source("./R/fancy_plots/2-plotting_facilities.R")
+source("C:/Users/lucas/OneDrive/Documents/GitHub/CorsaiR/R/2-plotting_facilities.R")
 
 div_dict <- hash()
 
