@@ -21,12 +21,12 @@ stages = pd.read_csv("./data_2023/simulated_data/EOM_bins.csv")
 EO_stages = ["Ypresian", "Lutetian", "Bartonian", "Priabonian", "Rupelian", "Chattian"]
 
 ## Empirical lambdas => mean q_rates ------------------------------------------
-empirical_lamb = pd.read_csv("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOT/GENUS_LEVEL/EOCENE_OLIGOCENE_regular/Q_SHIFTS/q_stages/Parsed_Q_rates.csv")
-empirical_lamb = empirical_lamb.drop(6) #under 23.03Ma
+empirical_lamb = pd.read_csv("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOT/GENUS_LEVEL/EOCENE_OLIGOCENE_regular/Q_SHIFTS/q_stages/Parsed_Q_rates.csv", sep = "\t")
+empirical_lamb = empirical_lamb.drop(0) #above 56Ma
 emp_lamb_dict = {key:None for key in EO_stages} #stored in a dictionary
 for key in EO_stages:
     idx = EO_stages.index(key)
-    emp_lamb_dict[key] = round(empirical_lamb["mean_Q"][idx], ndigits=2)
+    emp_lamb_dict[key] = round(empirical_lamb["mean_Q"][idx+1], ndigits=2)
     
 ## Empirical alphas => preservation heterogenity across lineages --------------
 ESS_sum = pd.read_csv("../../PyRate_outputs/RJMCMC_ICC_subepoch_21-06/EOT/GENUS_LEVEL/EOCENE_OLIGOCENE_regular/q_stages/pyrate_mcmc_logs/ESS_summary.txt",
