@@ -434,7 +434,7 @@ for(file in list.files("./data_2023/PyRate/cleaning_20-04/marine/")){
 extract.ages(paste0("./data_2023/PyRate/cleaning_", date, 
                     "/Eocene_Oligocene/Genus_level/Eocene_Oligocene_occurrences.txt"), replicates = 10)
 extract.ages(paste0("./data_2023/PyRate/cleaning_", date, 
-                    "/Eocene_Oligocene/Genus_level/Eocene_Oligocene_occurrences_spatially_scaled.txt"), replicates = 10)
+                    "/Eocene_Oligocene/Genus_level/Eocene_Oligocene_occurrences_spatially_scaled.txt"), replicates = 20)
 for(taxo in c("SANU", "Xenarthra", "Metatheria", "Rodentia")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_", date, 
                       "/Eocene_Oligocene/Genus_level/Order_level/", taxo, "_EOT.txt"), replicates = 10)
