@@ -64,10 +64,12 @@ for(i in 0:9){
   #Preservation rates
   Q_plot <- q_plot(data = Q, 
                    ltt_input = ltt, 
-                   y_limits = c(0, 2.4),
+                   y_limits = c(0, 3.25),
                    x_breaks = c(23.03, 27.82, 33.9, 37.82, 41.2, 47.8, 56),
                    x_labels = c(23, 27.8, 33.9, 37.8, 41.2, 47.8, 56),
                    x_limits = c(min(max(ltt$Age), 56), 23.03),
+                   y_breaks = seq(0, 3, 0.25),
+                   y_labels = seq(0, 3, 0.25),
                    x_lab = x_lab,
                    y_lab = y_lab_q)
   list_Q[[i+1]] <- Q_plot
@@ -101,3 +103,4 @@ ggsave("./figures/simulations/Qrates_panel.png",
        width = 1000,
        units = "mm",
        dpi = 500)
+ 
