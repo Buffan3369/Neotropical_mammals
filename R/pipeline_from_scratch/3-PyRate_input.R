@@ -71,7 +71,7 @@ just_one <- function(name, sp_ds, level="genus"){
     return(tmp)
   }
   #if no state indication
-  else if(length(is.na(tmp$state) == nrow(tmp))){
+  else if(length(is.na(tmp$state)) == nrow(tmp)){
     #country level
     retained <- c()
     for(country in unique(tmp$cc)){
@@ -132,7 +132,6 @@ write.table(x = final_unique,
 
 ## Order-level split -----------------------------------------------------------
   #we exclude orders with too few occurrences
-
 #excluded <- c("Lagomorpha","Dasyuromorphia", "Eulipotyphla", "Monotremata", "Xenungulata", "Cimolesta", "Gondwanatheria")
 excluded <- unique(species_list$order)[!(unique(species_list$order) %in% c("Paucituberculata", "Polydolopimorphia",
                                                                            "Microbiotheria", "Sparassodonta", "Didelphimorphia"))]
@@ -269,7 +268,7 @@ write.table(x = all_in_sp_EOT,
             quote = FALSE)
   #order-level
 full <- subset(all_in_sp, (min_ma >= 23.03 & max_ma <= 56))
-for(taxo in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){ #needs the "tax_dict dictionary to have been created (l.368)
+for(taxo in c("Notoungulata", "Other_SANU", "Metatheria", "Rodentia", "Xenarthra")){ #needs the "tax_dict dictionary to have been created (l.380)
   tmp <- full[which(full$order %in% values(tax_dict[taxo])), ]
   tmp <- tmp[,c("accepted_name", "status", "min_ma", "max_ma")]
   colnames(tmp) <- c("Species", "Status", "min_age", "max_age")
@@ -314,7 +313,7 @@ write.table(x = final_unique_sp,
             na = "",
             row.names = FALSE,
             quote = FALSE)
-#Subset EOT species
+#Subset EOT species spatially weighted
   #Full
 final_unique_sp_EOT <- subset(final_unique_sp1, (min_age >= 23.03 & max_age <= 56)) #784 species in total => normal as we splitted lineages with genus-level description based on their country
 message(paste0("Age boundaries of species dataset were restricted to min = ", 
@@ -328,7 +327,7 @@ write.table(x = final_unique_sp_EOT,
             quote = FALSE)
   #"order"-level
 full_scaled <- subset(final_unique_sp, (min_ma >= 23.03 & max_ma <= 56))
-for(taxo in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){ #needs the "tax_dict dictionary to have been created (l.368)
+for(taxo in c("Notoungulata", "Other_SANU", "Metatheria", "Rodentia", "Xenarthra")){ #needs the "tax_dict dictionary to have been created (l.380)
   tmp <- full_scaled[which(full_scaled$order %in% values(tax_dict[taxo])), ]
   tmp <- tmp[,c("accepted_name", "status", "min_ma", "max_ma")]
   colnames(tmp) <- c("Species", "Status", "min_age", "max_age")
@@ -377,17 +376,18 @@ ct_order[,2:ncol(ct_order)] <- apply(X = ct_order[,2:ncol(ct_order)], FUN = as.n
 
   ## Taxonomic subdivision -----------------------------------------------------
 Eot_occ1 <- species_list[which(species_list$epoch %in% c("Oligocene", "Eocene")),]
-tax_dict <- hash::hash("SANU"=c("Notoungulata", "Pyrotheria", "Astrapotheria", "Xenungulata", "Litopterna"),
+tax_dict <- hash::hash("Notoungulata" = "Notoungulata", 
+                       "Other_SANU"=c("Pyrotheria", "Astrapotheria", "Xenungulata", "Litopterna"),
                        "Metatheria"=c("Polydolopimorphia", "Paucituberculata", "Sparassodonta", "Microbiotheria"),
                        "Rodentia"="Rodentia",
                        "Xenarthra"=c("Cingulata", "Pilosa"))
-for(taxo in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){
+for(taxo in c("Notoungulata", "Other_SANU", "Metatheria", "Rodentia", "Xenarthra")){
   tmp <- Eot_occ1[which(Eot_occ1$order %in% values(tax_dict[taxo])), ]
   tmp <- tmp[,c("genus", "gen_lvl_status", "min_ma", "max_ma")]
   colnames(tmp) <- c("Species", "Status", "min_age", "max_age")
   write.table(x = tmp,
               file = paste0("./data_2023/PyRate/cleaning_", date, 
-                            "/Eocene_Oligocene/Order_level/Genus_level/", taxo, "_EOT.txt"),
+                            "/Eocene_Oligocene/Genus_level/Order_level/", taxo, "_EOT.txt"),
               sep = "\t",
               na = "",
               row.names = FALSE,
@@ -407,6 +407,37 @@ write.table(x = final_unique,
             na = "",
             row.names = FALSE,
             quote = FALSE)
+
+######################### ECOMORPHOTYPES EOT ###################################
+spl_troph <- read.table(file = "../../DATA/ecomorphotypes/species_list_ecomorphotypes.txt",
+                        sep = ";",
+                        header = TRUE)
+spl_troph$min_ma <- unlist(lapply(X = spl_troph$min_ma, FUN = as.numeric))
+spl_troph$max_ma <- unlist(lapply(X = spl_troph$max_ma, FUN = as.numeric))
+spl_troph <- spl_troph[-which(spl_troph$diet == "frugivore"),] #too few
+for(diet in unique(spl_troph$diet)){
+  tmp <- spl_troph[which(spl_troph$diet == diet),]
+  # Genus level input
+  tmp_gen <- tmp[, c("genus", "gen_lvl_status", "min_ma", "max_ma")]
+  tmp_gen <- tmp_gen %>% rename(Species = "genus", Status = "gen_lvl_status", MinT = "min_ma", MaxT = "max_ma")
+  write.table(x = tmp_gen,
+              file = paste0("./data_2023/PyRate/cleaning_", date, 
+                            "/Eocene_Oligocene/Genus_level/Ecomorphotypes/", diet, "_occ.txt"),
+              sep = "\t",
+              na = "",
+              row.names = FALSE,
+              quote = FALSE)
+  # Species-level input
+  tmp_sp <- tmp[, c("accepted_name", "status", "min_ma", "max_ma")]
+  tmp_sp <- tmp_sp %>% rename(Species = "accepted_name", Status = "status", MinT = "min_ma", MaxT = "max_ma")
+  write.table(x = tmp_sp,
+              file = paste0("./data_2023/PyRate/cleaning_", date, 
+                            "/Eocene_Oligocene/Species_level/Ecomorphotypes/", diet, "_occ.txt"),
+              sep = "\t",
+              na = "",
+              row.names = FALSE,
+              quote = FALSE)
+}
 
 ####### Extract ages using Silvestro et al. function (for PyRate input) #######
 source("../../pyrate_utilities.R")
@@ -429,28 +460,35 @@ for(file in list.files("./data_2023/PyRate/cleaning_", date, "/infra_order_level
 for(file in list.files("./data_2023/PyRate/cleaning_20-04/marine/")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_20-04/marine/", file), replicates = 10)
 }
-## EOT
+## EOT -------------------------------------------------------------------------
 #Genus
 extract.ages(paste0("./data_2023/PyRate/cleaning_", date, 
                     "/Eocene_Oligocene/Genus_level/Eocene_Oligocene_occurrences.txt"), replicates = 10)
 extract.ages(paste0("./data_2023/PyRate/cleaning_", date, 
                     "/Eocene_Oligocene/Genus_level/Eocene_Oligocene_occurrences_spatially_scaled.txt"), replicates = 20)
-for(taxo in c("SANU", "Xenarthra", "Metatheria", "Rodentia")){
+for(taxo in c("Notoungulata", "Other_SANU", "Xenarthra", "Metatheria", "Rodentia")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_", date, 
                       "/Eocene_Oligocene/Genus_level/Order_level/", taxo, "_EOT.txt"), replicates = 10)
 }
 #Species (20 replicates for full ds as more param => convergence harder to reach)
   #Entire
 extract.ages("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/entire/full_EOT_species.txt", replicates = 20)
-for(odr in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){
+for(odr in c("Notoungulata", "Other_SANU", "Metatheria", "Rodentia", "Xenarthra")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/entire/", odr, "_EOT_species.txt"), replicates = 10)
 }
   #Spatially-scaled
 extract.ages("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/spatially_scaled/full_spatially_scaled_EOT_species.txt", replicates = 20)
-for(odr in c("SANU", "Metatheria", "Rodentia", "Xenarthra")){
+for(odr in c("Notoungulata", "Other_SANU", "Metatheria", "Rodentia", "Xenarthra")){
   extract.ages(paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/spatially_scaled/", odr, "_spatially_scaled_EOT_species.txt"), replicates = 10)
 }
-## Simulations
+## Simulations -----------------------------------------------------------------
 for(i in 0:9){
   extract.ages(paste0("./data_2023/simulated_data/Simulated_occurrence_datasets/sampled_simulated_occurrences_", i, ".txt"), replicates = 10)
+}
+## Diet analysis ---------------------------------------------------------------
+for(diet in c("omnivore", "carnivore", "herbivore", "insectivore")){
+  # Genus
+  extract.ages(paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Genus_level/Ecomorphotypes/", diet, "_occ.txt"), replicates = 10)
+  # Species
+  extract.ages(paste0("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/Ecomorphotypes/", diet, "_occ.txt"), replicates = 10)
 }
