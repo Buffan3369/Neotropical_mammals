@@ -1,6 +1,6 @@
 ################################################################################
 # Goal: Table recap
-# Authors: Lucas Buffan
+# Author: Lucas Buffan
 # Contact: Lucas.L.Buffan@gmail.com
 # Description :
 #   args[1] => table we want to recap

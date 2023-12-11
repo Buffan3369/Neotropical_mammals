@@ -123,6 +123,8 @@ Added occurrence from a newly described genus of the Peridolopidae family from t
 
 # Primates
 
+Ages of Deseadian Soriacebines *Branisella* and *Canaanimico* were restricted to the 24.5-26 Ma interval according to [@marivaux2016].
+
 # Proboscidea
 
 *Mastotherium hyodon* (coll. nb. 142016, [@boule1920] and 145181, [@schneider1927]) genus named was set to *Cuvieronius*.   
