@@ -2,59 +2,40 @@
 # Goal: Table recap
 # Author: Lucas Buffan
 # Contact: Lucas.L.Buffan@gmail.com
-# Description :
-#   args[1] => table we want to recap
-#   args[2] => taxonomic reference table
-#   args[3] => path to where we want to store the recap table
 ################################################################################
 
-library(dplyr)
-library(readxl)
+library(tidyverse)
 
-args <- commandArgs(trailingOnly=TRUE)
-
-#tbl <- read.table(args[1], header = TRUE, sep = "\t")
-tbl <- read.table("./data_2023/PyRate/cleaning_21-06/Eocene_Oligocene/Species_level/entire/full_EOT_species.txt", header = TRUE, sep = "\t")
-ref_tax <- read_xlsx("../../DATA/Cnz_Mammals_UpdatedList.xlsx")
-## Highlight different orders --------------------------------------------------
-assign_odr <-function(sp){
-  if(sp %in% ref_tax$accepted_name){
-    return(unique(ref_tax$order[which(ref_tax$accepted_name == sp)]))
-  }
-  else{
-    spl <- strsplit(sp, split = "_")[[1]]
-    if(spl[1] %in% ref_tax$genus){
-      return(unique(ref_tax$order[which(ref_tax$genus == spl[1])]))
-    }
-    else if(spl[2] %in% ref_tax$genus){
-      return(unique(ref_tax$order[which(ref_tax$genus == spl[1])]))
-    }
-  }
-}
-all_odr <- unlist(lapply(X = tbl$Species,
-                         FUN = assign_odr))
-tbl$order <- all_odr
-all_odr <- unique(all_odr)
-all_odr <- all_odr[which(is.na(all_odr) == F)]
-## Loop across them ------------------------------------------------------------
-n_occ <- c()
-n_singl <- c()
-for(odr in all_odr){
-  tmp <- tbl[which(tbl$order == odr),]
-  n_occ <- c(n_occ, nrow(tmp))
-  c_df <- tmp %>% count(Species)
-  n_singl <- c(n_singl, length(which(c_df$n == 1)))
-}
-## Add "total" row -------------------------------------------------------------
-count_df <- tbl %>% count(Species)
-n_occ <- c(n_occ, nrow(count_df))
-n_singl <- c(n_singl, length(which(count_df$n == 1)))
-all_odr <- c(all_odr, "Total")
-## Save ------------------------------------------------------------------------
-final_df <- data.frame(Order = all_odr,
-                       occ_nb = n_occ,
-                       singl_nb = n_singl)
-final_df$prop_singl <- unlist(lapply(X = 1:16,
-                                     FUN = function(i){
-                                       return(round(n_singl[i]/n_occ[i], digits = 2))
-                                     }))
+tbl <- readRDS("./data_2023/SPECIES_LISTS/6-Fully_cleaned_EOT_SA_Mammals.RDS")
+# Non-Na orders
+full_odr <- unique(tbl$order)[!is.na(unique(tbl$order))]
+# Assess number of occ, singleton and proportion of singleton per order
+final_df <- data.frame(order = full_odr,
+                       n_occ = sapply(X = full_odr,
+                                      FUN = function(x){
+                                        tmp <- tbl %>% filter(order == x)
+                                        return(nrow(tmp))}),
+                       n_gen = sapply(X = full_odr,
+                                      FUN = function(x){
+                                        tmp <- tbl %>% filter(order == x)
+                                        return(length(unique(tmp$genus)))}),
+                       n_singl = sapply(X = full_odr,
+                                        FUN = function(x){
+                                          tmp <- tbl %>% filter(order == x)
+                                          gen_count <- tmp %>% count(genus)
+                                          S <- which(gen_count$n == 1)
+                                          return(length(S))
+                                          }))
+# Add "total" row
+ttl_count <- tbl %>% count(genus)
+final_df <- final_df %>% add_row(order = "total", n_occ = nrow(tbl), n_gen = nrow(ttl_count), n_singl = length(which(ttl_count$n == 1)))
+# Add "propotion of singleton" column
+final_df$prop_singl <- sapply(X = 1:nrow(final_df),
+                              FUN = function(x){
+                                occ <- final_df$n_occ[x]
+                                singl <- final_df$n_singl[x]
+                                prop <- (singl / occ)
+                                return(round(prop, digits = 2))
+                              })
+# save
+write.csv(final_df, "./data_2023/recap_tbl_EOT.csv")

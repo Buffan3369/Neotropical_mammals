@@ -145,4 +145,4 @@ for(idx in unmatched){
 }
 
 ## Save ------------------------------------------------------------------------
-write.csv(raw, "./data_2023/SPECIES_LISTS/2-Matched_Uncleaned_Cnz_SA_Mammals.csv", na = "", row.names = F)
+saveRDS(raw, "./data_2023/SPECIES_LISTS/2-Matched_Uncleaned_Cnz_SA_Mammals.RDS")

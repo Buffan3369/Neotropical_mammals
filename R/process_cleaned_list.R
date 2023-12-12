@@ -175,8 +175,13 @@ new_tax$authorizer <- NA
 new_tax$status <- "extinct"
 new_tax$gen_lvl_status <- "extinct"
 new_tax <- new_tax[, colnames(all_cleaned)]
-
+  #bind
 all_cleaned <- rbind.data.frame(all_cleaned, new_tax)
 all_cleaned <- all_cleaned %>% arrange(order, family, genus, accepted_name, cc)
+  #save
+saveRDS(all_cleaned, "./data_2023/SPECIES_LISTS/3-Fully_cleaned_SALMA_kept.RDS")
 
-write.csv(all_cleaned, "./data_2023/SPECIES_LISTS/3-Fully_cleaned_SALMA_kept.csv", row.names = F, na="", quote = F)
+#Subset EOT data
+all_cleaned_EOT <- all_cleaned %>% filter(epoch %in% c("Eocene", "Oligocene"))
+  #save
+saveRDS(all_cleaned_EOT, "./data_2023/SPECIES_LISTS/6-Fully_cleaned_EOT_SA_Mammals.RDS")
