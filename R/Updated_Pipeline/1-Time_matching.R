@@ -12,9 +12,11 @@ source("./R/Updated_Pipeline/1b_Matching_functions.R")
 
 ## A bit of preprocessing ------------------------------------------------------
 raw <- read.csv("./data_2023/SPECIES_LISTS/1-Raw_Cnz_SA_Mammals.csv", na.strings = "")
+L1 <- nrow(raw)
   #exclude marine taxa
 raw <- raw %>% filter(!((order %in% c("Cetacea", "Sirenia")) | 
                           (family %in% c("Phocidae", "Otariidae"))))
+message(paste0("Discarded ", (L1-nrow(raw)), " marine occurrences."))
   #exclude occurrences with age range >= 20My
 range <- sapply(X = 1:nrow(raw), FUN = function(x){return((raw$max_ma[x]-raw$min_ma[x]))})
 raw <- raw[-which(range >= 20),]
