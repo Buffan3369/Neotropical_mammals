@@ -1,5 +1,5 @@
 ################################################################################
-# Name: 1-Time_matching.R
+# Name: 3-SALMA_smoothing.R
 # Author: Lucas Buffan
 # Date: 2023-12-13
 # Aim: 'Smooth' SALMAs => match boundaries of the occurrences 
@@ -88,3 +88,8 @@ spl <- spl %>%
   select(-c(Early_stage, Late_stage)) %>% 
   arrange(order, family, genus, accepted_name, cc)
 saveRDS(spl, "./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_smoothed.RDS")
+
+## Write and save PyRate input -------------------------------------------------
+
+
+
