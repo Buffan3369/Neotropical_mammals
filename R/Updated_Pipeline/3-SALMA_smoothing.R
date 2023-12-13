@@ -1,5 +1,5 @@
 ################################################################################
-# Name: 1-Time_matching.R
+# Name: 3-SALMA_smoothing.R
 # Author: Lucas Buffan
 # Date: 2023-12-13
 # Aim: 'Smooth' SALMAs => match boundaries of the occurrences 
@@ -14,7 +14,7 @@ library(palaeoverse)
 SubEpochs <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
 SubEpochs$bin <- 1:nrow(SubEpochs) #add 'bin' columns for `bin_time`
 SALMA_EOT <- read_xlsx("./data_2023/time_bins/SALMA_EOT.xlsx")
-species_list <- readRDS("./data_2023/SPECIES_LISTS/4-Fully_cleaned_EOT_SA_Mammals_SALMA_kept.RDS")
+species_list <- readRDS("./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
 
 ## Bin SALMAs with the Sub-Epochs they most overlap with -----------------------
 binning <- palaeoverse::bin_time(occdf = data.frame(max_ma = SALMA_EOT$max_ma,
@@ -84,7 +84,13 @@ spl_EOT$max_ma <- sapply(X = spl_EOT$stage, FUN = get_ref, Which = "max")
 ## Merge the two datasets (SALMA/not_SALMA) and save ---------------------------
 spl_not_EOT <- species_list %>% filter(Early_stage %in% SALMA_EOT$interval_name == FALSE)
 spl <- rbind.data.frame(spl_not_EOT, spl_EOT)
+spl <- data.frame(spl)
 spl <- spl %>% 
   select(-c(Early_stage, Late_stage)) %>% 
   arrange(order, family, genus, accepted_name, cc)
-saveRDS(spl, "./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_smoothed.RDS")
+saveRDS(spl, "./data_2023/SPECIES_LISTS/6-Fully_cleaned_EOT_SA_Mammals_SALMA_smoothed_Tropics_Diet.RDS")
+
+## Write and save PyRate input -------------------------------------------------
+
+
+
