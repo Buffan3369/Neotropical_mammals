@@ -1,0 +1,512 @@
+mean_loc <- data.frame(genus = unique(to_rot$genus),
+lat = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_mean,
+coord = "lat")),
+sd_lat = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_sd,
+coord = "lat")),
+N = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_len)))
+mean_loc_binned <- bin_lat(occdf = to_rot,
+bins = bins,
+lat = "lat")
+library(palaeoverse)
+library(dplyr)
+library(readxl)
+library(hash)
+mean_loc_binned <- bin_lat(occdf = to_rot,
+bins = bins,
+lat = "lat")
+IC_loc <- mean_loc
+IC_loc <- mean_loc[which(mean_loc$N > 1),]
+IC_loc$IC <- IC_loc$lat + IC_loc$sd_lat
+mean_loc_binned <- bin_lat(occdf = to_rot,
+bins = bins,
+lat = "IC")
+IC_loc <- mean_loc[which(mean_loc$N > 1),]
+IC_loc$IC <- IC_loc$lat + IC_loc$sd_lat
+IC_loc <- bin_lat(occdf = IC_loc,
+bins = bins,
+lat = "IC")
+mean_loc_binned <- mean_loc[which(mean_loc$N > 1),]
+mean_loc_binned <- bin_lat(occdf = mean_loc_binned,
+bins = bins,
+lat = "lat")
+IC_loc <- mean_loc[which(mean_loc$N > 1),]
+IC_loc$IC <- IC_loc$lat + IC_loc$sd_lat
+IC_loc <- bin_lat(occdf = IC_loc,
+bins = bins,
+lat = "IC")
+bin <- mean_loc_binned$lat_bin + IC_loc$lat_bin
+length(which(bin == 3))
+View(IC_loc)
+View(mean_loc_binned)
+mean_loc <- data.frame(genus = unique(to_rot$genus),
+lat = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_mean,
+coord = "lat")),
+sd_lat = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_sd,
+coord = "lat")),
+N = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_len)))
+library(palaeoverse)
+library(dplyr)
+library(readxl)
+library(hash)
+#Fix the issue of the genera distributed between both bins
+assign_mean <- function(genus, coord){ #coord = "lat" or "lng"
+coord_list <- to_rot[which(to_rot$genus == genus), c(coord)]
+return(mean(coord_list, na.rm = TRUE))
+}
+assign_sd <- function(genus, coord){ #coord = "lat" or "lng"
+coord_list <- to_rot[which(to_rot$genus == genus), c(coord)]
+return(sd(coord_list, na.rm = TRUE))
+}
+assign_len <- function(genus){
+return(length(which(to_rot$genus == genus)))
+}
+mean_loc <- data.frame(genus = unique(to_rot$genus),
+lat = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_mean,
+coord = "lat")),
+sd_lat = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_sd,
+coord = "lat")),
+N = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_len)))
+mean_loc_binned <- mean_loc[which(mean_loc$N > 1),]
+row.names(mean_loc_binned) <- 1:nrow(mean_loc_binned)
+mean_loc_binned <- bin_lat(occdf = mean_loc_binned,
+bins = bins,
+lat = "lat")
+IC_loc <- mean_loc[which(mean_loc$N > 1),]
+row.names(IC_loc) <- 1:nrow(IC_loc)
+IC_loc$IC <- IC_loc$lat + IC_loc$sd_lat
+IC_loc <- bin_lat(occdf = IC_loc,
+bins = bins,
+lat = "IC")
+View(IC_loc)
+View(mean_loc)
+View(mean_loc_binned)
+View(bins)
+IC_loc <- mean_loc[which(mean_loc$N > 1),]
+row.names(IC_loc) <- 1:nrow(IC_loc)
+IC_loc$IC <- IC_loc$lat - IC_loc$sd_lat
+IC_loc <- bin_lat(occdf = IC_loc,
+bins = bins,
+lat = "IC")
+View(IC_loc)
+bin <- mean_loc_binned$lat_bin + IC_loc$lat_bin
+length(which(bin == 3))
+View(mean_loc_binned[which(bin == 3),])
+retained_genera <- mean_loc_binned$genus[which(bin != 3)]
+# Exclude them
+mean_loc <- mean_loc[which(mean_loc$genus %in% retained_genera), ]
+bin <- mean_loc_binned$lat_bin + IC_loc$lat_bin
+retained_genera <- mean_loc_binned$genus[which(bin != 3)] # 3 = 2+1 or 1+2 => different bins
+# Exclude them
+mean_loc <- mean_loc[which( (mean_loc$genus %in% retained_genera) |
+(mean_loc$N == 1)), ]
+mean_loc <- data.frame(genus = unique(to_rot$genus),
+mean_lat = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_mean,
+coord = "lat")),
+sd_lat = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_sd,
+coord = "lat")),
+N = unlist(lapply(X = unique(to_rot$genus),
+FUN = assign_len)))
+# Exclude them
+mean_loc <- mean_loc[which( (mean_loc$genus %in% retained_genera) |
+(mean_loc$N == 1)), ]
+mean_loc <- bin_lat(occdf = mean_loc,
+bins = bins,
+lat = "mean_lat")
+## Merge and save binned palaeorotated occurrences dataframe -------------------
+occdf$lat_bin <- NA
+for(genus in occdf$genus){
+idx <- which(occdf$genus == genus)
+if(genus %in% mean_loc$genus){
+occdf$lat_bin[idx] <- mean_loc$lat_bin[which(mean_loc$genus == genus)]
+}
+else{
+occdf$lat_bin[idx] <- "UNASSIGNED"
+}
+}
+write.table(occdf,
+file = "../../DATA/lat_binning/full_list_palaeorotated_binned.txt",
+sep = "\t",
+dec = ",",
+na = "",
+row.names = FALSE,
+quote = FALSE)
+## Split based on palaeolatitudinal bin and save pyrate inputs -----------------
+source("../../pyrate_utilities.R")
+bin_sign <- hash::hash("1"="Tropical", "2"="Extra-tropical")
+for(bin in keys(bin_sign)){
+tmp <- occdf[which(occdf$lat_bin == as.numeric(bin)), c("genus", "gen_lvl_status", "min_ma", "max_ma")]
+write.table(tmp,
+file = paste0("../../DATA/lat_binning/", values(bin_sign[bin]), "_taxa.txt"),
+sep = "\t",
+na = "",
+row.names = FALSE,
+quote = FALSE)
+extract.ages(paste0("../../DATA/lat_binning/", values(bin_sign[bin]), "_taxa.txt"),
+replicates = 10)
+}
+5167+1861
+library(ggplot2)
+library(deeptime)
+library(cowplot)
+dir <- "../../PyRate_outputs/stage+SALMA_time_matching/order_level/LTT/Artiodactyla/"
+files <- Sys.glob(paste0(dir, "*_ltt.txt"))
+length(files)
+dir <- "../../PyRate_outputs/stage+SALMA_time_matching/order_level/LTT/Notoungulata/"
+files <- Sys.glob(paste0(dir, "*_ltt.txt"))
+files <- Sys.glob(paste0(dir, "*_se_est.txt"))
+ltt <- read.table(files[1], header = TRUE)
+View(ltt)
+ltt2 <- read.table(files[2], header = TRUE)
+View(ltt2)
+library(ggplot2)
+library(deeptime)
+library(cowplot)
+dir <- "../../PyRate_outputs/stage+SALMA_time_matching/order_level/LTT/Notoungulata/"
+files <- Sys.glob(paste0(dir, "*_ltt.txt"))
+ltt <- read.table(files[1], header = TRUE)
+ltt$time <- unlist(lapply(X = ltt$time, FUN = round, digits = 1))
+ltt <- ltt[-which(ltt$time > 66.0), c("time", "diversity")]
+ltt <- ltt %>% rename(diversity_1 = "diversity")
+i = 2
+for(file in files[2:length(files)]){
+f <- read.table(file, header = TRUE)
+if(length(which(ltt$time > 66.0)) > 0){
+f <- f[-which(f$time > 66.0), c("time", "diversity")]
+}
+else{
+f <- f[, c("time", "diversity")]
+}
+f$time <- unlist(lapply(X = f$time, FUN = round, digits = 1))
+colnames(f) <- c("time", paste0("diversity_", i))
+ltt <- merge(ltt, f, by = "time", all = T)
+i <- i+1
+}
+View(ltt)
+dir <- "../../PyRate_outputs/stage+SALMA_time_matching/order_level/LTT/Notoungulata/"
+files <- Sys.glob(paste0(dir, "*_ltt.txt"))
+ltt <- read.table(files[1], header = TRUE)
+ltt$time <- unlist(lapply(X = ltt$time, FUN = round, digits = 1))
+ltt <- ltt[-which(ltt$time > 66.0), c("time", "diversity")]
+ltt <- ltt %>% rename(diversity_1 = "diversity")
+library(dplyr)
+library(dplyr)
+ltt <- ltt %>% rename(diversity_1 = "diversity")
+ltt <- read.table(files[1], header = TRUE)
+ltt$time <- unlist(lapply(X = ltt$time, FUN = round, digits = 1))
+ltt <- ltt[-which(ltt$time > 66.0), c("time", "diversity")]
+library(ggplot2)
+library(deeptime)
+library(cowplot)
+library(dplyr)
+dir <- "../../PyRate_outputs/stage+SALMA_time_matching/order_level/LTT/Notoungulata/"
+files <- Sys.glob(paste0(dir, "*_ltt.txt"))
+ltt <- read.table(files[1], header = TRUE)
+ltt$time <- unlist(lapply(X = ltt$time, FUN = round, digits = 1))
+ltt <- ltt[-which(ltt$time > 66.0), c("time", "diversity")]
+ltt <- read.table(files[1], header = TRUE)
+ltt$time <- unlist(lapply(X = ltt$time, FUN = round, digits = 1))
+View(ltt)
+ltt <- ltt[-which(ltt$time > 66.0), ]
+library(ggplot2)
+library(deeptime)
+library(cowplot)
+library(dplyr)
+dir <- "../../PyRate_outputs/stage+SALMA_time_matching/order_level/LTT/Notoungulata/"
+files <- Sys.glob(paste0(dir, "*_ltt.txt"))
+ltt <- read.table(files[1], header = TRUE)
+ltt$time <- unlist(lapply(X = ltt$time, FUN = round, digits = 1))
+ltt <- ltt %>% rename(diversity_1 = "diversity")
+ltt <- ltt[, c("time", "diversity")]
+ltt <- ltt[, c("time", "diversity1")]
+ltt <- ltt[, 1:2]
+i = 2
+for(file in files[2:length(files)]){
+f <- read.table(file, header = TRUE)
+if(length(which(ltt$time > 66.0)) > 0){
+f <- f[-which(f$time > 66.0), c("time", "diversity")]
+}
+else{
+f <- f[, c("time", "diversity")]
+}
+f$time <- unlist(lapply(X = f$time, FUN = round, digits = 1))
+colnames(f) <- c("time", paste0("diversity_", i))
+ltt <- merge(ltt, f, by = "time", all = T)
+i <- i+1
+}
+LTT <- data.frame(Age = ltt$time,
+Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+MARGIN = 1,
+FUN = mean,
+na.rm = TRUE),
+min_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+MARGIN = 1,
+FUN = min,
+na.rm = TRUE),
+max_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+MARGIN = 1,
+FUN = max,
+na.rm = TRUE))
+ltt_plot <- ggplot(data = LTT, aes(x = Age, y = Diversity)) +
+scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+scale_y_continuous(breaks = seq(0,250,50),
+limits = c(0,250)) +
+annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+geom_ribbon(aes(x = Age, ymin = min_Diversity, ymax = max_Diversity),
+fill = "#a1d99b",
+alpha = 0.8) +
+geom_line(linewidth = 1, colour = "#329507") +
+xlab("Time (Ma)") +
+ylab("Diversity (nb. lineages)") +
+theme(axis.title.x = element_text(size = 22),
+axis.title.y = element_text(size = 22),
+axis.text = element_text(size = 18),
+panel.background = element_blank(),
+panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 5)
+## Set Cenozoic epochs dataset for plotting facilities -------------------------
+cnz_epochs <- deeptime::epochs[1:7, ]
+cnz_epochs$abbr <- c("H", "Ple", "Pli", "Miocene", "Oligocene", "Eocene", "Palaeocene")
+ltt_plot <- ggplot(data = LTT, aes(x = Age, y = Diversity)) +
+scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+scale_y_continuous(breaks = seq(0,250,50),
+limits = c(0,250)) +
+annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+geom_ribbon(aes(x = Age, ymin = min_Diversity, ymax = max_Diversity),
+fill = "#a1d99b",
+alpha = 0.8) +
+geom_line(linewidth = 1, colour = "#329507") +
+xlab("Time (Ma)") +
+ylab("Diversity (nb. lineages)") +
+theme(axis.title.x = element_text(size = 22),
+axis.title.y = element_text(size = 22),
+axis.text = element_text(size = 18),
+panel.background = element_blank(),
+panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 5)
+ltt_plot
+ltt_plot <- ggplot(data = LTT, aes(x = Age, y = Diversity)) +
+scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+# scale_y_continuous(breaks = seq(0,250,50),
+#                    limits = c(0,250)) +
+annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+geom_ribbon(aes(x = Age, ymin = min_Diversity, ymax = max_Diversity),
+fill = "#a1d99b",
+alpha = 0.8) +
+geom_line(linewidth = 1, colour = "#329507") +
+xlab("Time (Ma)") +
+ylab("Diversity (nb. lineages)") +
+theme(axis.title.x = element_text(size = 22),
+axis.title.y = element_text(size = 22),
+axis.text = element_text(size = 18),
+panel.background = element_blank(),
+panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 5)
+ltt_plot
+ggsave(paste0("./figures/LTT_order_level/",order,"_LTT.png"),
+plot = ltt_plot,
+height = 200,
+width = 300,
+units = "mm",
+dpi = 600)
+order = "Notoungulata"
+ggsave(paste0("./figures/LTT_order_level/",order,"_LTT.png"),
+plot = ltt_plot,
+height = 200,
+width = 300,
+units = "mm",
+dpi = 600)
+ggsave(paste0("./figures/LTT_order_level/",order,"_LTT.png"),
+plot = ltt_plot,
+height = 170,
+width = 320,
+units = "mm",
+dpi = 600)
+ltt_plot <- ggplot(data = LTT, aes(x = Age, y = Diversity)) +
+scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+# scale_y_continuous(breaks = seq(0,250,50),
+#                    limits = c(0,250)) +
+annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+geom_ribbon(aes(x = Age, ymin = min_Diversity, ymax = max_Diversity),
+fill = "#a1d99b",
+alpha = 0.8) +
+geom_line(linewidth = 1, colour = "#329507") +
+ggtitle(order) +
+xlab("Time (Ma)") +
+ylab("Diversity (nb. lineages)") +
+theme(axis.title.x = element_text(size = 22),
+axis.title.y = element_text(size = 22),
+axis.text = element_text(size = 18),
+panel.background = element_blank(),
+panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5),
+plot.title = element_text(size = 25, hjust = 0.5)) +
+coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 5)
+ggsave(paste0("./figures/LTT_order_level/",order,"_LTT.png"),
+plot = ltt_plot,
+height = 170,
+width = 320,
+units = "mm",
+dpi = 600)
+ggsave(paste0("./figures/LTT_order_level/",order,"_LTT.png"),
+plot = ltt_plot,
+height = 200,
+width = 320,
+units = "mm",
+dpi = 600)
+?add_phylopic
+library(rphylopic)
+?add_phylopic
+library(ggplot2)
+library(deeptime)
+library(rphylopic)
+library(dplyr)
+for(order in c("Artiodactyla", "Astrapotheria", "Carnivora", "Chrioptera", "Litopterna", "Notoungulata",
+"Perissodactyla", "Primates", "Pyrotheria", "Rodentia")){
+dir <- paste0("../../PyRate_outputs/stage+SALMA_time_matching/order_level/LTT/", order, "/")
+files <- Sys.glob(paste0(dir, "*_ltt.txt"))
+ltt <- read.table(files[1], header = TRUE)
+ltt$time <- unlist(lapply(X = ltt$time, FUN = round, digits = 1))
+if(length(which(ltt$time > 66)) > 0){
+ltt <- ltt[-which(ltt$time > 66.0), ]
+}
+ltt <- ltt %>% rename(diversity_1 = "diversity")
+ltt <- ltt[, 1:2]
+i = 2
+for(file in files[2:length(files)]){
+f <- read.table(file, header = TRUE)
+if(length(which(ltt$time > 66.0)) > 0){
+f <- f[-which(f$time > 66.0), c("time", "diversity")]
+}
+else{
+f <- f[, c("time", "diversity")]
+}
+f$time <- unlist(lapply(X = f$time, FUN = round, digits = 1))
+colnames(f) <- c("time", paste0("diversity_", i))
+ltt <- merge(ltt, f, by = "time", all = T)
+i <- i+1
+}
+LTT <- data.frame(Age = ltt$time,
+Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+MARGIN = 1,
+FUN = mean,
+na.rm = TRUE),
+min_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+MARGIN = 1,
+FUN = min,
+na.rm = TRUE),
+max_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+MARGIN = 1,
+FUN = max,
+na.rm = TRUE))
+ltt_plot <- ggplot(data = LTT, aes(x = Age, y = Diversity)) +
+scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+# scale_y_continuous(breaks = seq(0,250,50),
+#                    limits = c(0,250)) +
+annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+geom_ribbon(aes(x = Age, ymin = min_Diversity, ymax = max_Diversity),
+fill = "#a1d99b",
+alpha = 0.8) +
+geom_line(linewidth = 1, colour = "#329507") +
+ggtitle(order) +
+xlab("Time (Ma)") +
+ylab("Diversity (nb. lineages)") +
+theme(axis.title.x = element_text(size = 22),
+axis.title.y = element_text(size = 22),
+axis.text = element_text(size = 18),
+panel.background = element_blank(),
+panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5),
+plot.title = element_text(size = 25, hjust = 0.5)) +
+coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 5)
+ggsave(paste0("./figures/LTT_order_level/",order,"_LTT.png"),
+plot = ltt_plot,
+height = 200,
+width = 320,
+units = "mm",
+dpi = 600)
+}
+for(order in c("Litopterna", "Notoungulata",
+"Perissodactyla", "Primates", "Pyrotheria", "Rodentia")){
+dir <- paste0("../../PyRate_outputs/stage+SALMA_time_matching/order_level/LTT/", order, "/")
+files <- Sys.glob(paste0(dir, "*_ltt.txt"))
+ltt <- read.table(files[1], header = TRUE)
+ltt$time <- unlist(lapply(X = ltt$time, FUN = round, digits = 1))
+if(length(which(ltt$time > 66)) > 0){
+ltt <- ltt[-which(ltt$time > 66.0), ]
+}
+ltt <- ltt %>% rename(diversity_1 = "diversity")
+ltt <- ltt[, 1:2]
+i = 2
+for(file in files[2:length(files)]){
+f <- read.table(file, header = TRUE)
+if(length(which(ltt$time > 66.0)) > 0){
+f <- f[-which(f$time > 66.0), c("time", "diversity")]
+}
+else{
+f <- f[, c("time", "diversity")]
+}
+f$time <- unlist(lapply(X = f$time, FUN = round, digits = 1))
+colnames(f) <- c("time", paste0("diversity_", i))
+ltt <- merge(ltt, f, by = "time", all = T)
+i <- i+1
+}
+LTT <- data.frame(Age = ltt$time,
+Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+MARGIN = 1,
+FUN = mean,
+na.rm = TRUE),
+min_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+MARGIN = 1,
+FUN = min,
+na.rm = TRUE),
+max_Diversity = apply(X = ltt[,c(2:ncol(ltt))],
+MARGIN = 1,
+FUN = max,
+na.rm = TRUE))
+ltt_plot <- ggplot(data = LTT, aes(x = Age, y = Diversity)) +
+scale_x_reverse(breaks = c(2.58, 5.33, 11.63, 15.97, 23.03, 27.82, 33.9, 56, 66)) +
+# scale_y_continuous(breaks = seq(0,250,50),
+#                    limits = c(0,250)) +
+annotate("rect", xmin = 56, xmax = 65.43265, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 23.03, xmax = 33.9, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+annotate("rect", xmin = 2.58, xmax = 5.33, ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey40") +
+geom_ribbon(aes(x = Age, ymin = min_Diversity, ymax = max_Diversity),
+fill = "#a1d99b",
+alpha = 0.8) +
+geom_line(linewidth = 1, colour = "#329507") +
+ggtitle(order) +
+xlab("Time (Ma)") +
+ylab("Diversity (nb. lineages)") +
+theme(axis.title.x = element_text(size = 22),
+axis.title.y = element_text(size = 22),
+axis.text = element_text(size = 18),
+panel.background = element_blank(),
+panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5),
+plot.title = element_text(size = 25, hjust = 0.5)) +
+coord_geo(dat = cnz_epochs, abbrv = TRUE, size = 5)
+ggsave(paste0("./figures/LTT_order_level/",order,"_LTT.png"),
+plot = ltt_plot,
+height = 200,
+width = 320,
+units = "mm",
+dpi = 600)
+}

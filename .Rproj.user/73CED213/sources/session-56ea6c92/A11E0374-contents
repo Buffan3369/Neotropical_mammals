@@ -28,8 +28,8 @@
 #Rhistory
 .Rhistory
 #Unuseful files
-*data_2020
-R/pipeline_from_2020_data/
+data_2020/
+R/pipeline_from_2020_da ta/
 R/pipeline_from_scratch/
 #mac files
 .DS_Store
