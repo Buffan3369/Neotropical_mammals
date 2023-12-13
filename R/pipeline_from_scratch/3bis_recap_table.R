@@ -32,10 +32,10 @@ final_df <- final_df %>% add_row(order = "total", n_occ = nrow(tbl), n_gen = nro
 # Add "propotion of singleton" column
 final_df$prop_singl <- sapply(X = 1:nrow(final_df),
                               FUN = function(x){
-                                occ <- final_df$n_occ[x]
+                                occ <- final_df$n_gen[x]
                                 singl <- final_df$n_singl[x]
                                 prop <- (singl / occ)
                                 return(round(prop, digits = 2))
                               })
 # save
-write.csv(final_df, "./data_2023/recap_tbl_EOT.csv")
+write.csv(final_df, "./data_2023/recap_tbl_EOT.csv", row.names = FALSE)
