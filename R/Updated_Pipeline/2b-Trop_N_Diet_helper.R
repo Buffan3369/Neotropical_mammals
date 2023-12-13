@@ -3,7 +3,8 @@
 # Author: Lucas Buffan
 # Date: 2023-12-13
 # Aim: Helper script containing the detail of the backtracing step, assigning 
-#   spatial coordinates to occurrences with no defined collection.
+#   spatial coordinates to occurrences with no defined collection, as well as 
+#   the diet categories vector.
 ################################################################################
 
 library(hash)

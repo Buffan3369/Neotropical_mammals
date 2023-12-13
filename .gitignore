@@ -27,7 +27,7 @@
 .Rproj.user
 #Rhistory
 .Rhistory
-#Unuseful files
+#Unuseful folders
 data_2020/
 R/pipeline_from_2020_data/
 R/pipeline_from_scratch/

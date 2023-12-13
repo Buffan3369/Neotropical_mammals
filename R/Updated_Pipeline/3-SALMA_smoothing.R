@@ -90,7 +90,3 @@ spl <- spl %>%
   arrange(order, family, genus, accepted_name, cc)
 saveRDS(spl, "./data_2023/SPECIES_LISTS/6-Fully_cleaned_EOT_SA_Mammals_SALMA_smoothed_Tropics_Diet.RDS")
 
-## Write and save PyRate input -------------------------------------------------
-
-
-
