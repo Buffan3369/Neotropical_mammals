@@ -15,11 +15,11 @@ i <- 4
 for(salma in c("SALMA_kept", "SALMA_smoothed")){
   i <- i+1
   occdf <- readRDS(paste0("./data_2023/SPECIES_LISTS/", i, "-Fully_cleaned_EOT_SA_Mammals_", salma, "_Tropics_Diet.RDS"))
-## Genus-level ---------------------------------------------------------------
+## Genus-level -----------------------------------------------------------------
   ### Full & Singleton
   #prepare data
-  gen_lvl <- occdf %>% 
-    select(genus, gen_lvl_status, min_ma, max_ma) %>% 
+  gen_lvl <- occdf %>%
+    select(genus, gen_lvl_status, min_ma, max_ma) %>%
     rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
   #save
   write.table.lucas(x = gen_lvl,
@@ -29,11 +29,11 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
                replicates = 20)
   ### Spatially scaled
   #subset unique genera at a given age and place (characterised by p_lng, p_lat (nb. could have been present-day lon/lat))
-  gen_lvl_scaled <- occdf %>% 
-    group_by(genus, gen_lvl_status, min_ma, max_ma, p_lng, p_lat, age) %>% 
-    distinct(genus) %>% 
-    ungroup() %>% 
-    select(genus, gen_lvl_status, min_ma, max_ma) %>% 
+  gen_lvl_scaled <- occdf %>%
+    group_by(genus, gen_lvl_status, min_ma, max_ma, p_lng, p_lat, age) %>%
+    distinct(genus) %>%
+    ungroup() %>%
+    select(genus, gen_lvl_status, min_ma, max_ma) %>%
     rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
   #save
   write.table.lucas(x = gen_lvl_scaled,
@@ -43,13 +43,13 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
                replicates = 20)
   ### Tropical/Extra-tropical
   #subset tropical/extra-tropical taxa
-  trop <- occdf %>% 
-    filter(loc == "T") %>% 
-    select(genus, gen_lvl_status, min_ma, max_ma) %>% 
+  trop <- occdf %>%
+    filter(loc == "T") %>%
+    select(genus, gen_lvl_status, min_ma, max_ma) %>%
     rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
-  Etrop <- occdf %>% 
-    filter(loc == "E") %>% 
-    select(genus, gen_lvl_status, min_ma, max_ma) %>% 
+  Etrop <- occdf %>%
+    filter(loc == "E") %>%
+    select(genus, gen_lvl_status, min_ma, max_ma) %>%
     rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
   #save
   write.table.lucas(x = trop,
@@ -63,20 +63,35 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
                replicates = 20)
   ### Diet types (10 replicates)
   for(dt in c("carnivore", "herbivore", "omnivore", "insectivore")){ #frugivore omitted, not enough data
-    tmp <- occdf %>% 
-      filter(diet == dt) %>% 
-      select(genus, gen_lvl_status, min_ma, max_ma) %>% 
+    tmp <- occdf %>%
+      filter(diet == dt) %>%
+      select(genus, gen_lvl_status, min_ma, max_ma) %>%
       rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
     write.table.lucas(x = tmp,
                       file = paste0(paste0("./data_2023/PyRate/", salma, "/genus_level/4-Ecomorphotype/", dt, "_EOT_gen_occ_", salma, ".txt")))
     extract.ages(paste0(paste0("./data_2023/PyRate/", salma, "/genus_level/4-Ecomorphotype/", dt, "_EOT_gen_occ_", salma, ".txt")),
                  replicates = 10)
   }
+  ### Order (10 replicates)
+  for(odr in keys(tax_dict)){
+    # Get the occ of the corresponding "order"
+    tmp_odr <- occdf %>% 
+      filter(order %in% values(tax_dict[odr])) %>% 
+      select(genus, gen_lvl_status, min_ma, max_ma) %>% 
+      rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
+    # Save
+    write.table.lucas(x = tmp_odr,
+                      file = paste0(paste0("./data_2023/PyRate/", salma, "/genus_level/5-Order_level/", odr, "_EOT_gen_occ_", salma, ".txt")))
+    # Extract ages
+    extract.ages(paste0(paste0("./data_2023/PyRate/", salma, "/genus_level/5-Order_level/", odr, "_EOT_gen_occ_", salma, ".txt")),
+                 replicates = 10)
+  }
+  
 ## Species-level ---------------------------------------------------------------
   ### Full & Singleton
   #prepare data
-  sp_lvl <- occdf %>% 
-    select(accepted_name, status, min_ma, max_ma) %>% 
+  sp_lvl <- occdf %>%
+    select(accepted_name, status, min_ma, max_ma) %>%
     rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
   #save
   write.table.lucas(x = sp_lvl,
@@ -86,11 +101,11 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
                replicates = 20)
   ### Spatially scaled
   #subset unique genera at a given age and place (characterised by p_lng, p_lat (nb. could have been present-day lon/lat))
-  sp_lvl_scaled <- occdf %>% 
-    group_by(accepted_name, status, min_ma, max_ma, p_lng, p_lat, age) %>% 
-    distinct(accepted_name) %>% 
-    ungroup() %>% 
-    select(accepted_name, status, min_ma, max_ma) %>% 
+  sp_lvl_scaled <- occdf %>%
+    group_by(accepted_name, status, min_ma, max_ma, p_lng, p_lat, age) %>%
+    distinct(accepted_name) %>%
+    ungroup() %>%
+    select(accepted_name, status, min_ma, max_ma) %>%
     rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
   #save
   write.table.lucas(x = sp_lvl_scaled,
@@ -100,13 +115,13 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
                replicates = 20)
   ### Tropical/Extra-tropical
   #subset tropical/extra-tropical taxa
-  sp_trop <- occdf %>% 
-    filter(loc == "T") %>% 
-    select(accepted_name, status, min_ma, max_ma) %>% 
+  sp_trop <- occdf %>%
+    filter(loc == "T") %>%
+    select(accepted_name, status, min_ma, max_ma) %>%
     rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
-  sp_Etrop <- occdf %>% 
-    filter(loc == "E") %>% 
-    select(accepted_name, status, min_ma, max_ma) %>% 
+  sp_Etrop <- occdf %>%
+    filter(loc == "E") %>%
+    select(accepted_name, status, min_ma, max_ma) %>%
     rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
   #save
   write.table.lucas(x = sp_trop,
@@ -120,13 +135,27 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
                replicates = 20)
   ### Diet types (10 replicates)
   for(dt in c("carnivore", "herbivore", "omnivore", "insectivore")){ #frugivore omitted, not enough data
-    tmp <- occdf %>% 
-      filter(diet == dt) %>% 
-      select(accepted_name, status, min_ma, max_ma) %>% 
+    tmp <- occdf %>%
+      filter(diet == dt) %>%
+      select(accepted_name, status, min_ma, max_ma) %>%
       rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
     write.table.lucas(x = tmp,
                       file = paste0("./data_2023/PyRate/", salma, "/species_level/4-Ecomorphotype/", dt, "_EOT_sp_occ_", salma, ".txt"))
     extract.ages(paste0("./data_2023/PyRate/", salma, "/species_level/4-Ecomorphotype/", dt, "_EOT_sp_occ_", salma, ".txt"),
+                 replicates = 10)
+  }
+  ### Order (10 replicates)
+  for(odr in keys(tax_dict)){
+    # Get the occ of the corresponding "order"
+    tmp_odr <- occdf %>% 
+      filter(order %in% values(tax_dict[odr])) %>% 
+      select(accepted_name, status, min_ma, max_ma) %>% 
+      rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
+    # Save
+    write.table.lucas(x = tmp_odr,
+                      file = paste0(paste0("./data_2023/PyRate/", salma, "/species_level/5-Order_level/", odr, "_EOT_sp_occ_", salma, ".txt")))
+    # Extract ages
+    extract.ages(paste0(paste0("./data_2023/PyRate/", salma, "/species_level/5-Order_level/", odr, "_EOT_sp_occ_", salma, ".txt")),
                  replicates = 10)
   }
 }
