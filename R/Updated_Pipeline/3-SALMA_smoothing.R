@@ -88,5 +88,6 @@ spl <- data.frame(spl)
 spl <- spl %>% 
   select(-c(Early_stage, Late_stage)) %>% 
   arrange(order, family, genus, accepted_name, cc)
+spl$min_ma <- as.numeric(spl$min_ma) #for some reason, the "min_ma" column turned into a list...
 saveRDS(spl, "./data_2023/SPECIES_LISTS/6-Fully_cleaned_EOT_SA_Mammals_SALMA_smoothed_Tropics_Diet.RDS")
 
