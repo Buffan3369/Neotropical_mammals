@@ -8,7 +8,7 @@
 
 library(dplyr)
 library(palaeoverse)
-source("./R/Updated_Pipeline/1b_Matching_functions.R")
+source("./R/useful/1b_Matching_functions.R")
 
 ## A bit of preprocessing ------------------------------------------------------
 raw <- read.csv("./data_2023/SPECIES_LISTS/1-Raw_Cnz_SA_Mammals.csv", na.strings = "")

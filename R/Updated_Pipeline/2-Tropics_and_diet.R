@@ -30,7 +30,7 @@ coord_ref <- raw %>%
 occdf <- occdf %>%
   left_join(coord_ref)
   #Backtrace (for newly-entered occurrences, without collection number)
-source("./R/Updated_Pipeline/2b-Backtrace_coords.R")
+source("./R/useful/2b-Backtrace_coords.R")
 
 ## Create mid_ma column (mid age, for palaeorotation) --------------------------
 occdf$age <- sapply(X = 1:nrow(occdf),
