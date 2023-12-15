@@ -16,7 +16,7 @@ L1 <- nrow(raw)
   #exclude marine taxa
 raw <- raw %>% filter(!((order %in% c("Cetacea", "Sirenia")) | 
                           (family %in% c("Phocidae", "Otariidae"))))
-message(paste0("Discarded ", (L1-nrow(raw)), " marine occurrences."))
+cat("Discarded", (L1-nrow(raw)), "marine occurrences.")
   #exclude occurrences with age range >= 20My
 range <- sapply(X = 1:nrow(raw), FUN = function(x){return((raw$max_ma[x]-raw$min_ma[x]))})
 raw <- raw[-which(range >= 20),]
@@ -58,7 +58,7 @@ for(i in 1:nrow(tarq)){
     ctr <- ctr + 1
   }
 }
-message(paste0("Found ", ctr, " occurrences in common with Tarquini et al. (2022) published data."))
+cat("Found", ctr, "occurrences in common with Tarquini et al. (2022) published data.")
 
 ## Match the rest with boundaries of the given early/late intervals ------------
 unmatched <- which(is.na(raw$stage)) #if the `stage` column hasn't been filled, the row hasn't been matched. We therefore look for columns with similar features that have been matched

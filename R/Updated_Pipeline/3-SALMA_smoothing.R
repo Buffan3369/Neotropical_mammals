@@ -52,9 +52,9 @@ species_list <- species_list %>% add_column(Early_stage = sapply(X = species_lis
                                             .after = "stage")
   #Split SALMA-associated occurrences
 spl_EOT <- species_list %>% filter(Early_stage %in% SALMA_EOT$interval_name)
-message(paste0("A total of ", nrow(spl_EOT), " occurrences (representing ",
-               round( (nrow(spl_EOT) / nrow(species_list)), digits = 2 )*100,
-               "% of the total) are associated to a SALMA."))
+cat("A total of", nrow(spl_EOT), "occurrences (representing",
+     round( (nrow(spl_EOT) / nrow(species_list)), digits = 2 )*100,
+     "% of the total) are associated to a SALMA.")
 
 get_ref <- function(stage, Which=c("min", "max")){
   #get the ref age
