@@ -22,7 +22,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     else{
       Winner <- "SALMA"
     }
-    cat("Retained TPP for", salma, "at the", lvl, ":", Winner)
+    cat("Retained TPP for", salma, "at the", lvl, ":", Winner, "\n")
   }
 }
 

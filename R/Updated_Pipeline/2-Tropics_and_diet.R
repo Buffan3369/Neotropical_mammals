@@ -90,9 +90,9 @@ for(t in seq(from = 5, to = 60, by = 5)){
 occdf$loc[which(occdf$loc > 1)] <- "E" #Extra-tropical
 occdf$loc[which(occdf$loc == 1)] <- "T"
 # Indicative message
-cat("Proportion of Tropical occurrences:", round(length(which(occdf$loc == "T"))/nrow(occdf), digits = 2) )
-cat("Proportion of Extra-tropical occurrences:", round(length(which(occdf$loc == "E"))/nrow(occdf), digits = 2) )
-cat("Proportion of occurrences with unassigned affinity:", round(length(which(is.na(occdf$loc)))/nrow(occdf), digits = 2) )
+cat("Proportion of Tropical occurrences:", round(length(which(occdf$loc == "T"))/nrow(occdf), digits = 2), "\n")
+cat("Proportion of Extra-tropical occurrences:", round(length(which(occdf$loc == "E"))/nrow(occdf), digits = 2), "\n")
+cat("Proportion of occurrences with unassigned affinity:", round(length(which(is.na(occdf$loc)))/nrow(occdf), digits = 2), "\n")
 
 #-------------------------------------------------------------------------------
 ############################# 'Diet' Assignment ################################

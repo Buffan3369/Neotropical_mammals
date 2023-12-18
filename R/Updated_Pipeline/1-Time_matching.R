@@ -16,7 +16,7 @@ L1 <- nrow(raw)
   #exclude marine taxa
 raw <- raw %>% filter(!((order %in% c("Cetacea", "Sirenia")) | 
                           (family %in% c("Phocidae", "Otariidae"))))
-cat("Discarded", (L1-nrow(raw)), "marine occurrences.")
+cat("Discarded", (L1-nrow(raw)), "marine occurrences.\n")
   #exclude occurrences with age range >= 20My
 range <- sapply(X = 1:nrow(raw), FUN = function(x){return((raw$max_ma[x]-raw$min_ma[x]))})
 raw <- raw[-which(range >= 20),]
