@@ -27,8 +27,9 @@
 .Rproj.user
 #Rhistory
 .Rhistory
-#Unuseful folders
+#Unuseful/heavy folders
 data_2020/
+results/
 R/pipeline_from_2020_data/
 R/pipeline_from_scratch/
 #mac files
