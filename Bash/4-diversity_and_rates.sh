@@ -10,17 +10,17 @@ do
         do
             #Combine logs
             python3.8 ~/PyRate/PyRate.py -combLogRJ ../results/$s/$ss/$ana/pyrate_mcmc_logs -tag _KEEP -b ${burnin1[$s/$ss/$ana]}
-            mkdir -p ../$s/$ss/$ana/combined_logs/q_stages
-            mv ../results/$s/$ss/$ana/pyrate_mcmc_logs/combined_* ../$s/$ss/$ana/combined_logs/q_stages
+            mkdir -p ../$s/$ss/$ana/combined_logs
+            mv ../results/$s/$ss/$ana/pyrate_mcmc_logs/combined_* ../$s/$ss/$ana/combined_logs
             #Plot RTT
-            python3.8 ~/PyRate/PyRate.py -plotRJ ../$s/$ss/$ana/combined_logs/q_stages -b ${burnin1[$s/$ss/$ana]}
+            python3.8 ~/PyRate/PyRate.py -plotRJ ../$s/$ss/$ana/combined_logs -b ${burnin1[$s/$ss/$ana]}
             #Plot LTT
-            mkdir -p ../$s/$ss/$ana/LTT/q_stages/
-            python3.8 ~/PyRate/PyRate.py -ginput ../$s/$ss/$ana/combined_logs/q_stages -b ${burnin1[$s/$ss/$ana]}
-            mv ../$s/$ss/$ana/combined_logs/q_stages/*_se_est.txt ../$s/$ss/$ana/LTT/q_stages/
-            mv ../$s/$ss/$ana/combined_logs/q_stages/*_LTT.r ../$s/$ss/$ana/LTT/q_stages/
+            mkdir -p ../$s/$ss/$ana/LTT/
+            python3.8 ~/PyRate/PyRate.py -ginput ../$s/$ss/$ana/combined_logs -b ${burnin1[$s/$ss/$ana]}
+            mv ../$s/$ss/$ana/combined_logs/*_se_est.txt ../$s/$ss/$ana/LTT/
+            mv ../$s/$ss/$ana/combined_logs/*_LTT.r ../$s/$ss/$ana/LTT/
             #Diversity through time in the right format for MBD
-            python3.8 ~/PyRate/PyRate.py -d ../$s/$ss/$ana/LTT/q_stages/*_se_est.txt -ltt 1
+            python3.8 ~/PyRate/PyRate.py -d ../$s/$ss/$ana/LTT/*_se_est.txt -ltt 1
         done
     done
 done

@@ -12,7 +12,7 @@ do
 			q=../$s/$ss/$ana/Q_SHIFTS/q_stages/Parsed_Q_rates.csv
 			out=../$s/$ss/$ana/RTT_LTT_${s}_${ss}_${ana}.png
 			#execute plotting function
-			Rscript ~/PyRate/plot_rates.r $rtt $ltt $q $out
+			Rscript ~/Documents/GitHub/CorsaiR/R/Plot_rates.r $rtt $ltt $q $out
 		done
 	done
 done

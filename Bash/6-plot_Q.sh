@@ -9,15 +9,14 @@ do
 		for ana in 1-Full 2-Singleton
 		do
 			# For each individual retained run
-			for file in ../$s/$ss/$ana/q_stages/pyrate_mcmc_logs/*_KEEP_mcmc.log
+			for file in ../$s/$ss/$ana/pyrate_mcmc_logs/*_KEEP_mcmc.log
 			do
 				python3.8 ~/PyRate/PyRate.py -plotQ ${file} -qShift ../data_2023/EO_stages.txt -b ${burnin1[$s/$ss/$ana]}
-				done
-				mkdir -p ../$s/$ss/$ana/Q_SHIFTS/q_stages
-				mv ./*_Qrates* ../$s/$ss/$ana/Q_SHIFTS/q_stages
-				#Parse and save individual q_rates to compile them in a table
-				python3.8 ~/PyRate/parse_Q_rates.py -dir ../$s/$ss/$ana/Q_SHIFTS/q_stages -out ../$s/$ss/$ana/Q_SHIFTS/q_stages/Parsed_Q_rates.csv
 			done
+			# Parse and save individual q_rates to compile them in a table
+			mkdir -p ../$s/$ss/$ana/Q_SHIFTS
+			mv ./*_Qrates* ../$s/$ss/$ana/Q_SHIFTS
+			python3.8 ~/Documents/GitHub/CorsaiR/Python/parse_Q_rates.py -dir ../$s/$ss/$ana/Q_SHIFTS -out ../$s/$ss/$ana/Q_SHIFTS/Parsed_Q_rates.csv
 		done
 	done
 done
