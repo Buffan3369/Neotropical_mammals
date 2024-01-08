@@ -13,7 +13,7 @@ do
 			out=../results/$s/$ss/$ana/RTT_LTT_${s}_${ss}_${ana}.png
 			acc=~/Documents/GitHub/CorsaiR/R/
 			#execute plotting function
-			Rscript ~/Documents/GitHub/CorsaiR/R/Plot_rates.r "RJMCMC" $rtt $ltt $q $out $acc
+			Rscript ../R/fancy_plots/2-Plot_rates.r "RJMCMC" $rtt $ltt $q $out $acc
 		done
 	done
 done
