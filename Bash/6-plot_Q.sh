@@ -15,7 +15,7 @@ do
 			done
 			# Parse and save individual q_rates to compile them in a table
 			mkdir -p ../results/$s/$ss/$ana/Q_SHIFTS
-			mv ./*_Qrates* ../results/$s/$ss/$ana/Q_SHIFTS
+			mv ../results/$s/$ss/$ana/pyrate_mcmc_logs/*_Qrates* ../results/$s/$ss/$ana/Q_SHIFTS
 			python ~/Documents/GitHub/CorsaiR/Python/parse_Q_rates.py -dir ../results/$s/$ss/$ana/Q_SHIFTS -out ../results/$s/$ss/$ana/Q_SHIFTS/Parsed_Q_rates.csv
 		done
 	done

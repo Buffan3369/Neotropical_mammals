@@ -7,12 +7,13 @@ do
 		for ana in 1-Full 2-Singleton
 		do
 			#specify arguments
-			rtt=../results/$s/$ss/$ana/combined_logs/q_stages/RTT_plots.r 
-			ltt=../results/$s/$ss/$ana/LTT/q_stages/per_replicate/
-			q=../results/$s/$ss/$ana/Q_SHIFTS/q_stages/Parsed_Q_rates.csv
+			rtt=../results/$s/$ss/$ana/combined_logs/RTT_plots.r 
+			ltt=../results/$s/$ss/$ana/LTT/per_replicate/
+			q=../results/$s/$ss/$ana/Q_SHIFTS/Parsed_Q_rates.csv
 			out=../results/$s/$ss/$ana/RTT_LTT_${s}_${ss}_${ana}.png
+			acc=~/Documents/GitHub/CorsaiR/R/
 			#execute plotting function
-			Rscript ~/Documents/GitHub/CorsaiR/R/Plot_rates.r $rtt $ltt $q $out
+			Rscript ~/Documents/GitHub/CorsaiR/R/Plot_rates.r "RJMCMC" $rtt $ltt $q $out $acc
 		done
 	done
 done
