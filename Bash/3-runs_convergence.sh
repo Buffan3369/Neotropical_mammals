@@ -6,8 +6,8 @@ do
 	do
 		for ana in 1-Full 2-Singleton
 		do
-			python ~/PyRate/assess_run_convergence.py -dir "$PWD"/../results/$s/$ss/$ana/pyrate_mcmc_logs/
-			Rscript ~/PyRate/plot_ess.r "$PWD"/../results/$s/$ss/$ana/pyrate_mcmc_logs/ESS_summary.txt "$PWD"/../results/$s/$ss/$ana/pyrate_mcmc_logs/ESS_plot_${type}.png
+			python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/../results/$s/$ss/$ana/pyrate_mcmc_logs/
+			Rscript ~/Documents/GitHub/CorsaiR/Python/plot_ess.r "$PWD"/../results/$s/$ss/$ana/pyrate_mcmc_logs/ESS_summary.txt "$PWD"/../results/$s/$ss/$ana/pyrate_mcmc_logs/ESS_plot_${type}.png
 		done
 	done
 done

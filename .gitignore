@@ -34,5 +34,6 @@ R/pipeline_from_2020_data/
 R/pipeline_from_scratch/
 results/
 data_2023/simulated_data/
+Supp_Mat/
 #mac files
 .DS_Store

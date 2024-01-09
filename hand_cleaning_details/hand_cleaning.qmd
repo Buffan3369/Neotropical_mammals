@@ -2,7 +2,7 @@
 title: "Details for fossil data hand-cleaning based on authors' expertise."
 author:
   - "---"
-  - Lucas Buffan^1,2^, Fabien L. Condamine^2^, Laurent Marivaux^2^, François Pujos^3,4^, Narla S. Stutz ^2,5^, and Pierre-Olivier Antoine^2^
+  - Lucas Buffan^1,2^, Fabien L. Condamine^2^, François Pujos^3,4^, Narla S. Stutz ^2,5^, Pierre-Olivier Antoine^2^ and Laurent Marivaux^2^
   - "---"
   - "^1^Département de Biologie, École Normale Supérieure de Lyon, Université Claude Bernard Lyon 1, 69342 Lyon Cedex 07, France."
   - "^2^CNRS, UMR 5554 Institut des Sciences de l’Évolution de Montpellier, Place Eugène Bataillon, 34095 Montpellier, France."

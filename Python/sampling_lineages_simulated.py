@@ -6,24 +6,25 @@ Sample the number of occurrences from each simulated lineage based on empirical 
 @date: 11/2023
 """
 
-#import sys
-## Generate input (10 simulated datasets with constant rates lam = 0.17 and mu = 0.1)
-exec(open("/home/lucas.buffan/PyRate/pyrate_lib/birthdeath_simulator.py").read())
-#sys.modules[__name__].__dict__.clear() #clear environment
-
 import numpy as np
 import pandas as pd
 import os
+import argparse
 
-os.chdir("/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/")
-stages = pd.read_csv("./data_2023/simulated_data/EOM_bins.csv")
+p = argparse.ArgumentParser()
+p.add_argument('-n_reps', type=int, help='number of replicates we want to simulate', default=10)
+p.add_argument('-bin_path', type=str, help='path towards time bins')
+p.add_argument('-post_path', type=str, help='path towards posterior empirical analysis we want to inform our simulations with (ends with a slash)')
+p.add_argument('-out', type=str, help='path towards where we want the sampled simulated occurrence datasets to be saved')
 
+args = p.parse_args()
+
+# Open time bins
+stages = pd.read_csv(args.bin_path)
 EO_stages = ["Ypresian", "Lutetian", "Bartonian", "Priabonian", "Rupelian", "Chattian"]
 
-n_reps = 100 #number of replicates
-
 ## Empirical lambdas => mean q_rates ------------------------------------------
-empirical_lamb = pd.read_csv("./results/SALMA_smoothed/genus_level/1-Full/Q_SHIFTS/Parsed_Q_rates.csv", sep = "\t")
+empirical_lamb = pd.read_csv(args.post_path+"Q_SHIFTS/Parsed_Q_rates.csv", sep = "\t")
 empirical_lamb = empirical_lamb.drop(0) #above 56Ma
 emp_lamb_dict = {key:None for key in EO_stages} #stored in a dictionary
 for key in EO_stages:
@@ -31,7 +32,7 @@ for key in EO_stages:
     emp_lamb_dict[key] = round(empirical_lamb["mean_Q"][idx+1], ndigits=2)
     
 ## Empirical alphas => preservation heterogenity across lineages --------------
-ESS_sum = pd.read_csv("./results/SALMA_smoothed/genus_level/1-Full/pyrate_mcmc_logs/ESS_summary.txt",
+ESS_sum = pd.read_csv(args.post_path+"pyrate_mcmc_logs/ESS_summary.txt",
                       sep = "\t")
 CV = np.where(ESS_sum["ESS_posterior"] > 200)[0] # index of the runs that effectively converged
 ESS_sum = ESS_sum.iloc[CV] #subset runs that converged only
@@ -65,9 +66,9 @@ def choose_min_max(sp_name):
         str_out += "%s\t%s\t%s\t%s\n" % (sp_name, st, round(r_min, ndigits = 2), round(r_max, ndigits=2))
     return str_out
 
-for it in range(n_reps):
+for it in range(args.n_reps):
 ## Load simulated occurrence dataset ------------------------------------------
-    simulated_TsTe = pd.read_csv("./data_2023/simulated_data/All_lineages_TsTe/"+str(n_reps)+"_replicates/sim_"+str(it)+".txt", sep="\t")
+    simulated_TsTe = pd.read_csv(args.out+str(args.n_reps)+"_replicates/sim_"+str(it)+".txt", sep="\t")
     simulated_TsTe["mid"] = (simulated_TsTe["ts"] + simulated_TsTe["te"]) / 2
     bins = map(bin_mid, simulated_TsTe["mid"])
     bins = list(bins)
@@ -103,7 +104,7 @@ for it in range(n_reps):
         nb_occ_tot += samples[key]
     simulated_TsTe["nb_occ"] = nb_occ_tot #create the number of occurrences sampled per lineage column
     #Save full diversity and sampled occ file
-    simulated_TsTe.to_csv("./data_2023/simulated_data/All_lineages_TsTe/"+str(n_reps)+"_replicates/Full_simulated_diversity_and_sampled_occ_"+str(it)+".csv", index = False)
+    simulated_TsTe.to_csv(args.out+str(args.n_reps)+"_replicates/Full_simulated_diversity_and_sampled_occ_"+str(it)+".csv", index = False)
     
     #Remove species with 0 sampled occurrences (makes the rest faster)
     simulated_TsTe.drop(simulated_TsTe[simulated_TsTe["nb_occ"] == 0].index, inplace = True)
@@ -115,6 +116,6 @@ for it in range(n_reps):
     for species in simulated_TsTe["species"]:
         MinMax += choose_min_max(species)
     
-    with open("./data_2023/simulated_data/Simulated_occurrence_datasets/"+str(n_reps)+"_replicates/sampled_simulated_occurrences_"+str(it)+".txt", 'w') as file:
+    with open("./data_2023/simulated_data/Simulated_occurrence_datasets/"+str(args.n_reps)+"_replicates/sampled_simulated_occurrences_"+str(it)+".txt", 'w') as file:
         file.write(MinMax)
     file.close()
