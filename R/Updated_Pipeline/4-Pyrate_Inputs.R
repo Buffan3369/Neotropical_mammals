@@ -16,7 +16,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
   i <- i+1
   occdf <- readRDS(paste0("./data_2023/SPECIES_LISTS/", i, "-Fully_cleaned_EOT_SA_Mammals_", salma, "_Tropics_Diet.RDS"))
 ## Genus-level -----------------------------------------------------------------
-  ### Full & Singleton
+  ### Full & Singleton ###
   #prepare data
   gen_lvl <- occdf %>%
     select(genus, gen_lvl_status, min_ma, max_ma) %>%
@@ -41,7 +41,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
   #extract ages
   extract.ages(paste0("./data_2023/PyRate/", salma, "/genus_level/2-Spatially_scaled/spatially_scaled_EOT_gen_occ_", salma, ".txt"),
                replicates = 20)
-  ### Tropical/Extra-tropical
+  ### Tropical/Extra-tropical ###
   #subset tropical/extra-tropical taxa
   trop <- occdf %>%
     filter(loc == "T") %>%
@@ -61,7 +61,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
                replicates = 20)
   extract.ages(paste0("./data_2023/PyRate/", salma, "/genus_level/3-Tropical_Extratropical/Extratropical_EOT_gen_occ_", salma, ".txt"),
                replicates = 20)
-  ### Diet types (10 replicates)
+  ### Diet types (10 replicates) ###
   for(dt in c("carnivore", "herbivore", "omnivore", "insectivore")){ #frugivore omitted, not enough data
     tmp <- occdf %>%
       filter(diet == dt) %>%
@@ -72,7 +72,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     extract.ages(paste0(paste0("./data_2023/PyRate/", salma, "/genus_level/4-Ecomorphotype/", dt, "_EOT_gen_occ_", salma, ".txt")),
                  replicates = 10)
   }
-  ### Order (10 replicates)
+  ### Order (10 replicates) ###
   for(odr in keys(tax_dict)){
     # Get the occ of the corresponding "order"
     tmp_odr <- occdf %>% 
@@ -88,7 +88,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
   }
   
 ## Species-level ---------------------------------------------------------------
-  ### Full & Singleton
+  ### Full & Singleton ###
   #prepare data
   sp_lvl <- occdf %>%
     select(accepted_name, status, min_ma, max_ma) %>%
@@ -99,7 +99,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
   #extract ages
   extract.ages(paste0("./data_2023/PyRate/", salma, "/species_level/1-Full/Full_EOT_sp_occ_", salma, ".txt"),
                replicates = 20)
-  ### Spatially scaled
+  ### Spatially scaled ###
   #subset unique genera at a given age and place (characterised by p_lng, p_lat (nb. could have been present-day lon/lat))
   sp_lvl_scaled <- occdf %>%
     group_by(accepted_name, status, min_ma, max_ma, p_lng, p_lat, age) %>%
@@ -113,7 +113,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
   #extract ages
   extract.ages(paste0("./data_2023/PyRate/", salma, "/species_level/2-Spatially_scaled/spatially_scaled_EOT_sp_occ_", salma, ".txt"),
                replicates = 20)
-  ### Tropical/Extra-tropical
+  ### Tropical/Extra-tropical ###
   #subset tropical/extra-tropical taxa
   sp_trop <- occdf %>%
     filter(loc == "T") %>%
@@ -133,7 +133,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
                replicates = 20)
   extract.ages(paste0("./data_2023/PyRate/", salma, "/species_level/3-Tropical_Extratropical/Extratropical_EOT_sp_occ_", salma, ".txt"),
                replicates = 20)
-  ### Diet types (10 replicates)
+  ### Diet types (10 replicates) ###
   for(dt in c("carnivore", "herbivore", "omnivore", "insectivore")){ #frugivore omitted, not enough data
     tmp <- occdf %>%
       filter(diet == dt) %>%
@@ -144,7 +144,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     extract.ages(paste0("./data_2023/PyRate/", salma, "/species_level/4-Ecomorphotype/", dt, "_EOT_sp_occ_", salma, ".txt"),
                  replicates = 10)
   }
-  ### Order (10 replicates)
+  ### Order (10 replicates) ###
   for(odr in keys(tax_dict)){
     # Get the occ of the corresponding "order"
     tmp_odr <- occdf %>% 
