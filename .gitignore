@@ -35,5 +35,6 @@ R/pipeline_from_scratch/
 results/
 data_2023/simulated_data/
 Supp_Mat/
+paleoTropics/
 #mac files
 .DS_Store

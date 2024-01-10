@@ -21,6 +21,10 @@ world %>%
   scale_color_manual(values = c("brown", "green")) +
   theme(panel.background = element_blank())
 
+weird <- occdf %>% 
+  filter(lat > -10 & loc == "E")
+
+#requires internet connexion
 pmap_30 <- sf::read_sf("https://gws.gplates.org/reconstruct/coastlines/?&time=30&model=PALEOMAP")
 
 pmap_30 %>% 

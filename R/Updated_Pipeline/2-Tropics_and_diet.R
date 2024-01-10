@@ -30,7 +30,7 @@ coord_ref <- raw %>%
 occdf <- occdf %>%
   left_join(coord_ref)
   #Backtrace (for newly-entered occurrences, without collection number)
-source("./R/useful/2b-Backtrace_coords.R")
+source("./R/useful/2b-Trop_N_Diet_helper.R")
 
 ## Create mid_ma column (mid age, for palaeorotation) --------------------------
 occdf$age <- sapply(X = 1:nrow(occdf),
@@ -65,7 +65,7 @@ closest <- function(lat, ref_lats){
 occdf$loc <- NA #loc will be either "E" for "Extra tropical" or "T" for "Tropical"
 for(t in seq(from = 5, to = 60, by = 5)){
   idx <- which((occdf$age < t) & (is.na(occdf$loc)))
-  corr_map <- raster(paste0("../../paleoTropics/paleoTropics/Ma_", (t-5), "_moll.grd"))
+  corr_map <- raster(paste0("./paleoTropics/paleoTropics/Ma_", (t-5), "_moll.grd"))
   # Super weird coordinates => retrieve proportionality factor with true things in degrees
   ext <- extent(corr_map)
   f_long <- ext[2]/180
@@ -89,6 +89,14 @@ for(t in seq(from = 5, to = 60, by = 5)){
 }
 occdf$loc[which(occdf$loc > 1)] <- "E" #Extra-tropical
 occdf$loc[which(occdf$loc == 1)] <- "T"
+
+# Backtrace samples from Shapaja (for some reasons, assigned as Extra-tropical whereas not)
+# nb. easy to verify by hand :
+#       1. Extract all samples from Shapaja (Tar-X) => coll nb. 199560 and 199562
+#       2. Re-do the pipeline in the loop using the 40 Ma climate map for these specific samples
+#       3. They are all assigned tropical, whereas (for some reason) it's not the case when using the loop
+occdf$loc[which(occdf$collection_no %in% c(199560, 199562))] <- 'T'
+
 # Indicative message
 cat("Proportion of Tropical occurrences:", round(length(which(occdf$loc == "T"))/nrow(occdf), digits = 2), "\n")
 cat("Proportion of Extra-tropical occurrences:", round(length(which(occdf$loc == "E"))/nrow(occdf), digits = 2), "\n")
