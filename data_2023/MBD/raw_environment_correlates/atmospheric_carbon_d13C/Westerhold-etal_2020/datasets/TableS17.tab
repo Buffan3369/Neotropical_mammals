@@ -1,0 +1,200 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S17. Revised site-to-site correlation tie points between Sites 208-1263 and 208-1262. PANGAEA, https://doi.org/10.1594/PANGAEA.917526, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:	LATITUDE: -27.185833 * LONGITUDE: 1.577000
+	DATE/TIME START: 2003-03-24T00:00:00 * DATE/TIME END: 2003-03-29T00:00:00
+	MINIMUM DEPTH, sediment/rock: 59.250 m * MAXIMUM DEPTH, sediment/rock: 287.390 m
+Event(s):	208-1262 * LATITUDE: -27.185833 * LONGITUDE: 1.577000 * DATE/TIME START: 2003-03-24T00:00:00 * DATE/TIME END: 2003-03-29T00:00:00 * ELEVATION: -4755.4 m * Penetration: 583.9 m * Recovery: 502.5 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Composite Core (COMPCORE) * COMMENT: 54 cores; 493.9 m cored; 90 m drilled; 101.7 % recovery
+Parameter(s):	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	DEPTH, sediment/rock [m] (Depth sed) * GEOCODE * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: mbsf
+	Depth, composite [mcd] (Depth comp) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Tie point (Tie point) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	DEPTH, sediment/rock [m] (Depth sed) * GEOCODE * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: mbsf
+	Depth, composite revised [rmcd] (Depth comp r) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Depth, composite revised [rmcd] (Depth comp r) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: corrected
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	1062 data points
+*/
+Sample label	Depth sed [m] (mbsf)	Depth comp [mcd]	Tie point	Sample label	Depth sed [m] (mbsf)	Depth comp r [rmcd]	Depth comp r [rmcd] (corrected)	Reference
+208-1262A-7-3,27	60.270	71.66	Ties To	208-1263B-2-3,75	59.25	68.25	67.75	Westerhold et al. 2017, corrected by -0.50 cm
+208-1262B-9-4,11	72.010	78.88	Ties To	208-1263A-10-6,92	86.72	98.01	97.51	Westerhold et al. 2017, corrected by -0.50 cm
+208-1262A-8-1,90	67.400	81.44	Ties To	208-1263C-2-6,14	107.14	124.64	124.14	Westerhold et al. 2017, corrected by -0.50 cm
+208-1262A-8-1,126	67.760	81.80	Ties To	208-1263B-8-2,85	114.85	136.42		Westerhold et al. 2017
+208-1262A-8-2,78	68.700	82.74	Ties To	208-1263A-15-3,83	129.63	153.36		Westerhold et al. 2017
+208-1262A-8-2,102	68.940	82.98	Ties To	208-1263B-10-1,127	132.77	156.81		Westerhold et al. 2017
+208-1262A-8-3,46	69.880	83.92	Ties To	208-1263B-11-3,134	145.34	170.37		Westerhold et al. 2017
+208-1262A-8-3,74	70.160	84.20	Ties To	208-1263B-11-6,1	148.51	173.54		Westerhold et al. 2017
+208-1262A-8-3,104	70.460	84.50	Ties To	208-1263B-12-2,135	153.35	179.55		Westerhold et al. 2017
+208-1262A-8-4,26	70.780	84.82	Ties To	208-1263B-12-6,35	157.05	183.25		Westerhold et al. 2017
+208-1262A-8-5,7	71.200	85.24	Ties To	208-1263A-18-4,102	159.82	187.26		Westerhold et al. 2017
+208-1262B-10-2,30	78.700	86.12	Ties To	208-1263A-19-3,64	167.44	196.50		Westerhold et al. 2017
+208-1262B-10-2,74	79.140	86.56	Ties To	208-1263A-19-4,68	168.98	198.04		Westerhold et al. 2017
+208-1262B-10-2,100	79.400	86.82	Ties To	208-1263A-19-4,145	169.75	198.81		Westerhold et al. 2017
+208-1262B-10-3,34	80.240	87.66	Ties To	208-1263B-14-3,30	172.80	202.47		Westerhold et al. 2017
+208-1262B-10-3,88	80.780	88.20	Ties To	208-1263B-14-5,10	175.60	205.27		Westerhold et al. 2017
+208-1262B-10-3,110	81.000	88.42	Ties To	208-1263B-14-5,131	176.81	206.48		Westerhold et al. 2017
+208-1262B-10-3,142	81.320	88.74	Ties To	208-1263A-20-3,18	176.48	207.84		Westerhold et al. 2017
+208-1262B-10-4,102	82.420	89.84	Ties To	208-1263B-15-4,30	181.80	212.65		Westerhold et al. 2017
+208-1262B-10-6,43	84.830	92.25	Ties To	208-1263B-16-3,124	190.74	223.87		Westerhold et al. 2017
+208-1262B-10-6,66	85.060	92.48	Ties To	208-1263B-16-4,134	192.34	225.47		Westerhold et al. 2017
+208-1262A-9-2,10	77.600	92.81	Ties To	208-1263B-16-6,102	195.02	228.15		Westerhold et al. 2017
+208-1262A-9-2,32	77.820	93.03		208-gap in 1263, correlated to 1265		230.22		Westerhold et al. 2017
+208-1262A-9-2,55	78.050	93.26		208-gap in 1263, correlated to 1265		231.55		Westerhold et al. 2017
+208-1262A-9-2,73	78.230	93.44		208-gap in 1263, correlated to 1265		233.11		Westerhold et al. 2017
+208-1262A-9-2,119	78.690	93.90	Ties To	208-1263B-19-2,76	203.26	235.86		Westerhold et al. 2017
+208-1262A-9-2,144	78.940	94.15	Ties To	208-1263A-23-3,10	204.89	237.44		Westerhold et al. 2017
+208-1262A-9-3,24	79.240	94.45	Ties To	208-1263A-23-3,126	206.05	238.60		Westerhold et al. 2017
+208-1262A-9-3,92	79.920	95.13	Ties To	208-1263B-20-2,31	206.71	240.42		Westerhold et al. 2017
+208-1262A-9-3,137	80.370	95.58	Ties To	208-1263B-20-3,4	207.94	241.65		Westerhold et al. 2017
+208-1262A-9-4,22	80.720	95.93	Ties To	208-1263B-20-3,144	209.34	243.05		Westerhold et al. 2017
+208-1262A-9-4,49	80.990	96.20	Ties To	208-1263B-20-4,76	210.16	243.87		Westerhold et al. 2017
+208-1262A-9-4,84	81.340	96.55	Ties To	208-1263B-20-5,38	211.28	244.99		Westerhold et al. 2017
+208-1262A-9-4,146	81.960	97.17	Ties To	208-1263B-20-6,66	213.06	246.77		Westerhold et al. 2017
+208-1262A-9-5,60	82.600	97.81	Ties To	208-1263A-24-5,42	214.52	249.17		Westerhold et al. 2017
+208-1262A-9-5,94	82.940	98.15	Ties To	208-1263A-24-6,22	215.82	250.47		Westerhold et al. 2017
+208-1262A-9-5,124	83.240	98.45	Ties To	208-1263A-24-6,122	216.82	251.47		Westerhold et al. 2017
+208-1262B-11-2,115	89.050	98.63	Ties To	208-1263B-21-2,83	216.73	252.65		Westerhold et al. 2017
+208-1262B-11-2,140	89.300	98.88	Ties To	208-1263B-21-3,34	217.74	253.66		Westerhold et al. 2017
+208-1262B-11-3,6	89.460	99.04	Ties To	208-1263B-21-3,84	218.24	254.16		Westerhold et al. 2017
+208-1262B-11-3,22	89.620	99.21	Ties To	208-1263B-21-4,18	219.08	254.99		Westerhold et al. 2017
+208-1262B-11-3,57	89.970	99.56	Ties To	208-1263B-21-5,13	220.53	256.45		Westerhold et al. 2017
+208-1262B-11-3,104	90.440	100.02	Ties To	208-1263C-7-2,34	223.29	257.56		Westerhold et al. 2017
+208-1262B-11-3,136	90.760	100.34	Ties To	208-1263C-7-2,146	224.41	258.68		Westerhold et al. 2017
+208-1262B-11-4,8	90.980	100.56	Ties To	208-1263A-26-1,12	222.72	259.57		Westerhold et al. 2017
+208-1262B-11-6,24	94.140	103.72	Ties To	208-1263B-22-4,92	229.32	267.65		Westerhold et al. 2017
+208-1262A-10-2,82	87.820	103.93	Ties To	208-1263B-22-4,148	229.88	268.20		Westerhold et al. 2017
+208-1262A-10-2,115	88.150	104.26	Ties To	208-1263B-22-5,40	230.30	268.63		Westerhold et al. 2017
+208-1262A-10-2,145	88.450	104.56	Ties To	208-1263B-22-5,100	230.90	269.23		Lauretano et al. 2015
+208-1262A-10-3,20	88.700	104.81	Ties To	208-1263B-22-5,125	231.15	269.48		Lauretano et al. 2015
+208-1262A-10-3,38	88.880	104.99	Ties To	208-1263B-22-6,48	231.88	270.20		Westerhold et al. 2017
+208-1262A-10-3,60	89.100	105.21	Ties To	208-1263B-22-6,143	232.83	271.15		Lauretano et al. 2015
+208-1262A-10-3,88	89.380	105.49	Ties To	208-1263B-22-7,45	233.35	271.68		Lauretano et al. 2015
+208-1262A-10-4,3	90.030	106.14	Ties To	208-1263A-27-1,65	232.75	272.78		Lauretano et al. 2015
+208-1262A-10-4,28	90.280	106.39	Ties To	208-1263A-27-2,7	233.67	273.70		Lauretano et al. 2015
+208-1262A-10-4,38	90.380	106.49	Ties To	208-1263A-27-2,17	233.77	273.80		Lauretano et al. 2015
+208-1262A-10-4,45	90.450	106.56	Ties To	208-1263A-27-2,25	233.85	273.88		Lauretano et al. 2015
+208-1262A-10-4,78	90.780	106.89	Ties To	208-1263A-27-2,125	234.85	274.88		Lauretano et al. 2015
+208-1262B-12-1,70	96.600	107.24	Ties To	208-1263A-27-2,145	235.05	275.08		Lauretano et al. 2015
+208-1262B-12-1,85	96.750	107.39	Ties To	208-1263A-27-3,40	235.50	275.53		Lauretano et al. 2015
+208-1262B-12-1,100	96.900	107.54	Ties To	208-1263A-27-3,67	235.77	275.80		Lauretano et al. 2015
+208-1262B-12-1,110	97.000	107.64	Ties To	208-1263A-27-3,100	236.10	276.13		Lauretano et al. 2015
+208-1262B-12-1,120	97.100	107.74	Ties To	208-1263A-27-3,135	236.45	276.48		Lauretano et al. 2015
+208-1262B-12-2,5	97.450	108.09	Ties To	208-1263A-27-4,77	237.37	277.40		Lauretano et al. 2015
+208-1262B-12-2,22	97.620	108.26	Ties To	208-1263A-27-4,100	237.60	277.63		Lauretano et al. 2015
+208-1262B-12-2,60	98.000	108.64	Ties To	208-1263A-27-4,138	237.98	278.01		Lauretano et al. 2015
+208-1262B-12-2,110	98.500	109.14	Ties To	208-1263A-27-5,70	238.80	278.83		Lauretano et al. 2015
+208-1262B-12-2,135	98.750	109.39	Ties To	208-1263C-9-4,105	240.45	280.24		Lauretano et al. 2015
+208-1262B-12-3,13	99.030	109.67	Ties To	208-1263C-9-5,15	241.05	280.84		Lauretano et al. 2015
+208-1262B-12-3,40	99.300	109.94	Ties To	208-1263C-9-5,100	241.90	281.69		Lauretano et al. 2015
+208-1262B-12-3,57	99.470	110.11	Ties To	208-1263C-9-6,2	242.42	282.21		Lauretano et al. 2015
+208-1262B-12-3,65	99.550	110.19	Ties To	208-1263C-9-6,15	242.55	282.34		Lauretano et al. 2015
+208-1262B-12-3,85	99.750	110.39	Ties To	208-1263C-9-6,33	242.73	282.52		Lauretano et al. 2015
+208-1262B-12-4,10	100.500	111.14	Ties To	208-1263C-9-6,83	243.23	283.02		Lauretano et al. 2015
+208-1262B-12-4,65	101.050	111.69	Ties To	208-1263A-28-1,40	242.00	284.52		Lauretano et al. 2015
+208-1262B-12-4,122	101.620	112.26	Ties To	208-1263A-28-1,95	242.55	285.07		Lauretano et al. 2015
+208-1262A-11-1,138	96.380	112.43	Ties To	208-1263A-28-1,115	242.75	285.27		Lauretano et al. 2015
+208-1262A-11-2,2	96.520	112.57	Ties To	208-1263A-28-2,40	243.50	286.02		Lauretano et al. 2015
+208-1262A-11-2,13	96.630	112.68	Ties To	208-1263A-28-2,70	243.80	286.32		Lauretano et al. 2015
+208-1262A-11-2,50	97.000	113.05	Ties To	208-1263A-28-2,108	244.18	286.70		Lauretano et al. 2015
+208-1262A-11-2,67	97.170	113.22	Ties To	208-1263A-28-3,5	244.65	287.17		Lauretano et al. 2015
+208-1262A-11-2,80	97.300	113.35	Ties To	208-1263A-28-3,27	244.87	287.39		Lauretano et al. 2015
+208-1262A-11-2,85	97.350	113.40	Ties To	208-1263A-28-3,33	244.93	287.45		Lauretano et al. 2015
+208-1262A-11-2,97	97.470	113.53	Ties To	208-1263A-28-3,65	245.25	287.77		Lauretano et al. 2015
+208-1262A-11-2,105	97.550	113.60	Ties To	208-1263A-28-3,70	245.30	287.82		Lauretano et al. 2015
+208-1262A-11-2,132	97.820	113.88	Ties To	208-1263B-24-2,148	245.88	288.17		Lauretano et al. 2015
+208-1262A-11-2,147	97.970	114.03	Ties To	208-1263B-24-3,67	246.57	288.86		Lauretano et al. 2015
+208-1262A-11-3,95	98.950	115.00	Ties To	208-1263B-24-4,135	248.75	291.04		Lauretano et al. 2015
+208-1262A-11-3,145	99.450	115.50	Ties To	208-1263B-24-5,48	249.38	291.67		Lauretano et al. 2015
+208-1262A-11-4,52	100.020	116.07	Ties To	208-1263C-10-5,61	251.01	292.89		Lauretano et al. 2015
+208-1262A-11-4,57	100.070	116.12	Ties To	208-1263C-10-5,65	251.05	292.93		Lauretano et al. 2015
+208-1262A-11-4,72	100.220	116.28	Ties To	208-1263C-10-5,83	251.23	293.11		Lauretano et al. 2015
+208-1262A-11-4,88	100.380	116.43	Ties To	208-1263C-10-5,110	251.50	293.38		Lauretano et al. 2015
+208-1262A-11-4,110	100.600	116.65	Ties To	208-1263C-10-6,8	251.98	293.86		Westerhold et al. 2017
+208-1262A-11-4,138	100.880	116.93	Ties To	208-1263C-10-6,70	252.60	294.48		Westerhold et al. 2017
+208-1262A-11-5,10	101.100	117.15	Ties To	208-1263C-10-7,10	253.00	294.88		Lauretano et al. 2015
+208-1262A-11-5,30	101.300	117.35	Ties To	208-1263C-10-7,36	253.26	295.14		Westerhold et al. 2007
+208-1262B-13-2,47	107.040	118.01	Ties To	208-1263A-29-1,120	252.30	296.08		Westerhold et al. 2007
+208-1262B-13-2,82	107.390	118.36	Ties To	208-1263A-29-2,10	252.70	296.48		Westerhold et al. 2017
+208-1262B-13-2,132	107.890	118.86	Ties To	208-1263A-29-2,107	253.67	297.45		Westerhold et al. 2017
+208-1262B-13-3,40	108.470	119.44	Ties To	208-1263A-29-3,48	254.58	298.36		Westerhold et al. 2007
+208-1262B-13-3,102	109.090	120.06	Ties To	208-1263A-29-3,134	255.44	299.22		Westerhold et al. 2017
+208-1262B-13-3,135	109.420	120.39	Ties To	208-1263A-29-4,32	255.92	299.70		Westerhold et al. 2007
+208-1262B-13-4,12	109.690	120.66	Ties To	208-1263A-29-4,70	256.30	300.08		Westerhold et al. 2017
+208-1262B-13-4,42	109.990	120.96	Ties To	208-1263A-29-4,120	256.80	300.58		Westerhold et al. 2007
+208-1262B-13-4,84	110.410	121.38	Ties To	208-1263A-29-5,76	257.86	301.64		Westerhold et al. 2017
+208-1262B-13-4,103	110.600	121.57	Ties To	208-1263C-11-3,148	258.38	302.17		Westerhold et al. 2007
+208-1262B-13-4,130	110.870	121.84	Ties To	208-1263C-11-4,38	258.78	302.57		Westerhold et al. 2007
+208-1262B-13-5,3	111.100	122.07	Ties To	208-1263C-11-4,85	259.25	303.04		Westerhold et al. 2007
+208-1262B-13-5,29	111.360	122.33	Ties To	208-1263C-11-4,121	259.61	303.40		Westerhold et al. 2017
+208-1262B-13-5,60	111.670	122.64	Ties To	208-1263C-11-5,17	260.07	303.86		Westerhold et al. 2017
+208-1262B-13-5,78	111.850	122.82	Ties To	208-1263C-11-5,52	260.42	304.21		Westerhold et al. 2007
+208-1262B-13-5,145	112.520	123.49	Ties To	208-1263C-11-5,130	261.20	304.99		Westerhold et al. 2007
+208-1262B-13-6,53	113.100	124.07	Ties To	208-1263C-11-6,63	262.03	305.82		Westerhold et al. 2007
+208-1262A-12-3,25	107.750	124.36	Ties To	208-1263C-11-6,115	262.55	306.34		Westerhold et al. 2007
+208-1262A-12-3,60	108.100	124.71	Ties To	208-1263C-11-7,10	263.00	306.79		Westerhold et al. 2007
+208-1262A-12-3,88	108.380	124.99	Ties To	208-1263A-30-1,85	261.45	307.24		Westerhold et al. 2007
+208-1262A-12-3,120	108.700	125.31	Ties To	208-1263A-30-1,142	262.02	307.82		Westerhold et al. 2007
+208-1262A-12-3,147	108.970	125.58	Ties To	208-1263A-30-2,50	262.60	308.39		Westerhold et al. 2007
+208-1262A-12-4,30	109.300	125.91	Ties To	208-1263A-30-2,107	263.17	308.96		Westerhold et al. 2007
+208-1262A-12-4,60	109.600	126.21	Ties To	208-1263A-30-3,17	263.77	309.57		Westerhold et al. 2007
+208-1262A-12-4,90	109.900	126.51	Ties To	208-1263A-30-3,65	264.25	310.04		Westerhold et al. 2017
+208-1262A-12-4,120	110.200	126.81	Ties To	208-1263A-30-3,115	264.75	310.54		Westerhold et al. 2017
+208-1262A-12-5,3	110.530	127.14	Ties To	208-1263A-30-4,13	265.23	311.02		Westerhold et al. 2007
+208-1262A-12-5,35	110.850	127.46	Ties To	208-1263A-30-4,65	265.75	311.54		Westerhold et al. 2007
+208-1262A-12-5,60	111.100	127.71	Ties To	208-1263A-30-4,113	266.23	312.02		Westerhold et al. 2007
+208-1262A-12-5,96	111.460	128.07	Ties To	208-1263A-30-5,9	266.69	312.48		Westerhold et al. 2017
+208-1262A-12-5,129	111.790	128.40	Ties To	208-1263A-30-5,70	267.30	313.09		Westerhold et al. 2017
+208-1262A-12-6,7	112.070	128.68	Ties To	208-1263A-30-5,113	267.73	313.52		Westerhold et al. 2007
+208-1262A-12-6,35	112.350	128.96	Ties To	208-1263A-30-6,10	268.20	313.99		Westerhold et al. 2017
+208-1262A-12-6,56	112.560	129.17	Ties To	208-1263A-30-6,46	268.56	314.35		Westerhold et al. 2017
+208-1262A-12-6,80	112.800	129.41	Ties To	208-1263A-30-6,80	268.90	314.69		Westerhold et al. 2007
+208-1262A-12-6,91	112.910	129.52	Ties To	208-1263A-30-6,113	269.23	315.02		Westerhold et al. 2017
+208-1262B-14-3,8	117.980	129.87	Ties To	208-1263A-30-7,7	269.67	315.46		Westerhold et al. 2017
+208-1262B-14-3,27	118.170	130.06	Ties To	208-1263C-12-5,94	270.34	315.84		Westerhold et al. 2017
+208-1262B-14-3,85	118.750	130.64	Ties To	208-1263C-12-6,45	271.35	316.85		Westerhold et al. 2007
+208-1262B-14-3,115	119.050	130.94	Ties To	208-1263C-12-6,95	271.85	317.35		Westerhold et al. 2007
+208-1262B-14-3,135	119.250	131.14	Ties To	208-1263C-12-7,15	272.25	317.75		Westerhold et al. 2007
+208-1262B-14-4,15	119.550	131.44	Ties To	208-1263C-12-7,60	272.70	318.20		Westerhold et al. 2017
+208-1262B-14-4,80	120.200	132.09	Ties To	208-1263D-1-1,145	273.45	319.21		Westerhold et al. 2007
+208-1262B-14-4,105	120.450	132.34	Ties To	208-1263D-1-2,42	273.92	319.68		Westerhold et al. 2007
+208-1262B-14-4,132	120.720	132.61	Ties To	208-1263D-1-2,111	274.61	320.38		Westerhold et al. 2007
+208-1262B-14-5,10	121.000	132.89	Ties To	208-1263B-27-1,33	271.43	320.71		Westerhold et al. 2017
+208-1262B-14-5,47	121.370	133.26	Ties To	208-1263B-27-1,107	272.17	321.45		Westerhold et al. 2017
+208-1262B-14-5,75	121.650	133.54	Ties To	208-1263A-32-1,127	272.87	321.95		Westerhold et al. 2007
+208-1262B-14-5,103	121.930	133.82	Ties To	208-1263A-32-2,40	273.50	322.58		Westerhold et al. 2007
+208-1262A-13-2,52	116.020	134.13	Ties To	208-1263A-32-2,98	274.08	323.15		Westerhold et al. 2007
+208-1262A-13-2,75	116.250	134.36	Ties To	208-1263A-32-3,1	274.61	323.69		Westerhold et al. 2017
+208-1262A-13-2,102	116.520	134.63	Ties To	208-1263A-32-3,55	275.15	324.23		Westerhold et al. 2017
+208-1262A-13-2,123	116.730	134.84	Ties To	208-1263A-32-3,98	275.58	324.65		Westerhold et al. 2007
+208-1262A-13-2,149	116.990	135.10	Ties To	208-1263A-32-4,0	276.10	325.18		Westerhold et al. 2017
+208-1262A-13-3,26	117.260	135.37	Ties To	208-1263A-32-4,38	276.48	325.56		Westerhold et al. 2017
+208-1262A-13-3,50	117.500	135.61	Ties To	208-1263A-32-4,86	276.96	326.04		Westerhold et al. 2017
+208-1262A-13-3,77	117.770	135.88	Ties To	208-1263A-32-4,138	277.48	326.56		Röhl et al. 2007
+208-1262A-13-3,98	117.980	136.09	Ties To	208-1263C-13-5,13	279.03	327.01		Röhl et al. 2007
+208-1262A-13-3,120	118.200	136.31	Ties To	208-1263C-13-5,65	279.55	327.53		Röhl et al. 2007
+208-1262A-13-4,9	118.590	136.70	Ties To	208-1263C-13-5,142	280.32	328.30		Röhl et al. 2007
+208-1262A-13-4,43	118.930	137.04	Ties To	208-1263C-13-6,73	281.13	329.11		Röhl et al. 2007
+208-1262B-15-1,55	124.950	137.27	Ties To	208-1263C-13-6,120	281.60	329.58		Röhl et al. 2007
+208-1262B-15-1,78	125.180	137.50	Ties To	208-1263C-13-7,25	282.15	330.13		Röhl et al. 2007
+208-1262B-15-1,103	125.430	137.75	Ties To	208-1263C-13-8,3	282.80	330.78		Röhl et al. 2007
+208-1262B-15-2,51	126.410	138.73	Ties To	208-1263D-3-1,28	281.78	332.12		Röhl et al. 2007
+208-1262B-15-2,81	126.710	139.03	Ties To	208-1263C-14-1,48	282.88	332.79		Röhl et al. 2007
+208-1262B-15-2,110	127.000	139.32	Ties To	208-1263C-14-1,108	283.48	333.39		Röhl et al. 2007
+208-1262B-15-3,11	127.210	139.53	Ties To	208-1263C-14-2,7	283.97	333.88		Röhl et al. 2007
+208-1262B-15-3,29	127.390	139.71	Ties To	208-1263C-14-2,48	284.38	334.29		Röhl et al. 2007
+208-1262B-15-3,40	127.500	139.82	Ties To	208-1263C-14-2,76	284.66	334.57		Röhl et al. 2007
+208-1262B-15-3,52	127.620	139.94	Ties To	208-1263C-14-2,101	284.91	334.82		Röhl et al. 2007
+208-1262B-15-3,61	127.710	140.03	Ties To	208-1263C-14-2,123	285.13	335.04		Röhl et al. 2007
+208-1262B-15-3,72	127.820	140.14	Ties To	208-1263C-14-2,146	285.36	335.27		Röhl et al. 2007
+208-1262B-15-3,81	127.910	140.23	Ties To	208-1263A-34-1,68	284.78	335.64		Röhl et al. 2007
+208-1262B-15-3,143	128.530	140.85	Ties To	208-1263A-34-2,40	286.00	336.86		Röhl et al. 2007
+208-1262B-15-4,12	128.720	141.04	Ties To	208-1263A-34-2,65	286.25	337.11		Röhl et al. 2007
+208-1262B-15-4,35	128.950	141.27	Ties To	208-1263A-34-2,96	286.56	337.42		Röhl et al. 2007
+208-1262B-15-4,60	129.200	141.52	Ties To	208-1263A-34-2,136	286.96	337.82		Röhl et al. 2007
+208-1262B-15-4,82	129.420	141.74	Ties To	208-1263C-16-1,142	287.12	338.20		Röhl et al. 2007
+208-1262B-15-4,103	129.630	141.95	Ties To	208-1263C-16-2,19	287.39	338.47		Röhl et al. 2007

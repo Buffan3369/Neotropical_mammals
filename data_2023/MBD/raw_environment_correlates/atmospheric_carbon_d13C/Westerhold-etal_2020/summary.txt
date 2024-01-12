@@ -1,0 +1,40 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Abstract:	Much of our understanding of Earth's past climate states comes from the measurement of oxygen and carbon isotope variations in deep-sea benthic foraminifera. Yet, major intervals in those records that lack the temporal resolution and/or age control required to identify climate forcing and feedback mechanisms. Here we document 66 million years of global climate by a new high-fidelity Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). Using recurrence analysis, we find that on timescales of millions of years Earth's climate can be grouped into Hothouse, Warmhouse, Coolhouse and Icehouse states separated by transitions related to changing greenhouse gas levels and the growth of polar ice sheets. Each Cenozoic climate state is paced by orbital cycles, but the response to radiative forcing is state dependent.
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Supplement to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:	MEDIAN LATITUDE: -17.616757 * MEDIAN LONGITUDE: -14.735337 * SOUTH-BOUND LATITUDE: -28.835017 * WEST-BOUND LONGITUDE: -138.419540 * NORTH-BOUND LATITUDE: 19.456710 * EAST-BOUND LONGITUDE: 116.273080
+	DATE/TIME START: 1994-02-08T09:00:00 * DATE/TIME END: 2003-10-28T10:10:00
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	27 datasets
+*/
+/* TABULAR SUMMARY OF DATASETS LISTED IN THIS COLLECTION: */
+Filename	Citation of child dataset
+TableS8.tab	Westerhold, Thomas (2020): S8. Benthic foraminifer stable carbon and oxygen isotope data of ODP Site 208-1263. https://doi.org/10.1594/PANGAEA.917496
+TableS9.tab	Westerhold, Thomas (2020): S9. Benthic foraminifer stable carbon and oxygen isotope data of ODP Site 208-1264. https://doi.org/10.1594/PANGAEA.917500
+TableS10.tab	Westerhold, Thomas (2020): S10. Benthic foraminifer stable carbon and oxygen isotope data of ODP Site 208-1265. https://doi.org/10.1594/PANGAEA.917507
+TableS11.tab	Westerhold, Thomas (2020): S11. Bulk stable carbon and oxygen isotope data of ODP Site 208-1263. https://doi.org/10.1594/PANGAEA.917512
+TableS12.tab	Westerhold, Thomas (2020): S12. Offsets applied to cores from ODP Holes 208-1263A, 208-1263B, 208-1263C. https://doi.org/10.1594/PANGAEA.917513
+TableS13.tab	Westerhold, Thomas (2020): S13. List of tie points to create the revised composite depth scale (rmcd) for ODP Site 208-1263. https://doi.org/10.1594/PANGAEA.917519
+TableS14.tab	Westerhold, Thomas (2020): S14. Mapping pairs for ODP Site 208-1263 to correlate intervals outside the splice to the splice. https://doi.org/10.1594/PANGAEA.917520
+TableS15.tab	Westerhold, Thomas (2020): S15. Revised site-to-site correlation tie points between ODP Sites 208-1263 and 208-1265. https://doi.org/10.1594/PANGAEA.917521
+TableS16.tab	Westerhold, Thomas (2020): S16. Revised site-to-site correlation tie points between ODP Sites 208-1263 and 208-1267. https://doi.org/10.1594/PANGAEA.917523
+TableS17.tab	Westerhold, Thomas (2020): S17. Revised site-to-site correlation tie points between Sites 208-1263 and 208-1262. https://doi.org/10.1594/PANGAEA.917526
+TableS18.tab	Westerhold, Thomas (2020): S18. Calcareous Nannofossil Events at ODP Site 208-1263. https://doi.org/10.1594/PANGAEA.917530
+TableS19.tab	Westerhold, Thomas (2020): S19. Characteristic remanent magnetization for discrete samples from ODP Site 208-1263. https://doi.org/10.1594/PANGAEA.917533
+TableS20.tab	Westerhold, Thomas (2020): S20. Magnetostratigraphic interpretation of characteristic remanent magnetization for ODP Site 208-1263. https://doi.org/10.1594/PANGAEA.917718
+TableS21.tab	Westerhold, Thomas (2020): S21. Position and tuned ages for ODP Site 208-1263 magnetochron boundaries. https://doi.org/10.1594/PANGAEA.917565
+TableS22.tab	Westerhold, Thomas (2020): S22. Combined magnetochron boundaries from ocean drilling cores from 20 to 66.4 Ma. https://doi.org/10.1594/PANGAEA.917567
+TableS23.tab	Westerhold, Thomas (2020): S23. Cenozoic Geomagnetic Polarity Time Scale. https://doi.org/10.1594/PANGAEA.917569
+TableS24.tab	Westerhold, Thomas (2020): S24. Age model of ODP Site 154-926 Ceara Rise. https://doi.org/10.1594/PANGAEA.917570
+TableS25.tab	Westerhold, Thomas (2020): S25. Age model of ODP Site 184-1146. https://doi.org/10.1594/PANGAEA.917572
+TableS26.tab	Westerhold, Thomas (2020): S26. Age model of ODP Site 199-1218. https://doi.org/10.1594/PANGAEA.917575
+TableS27.tab	Westerhold, Thomas (2020): S27. Age model of ODP Site 207-1258. https://doi.org/10.1594/PANGAEA.917589
+TableS28.tab	Westerhold, Thomas (2020): S28. Age model of ODP Site 208-1262. https://doi.org/10.1594/PANGAEA.917592
+TableS29.tab	Westerhold, Thomas (2020): S29. Age model of ODP Site 208-1263. https://doi.org/10.1594/PANGAEA.917594
+TableS30.tab	Westerhold, Thomas (2020): S30. Age model of ODP Site 208-1264. https://doi.org/10.1594/PANGAEA.917627
+TableS31.tab	Westerhold, Thomas (2020): S31. Age model of IODP Site 321U1337. https://doi.org/10.1594/PANGAEA.917653
+TableS32.tab	Westerhold, Thomas (2020): S32. Age model of IODP Site 321-U1338. https://doi.org/10.1594/PANGAEA.917654
+TableS33.tab	Westerhold, Thomas (2020): S33. Cenozoic deep-sea benthic foraminifer stable carbon and oxygen isotope reference splice. https://doi.org/10.1594/PANGAEA.917660
+TableS34.tab	Westerhold, Thomas (2020): S34. Binned and LOESS smoothed Cenozoic deep-sea benthic foraminifer stable carbon and oxygen isotope reference splice. https://doi.org/10.1594/PANGAEA.917717

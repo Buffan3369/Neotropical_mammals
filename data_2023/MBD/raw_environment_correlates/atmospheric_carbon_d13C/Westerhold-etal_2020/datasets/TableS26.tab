@@ -1,0 +1,177 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S26. Age model of ODP Site 199-1218. PANGAEA, https://doi.org/10.1594/PANGAEA.917575, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:	LATITUDE: 8.889630 * LONGITUDE: -135.366660
+	DATE/TIME START: 2001-11-14T00:00:00 * DATE/TIME END: 2001-11-14T00:00:00
+	MINIMUM DEPTH, sediment/rock: 52.510 m * MAXIMUM DEPTH, sediment/rock: 267.840 m
+Event(s):	199-1218 * LATITUDE: 8.889630 * LONGITUDE: -135.366660 * DATE/TIME: 2001-11-14T00:00:00 * ELEVATION: -4827.2 m * Penetration: 797.1 m * Recovery: 723.7 m * LOCATION: North Pacific Ocean * CAMPAIGN: Leg199 (URI: https://doi.org/10.2973/odp.proc.ir.199.2002) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Composite Core (COMPCORE) * COMMENT: 80 cores; 735.1 m cored; 62 m drilled; 98.5% recovery
+Parameter(s):	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	DEPTH, sediment/rock [m] (Depth sed) * GEOCODE * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: mbsf
+	Depth, composite revised [rmcd] (Depth comp r) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Comment (Comment) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	641 data points
+*/
+Sample label	Depth sed [m]	Depth comp r [rmcd]	Tuned time [Ma]	Reference	Comment
+199-1218A-6H-5, 31	52.510	59.350	18.650000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-8H-3, 87	64.770	73.160	20.650999	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-8H-3, 55	68.750	76.710	21.114000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-9H-5, 64	77.040	85.380	21.811001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-9H-5, 126	77.660	86.000	21.892000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-9H-6, 4	77.940	86.280	21.968000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-9H-6, 76	78.660	87.000	22.075001	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-9H-2, 134	77.540	87.800	22.181999	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-9H-3, 103	78.730	88.990	22.266001	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-9H-4, 62	79.820	90.080	22.348000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-9H-5, 25	80.950	91.210	22.457001	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-9H-5, 115	81.850	92.110	22.568001	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-9H-6, 35	82.550	92.810	22.670000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-9H-6, 72	82.920	93.180	22.747999	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-10H-3, 17	83.070	93.870	22.846001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-10H-3, 147	84.370	95.170	22.954000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-10H-4, 119	85.590	96.390	23.052000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-10H-6, 67	88.070	98.870	23.219000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-10H-3, 63	87.830	99.730	23.327999	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-10H-4, 68	89.380	101.280	23.434000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-10H-4, 147	90.170	102.070	23.514999	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-10H-5, 125	91.450	103.350	23.601000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-10H-6, 90	92.600	104.500	23.709000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-11H-2, 132	92.220	105.600	23.825001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-11H-3, 36	92.760	106.140	23.905001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-11H-3, 126	93.660	107.040	24.047001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-11H-4, 135	95.250	108.630	24.160999	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-11H-6, 1	96.910	110.290	24.263000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-11H-6, 47	97.370	110.750	24.337000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-11H-6, 122	98.120	111.500	24.434999	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-11H-4, 74	98.940	112.340	24.544001	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-11H-5, 48	100.180	113.580	24.653999	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-11H-6, 45	101.650	115.050	24.745001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-12H-2, 67	101.070	116.310	24.823000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-12H-3, 83	102.730	117.970	24.934999	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-12H-4, 77	104.170	119.410	25.042000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-12H-5, 54	105.440	120.680	25.125000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-12H-5, 134	106.240	121.480	25.214001	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-12H-4, 71	108.410	122.880	25.320999	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-12H-5, 8	109.280	123.750	25.430000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-13H-1, 107	109.470	124.960	25.523001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-13H-2, 125	111.150	126.640	25.599001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-13H-3, 122	112.620	128.110	25.702000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-13H-4, 114	114.040	129.530	25.815001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-13H-5, 89	115.290	130.780	25.954000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-13H-4, 22	117.420	132.330	26.046000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-13H-4, 144	118.640	133.550	26.156000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-13H-5, 109	119.790	134.700	26.260000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-14H-2, 2	119.420	135.880	26.343000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-14H-2, 125	120.650	137.110	26.436001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-14H-3, 57	121.470	137.930	26.541000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-14H-4, 56	122.960	139.420	26.646999	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-14H-4, 35	127.050	142.470	26.805000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-14H-5, 59	128.790	144.210	26.912001	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-14H-6, 85	130.550	145.970	27.020000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-15H-2, 54	129.440	147.260	27.114000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-15H-3, 63	131.030	148.850	27.191999	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-15H-4, 35	132.250	150.070	27.298000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-15H-3, 66	135.360	151.580	27.407000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-15H-4, 67	136.870	153.090	27.511000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-15H-5, 37	138.070	154.290	27.590000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-15H-6, 24	139.440	155.660	27.684999	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-15H-7, 29	140.990	157.210	27.791000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-16H-2, 100	139.400	158.420	27.896999	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-16H-3, 44	140.340	159.360	27.962000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-16H-4, 69	141.590	160.610	28.058001	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-16H-5, 87	143.270	162.290	28.167000	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-16H-4, 66	146.360	164.200	28.271999	this study; Liebrand updated Pälike et al. 2006	
+199-1218A-16H-5, 35	147.550	165.390	28.358000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-17H-3, 69	150.090	169.870	28.625000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-17H-5, 114	153.540	173.320	28.792000	this study; Liebrand updated Pälike et al. 2006	
+199-1218B-18H-3, 118	160.080	180.200	29.271000	this study connection	
+199-1218B-18H-4, 125	161.650	181.770	29.382999	this study connection	
+199-1218B-18H-5, 68	162.580	182.700	29.493999	this study connection	
+199-1218A-18H-4, 55	165.250	185.810	29.666000	this study connection	
+199-1218C-12H-4, 55	168.550	188.330	29.886000	this study connection	
+199-1218C-12H-6, 5	171.050	190.830	30.046000	this study connection	
+199-1218A-19H-4, 70	174.900	195.280	30.361000	this study connection	
+199-1218A-19H-6, 25	177.450	197.830	30.577000	this study connection	
+199-1218B-20H-3, 30	178.400	199.100	30.656000	this study connection	
+199-1218A-20H-2, 47	181.170	203.447	30.941383	Westerhold et al. 2014	
+199-1218A-20H-3, 24	182.440	204.717	31.033014	Westerhold et al. 2014	
+199-1218A-20H-4, 118	184.880	207.160	31.223150	Westerhold et al. 2014	
+199-1218A-20H-5, 70	185.900	208.182	31.312559	Westerhold et al. 2014	
+199-1218A-20H-6, 85	187.550	209.834	31.427031	Westerhold et al. 2014	
+199-1218B-21H-3, 40	188.200	210.468	31.468266	Westerhold et al. 2014	
+199-1218B-21H-5, 111	191.910	214.177	31.711082	Westerhold et al. 2014	
+199-1218C-15H-3, 5	194.250	216.067	31.822918	Westerhold et al. 2014	
+199-1218C-15H-4, 1	195.710	217.531	31.914211	Westerhold et al. 2014	
+199-1218B-22H-2, 56	196.460	220.106	32.083103	Westerhold et al. 2014	
+199-1218B-22H-3, 79	198.190	221.835	32.196079	Westerhold et al. 2014	
+199-1218B-22H-4, 98	199.880	223.529	32.309055	Westerhold et al. 2014	
+199-1218B-22H-5, 45	200.850	224.500	32.388000	Westerhold et al. 2014	
+199-1218B-22H-6, 1	201.910	225.558	32.477947	Westerhold et al. 2014	
+199-1218C-16H-2, 130	203.600	226.902	32.590923	Westerhold et al. 2014	
+199-1218C-16H-3, 21	204.010	227.314	32.635429	Westerhold et al. 2014	
+199-1218C-16H-3, 57	204.370	227.673	32.674229	Westerhold et al. 2014	
+199-1218A-23H-2, 9	207.090	229.734	32.864006	Westerhold et al. 2014	
+199-1218A-23H-3, 94	209.440	232.082	33.068115	Westerhold et al. 2014	
+199-1218A-23H-4, 115	211.150	233.791	33.265221	Westerhold et al. 2014	
+199-1218A-23H-4, 133	211.330	233.971	33.288109	Westerhold et al. 2014	
+199-1218C-17H-2, 15	212.050	234.911	33.382236	Westerhold et al. 2014	
+199-1218C-17H-4, 57	215.470	238.330	33.641441	Westerhold et al. 2014	
+199-1218C-17H-4, 137	216.270	239.133	33.704170	Westerhold et al. 2014	
+199-1218C-17H-5, 110	217.500	240.364	33.805344	Westerhold et al. 2014	
+199-1218B-24H-2, 36	215.560	241.421	34.000938	Westerhold et al. 2014	
+199-1218B-24H-2, 120	216.400	242.255	34.197830	Westerhold et al. 2014	
+199-1218B-24H-3, 2	216.720	242.580	34.269794	Westerhold et al. 2014	
+199-1218B-24H-3, 21	216.910	242.766	34.311073	Westerhold et al. 2014	
+199-1218B-24H-3, 92	217.620	243.479	34.434650	Westerhold et al. 2014	
+199-1218B-24H-3, 132	218.020	243.879	34.520836	Westerhold et al. 2014	
+199-1218B-24H-4, 19	218.390	244.245	34.576000	Westerhold et al. 2014	
+199-1218B-24H-4, 63	218.830	244.691	34.707451	Westerhold et al. 2014	
+199-1218B-24H-4, 98	219.180	245.043	34.778465	Westerhold et al. 2014	
+199-1218B-24H-4, 133	219.530	245.390	34.875061	Westerhold et al. 2014	
+199-1218B-24H-5, 29	219.990	245.847	34.977764	Westerhold et al. 2014	
+199-1218B-24H-5, 90	220.600	246.464	35.099960	Westerhold et al. 2014	
+199-1218B-24H-5, 145	221.150	247.005	35.280151	Westerhold et al. 2014	
+199-1218C-18H-2, 54	225.110	248.991	35.653549	Westerhold et al. 2014	
+199-1218C-18H-2, 128	225.850	249.729	35.799084	Westerhold et al. 2014	
+199-1218C-18H-3, 43	226.500	250.383	35.907829	Westerhold et al. 2014	
+199-1218C-18H-4, 41	227.980	251.857	36.201584	Westerhold et al. 2014	
+199-1218C-18H-4, 79	228.360	252.236	36.291019	Westerhold et al. 2014	
+199-1218C-18H-4, 144	229.010	252.890	36.428677	Westerhold et al. 2014	
+199-1218C-18H-5, 37	229.440	253.320	36.506275	Westerhold et al. 2014	
+199-1218C-18H-5, 57	229.640	253.523	36.554066	Westerhold et al. 2014	
+199-1218C-18H-5, 131	230.380	254.265	36.666084	Westerhold et al. 2014	
+199-1218C-18H-6, 44	231.010	254.894	36.776039	Westerhold et al. 2014	
+199-1218C-18H-6, 99	231.560	255.444	36.851639	Westerhold et al. 2014	
+199-1218B-26H-1, 57	228.870	255.941	36.956276	Westerhold et al. 2014	
+199-1218B-26H-1, 101	229.310	256.383	37.057808	Westerhold et al. 2014	
+199-1218B-26H-2, 16	229.960	257.033	37.172348	Westerhold et al. 2014	
+199-1218B-26H-3, 55	231.350	258.423	37.453732	Westerhold et al. 2014	
+199-1218B-26H-3, 109	231.890	258.960	37.566067	Westerhold et al. 2014	
+199-1218B-26H-3, 132	232.120	259.185	37.609890	Westerhold et al. 2014	
+199-1218B-26H-4, 104	233.340	260.410	37.919147	Westerhold et al. 2014	
+199-1218B-26H-5, 6	233.860	260.933	38.031399	Westerhold et al. 2014	
+199-1218B-26H-5, 24	234.040	261.113	38.079102	Westerhold et al. 2014	
+199-1218A-26H-2, 109	236.890	262.421	38.402508	Westerhold et al. 2014	
+199-1218A-26H-2, 125	237.050	262.576	38.425415	Westerhold et al. 2014	
+199-1218A-26H-3, 3	237.330	262.856	38.466648	Westerhold et al. 2014	
+199-1218A-26H-3, 36	237.660	263.188	38.536247	Westerhold et al. 2014	
+199-1218A-26H-3, 85	238.150	263.676	38.642605	Westerhold et al. 2014	
+199-1218A-26H-3, 148	238.780	264.314	38.762161	Westerhold et al. 2014	
+199-1218A-26H-5, 94	241.240	266.772	39.097927	Westerhold et al. 2014	uncertain
+199-1218B-27H-3, 60	241.500	270.093	39.631134	Westerhold et al. 2014	uncertain
+199-1218B-27H-4, 26	242.660	271.249	39.825222	Westerhold et al. 2014	uncertain
+199-1218B-27H-4, 108	243.480	272.074	40.007050	Westerhold et al. 2014	uncertain
+199-1218B-27H-5, 121	245.110	273.698	40.181580	Westerhold et al. 2014	uncertain
+199-1218B-27H-6, 58	245.980	274.566	40.274216	Westerhold et al. 2014	uncertain
+199-1218C-21H-1, 97	248.170	275.198	40.376251	Westerhold et al. 2014	uncertain
+199-1218C-21H-3, 8	250.280	277.312	40.515003	Westerhold et al. 2014	uncertain
+199-1218C-21H-4, 67	252.370	279.397	40.616253	Westerhold et al. 2014	uncertain
+199-1218A-28H-3, 135	257.850	282.381	40.753147	Westerhold et al. 2014	uncertain
+199-1218A-28H-6, 17	261.170	285.695	40.866394	Westerhold et al. 2014	uncertain
+199-1218A-29H-2, 57	265.170	289.995	41.040966	Westerhold et al. 2014	uncertain
+199-1218HA29H-4, 24	267.840	292.675	41.246223	Westerhold et al. 2014	uncertain

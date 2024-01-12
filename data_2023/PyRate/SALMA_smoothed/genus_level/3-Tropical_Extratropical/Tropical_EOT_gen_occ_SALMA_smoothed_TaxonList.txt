@@ -1,6 +1,7 @@
 Species	Status
 ?_Eocoleophorus	extinct
 Abderites	extinct
+aff._Tarapotomys	extinct
 Baguatherium	extinct
 Balsayacuy	extinct
 Cachiyacuy	extinct
@@ -10,6 +11,7 @@ Carodnia	extinct
 cf._Cachiyacuy	extinct
 cf._Eoespina	extinct
 cf._Pozomys	extinct
+cf._Tarapotomys	extinct
 Chachapoyamys	extinct
 Chambiramys	extinct
 Colombitherium	extinct

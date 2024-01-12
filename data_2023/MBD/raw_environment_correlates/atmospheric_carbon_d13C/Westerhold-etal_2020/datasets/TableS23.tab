@@ -1,0 +1,195 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S23. Cenozoic Geomagnetic Polarity Time Scale. PANGAEA, https://doi.org/10.1594/PANGAEA.917569, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Parameter(s):	Chronozone (Chronozone) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Age model [ka] (Age model) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: CK95
+	Age model [ka] (Age model) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: GPTS2004
+	Age model [ka] (Age model) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: GPTS2012
+	Age model [ka] (Age model) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Age this study
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Age model [ka] (Age model) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: D GPTS2012 - this study
+	Cruise/expedition (Expedition) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	1338 data points
+*/
+Chronozone	Age model [ka] (CK95)	Age model [ka] (GPTS2004)	Age model [ka] (GPTS2012)	Age model [ka] (Age this study)	Reference	Age model [ka] (D GPTS2012 - this study)	Expedition
+C1n (y)	0	0	0	0	GPTS2012	0	
+C1n (o)	780	781	781	781	GPTS2012	0	
+C1r.1n (y)	990	988	988	988	GPTS2012	0	
+C1r.1n (o)	1070	1072	1072	1072	GPTS2012	0	
+C1r.2n (y)			1173	1173	GPTS2012	0	
+C1r.2n (o)			1185	1185	GPTS2012	0	
+C2n (y)	1770	1778	1778	1778	GPTS2012	0	
+C2n (o)	1950	1945	1945	1945	GPTS2012	0	
+C2r.1n (y)	2140	2128	2128	2128	GPTS2012	0	
+C2r.1n (o)	2150	2148	2148	2148	GPTS2012	0	
+C2An.1n (y)	2581	2581	2581	2581	GPTS2012	0	
+C2An.1n (o)	3040	3032	3032	3032	GPTS2012	0	
+C2An.2n (y)	3110	3116	3116	3116	GPTS2012	0	
+C2An.2n (o)	3220	3207	3207	3207	GPTS2012	0	
+C2An.3n (y)	3330	3330	3330	3330	GPTS2012	0	
+C2An.3n (o)	3580	3596	3596	3596	GPTS2012	0	
+C3n.1n (y)	4180	4187	4187	4187	GPTS2012	0	
+C3n.1n (o)	4290	4300	4300	4300	GPTS2012	0	
+C3n.2n (y)	4480	4493	4493	4493	GPTS2012	0	
+C3n.2n (o)	4620	4631	4631	4631	GPTS2012	0	
+C3n.3n (y)	4800	4799	4799	4799	GPTS2012	0	
+C3n.3n (o)	4890	4896	4896	4896	GPTS2012	0	
+C3n.4n (y)	4980	4997	4997	4997	GPTS2012	0	
+C3n.4n (o)	5230	5235	5235	5235	GPTS2012	0	
+C3An.1n (y)	5894	6033	6033	6023	Drury et al. 2017	10	Exp320/321
+C3An.1n (o)	6137	6252	6252	6272	Drury et al. 2017	-20	Exp320/321
+C3An.2n (y)	6269	6436	6436	6386	Drury et al. 2017	50	Exp320/321
+C3An.2n (o)	6567	6733	6733	6727	Drury et al. 2017	6	Exp320/321
+C3Bn (y)	6935	7140	7140	7104	Drury et al. 2017	36	Exp320/321
+C3Bn (o)	7091	7212	7212	7214	Drury et al. 2017	-2	Exp320/321
+C3Br.1n (y)	7135	7251	7251	7262	Drury et al. 2017	-11	Exp320/321
+C3Br.1n (o)	7170	7285	7285	7305	Drury et al. 2017	-20	Exp320/321
+C3Br.2n (y)	7341	7454	7454	7456	Drury et al. 2017	-2	Exp320/321
+C3Br.2n (o)	7375	7489	7489	7499	Drury et al. 2017	-10	Exp320/321
+C4n.1n (y)	7432	7528	7528	7537	Drury et al. 2017	-9	Exp320/321
+C4n.1n (o)	7562	7642	7642	7651	Drury et al. 2017	-9	Exp320/321
+C4n.2n (y)	7650	7695	7695	7701	Drury et al. 2017	-6	Exp320/321
+C4n.2n (o)	8072	8108	8108	8107	Drury et al. 2017	1	Exp320/321
+C4r.1n (y)	8225	8254	8254	8236	Drury et al. 2017	18	Exp320/321
+C4r.1n (o)	8257	8300	8300	8300	GPTS2012	0	
+C4An (y)	8699	8769	8771	8771	GPTS2012	0	
+C4An (o)	9025	9098	9105	9105	GPTS2012	0	
+C4Ar.1n (y)	9230	9312	9311	9311	GPTS2012	0	
+C4Ar.1n (o)	9308	9409	9426	9426	GPTS2012	0	
+C4Ar.2n (y)	9580	9656	9647	9647	GPTS2012	0	
+C4Ar.2n (o)	9642	9717	9721	9721	GPTS2012	0	
+C5n.1n (y)	9740	9779	9786	9786	GPTS2012	0	
+C5n.1n (o)	9880	9934	9937	9937	GPTS2012	0	
+C5n.2n (y)	9920	9987	9984	9984	GPTS2012	0	
+C5n.2n (o)	10949	11040	11056	11056	GPTS2012	0	
+C5r.1n (y)	11052	11118	11146	11146	GPTS2012	0	
+C5r.1n (o)	11099	11154	11188	11188	GPTS2012	0	
+C5r.2n (y)	11476	11554	11592	11592	GPTS2012	0	
+C5r.2n (o)	11531	11614	11657	11657	GPTS2012	0	
+C5An.1n (y)	11935	12014	12049	12049	GPTS2012	0	
+C5An.1n (o)	12078	12116	12174	12174	GPTS2012	0	
+C5An.2n (y)	12184	12207	12272	12272	GPTS2012	0	
+C5An.2n (o)	12401	12415	12474	12474	GPTS2012	0	
+C5Ar.1n (y)	12678	12730	12735	12735	GPTS2012	0	
+C5Ar.1n (o)	12708	12765	12770	12770	GPTS2012	0	
+C5Ar.2n (y)	12775	12820	12829	12829	GPTS2012	0	
+C5Ar.2n (o)	12819	12878	12887	12887	GPTS2012	0	
+C5AAn (y)	12991	13015	13032	13032	GPTS2012	0	
+C5AAn (o)	13139	13183	13183	13183	GPTS2012	0	
+C5ABn (y)	13302	13369	13363	13363	GPTS2012	0	
+C5ABn (o)	13510	13605	13608	13608	GPTS2012	0	
+C5ACn (y)	13703	13734	13739	13739	GPTS2012	0	
+C5ACn (o)	14076	14095	14070	14070	GPTS2012	0	
+C5ADn (y)	14178	14194	14163	14163	GPTS2012	0	
+C5ADn (o)	14612	14581	14609	14609	GPTS2012	0	
+C5Bn.1n (y)	14800	14784	14775	14775	GPTS2012	0	
+C5Bn.1n (o)	14888	14877	14870	14870	GPTS2012	0	
+C5Bn.2n (y)	15034	15032	15032	15032	GPTS2012	0	
+C5Bn.2n (o)	15155	15160	15160	15160	GPTS2012	0	
+C5Cn.1n (y)	16014	15974	15974	15974	GPTS2012	0	
+C5Cn.1n (o)	16293	16268	16268	16268	GPTS2012	0	
+C5Cn.2n (y)	16327	16303	16303	16303	GPTS2012	0	
+C5Cn.2n (o)	16488	16472	16472	16472	GPTS2012	0	
+C5Cn.3n (y)	16556	16543	16543	16543	GPTS2012	0	
+C5Cn.3n (o)	16726	16721	16721	16721	GPTS2012	0	
+C5Dn (y)	17277	17235	17235	17235	GPTS2012	0	
+C5Dn (o)		17533	17533	17533	GPTS2012	0	
+C5Dr.1n (y)		17717	17717	17717	GPTS2012	0	
+C5Dr.1n (o)	17615	17740	17740	17740	GPTS2012	0	
+C5En (y)	18281	18056	18056	18056	GPTS2012	0	
+C5En (o)	18781	18524	18524	18524	GPTS2012	0	
+C6n (y)	19048	18748	18748	18748	GPTS2012	0	
+C6n (o)	20131	19722	19722	19727	this study	-5	Leg199, Exp320/321
+C6An.1n (y)	20518	20040	20040	20100	this study	-60	Leg199, Exp320/321
+C6An.1n (o)	20725	20213	20213	20236	this study	-23	Leg199, Exp320/321
+C6An.2n (y)	20996	20439	20439	20407	this study	32	Leg199, Exp320/321
+C6An.2n (o)	21320	20709	20709	20673	this study	36	Leg199, Exp320/321
+C6AAn (y)	21768	21083	21083	21058	this study	25	Leg199, Exp320/321
+C6AAn (o)	21859	21159	21159	21202	this study	-43	Leg199, Exp320/321
+C6AAr.1n (y)	22151	21403	21403	21488	this study	-85	Leg199, Exp320/321
+C6AAr.1n (o)	22248	21483	21483	21544	this study	-61	Leg199, Exp320/321
+C6AAr.2n (y)	22459	21659	21659	21688	this study	-29	Leg199, Exp320/321
+C6AAr.2n (o)	22493	21688	21688	21733	this study	-45	Leg199, Exp320/321
+C6Bn.1n (y)	22588	21767	21767	21786	this study	-19	Leg199, Exp320/321
+C6Bn.1n (o)	22750	21936	21936	21991	this study	-55	Leg199, Exp320/321
+C6Bn.2n (y)	22804	21992	21992	22050	this study	-58	Leg199, Exp320/321
+C6Bn.2n (o)	23069	22268	22268	22313	this study	-45	Leg199, Exp320/321
+C6Cn.1n (y)	23353	22564	22564	22626	this study	-62	Leg199, Exp320/321
+C6Cn.1n (o)	23535	22754	22754	22794	this study	-40	Leg199, Exp320/321
+C6Cn.2n (y)	23677	22902	22902	22957	this study	-55	Leg199, Exp320/321
+C6Cn.2n (o)	23800	23030	23030	23039	this study	-9	Leg199, Exp320/321
+C6Cn.3n (y)	23999	23249	23233	23215	this study	18	Leg199, Exp320/321
+C6Cn.3n (o)	24118	23375	23295	23323	this study	-28	Leg199, Exp320/321
+C7n.1n (y)	24730	24044	23962	24032	this study	-70	Leg199, Exp320/321
+C7n.1n (o)	24781	24102	24000	24057	this study	-57	Leg199, Exp320/321
+C7n.2n (y)	24835	24163	24109	24115	this study	-6	Leg199, Exp320/321
+C7n.2n (o)	25183	24556	24474	24462	this study	12	Leg199, Exp320/321
+C7An (y)	25496	24915	24761	24768	this study	-7	Leg199, Exp320/321
+C7An (o)	25648	25091	24984	24895	this study	89	Leg199, Exp320/321
+C8n.1n (y)	25823	25295	25099	25049	this study	50	Leg199, Exp320/321
+C8n.1n (o)	25951	25444	25264	25220	this study	44	Leg199, Exp320/321
+C8n.2n (y)	25992	25492	25304	25259	this study	45	Leg199, Exp320/321
+C8n.2n (o)	26554	26154	25987	25979	this study	8	Leg199, Exp320/321
+C9n (y)	27027	26714	26420	26599	this study	-179	Leg199, Exp320/321
+C9n (o)	27972	27826	27439	27407	this study	32	Leg199, Exp320/321
+C10n.1n (y)	28283	28186	27859	27847	this study	12	Leg199, Exp320/321
+C10n.1n (o)	28512	28450	28087	28107	this study	-20	Leg199, Exp320/321
+C10n.2n (y)	28578	28525	28141	28157	this study	-16	Leg199, Exp320/321
+C10n.2n (o)	28745	28715	28278	28263	this study	15	Leg199, Exp320/321
+C11n.1n (y)	29401	29451	29183	29149	this study	34	Leg199, Exp320/321
+C11n.1n (o)	29662	29740	29477	29581	this study	-104	Leg199, Exp320/321
+C11n.2n (y)	29765	29853	29527	29642	this study	-115	Leg199, Exp320/321
+C11n.2n (o)	30098	30217	29970	29990	this study	-20	Leg199, Exp320/321
+C12n (y)	30479	30627	30591	30755	this study	-164	Leg199, Exp320/321
+C12n (o)	30939	31116	31034	30977	this study	57	Leg199, Exp320/321
+C13n (y)	33058	33266	33157	33214	this study	-57	Leg199, Exp320/321
+C13n (o)	33545	33738	33705	33726	this study	-21	Leg199, Exp320/321
+C15n (y)	34655	34782	34999	35102	this study	-103	Leg199, Exp320/321
+C15n (o)	34940	35043	35294	35336	this study	-42	Leg199, Exp320/321
+C16n.1n (y)	35343	35404	35706	35580	this study	126	Leg199, Exp320/321
+C16n.1n (o)	35526	35567	35892	35718	this study	174	Leg199, Exp320/321
+C16n.2n (y)	35685	35707	36051	35774	this study	277	Leg199, Exp320/321
+C16n.2n (o)	36341	36276	36700	36351	this study	349	Leg199, Exp320/321
+C17n.1n (y)	36618	36512	36969	36573	this study	396	Leg199, Exp320/321
+C17n.1n (o)	37473	37235	37753	37385	this study	368	Leg199, Exp320/321
+C17n.2n (y)	37604	37345	37872	37530	this study	342	Leg199, Exp320/321
+C17n.2n (o)	37848	37549	38093	37781	this study	312	Leg199, Exp320/321
+C17n.3n (y)	37920	37610	38159	37858	this study	301	Leg199, Exp320/321
+C17n.3n (o)	38113	37771	38333	38081	this study	252	Leg199, Exp320/321
+C18n.1n (y)	38426	38032	38615	38423	this study	192	Leg 208
+C18n.1n (o)	39552	38975	39627	39825	this study	-198	Leg 208
+C18n.2n (y)	39631	39041	39698	39941	this study	-243	Leg 208
+C18n.2n (o)	40130	39464	40145	40276	this study	-131	Leg 208
+C19n (y)	41257	40439	41154	41062	this study	92	Leg 208
+C19n (o)	41521	40671	41390	41262	this study	128	Leg 208
+C20n (y)	42536	41590	42301	42196	this study	105	Leg 208
+C20n (o)	43789	42774	43432	43508	this study	-76	Leg 208
+C21n (y)	46264	45346	45724	46235	this study	-511	Leg 208
+C21n (o)	47906	47235	47349	47857	this study	-508	Leg 208
+C22n (y)	49037	48599	48566	49173	this study	-607	Leg 208
+C22n (o)	49714	49427	49344	49713	this study	-369	Leg 208
+C23n.1n (y)	50778	50730	50628	50776	this study	-148	Leg 208
+C23n.1n (o)	50946	50932	50835	50942	this study	-107	Leg 208
+C23n.2n (y)	51047	51057	50961	51025	this study	-64	Leg 208
+C23n.2n (o)	51743	51901	51833	51737	this study	96	Leg 208
+C24n.1n (y)	52364	52648	52620	52628	this study	-8	Leg 208
+C24n.1n (o)	52663	53004	53074	52939	this study	135	Leg 208
+C24n.2n (y)	52757	53116	53199	53088	this study	111	Leg 208
+C24n.2n (o)	52801	53167	53274	53123	this study	151	Leg 208
+C24n.3n (y)	52903	53286	53416	53403	this study	13	Leg 208
+C24n.3n (o)	53347	53808	53983	53899	this study	84	Leg 208
+C25n (y)	55904	56665	57101	57073	this study	28	Leg 208
+C25n (o)	56391	57180	57656	57598	this study	58	Leg 208
+C26n (y)	57554	58379	58959	58865	this study	94	Leg 208
+C26n (o)	57911	58737	59237	59197	this study	40	Leg 208
+C27n (y)	60920	61650	62221	62126	this study	95	Leg 208
+C27n (o)	61276	61983	62517	62448	this study	69	Leg 208
+C28n (y)	62499	63104	63494	63558	this study	-64	Leg 208
+C28n (o)	63634	64128	64667	64608	this study	59	Leg 208
+C29n (y)	63976	64432	64958	64871	this study	87	Leg 208
+C29n (o)	64745	65118	65688	65653	this study	35	Leg 208
+C30n (y)	65578	65861	66398	66393	this study	5	Leg 208

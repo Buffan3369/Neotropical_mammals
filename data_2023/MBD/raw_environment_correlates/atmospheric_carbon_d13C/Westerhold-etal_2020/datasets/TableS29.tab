@@ -1,0 +1,146 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S29. Age model of ODP Site 208-1263. PANGAEA, https://doi.org/10.1594/PANGAEA.917594, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:	LATITUDE: -28.532950 * LONGITUDE: 2.779567
+	DATE/TIME START: 2003-03-29T00:00:00 * DATE/TIME END: 2003-04-05T00:00:00
+	MINIMUM DEPTH, sediment/rock: 72.260 m * MAXIMUM DEPTH, sediment/rock: 287.390 m
+Event(s):	208-1263 * LATITUDE: -28.532950 * LONGITUDE: 2.779567 * DATE/TIME START: 2003-03-29T00:00:00 * DATE/TIME END: 2003-04-05T00:00:00 * ELEVATION: -2717.1 m * Penetration: 1261.5 m * Recovery: 709.5 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Composite Core (COMPCORE) * COMMENT: 93 cores; 777.9 m cored; 483.6 m drilled; 91.2 % recovery
+Parameter(s):	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	DEPTH, sediment/rock [m] (Depth sed) * GEOCODE * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: mbsf
+	Depth, composite revised [rmcd] (Depth comp r) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Comment (Comment) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	630 data points
+*/
+Sample label	Depth sed [m]	Depth comp r [rmcd]	Tuned time [Ma]	Reference	Comment
+208-1263A-9H-3,46	72.260	82.900	32.768	this study	La2010b Eccenticity
+208-1263A-9H-4,86	74.160	84.800	32.975	this study	La2010b Eccenticity
+208-1263A-9H-6,53	76.830	87.471	33.216	this study	La2010b Eccenticity
+208-1263B-4H-3,86	78.360	89.290	33.416	this study	La2010b Eccenticity
+208-1263B-4H-5,11	80.610	91.540	33.639	this study	La2010b Eccenticity
+208-1263B-4H-5,51	81.010	91.942	33.786	this study	La2010b Eccenticity
+208-1263A-10H-4,21	83.010	93.800	34.188	this study	La2010b Eccenticity
+208-1263B-5H-1,96	84.960	98.710	34.580	this study	La2010b Eccenticity
+208-1263B-5H-4,39	88.720	102.470	34.970	this study	La2010b Eccenticity
+208-1263B-5H-5,114	90.970	104.720	35.420	this study	La2010b Eccenticity
+208-1263C-1H-3,145	94.450	106.670	35.855	this study	La2010b Eccenticity
+208-1263C-1H-5,33	96.330	108.550	36.280	this study	La2010b Eccenticity
+208-1263B-6H-2,82	95.820	110.590	36.660	this study	La2010b Eccenticity
+208-1263B-6H-4,26	98.260	113.030	37.060	this study	La2010b Eccenticity
+208-1263B-6H-6,34	101.340	116.110	37.430	this study	La2010b Eccenticity
+208-1263C-2H-2,83	101.830	118.830	37.867	this study	La2010b Eccenticity
+208-1263C-2H-5,89	106.390	123.390	38.265	this study	La2010b Eccenticity
+208-1263C-2H-7,55	108.550	125.550	38.645	this study	La2010b Eccenticity
+208-1263B-7H-4,51	108.010	128.330	39.035	this study	La2010b Eccenticity
+208-1263B-7H-5,7	109.070	129.388	39.145	this study	La2010b Eccenticity
+208-1263C-3H-2,35	110.850	132.330	39.435	this study	La2010b Eccenticity
+208-1263C-3H-2,111	111.610	133.090	39.535	this study	La2010b Eccenticity
+208-1263B-8H-2,20	114.200	135.770	39.825	this study	La2010b Eccenticity
+208-1263B-8H-2,149	115.490	137.065	39.930	Rivero-Cuesta et al. 2019	La2010b Eccenticity
+208-1263A-14H-3,93	120.230	141.260	40.270	Rivero-Cuesta et al. 2019	La2010b Eccenticity
+208-1263B-9H-1,146	123.460	146.690	40.656	Rivero-Cuesta et al. 2019	La2010b Eccenticity
+208-1263B-9H-4,96	127.460	150.694	41.135	Rivero-Cuesta et al. 2019	La2010b Eccenticity
+208-1263A-15H-3,132	130.120	153.850	41.413	Rivero-Cuesta et al. 2019	La2010b Eccenticity
+208-1263A-15H-4,80	131.100	154.830	41.520	Rivero-Cuesta et al. 2019	La2010b Eccenticity
+208-1263A-15H-5,37	132.170	155.895	41.623	Rivero-Cuesta et al. 2019	La2010b Eccenticity
+208-1263B-10H-2,112	134.120	158.160	41.910	Rivero-Cuesta et al. 2019	La2010b Eccenticity
+208-1263B-10H-3,42	134.920	158.960	42.010	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-16H-2,1	136.810	161.940	42.385	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-16H-3,3	138.330	163.460	42.575	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-16H-3,117	139.470	164.600	42.675	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-11H-2,93	143.430	168.460	43.120	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-11H-4,43	145.930	170.960	43.399	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-11H-4,149	146.990	172.020	43.505	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-11H-5,97	147.970	173.000	43.615	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-17H-3,128	149.080	175.420	43.895	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-17H-4,58	149.880	176.220	44.000	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-17H-6,8	152.380	178.720	44.290	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-12H-3,0	153.500	179.700	44.390	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-12H-4,5	154.400	180.600	44.490	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-12H-6,52	157.220	183.420	44.780	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-18H-3,70	158.000	185.440	45.045	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-18H-4,74	159.540	186.980	45.130	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-13H-3,17	163.170	191.340	45.515	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-13H-4,7	164.570	192.740	45.620	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-19H-2,136	166.660	195.720	45.895	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-19H-3,138	168.180	197.240	45.995	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-14H-3,37	172.870	202.540	46.380	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-14H-4,51	174.510	204.180	46.490	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-20H-2,94	175.740	207.100	46.770	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-20H-5,10	179.400	210.760	47.050	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-15H-3,85	180.850	211.700	47.145	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-15H-4,37	181.870	212.720	47.245	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-15H-6,75	185.250	216.100	47.450	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-21H-1,51	183.310	217.140	47.640	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-16H-1,125	187.750	220.880	47.980	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-16H-2,95	188.950	222.080	48.070	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-16H-4,148	192.480	225.610	48.370	Westerhold et al. 2017	La2010b Eccenticity
+208-1265A22H-4,124	205.240	226.660	48.470	this study	La2010b Eccenticity
+208-1265A22H-4,150	205.500	227.276	48.526	this study	La2010b Eccenticity
+208-1265B23H-2,6	205.760	231.252	49.260	this study	La2010b Eccenticity
+208-1265B23H-2,118	206.880	235.138	49.457	this study	La2010b Eccenticity
+208-1265B23H-2,146	207.160	236.110	49.557	this study	La2010b Eccenticity
+208-1263A-23H-2,128	204.570	237.120	49.670	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-23H-4,18	206.470	239.020	49.850	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-20H-2,35	206.750	240.460	49.950	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-20H-3,3	207.930	241.640	50.060	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-20H-4,59	209.990	243.700	50.270	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-20H-5,45	211.350	245.060	50.375	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-20H-6,67	213.070	246.780	50.485	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-24H-5,27	214.370	249.020	50.670	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-24H-6,17	215.770	250.420	50.765	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-24H-6,121	216.810	251.460	50.865	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-21H-2,76	216.660	252.580	50.960	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-21H-4,4	218.940	254.860	51.150	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-21H-5,28	220.680	256.600	51.250	Westerhold et al. 2017	La2010b Eccenticity
+208-1263C-7H-2,38	223.330	257.600	51.350	Westerhold et al. 2017	La2010b Eccenticity
+208-1263C-7H-2,134	224.290	258.560	51.445	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-26H-1,11	222.710	259.560	51.550	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-26H-3,37	225.970	262.820	51.970	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-22H-4,143	229.830	268.160	52.360	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-22H-5,101	230.910	269.240	52.460	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-22H-6,5	231.450	269.780	52.518	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-27H-2,15	233.750	273.780	52.740	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-27H-2,145	235.050	275.080	52.845	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-27H-3,113	236.230	276.260	52.945	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-27H-5,111	239.210	279.240	53.145	Westerhold et al. 2017	La2010b Eccenticity
+208-1263C-9H-5,9	240.990	280.780	53.255	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-28H-2,7	243.170	285.690	53.560	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-28H-3,29	244.890	287.410	53.665	Westerhold et al. 2017	La2010b Eccenticity
+208-1263B-24H-6,16	250.560	292.850	53.945	Westerhold et al. 2017	La2010b Eccenticity
+208-1263C-10H-7,9	252.990	294.870	54.050	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-29H-4,115	256.750	300.530	54.345	Westerhold et al. 2017	La2010b Eccenticity
+208-1263C-11H-4,2	258.420	302.210	54.450	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-30H-2,86	262.960	308.750	54.750	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-30H-4,48	265.580	311.370	54.865	Westerhold et al. 2017	La2010b Eccenticity
+208-1263C-12H-6,111	272.010	317.510	55.165	Westerhold et al. 2017	La2010b Eccenticity
+208-1263D1H-2,45	273.950	319.710	55.270	Westerhold et al. 2017	La2010b Eccenticity
+208-1263A-32H-4,138	277.480	326.560	55.521	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-13H-5,13	279.030	327.010	55.542	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-13H-5,65	279.550	327.530	55.563	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-13H-5,142	280.320	328.300	55.584	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-13H-6,73	281.130	329.110	55.605	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-13H-6,120	281.600	329.580	55.626	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-13H-7,25	282.150	330.130	55.647	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-13H-8,3	282.800	330.780	55.668	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263D3H-1,28	281.780	332.120	55.731	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-14H-1,48	282.880	332.790	55.752	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-14H-1,108	283.480	333.390	55.773	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-14H-2,7	283.970	333.880	55.794	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-14H-2,48	284.380	334.290	55.815	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-14H-2,76	284.660	334.570	55.836	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-14H-2,101	284.910	334.820	55.857	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-14H-2,123	285.130	335.040	55.878	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-14H-2,146	285.360	335.270	55.930	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263A-34H-1,68	284.780	335.640	55.940	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263A-34H-2,40	286.000	336.860	56.024	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263A-34H-2,65	286.250	337.110	56.045	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263A-34H-2,96	286.560	337.420	56.066	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263A-34H-2,136	286.960	337.820	56.087	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-16H-1,142	287.120	338.200	56.108	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma
+208-1263C-16H-2,19	287.390	338.470	56.129	Westerhold et al. 2018	Precession cycle counting  relative onset PETM @ 55.930 Ma

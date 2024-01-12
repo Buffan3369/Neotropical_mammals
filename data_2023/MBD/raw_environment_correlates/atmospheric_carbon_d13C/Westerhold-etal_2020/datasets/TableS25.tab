@@ -1,0 +1,86 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S25. Age model of ODP Site 184-1146. PANGAEA, https://doi.org/10.1594/PANGAEA.917572, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:	LATITUDE: 19.456700 * LONGITUDE: 116.272917
+	DATE/TIME START: 1999-03-21T00:00:00 * DATE/TIME END: 1999-03-29T00:00:00
+	MINIMUM DEPTH, sediment/rock: 283.400 m * MAXIMUM DEPTH, sediment/rock: 469.120 m
+Event(s):	184-1146 * LATITUDE: 19.456700 * LONGITUDE: 116.272917 * DATE/TIME START: 1999-03-21T00:00:00 * DATE/TIME END: 1999-03-29T00:00:00 * ELEVATION: -2091.5 m * Penetration: 1455.6 m * Recovery: 1451.7 m * LOCATION: South China Sea (URI: http://en.wikipedia.org/wiki/South_China_Sea) * CAMPAIGN: Leg184 (URI: https://doi.org/10.2973/odp.proc.ir.184.2000) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Composite Core (COMPCORE) * COMMENT: 153 cores; 1450.6 m cored; 5 m drilled; 100.1% recovery
+Parameter(s):	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	DEPTH, sediment/rock [m] (Depth sed) * GEOCODE * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: mbsf
+	Depth, composite revised [rmcd] (Depth comp r) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Comment (Comment) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	307 data points
+*/
+Sample label	Depth sed [m]	Depth comp r [rmcd]	Tuned time [Ma]	Reference	Comment
+184-1146C-30X-2,10	283.400	299.70	5.120	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146C-30X-3,18	284.980	301.28	5.178	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146C-30X-4,88	287.180	303.48	5.259	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-32X-3,53	293.330	311.78	5.549	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-32X-4,103	295.330	313.78	5.590	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using 926 and U1337 data)
+184-1146A-32X-5,128	297.080	315.53	5.642	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using 926 and U1337 data)
+184-1146A-32X-6,73	298.030	316.48	5.696	Holbourn et al., 2018; DeVleeschower et al. in review	Additional tie (using 926 data)
+184-1146A-32X-0,38	299.470	317.92	5.751	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-33X-1,103	300.530	319.28	5.793	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-33X-5,48	305.980	324.73	5.992	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using 926 and U1337 data)
+184-1146A-33X-6,138	308.380	327.13	6.059	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using 926 and U1337 data)
+184-1146A-34X-4,14	313.740	332.69	6.259	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146C-34X-4,8	319.880	337.73	6.370	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146C-34X-4,117	320.970	338.82	6.424	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146A-35X-3,80	322.500	342.20	6.554	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146A-35X-5,81	325.510	345.21	6.674	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146C-35X-5,94	331.840	350.74	6.875	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146A-36X-5,78	335.180	357.28	6.985	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146C-36X-5,3	340.630	362.28	7.155	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146A-37X-5,113	345.230	367.98	7.322	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146C-37X-4,38	349.080	372.18	7.438	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146A-38X-3,123	351.930	375.68	7.587	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146C-38X-1,48	354.280	378.43	7.682	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146A-39X-2,38	359.180	383.78	7.851	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146A-39X-4,67	362.470	387.07	7.999	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146A-39X-6,16	364.960	389.56	8.065	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146C-39X-4,6	368.060	394.16	8.203	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1337 data)
+184-1146A-40X-4,143	372.830	398.43	8.404	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using ET curve)
+184-1146C-40X-1,68	373.780	400.24	8.461	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using ET curve)
+184-1146C-40X-2,118	375.780	402.24	8.544	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-41X-2,78	378.780	405.42	8.664	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-41X-5,103	383.530	410.17	8.868	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146C-41X-1,121	384.010	411.67	8.953	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146C-41X-3,36	386.160	413.82	9.034	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-42X-2,103	388.630	415.67	9.121	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-42X-3,48	389.580	416.62	9.157	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-42X-4,58	391.180	418.22	9.240	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146C-42X-2,3	395.430	421.72	9.403	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146C-42X-5,14	398.540	424.83	9.521	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-43X-6,13	403.330	430.52	9.762	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-44X-2,3	406.830	434.02	9.882	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-44X-4,70	410.500	437.69	10.024	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-44X-5,84	412.140	439.33	10.107	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146C-44X-3,127	415.870	442.31	10.271	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146C-44X-4,130	417.400	443.84	10.349	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146A-45X-3,7	417.970	445.51	10.457	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146C-45X-3,133	425.530	452.37	10.700	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146C-45X-5,3	427.230	454.07	10.801	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146A-46X-3,102	428.520	457.56	10.942	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146A-46X-4,100	430.000	459.04	11.022	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146C-46X-4,139	436.490	465.93	11.310	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146A-47X-3,10	437.200	468.24	11.411	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146A-47X-5,8	440.180	471.22	11.576	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146A-47X-5,150	441.600	472.64	11.656	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146C-47X-3,22	443.420	473.91	11.719	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146C-47X-4,81	445.510	476.00	11.797	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-48X-2,134	446.540	477.87	11.898	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-48X-4,48	448.680	480.01	11.998	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146A-48X-6,46	451.660	482.99	12.140	Holbourn et al., 2018; DeVleeschower et al. in review	
+184-1146C-48X-3,66	453.460	484.17	12.220	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146C-48X-4,35	454.650	485.36	12.298	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146C-48X-5,113	456.930	487.64	12.380	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146A-49X-4,138	459.330	489.59	12.480	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using obliquity)
+184-1146C-49X-3,139	463.890	494.00	12.686	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1338 data)
+184-1146C-49X-6,46	467.460	497.57	12.860	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1338 data)
+184-1146C-49X-CC,15	469.120	499.23	12.960	Holbourn et al., 2018; DeVleeschower et al. in review	Retuned (using U1338 data)

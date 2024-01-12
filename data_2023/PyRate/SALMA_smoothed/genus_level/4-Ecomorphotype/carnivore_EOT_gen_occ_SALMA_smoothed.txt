@@ -41,7 +41,7 @@ Eomakhaira	extinct	27.82	33.9
 Andinogale	extinct	23.03	27.82
 Angelocabrerus	extinct	39	41.6
 Argyrolestes	extinct	33.9	45
-Chlorocyon	extinct	37.71	47.8
+Chlorocyon	extinct	33.9	37.71
 Nemolestes	extinct	39	41.6
 Nemolestes	extinct	37.71	41.2
 Nemolestes	extinct	39	41.6
@@ -65,5 +65,5 @@ Plesiofelis	extinct	33.9	37.2
 Plesiofelis	extinct	33.9	37.2
 Plesiofelis	extinct	33.9	41.2
 Procladosictis	extinct	38	41.3
-Procladosictis	extinct	37.71	47.8
+Procladosictis	extinct	33.9	37.71
 Eobrasilia	extinct	48.6	55.8

@@ -1,0 +1,255 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S30. Age model of ODP Site 208-1264. PANGAEA, https://doi.org/10.1594/PANGAEA.917627, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:	LATITUDE: -28.532483 * LONGITUDE: 2.845483
+	DATE/TIME START: 2003-04-05T00:00:00 * DATE/TIME END: 2003-04-08T00:00:00
+	MINIMUM DEPTH, sediment/rock: 0.020 m * MAXIMUM DEPTH, sediment/rock: 280.360 m
+Event(s):	208-1264 * LATITUDE: -28.532483 * LONGITUDE: 2.845483 * DATE/TIME START: 2003-04-05T00:00:00 * DATE/TIME END: 2003-04-08T00:00:00 * ELEVATION: -2505.1 m * Penetration: 566.5 m * Recovery: 563.8 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Composite Core (COMPCORE) * COMMENT: 61 cores; 566.5 m cored; 0 m drilled; 99.5 % recovery
+Parameter(s):	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	DEPTH, sediment/rock [m] (Depth sed) * GEOCODE * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: mbsf
+	Depth, composite revised [rmcd] (Depth comp r) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Comment (Comment) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	1175 data points
+*/
+Sample label	Depth sed [m]	Depth comp r [rmcd]	Tuned time [Ma]	Reference	Comment
+208-1264B-1H-1-W2	0.020	0.02000	0.000000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-1-W16	0.160	0.16000	0.013000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-1-W57	0.570	0.57000	0.075000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-1-W66	0.660	0.66000	0.101000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-1-W87	0.870	0.87000	0.132000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-1-W127	1.270	1.27000	0.220000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-1-W134	1.340	1.34000	0.246000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-2-W4	1.540	1.54000	0.285000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-2-W23	1.730	1.73000	0.336000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-2-W76	2.260	2.26000	0.425000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-2-W105	2.550	2.55000	0.451000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-2-W129	2.790	2.79000	0.512000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-3-W4	3.040	3.04000	0.544000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-3-W17	3.170	3.17000	0.596000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-1H-3-W69	3.690	3.69000	0.712000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-1-W141	1.410	4.37000	0.868000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-2-W17	1.670	4.63000	0.916000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-2-W76	2.260	5.22000	1.032000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-2-W99	2.490	5.45000	1.069000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-2-W138	2.880	5.84000	1.124000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-3-W24	3.240	6.20000	1.192000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-3-W64	3.640	6.60000	1.251000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-3-W94	3.940	6.90000	1.302000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-4-W19	4.690	7.65000	1.396000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-4-W50	5.000	7.96000	1.458000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-4-W91	5.410	8.37000	1.530000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-4-W117	5.670	8.63000	1.573000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-4-W131	5.810	8.77000	1.603000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-5-W2	6.020	8.98000	1.645000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-5-W62	6.620	9.58000	1.703000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-5-W94	6.940	9.90000	1.748000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-6-W2	7.520	10.48000	1.795000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-6-W29	7.790	10.75000	1.818000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-6-W70	8.200	11.16000	1.865000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-1H-6-W99	8.490	11.45000	1.902000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-3-W52	10.820	11.93000	1.947000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-3-W82	11.120	12.23000	2.003000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-3-W107	11.370	12.48000	2.070000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-4-W67	12.470	13.58000	2.200000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-4-W112	12.920	14.03000	2.240000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-5-W76	14.060	15.17000	2.358000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-5-W141	14.710	15.82000	2.435000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-6-W22	15.020	16.13000	2.488000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-6-W54	15.340	16.45000	2.523000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-6-W88	15.680	16.79000	2.565000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-2H-6-W119	15.990	17.10000	2.603000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-2H-3-W78	13.080	17.41000	2.645000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-2H-4-W2	13.820	18.15000	2.715000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-2H-4-W131	15.110	19.44000	2.805000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264A-2H-5-W63	15.930	20.26000	2.938000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-3H-1-W97	17.770	20.58000	2.978000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-3H-2-W27	18.570	21.38000	3.030000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-3H-2-W105	19.350	22.16000	3.150000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-3H-2-W145	19.750	22.56000	3.175000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-3H-3-W55	20.350	23.16000	3.235000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-3H-3-W87	20.670	23.48000	3.280000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-3H-3-W112	20.920	23.73000	3.302000	Bell et al., 2014; updated in Drury et al., in prep/submitted	d18O to LR04/CR17
+208-1264B-3H-4-W62.5	21.925	24.73500	3.385000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-3H-4-W127.5	22.575	25.38500	3.430000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-3H-2-W105	21.350	27.24000	3.533000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-3H-3-W80	22.600	28.49000	3.629000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-3H-4-W40	23.700	29.59000	3.715000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-3H-5-W100	25.800	31.69000	3.829000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-3H-6-W27.5	26.575	32.46500	3.876000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-4H-3-W97.5	30.275	33.87500	4.039000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-4H-4-W132.5	32.125	35.72500	4.158000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-4H-2-W37.5	30.175	37.38500	4.231000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-4H-2-W122.5	31.025	38.23500	4.264000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-4H-3-W25	31.550	38.76000	4.289000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-4H-3-W67.5	31.975	39.18500	4.313000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-4H-4-W5	32.850	40.06000	4.353000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-5H-1-W107.5	36.875	41.04500	4.389000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-5H-2-W22.5	37.525	41.69500	4.437000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-5H-2-W90	38.200	42.37000	4.476000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-5H-2-W149.5	38.795	42.96500	4.508000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-5H-3-W87.5	39.675	43.84500	4.554000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-5H-4-W22.5	40.525	44.69500	4.598000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-5H-4-W105	41.350	45.52000	4.633000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-5H-5-W37.5	42.175	46.34500	4.670000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-5H-5-W100	42.800	46.97000	4.717000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-5H-6-W70	44.000	48.17000	4.758000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-5H-2-W87.1	40.171	48.85100	4.791000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-5H-2-W135	40.650	49.33000	4.836000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-5H-3-W52	41.320	50.00000	4.879000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-5H-3-W125	42.050	50.73000	4.913000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-5H-4-W85	43.150	51.83000	4.954000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-5H-5-W40	44.200	52.88000	4.999000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-5H-5-W117.5	44.975	53.65500	5.036000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-6H-2-W135	48.150	54.41000	5.069000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-6H-3-W82.5	49.125	55.38500	5.118000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-6H-3-W147.5	49.775	56.03500	5.149000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-6H-4-W87.5	50.675	56.93500	5.192000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-6H-5-W15	51.450	57.71000	5.237000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-6H-5-W107.5	52.375	58.63500	5.275000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-6H-2-W135	50.150	60.17000	5.358000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-6H-3-W37.5	50.675	60.69500	5.405000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-6H-3-W95	51.250	61.27000	5.425000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-6H-3-W135	51.650	61.67000	5.447000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-6H-4-W90	52.700	62.72000	5.497000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-6H-5-W55	53.350	63.37000	5.520000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-6H-6-W40	54.080	64.10000	5.561000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-7H-3-W92.5	58.725	64.82500	5.613000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-7H-4-W57.5	59.875	65.97500	5.652000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-7H-5-W2.5	60.825	66.92500	5.691000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-7H-5-W80	61.600	67.70000	5.730000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-7H-6-W7.5	62.375	68.47500	5.773000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-7H-6-W87.5	63.175	69.27500	5.805000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-7H-2-W37.5	58.675	69.72500	5.825000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-7H-2-W80	59.100	70.15000	5.848000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-7H-3-W40	60.200	71.25000	5.898000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-7H-3-W120	61.000	72.05000	5.939000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-7H-4-W45	61.750	72.80000	5.981000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-7H-4-W110	62.400	73.45000	6.013000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264A-7H-5-W31.5	63.115	74.16500	6.052000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-8H-2-W140	67.200	74.96000	6.099000	Drury et al., in prep/submitted	CaCO3 Maxima/d18O minima to ET-P Maxima
+208-1264B-8H-3-W82.5	68.125	75.88500	6.137000	Drury et al., in prep/submitted	CaCO3 Maxima to ET-P Maxima
+208-1264B-8H-4-W42.5	69.225	76.98500	6.183000	Drury et al., in prep/submitted	CaCO3 Maxima to ET-P Maxima
+208-1264B-8H-4-W90	69.700	77.46000	6.205000	Drury et al., in prep/submitted	CaCO3 Maxima to ET-P Maxima
+208-1264A-20H-2-W26	182.060	204.99000	17.042000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-20H-2-W68	182.480	205.41000	17.135000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-20H-2-W118	182.980	205.91000	17.243000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-20H-3-W20	183.500	206.43000	17.352000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-20H-3-W48	183.780	206.71000	17.408000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-20H-3-W96	184.260	207.19000	17.509000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-20H-4-W60	185.400	208.33000	17.727000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-20H-4-W92	185.720	208.65000	17.818000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-20H-5-W88	187.180	210.11000	18.120000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-20H-6-W8	187.880	210.81000	18.223000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-20H-6-W30	188.100	211.03000	18.285000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-21H-3-W138	192.180	212.24000	18.494000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-21H-4-W30	192.600	212.66000	18.587000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-21H-4-W72	193.020	213.08000	18.670000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-21H-4-W144	193.740	213.80000	18.775000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-21H-5-W70	194.500	214.56000	18.893000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-21H-2-W42	191.720	215.65000	19.045000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-21H-3-W24	193.040	216.97000	19.220000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-21H-3-W102	193.820	217.75000	19.330000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-21H-4-W22	194.520	218.45000	19.411000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-22H-2-W138	200.180	220.93000	19.708000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-22H-3-W80	201.100	221.85000	19.809000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-22H-3-W148	201.780	222.53000	19.881000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-22H-4-W102	202.820	223.57000	19.982000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-22H-5-W48	203.780	224.53000	20.093000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-22H-5-W144	204.740	225.49000	20.205000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-22H-2-W148	202.280	227.18000	20.366000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-22H-3-W92	203.220	228.12000	20.477000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-22H-4-W16	203.960	228.86000	20.584000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-22H-4-W58	204.380	229.28000	20.668000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-22H-4-W94	204.740	229.64000	20.751000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-22H-5-W26	205.560	230.46000	20.856000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-23H-2-W126	209.560	231.21000	20.964000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-23H-3-W68	210.480	232.13000	21.057000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-23H-3-W98	210.780	232.43000	21.107000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-23H-4-W40	211.700	233.35000	21.214000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-23H-4-W114	212.440	234.09000	21.325000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-23H-5-W48	213.280	234.93000	21.424000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-23H-5-W108	213.880	235.53000	21.493000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-23H-3-W22	212.020	237.73000	21.704000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-23H-3-W97	212.770	238.48000	21.811000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-23H-4-W10	213.400	239.11000	21.892000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-23H-4-W78	214.080	239.79000	21.968000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-23H-5-W36	215.160	240.87000	22.075000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-23H-6-W2	216.320	242.03000	22.182000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-24H-3-W140	220.700	243.05000	22.266000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-24H-4-W100	221.800	244.15000	22.348000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-24H-5-W54	222.840	245.19000	22.457000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-24H-6-W12	223.920	246.27000	22.568000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-24H-2-W17	219.970	247.28000	22.670000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-24H-2-W108	220.880	248.19000	22.748000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-24H-3-W50	221.800	249.11000	22.846000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-24H-4-W18	222.980	250.29000	22.954000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-25H-1-W102	226.820	251.18000	23.052000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-25H-2-W32	227.620	251.98000	23.118000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-25H-3-W76	229.560	253.92000	23.328000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-25H-4-W98	231.280	255.64000	23.434000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-25H-5-W54	232.340	256.70000	23.515000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-25H-1-W106	228.860	257.56000	23.601000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-25H-2-W48	229.780	258.48000	23.709000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-25H-2-W134	230.640	259.34000	23.825000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-25H-3-W80	231.600	260.30000	23.905000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+NoID-basedat1265		262.14000	24.047000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-26H-1-W80	236.100	263.30000	24.161000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-26H-2-W94	237.740	264.94000	24.263000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-26H-2-W148	238.280	265.48000	24.337000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-26H-3-W76	239.060	266.26000	24.435000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-26H-4-W62	240.420	267.62000	24.544000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-26H-1-W54	237.840	268.58000	24.654000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-26H-2-W102	239.820	270.56000	24.823000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-26H-3-W22	240.520	271.26000	24.935000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-26H-3-W102	241.320	272.06000	25.042000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-26H-4-W60	242.400	273.14000	25.214000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-26H-4-W146	243.260	274.00000	25.321000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-26H-5-W76	244.060	274.80000	25.430000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-27H-2-W80	247.100	275.52000	25.523000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-27H-3-W4	247.840	276.26000	25.599000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-27H-3-W90	248.700	277.12000	25.702000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-27H-4-W54	249.840	278.26000	25.815000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-27H-4-W116	250.460	278.88000	25.893000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-27H-5-W12	250.920	279.34000	25.954000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-27H-5-W112	251.920	280.34000	26.046000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-27H-6-W62	252.920	281.34000	26.156000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-27H-7-W6	253.860	282.28000	26.260000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-27H-7-W61	254.410	282.83000	26.343000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+NoID-basedat1265		283.77000	26.436000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-28H-1-W18	254.480	284.60000	26.541000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-28H-1-W102	255.320	285.44000	26.647000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-28H-2-W34	256.140	286.26000	26.805000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-28H-2-W112	256.920	287.04000	26.912000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-28H-3-W28	257.580	287.70000	27.020000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-28H-3-W106	258.360	288.48000	27.114000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-28H-4-W78	259.580	289.70000	27.298000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-28H-5-W33	260.630	290.75000	27.407000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-28H-2-W80	258.600	291.56000	27.511000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-28H-2-W126	259.060	292.02000	27.590000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-28H-3-W68	259.980	292.94000	27.685000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-28H-4-W4	260.840	293.80000	27.791000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-29H-1-W62	264.420	295.37000	27.962000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-29H-1-W128	265.080	296.03000	28.058000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-29H-2-W80	266.100	297.05000	28.167000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-29H-2-W76	263.960	297.91000	28.272000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-29H-3-W56	265.260	299.21000	28.449000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-29H-5-W24	267.940	301.89000	28.727000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-29H-5-W80	268.500	302.45000	28.792000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-29H-6-W32	269.520	303.47000	28.891001	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+NoID-basedat1265		305.60999	29.097000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-30H-1-W106	274.360	306.91000	29.172001	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-30H-2-W60	275.400	307.95000	29.274000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264B-30H-3-W62	276.920	309.47000	29.385000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-30H-3-W108	275.280	310.41000	29.495001	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-30H-4-W100	276.700	311.83000	29.667999	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-30H-6-W6	278.760	313.89000	29.889999	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-30H-6-W54	279.240	314.37000	29.957001	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+208-1264A-30H-7-W16	280.360	315.49000	30.052000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+NoID-basedat1265		318.57999	30.362000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima
+NoID-basedat1265		324.79999	30.736000	Liebrand et al., 2016; updated in Drury et al., in prep/submitted	CaCO3 Maxima to E Minima

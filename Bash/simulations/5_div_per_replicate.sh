@@ -2,7 +2,7 @@
 
 basal_dir=../../results/SALMA_smoothed/genus_level/simulations
 
-for i in {0..12}
+for i in {13..55}
 do
 	mkdir -p ${basal_dir}/replicate_$i/LTT/tmp
 	mkdir -p ${basal_dir}/replicate_$i/LTT/per_replicate

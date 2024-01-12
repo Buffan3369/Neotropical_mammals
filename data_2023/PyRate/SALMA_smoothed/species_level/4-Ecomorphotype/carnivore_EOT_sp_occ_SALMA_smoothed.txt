@@ -41,7 +41,7 @@ Eomakhaira_molossus	extinct	27.82	33.9
 Andinogale_sallensis	extinct	23.03	27.82
 Angelocabrerus_daptes	extinct	39	41.6
 Argyrolestes_peralestinus	extinct	33.9	45
-Chlorocyon_phantasma	extinct	37.71	47.8
+Chlorocyon_phantasma	extinct	33.9	37.71
 Nemolestes	extinct	39	41.6
 Nemolestes	extinct	37.71	41.2
 Nemolestes_spalacotherinus	extinct	39	41.6
@@ -65,5 +65,5 @@ Plesiofelis_schlosseri	extinct	33.9	37.2
 Plesiofelis_schlosseri	extinct	33.9	37.2
 Plesiofelis_schlosseri	extinct	33.9	41.2
 Procladosictis	extinct	38	41.3
-Procladosictis_anomala	extinct	37.71	47.8
+Procladosictis_anomala	extinct	33.9	37.71
 Eobrasilia_coutoi	extinct	48.6	55.8

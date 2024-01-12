@@ -1203,7 +1203,6 @@ Puelia	extinct	33.9	41.2
 Puelia	extinct	33.9	41.2
 Puelia	extinct	33.9	41.2
 Teushentherium	extinct	28.4	33.9
-Perulestes	extinct	33.9	37.2
 Pilchenia	extinct	33.566	33.596
 Pilchenia	extinct	30.617	30.77
 Pilchenia	extinct	24.2	29
@@ -1242,8 +1241,6 @@ Klohnia	extinct	28.4	33.9
 Klohnia	extinct	28.4	33.9
 Klohnia	extinct	31.3	33.6
 Klohnia	extinct	31.3	33.6
-Proargyrolagus	extinct	33.9	37.2
-Proargyrolagus	extinct	33.9	37.2
 Proargyrolagus	extinct	24.2	29
 Proargyrolagus	extinct	24.2	29
 Proargyrolagus	extinct	24.2	29
@@ -1456,10 +1453,6 @@ Migraveramus	extinct	24.2	29
 ?Sallamys	extinct	24.5	26
 Draconomys	extinct	30.617	30.77
 Eobranisamys	extinct	28.1	33.9
-Eoincamys	extinct	33.9	37.2
-Eoincamys	extinct	33.9	37.2
-Eoincamys	extinct	33.9	37.2
-Eoincamys	extinct	33.9	37.2
 Ethelomys	extinct	24.2	29
 Lapazomys	extinct	24.5	26
 Lapazomys	extinct	24.5	26
@@ -1475,14 +1468,9 @@ Sallamys	extinct	24.5	26
 Sallamys	extinct	24.5	26
 Sallamys	extinct	24.5	26
 Tacheria	extinct	23.03	27.82
-Tarapotomys	extinct	33.9	37.2
-Tarapotomys	extinct	33.9	37.2
 Vallehermosomys	extinct	30.617	30.77
 Vallehermosomys	extinct	30.617	30.77
 Xylechimys	extinct	24.2	29
-aff. Tarapotomys	extinct	33.9	37.2
-aff. Tarapotomys	extinct	33.9	37.2
-cf. Tarapotomys	extinct	33.9	37.2
 Australohyaena	extinct	24.2	29.4
 Australohyaena	extinct	24.2	29.4
 Australohyaena	extinct	24.2	29.4

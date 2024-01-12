@@ -1,0 +1,129 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S22. Combined magnetochron boundaries from ocean drilling cores from 20 to 66.4 Ma. PANGAEA, https://doi.org/10.1594/PANGAEA.917567, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:	MEDIAN LATITUDE: -9.001499 * MEDIAN LONGITUDE: -53.902695 * SOUTH-BOUND LATITUDE: -28.533080 * WEST-BOUND LONGITUDE: -138.419540 * NORTH-BOUND LATITUDE: 10.516600 * EAST-BOUND LONGITUDE: 2.779630
+	DATE/TIME START: 2001-11-14T00:00:00 * DATE/TIME END: 2003-10-28T10:10:00
+	MINIMUM ELEVATION: -4853.8 m * MAXIMUM ELEVATION: -2548.8 m
+Event(s):	199-1218A * LATITUDE: 8.889450 * LONGITUDE: -135.366660 * DATE/TIME: 2001-11-14T00:00:00 * ELEVATION: -4826.3 m * Penetration: 276.8 m * Recovery: 266.42 m * LOCATION: North Pacific Ocean * CAMPAIGN: Leg199 (URI: https://doi.org/10.2973/odp.proc.ir.199.2002) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 30 cores; 276.8 m cored; 0 m drilled; 96.3 % recovery
+	207-1258B * LATITUDE: 9.433330 * LONGITUDE: -54.733030 * DATE/TIME START: 2003-01-25T10:10:00 * DATE/TIME END: 2003-10-28T10:10:00 * ELEVATION: -3192.2 m * Penetration: 460.9 m * Recovery: 346.13 m * LOCATION: South Atlantic Ocean * CAMPAIGN: Leg207 (URI: https://doi.org/10.2973/odp.proc.ir.207.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 57 cores; 453.9 m cored; 7 m drilled; 76.3 % recovery
+	207-1260B * LATITUDE: 9.265510 * LONGITUDE: -54.544200 * DATE/TIME START: 2003-02-09T07:35:00 * DATE/TIME END: 2003-02-12T23:45:00 * ELEVATION: -2548.8 m * Penetration: 509 m * Recovery: 326.49 m * LOCATION: South Atlantic Ocean * CAMPAIGN: Leg207 (URI: https://doi.org/10.2973/odp.proc.ir.207.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 46 cores; 370.3 m cored; 138.7 m drilled; 88.2 % recovery
+	208-1262A * LATITUDE: -27.186000 * LONGITUDE: 1.577000 * DATE/TIME START: 2003-03-24T13:00:00 * DATE/TIME END: 2003-03-26T12:40:00 * ELEVATION: -4759.0 m * Penetration: 161.5 m * Recovery: 163.53 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 17 cores; 161.5 m cored; 0 m drilled; 101.3 % recovery
+	208-1262B * LATITUDE: -27.185830 * LONGITUDE: 1.577000 * DATE/TIME START: 2003-03-26T12:40:00 * DATE/TIME END: 2003-03-27T21:25:00 * ELEVATION: -4753.6 m * Penetration: 209.9 m * Recovery: 212.53 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 23 cores; 209.9 m cored; 0 m drilled; 101.3 % recovery
+	208-1262C * LATITUDE: -27.185650 * LONGITUDE: 1.576980 * DATE/TIME START: 2003-03-27T21:25:00 * DATE/TIME END: 2003-03-29T05:15:00 * ELEVATION: -4753.6 m * Penetration: 212.5 m * Recovery: 125.93 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 14 cores; 122.5 m cored; 90 m drilled; 102.8 % recovery
+	208-1263A * LATITUDE: -28.532830 * LONGITUDE: 2.779480 * DATE/TIME START: 2003-03-29T15:15:00 * DATE/TIME END: 2003-04-02T01:25:00 * ELEVATION: -2717.1 m * Penetration: 345.6 m * Recovery: 295.78 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 40 cores; 345.6 m cored; 0 m drilled; 85.6 % recovery
+	208-1263B * LATITUDE: -28.532660 * LONGITUDE: 2.779410 * DATE/TIME START: 2003-04-02T01:25:00 * DATE/TIME END: 2003-04-03T13:30:00 * ELEVATION: -2717.1 m * Penetration: 338.5 m * Recovery: 275.28 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 33 cores; 291.4 m cored; 47.1 m drilled; 94.5 % recovery
+	208-1263C * LATITUDE: -28.533080 * LONGITUDE: 2.779630 * DATE/TIME START: 2003-04-03T13:30:00 * DATE/TIME END: 2003-04-04T18:30:00 * ELEVATION: -2717.1 m * Penetration: 290.8 m * Recovery: 122.06 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 16 cores; 126.3 m cored; 164.5 m drilled; 96.6 % recovery
+	320-U1333A * LATITUDE: 10.516580 * LONGITUDE: -138.419540 * ELEVATION: -4853.7 m * Recovery: 176.25 m * CAMPAIGN: Exp320 (Pacific Equatorial Age Transect I) (URI: https://doi.org/10.2204/iodp.proc.320321.2010) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 22 cores; 184.1 m cored; 95.7 % recovered; 0 m drilled; 184.1 m penetrated
+	320-U1333B * LATITUDE: 10.516600 * LONGITUDE: -138.419320 * ELEVATION: -4850.5 m * Recovery: 180.3 m * CAMPAIGN: Exp320 (Pacific Equatorial Age Transect I) (URI: https://doi.org/10.2204/iodp.proc.320321.2010) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 20 cores; 180.3 m cored; 100 % recovered; 180.3 drilled; 180.8 m penetrated
+	320-U1333C * LATITUDE: 10.516596 * LONGITUDE: -138.419090 * ELEVATION: -4853.8 m * CAMPAIGN: Exp320 (Pacific Equatorial Age Transect I) (URI: https://doi.org/10.2204/iodp.proc.320321.2010) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 24 cores; 177 m cored; 100 % recovered; 177 m penetrated
+Parameter(s):	Event label (Event) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Chronozone (Chronozone) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Top
+	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Bot
+	Depth, composite revised top [rmcd] (Depth comp r top) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Depth, composite revised bottom [rmcd] (Depth comp r bot) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Depth, composite revised [rmcd] (Depth comp r) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Average
+	Depth, composite revised error [rmcd] (Depth comp r e) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: tuned age Bot
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: tuned age Top
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: tuned age average
+	Age, error [±] (Age e) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	793 data points
+*/
+Event	Chronozone	Sample label (Top)	Sample label (Bot)	Depth comp r top [rmcd]	Depth comp r bot [rmcd]	Depth comp r [rmcd] (Average)	Depth comp r e [rmcd]	Reference	Tuned time [Ma] (tuned age Bot)	Tuned time [Ma] (tuned age Top)	Tuned time [Ma] (tuned age average)	Age e [±]
+320-U1333B	C6n (o)	U1333B-1H-3, 50				3.50		Guidry et al. 2013			19.727	
+320-U1333B	C6An.1n (y)	U1333B-1H-4, 64				5.14		Guidry et al. 2013			20.100	
+320-U1333B	C6An.1n (o)	U1333B-1H-4, 128				5.78		Guidry et al. 2013			20.236	
+320-U1333A	C6An.2n (y)	U1333A-1H-2, 50				6.66		Guidry et al. 2013			20.407	
+320-U1333A	C6An.2n (o)	U1333A-1H-3, 23				7.89		Guidry et al. 2013			20.673	
+320-U1333A	C6AAn (y)	U1333A-1H-4, 81				9.97		Guidry et al. 2013			21.058	
+320-U1333A	C6AAn (o)	U1333A-1H-4, 149				10.65		Guidry et al. 2013			21.202	
+320-U1333B	C6AAr.1n (y)	U1333B-2H-4, 56				12.77		Guidry et al. 2013			21.488	
+320-U1333B	C6AAr.1n (o)	U1333B-2H-4, 136				13.57		Guidry et al. 2013			21.544	
+320-U1333C	C6AAr.2n (y)	U1333C-3H-2, 44				15.70		Guidry et al. 2013			21.688	
+320-U1333C	C6AAr.2n (o)	U1333C-3H-2, 81				16.07		Guidry et al. 2013			21.733	
+320-U1333C	C6Bn.1n (y)	U1333C-3H-2, 122				16.48		Guidry et al. 2013			21.786	
+320-U1333C	C6Bn.1n (o)	U1333C-3H-3, 58				17.34		Guidry et al. 2013			21.991	
+320-U1333C	C6Bn.2n (y)	U1333C-3H-3, 82				17.58		Guidry et al. 2013			22.050	
+320-U1333C	C6Bn.2n (o)	U1333C-3H-4, 113				19.39		Guidry et al. 2013			22.313	
+320-U1333C	C6Cn.1n (y)	U1333C-3H-6, 22				21.48		Guidry et al. 2013			22.626	
+320-U1333B	C6Cn.1n (o)	U1333B-3H-2, 138				22.15		Guidry et al. 2013			22.794	
+320-U1333B	C6Cn.2n (y)	U1333B-3H-3, 95				23.22		Guidry et al. 2013			22.957	
+320-U1333B	C6Cn.2n (o)	U1333B-3H-4, 19				23.96		Guidry et al. 2013			23.039	
+320-U1333B	C6Cn.3n (y)	U1333B-3H-5, 37				25.64		Guidry et al. 2013			23.215	
+320-U1333B	C6Cn.3n (o)	U1333B-3H-5, 94				26.21		Guidry et al. 2013			23.323	
+320-U1333C	C7n.1n (y)	U1333C-4H-5, 30				30.18		Guidry et al. 2013			24.032	
+320-U1333C	C7n.1n (o)	U1333C-4H-5, 47				30.35		Guidry et al. 2013			24.057	
+320-U1333B	C7n.2n (y)	U1333B-4H-1, 106				30.94		Guidry et al. 2013			24.115	
+320-U1333B	C7n.2n (o)	U1333B-4H-3, 12				33.00		Guidry et al. 2013			24.462	
+320-U1333B	C7An (y)	U1333B-4H-4, 49				34.87		Guidry et al. 2013			24.768	
+320-U1333B	C7An (o)	U1333B-4H-5, 22				36.10		Guidry et al. 2013			24.895	
+320-U1333B	C8n.1n (y)	U1333B-4H-5, 122				37.10		Guidry et al. 2013			25.049	
+320-U1333C	C8n.1n (o)	U1333C-5H-2, 35				38.50		Guidry et al. 2013			25.220	
+320-U1333C	C8n.2n (y)	U1333C-5H-2, 64				38.79		Guidry et al. 2013			25.259	
+320-U1333C	C8n.2n (o)	U1333C-5H-5, 52				43.17		Guidry et al. 2013			25.979	
+320-U1333C	C9n (y)	U1333C-6H-1, 101				49.21		Guidry et al. 2013			26.599	
+320-U1333B	C9n (o)	U1333B-6H-4, 15				58.19		Guidry et al. 2013			27.407	
+320-U1333A	C10n.1n (y)	U1333A-6H-3, 140				63.65		Guidry et al. 2013			27.847	
+320-U1333B	C10n.1n (o)	U1333B-7H-1, 134				66.57		Guidry et al. 2013			28.107	
+320-U1333B	C10n.2n (y)	U1333B-7H-2, 46				67.19		Guidry et al. 2013			28.157	
+320-U1333B	C10n.2n (o)	U1333B-7H-3, 38				68.61		Guidry et al. 2013			28.263	
+320-U1333B	C11n.1n (y)	U1333B-8H-4, 138				81.35		Guidry et al. 2013			29.149	
+320-U1333A	C11n.1n (o)	U1333A-8H-3, 146				86.14		Guidry et al. 2013			29.581	
+320-U1333C	C11n.2n (y)	U1333C-9H-3, 54				86.98		Guidry et al. 2013			29.642	
+320-U1333B	C11n.2n (o)	U1333B-9H-4, 132				92.05		Guidry et al. 2013			29.990	
+199-1218A	C12n (y)	1218A-19H-7, 50	1218A-19H-7, 50	199.14	202.09	200.62	1.47	Lanci et al. 2004	30.659	30.852	30.755	97
+320-U1333C	C12n (o)	U1333C-10H-4, 86	U1333C-10H-4, 87	104.46	104.52	104.49	0.03	Westerhold et al. 2014	30.962	30.993	30.977	16
+320-U1333B	C13n (y)	U1333B-10H-4, 105	U1333B-10H-4, 117	129.92	129.93	129.93	0.00	Westerhold et al. 2014	33.211	33.216	33.214	2
+320-U1333B	C13n (o)	U1333B-12H-6, 122	U1333B-12H-6, 123	134.80	134.81	134.81	0.00	Westerhold et al. 2014	33.718	33.734	33.726	8
+320-U1333B	C15n (y)	U1333B-13H-3, 5	U1333B-13H-3, 7	138.60	138.62	138.61	0.01	Westerhold et al. 2014	35.069	35.134	35.102	32
+320-U1333B	C15n (o)	U1333B-13H-5, 85	U1333B-13H-5, 88	139.06	139.09	139.08	0.01	Westerhold et al. 2014	35.319	35.353	35.336	17
+320-U1333B	C16n.1n (y)	U1333B-13H-5, 131	U1333B-13H-5, 137	140.05	140.08	140.07	0.01	Westerhold et al. 2014	35.566	35.595	35.580	15
+320-U1333B	C16n.1n (o)	U1333B-13H-6, 80	U1333B-13H-6, 85	140.66	140.68	140.67	0.01	Westerhold et al. 2014	35.697	35.740	35.718	22
+320-U1333B	C16n.2n (y)	U1333B-13H-6, 141	U1333B-13H-6, 144	140.94	140.96	140.95	0.01	Westerhold et al. 2014	35.753	35.795	35.774	21
+320-U1333C	C16n.2n (o)	U1333C-15H-2, 14	U1333C-15H-2, 18	145.46	145.49	145.48	0.01	Westerhold et al. 2014	36.345	36.357	36.351	6
+320-U1333C	C17n.1n (y)	U1333C-15H-5, 16	U1333C-15H-5, 22	147.16	147.18	147.17	0.01	Westerhold et al. 2014	36.568	36.578	36.573	5
+320-U1333B	C17n.1n (o)	U1333B-14H-3, 101	U1333B-14H-3, 105	151.64	151.66	151.65	0.01	Westerhold et al. 2014	37.378	37.392	37.385	7
+320-U1333B	C17n.2n (y)	U1333B-14H-6, 99	U1333B-14H-6, 103	152.53	152.55	152.54	0.01	Westerhold et al. 2014	37.527	37.533	37.530	3
+320-U1333C	C17n.2n (o)	U1333C-16H-2, 7	U1333C-16H-2, 10	153.81	153.82	153.82	0.00	Westerhold et al. 2014	37.774	37.788	37.781	7
+320-U1333C	C17n.3n (y)	U1333C-16H-2, 135	U1333C-16H-2, 137	154.20	154.22	154.21	0.01	Westerhold et al. 2014	37.851	37.864	37.858	7
+320-U1333C	C17n.3n (o)	U1333C-16H-3, 24	U1333C-16H-3, 27	155.33	155.35	155.34	0.01	Westerhold et al. 2014	38.070	38.092	38.081	11
+208-1263C	C18n.1n (y)	1263C-2H-5, 103	1263B-7H-2, 13	123.52	125.06	124.29	0.77	This study	38.288	38.559	38.423	135
+208-1263C	C18n.1n (o)	1263C-3H-4, 53	1263B-8H-2, 53	135.53	136.10	135.81	0.28	This study	39.799	39.852	39.825	26
+208-1263B	C18n.2n (y)	1263B-8H-2, 133	1263B-8H-3, 43	136.91	137.50	137.20	0.29	This study	39.917	39.965	39.941	24
+208-1263A	C18n.2n (o)	1263A-14H-3, 97	1263A-14H-3, 107	141.30	141.40	141.35	0.05	This study	40.273	40.280	40.276	4
+207-1260B	C19n (y)	1260B-4R-1, 15	1260B-4R-1, 69	63.78	64.32	64.05	0.27	Westerhold & Röhl 2013	41.051	41.073	41.062	11
+207-1260B	C19n (o)	1260B-4R-4, 90	1260B-4R-4, 110	69.03	69.23	69.13	0.10	Westerhold & Röhl 2013	41.258	41.265	41.262	4
+208-1263B	C20n (y)	1263B-10H4, 30	1263B-10H4, 50	160.34	160.54	160.44	0.10	Westerhold et al. 2015	42.184	42.209	42.196	13
+208-1263B	C20n (o)	1263B-11H4, 141	1263B-11H5, 11	171.94	172.14	172.04	0.10	Westerhold et al. 2015	43.497	43.518	43.508	11
+208-1263A	C21n (y)	1263A-19H5, 108	1263B-14H2, 47	199.94	201.14	200.54	0.60	Westerhold et al. 2015	46.191	46.278	46.235	44
+207-1258B	C21n (o)	1258B-5H3, 18	1258B-5H3, 128	38.08	39.19	38.63	0.55	Westerhold et al. 2017	47.778	47.935	47.857	79
+207-1258B	C22n (y)	1258B-6H5, 12	1258B-5H6, 73	46.61	46.81	46.71	0.10	Westerhold et al. 2017	49.149	49.197	49.173	24
+207-1258B	C22n (o)	1258B-7H1, 113	1258B-7H2, 74	51.64	52.45	52.05	0.41	Westerhold et al. 2017	49.673	49.753	49.713	40
+208-1262B	C23n.1n (y)	1262B-11H2, 73	1262A-9H5, 99	98.14	98.20	98.17	0.03	Westerhold et al. 2017	50.766	50.786	50.776	10
+208-1262A	C23n.1n (o)	1262A-9H5, 129	1262B-11H2, 124	98.49	98.72	98.61	0.11	Westerhold et al. 2017	50.888	50.996	50.942	54
+208-1262B	C23n.2n (y)	1262B-11H2, 127	1262A-9H6, 28	98.75	98.86	98.81	0.06	Westerhold et al. 2017	51.006	51.043	51.025	19
+208-1262B	C23n.2n (o)	1262B-11H4, 27	1262B-11H4, 102	100.75	101.50	101.13	0.38	Westerhold et al. 2017	51.614	51.861	51.737	124
+208-1262A	C24n.1n (y)	1262A-10H3, 52	1262A-10H3, 149	105.13	106.10	105.62	0.48	Westerhold et al. 2017	52.575	52.681	52.628	53
+207-1258B	C24n.1n (o)	1258B-12H4, 71	1258B-12H5, 37	100.34	101.50	100.92	0.58	Westerhold et al. 2017	52.904	52.973	52.939	35
+207-1258B	C24n.2n (y)	1258B-12H6, 76	1258B-12H7, 11	103.39	104.22	103.80	0.41	Westerhold et al. 2017	53.068	53.108	53.088	20
+207-1258B	C24n.2n (o)	1258B-12H7, 11	1258B-12H8, 4	104.22	104.84	104.53	0.31	Westerhold et al. 2017	53.108	53.138	53.123	15
+208-1262B	C24n.3n (y)	1262B-12H3, 127	1262C-2H2, 52	110.81	111.32	111.07	0.26	Westerhold et al. 2017	53.380	53.425	53.403	22
+208-1262B	C24n.3n (o)	1262B-12H7, 22	1262C-2H5, 72	115.10	116.00	115.55	0.45	Westerhold et al. 2017	53.858	53.939	53.899	41
+208-1262B	C25n (y)	1262B-16H-5,42	1262C-7H-1,122	153.18	153.31	153.25	0.06	Bowles 2006; Westerhold et al. 2008	57.067	57.078	57.073	5
+208-1262A	C25n (o)	1262A-15H-4,142	1262C-7H-6,42	159.08	160.01	159.55	0.46	Bowles 2006; Westerhold et al. 2008	57.557	57.640	57.598	41
+208-1262B	C26n (y)	1267B-27X-4,130	1267B-27X-4,135	275.45	275.50	275.48	0.02	Bowles 2006; Westerhold et al. 2008	58.859	58.870	58.865	5
+208-1262B	C26n (o)	1262B-18H-4,72	1262B-18H-3,101	173.21	173.41	173.31	0.10	Bowles 2006; Westerhold et al. 2008	59.176	59.217	59.197	21
+208-1262B	C27n (y)	1262B-20H-5,2	1262B-20H-5,42	195.25	195.65	195.45	0.20	Bowles 2006; Westerhold et al. 2008	62.100	62.152	62.126	26
+208-1262B	C27n (o)	1262B-20H-6,102	1262B-20H-6,132	197.75	198.05	197.90	0.15	Bowles 2006; Westerhold et al. 2008	62.429	62.468	62.448	20
+208-1262B	C28n (y)	1262B-21H-3,122	1262B-21H-3,142	204.56	204.76	204.66	0.10	Bowles 2006; Westerhold et al. 2008	63.535	63.580	63.558	23
+208-1262C	C28n (o)	1262C-12H-5,82	1262C-12H-5,112	209.60	209.90	209.75	0.15	Bowles 2006; Westerhold et al. 2008	64.576	64.640	64.608	32
+208-1262C	C29n (y)	1262C-12H-6,62	1262C-12H-6,82	210.90	211.10	211.00	0.10	Bowles 2006; Westerhold et al. 2008	64.852	64.891	64.871	20
+208-1262B	C29n (o)	1262B-22H-3,124	1262B-22H-3,136	214.89	215.01	214.95	0.06	Bowles 2006; Westerhold et al. 2008	65.637	65.669	65.653	16
+208-1262B	C30n (y)	1262B-23H-1,42	1262B-23H-1,57	224.00	224.15	224.08	0.08	Bowles 2006; Westerhold et al. 2008	66.389	66.397	66.393	4
+208-1262B												

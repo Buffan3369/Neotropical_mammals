@@ -1,0 +1,102 @@
+# Cenozoic Global Mean Sea Level Estimates
+#----------------------------------------------------------------------- 
+#                World Data Service for Paleoclimatology, Boulder 
+#                                  and 
+#                     NOAA Paleoclimatology Program 
+#             National Centers for Environmental Information (NCEI)
+#----------------------------------------------------------------------- 
+# Template Version 3.0
+# Encoding UTF-8
+# NOTE Please cite Publication, and Online_Resource and date accessed when using these data. 
+# If there is no publication information, please cite Investigators, Title, and Online_Resource and date accessed. 
+#
+# Online_Resource httpswww.ncdc.noaa.govpaleostudy29130 
+#       Description NOAA Landing Page
+# Online_Resource httpswww1.ncdc.noaa.govpubdatapaleocontributions_by_authormiller2020miller2020rsl.txt
+#       Description NOAA location of the template
+#
+# Original_Source_URL  
+#       Description
+# 
+# DescriptionDocumentation lines begin with #
+# Data lines have no #
+#
+# Archive Paleoceanography
+#
+# Dataset DOI 
+#
+# Parameter_Keywords oxygen isotopes, reconstruction
+#--------------------
+# Contribution_Date
+#	Date 2020-05-15
+#--------------------
+# File_Last_Modified_Date
+#	Date 2020-05-15
+#--------------------
+# Title
+#	Study_Name Cenozoic Global Mean Sea Level Estimates
+#--------------------
+# Investigators
+#	Investigators Miller, K.G.; Browning, J.V.; Schmelz, W.J.; Kopp, R.E.; Mountain, G.S.; Wright, J.D.
+#--------------------
+# Description_Notes_and_Keywords
+#	Description Pacific benthic foramiferal oxygen isotope (d18O) data and global mean sea level estimates (raw and smoothed) for the Cenozoic (past ~66 Myr).
+#--------------------
+# Publication 
+#	Authors Kenneth G. Miller, James V. Browning, W. John Schmelz, Robert E. Kopp, Gregory S. Mountain, James D. Wright
+#	Published_Date_or_Year 2020-05-15     
+#	Published_Title Cenozoic sea-level and cryospheric evolution from deep-sea geochemical and continental margin records
+#	Journal_Name Science Advances
+#	Volume 6
+#	Edition eaaz1346 
+#	Issue 20
+#	Pages
+#	Report_Number 
+#	DOI 10.1126sciadv.aaz1346 
+#	Online_Resource httpsadvances.sciencemag.orgcontent620eaaz1346
+#	Full_Citation 
+#	Abstract Using Pacific benthic foraminiferal d18O and MgCa records, we derive a Cenozoic (66 Ma) global mean sea level (GMSL) estimate that records evolution from an ice-free Early Eocene to Quaternary bipolar ice sheets. These GMSL estimates are statistically similar to backstripped estimates from continental margins accounting for compaction, loading, and thermal subsidence. Peak warmth, elevated GMSL, high CO2, and ice-free Hothouse conditions (56 to 48 Ma) were followed by Cool Greenhouse (48 to 34 Ma) ice sheets (10 to 30 m changes). Continental-scale ice sheets (Icehouse) began ~34 Ma (50 m changes), permanent East Antarctic ice sheets at 12.8 Ma, and bipolar glaciation at 2.5 Ma. The largest GMSL fall (27 to 20 ka; ~130 m) was followed by a 40 mmyr rise (19 to 10 ka), a slowing (10 to 2 ka), and a stillstand until ~1900 CE, when rates began to rise. High long-term CO2 caused warm climates and high sea levels, with sea-level variability dominated by periodic Milankovitch cycles.
+#------------------
+# Funding_Agency 
+#	Funding_Agency_Name 
+#	Grant 
+#------------------
+# Site_Information 
+#	Site_Name Global Ocean
+#	Location Geographic RegionGlobal
+#	Country  
+#	Northernmost_Latitude 90
+# 	Southernmost_Latitude -80
+# 	Easternmost_Longitude 180
+# 	Westernmost_Longitude -180
+# 	Elevation 0
+#------------------
+# Data_Collection   
+#	Collection_Name Miller2020RSL
+#	Earliest_Year 66610000
+#	Most_Recent_Year 0
+#	Time_Unit Cal. Year BP
+#	Core_Length 
+#	Notes 
+#------------------
+# Chronology_Information
+#	Chronology 
+# 	
+#----------------	
+# Variables 
+#
+# Data variables follow are preceded by ## in columns one and two.
+# Data line variables format  one per line, shortname-tab-variable components (what, material, error, units, seasonality, data type,detail, method, C or N for Character or Numeric data, free text) 
+#
+## core	sample identification,,,,,paleoceanography;climate reconstructions,,,C,core	
+## age_calkaBP	age,,,calendar kiloyear before present,,paleoceanography;climate reconstructions,,,N,
+## d18Obenth	delta 18O, benthic foraminifer,,per mil VPDB,,paleoceanography,,isotope ratio mass spectrometry,N,delta-18O of deep sea benthic foraminiferal from Pacific sites either generated on or corrected to Cibicidoides sp. 
+## d18Ow	delta 18O,sea water,,per mil VPDB,,paleoceanography;climate reconstructions,,,N,computed delta 18O seawater using the paleotemperature equation based on delta-18Obenth and paleotemperatures from Cramer et al. (2011)
+## sealevel	sea level,delta 18O,,meter,,paleoceanography;climate reconstructions,,,N,sea level computed using delta 18O seawater and calibration of 0.13permil10 m; meters above (+) and below (-) relative to present day
+#
+#----------------
+# Data
+# Data lines follow (have no #)
+# Data line format - tab-delimited text, variable short name as header
+# Missing Values  
+#

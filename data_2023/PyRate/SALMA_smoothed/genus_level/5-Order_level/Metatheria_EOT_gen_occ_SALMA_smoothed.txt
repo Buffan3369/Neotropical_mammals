@@ -96,9 +96,9 @@ Kramadolops	extinct	27.82	33.9
 Kramadolops	extinct	48	50
 Kramadolops	extinct	28.1	33.9
 Kramadolops	extinct	28.4	33.9
-Kramadolops	extinct	37.71	47.8
-Kramadolops	extinct	37.71	47.8
-Kramadolops	extinct	37.71	47.8
+Kramadolops	extinct	33.9	37.71
+Kramadolops	extinct	33.9	37.71
+Kramadolops	extinct	33.9	37.71
 Kramadolops	extinct	28.4	33.9
 Polydolops	extinct	47.8	56
 Polydolops	extinct	38	41.2
@@ -137,7 +137,7 @@ Polydolops	extinct	48	50
 Polydolops	extinct	48	50
 Polydolops	extinct	38	41.2
 Polydolops	extinct	37.71	47.8
-Polydolops	extinct	37.71	47.8
+Polydolops	extinct	33.9	37.71
 Polydolops	extinct	41.3	47.8
 Polydolops	extinct	47.8	56
 Pseudolops	extinct	38	41.2
@@ -196,7 +196,7 @@ Eomakhaira	extinct	27.82	33.9
 Andinogale	extinct	23.03	27.82
 Angelocabrerus	extinct	39	41.6
 Argyrolestes	extinct	33.9	45
-Chlorocyon	extinct	37.71	47.8
+Chlorocyon	extinct	33.9	37.71
 Nemolestes	extinct	39	41.6
 Nemolestes	extinct	37.71	41.2
 Nemolestes	extinct	39	41.6
@@ -220,4 +220,4 @@ Plesiofelis	extinct	33.9	37.2
 Plesiofelis	extinct	33.9	37.2
 Plesiofelis	extinct	33.9	41.2
 Procladosictis	extinct	38	41.3
-Procladosictis	extinct	37.71	47.8
+Procladosictis	extinct	33.9	37.71

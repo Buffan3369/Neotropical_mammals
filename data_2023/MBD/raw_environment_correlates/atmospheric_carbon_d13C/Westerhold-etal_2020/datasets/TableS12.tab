@@ -1,0 +1,115 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S12. Offsets applied to cores from ODP Holes 208-1263A, 208-1263B, 208-1263C. PANGAEA, https://doi.org/10.1594/PANGAEA.917513, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:	LATITUDE: -28.532950 * LONGITUDE: 2.779567
+	DATE/TIME START: 2003-03-29T00:00:00 * DATE/TIME END: 2003-04-05T00:00:00
+	MINIMUM DEPTH, sediment/rock: 0.0 m * MAXIMUM DEPTH, sediment/rock: 336.0 m
+Event(s):	208-1263 * LATITUDE: -28.532950 * LONGITUDE: 2.779567 * DATE/TIME START: 2003-03-29T00:00:00 * DATE/TIME END: 2003-04-05T00:00:00 * ELEVATION: -2717.1 m * Penetration: 1261.5 m * Recovery: 709.5 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Composite Core (COMPCORE) * COMMENT: 93 cores; 777.9 m cored; 483.6 m drilled; 91.2 % recovery
+Comment:	* strong core disturbance
+Parameter(s):	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Offset [m] (Offset) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Offset Ship
+	Offset [m] (Offset) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Revised Offset
+	Offset [m] (Offset) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: D Ship Revised
+	DEPTH, sediment/rock [m] (Depth sed) * GEOCODE * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: mbsf
+	Depth, composite revised [rmcd] (Depth comp r) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	558 data points
+*/
+Sample label	Offset [m] (Offset Ship)	Offset [m] (Revised Offset)	Offset [m] (D Ship Revised)	Depth sed [m] (mbsf)	Depth comp r [rmcd]	Reference
+208-1263A-1H	0.00	0.00	0.00	0.0	0.00	ship
+208-1263A-2H	0.41	0.41	0.00	2.3	2.71	ship
+208-1263A-3H	2.12	2.12	0.00	11.8	13.92	ship
+208-1263A-4H	3.83	3.83	0.00	21.3	25.13	ship
+208-1263A-5H	3.85	3.85	0.00	30.8	34.65	ship
+208-1263A-6H	7.25	6.75	-0.50	40.3	47.05	this study
+208-1263A-7H	9.11	8.56	-0.45	49.8	58.36	this study
+208-1263A-8H	10.71	9.61	0.10	59.3	68.91	this study
+208-1263A-9H	11.77	10.64	0.13	68.8	79.44	this study
+208-1263A-10H	11.79	10.79	0.00	78.3	89.09	this study
+208-1263A-11H	13.17	12.17	0.00	87.8	99.97	this study
+208-1263A-12H	13.73	12.73	0.00	97.3	110.03	this study
+208-1263A-13H	17.53	17.03	0.50	106.8	123.83	Westerhold et al. 2015
+208-1263A-14H	17.75	21.03	-3.28	116.3	137.33	Westerhold et al. 2015
+208-1263A-15H	20.52	23.73	-3.21	125.8	149.53	Westerhold et al. 2015
+208-1263A-16H	21.89	25.13	-3.24	135.3	160.43	Westerhold et al. 2015
+208-1263A-17H	23.02	26.34	-3.32	144.8	171.14	Westerhold et al. 2015
+208-1263A-18H	23.94	27.44	-3.50	154.3	181.74	Westerhold et al. 2015
+208-1263A-19H	25.47	29.06	-3.59	163.8	192.86	Westerhold et al. 2015
+208-1263A-20H	27.77	31.36	-3.59	173.3	204.66	Westerhold et al. 2015
+208-1263A-21H	30.34	33.83	-3.49	182.8	216.63	Westerhold et al. 2015
+208-1263A-22H*	32.34	31.86	0.48	192.3	224.16	Westerhold et al. 2015
+208-1263A-23H	32.55	32.55	0.00	201.8	234.35	ship
+208-1263A-24H	34.65	34.65	0.00	208.1	242.75	ship
+208-1263A-25H	35.85	35.85	0.00	217.6	253.45	ship
+208-1263A-26H	36.85	36.85	0.00	222.6	259.45	ship
+208-1263A-27H	40.03	40.03	0.00	232.1	272.13	ship
+208-1263A-28H	42.52	42.52	0.00	241.6	284.12	ship
+208-1263A-29H	43.70	43.78	-0.08	251.1	294.88	Westerhold et al. 2007
+208-1263A-30H	45.71	45.79	-0.08	260.6	306.39	Westerhold et al. 2007
+208-1263A-31H	46.40	46.48	-0.08	270.1	316.58	Westerhold et al. 2007
+208-1263A-32H	48.38	49.08	-0.70	271.6	320.68	Westerhold et al. 2007
+208-1263A-33H	51.00	50.60	0.40	281.1	331.70	Westerhold et al. 2007
+208-1263A-34X	51.24	50.86	0.38	284.1	334.96	Westerhold et al. 2007
+208-1263A-35X	52.36	51.98	0.38	290.3	342.28	Westerhold et al. 2007
+208-1263A-36X	54.10	53.72	0.38	300.0	353.72	Westerhold et al. 2007
+208-1263A-37X	55.38	55.00	0.38	307.1	362.10	Westerhold et al. 2007
+208-1263A-38X	57.11	56.73	0.38	316.7	373.43	Westerhold et al. 2007
+208-1263A-39X	58.85	58.47	0.38	326.4	384.87	Westerhold et al. 2007
+208-1263A-40X	60.58	60.20	0.38	336.0	396.20	Westerhold et al. 2007
+208-1263B-1H	7.31	6.80	-0.49	46.0	52.80	this study
+208-1263B-2H	9.41	8.50	-0.09	55.5	64.00	this study
+208-1263B-3H	11.04	9.95	0.09	65.0	74.95	this study
+208-1263B-4H	12.09	10.93	0.16	74.5	85.43	this study
+208-1263B-5H	14.69	13.75	-0.06	84.0	97.75	this study
+208-1263B-6H	15.64	14.77	-0.13	93.5	108.27	this study
+208-1263B-7H	16.98	20.32	-3.34	103.0	123.32	Westerhold et al. 2015
+208-1263B-8H	18.34	21.57	-3.23	112.5	134.07	Westerhold et al. 2015
+208-1263B-9H	19.95	23.23	-3.28	122.0	145.23	Westerhold et al. 2015
+208-1263B-10H	20.78	24.04	-3.26	131.5	155.54	Westerhold et al. 2015
+208-1263B-11H	21.78	25.03	-3.25	141.0	166.03	Westerhold et al. 2015
+208-1263B-12H	22.68	26.20	-3.52	150.5	176.70	Westerhold et al. 2015
+208-1263B-13H	24.57	28.17	-3.60	160.0	188.17	Westerhold et al. 2015
+208-1263B-14H	26.12	29.67	-3.55	169.5	199.17	Westerhold et al. 2015
+208-1263B-15H	27.35	30.85	-3.50	177.0	207.85	Westerhold et al. 2015
+208-1263B-16H	29.69	33.13	-3.44	186.5	219.63	Westerhold et al. 2015
+208-1263B-17H*	29.69	29.21	0.48	196.0	225.21	Westerhold et al. 2015
+208-1263B-18H*	31.11	30.63	0.48	197.2	227.83	Westerhold et al. 2015
+208-1263B-19H	32.60	32.60	0.00	201.0	233.60	ship
+208-1263B-20H	33.71	33.71	0.00	204.9	238.61	ship
+208-1263B-21H	35.92	35.92	0.00	214.4	250.32	ship
+208-1263B-22H	38.33	38.33	0.00	223.9	262.23	ship
+208-1263B-23H	40.47	40.47	0.00	233.4	273.87	ship
+208-1263B-24H	42.29	42.29	0.00	242.9	285.19	ship
+208-1263B-25H	42.95	43.03	-0.08	252.4	295.43	Westerhold et al. 2007
+208-1263B-26X	44.12	44.20	-0.08	261.9	306.10	Westerhold et al. 2007
+208-1263B-27X	47.38	49.28	-1.90	271.1	320.38	Westerhold et al. 2007
+208-1263B-28X	50.83	50.58	0.25	280.7	331.28	Westerhold et al. 2007
+208-1263B-29X	52.56	52.16	0.40	290.3	342.46	Westerhold et al. 2007
+208-1263B-30X	54.30	53.90	0.40	300.0	353.90	Westerhold et al. 2007
+208-1263B-31X	56.03	55.63	0.40	309.6	365.23	Westerhold et al. 2007
+208-1263B-32X	57.76	57.36	0.40	319.2	376.56	Westerhold et al. 2007
+208-1263B-33X	59.51	59.11	0.40	328.9	388.01	Westerhold et al. 2007
+208-1263C-1H	13.11	12.22	-0.11	90.0	102.22	this study
+208-1263C-2H	14.98	17.50	-2.02	99.5	116.50	this study
+208-1263C-3H	18.26	21.48	-3.22	109.0	130.48	Westerhold et al. 2015
+208-1263C-4H*	32.32	31.84	0.48	193.0	224.84	Westerhold et al. 2015
+208-1263C-5H	33.00	33.00	0.00	202.5	235.50	ship
+208-1263C-6H	33.83	33.83	0.00	212.0	245.83	ship
+208-1263C-7H	34.27	34.27	0.00	221.5	255.77	ship
+208-1263C-8H	36.94	36.94	0.00	225.4	262.34	ship
+208-1263C-9H	39.79	39.79	0.00	234.9	274.69	ship
+208-1263C-10H	41.88	41.88	0.00	244.4	286.28	ship
+208-1263C-11H	43.71	43.79	-0.08	253.9	297.69	Westerhold et al. 2007
+208-1263C-12H	45.42	45.50	-0.08	263.4	308.90	Westerhold et al. 2007
+208-1263C-13H	47.21	47.98	-0.77	272.9	320.88	Westerhold et al. 2007
+208-1263C-14H	50.31	49.91	0.40	282.4	332.31	Westerhold et al. 2007
+208-1263C-15H	50.31	49.91	0.40	285.6	335.51	Westerhold et al. 2007
+208-1263C-16X	50.83	51.08	-0.25	285.7	336.78	Westerhold et al. 2007
+208-1263D-1H	46.48	45.76	0.72	272.0	317.76	Westerhold et al. 2007
+208-1263D-2H	48.38	47.73	0.65	275.2	322.93	Westerhold et al. 2007
+208-1263D-3H	50.61	50.34	0.27	281.5	331.84	Westerhold et al. 2007
+208-1263D-4H	50.63	50.30	0.33	284.3	334.60	Westerhold et al. 2007

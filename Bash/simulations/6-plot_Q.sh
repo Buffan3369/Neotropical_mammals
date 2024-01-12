@@ -2,7 +2,7 @@
 
 basal_dir=../../results/SALMA_smoothed/genus_level/simulations
 
-for i in {1..12} 
+for i in {13..55} 
 do
 	# For each individual retained run
 	for file in ${basal_dir}/replicate_$i/pyrate_mcmc_logs/*_KEEP_mcmc.log

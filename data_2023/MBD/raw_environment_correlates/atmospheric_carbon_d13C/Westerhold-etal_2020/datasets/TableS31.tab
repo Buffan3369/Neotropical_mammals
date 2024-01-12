@@ -1,0 +1,116 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S31. Age model of IODP Site 321U1337. PANGAEA, https://doi.org/10.1594/PANGAEA.917653, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Integrated Ocean Drilling Program / International Ocean Discovery Program (IODP) (URI: https://www.iodp.org/)
+Coverage:	LATITUDE: 3.833000 * LONGITUDE: -123.206000
+	MINIMUM DEPTH, sediment/rock: 103.720 m * MAXIMUM DEPTH, sediment/rock: 404.220 m
+Event(s):	321-U1337 * LATITUDE: 3.833000 * LONGITUDE: -123.206000 * ELEVATION: -4476.0 m * CAMPAIGN: Exp321 (Pacific Equatorial Age Transect II / Juan de Fuca) (URI: https://doi.org/10.2204/iodp.proc.320321.2010) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Composite Core (COMPCORE)
+Parameter(s):	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	DEPTH, sediment/rock [m] (Depth sed) * GEOCODE * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: mbsf
+	Depth, composite revised [rmcd] (Depth comp r) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: mid Depth rmcd (Lyle et al., 2019 splice)
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	392 data points
+*/
+Sample label	Depth sed [m]	Depth comp r [rmcd]	Tuned time [Ma]	Reference
+321-U1337A-12H-3-W22	103.720	110.310	5.939	Drury et al. 2017
+321-U1337A-12H-3-W104	104.540	111.130	5.982	Drury et al. 2017
+321-U1337A-12H-4-W61	105.610	112.200	6.024	Drury et al. 2017
+321-U1337A-12H-4-W124	106.240	112.830	6.052	Drury et al. 2017
+321-U1337A-12H-5-W81	107.310	113.900	6.098	Drury et al. 2017
+321-U1337A-12H-6-W28	108.280	114.870	6.138	Drury et al. 2017
+321-U1337B-12H-3-W10	108.600	116.790	6.224	Drury et al. 2017
+321-U1337B-12H-4-W14	110.140	118.330	6.298	Drury et al. 2017
+321-U1337B-12H-5-W37	111.870	120.060	6.342	Drury et al. 2017
+321-U1337A-13H-3-W98	113.980	121.510	6.391	Drury et al. 2017
+321-U1337A-13H-4-W42	114.920	122.450	6.430	Drury et al. 2017
+321-U1337A-13H-4-W101	115.510	123.040	6.468	Drury et al. 2017
+321-U1337B-13H-1-W100	116.000	125.480	6.562	Drury et al. 2017
+321-U1337B-13H-1-W138	116.380	125.860	6.584	Drury et al. 2017
+321-U1337B-13H-3-W55	118.550	128.030	6.676	Drury et al. 2017
+321-U1337B-13H-4-W111	120.610	130.090	6.751	Drury et al. 2017
+321-U1337A-14H-2-W62	121.620	131.240	6.791	Drury et al. 2017
+321-U1337A-14H-3-W77	123.270	132.890	6.846	Drury et al. 2017
+321-U1337A-14H-4-W75	124.750	134.370	6.884	Drury et al. 2017
+321-U1337A-14H-5-W81	126.310	135.930	6.919	Drury et al. 2017
+321-U1337A-14H-6-W67	127.670	137.290	6.961	Drury et al. 2017
+321-U1337A-14H-6-W131	128.310	137.930	6.981	Drury et al. 2017
+321-U1337D-14H-2-W4	123.540	138.830	7.035	Drury et al. 2017
+321-U1337D-14H-2-W104	124.540	139.830	7.077	Drury et al. 2017
+321-U1337D-14H-3-W75	125.750	141.040	7.123	Drury et al. 2017
+321-U1337D-14H-4-W28	126.780	142.070	7.157	Drury et al. 2017
+321-U1337A-15H-2-W123	131.730	143.060	7.193	Drury et al. 2017
+321-U1337A-15H-3-W70	132.700	144.030	7.242	Drury et al. 2017
+321-U1337A-15H-4-W39	133.890	145.220	7.281	Drury et al. 2017
+321-U1337A-15H-4-W143	134.930	146.260	7.322	Drury et al. 2017
+321-U1337B-15H-2-W29	135.790	147.290	7.362	Drury et al. 2017
+321-U1337B-15H-2-W144	136.940	148.440	7.409	Drury et al. 2017
+321-U1337B-15H-3-W59	137.590	149.090	7.435	Drury et al. 2017
+321-U1337B-15H-4-W3	138.530	150.030	7.479	Drury et al. 2017
+321-U1337B-15H-4-W77	139.270	150.770	7.525	Drury et al. 2017
+321-U1337B-15H-5-W13	140.130	151.630	7.567	Drury et al. 2017
+321-U1337B-15H-5-W63	140.630	152.130	7.596	Drury et al. 2017
+321-U1337A-16H-3-W15	141.650	153.590	7.648	Drury et al. 2017
+321-U1337A-16H-3-W129	142.790	154.730	7.702	Drury et al. 2017
+321-U1337A-16H-5-W31	144.810	156.750	7.767	Drury et al. 2017
+321-U1337B-16H-1-W141	144.910	157.730	7.809	Drury et al. 2017
+321-U1337B-16H-2-W124	146.240	159.060	7.858	Drury et al. 2017
+321-U1337B-16H-3-W31	146.810	159.630	7.882	Drury et al. 2017
+321-U1337B-16H-4-W31	148.310	161.130	7.949	Drury et al. 2017
+321-U1337B-16H-4-W71	148.710	161.530	7.974	Drury et al. 2017
+321-U1337B-16H-4-W101	149.010	161.830	7.996	Drury et al. 2017
+321-U1337B-16H-4-W141	149.410	162.230	8.016	Drury et al. 2017
+321-U1337B-16H-5-W25	149.750	162.570	8.035	Drury et al. 2017
+321-U1337A-17H-3-W92	151.920	165.330	8.167	Drury et al. 2017
+321-U1337A-17H-3-W125	152.250	165.660	8.186	Drury et al. 2017
+321-U1337A-17H-4-W82	153.320	166.730	8.260	Drury et al. 2017
+321-U1337A-17H-4-W122	153.720	167.130	8.281	Drury et al. 2017
+321-U1337A-17H-5-W2	154.020	167.430	8.301	Drury et al. 2017
+321-U1337C-18X-2,82.2	300.422	335.460	14.949	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-18X-4,51.2	303.112	338.150	15.080	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-18X-4,112.2	303.722	338.759	15.119	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-18X-5,83.2	304.932	339.970	15.194	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-18X-6,13.2	305.732	340.770	15.234	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-34X-3,32	312.620	341.520	15.286	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-34X-3,132	313.620	342.520	15.325	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-34X-5,51	315.810	344.710	15.402	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-19X-4,7.2	312.272	347.310	15.479	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-35X-2,80	321.200	349.870	15.569	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-35X-3,16	322.060	350.730	15.594	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337D-36X-4,24	319.240	353.230	15.721	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337D-36X-4,140	320.400	354.390	15.799	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-20X-3,81.1	321.111	358.130	15.892	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-20X-5,9.1	323.391	360.410	16.010	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-21X-1,126.5	328.065	366.419	16.341	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-21X-2,130.5	329.605	367.960	16.456	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-37X-4,10	342.600	374.780	16.812	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-37X-4,149	343.990	376.170	16.898	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-37X-5,51	344.510	376.690	16.927	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-22X-3,40.9	339.809	379.480	17.095	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-22X-4,80.9	341.709	381.380	17.189	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337D-39X-4,32	348.020	385.450	17.301	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-23X-2,13.4	347.634	388.930	17.455	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-23X-4,62.4	351.124	392.420	17.585	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337D-40X-2,124	355.540	393.650	17.661	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337D-40X-3,51	356.310	394.420	17.727	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337D-40X-4,102	358.320	396.430	17.884	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337D-40X-5,101	359.810	397.920	17.983	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-24X-3,2.4	358.624	399.370	18.058	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-24X-3,131.4	359.914	400.660	18.150	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-40X-1,34	367.140	403.650	18.343	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-40X-2,42	368.720	405.230	18.434	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-40X-3,42	370.220	406.730	18.523	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-25X-3,109.4	369.294	411.210	18.717	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-25X-5,2.4	371.224	413.140	18.832	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-41X-3,11	379.510	417.000	19.035	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-41X-5,53	382.930	420.420	19.158	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-26X-3,115.4	378.854	422.350	19.234	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337D-43X-4,69	386.790	430.610	19.558	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337C-27X-3,43.4	387.734	433.430	19.632	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-43X-1,140	397.000	436.690	19.764	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-43X-3,93	399.530	439.220	19.841	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-43X-5,50	402.100	441.790	19.934	Holbourn et al. 2015, Kochhan et al.2016
+321-U1337A-43X-7,12	404.220	443.910	20.008	Holbourn et al. 2015, Kochhan et al.2016

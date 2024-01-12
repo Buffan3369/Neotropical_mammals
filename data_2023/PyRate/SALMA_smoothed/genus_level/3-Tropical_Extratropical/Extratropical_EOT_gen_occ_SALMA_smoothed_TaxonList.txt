@@ -7,7 +7,6 @@ Acdestoides	extinct
 Acoelodus	extinct
 Acoelohyrax	extinct
 Adiantoides	extinct
-aff._Tarapotomys	extinct
 Albertogaudrya	extinct
 Allalmeia	extinct
 Amilnedwardsia	extinct
@@ -63,7 +62,6 @@ Carolopaulacoutoia	extinct
 Carolozittelia	extinct
 Cephalomyopsis	extinct
 Cephalomys	extinct
-cf._Tarapotomys	extinct
 Changquin	extinct
 Chilestylops	extinct
 Chlorocyon	extinct
@@ -97,7 +95,6 @@ Elmerriggsia	extinct
 Eobranisamys	extinct
 Eobrasilia	extinct
 Eohyrax	extinct
-Eoincamys	extinct
 Eolicaphrium	extinct
 Eomakhaira	extinct
 Eomicrobiotherium	extinct
@@ -223,7 +220,6 @@ Periakros	extinct
 Peripantostylops	extinct
 Periphragnis	extinct
 Periprotodidelphis	extinct
-Perulestes	extinct
 Perutherium	extinct
 Pharsophorus	extinct
 Phoradiadius	extinct
@@ -306,7 +302,6 @@ Stegosimpsonia	extinct
 Stenotatus	extinct
 Suniodon	extinct
 Tacheria	extinct
-Tarapotomys	extinct
 Taubatherium	extinct
 tegotherium	extinct
 Teratopithecus	extinct

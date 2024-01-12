@@ -1,0 +1,1 @@
+python3 ~/PyRate/PyRate.py -A 4 ../../results/SALMA_smoothed/genus_level/simulations/replicate_55/sampled_simulated_occurrences_55_PyRate.py -qShift ../../data_2023/EO_stages.txt -pL 1.1 0 -pM 1.1 0 -pP 2 0 -mG -j $1 -n 10000000 -s 10000

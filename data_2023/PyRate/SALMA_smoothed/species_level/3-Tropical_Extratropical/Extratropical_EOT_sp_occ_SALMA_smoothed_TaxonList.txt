@@ -17,8 +17,6 @@ Acoelohyrax_coronatus	extinct
 Acoelohyrax_sigma	extinct
 Adiantoides_leali	extinct
 Adiantoides_magnus	extinct
-aff._Tarapotomys	extinct
-aff._Tarapotomys_sp.	extinct
 Albertogaudrya	extinct
 Albertogaudrya_carahuasensis	extinct
 Albertogaudrya_robusta	extinct
@@ -124,7 +122,6 @@ Cephalomyopsis	extinct
 Cephalomys	extinct
 Cephalomys_arcidens	extinct
 Cephalomys_ceciae	extinct
-cf._Tarapotomys	extinct
 Changquin_woodi	extinct
 Chilestylops_davidsoni	extinct
 Chlorocyon_phantasma	extinct
@@ -185,8 +182,6 @@ Eohyrax_isotemnoides	extinct
 Eohyrax_platyodus	extinct
 Eohyrax_praerusticus	extinct
 Eohyrax_rusticus	extinct
-Eoincamys_parvus	extinct
-Eoincamys_valverdei	extinct
 Eolicaphrium_primarium	extinct
 Eomakhaira_molossus	extinct
 Eomicrobiotherium	extinct
@@ -439,7 +434,6 @@ Periphragnis_harmeri	extinct
 Periphragnis_palmeri	extinct
 Periphragnis_vicentei	extinct
 Periprotodidelphis_bergqvistae	extinct
-Perulestes	extinct
 Perutherium_altiplanense	extinct
 Pharsophorus	extinct
 Pharsophorus_lacerans	extinct
@@ -481,7 +475,6 @@ Proadinotherium	extinct
 Proadinotherium_saltoni	extinct
 Proargyrohyrax	extinct
 Proargyrohyrax_curanderensis	extinct
-Proargyrolagus	extinct
 Proargyrolagus_bolivianus	extinct
 Proborhyaena	extinct
 Proborhyaena_gigantea	extinct
@@ -607,7 +600,6 @@ Stenotatus_ornatus	extinct
 Suniodon	extinct
 Suniodon_catamarcensis	extinct
 Tacheria_troyana	extinct
-Tarapotomys_subandinus	extinct
 Taubatherium_major	extinct
 Taubatherium_paulacoutoi	extinct
 Teratopithecus_elpidophoros	extinct

@@ -1,0 +1,75 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S27. Age model of ODP Site 207-1258. PANGAEA, https://doi.org/10.1594/PANGAEA.917589, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:	LATITUDE: 9.433330 * LONGITUDE: -54.733030
+	DATE/TIME START: 2003-01-25T10:10:00 * DATE/TIME END: 2003-10-28T10:10:00
+	MINIMUM DEPTH, sediment/rock: 33.010 m * MAXIMUM DEPTH, sediment/rock: 200.910 m
+Event(s):	207-1258B * LATITUDE: 9.433330 * LONGITUDE: -54.733030 * DATE/TIME START: 2003-01-25T10:10:00 * DATE/TIME END: 2003-10-28T10:10:00 * ELEVATION: -3192.2 m * Penetration: 460.9 m * Recovery: 346.13 m * LOCATION: South Atlantic Ocean * CAMPAIGN: Leg207 (URI: https://doi.org/10.2973/odp.proc.ir.207.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Drilling/drill rig (DRILL) * COMMENT: 57 cores; 453.9 m cored; 7 m drilled; 76.3 % recovery
+Parameter(s):	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	DEPTH, sediment/rock [m] (Depth sed) * GEOCODE * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: mbsf
+	Depth, composite revised [rmcd] (Depth comp r) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Comment (Comment) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	275 data points
+*/
+Sample label	Depth sed [m]	Depth comp r [rmcd]	Tuned time [Ma]	Reference	Comment
+207-1258B-4H-1,91	33.010	33.01	47.050	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-4H-2,1	33.610	33.61	47.145	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-4H-2,67	34.270	34.27	47.245	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-4H-3,134	36.440	36.44	47.540	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-4H-4,50	37.100	37.10	47.635	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-5H-2,42	43.020	40.50	48.075	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-5H-2,97	43.570	41.05	48.165	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-5H-3,6	44.160	41.64	48.265	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-5H-3,57	44.670	42.15	48.365	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-5H-5,32	47.420	44.90	48.745	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-5H-5,98	48.080	45.56	48.855	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-6H-6,7	50.370	48.04	49.155	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-6H-6,83	51.130	48.80	49.260	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-6H-3,53	54.330	50.87	49.560	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-7H-2,4	53.740	51.75	49.665	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-7H-3,33	55.530	53.54	49.850	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-7H-4,34	57.040	55.05	49.950	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-7H-4,138	58.080	56.09	50.060	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-7H-2,139	63.390	58.45	50.270	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-7H-4,35	65.350	60.41	50.375	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-8H-3,39	65.560	62.69	50.485	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-8H-1,63	70.730	65.52	50.670	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-8H-2,73	72.330	67.12	50.765	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-8H-3,27	73.370	68.16	50.865	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-9H-2,42	73.820	69.36	50.960	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-9H-4,9	76.490	72.03	51.150	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-9H-5,48	78.380	73.92	51.250	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-9H-6,3	79.430	74.97	51.350	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-9H-2,118	82.380	76.76	51.445	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-10H-1,72	82.320	78.10	51.550	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-10H-4,127	87.370	83.15	51.970	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-11H-4,7	95.870	90.58	52.360	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-11H-5,6	97.360	92.07	52.460	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-11H-5,69	97.990	92.70	52.518	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-11H-4,25	103.750	97.36	52.740	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-11H-5,61	105.610	99.22	52.845	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-12H-4,131	106.710	100.94	52.945	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-12H-2,38	110.480	104.98	53.145	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-13H-2,50	112.500	106.95	53.255	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-13H-2,5	119.750	113.20	53.560	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-13H-3,101	122.210	115.66	53.665	Westerhold et al. 2017	La2010b Eccenticity
+207-1258C-1H-7,31	129.310	123.52	53.945	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-14H-4,63	133.030	127.58	54.050	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-15H-4,19	142.190	136.54	54.345	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-15H-6,3	145.030	139.38	54.450	Westerhold et al. 2017	La2010b Eccenticity
+207-1258C-4H-4,141	154.510	150.17	54.750	Westerhold et al. 2017	La2010b Eccenticity
+207-1258B-17H-3,99	160.890	155.07	54.865	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-17H-3,59	152.640	168.17	55.165	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-17H-5,45	155.500	171.03	55.270	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-18H-4,90	164.100	179.63	55.550	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-18H-6,114	167.340	182.87	55.650	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-19H-2,108	170.980	186.46	55.745	Westerhold et al. 2017	La2010b Eccenticity
+207-1258A-19H-5,110	174.660	190.14	55.930	Westerhold et al. 2017	La2010b Eccenticity
+207-1258C-9H-1,114	197.640	193.37	56.040	Westerhold et al. 2017	La2010b Eccenticity
+207-1258C-9H-3,141	200.910	196.64	56.145	Westerhold et al. 2017	La2010b Eccenticity

@@ -2,6 +2,8 @@ Species	Status
 ?_Eocoleophorus_glyptodontoides	extinct
 Abderites	extinct
 aff._Eosallamys_sp.	extinct
+aff._Tarapotomys	extinct
+aff._Tarapotomys_sp.	extinct
 Baguatherium_jaureguii	extinct
 Balsayacuy	extinct
 Balsayacuy_huallagaensis	extinct
@@ -17,6 +19,7 @@ Carodnia_inexpectans	extinct
 cf._Cachiyacuy_kummeli	extinct
 cf._Eoespina	extinct
 cf._Pozomys_ucayaliensis	extinct
+cf._Tarapotomys	extinct
 cf._Yuruatherium	extinct
 Chachapoyamys_cf._kathetos	extinct
 Chachapoyamys_kathetos	extinct

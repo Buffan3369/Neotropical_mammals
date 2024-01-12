@@ -1,0 +1,56 @@
+/* DATA DESCRIPTION:
+Citation:	Westerhold, Thomas (2020): S21. Position and tuned ages for ODP Site 208-1263 magnetochron boundaries. PANGAEA, https://doi.org/10.1594/PANGAEA.917565, 
+	In: Westerhold, T (2020): Cenozoic global reference benthic carbon and oxygen isotope dataset (CENOGRID). PANGAEA, https://doi.org/10.1594/PANGAEA.917503
+Keyword(s):	Cenozoic Climate; Ocean Drilling
+Related to:	Westerhold, Thomas; Marwan, Norbert; Drury, Anna Joy; Liebrand, Diederik; Agnini, Claudia; Anagnostou, Eleni; Barnet, James S K; Bohaty, Steven M; De Vleeschouwer, David; Florindo, Fabio; Frederichs, Thomas; Hodell, David A; Holbourn, Ann E; Kroon, Dick; Lauretano, Vittoria; Littler, Kate; Lourens, Lucas Joost; Lyle, Mitchell W; Pälike, Heiko; Röhl, Ursula; Tian, Jun; Wilkens, Roy H; Wilson, Paul A; Zachos, James C (2020): An astronomically dated record of Earth's climate and its predictability over the last 66 million years. Science, 369, 1383-1387, https://doi.org/10.1126/science.aba6853
+Project(s):	Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:	LATITUDE: -28.532950 * LONGITUDE: 2.779567
+	DATE/TIME START: 2003-03-29T00:00:00 * DATE/TIME END: 2003-04-05T00:00:00
+	MINIMUM ELEVATION: -2717.1 m * MAXIMUM ELEVATION: -2717.1 m
+Event(s):	208-1263 * LATITUDE: -28.532950 * LONGITUDE: 2.779567 * DATE/TIME START: 2003-03-29T00:00:00 * DATE/TIME END: 2003-04-05T00:00:00 * ELEVATION: -2717.1 m * Penetration: 1261.5 m * Recovery: 709.5 m * LOCATION: Walvis Ridge, Southeast Atlantic Ocean * CAMPAIGN: Leg208 (URI: https://doi.org/10.2973/odp.proc.ir.208.2004) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Composite Core (COMPCORE) * COMMENT: 93 cores; 777.9 m cored; 483.6 m drilled; 91.2 % recovery
+Parameter(s):	Chronozone (Chronozone) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Top
+	Sample code/label (Sample label) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Bottom
+	Depth, composite revised top [rmcd] (Depth comp r top) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Depth, composite revised bottom [rmcd] (Depth comp r bot) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Depth, composite revised mean [rmcd] (Depth comp r mean) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Depth, composite revised error [rmcd] (Depth comp r e) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Top
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Bottom
+	Tuned time [Ma] (Tuned time) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: Mean
+	Age, error [±] (Age e) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html) * COMMENT: tuned age error
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	360 data points
+*/
+Chronozone	Sample label (Top)	Sample label (Bottom)	Depth comp r top [rmcd]	Depth comp r bot [rmcd]	Depth comp r mean [rmcd]	Depth comp r e [rmcd]	Reference	Tuned time [Ma] (Top)	Tuned time [Ma] (Bottom)	Tuned time [Ma] (Mean)	Age e [±] (tuned age error)
+C13n (y)	1263B-4H-1,112	1263B-4H-2,62	86.39	87.50	86.95	0.56	This study	33.118	33.219	33.169	0.050
+C13n (o)	1263B-4H-6,22	1263B-4H-6,46	93.16	93.42	93.29	0.13	This study	34.050	34.106	34.078	0.028
+C15n (y)	1263B-5H-4,128	1263B-5H-5,98	103.36	104.55	103.96	0.60	This study	35.148	35.386	35.267	0.119
+C15n (o)	1263C-1H-4,43	1263C-1H-4,66	107.15	107.40	107.27	0.12	This study	35.964	36.020	35.992	0.028
+C16n.1n (y)	1263C-1H-4,117	1263C-1H-5,33	107.90	108.54	108.22	0.32	This study	36.133	36.278	36.205	0.072
+C16n.1n (o)	1263C-1H-5,53	1263C-1H-5,93	108.76	109.14	108.95	0.19	This study	36.319	36.390	36.355	0.035
+C16n.2n (y)	1263C-1H-6,3	1263B-6H-2,73	109.74	110.49	110.12	0.38	This study	36.502	36.641	36.572	0.070
+C16n.2n (o)	1263B-6H-3,4	1263B-6H-3,25	111.29	111.50	111.40	0.11	This study	36.775	36.809	36.792	0.017
+C17n.1n (y)	1263B-6H-4,53	1263B-6H-4,73	113.28	113.48	113.38	0.10	This study	37.090	37.114	37.102	0.012
+C17n.1n (o)	1263B-6H-6,73	1263B-6H-6,93	116.50	116.70	116.60	0.10	This study	37.493	37.525	37.509	0.016
+C17n.2n (y)	1263C-2H-1,143	1263C-2H-2,73	117.94	118.73	118.33	0.40	This study	37.724	37.851	37.787	0.063
+C17n.2n (o)	1263C-2H-2,73	1263C-2H-2,99	118.73	118.99	118.86	0.13	This study	37.851	37.881	37.866	0.015
+C17n.3n (y)	1263C-2H-3,43	1263C-2H-3,49	119.92	119.99	119.95	0.03	This study	37.962	37.968	37.965	0.003
+C17n.3n (o)	1263C-2H-4,73	1263C-2H-4,93	121.74	121.94	121.84	0.10	This study	38.121	38.138	38.130	0.009
+C18n.1n (y)	1263C-2H-5,103	1263B-7H-2,13	123.52	125.06	124.29	0.77	This study	38.288	38.559	38.423	0.135
+C18n.1n (o)	1263C-3H-4,53	1263B-8H-2,53	135.53	136.10	135.81	0.28	This study	39.799	39.852	39.825	0.026
+C18n.2n (y)	1263B-8H-2,133	1263B-8H-3,43	136.91	137.50	137.20	0.29	This study	39.917	39.965	39.941	0.024
+C18n.2n (o)	1263A-14H-3,97	1263A-14H-3,107	141.30	141.40	141.35	0.05	This study	40.273	40.280	40.276	0.004
+C19n (y)	1263A-15H-2,27	1263B-9H-5,51	151.30	151.87	151.59	0.29	This study	41.188	41.239	41.213	0.025
+C19n (o)	1263A-15H-2,137	1263A-15H-2,147	152.50	152.60	152.55	0.05	This study	41.294	41.303	41.298	0.004
+C20n (y)	1263B-10H4,30	1263B-10H4,50	160.34	160.54	160.44	0.10	Westerhold et al. 2015	42.184	42.209	42.196	0.013
+C20n (o)	1263B-11H4,141	1263B-11H5,11	171.94	172.14	172.04	0.10	Westerhold et al. 2015	43.497	43.518	43.508	0.011
+C21n (y)	1263A-19H5,108	1263B-14H2,47	199.94	201.14	200.54	0.60	Westerhold et al. 2015, modified	46.191	46.278	46.235	0.044
+C21n (o)	1263B-15H6,79	1263A-21H1,131	216.14	217.94	217.04	0.90	Westerhold et al. 2015, modified	47.457	47.713	47.585	0.128
+C22n (y)	1263B-16H5,131	1263B-16H6,81	227.33	228.38	227.86	0.53	Westerhold et al. 2015_uncertain	48.524	48.609	48.566	0.042
+C22n (o)	1263A-23H2,114	1263A-23H4,18	237.50	239.02	238.26	0.76	Westerhold et al. 2017	49.706	49.850	49.778	0.072
+C23n.1n (y)	1263A-24H5,145	1263A-24H6,35	250.20	250.60	250.40	0.20	Westerhold et al. 2017	50.750	50.782	50.766	0.016
+C23n.1n (o)	1263B-21H3,118	1263B-21H4,8	254.50	254.90	254.70	0.20	Westerhold et al. 2017	51.120	51.152	51.136	0.016
+C23n.2n (y)	1263B-21H5,18	1263B-21H5,38	256.50	256.70	256.60	0.10	Westerhold et al. 2017	51.244	51.260	51.252	0.008
+C23n.2n (o)	1263A-26H2,5	1263B-22H2,127	261.00	265.00	263.00	2.00	uncertain	51.736	52.129	51.932	0.197

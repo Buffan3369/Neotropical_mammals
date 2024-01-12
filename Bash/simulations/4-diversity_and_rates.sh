@@ -2,7 +2,7 @@
 
 basal_dir=../../results/SALMA_smoothed/genus_level/simulations
 
-for i in {0..12}
+for i in {13..55}
 do
 	#Combine logs
 	python ~/PyRate/PyRate.py -combLogRJ ${basal_dir}/replicate_$i/pyrate_mcmc_logs -tag _KEEP -b 10
