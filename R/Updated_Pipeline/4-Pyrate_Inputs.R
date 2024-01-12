@@ -8,7 +8,7 @@
 library(dplyr)
 
 ## Accessory functions ---------------------------------------------------------
-source("../../pyrate_utilities.R")
+source("~/PyRate/pyrate_utilities.r")
 source("./R/useful/helper_functions.R")
 
 i <- 4
