@@ -1,0 +1,2816 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="SALMA_SubEpochs.svg"
+   inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+   inkscape:export-xdpi="400"
+   inkscape:export-ydpi="400"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.99999999"
+     inkscape:cx="245"
+     inkscape:cy="284.5"
+     inkscape:window-width="1850"
+     inkscape:window-height="1016"
+     inkscape:window-x="70"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g82807" />
+  <defs
+     id="defs2">
+    <rect
+       x="72.14728"
+       y="199.82901"
+       width="59.216814"
+       height="14.785843"
+       id="rect78221" />
+    <rect
+       x="67.682805"
+       y="185.50806"
+       width="227.22848"
+       height="278.21046"
+       id="rect75585" />
+    <linearGradient
+       id="linearGradient74075"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop74073" />
+    </linearGradient>
+    <rect
+       x="305.89128"
+       y="152.40116"
+       width="139.34905"
+       height="67.614895"
+       id="rect37306" />
+    <rect
+       x="236.32601"
+       y="84.731424"
+       width="350.26438"
+       height="54.128322"
+       id="rect6678" />
+    <rect
+       x="493.15486"
+       y="81.207308"
+       width="196.28082"
+       height="104.51283"
+       id="rect5316" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath43">
+      <path
+         d="m 132.39,5.48 h 942.13 V 1074.52 H 132.39 Z"
+         id="path41" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath147">
+      <path
+         d="m 45.99,5.48 h 28.8 v 1069.04 h -28.8 z"
+         id="path145" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath373">
+      <path
+         d="m 74.79,5.48 h 28.8 v 1069.04 h -28.8 z"
+         id="path371" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath671">
+      <path
+         d="m 103.59,5.48 h 28.8 v 1069.04 h -28.8 z"
+         id="path669" />
+    </clipPath>
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-3" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-6" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-9" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-2" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0-3" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0-0" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0-0-6" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0-0-6-7" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0-0-6-7-2" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0-0-6-7-2-2" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0-0-6-7-2-7" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0-0-6-7-2-7-9" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-2" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-9" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-9-3" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-9-3-1" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-9-3-1-9" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6-8" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6-8-3" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6-8-3-4" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6-8-3-4-2" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6-9" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6-9-6" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6-9-6-4" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6-9-6-4-5" />
+    <rect
+       x="305.89127"
+       y="152.40115"
+       width="139.34904"
+       height="67.614899"
+       id="rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6-9-6-4-5-4" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient74075"
+       id="linearGradient74077"
+       x1="555.13848"
+       y1="-599.91989"
+       x2="773.72344"
+       y2="-599.91989"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1066738,0,0,1.0686211,-43.930318,146.72824)" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0-0-6-7-2-7-9-5" />
+    <rect
+       x="236.326"
+       y="84.731422"
+       width="350.26437"
+       height="54.128323"
+       id="rect6678-7-3-0-0-6-7-2-7-9-5-5" />
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g15"
+       inkscape:label="SALMA_scale"
+       transform="matrix(0.35277777,0,0,-0.35277777,-116.95379,270.02843)">
+      <g
+         id="g82807"
+         inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400">
+        <g
+           id="g17"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g21"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g23"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g25"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g27"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g29"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g31"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g35"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g47"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g49"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g51"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g53"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g55"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g57"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g59"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g61"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g63"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g65"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g67"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g69"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g71"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g73"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g75"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g77"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g83"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g85"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g113"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g115"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g131"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g133"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g135"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g137"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g139"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g271"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g273"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g275"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g277"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g279"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g281"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g283"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g285"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g287"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g289"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g291"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g293"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g295"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g297"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g299"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g301"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g303"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g305"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g307"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g309"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g311"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g313"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g315"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g317"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g319"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g321"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g323"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g325"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g327"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g329"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g331"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g333"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g335"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g337"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g339"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g341"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g343"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g345"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g347"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g349"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g351"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g353"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g355"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g357"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g359"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g361"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g363"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g365"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g569"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g571"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g573"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g575"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g577"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g579"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g581"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g583"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g585"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g587"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g589"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g591"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g593"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g595"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g597"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g599"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g601"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g603"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g605"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g607"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g609"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g611"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g613"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g615"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g617"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g619"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g621"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g623"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g625"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g627"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g629"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g631"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g633"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g635"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g637"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g639"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g641"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g643"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g645"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g647"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g649"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g651"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g653"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g655"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g657"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g659"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g661"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g663"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g6322"
+           transform="translate(38.598142,-96.064784)"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g871"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g873"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g875"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g877"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g879"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g881"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g883"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g885"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g887"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g889"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g891"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g893"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g895"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g897"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g899"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g901"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g903"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g905"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g907"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g909"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g911"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g913"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g915"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g917"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g919"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g921"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g923"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g925"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g927"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g929"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g931"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g933"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g935"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g937"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g939"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g941"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g943"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g945"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g947"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g949"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g951"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g953"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g955"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g957"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g959"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g961"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g963"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g965"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g967"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g969"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g971"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g973"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g979"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g981"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g983"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g985"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g987"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g995"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g997"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g999"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g1001"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g1003"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g1005"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g1007"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g1009"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g1011"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g1013"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g1015"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g1017"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g1019"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <rect
+           style="fill:url(#linearGradient74077);fill-opacity:1;stroke:none;stroke-width:0.154131;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect73991"
+           width="241.74539"
+           height="295.76627"
+           x="570.50531"
+           y="-642.24194"
+           transform="scale(1,-1)"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <g
+           id="g79"
+           transform="matrix(1.0024991,0,0,0.25000019,569.20906,368.24751)"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400">
+          <path
+             d="M 45.99,5.48 V 1074.52"
+             style="fill:none;stroke:#000000;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path81" />
+        </g>
+        <g
+           id="g117"
+           transform="matrix(1.0024991,0,0,0.25000019,569.20906,368.24751)"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400">
+          <path
+             d="m 43.332682,1075.6733 h 2.74"
+             style="fill:none;stroke:#333333;stroke-width:4.24666;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path119" />
+          <path
+             d="m 43.25,918.52 h 2.74"
+             style="fill:none;stroke:#333333;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121" />
+          <path
+             d="m 131.02857,1035.8301 h 2.90064"
+             style="fill:none;stroke:#333333;stroke-width:1.10092;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7" />
+          <path
+             d="m 131.01163,867.11433 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5" />
+          <path
+             d="m 131.0087,731.5929 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-5" />
+          <path
+             d="m 130.85894,676.35181 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-5-3" />
+          <path
+             d="m 131.03112,556.34271 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-4" />
+          <path
+             d="m 130.97363,469.51127 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-7" />
+          <path
+             d="m 130.98214,394.73478 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-6" />
+          <path
+             d="m 130.96639,330.57446 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-56" />
+          <path
+             d="m 131.00378,297.59684 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-9" />
+          <path
+             d="m 130.97465,233.32525 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-3" />
+          <path
+             d="m 131.0007,200.44995 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-74" />
+          <path
+             d="m 130.99897,168.49245 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-52" />
+          <path
+             d="m 130.98053,135.74459 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-54" />
+          <path
+             d="m 130.98327,71.374327 h 2.85392"
+             style="fill:none;stroke:#333333;stroke-width:1.09218;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path121-7-5-744" />
+          <path
+             d="m 43.25,721.73 h 2.74"
+             style="fill:none;stroke:#333333;stroke-width:4.24666;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path123" />
+          <path
+             d="m 43.25,598.42 h 2.74"
+             style="fill:none;stroke:#333333;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path125" />
+          <path
+             d="m 43.25,271.85 h 2.74"
+             style="fill:none;stroke:#333333;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path127" />
+          <path
+             d="m 43.223671,4.4927374 h 0.714691 2.025309"
+             style="fill:none;stroke:#333333;stroke-width:4.24666;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path129"
+             sodipodi:nodetypes="ccc" />
+        </g>
+        <g
+           id="g141"
+           transform="matrix(1.0024991,0,0,0.25000019,569.20906,368.24751)"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400">
+          <path
+             d="m 74.79,1073.55 v -10.99 -11 -10.99 -11 -10.99 -11 -10.99 -10.99 -11 -10.99 -11 -10.99 -11 -10.99 -10.99 -11 -10.99 -11 -10.99 -11 -10.99 -10.99 -11 -10.99 -11 -10.99 -11 -10.99 -10.99 -11 -10.99 -11 h -9.6 -9.6 -9.6 v 11 10.99 11 10.99 10.99 11 10.99 11 10.99 11 10.99 10.99 11 10.99 11 10.99 11 10.99 10.99 11 10.99 11 10.99 11 10.99 10.99 11 10.99 11 10.99 11 10.99 h 9.6 9.6 z"
+             style="fill:#fdc07a;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path157" />
+          <path
+             d="M 74.79,721.73 V 710.9 700.06 689.22 678.38 667.55 656.71 645.87 635.03 624.2 613.36 602.52 591.68 580.84 570.01 559.17 548.33 537.49 526.66 515.82 504.98 494.14 483.31 472.47 461.63 450.79 439.96 429.12 418.28 407.44 396.6 385.77 374.93 364.09 353.25 342.42 331.58 320.74 309.9 299.07 288.23 277.39 266.55 255.72 244.88 234.04 223.2 212.37 201.53 190.69 179.85 169.01 158.18 147.34 136.5 125.66 114.83 103.99 93.15 82.31 71.48 60.64 49.8 38.96 28.13 17.29 6.45 h -9.6 -9.6 -9.6 v 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 10.84 10.84 10.84 10.83 h 9.6 9.6 z"
+             style="fill:#fdb46c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path159" />
+          <path
+             d="m 45.99,1073.55 h 9.6 9.6 9.6"
+             style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path181" />
+          <path
+             d="m 45.99,721.73 h 9.6 9.6 9.6"
+             style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path183" />
+          <path
+             d="m 45.99,6.45 h 9.6 9.6 9.6"
+             style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path185" />
+          <path
+             d="m 45.99,1073.55 h 9.6 9.6 9.6"
+             style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path203" />
+          <path
+             d="m 45.99,721.73 h 9.6 9.6 9.6"
+             style="fill:none;stroke:#000000;stroke-width:4.24666;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path205" />
+          <path
+             d="m 45.460597,1075.6719 h 9.776798 9.776799 9.776799"
+             style="fill:none;stroke:#000000;stroke-width:4.2862994;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path205-1" />
+          <path
+             d="m 45.462318,4.4827387 h 28.97646 28.976462 28.97646"
+             style="fill:none;stroke:#000000;stroke-width:4.24524;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path207" />
+          <path
+             d="m 74.79,5.48 v 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8"
+             style="fill:none;stroke:#000000;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path267" />
+          <path
+             d="m 45.99,5.48 v 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8"
+             style="fill:none;stroke:#000000;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path269" />
+          <path
+             d="m 74.286419,1075.6726 h 9.6 9.6 9.600001"
+             style="fill:none;stroke:#000000;stroke-width:4.24666;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path205-9" />
+          <path
+             d="m 103.08642,1075.6726 h 9.76912 9.76913 9.76914"
+             style="fill:none;stroke:#000000;stroke-width:4.28391;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path205-9-4" />
+        </g>
+        <g
+           id="g367"
+           transform="matrix(1.0024991,0,0,0.25000019,569.20906,368.24751)"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400">
+          <g
+             id="g369"
+             clip-path="url(#clipPath373)">
+            <path
+               d="m 103.59,1818.93 v -0.13 h -9.6 -9.6 -9.6 v 0.13 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path375" />
+            <path
+               d="m 103.59,1818.8 v -0.13 h -9.6 -9.6 -9.6 v 0.13 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path377" />
+            <path
+               d="m 103.59,1818.67 v -0.12 h -9.6 -9.6 -9.6 v 0.12 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path379" />
+            <path
+               d="m 103.59,1818.55 v -3.79 h -9.6 -9.6 -9.6 v 3.79 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path381" />
+            <path
+               d="m 103.59,1814.76 v -20.99 h -9.6 -9.6 -9.6 v 20.99 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path383" />
+            <path
+               d="m 103.59,1793.88 v -11.69 -11.69 -11.69 -11.69 -11.69 h -9.6 -9.6 -9.6 v 11.69 11.69 11.69 11.69 11.69 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path385" />
+            <path
+               d="m 103.59,1735.43 v -11 -11.01 -11 h -9.6 -9.6 -9.6 v 11 11.01 11 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path387" />
+            <path
+               d="m 103.59,1702.42 v -11.22 -11.22 -11.22 -11.22 -11.21 h -9.6 -9.6 -9.6 v 11.21 11.22 11.22 11.22 11.22 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path389" />
+            <path
+               d="m 103.59,1646.33 v -10.73 -10.73 -10.72 -10.73 -10.73 -10.72 -10.73 -10.73 -10.72 -10.73 -10.73 -10.72 -10.73 -10.73 -10.72 -10.73 -10.73 -10.72 -10.73 h -9.6 -9.6 -9.6 v 10.73 10.72 10.73 10.73 10.72 10.73 10.73 10.72 10.73 10.73 10.72 10.73 10.73 10.72 10.73 10.73 10.72 10.73 10.73 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path391" />
+            <path
+               d="m 103.59,1442.52 v -10.81 -10.8 -10.81 -10.8 -10.81 -10.8 -10.81 -10.8 -10.81 -10.8 -10.81 -10.8 -10.81 h -9.6 -9.6 -9.6 v 10.81 10.8 10.81 10.8 10.81 10.8 10.81 10.8 10.81 10.8 10.81 10.8 10.81 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path393" />
+            <path
+               d="m 103.59,1073.55 v -11.07 -11.08 -11.07 -11.08 -11.07 -11.07 -11.08 -11.07 -11.07 -11.08 -11.07 -11.07 -11.08 -11.07 h -9.6 -9.6 -9.6 v 11.07 11.08 11.07 11.07 11.08 11.07 11.07 11.08 11.07 11.07 11.08 11.07 11.08 11.07 h 9.6 9.6 z"
+               style="fill:#fee6aa;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path397" />
+            <path
+               d="M 103.59,918.52 V 907.59 896.65 885.72 874.79 863.86 852.92 841.99 831.06 820.13 809.19 798.26 787.33 776.4 765.46 754.53 743.6 732.67 721.73 h -9.6 -9.6 -9.6 v 10.94 10.93 10.93 10.93 10.94 10.93 10.93 10.93 10.94 10.93 10.93 10.93 10.94 10.93 10.93 10.93 10.94 10.93 h 9.6 9.6 z"
+               style="fill:#fed99a;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path399" />
+            <path
+               d="M 103.59,721.73 V 710.52 699.31 688.1 676.89 665.68 654.47 643.26 632.05 620.84 609.63 598.42 h -9.6 -9.6 -9.6 v 11.21 11.21 11.21 11.21 11.21 11.21 11.21 11.21 11.21 11.21 11.21 h 9.6 9.6 z"
+               style="fill:#fdcda1;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path401" />
+            <path
+               d="m 103.59,598.42 v -10.89 -10.88 -10.89 -10.88 -10.89 -10.88 -10.89 -10.89 -10.88 -10.89 -10.88 -10.89 -10.88 -10.89 -10.89 -10.88 -10.89 -10.88 -10.89 -10.88 -10.89 -10.88 -10.89 -10.89 -10.88 -10.89 -10.88 -10.89 -10.88 -10.89 h -9.6 -9.6 -9.6 v 10.89 10.88 10.89 10.88 10.89 10.88 10.89 10.89 10.88 10.89 10.88 10.89 10.88 10.89 10.88 10.89 10.89 10.88 10.89 10.88 10.89 10.88 10.89 10.89 10.88 10.89 10.88 10.89 10.88 10.89 h 9.6 9.6 z"
+               style="fill:#fcb482;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path403" />
+            <path
+               d="M 103.59,271.85 V 260.79 249.73 238.67 227.62 216.56 205.5 194.44 183.38 172.32 161.27 150.21 139.15 128.09 117.03 105.98 94.92 83.86 72.8 61.74 50.68 39.63 28.57 17.51 6.45 h -9.6 -9.6 -9.6 v 11.06 11.06 11.06 11.05 11.06 11.06 11.06 11.06 11.06 11.05 11.06 11.06 11.06 11.06 11.05 11.06 11.06 11.06 11.06 11.06 11.05 11.06 11.06 11.06 h 9.6 9.6 z"
+               style="fill:#fca773;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path405" />
+            <path
+               d="m 103.59,-97.12 v -11.1 -11.09 -11.1 -11.1 -11.09 -11.1 -11.1 h -9.6 -9.6 -9.6 v 11.1 11.1 11.09 11.1 11.1 11.09 11.1 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path409" />
+            <path
+               d="m 103.59,-174.8 v -10.95 -10.96 -10.95 -10.96 -10.95 -10.96 -10.95 -10.95 -10.96 -10.95 -10.96 -10.95 -10.96 h -9.6 -9.6 -9.6 v 10.96 10.95 10.96 10.95 10.96 10.95 10.95 10.96 10.95 10.96 10.95 10.96 10.95 h 9.6 9.6 z"
+               style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path411" />
+            <path
+               d="m 74.79,1818.93 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path413" />
+            <path
+               d="m 74.79,1818.8 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path415" />
+            <path
+               d="m 74.79,1818.67 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path417" />
+            <path
+               d="m 74.79,1818.55 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path419" />
+            <path
+               d="m 74.79,1814.76 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path421" />
+            <path
+               d="m 74.79,1793.88 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path423" />
+            <path
+               d="m 74.79,1735.43 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path425" />
+            <path
+               d="m 74.79,1702.42 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path427" />
+            <path
+               d="m 74.79,1646.33 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path429" />
+            <path
+               d="m 74.79,1442.52 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path431" />
+            <path
+               d="m 74.79,1302.05 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path433" />
+            <path
+               d="m 74.79,1073.55 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path435" />
+            <path
+               d="m 74.79,918.52 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path437" />
+            <path
+               d="m 74.79,721.73 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path439" />
+            <path
+               d="m 74.79,598.42 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path441" />
+            <path
+               d="m 74.79,271.85 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path443" />
+            <path
+               d="m 74.79,-97.12 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path447" />
+            <path
+               d="m 74.79,-174.8 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path449" />
+            <path
+               d="m 74.79,1818.8 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path451" />
+            <path
+               d="m 74.79,1818.67 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path453" />
+            <path
+               d="m 74.79,1818.55 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path455" />
+            <path
+               d="m 74.79,1814.76 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path457" />
+            <path
+               d="m 74.79,1793.77 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path459" />
+            <path
+               d="m 74.79,1735.43 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path461" />
+            <path
+               d="m 74.79,1702.42 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path463" />
+            <path
+               d="m 74.79,1646.33 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path465" />
+            <path
+               d="m 74.79,1442.52 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path467" />
+            <path
+               d="m 74.79,1302.05 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path469" />
+            <path
+               d="m 74.79,918.52 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path473" />
+            <path
+               d="m 74.79,721.73 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:4.24666;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path475" />
+            <path
+               d="m 74.79,598.42 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path477" />
+            <path
+               d="m 74.79,271.85 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path479" />
+            <path
+               d="m 74.79,-97.12 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path483" />
+            <path
+               d="m 74.79,-174.8 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path485" />
+            <path
+               d="m 74.79,-317.21 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path487" />
+            <text
+               transform="matrix(1,0,0,-1,44.05,1813.84)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text491"><tspan
+                 x="0 7.7839999 15.568 19.459999 27.243999 31.136 41.243999 49.028 52.136002 59.919998 66.919998 74.704002 82.487999"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan489">Late Holocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,37.06,1813.71)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text495"><tspan
+                 x="0 11.662 14.77 22.554001 30.337999 33.445999 41.23 45.122002 55.23 63.014 66.122002 73.905998 80.905998 88.690002 96.473999"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan493">Middle Holocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,41.62,1813.59)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text499"><tspan
+                 x="0 9.3380003 17.122 21.993999 25.101999 32.102001 35.993999 46.102001 53.886002 56.993999 64.778 71.778 79.561996 87.346001"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan497">Early Holocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,30.44,1799.24)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text503"><tspan
+                 x="0 11.662 14.77 22.554001 30.337999 33.445999 41.23 45.122002 54.459999 57.568001 65.351997 68.459999 75.459999 79.351997 87.136002 94.136002 101.92 109.704"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan501">Middle Pleistocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,35.01,1759.63)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text507"><tspan
+                 x="0 9.3380003 17.122 21.993999 25.101999 32.102001 35.993999 45.332001 48.439999 56.223999 59.332001 66.332001 70.223999 78.008003 85.008003 92.792 100.576"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan505">Early Pleistocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,46.77,1713.9)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text511"><tspan
+                 x="0 7.7839999 15.568 19.459999 27.243999 31.136 40.473999 43.582001 46.689999 54.473999 61.473999 69.258003 77.042"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan509">Late Pliocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,44.34,1669.35)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text515"><tspan
+                 x="0 9.3380003 17.122 21.993999 25.101999 32.102001 35.993999 45.332001 48.439999 51.548 59.332001 66.332001 74.115997 81.900002"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan513">Early Pliocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,47.17,1539.4)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text519"><tspan
+                 x="0 7.7839999 15.568 19.459999 27.243999 31.136 42.798 45.905998 53.689999 60.689999 68.473999 76.258003"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan517">Late Miocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,40.17,1367.26)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text523"><tspan
+                 x="0 11.662 14.77 22.554001 30.337999 33.445999 41.23 45.122002 56.784 59.891998 67.676003 74.676003 82.459999 90.244003"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan521">Middle Miocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,44.74,1182.77)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text527"><tspan
+                 x="0 9.3380003 17.122 21.993999 25.101999 32.102001 35.993999 47.655998 50.764 58.548 65.547997 73.332001 81.115997"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan525">Early Miocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,40.82,-50.36)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text551"><tspan
+                 x="0 7.7839999 15.568 19.459999 27.243999 31.136 39.914001 47.698002 50.806 58.59 66.374001 73.374001 81.157997 88.942001"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan549">Late Paleocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,33.83,-140.98)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text555"><tspan
+                 x="0 11.662 14.77 22.554001 30.337999 33.445999 41.23 45.122002 53.900002 61.683998 64.792 72.575996 80.360001 87.360001 95.143997 102.928"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan553">Middle Paleocene</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,38.39,-251.03)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text559"><tspan
+                 x="0 9.3380003 17.122 21.993999 25.101999 32.102001 35.993999 44.771999 52.556 55.664001 63.448002 71.232002 78.232002 86.015999 93.800003"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan557">Early Paleocene</tspan></text>
+            <path
+               d="m 103.59,5.48 v 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8"
+               style="fill:none;stroke:#000000;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path565" />
+            <path
+               d="m 74.79,5.48 v 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8"
+               style="fill:none;stroke:#000000;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path567" />
+            <rect
+               style="fill:#000000;fill-opacity:0;stroke-width:4.24667;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0"
+               id="rect43722"
+               width="2.4441128"
+               height="1.1719321"
+               x="74.790993"
+               y="-1075.6719"
+               transform="scale(1,-1)" />
+          </g>
+        </g>
+        <g
+           id="g665"
+           transform="matrix(1.0024991,0,0,0.25000019,569.20906,368.24751)"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400">
+          <g
+             id="g667"
+             clip-path="url(#clipPath671)">
+            <path
+               d="m 132.39,1139.25 v -11.51 -11.5 -11.51 -11.51 -11.51 -11.5 -11.51 -11.51 -11.51 h -9.6 -9.6 -9.6 v 11.51 11.51 11.51 11.5 11.51 11.51 11.51 11.5 11.51 h 9.6 9.6 z"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path673" />
+            <path
+               d="m 132.39,1035.68 v -11.22 -11.22 -11.22 V 990.8 979.58 968.36 957.14 945.92 934.7 923.48 912.26 901.04 889.82 878.6 867.38 h -9.6 -9.6 -9.6 v 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 h 9.6 9.6 z"
+               style="fill:#ffffb2;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path675" />
+            <path
+               d="m 132.39,867.38 v -13.13 -13.13 -13.13 h -9.6 -9.6 -9.6 v 13.13 13.13 13.13 h 9.6 9.6 z"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path677" />
+            <path
+               d="m 132.39,827.99 v -4.95 h -9.6 -9.6 -9.6 v 4.95 h 9.6 9.6 z"
+               style="fill:#fecc5c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path679" />
+            <path
+               d="m 132.39,823.04 v -17.16 h -9.6 -9.6 -9.6 v 17.16 h 9.6 9.6 z"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path681" />
+            <path
+               d="m 132.39,805.88 v -12.4 -12.41 -12.41 -12.4 -12.41 -12.41 h -9.6 -9.6 -9.6 v 12.41 12.41 12.4 12.41 12.41 12.4 h 9.6 9.6 z"
+               style="fill:#fd8d3c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path683" />
+            <path
+               d="M 132.39,731.44 V 720.49 709.53 698.58 687.63 676.67 665.72 654.76 643.81 632.85 621.9 610.94 599.99 589.03 h -9.6 -9.6 -9.6 v 10.96 10.95 10.96 10.95 10.96 10.95 10.96 10.95 10.96 10.95 10.95 10.96 10.95 h 9.6 9.6 z"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path685" />
+            <path
+               d="M 132.39,675.93991 V 582.56 h -9.6 -9.6 -9.6 v 93.37991 h 9.6 9.6 z"
+               style="fill:#deebf7;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.79905"
+               id="path687" />
+            <path
+               d="m 132.39,556.67 v 12.94 12.95 h -9.6 -9.6 -9.6 v -12.95 -12.94 h 9.6 9.6 z"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path689" />
+            <path
+               d="M 132.39,556.67 V 545.74 534.82 523.9 512.97 502.05 491.13 480.2 469.28 h -9.6 -9.6 -9.6 v 10.92 10.93 10.92 10.92 10.93 10.92 10.92 10.93 h 9.6 9.6 z"
+               style="fill:#c6dbef;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path691" />
+            <path
+               d="m 132.39,469.28 v -12.41 -12.4 -12.41 -12.41 -12.4 -12.41 h -9.6 -9.6 -9.6 v 12.41 12.4 12.41 12.41 12.4 12.41 h 9.6 9.6 z"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path693" />
+            <path
+               d="M 132.39,394.84 V 384.05 373.26 362.47 351.69 340.9 330.11 h -9.6 -9.6 -9.6 v 10.79 10.79 10.78 10.79 10.79 10.79 h 9.6 9.6 z"
+               style="fill:#9ecae1;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path695" />
+            <path
+               d="m 132.39,330.11 v -10.79 -10.79 -10.79 h -9.6 -9.6 -9.6 v 10.79 10.79 10.79 h 9.6 9.6 z"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path697" />
+            <path
+               d="M 132.39,297.74 V 286.95 276.17 265.38 254.59 243.8 233.01 h -9.6 -9.6 -9.6 v 10.79 10.79 10.79 10.79 10.78 10.79 h 9.6 9.6 z"
+               style="fill:#6baed6;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path699" />
+            <path
+               d="m 132.39,233.01 v -10.79 -10.79 -10.79 h -9.6 -9.6 -9.6 v 10.79 10.79 10.79 h 9.6 9.6 z"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path701" />
+            <path
+               d="m 132.39,200.64 v -10.78 -10.79 -10.79 h -9.6 -9.6 -9.6 v 10.79 10.79 10.78 h 9.6 9.6 z"
+               style="fill:#4292c6;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path703" />
+            <path
+               d="M 132.39,168.28 V 157.49 146.7 135.91 h -9.6 -9.6 -9.6 v 10.79 10.79 10.79 h 9.6 9.6 z"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path705" />
+            <path
+               d="M 132.39,135.91 V 125.12 114.34 103.55 92.76 81.97 71.18 h -9.6 -9.6 -9.6 v 10.79 10.79 10.79 10.79 10.78 10.79 h 9.6 9.6 z"
+               style="fill:#2171b5;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path707" />
+            <path
+               d="M 132.39,71.18 V 59.96 48.74 37.52 26.3 15.08 3.86 -7.36 -18.58 -29.8 -41.02 -52.24 -63.46 -74.68 -85.9 -97.12 h -9.6 -9.6 -9.6 v 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 11.22 h 9.6 9.6 z"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path709" />
+            <path
+               d="m 103.59,1139.25 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path711" />
+            <path
+               d="m 103.59,1035.68 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path713" />
+            <path
+               d="m 103.59,867.38 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path715" />
+            <path
+               d="m 103.59,827.99 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path717" />
+            <path
+               d="m 103.59,823.04 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path719" />
+            <path
+               d="m 103.59,805.88 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path721" />
+            <path
+               d="m 103.59,731.44 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path723" />
+            <path
+               d="m 103.59,556.67 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path727" />
+            <path
+               d="m 103.59,556.67 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path729" />
+            <path
+               d="m 103.59,469.28 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path731" />
+            <path
+               d="m 103.59,394.84 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path733" />
+            <path
+               d="m 103.59,330.11 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path735" />
+            <path
+               d="m 103.59,297.74 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path737" />
+            <path
+               d="m 103.59,233.01 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path739" />
+            <path
+               d="m 103.59,200.64 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path741" />
+            <path
+               d="m 103.59,168.28 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path743" />
+            <path
+               d="m 103.59,135.91 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path745" />
+            <path
+               d="m 103.59,71.18 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path747" />
+            <path
+               d="m 103.59,1035.68 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path749" />
+            <path
+               d="m 103.59,867.38 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path751" />
+            <path
+               d="m 103.59,827.99 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path753" />
+            <path
+               d="m 103.59,823.04 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path755" />
+            <path
+               d="m 103.59,805.88 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path757" />
+            <path
+               d="m 103.59,731.44 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path759" />
+            <path
+               d="m 103.59,582.56 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path763" />
+            <path
+               d="m 103.59,582.56 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path765" />
+            <path
+               d="m 103.59,469.28 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path767" />
+            <path
+               d="m 103.59,394.84 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path769" />
+            <path
+               d="m 103.59,330.11 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path771" />
+            <path
+               d="m 103.59,297.74 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path773" />
+            <path
+               d="m 103.59,233.01 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path775" />
+            <path
+               d="m 103.59,200.64 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path777" />
+            <path
+               d="m 103.59,168.28 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path779" />
+            <path
+               d="m 103.59,135.91 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path781" />
+            <path
+               d="m 103.59,71.18 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path783" />
+            <path
+               d="m 103.59,-97.12 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path785" />
+            <text
+               transform="matrix(1,0,0,-1,103.2,1082.44)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text789"><tspan
+                 x="0 10.892 20.23"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan787">GAP</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,103.2,842.66)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text797"><tspan
+                 x="0 10.892 20.23"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan795">GAP</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,103.2,809.44)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text805"><tspan
+                 x="0 10.892 20.23"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan803">GAP</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,103.2,564.59)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text821"><tspan
+                 x="0 10.892 20.23"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan819">GAP</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,103.2,427.03)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text829"><tspan
+                 x="0 10.892 20.23"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan827">GAP</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,103.2,308.9)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text837"><tspan
+                 x="0 10.892 20.23"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan835">GAP</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,103.2,211.8)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text845"><tspan
+                 x="0 10.892 20.23"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan843">GAP</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,103.2,147.07)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text853"><tspan
+                 x="0 10.892 20.23"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan851">GAP</tspan></text>
+            <text
+               transform="matrix(1,0,0,-1,103.2,-18)"
+               style="font-variant:normal;font-weight:normal;font-size:14px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text861"><tspan
+                 x="0 10.892 20.23"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan859">GAP</tspan></text>
+            <path
+               d="m 103.59,5.48 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path863" />
+            <path
+               d="m 103.59,1074.52 h 9.6 9.6 9.6"
+               style="fill:none;stroke:#000000;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path865" />
+            <path
+               d="m 132.39,5.48 v 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8"
+               style="fill:none;stroke:#000000;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path867" />
+            <path
+               d="m 103.59,5.48 v 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8 10.8 10.8 10.8 10.8 10.79 10.8 10.8"
+               style="fill:none;stroke:#000000;stroke-width:1.07;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path869" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           transform="matrix(0,0.75000002,0.75000002,0,555.9888,385.55696)"
+           id="text6676"
+           style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="102.42578"
+             id="tspan4376"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4374">Oligocene</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0,0.75000002,0.75000002,0,587.95161,384.67828)"
+           id="text6676-5"
+           style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="98.886719"
+             id="tspan4380"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4378">Early</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0,0.75000002,0.75000002,0,587.95261,214.68163)"
+           id="text6676-5-1"
+           style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-9);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="98.886719"
+             id="tspan4384"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4382">Early</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0,0.75000002,0.75000002,0,587.95261,294.17427)"
+           id="text6676-5-7"
+           style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-2);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="98.886719"
+             id="tspan4388"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4386">Mid</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0,0.75000002,0.75000002,0,586.93261,428.04325)"
+           id="text6676-5-5"
+           style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="98.886719"
+             id="tspan4392"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4390">Late</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,501.85422,676.24922)"
+           id="text6676-5-5-9"
+           style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="96.527314"
+             id="tspan4396"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4394">Des.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,555.46734,644.24729)"
+           id="text6676-5-5-9-62"
+           style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0-0);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="96.527314"
+             id="tspan4400"><tspan
+               style="font-style:italic;font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4398">&quot;La Cantera Fauna&quot;</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,500.12496,630.18625)"
+           id="text6676-5-5-9-6"
+           style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0-3);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="96.527314"
+             id="tspan4404"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4402">Ting.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0,0.75000002,0.75000002,0,586.93261,346.77653)"
+           id="text6676-5-5-2"
+           style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-6);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="98.886719"
+             id="tspan4408"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4406">Late</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0,0.75000002,0.75000002,0,556.36065,262.66467)"
+           id="text6676-6"
+           style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-3);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="102.42578"
+             id="tspan4412"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4410">Eocene</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,499.05816,595.81143)"
+           id="text6676-5-5-9-62-1"
+           style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0-0-6);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="96.527314"
+             id="tspan4416"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4414">Must.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,500.74057,566.12767)"
+           id="text6676-5-5-9-62-1-9"
+           style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0-0-6-7);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="96.527314"
+             id="tspan4420"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4418">Barr.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,498.45296,528.30848)"
+           id="text6676-5-5-9-62-1-9-0"
+           style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0-0-6-7-2);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="96.527314"
+             id="tspan4424"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4422">Vacan</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,498.54664,483.83949)"
+           id="text6676-5-5-9-62-1-9-0-5"
+           style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0-0-6-7-2-7);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="96.527314"
+             id="tspan4428"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4426">Rioch.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,501.21078,463.87179)"
+           id="text6676-5-5-9-62-1-9-0-5-2"
+           style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0-0-6-7-2-7-9);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="96.527314"
+             id="tspan4432"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4430">Itab.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,498.20232,503.99282)"
+           id="text6676-5-5-9-62-1-9-0-3"
+           style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0-0-6-7-2-2);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="96.527314"
+             id="tspan4436"><tspan
+               style="font-style:italic;font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4434">&quot;S. F.&quot;</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,367.32347,756.50458)"
+           id="text37304"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4440"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4438">23.03</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.7178,746.60346)"
+           id="text37304-4"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4444"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4442">24.2</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,475.10342,704.4647)"
+           id="text37304-4-3"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4448"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4446">29.4</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.74716,698.65221)"
+           id="text37304-4-3-0"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4452"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4450">30.6</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.70126,691.31657)"
+           id="text37304-4-3-0-3"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4456"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4454">30.8</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,475.19592,686.07149)"
+           id="text37304-4-3-0-3-5"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4460"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4458">31.3</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,475.19713,670.57753)"
+           id="text37304-4-3-0-3-5-0"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4464"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4462">33.6</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.87824,656.89058)"
+           id="text37304-4-3-0-3-5-0-8"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4468"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4466">35</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.63773,633.19106)"
+           id="text37304-4-3-0-3-5-0-8-8"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4472"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4470">38.2</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.59532,626.63792)"
+           id="text37304-4-3-0-3-5-0-8-8-4"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6-8);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4476"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4474">39</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.05699,604.96731)"
+           id="text37304-4-3-0-3-5-0-8-8-4-1"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6-8-3);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4480"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4478">41.7</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.53566,586.16724)"
+           id="text37304-4-3-0-3-5-0-8-8-4-1-9"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6-8-3-4);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4484"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4482">44</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.78493,570.23484)"
+           id="text37304-4-3-0-3-5-0-8-8-4-1-9-0"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6-8-3-4-2);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4488"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4486">46</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,475.13785,562.14603)"
+           id="text37304-4-3-0-3-5-0-8-8-4-1-9-0-8"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4492"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4490">47</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.33165,545.90931)"
+           id="text37304-4-3-0-3-5-0-8-8-4-1-9-0-8-2"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6-9);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4496"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4494">49</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.63084,537.77977)"
+           id="text37304-4-3-0-3-5-0-8-8-4-1-9-0-8-2-6"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6-9-6);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4500"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4498">50</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.65277,529.8131)"
+           id="text37304-4-3-0-3-5-0-8-8-4-1-9-0-8-2-6-9"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6-9-6-4);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4504"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4502">51</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.55473,521.56355)"
+           id="text37304-4-3-0-3-5-0-8-8-4-1-9-0-8-2-6-9-0"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6-9-6-4-5);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4508"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4506">52</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,474.567,505.44507)"
+           id="text37304-4-3-0-3-5-0-8-8-4-1-9-0-8-2-6-9-0-8"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-8-0-1-6-1-3-7-6-8-3-4-2-6-9-6-4-5-4);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4512"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4510">54</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,367.23845,717.22516)"
+           id="text37304-8"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-2);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4516"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4514">27.82</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,369.63904,667.99987)"
+           id="text37304-7"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-9);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4520"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4518">33.9</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,367.17445,637.26905)"
+           id="text37304-7-6"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-9-3);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4524"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4522">37.71</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,369.90281,555.91135)"
+           id="text37304-7-6-2"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-9-3-1);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4528"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4526">41.2</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,374.55285,488.95378)"
+           id="text37304-7-6-2-3"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect37306-9-3-1-9);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="305.89062"
+             y="161.83792"
+             id="tspan4532"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4530">56</tspan></tspan></text>
+        <path
+           style="fill:none;stroke:#333333;stroke-width:0.255118;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 701.92991,575.24516 1.0406,3.88718 h 0.43993"
+           id="path47710"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <path
+           style="fill:none;stroke:#333333;stroke-width:0.255118;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 701.92991,574.00766 1.03012,-1.84054 h 0.46402"
+           id="path48298"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.283465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.283465, 0.566929;stroke-dashoffset:0;stroke-opacity:1"
+           d="m 701.73566,574.54657 h 30.98817"
+           id="path50422"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <path
+           style="fill:none;stroke:#333333;stroke-width:0.255118;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 701.92991,569.71766 1.02315,-2.76587 h 0.47991"
+           id="path59951"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0,0.75000002,0.75000002,0,431.4768,436.47308)"
+           id="text78219"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect78221);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="72.146484"
+             y="209.26565"
+             id="tspan4536"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan4534">Time (Ma)</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,450.53636,424.95764)"
+           id="text6676-5-5-9-62-1-9-0-5-2-3"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0-0-6-7-2-7-9-5);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="94.167999"
+             id="tspan4540"><tspan
+               style="font-weight:bold"
+               id="tspan4538">ICC bins</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.75000002,0,0,-0.75000002,493.38919,425.0979)"
+           id="text6676-5-5-9-62-1-9-0-5-2-3-6"
+           style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-3-0-0-6-7-2-7-9-5-5);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
+           inkscape:export-xdpi="400"
+           inkscape:export-ydpi="400"><tspan
+             x="236.32617"
+             y="94.167999"
+             id="tspan4544"><tspan
+               style="font-weight:bold"
+               id="tspan4542">SALMAs</tspan></tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:30px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+         x="780.591"
+         y="-376.9173"
+         id="text6862"
+         transform="scale(1,-1)"><tspan
+           sodipodi:role="line"
+           id="tspan6860"
+           style="stroke-width:0.75"
+           x="780.591"
+           y="-376.9173" /><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.75"
+           id="tspan6864"
+           x="780.591"
+           y="-339.4173" /></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.283465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 616.14983,368.65823 c 0,-6.69255 25.67332,1.28793 27.44415,-5.32089 1.76561,6.58934 27.69472,-1.37905 27.69472,5.32089"
+         id="path11510"
+         sodipodi:nodetypes="ccc" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.0890631;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 120.74066,139.97464 c -0.006,1.87782 4.23985,-0.10242 4.8643,1.74198 0.62146,-1.83559 4.84458,0.13035 4.84458,-1.74198"
+       id="path8776"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>

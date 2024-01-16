@@ -28,4 +28,4 @@ p <- ggplot() +
             abbrv = list(FALSE, TRUE, FALSE)) +
   theme_classic()
 
-ggsave("./figures/methods_figure/SALMA_scale.pdf", plot = p, width = 10, height = 30)
+ggsave("./figures/Fig_S1_SALMA_scale/SALMA_scale.pdf", plot = p, width = 10, height = 30)
