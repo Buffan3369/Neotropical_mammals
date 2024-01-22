@@ -31,17 +31,17 @@ echo "python3 ../PyRate/PyRate.py ../results/SALMA_smoothed/genus_level/3-Spatia
     ## TROPICS
         #SALMA kept
 #Extra-tropical
-echo "python3 ../PyRate/PyRate.py ../results/SALMA_kept/genus_level/4-Tropical/Extratropical_EOT_gen_occ_SALMA_kept_PyRate.py -qShift ../EO_stages.txt -pL 1.1 0 -pM 1.1 0 -pP 2 0 -edgeShift 55.8 23.23 -mG -j \$1 -n 50000000 -s 50000" > tmp_script.sh
+echo "python3 ../PyRate/PyRate.py ../results/SALMA_kept/genus_level/4-Tropical_Extratropical/Extratropical/Extratropical_EOT_gen_occ_SALMA_kept_PyRate.py -qShift ../EO_stages.txt -pL 1.1 0 -pM 1.1 0 -pP 2 0 -edgeShift 55.8 23.23 -mG -j \$1 -n 50000000 -s 50000" > tmp_script.sh
 /usr/local/bin/parallel -j 20 bash tmp_script.sh ::: {1..20}
 #Tropical
-echo "python3 ../PyRate/PyRate.py ../results/SALMA_kept/genus_level/4-Tropical/Tropical_EOT_gen_occ_SALMA_kept_PyRate.py -qShift ../EO_stages.txt -pL 1.1 0 -pM 1.1 0 -pP 2 0 -edgeShift 55.8 23.23 -mG -j \$1 -n 50000000 -s 50000" > tmp_script.sh
+echo "python3 ../PyRate/PyRate.py ../results/SALMA_kept/genus_level/4-Tropical_Extratropical/Tropical/Tropical_EOT_gen_occ_SALMA_kept_PyRate.py -qShift ../EO_stages.txt -pL 1.1 0 -pM 1.1 0 -pP 2 0 -edgeShift 55.8 23.23 -mG -j \$1 -n 50000000 -s 50000" > tmp_script.sh
 /usr/local/bin/parallel -j 20 bash tmp_script.sh ::: {1..20}
         #SALMA smoothed
 #Extra-tropical
-echo "python3 ../PyRate/PyRate.py ../results/SALMA_kept/genus_level/4-Tropical/Extratropical_EOT_gen_occ_SALMA_smoothed_PyRate.py -qShift ../EO_stages.txt -pL 1.1 0 -pM 1.1 0 -pP 2 0 -edgeShift 55.8 23.23 -mG -j \$1 -n 50000000 -s 50000" > tmp_script.sh
+echo "python3 ../PyRate/PyRate.py ../results/SALMA_kept/genus_level/4-Tropical_Extratropical/Extratropical/Extratropical_EOT_gen_occ_SALMA_smoothed_PyRate.py -qShift ../EO_stages.txt -pL 1.1 0 -pM 1.1 0 -pP 2 0 -edgeShift 55.8 23.23 -mG -j \$1 -n 50000000 -s 50000" > tmp_script.sh
 /usr/local/bin/parallel -j 20 bash tmp_script.sh ::: {1..20}
 #Tropical
-echo "python3 ../PyRate/PyRate.py ../results/SALMA_kept/genus_level/4-Tropical/Tropical_EOT_gen_occ_SALMA_smoothed_PyRate.py -qShift ../EO_stages.txt -pL 1.1 0 -pM 1.1 0 -pP 2 0 -edgeShift 55.8 23.23 -mG -j \$1 -n 50000000 -s 50000" > tmp_script.sh
+echo "python3 ../PyRate/PyRate.py ../results/SALMA_kept/genus_level/4-Tropical_Extratropical/Tropical/Tropical_EOT_gen_occ_SALMA_smoothed_PyRate.py -qShift ../EO_stages.txt -pL 1.1 0 -pM 1.1 0 -pP 2 0 -edgeShift 55.8 23.23 -mG -j \$1 -n 50000000 -s 50000" > tmp_script.sh
 /usr/local/bin/parallel -j 20 bash tmp_script.sh ::: {1..20}
 
     ## DIET
