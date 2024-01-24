@@ -48,6 +48,7 @@ net_div_all_in_one <- rtt_plot(data = rtt_all_in_one,
 ## Lineages-through-time (LTT)--------------------------------------------------
   # LTT table
 ltt_df <- extract_ltt(dir = args[3])
+ltt_df <- ltt_df %>% flter(Age > 23.03 & Age < 56) # erase what's outside study period
   # LTT plot
 ltt.plot <- ltt_plot(ltt_df, 
                      y_breaks = seq(0,(round(max(ltt_df$Diversity), -1) + 10),30), 
@@ -59,6 +60,7 @@ ltt.plot <- ltt_plot(ltt_df,
 ## Preservation (q) rates ------------------------------------------------------
   # q-rates table
 omega<-read.table(args[4], header = TRUE)
+omega <- omega %>% filter(Age > 23.03 & Age < 56)
   # q-rates plot
 Q_plot<-q_plot(omega, 
                ltt_df,
