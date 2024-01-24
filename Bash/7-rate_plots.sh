@@ -1,10 +1,10 @@
 #!/bin/bash
 
-for s in SALMA_kept SALMA_smoothed 
+for s in SALMA_kept SALMA_smoothed
 do
-	for ss in genus_level
+	for ss in genus_level species_level
 	do
-		for ana in 3-Spatially_scaled
+		for ana in 1-Full 2-Singleton 3-Spatially_scaled
 		do
 			#specify arguments
 			rtt=../results/$s/$ss/$ana/combined_logs/RTT_plots.r 
