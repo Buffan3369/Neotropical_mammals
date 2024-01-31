@@ -27,15 +27,16 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     for(a in c("1-Full", "2-Singleton", "3-Spatially_scaled")){
       rtt_tbl <- extract_rtt(path = paste0("./results/", salma, "/", scl, "/", a, "/combined_logs/RTT_plots.r"), ana = "RJMCMC")
       # origination rate plot
-      ori_plt <- rtt_plot(data = rtt_tbl,
+      rtt_plt <- rtt_plot(data = rtt_tbl,
                           type = "SpEx",
                           y_limits = c(0, 1),
+                          y_lab = "Rate",
                           restrict_thr = 1,
                           several_gts = TRUE,
                           geoscale2 = gsc2,
                           abbr = list(TRUE, FALSE))
       i <- i+1
-      plot_list[[i]] <- ori_plt
+      plot_list[[i]] <- rtt_plt
       # extinction rate plot
       ext_plt <- rtt_plot(data = rtt_tbl,
                           type = "net",
@@ -72,14 +73,20 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
 }
 
 ## Partition and save ----------------------------------------------------------
-kept <- ggarrange(plotlist = plot_list[1:24], nrow = 6, ncol = 4)
+kept <- ggarrange(plotlist = plot_list[1:24], nrow = 6, ncol = 4, 
+                  labels = c("(A)", rep(NA, 3), "(B)", rep(NA, 3), "(C)",
+                             rep(NA, 3), "(D)", rep(NA, 3), "(E)", rep(NA, 3),  "(F)", rep(NA, 3)),
+                  font.label = list(size = 20))
 ggsave("./figures/Sensitivity_analyses/Mustersan_38.2_35/kept_panel.png",
        plot = kept,
        height = 700,
        width = 1000,
        units = "mm",
        dpi = 200)
-smoothed <- ggarrange(plotlist = plot_list[25:48], nrow = 6, ncol = 4)
+smoothed <- ggarrange(plotlist = plot_list[25:48], nrow = 6, ncol = 4, 
+                      labels = c("(A)", rep(NA, 3), "(B)", rep(NA, 3), "(C)",
+                                 rep(NA, 3), "(D)", rep(NA, 3), "(E)", rep(NA, 3),  "(F)", rep(NA, 3)),
+                      font.label = list(size = 20))
 ggsave("./figures/Sensitivity_analyses/Mustersan_38.2_35/smoothed_panel.png",
        plot = smoothed,
        height = 700,
