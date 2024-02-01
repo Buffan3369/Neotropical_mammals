@@ -1,1 +1,1 @@
-python3 ~/PyRate/PyRate.py ../results/SALMA_smoothed/genus_level/3-Spatially_scaled/spatially_scaled_EOT_gen_occ_SALMA_smoothed_PyRate.py -qShift ../data_2023/EO_stages.txt -pL 1.1 0 -pM 1.1 0 -pP 2 0 -singleton 1 -edgeShift 55.8 23.23 -mG -j $1 -n 50000000 -s 50000
+python3 ~/PyRate/PyRateMBD.py -d ../results/MBD/1-Full/Combined_TsTe_from_replicates.txt -var ../data_2023/MBD/processed_environment_predictors -m 0 -j $1 -minT 23.03 -maxT 56 -n 10000000 -s 10000
