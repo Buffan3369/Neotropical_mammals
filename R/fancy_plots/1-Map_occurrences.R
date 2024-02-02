@@ -15,6 +15,8 @@ library(tidyverse)
 occdf <- readRDS("./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
   # New world map
 nw <- st_read("./data_2023/New_World_map_ecoregions/New_World_18_regions_DCsplit.shp")
+  # switch off the use of s2, otherwise st_union does not work
+sf_use_s2(FALSE)
 
 ## Process map data and pot ----------------------------------------------------
 p <- nw %>%
