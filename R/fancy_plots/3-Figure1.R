@@ -64,6 +64,8 @@ for(pth in paths){
                       x.axis = x.axis,
                       several_gts = TRUE,
                       geoscale2 = gsc2,
+                      geoscale_height = unit(1, "line"),
+                      geoscale_labelsize = 4,
                       abbr = list(TRUE, FALSE)) +
     #additional customs
     annotate(geom = "rect", xmin = 37.71, xmax = 47.8, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
@@ -107,6 +109,8 @@ for(pth in paths){
                       x.axis = x.axis,
                       several_gts = TRUE,
                       geoscale2 = gsc2,
+                      geoscale_height = unit(1, "line"),
+                      geoscale_labelsize = 4,
                       abbr = list(TRUE, FALSE)) +
     annotate(geom = "rect", xmin = 37.71, xmax = 47.8, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     annotate(geom = "rect", xmin = 27.8, xmax = 33.9, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
@@ -152,6 +156,8 @@ for(pth in paths){
                        x.axis = x.axis,
                        several_gts = TRUE,
                        geoscale2 = gsc2,
+                       geoscale_height = unit(1, "line"),
+                       geoscale_labelsize = 4,
                        abbr = list(TRUE, FALSE)) +
     annotate(geom = "rect", xmin = 37.71, xmax = 47.8, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     annotate(geom = "rect", xmin = 27.8, xmax = 33.9, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
