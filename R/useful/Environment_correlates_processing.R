@@ -5,20 +5,45 @@
 # Aim: Process environmental correlates for MBD.
 ################################################################################
 
-## Function to select the closest 'age_vect' element to the integer 'int_age' --------------------------------------------------
-select_closer <- function(int_age, age_vect, d = 0){
-  corr <- which(unlist(lapply(X = age_vect, FUN = round, digits = d)) == int_age)
-  diff <- lapply(X = age_vect[corr], FUN = function(x){return(abs(x-int_age))})
-  return(corr[which.min(diff)])
+## Function to select the closest 'age_vect' element to the integer 'int_age' --------------------------------------
+select_closer <- function(int_age, age_vect){
+  diff <- sapply(X = age_vect, FUN = function(x){return(abs(x-int_age))})
+  return(which.min(diff))
 }
 
+age_vect <- plant_raw$Age
+int_age <- 52
+
+A <- sapply(X = age_vect, 
+            FUN = function(x){
+              return(abs(x-int_age))
+            })
+
+## Plant diversity (from Jaramillo et al. (2006)) -------------------------------------------------------------------
+plant_raw <- read.table("./data_2023/MBD/raw_environment_correlates/Cnz_Plant_diversity_Jaramillo_2006.txt", header = TRUE)
+selected_indices <- sapply(X = seq(from = 23, to = 56, by = 0.5),
+                           FUN = select_closer,
+                           age_vect = plant_raw$Age)
+plant_processed <- data.frame(Age = seq(from = 23, to = 56, by = 0.5),
+                              Plant_diversity = plant_raw$Div[selected_indices])
+### Verification ###
+#par(mfrow = c(1,2))
+#plot(x = plant_processed$Age, plant_processed$Plant_diversity)
+#plot(x = plt$Age, y = plt$Div)
+
+write.table(x = plant_processed,
+            file = "./data_2023/MBD/processed_environment_predictors/1-Cenozoic_Plant_Diversity_500ky_step.txt",
+            sep = "\t",
+            row.names = FALSE,
+            quote = FALSE)
+
 ## Andean Uplift (from Boschman (2021)) -----------------------------------------------------------------------------
-  Uplift <- read.table("./data_2023/MBD/raw_environment_correlates/andean_uplift/Andes_mean_elevations_no_basins_ALL.txt",
+Uplift <- read.table("./data_2023/MBD/raw_environment_correlates/andean_uplift/Andes_mean_elevations_no_basins_ALL.txt",
                      sep = " ",
                      header = TRUE)
 #Write and save a dataset of the covariate with a 100ky time step
 average_elevation <- data.frame(Age = 0:66,
-                                Altitude = unlist(lapply(X = 0:66, FUN = function(x){return(mean(Uplift$Altitude[which(Uplift$Age == x)]))})))
+                                Altitude = sapply(X = 0:66, FUN = function(x){return(mean(Uplift$Altitude[which(Uplift$Age == x)]))}))
 interpol_av_el <- approx(x = average_elevation$Age[1:2], y = average_elevation$Altitude[1:2], n=3)$y
 for(i in 2:66){
   interpol_av_el <- c(interpol_av_el,
@@ -43,9 +68,9 @@ Temp <- read.table("./data_2023/MBD/raw_environment_correlates/palaeotemperature
                    header = TRUE)
 Temp_Cnz <- Temp[which(Temp$Age <= 66), ]
 #Write and save a dataset of the covariate with a 500ky time step
-selected_indices <- unlist(lapply(X = seq(from = 0, to = 66, by = 0.5), FUN = select_closer, age_vect = Temp_Cnz$Age, d = 1))
+selected_indices <- sapply(X = seq(from = 0, to = 66, by = 0.5), FUN = select_closer, age_vect = Temp_Cnz$Age)
 Temp_Cnz <- Temp_Cnz[selected_indices, ]
-Temp_Cnz$Age <- unlist(lapply(X = Temp_Cnz$Age, FUN = round, digits = 1))
+Temp_Cnz$Age <- sapply(X = Temp_Cnz$Age, FUN = round, digits = 1)
 write.table(Temp_Cnz,
             file = "./data_2023/MBD/processed_environment_predictors/3-Cenozoic_Temp_500ky_step.txt",
             sep = "\t",
@@ -65,7 +90,7 @@ full_data <- read.table("./data_2023/MBD/raw_environment_correlates/atmospheric_
 # plot(full_data$Tuned.time..Ma., full_data$Foram.benth.δ13C....PDB...smoothLoess10.)
 
 #Write and save a dataset of the covariate with a 500ky time step
-selected_indices <- sapply(X = seq(0, 66, 0.5), FUN = select_closer, age_vect = full_data$Tuned.time..Ma., d = 1)
+selected_indices <- sapply(X = seq(0, 66, 0.5), FUN = select_closer, age_vect = full_data$Tuned.time..Ma.)
 d13_C <- data.frame(Age = seq(0, 66, 0.5),
                     d13C_atmospheric = full_data$Foram.benth.δ13C....PDB...VPDB.CorrAdjusted.[selected_indices])
 write.table(x = d13_C,
@@ -125,10 +150,10 @@ write.table(x = interpolated[selected_indices,],
 sea_lvl <- read.table("./data_2023/MBD/raw_environment_correlates/sea_level/Miller_2020_sea_level_data.txt",
                       sep = "\t",
                       header = TRUE)
-sea_lvl$age_calkaBP <- unlist(lapply(X = sea_lvl$age_calkaBP, FUN = function(x){x/1000}))
-selected_indices <- unlist(lapply(X = seq(from = 0, to = 66, by = 0.5), FUN = select_closer, age_vect = sea_lvl$age_calkaBP, d=1))
+sea_lvl$age_calkaBP <- sapply(X = sea_lvl$age_calkaBP, FUN = function(x){x/1000})
+selected_indices <- sapply(X = seq(from = 0, to = 66, by = 0.5), FUN = select_closer, age_vect = sea_lvl$age_calkaBP)
 #there are some intervals with lacks => interpolate
-ages <- unlist(lapply(X = sea_lvl$age_calkaBP[selected_indices], FUN = round, digits = 1))
+ages <- sapply(X = sea_lvl$age_calkaBP[selected_indices], FUN = round, digits = 1)
 sel_sea_lvl <- sea_lvl$sealevel[selected_indices]
 
 to_add <- seq(0,66,0.5)[which(seq(0,66,0.5) %in% ages == FALSE)]
@@ -191,11 +216,11 @@ for(order in c("Astrapotheria", "Carnivora", "Didelphimorphia", "Litopterna", "N
                    to = round(maxT, digits = 1),
                    by = 0.5)
   #sample diversity estimates inside this timescale
-  selected_indices <- unlist(lapply(X = round_seq, FUN = select_closer, age_vect = order_div$time, d = 1))
+  selected_indices <- sapply(X = round_seq, FUN = select_closer, age_vect = order_div$time)
   order_div <- order_div[selected_indices, ]
-  order_div$time <- unlist(lapply(X = order_div$time,
+  order_div$time <- sapply(X = order_div$time,
                                   FUN = round,
-                                  digits = 1))
+                                  digits = 1)
   #Create dataset with interpolated times
   interpolated <- data.frame(Age = NA, Diversity = NA)
   for(t in round_seq){
