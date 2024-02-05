@@ -31,7 +31,7 @@ covar_idx_diet <- hash("0" = "Self-diversity",
                      "10" = "Omnivorous_diversity")
 
 ## Different outputs to analyse ------------------------------------------------
-DIRS <- c("1-Full/Eocene_only", "1-Full/Oligocene_only", "4-Tropical_Extratropical/Tropical", "4-Tropical_Extratropical/Tropical/Eocene_only",
+DIRS <- c("1-Full", "1-Full/Eocene_only", "1-Full/Oligocene_only", "4-Tropical_Extratropical/Tropical", "4-Tropical_Extratropical/Tropical/Eocene_only",
           "4-Tropical_Extratropical/Tropical/Oligocene_only", "4-Tropical_Extratropical/Extratropical", 
           "4-Tropical_Extratropical/Extratropical/Eocene_only", "4-Tropical_Extratropical/Extratropical/Oligocene_only", "5-Ecomorphotype/carnivore", 
           "5-Ecomorphotype/herbivore", "5-Ecomorphotype/omnivore", "5-Ecomorphotype/insectivore")
@@ -103,7 +103,7 @@ for(trt in DIRS){
       }
     }
   }
-  
+
   # 4) reformat dataset for plotting
   value <- mcmcLog[, 1]
   param <- rep(0, nrow(mcmcLog))
@@ -193,3 +193,4 @@ for(trt in DIRS){
          dpi = 300)
   cat("\nDone :)!\n")
 }
+
