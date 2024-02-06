@@ -82,14 +82,18 @@ for(trt in DIRS){
     recap_tbl_sign <- NULL
   }
   else{
-    recap_tbl_sign <- recap_tbl %>% select(ends_with(corr_vbl))
+    mcmcLog_sign <- mcmcLog %>% select(corr_vbl)
     # 3) check if zero is in the 95% HPD
     zeros <- c()
-    for(G in colnames(mcmcLog)){
+    for(G in colnames(mcmcLog_sign)){
       #5 and 95% quantiles of the distribution
-      Q <- as.numeric(quantile(mcmcLog[, G], probs = c(0.025, 0.975)))
+      Q <- as.numeric(quantile(mcmcLog_sign[, G], probs = c(0.025, 0.975)))
       if(length(unique(sign(Q))) > 1){ #if these boundaries have different signs, i.e. 0 is in 95% HPD
-        zeros <- c(zeros, G)
+        small_abs <- min(abs(Q))
+        #in case the distribution is skewed and only a TINY part of the 95% HPD includes 0
+        if(small_abs >= 0.01){ #we consider small_abs small enough if smaller than 1e-2
+          zeros <- c(zeros, G)
+        }
       }
     }
     #remove variables including zero in their 95% HPD from the list of the significant variables
@@ -97,10 +101,6 @@ for(trt in DIRS){
       corr_vbl <- corr_vbl[-which(corr_vbl %in% zeros)]
       if(length(corr_vbl) == 0){
         message("\nNo significant correlation coefficient found.\n")
-        recap_tbl_sign <- NULL
-      }
-      else{
-        recap_tbl_sign <- recap_tbl_sign %>% select(ends_with(corr_vbl))
       }
     }
   }
