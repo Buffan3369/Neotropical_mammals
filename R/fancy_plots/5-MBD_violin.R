@@ -98,6 +98,7 @@ for(trt in DIRS){
     }
     #remove variables including zero in their 95% HPD from the list of the significant variables
     if(length(zeros) > 0){
+      zeros <- str_replace(zeros, "Mean_W", "G") #otherwise names don't match
       corr_vbl <- corr_vbl[-which(corr_vbl %in% zeros)]
       if(length(corr_vbl) == 0){
         message("\nNo significant correlation coefficient found.\n")
@@ -185,7 +186,7 @@ for(trt in DIRS){
   # set the name of the plot and save
   spl <- strsplit(trt, "/")[[1]]
   nm <- c(spl[1])
-  for(el in spl[2:length(spl)]){nm <- paste0(nm, "_", el)}
+  if(length(spl)>1){for(el in spl[2:length(spl)]){nm <- paste0(nm, "_", el)}}
   ggsave(paste0("./figures/MBD_outputs/", nm, "_MBD_violin.png"),
          plot = MBD_plot,
          height = 200,
