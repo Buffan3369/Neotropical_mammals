@@ -11,7 +11,7 @@ library(ggplot2)
 
 ## Dictionary containing the corresponding index of the covariates -------------
 covar_idx <- hash("0" = "Self-diversity",
-                "1" = "Fragmentation",
+                "1" = "Plant_diversity",
                 "2" = "Andes_elevation",
                 "3" = "Temperature",
                 "4" = "Atmospheric_carbon",
@@ -19,7 +19,7 @@ covar_idx <- hash("0" = "Self-diversity",
                 "6" = "Sea_level")
 
 covar_idx_diet <- hash("0" = "Self-diversity",
-                     "1" = "Fragmentation",
+                     "1" = "Plant_diversity",
                      "2" = "Andes_elevation",
                      "3" = "Temperature",
                      "4" = "Atmospheric_carbon",
@@ -31,10 +31,11 @@ covar_idx_diet <- hash("0" = "Self-diversity",
                      "10" = "Omnivorous_diversity")
 
 ## Different outputs to analyse ------------------------------------------------
-DIRS <- c("1-Full", "1-Full/Eocene_only", "1-Full/Oligocene_only", "4-Tropical_Extratropical/Tropical", "4-Tropical_Extratropical/Tropical/Eocene_only",
-          "4-Tropical_Extratropical/Tropical/Oligocene_only", "4-Tropical_Extratropical/Extratropical", 
-          "4-Tropical_Extratropical/Extratropical/Eocene_only", "4-Tropical_Extratropical/Extratropical/Oligocene_only", "5-Ecomorphotype/carnivore", 
-          "5-Ecomorphotype/herbivore", "5-Ecomorphotype/omnivore", "5-Ecomorphotype/insectivore")
+# DIRS <- c("1-Full", "1-Full/Eocene_only", "1-Full/Oligocene_only", "4-Tropical_Extratropical/Tropical", "4-Tropical_Extratropical/Tropical/Eocene_only",
+#           "4-Tropical_Extratropical/Tropical/Oligocene_only", "4-Tropical_Extratropical/Extratropical", 
+#           "4-Tropical_Extratropical/Extratropical/Eocene_only", "4-Tropical_Extratropical/Extratropical/Oligocene_only", "5-Ecomorphotype/carnivore", 
+#           "5-Ecomorphotype/herbivore", "5-Ecomorphotype/omnivore", "5-Ecomorphotype/insectivore")
+DIRS <- c("1-Full", "1-Full/Eocene_only", "1-Full/Oligocene_only")
 
 ## Big loop --------------------------------------------------------------------
 for(trt in DIRS){
@@ -86,7 +87,7 @@ for(trt in DIRS){
     zeros <- c()
     for(G in colnames(mcmcLog)){
       #5 and 95% quantiles of the distribution
-      Q <- as.numeric(quantile(mcmcLog[, G], probs = c(0.05, 0.95)))
+      Q <- as.numeric(quantile(mcmcLog[, G], probs = c(0.025, 0.975)))
       if(length(unique(sign(Q))) > 1){ #if these boundaries have different signs, i.e. 0 is in 95% HPD
         zeros <- c(zeros, G)
       }
@@ -137,8 +138,8 @@ for(trt in DIRS){
                 min_val = min(density(value)[[1]])) %>% 
       #adjust star position
       mutate(star_pos = ifelse(abs(max_val) >= abs(min_val), 
-                               max_val + sign(max_val)*1.5,
-                               min_val + sign(min_val)*1.5))
+                               max_val + sign(max_val)*0.5,
+                               min_val + sign(min_val)*0.5))
   }
   else{ #if no coefficient was found significant
     signif_df <- plot_df %>% 
@@ -147,8 +148,8 @@ for(trt in DIRS){
       summarise(max_val = max(density(value)[[1]]),
                 min_val = min(density(value)[[1]])) %>% 
       mutate(star_pos = ifelse(abs(max_val) >= abs(min_val), 
-                               max_val + sign(max_val)*1.5,
-                               min_val + sign(min_val)*1.5))
+                               max_val + sign(max_val)*0.5,
+                               min_val + sign(min_val)*0.5))
     
   }
   
