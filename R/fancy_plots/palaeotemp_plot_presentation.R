@@ -18,7 +18,7 @@ p <- Temp %>%
   geom_line(linewidth = 1, colour = "bisque2") +
   scale_x_reverse() +
   labs(x = "Time (Ma)",
-       y = "Average palaeotemperature (°C)") +
+       y = "Global Average Temperature (°C)") +
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
   annotate(geom = "text", x = 32.5, y = 35, label = "EOT", size = 10, colour = "red") +
   coord_geo(dat = "epochs", size = 6, color = "grey85", abbr = FALSE, center_end_labels = TRUE) +
