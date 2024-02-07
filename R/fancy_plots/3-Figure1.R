@@ -45,6 +45,7 @@ for(pth in paths){
     xlim <- NULL
     display_gts <- TRUE
   }
+  
   # diversification rates plot ---------
   rtt_plt <- rtt_plot(data = rtt_tbl,
                       type = "SpEx",
@@ -187,8 +188,3 @@ ggsave("./figures/Figure_1/backbone.png",
        units = "mm",
        dpi = 200)
 
-ggsave("./figures/Figure_1/backbone.pdf",
-       plot = fig1,
-       height = 400,
-       width = 400,
-       units = "mm")
