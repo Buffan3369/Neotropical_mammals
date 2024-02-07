@@ -8,6 +8,7 @@
 library(dplyr)
 library(hash)
 library(ggplot2)
+library(stringr)
 
 ## Dictionary containing the corresponding index of the covariates -------------
 covar_idx <- hash("0" = "Self-diversity",
@@ -35,7 +36,7 @@ covar_idx_diet <- hash("0" = "Self-diversity",
 #           "4-Tropical_Extratropical/Tropical/Oligocene_only", "4-Tropical_Extratropical/Extratropical", 
 #           "4-Tropical_Extratropical/Extratropical/Eocene_only", "4-Tropical_Extratropical/Extratropical/Oligocene_only", "5-Ecomorphotype/carnivore", 
 #           "5-Ecomorphotype/herbivore", "5-Ecomorphotype/omnivore", "5-Ecomorphotype/insectivore")
-DIRS <- c("1-Full", "1-Full/Eocene_only", "1-Full/Oligocene_only")
+DIRS <- c("5-Ecomorphotype/carnivore", "5-Ecomorphotype/herbivore", "5-Ecomorphotype/omnivore", "5-Ecomorphotype/insectivore")
 
 ## Big loop --------------------------------------------------------------------
 for(trt in DIRS){
@@ -82,7 +83,7 @@ for(trt in DIRS){
     recap_tbl_sign <- NULL
   }
   else{
-    mcmcLog_sign <- mcmcLog %>% select(corr_vbl)
+    mcmcLog_sign <- mcmcLog %>% select(all_of(corr_vbl))
     # 3) check if zero is in the 95% HPD
     zeros <- c()
     for(G in colnames(mcmcLog_sign)){
