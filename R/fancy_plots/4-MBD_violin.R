@@ -32,11 +32,12 @@ covar_idx_diet <- hash("0" = "Self-diversity",
                      "10" = "Omnivorous_diversity")
 
 ## Different outputs to analyse ------------------------------------------------
-# DIRS <- c("1-Full", "1-Full/Eocene_only", "1-Full/Oligocene_only", "4-Tropical_Extratropical/Tropical", "4-Tropical_Extratropical/Tropical/Eocene_only",
+# DIRS <- c("1-Full", "1-Full/Eocene_only", "1-Full/Oligocene_only", "1-Full/early_phase", "1-Full/late_phase", "1-Full/post_EECO",
+#            "4-Tropical_Extratropical/Tropical", "4-Tropical_Extratropical/Tropical/Eocene_only",
 #           "4-Tropical_Extratropical/Tropical/Oligocene_only", "4-Tropical_Extratropical/Extratropical", 
 #           "4-Tropical_Extratropical/Extratropical/Eocene_only", "4-Tropical_Extratropical/Extratropical/Oligocene_only", "5-Ecomorphotype/carnivore", 
 #           "5-Ecomorphotype/herbivore", "5-Ecomorphotype/omnivore", "5-Ecomorphotype/insectivore")
-DIRS <- c("5-Ecomorphotype/carnivore", "5-Ecomorphotype/herbivore", "5-Ecomorphotype/omnivore", "5-Ecomorphotype/insectivore")
+DIRS <- c("1-Full/early_phase", "1-Full/late_phase", "1-Full/post_EECO")
 
 ## Big loop --------------------------------------------------------------------
 for(trt in DIRS){
