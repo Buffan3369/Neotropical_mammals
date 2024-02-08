@@ -2,9 +2,10 @@
 # Name: palaeotemp_plot_presentation.R
 # Author: Lucas Buffan
 # Date: 2024-02-07
-# Aim: Fancy palaeotemperature plot for Lisbon presentation
+# Aim: Fancy palaeotemperature  and world map plots for Lisbon presentation
 ################################################################################
 
+## Temp ------------------------------------------------------------------------
 library(tidyverse)
 library(deeptime)
 
@@ -20,16 +21,36 @@ p <- Temp %>%
   labs(x = "Time (Ma)",
        y = "Global Average Temperature (°C)") +
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
-  annotate(geom = "text", x = 32.5, y = 35, label = "EOT", size = 10, colour = "red") +
-  coord_geo(dat = "epochs", size = 6, color = "grey85", abbr = FALSE, center_end_labels = TRUE) +
-  theme(axis.title = element_text(size = 18, colour = "grey85"),
+  annotate(geom = "text", x = 32.5, y = 35, label = "EOT", size = 17, colour = "red") +
+  coord_geo(dat = "epochs", size = 8, color = "grey85", abbr = FALSE, center_end_labels = TRUE) +
+  theme(axis.title = element_text(size = 24, colour = "grey85"),
         axis.line = element_line(colour = "grey85"),
         axis.ticks = element_line(colour = "grey85"),
-        axis.text = element_text(size = 18, colour = "grey85"),
+        axis.text = element_text(size = 24, colour = "grey85"),
         panel.background = element_rect(fill='transparent'), #transparent panel bg
         plot.background = element_rect(fill='transparent', color=NA), #transparent plot bg
         panel.grid.major = element_blank(), #remove major gridlines
         panel.grid.minor = element_blank(), #remove minor gridlines
         panel.border = element_blank())
 
-ggsave("./figures/palaeotemp.png", plot = p, width = 15, height = 7.5)
+ggsave("./figures/palaeotemp.png", plot = p, width = 30, height = 15)
+
+## World -----------------------------------------------------------------------
+library(sf)
+library(spData)
+
+sf_use_s2(FALSE)
+data("world")
+
+p1 <- world %>% 
+  st_union() %>% 
+  ggplot() +
+  geom_sf(fill = "bisque4") +
+  coord_sf(crs = "+proj=moll +ellps=WGS84") +
+  theme(panel.background = element_rect(fill='transparent'), #transparent panel bg
+        plot.background = element_rect(fill='transparent', color=NA), #transparent plot bg
+        panel.grid.major = element_blank(), #remove major gridlines
+        panel.grid.minor = element_blank(), #remove minor gridlines
+        panel.border = element_blank())
+
+ggsave("./figures/world_map.png", plot = p1, width = 35, height = 35)
