@@ -9,6 +9,7 @@ source("~/Documents/GitHub/CorsaiR/R/1-extract_param_from_PyRate_outputs.R")
 source("~/Documents/GitHub/CorsaiR/R/2-plotting_facilities.R")
 library("readxl")
 library("ggpubr")
+library("hash")
 library("rphylopic")
 
 ## Figure 2 --------------------------------------------------------------------
@@ -17,7 +18,11 @@ paths <- c("./results/SALMA_smoothed/genus_level/6-Order_level/Notoungulata/",
            "./results/SALMA_smoothed/genus_level/6-Order_level/Rodentia/",
            "./results/SALMA_smoothed/genus_level/6-Order_level/Xenarthra/",
            "./results/SALMA_smoothed/genus_level/6-Order_level/Metatheria/")
-sil_names <- c("Trigonostylops", "Protheosodon", "Spalacopus cyanus", "Propalaehoplophorus australis", "Marmosa")
+sil <- hash("Notoungulata" = "Trigonostylops",
+            "Other_SANUs" = "Protheosodon",
+            "Rodentia" = "Spalacopus cyanus",
+            "Xenarthra" = "Propalaehoplophorus australis",
+            "Metatheria" = "Marmosa")
   # dummy dataset for silhouette plot
 df <- data.frame(x = seq(1,10,10),
                  y = rnorm(n = 10, mean = 10))
@@ -172,7 +177,7 @@ for(pth in paths){
     ltt.plot <- ltt.plot +
       annotate(geom = "segment", x = 42.5, xend = 45, y = 110, yend = 110, colour = "#006d2c", linewidth = 1) +
       annotate(geom = "text", x = 39.25, y = 110, label = "Diversity", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 115, label = "EOT", size = 7, colour = "red")
+      annotate(geom = "text", x = 31.5, y = 55, label = "EOT", size = 7, colour = "red")
   }
   plot_list[[i+j]] <- ltt.plot
   #add blank element to plot list
@@ -182,10 +187,11 @@ for(pth in paths){
   i <- i+1
   group <- strsplit(pth, split = "/")[[1]]
   group <- group[length(group)]
+  corr_silhouette <- as.character(values(sil[group]))
   sil_plot <- ggplot(df) +
-    geom_phylopic(aes(x = 5, y = 5, name = sil_names[(i/4)]), size = 1) +
-    annotate(geom = "text", x = 5.1, y = 4.1, label = group, size = 10, family = "Rasa") +
-    xlim(4,6) +
+    add_phylopic(x = 5, y = 5, name = corr_silhouette, ysize = 0.8) +
+    annotate(geom = "text", x = 5.1, y = 4.1, label = group, size = 8, family = "Rasa") +
+    xlim(4.5,5.5) +
     ylim(4,6) +
     theme(panel.background = element_blank(),
           panel.grid.major = element_blank(),
@@ -201,7 +207,7 @@ for(pth in paths){
 
 fig2 <- ggarrange(plotlist = plot_list, nrow = 5, ncol = 7, 
                   heights = c(1, 1, 1, 1, 1.25),
-                  widths = c(1, 0.05, 1, 0.05, 1, 0.05, 1),
+                  widths = c(1, 0.05, 1, 0.05, 1, 0, 1),
                   labels = c("(A)", NA, "(B)", NA, "(C)", NA, NA,
                              "(D)",  NA, "(E)", NA, "(F)", NA, NA,
                              "(G)",  NA, "(H)",  NA, "(I)", NA, NA,
