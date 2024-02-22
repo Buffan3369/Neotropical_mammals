@@ -1,5 +1,5 @@
 ################################################################################
-# Name: 3-Figure1.R
+# Name: 5-Figure2.R
 # Author: Lucas Buffan
 # Aim: Script for figure 2, diversity and diversification per "order".
 ################################################################################
