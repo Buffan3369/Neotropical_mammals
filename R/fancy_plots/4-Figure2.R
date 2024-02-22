@@ -74,22 +74,26 @@ for(pth in paths){
                       xlim = xlim,
                       plot.border = FALSE,
                       x.axis = x.axis,
+                      display_EECO_MECO = TRUE,
                       several_gts = TRUE,
                       geoscale2 = gsc2,
                       geoscale_height = unit(1, "line"),
                       abbr = list(TRUE, FALSE)) +
     #additional customs
-    annotate(geom = "rect", xmin = 37.71, xmax = 47.8, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    annotate(geom = "rect", xmin = 27.8, xmax = 33.9, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8)
+    annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8)  # EOT line
   #add labels in the first line  
   if(i == 1){
     rtt_plt <- rtt_plt +
-      annotate(geom = "segment", x = 47, xend = 50, y = 1, yend = 1, colour = "#08519c", linewidth = 1) +
+      annotate(geom = "segment", x = 46, xend = 48.5, y = 1, yend = 1, colour = "#08519c", linewidth = 1) +
       annotate(geom = "text", x = 41.5, y = 1, label = "Origination rate", size = 5) +
-      annotate(geom = "segment", x = 47, xend = 50, y = 0.9, yend = 0.9, colour = "#a50f15", linewidth = 1) +
+      annotate(geom = "segment", x = 46, xend = 48.5, y = 0.9, yend = 0.9, colour = "#a50f15", linewidth = 1) +
       annotate(geom = "text", x = 41.5, y = 0.9, label = "Extinction rate ", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 1.05, label = "EOT", size = 7, colour = "red")
+      annotate(geom = "text", x = 31.5, y = 1.05, label = "EOT", size = 7, colour = "red") +
+      geom_text(aes(x = 51.5, y = 0.5, label = "EECO"), angle = 90, colour = "bisque4") +
+      geom_text(aes(x = 41.25, y = 0.5, label = "MECO"), angle = 90, colour = "bisque4")
   }
   plot_list[[i+j]] <- rtt_plt
   #add blank element to plot list
@@ -118,19 +122,24 @@ for(pth in paths){
                       xlim = xlim,
                       plot.border = FALSE,
                       x.axis = x.axis,
+                      display_EECO_MECO = TRUE,
                       several_gts = TRUE,
                       geoscale2 = gsc2,
                       geoscale_height = unit(1, "line"),
                       abbr = list(TRUE, FALSE)) +
-    annotate(geom = "rect", xmin = 37.71, xmax = 47.8, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    annotate(geom = "rect", xmin = 27.8, xmax = 33.9, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8)
+    annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8)  # EOT line
   #add labels in the first line  
   if(i == 2){
     net_plt <- net_plt +
-      annotate(geom = "segment", x = 47, xend = 50, y = 0.9, yend = 0.9, colour = "#504A4B", linewidth = 1) +
+      annotate(geom = "segment", x = 46, xend = 48.5, y = 0.9, yend = 0.9, colour = "#504A4B", linewidth = 1) +
       annotate(geom = "text", x = 40.5, y = 0.81, label = "Net diversification\n rate", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 1, label = "EOT", size = 7, colour = "red")
+      annotate(geom = "text", x = 31.5, y = 1, label = "EOT", size = 7, colour = "red") +
+      geom_text(aes(x = 51.5, y = -0.9, label = "EECO"), angle = 90, colour = "bisque4") +
+      geom_text(aes(x = 41.25, y = -0.9, label = "MECO"), angle = 90, colour = "bisque4")
+    
   }
   plot_list[[i+j]] <- net_plt
   #add blank element to plot list
@@ -164,20 +173,25 @@ for(pth in paths){
                        ribbon_col = "#74c476",
                        plot.border = FALSE,
                        x.axis = x.axis,
+                       display_EECO_MECO = TRUE,
                        several_gts = TRUE,
                        geoscale2 = gsc2,
                        geoscale_height = unit(1, "line"),
                        geoscale_labelsize = 4,
                        abbr = list(TRUE, FALSE)) +
-    annotate(geom = "rect", xmin = 37.71, xmax = 47.8, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    annotate(geom = "rect", xmin = 27.8, xmax = 33.9, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8)
+    annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8)  # EOT line
   #add labels in the first line  
   if(i == 3){
     ltt.plot <- ltt.plot +
-      annotate(geom = "segment", x = 42.5, xend = 45, y = 110, yend = 110, colour = "#006d2c", linewidth = 1) +
-      annotate(geom = "text", x = 39.25, y = 110, label = "Diversity", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 55, label = "EOT", size = 7, colour = "red")
+      annotate(geom = "segment", x = 45, xend = 47.5, y = 55, yend = 55, colour = "#006d2c", linewidth = 1) +
+      annotate(geom = "text", x = 42, y = 55, label = "Diversity", size = 5) +
+      annotate(geom = "text", x = 31.5, y = 57, label = "EOT", size = 7, colour = "red") +
+      geom_text(aes(x = 51.5, y = 5, label = "EECO"), angle = 90, colour = "bisque4") +
+      geom_text(aes(x = 41.25, y = 5, label = "MECO"), angle = 90, colour = "bisque4")
+    
   }
   plot_list[[i+j]] <- ltt.plot
   #add blank element to plot list
@@ -190,7 +204,7 @@ for(pth in paths){
   corr_silhouette <- as.character(values(sil[group]))
   sil_plot <- ggplot(df) +
     add_phylopic(x = 5, y = 5, name = corr_silhouette, ysize = 0.8) +
-    annotate(geom = "text", x = 5.1, y = 4.1, label = group, size = 8, family = "Rasa") +
+    annotate(geom = "text", x = 5, y = 4.1, label = group, size = 8) +
     xlim(4.5,5.5) +
     ylim(4,6) +
     theme(panel.background = element_blank(),
@@ -207,7 +221,7 @@ for(pth in paths){
 
 fig2 <- ggarrange(plotlist = plot_list, nrow = 5, ncol = 7, 
                   heights = c(1, 1, 1, 1, 1.25),
-                  widths = c(1, 0.05, 1, 0.05, 1, 0, 1),
+                  widths = c(1, 0.05, 1, 0.05, 1, 0, 0.5),
                   labels = c("(A)", NA, "(B)", NA, "(C)", NA, NA,
                              "(D)",  NA, "(E)", NA, "(F)", NA, NA,
                              "(G)",  NA, "(H)",  NA, "(I)", NA, NA,
@@ -222,3 +236,10 @@ ggsave("./figures/Figure_2/Figure2.png",
        width = 600,
        units = "mm",
        dpi = 300)
+
+ggsave("./figures/Figure_2/Figure2.pdf",
+       plot = fig2,
+       height = 500,
+       width = 600,
+       units = "mm")
+
