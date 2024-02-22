@@ -69,9 +69,9 @@ for(pth in paths){
                       geoscale_height = unit(1, "line"),
                       abbr = list(TRUE, FALSE)) +
     # Temporal bands
-    annotate(geom = "rect", xmin = 47.8, xmax = Inf, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    annotate(geom = "rect", xmin = 33.9, xmax = 37.71, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    annotate(geom = "rect", xmin = -Inf, xmax = 27.8, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     # EOT line
     geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) # EOT
   #add labels in the first line  
@@ -118,9 +118,9 @@ for(pth in paths){
                       geoscale_height = unit(1, "line"),
                       abbr = list(TRUE, FALSE)) +
     # Temporal bands
-    annotate(geom = "rect", xmin = 47.8, xmax = Inf, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    annotate(geom = "rect", xmin = 33.9, xmax = 37.71, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    annotate(geom = "rect", xmin = -Inf, xmax = 27.8, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +  # EOT line
+    annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) # EOT
   #add labels in the first line  
   if(i == 2){
@@ -171,9 +171,9 @@ for(pth in paths){
                        geoscale_labelsize = 4,
                        abbr = list(TRUE, FALSE)) +
     # Temporal bands
-    annotate(geom = "rect", xmin = 47.8, xmax = Inf, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    annotate(geom = "rect", xmin = 33.9, xmax = 37.71, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-    annotate(geom = "rect", xmin = -Inf, xmax = 27.8, colour = "grey95", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +    # EOT line
+    annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+    annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) #EOT
   #add labels in the first line  
   if(i == 3){
