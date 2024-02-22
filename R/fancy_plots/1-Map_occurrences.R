@@ -1,7 +1,7 @@
 ################################################################################
 # Name: 1-Map_occurrences.R
 # Author: Lucas Buffan
-# Date: 2023-12-18
+# Contact: lucas.l.buffan@gmail.com
 # Aim: Visualising occurrence data and Tropical/extratropical affinities.
 ################################################################################
 

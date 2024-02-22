@@ -1,7 +1,7 @@
 ################################################################################
 # Name: 0-SALMA_scale_plot.R
 # Author: Lucas Buffan
-# Date: 2024-01-10
+# Contact: lucas.l.buffan@gmail.com
 # Aim: Quick script for SALMA plotting
 ################################################################################
 
