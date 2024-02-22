@@ -1,8 +1,8 @@
 ################################################################################
-# Name: 4-MBD_violin.R
+# Name: MBD_violin.R
 # Author: Lucas Buffan
 # Date: 2024-02-05
-# Aim: Summarising MBD outputs as Violin plots
+# Aim: Summarising MBD outputs as violin plots
 ################################################################################
 
 library(dplyr)
@@ -52,7 +52,7 @@ for(trt in DIRS){
   # MCMC recap table
   recap_tbl <- read.table(paste0("./results/MBD/", trt, "/ESS_summary.txt"), 
                           sep = "\t", header = TRUE)
-  #remove parameters that did not converge fomr recap_tbl
+  #remove runs that did not converge fomr recap_tbl
   if(length(which(recap_tbl$ESS_posterior < 200)) > 0){
     recap_tbl <- recap_tbl[-which(recap_tbl$ESS_posterior < 200), ]
   }
