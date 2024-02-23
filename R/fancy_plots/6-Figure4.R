@@ -141,11 +141,14 @@ for(dir in dirs){
                         signif_df$param == plot_df$param[idx])
     type <- signif_df$rate[corr_idx] # Extinction or Origination
     signif <- signif_df$col[corr_idx] # "*" or NA
-    if(is.na(signif)){
-      return("ns")
+    if(type == "Extinction" & is.na(signif)){
+      return("Ext_ns")
     }
     else if(type == "Extinction" & signif == "*"){
       return("Ext_signif")
+    }
+    else if(type == "Origination" & is.na(signif)){
+      return("Ori_ns")
     }
     else if(type == "Origination" & signif == "*"){
       return("Ori_signif")
@@ -181,13 +184,13 @@ fig4 <- ggplot(data = PLOT_DF, aes(x = factor(param), y = value)) +
        y = "Correlation coefficient",
        fill = NULL) +
   # bands
-  # annotate(geom = "rect", xmin = -Inf, xmax = 1.5, ymin = -Inf, ymax = Inf, fill = "grey") +
-  # annotate(geom = "rect", xmin = 2.5, xmax = 3.5, ymin = -Inf, ymax = Inf, fill = "grey") +
-  # annotate(geom = "rect", xmin = 4.5, xmax = 5.5, ymin = -Inf, ymax = Inf, fill = "grey") +
-  # annotate(geom = "rect", xmin = 6.5, xmax = Inf, ymin = -Inf, ymax = Inf, fill = "grey") +
+  annotate(geom = "rect", xmin = -Inf, xmax = 1.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
+  annotate(geom = "rect", xmin = 2.5, xmax = 3.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
+  annotate(geom = "rect", xmin = 4.5, xmax = 5.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
+  annotate(geom = "rect", xmin = 6.5, xmax = Inf, ymin = -Inf, ymax = Inf, fill = "grey95") +
   # violins
   geom_violin(adjust = .75, draw_quantiles = c(0.025, 0.5, 0.975), scale = "width", aes(fill = factor(signif_col))) +
-  scale_fill_manual(values = c("#a50f15", "grey90", "#08519c")) + # non-significant correlation coefficients are displayed in light grey
+  scale_fill_manual(values = c("#fcbba1", "#a50f15", "#9ecae1", "#08519c")) + # non-significant correlation coefficients are displayed in light grey
   geom_hline(yintercept = 0, linetype = "dashed", colour = "grey60") +
 
   geom_text(data = SIGNIF_DF,
@@ -211,12 +214,12 @@ fig4 <- ggplot(data = PLOT_DF, aes(x = factor(param), y = value)) +
   facet_grid(interval~rate, labeller = labeller(rate = rate.labs, interval = int.labs))
 
 ## SAVE ------------------------------------------------------------------------
-ggsave("./figures/Figure_4/Figure4_noband.pdf",
+ggsave("./figures/Figure_4/Figure4.pdf",
        plot = fig4,
        height = 300,
        width = 400,
        units = "mm")
-ggsave("./figures/Figure_4/Figure4_noband.png",
+ggsave("./figures/Figure_4/Figure4.png",
        plot = fig4,
        height = 300,
        width = 400,
