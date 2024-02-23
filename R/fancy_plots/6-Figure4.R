@@ -10,27 +10,40 @@ library(tidyverse)
 library(hash)
 library(ggplot2)
 library(stringr)
-
-cov_idx <- hash("0" = "Self-diversity",
+ 
+## Define covariable names -----------------------------------------------------
+covar_idx <- hash("0" = "Self-diversity",
                 "1" = "Plant_diversity",
                 "2" = "Andes_elevation",
                 "3" = "Temperature",
                 "4" = "Atmospheric_carbon",
                 "5" = "Organic_carbon",
                 "6" = "Sea_level")
+covar_idx_diet <- hash("0" = "Self-diversity",
+                       "1" = "Plant_diversity",
+                       "2" = "Andes_elevation",
+                       "3" = "Temperature",
+                       "4" = "Atmospheric_carbon",
+                       "5" = "Organic_carbon",
+                       "6" = "Sea_level",
+                       "7" = "Carnivorous_diversity",
+                       "8" = "Insectivorous_diversity",
+                       "9" = "Omnivorous_diversity")
 
-dirs <- c("1-Full/post_EECO", "1-Full/Oligocene_only")
-intervals <- c("Eocene", "Oligocene")
-
-#initialise big tables
-PLOT_DF <- data.frame(param = NA, rate = NA, col = NA, signif_col = NA, value = NA, interval = NA)
-SIGNIF_DF <- data.frame(param = NA, rate = NA, col = NA, max_val = NA, min_val = NA, star_pos = NA, interval = NA)
+## BIG ASS LOOP ----------------------------------------------------------------
+dirs <- c("1-Full/post_EECO", "1-Full/Oligocene_only", 
+          "5-Ecomorphotype/herbivore/post_EECO", "5-Ecomorphotype/herbivore/Oligocene")
+intervals <- c("Eocene", "Oligocene", "Eocene", "Oligocene")
+#initialise large tables
+PLOT_DF <- data.frame(param = NA, rate = NA, col = NA, signif_col = NA, value = NA, interval = NA, dat = NA)
+SIGNIF_DF <- data.frame(param = NA, rate = NA, col = NA, max_val = NA, min_val = NA, star_pos = NA, interval = NA, dat = NA)
 j <- 1
 for(dir in dirs){
+  dat <- strsplit(dir, "/")[[1]][1]
   # MCMC recap table
   recap_tbl <- read.table(paste0("./results/MBD/", dir, "/ESS_summary.txt"), 
                           sep = "\t", header = TRUE)
-  #remove runs that did not converge fomr recap_tbl
+  #remove runs that did not converge from recap_tbl
   if(length(which(recap_tbl$ESS_posterior < 200)) > 0){
     recap_tbl <- recap_tbl[-which(recap_tbl$ESS_posterior < 200), ]
   }
@@ -63,7 +76,7 @@ for(dir in dirs){
   }
   if(length(corr_vbl) > 0){
     mcmcLog_sign <- mcmcLog %>% select(all_of(corr_vbl))
-    # 3) check if zero is in the 95% HPD
+    # 2) check if zero is in the 95% HPD
     zeros <- c()
     for(G in colnames(mcmcLog_sign)){
       #5 and 95% quantiles of the distribution
@@ -86,7 +99,7 @@ for(dir in dirs){
     }
   }
   
-  # 4) reformat dataset for plotting
+  # 3) reformat dataset for plotting
   value <- mcmcLog[, 1]
   param <- rep(0, nrow(mcmcLog))
   col <- rep(colnames(mcmcLog)[1], nrow(mcmcLog))
@@ -134,7 +147,8 @@ for(dir in dirs){
                                min_val + sign(min_val)*0.5))
     
   }
-  signif_df <- signif_df %>% add_column(interval = rep(intervals[j], nrow(signif_df)))
+  signif_df <- signif_df %>% add_column(interval = rep(intervals[j], nrow(signif_df)),
+                                        dat = rep(dat, nrow(signif_df)))
   # Create a column indicating (or not) significance of each coefficient (for colour attribution)
   attrib_sign <- function(idx){
     corr_idx <- which(signif_df$rate == plot_df$rate[idx] &
@@ -154,32 +168,40 @@ for(dir in dirs){
       return("Ori_signif")
     }
   }
-  
   sign_col <- sapply(X = 1:nrow(plot_df), FUN = attrib_sign)
   plot_df <- plot_df %>% add_column(signif_col = sign_col, 
                                     interval = rep(intervals[j], nrow(plot_df)),
+                                    dat = rep(dat, nrow(plot_df)),
                                     .after = "col")
   # Extend the big berthas
   PLOT_DF <- rbind.data.frame(PLOT_DF, plot_df)
   SIGNIF_DF <- rbind.data.frame(SIGNIF_DF, signif_df)
   j <- j+1
 }
-rm(plot_df)
+rm(plot_df) # free memory
 PLOT_DF <- PLOT_DF[-c(1), ]
 SIGNIF_DF <- SIGNIF_DF[-c(1), ]
+
 ## PLOT ------------------------------------------------------------------------
+  # Separate datasets for all mammals and for herbivores only
+PLOT_DF_all <- PLOT_DF %>% filter(dat == "1-Full")
+PLOT_DF_herbi <- PLOT_DF %>% filter(dat == "5-Ecomorphotype")
+rm(PLOT_DF)
+SIGNIF_DF_all <- SIGNIF_DF %>% filter(dat == "1-Full")
+SIGNIF_DF_herbi <- SIGNIF_DF %>% filter(dat == "5-Ecomorphotype")
+rm(SIGNIF_DF)
   # Set strip labels
 rate.labs <- c("Extinction rate", "Origination rate")
 names(rate.labs) <- c("Extinction", "Origination")
-int.labs <- intervals
-names(int.labs) <- intervals
-
-fig4 <- ggplot(data = PLOT_DF, aes(x = factor(param), y = value)) +
-  # Axes
-  scale_y_continuous(limits = c(min(signif_df$min_val-1), 
-                                max(signif_df$max_val+1))) +
-  scale_x_discrete(breaks = seq(from = 0, to = length(cov_idx)-1, by = 1),
-                   labels = c(values(cov_idx))) +
+int.labs <- intervals[1:2]
+names(int.labs) <- intervals[1:2]
+  #### FIGURE 4a ####
+fig4a <- ggplot(data = PLOT_DF_all, aes(x = factor(param), y = value)) +
+  # axes
+  scale_y_continuous(limits = c(min(SIGNIF_DF_all$min_val-1), 
+                                max(SIGNIF_DF_all$max_val+1))) +
+  scale_x_discrete(breaks = seq(from = 0, to = length(covar_idx)-1, by = 1),
+                   labels = c(values(covar_idx))) +
   labs(x = NULL,
        y = "Correlation coefficient",
        fill = NULL) +
@@ -192,16 +214,17 @@ fig4 <- ggplot(data = PLOT_DF, aes(x = factor(param), y = value)) +
   geom_violin(adjust = .75, draw_quantiles = c(0.025, 0.5, 0.975), scale = "width", aes(fill = factor(signif_col))) +
   scale_fill_manual(values = c("#fcbba1", "#a50f15", "#9ecae1", "#08519c")) + # non-significant correlation coefficients are displayed in light grey
   geom_hline(yintercept = 0, linetype = "dashed", colour = "grey60") +
-
-  geom_text(data = SIGNIF_DF,
+  # significance star
+  geom_text(data = SIGNIF_DF_all,
             aes(label = col,
                 y = star_pos,
-                x = param+0.75,
+                x = param + 0.75,
                 group = col),
             vjust = rep(c(0.1, #extinction star
                           0.08), #origination star
-                       nrow(signif_df)),
+                       (nrow(SIGNIF_DF_all)/2)),
             size = 10) +
+  # theme aesthetics
   theme(axis.title = element_text(size = 18),
         axis.text = element_text(size = 18),
         legend.position = "none",
@@ -212,6 +235,50 @@ fig4 <- ggplot(data = PLOT_DF, aes(x = factor(param), y = value)) +
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
   coord_flip() +
   facet_grid(interval~rate, labeller = labeller(rate = rate.labs, interval = int.labs))
+
+#### FIGURE 4b ####
+fig4b <- ggplot(data = PLOT_DF_herbi, aes(x = factor(param), y = value)) +
+  # axes
+  scale_y_continuous(limits = c(-10, 5)) +
+  scale_x_discrete(breaks = seq(from = 0, to = length(covar_idx_diet)-1, by = 1),
+                   labels = c(values(covar_idx_diet))) +
+  labs(x = NULL,
+       y = "Correlation coefficient",
+       fill = NULL) +
+  # bands
+  annotate(geom = "rect", xmin = -Inf, xmax = 1.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
+  annotate(geom = "rect", xmin = 2.5, xmax = 3.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
+  annotate(geom = "rect", xmin = 4.5, xmax = 5.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
+  annotate(geom = "rect", xmin = 6.5, xmax = 7.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
+  annotate(geom = "rect", xmin = 8.5, xmax = 9.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
+  # violins
+  geom_violin(adjust = .75, draw_quantiles = c(0.025, 0.5, 0.975), scale = "width", aes(fill = factor(signif_col))) +
+  scale_fill_manual(values = c("#fcbba1", "#a50f15", "#9ecae1", "#08519c")) + # non-significant correlation coefficients are displayed in light grey
+  geom_hline(yintercept = 0, linetype = "dashed", colour = "grey60") +
+  # significance star
+  geom_text(data = SIGNIF_DF_herbi,
+            aes(label = col,
+                y = star_pos,
+                x = param + 0.75,
+                group = col),
+            vjust = rep(c(0.5, #extinction star
+                          0.5), #origination star
+                        (nrow(SIGNIF_DF_herbi)/2)),
+            size = 10) +
+  # theme aesthetics
+  theme(axis.title = element_text(size = 18),
+        axis.text = element_text(size = 18),
+        legend.position = "none",
+        strip.text.x = element_text(size = 18),
+        strip.text.y = element_text(size = 18),
+        strip.background = element_rect(colour = "black", fill = "bisque2"),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
+  coord_flip() +
+  facet_grid(interval~rate, labeller = labeller(rate = rate.labs, interval = int.labs))
+
+fig4a
+
 
 ## SAVE ------------------------------------------------------------------------
 ggsave("./figures/Figure_4/Figure4.pdf",
