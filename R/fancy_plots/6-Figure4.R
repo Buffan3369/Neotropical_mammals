@@ -31,9 +31,15 @@ covar_idx_diet <- hash("0" = "Self-diversity",
                        "9" = "Omnivorous_diversity")
 
 ## BIG ASS LOOP ----------------------------------------------------------------
-dirs <- c("1-Full/post_EECO", "1-Full/Oligocene_only", 
-          "5-Ecomorphotype/herbivore/post_EECO", "5-Ecomorphotype/herbivore/Oligocene")
-intervals <- c("Eocene", "Oligocene", "Eocene", "Oligocene")
+dirs <- c(
+  #        "1-Full/post_EECO", "1-Full/Oligocene_only",
+          "4-Tropical_Extratropical/Tropical/post_EECO", "4-Tropical_Extratropical/Tropical/Oligocene_only",
+          "4-Tropical_Extratropical/Extratropical/post_EECO", "4-Tropical_Extratropical/Extratropical/Oligocene_only"
+  #        , "5-Ecomorphotype/herbivore/post_EECO", "5-Ecomorphotype/herbivore/Oligocene"
+  )
+intervals <- c("Eocene", "Oligocene"
+#               , "Eocene", "Oligocene"
+               )
 #initialise large tables
 PLOT_DF <- data.frame(param = NA, rate = NA, col = NA, signif_col = NA, value = NA, interval = NA, dat = NA)
 SIGNIF_DF <- data.frame(param = NA, rate = NA, col = NA, max_val = NA, min_val = NA, star_pos = NA, interval = NA, dat = NA)
@@ -276,9 +282,6 @@ fig4b <- ggplot(data = PLOT_DF_herbi, aes(x = factor(param), y = value)) +
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
   coord_flip() +
   facet_grid(interval~rate, labeller = labeller(rate = rate.labs, interval = int.labs))
-
-fig4a
-
 
 ## SAVE ------------------------------------------------------------------------
 ggsave("./figures/Figure_4/Figure4.pdf",
