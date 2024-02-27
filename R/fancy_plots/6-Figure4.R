@@ -33,9 +33,10 @@ covar_idx_diet <- hash("0" = "Self-diversity",
 ## BIG ASS LOOP ----------------------------------------------------------------
 dirs <- c(
   #        "1-Full/post_EECO", "1-Full/Oligocene_only",
-          "4-Tropical_Extratropical/Tropical/post_EECO", "4-Tropical_Extratropical/Tropical/Oligocene_only",
-          "4-Tropical_Extratropical/Extratropical/post_EECO", "4-Tropical_Extratropical/Extratropical/Oligocene_only"
-  #        , "5-Ecomorphotype/herbivore/post_EECO", "5-Ecomorphotype/herbivore/Oligocene"
+  #        "4-Tropical_Extratropical/Tropical/post_EECO", "4-Tropical_Extratropical/Tropical/Oligocene_only",
+  #        "4-Tropical_Extratropical/Extratropical/post_EECO", "4-Tropical_Extratropical/Extratropical/Oligocene_only"
+  #        , "5-Ecomorphotype/herbivore/post_EECO", "5-Ecomorphotype/herbivore/Oligocene",
+            "6-Order_level/Notoungulata/"
   )
 intervals <- c("Eocene", "Oligocene"
 #               , "Eocene", "Oligocene"
@@ -218,7 +219,7 @@ fig4a <- ggplot(data = PLOT_DF_all, aes(x = factor(param), y = value)) +
   annotate(geom = "rect", xmin = 6.5, xmax = Inf, ymin = -Inf, ymax = Inf, fill = "grey95") +
   # violins
   geom_violin(adjust = .75, draw_quantiles = c(0.025, 0.5, 0.975), scale = "width", aes(fill = factor(signif_col))) +
-  scale_fill_manual(values = c("#fcbba1", "#a50f15", "#9ecae1", "#08519c")) + # non-significant correlation coefficients are displayed in light grey
+  scale_fill_manual(values = c("#fcbba1", "#a50f15", "#9ecae1", "#08519c")) + # non-significant correlation coefficients are displayed in light colours
   geom_hline(yintercept = 0, linetype = "dashed", colour = "grey60") +
   # significance star
   geom_text(data = SIGNIF_DF_all,
