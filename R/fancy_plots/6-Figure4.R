@@ -19,6 +19,7 @@ covar_idx <- hash("0" = "Self-diversity",
                 "4" = "Atmospheric_carbon",
                 "5" = "Organic_carbon",
                 "6" = "Sea_level")
+
 covar_idx_diet <- hash("0" = "Self-diversity",
                        "1" = "Plant_diversity",
                        "2" = "Andes_elevation",
@@ -34,9 +35,9 @@ covar_idx_diet <- hash("0" = "Self-diversity",
 dirs <- c(
   #        "1-Full/post_EECO", "1-Full/Oligocene_only",
   #        "4-Tropical_Extratropical/Tropical/post_EECO", "4-Tropical_Extratropical/Tropical/Oligocene_only",
-  #        "4-Tropical_Extratropical/Extratropical/post_EECO", "4-Tropical_Extratropical/Extratropical/Oligocene_only"
-  #        , "5-Ecomorphotype/herbivore/post_EECO", "5-Ecomorphotype/herbivore/Oligocene",
-            "6-Order_level/Notoungulata/"
+  #        "4-Tropical_Extratropical/Extratropical/post_EECO", "4-Tropical_Extratropical/Extratropical/Oligocene_only",
+  #        "5-Ecomorphotype/herbivore/post_EECO", "5-Ecomorphotype/herbivore/Oligocene",
+            "6-Order_level/Notoungulata/post_EECO", "6-Order_level/Notoungulata/Oligocene_only" 
   )
 intervals <- c("Eocene", "Oligocene"
 #               , "Eocene", "Oligocene"
@@ -54,7 +55,7 @@ for(dir in dirs){
   if(length(which(recap_tbl$ESS_posterior < 200)) > 0){
     recap_tbl <- recap_tbl[-which(recap_tbl$ESS_posterior < 200), ]
   }
-  n_conv <- nrow(recap_tbl) #number of runs that converged, useful as in the name of the combined mcmc log file
+  n_conv <- nrow(recap_tbl) #number of runs that converged, useful as in the name of the combined mcmc.log file
   #add the mean row in last position
   recap_tbl[nrow(recap_tbl)+1, ] <- apply(X = recap_tbl, MARGIN = 2, FUN = mean, na.rm = TRUE)
   #subset mean Shrinkage Weights (SW)
@@ -101,7 +102,7 @@ for(dir in dirs){
       zeros <- str_replace(zeros, "Mean_W", "G") #otherwise names don't match
       corr_vbl <- corr_vbl[-which(corr_vbl %in% zeros)]
       if(length(corr_vbl) == 0){
-        message("\nNo significant correlation coefficient found.\n")
+        cat("\nNo significant correlation coefficient found.\n")
       }
     }
   }
@@ -186,16 +187,18 @@ for(dir in dirs){
   j <- j+1
 }
 rm(plot_df) # free memory
-PLOT_DF <- PLOT_DF[-c(1), ]
+PLOT_DF <- PLOT_DF[-c(1), ] #remove initialising row
 SIGNIF_DF <- SIGNIF_DF[-c(1), ]
 
 ## PLOT ------------------------------------------------------------------------
   # Separate datasets for all mammals and for herbivores only
-PLOT_DF_all <- PLOT_DF %>% filter(dat == "1-Full")
-PLOT_DF_herbi <- PLOT_DF %>% filter(dat == "5-Ecomorphotype")
+#PLOT_DF_all <- PLOT_DF %>% filter(dat == "1-Full")
+# PLOT_DF_herbi <- PLOT_DF %>% filter(dat == "5-Ecomorphotype")
+PLOT_DF_all <- PLOT_DF
 rm(PLOT_DF)
-SIGNIF_DF_all <- SIGNIF_DF %>% filter(dat == "1-Full")
-SIGNIF_DF_herbi <- SIGNIF_DF %>% filter(dat == "5-Ecomorphotype")
+# SIGNIF_DF_all <- SIGNIF_DF %>% filter(dat == "1-Full")
+# SIGNIF_DF_herbi <- SIGNIF_DF %>% filter(dat == "5-Ecomorphotype")
+SIGNIF_DF_all <- SIGNIF_DF
 rm(SIGNIF_DF)
   # Set strip labels
 rate.labs <- c("Extinction rate", "Origination rate")
@@ -228,7 +231,7 @@ fig4a <- ggplot(data = PLOT_DF_all, aes(x = factor(param), y = value)) +
                 x = param + 0.75,
                 group = col),
             vjust = rep(c(0.1, #extinction star
-                          0.08), #origination star
+                          0.1), #origination star
                        (nrow(SIGNIF_DF_all)/2)),
             size = 10) +
   # theme aesthetics
@@ -242,6 +245,12 @@ fig4a <- ggplot(data = PLOT_DF_all, aes(x = factor(param), y = value)) +
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
   coord_flip() +
   facet_grid(interval~rate, labeller = labeller(rate = rate.labs, interval = int.labs))
+
+ggsave("./figures/Figure_4/Notoungulata_MBD.pdf",
+       plot = fig4a,
+       height = 300,
+       width = 400,
+       units = "mm")
 
 #### FIGURE 4b ####
 fig4b <- ggplot(data = PLOT_DF_herbi, aes(x = factor(param), y = value)) +
