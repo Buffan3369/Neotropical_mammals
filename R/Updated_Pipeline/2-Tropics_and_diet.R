@@ -148,5 +148,7 @@ occdf$diet[which(occdf$genus == "Callicebus")] <- "frugivore"
 saveRDS(occdf, "./data_2023/SPECIES_LISTS/4-Fully_cleaned_Cnz_SA_mammals_SALMA_kept_Tropics_Diet.RDS")
 # EOT
 all_cleaned_EOT <- occdf %>% filter(epoch %in% c("Eocene", "Oligocene"))
-#save
 saveRDS(all_cleaned_EOT, "./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
+# Extended dataset (mid-Palaeocene/mid_Miocene)
+all_cleaned_extended <- occdf %>% filter(age <= 61.6 & age >= 15.97)
+saveRDS(all_cleaned_extended, "./data_2023/SPECIES_LISTS/7-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
