@@ -151,4 +151,6 @@ all_cleaned_EOT <- occdf %>% filter(epoch %in% c("Eocene", "Oligocene"))
 saveRDS(all_cleaned_EOT, "./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
 # Extended dataset (mid-Palaeocene/mid_Miocene)
 all_cleaned_extended <- occdf %>% filter(age <= 61.6 & age >= 15.97)
+all_cleaned_extended$stage[which(all_cleaned_extended$stage == "Santacrucian-Friasian")] <- "Santacrucian"
+all_cleaned_extended$stage[which(all_cleaned_extended$stage == "Colhuehuapian-Burdigalian")] <- "Colhuehuapian"
 saveRDS(all_cleaned_extended, "./data_2023/SPECIES_LISTS/7-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")

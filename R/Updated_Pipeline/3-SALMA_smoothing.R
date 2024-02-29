@@ -15,6 +15,9 @@ SubEpochs <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
 SubEpochs$bin <- 1:nrow(SubEpochs) #add 'bin' columns for `bin_time`
 SALMA_EOT <- read_xlsx("./data_2023/time_bins/SALMA_EOT.xlsx")
 species_list <- readRDS("./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
+species_list_ext <- readRDS("./data_2023/SPECIES_LISTS/7-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
+SPLs <- list(species_list, species_list_ext)
+rm(species_list, species_list_ext)
 
 ## Bin SALMAs with the Sub-Epochs they most overlap with -----------------------
 binning <- palaeoverse::bin_time(occdf = data.frame(max_ma = SALMA_EOT$max_ma,
@@ -22,14 +25,13 @@ binning <- palaeoverse::bin_time(occdf = data.frame(max_ma = SALMA_EOT$max_ma,
                                  bins = SubEpochs,
                                  method = "majority")
 SALMA_EOT_Sub_epoch <- sapply(X = binning$bin_assignment,
-                                 FUN = function(x){
-                                   return(SubEpochs$interval_name[which(SubEpochs$bin == x)])
-                                 })
+                              FUN = function(x){
+                                return(SubEpochs$interval_name[which(SubEpochs$bin == x)])
+                              })
 SALMA_EOT <- SALMA_EOT %>% add_column(Sub_Epoch = SALMA_EOT_Sub_epoch,
-                              .after = "epoch")
+                                      .after = "epoch")
 
-## Subset occ associated to a SALMA --------------------------------------------
-  #(Re)create Early/Late stage column
+## Function for stage name processing ------------------------------------------
 split_stage <- function(stage, early=TRUE){
   hyphen_split <- strsplit(stage, split = "-")[[1]]
   if(early == TRUE){
@@ -44,18 +46,8 @@ split_stage <- function(stage, early=TRUE){
     }
   }
 }
-species_list <- species_list %>% add_column(Early_stage = sapply(X = species_list$stage,
-                                                                 FUN = split_stage),
-                                            Late_stage = sapply(X = species_list$stage,
-                                                                FUN = split_stage,
-                                                                early = FALSE),
-                                            .after = "stage")
-  #Split SALMA-associated occurrences
-spl_EOT <- species_list %>% filter(Early_stage %in% SALMA_EOT$interval_name)
-cat("A total of", nrow(spl_EOT), "occurrences (representing",
-     round( (nrow(spl_EOT) / nrow(species_list)), digits = 2 )*100,
-     "% of the total) are associated to a SALMA.\n")
 
+## Function to get the age boundaries (min or max) of a stage given its name ---
 get_ref <- function(stage, Which=c("min", "max")){
   #get the ref age
   hyp_split <- strsplit(stage, split = "-")[[1]]
@@ -78,17 +70,43 @@ get_ref <- function(stage, Which=c("min", "max")){
     return(ref_max)
   }
 }
-spl_EOT$min_ma <- sapply(X = spl_EOT$stage, FUN = get_ref, Which = "min")
-spl_EOT$max_ma <- sapply(X = spl_EOT$stage, FUN = get_ref, Which = "max")
 
-## Merge the two datasets (SALMA/not_SALMA) and save ---------------------------
-spl_not_EOT <- species_list %>% filter(Early_stage %in% SALMA_EOT$interval_name == FALSE)
-spl <- rbind.data.frame(spl_not_EOT, spl_EOT)
-spl <- data.frame(spl)
-spl <- spl %>% 
-  select(-c(Early_stage, Late_stage)) %>% 
-  arrange(order, family, genus, accepted_name, cc)
-spl$min_ma <- as.numeric(spl$min_ma) #for some reason, the "min_ma" column turned into a list...
-spl$min_ma[which(spl$genus == "tegotherium")] <- 47.8 #unbinned otherwise
-saveRDS(spl, "./data_2023/SPECIES_LISTS/6-Fully_cleaned_EOT_SA_Mammals_SALMA_smoothed_Tropics_Diet.RDS")
+## Loop across the two datasets ------------------------------------------------
+i <- 1
+for(chosen_list in SPLs){
+  if(i == 1){
+    final_name <- "6-Fully_cleaned_EOT_SA_Mammals_SALMA_smoothed_Tropics_Diet.RDS"
+  }
+  else if(i == 2){
+    final_name <- "8-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_smoothed_Tropics_Diet.RDS"
+  }
+  ## Subset occ associated to a SALMA --------------------------------------------
+  #(Re)create Early/Late stage column
+  chosen_list <- chosen_list %>% add_column(Early_stage = sapply(X = chosen_list$stage,
+                                                                 FUN = split_stage),
+                                            Late_stage = sapply(X = chosen_list$stage,
+                                                                FUN = split_stage,
+                                                                early = FALSE),
+                                            .after = "stage")
+  #Split SALMA-associated occurrences
+  spl_EOT <- chosen_list %>% filter(Early_stage %in% SALMA_EOT$interval_name)
+  cat("A total of", nrow(spl_EOT), "occurrences (representing",
+      round( (nrow(spl_EOT) / nrow(chosen_list)), digits = 2 )*100,
+      "% of the total) are associated to a SALMA.\n")
+  #Change age boundaries of SALMA-associated occurrences 
+  spl_EOT$min_ma <- sapply(X = spl_EOT$stage, FUN = get_ref, Which = "min")
+  spl_EOT$max_ma <- sapply(X = spl_EOT$stage, FUN = get_ref, Which = "max")
+  
+  ## Merge the two datasets (SALMA/not_SALMA) and save ---------------------------
+  spl_not_EOT <- chosen_list %>% filter(Early_stage %in% SALMA_EOT$interval_name == FALSE)
+  spl <- rbind.data.frame(spl_not_EOT, spl_EOT)
+  spl <- data.frame(spl)
+  spl <- spl %>% 
+    select(-c(Early_stage, Late_stage)) %>% 
+    arrange(order, family, genus, accepted_name, cc)
+  spl$min_ma <- as.numeric(spl$min_ma) #for some reason, the "min_ma" column turned into a list...
+  spl$min_ma[which(spl$genus == "tegotherium")] <- 47.8 #unbinned otherwise
+  saveRDS(spl, paste0("./data_2023/SPECIES_LISTS/", final_name))
+  i <- i + 1
+}
 
