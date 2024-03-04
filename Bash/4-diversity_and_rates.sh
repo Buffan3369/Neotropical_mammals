@@ -40,8 +40,8 @@ do
 			python ~/PyRate/PyRate.py -plotRJ ../results/$s/$ss/$ana/combined_logs -b ${burnin1[$s/$ss/$ana]}
 			#Plot LTT
 			mkdir -p ../results/$s/$ss/$ana/LTT/
-			python ~/PyRate/PyRate.py -ginput ../results/$s/$ss/$ana/combined_logs -b ${burnin1[$s/$ss/$ana]}
-			mv ../results/$s/$ss/$ana/combined_logs/*_se_est.txt ../results/$s/$ss/$ana/LTT/
+			python ~/PyRate/PyRate.py -ginput ../results/$s/$ss/$ana/pyrate_mcmc_logs -tag KEEP_ -b ${burnin1[$s/$ss/$ana]}
+			mv ../results/$s/$ss/$ana/pyrate_mcmc_logs/*_se_est.txt ../results/$s/$ss/$ana/LTT/
 			mv ../results/$s/$ss/$ana/combined_logs/*_LTT.r ../results/$s/$ss/$ana/LTT/
 			#Diversity through time in the right format for MBD
 			python ~/PyRate/PyRate.py -d ../results/$s/$ss/$ana/LTT/*_se_est.txt -ltt 1
@@ -57,7 +57,7 @@ do
 			python ~/PyRate/PyRate.py -plotRJ ../results/$s/$ss/4-Tropical_Extratropical/$T/combined_logs -b ${burnin1[$s/$ss/4-Tropical_Extratropical/$T]}
 			#Plot LTT
 			mkdir -p ../results/$s/$ss/4-Tropical_Extratropical/$T/LTT/
-			python ~/PyRate/PyRate.py -ginput ../results/$s/$ss/4-Tropical_Extratropical/$T/combined_logs -b ${burnin1[$s/$ss/4-Tropical_Extratropical/$T]}
+			python ~/PyRate/PyRate.py -ginput ../results/$s/$ss/4-Tropical_Extratropical/$T/pyrate_mcmc_logs -tag KEEP_ -b ${burnin1[$s/$ss/4-Tropical_Extratropical/$T]}
 			mv ../results/$s/$ss/4-Tropical_Extratropical/$T/combined_logs/*_se_est.txt ../results/$s/$ss/4-Tropical_Extratropical/$T/LTT/
 			mv ../results/$s/$ss/4-Tropical_Extratropical/$T/combined_logs/*_LTT.r ../results/$s/$ss/4-Tropical_Extratropical/$T/LTT/
 			#Diversity through time in the right format for MBD
@@ -74,7 +74,7 @@ do
 			python ~/PyRate/PyRate.py -plotRJ ../results/$s/$ss/5-Ecomorphotype/$E/combined_logs -b ${burnin1[$s/$ss/5-Ecomorphotype/$E]}
 			#Plot LTT
 			mkdir -p ../results/$s/$ss/5-Ecomorphotype/$E/LTT/
-			python ~/PyRate/PyRate.py -ginput ../results/$s/$ss/5-Ecomorphotype/$E/combined_logs -b ${burnin1[$s/$ss/5-Ecomorphotype/$E]}
+			python ~/PyRate/PyRate.py -ginput ../results/$s/$ss/5-Ecomorphotype/$E/pyrate_mcmc_logs -tag KEEP_ -b ${burnin1[$s/$ss/5-Ecomorphotype/$E]}
 			mv ../results/$s/$ss/5-Ecomorphotype/$E/combined_logs/*_se_est.txt ../results/$s/$ss/5-Ecomorphotype/$E/LTT/
 			mv ../results/$s/$ss/5-Ecomorphotype/$E/combined_logs/*_LTT.r ../results/$s/$ss/5-Ecomorphotype/$E/LTT/
 			#Diversity through time in the right format for MBD
@@ -91,7 +91,7 @@ do
 			python ~/PyRate/PyRate.py -plotRJ ../results/$s/$ss/6-Order_level/$O/combined_logs -b ${burnin1[$s/$ss/6-Order_level/$O]}
 			#Plot LTT
 			mkdir -p ../results/$s/$ss/6-Order_level/$O/LTT/
-			python ~/PyRate/PyRate.py -ginput ../results/$s/$ss/6-Order_level/$O/combined_logs -b ${burnin1[$s/$ss/6-Order_level/$O]}
+			python ~/PyRate/PyRate.py -ginput ../results/$s/$ss/6-Order_level/$O/pyrate_mcmc_logs -tag KEEP_ -b ${burnin1[$s/$ss/6-Order_level/$O]}
 			mv ../results/$s/$ss/6-Order_level/$O/combined_logs/*_se_est.txt ../results/$s/$ss/6-Order_level/$O/LTT/
 			mv ../results/$s/$ss/6-Order_level/$O/combined_logs/*_LTT.r ../results/$s/$ss/6-Order_level/$O/LTT/
 			#Diversity through time in the right format for MBD

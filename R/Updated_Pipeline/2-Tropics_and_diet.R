@@ -141,6 +141,8 @@ occdf$diet[which(occdf$genus == "Neosaimiri")] <- "omnivore"
 occdf$diet[which(occdf$genus == "cf. Aotus")] <- "omnivore"
 occdf$diet[which(occdf$genus == "Callicebus")] <- "frugivore"
 
+## Small correction for Mustersan's age boundaries
+occdf$min_ma[which(occdf$stage == 'Mustersan')] <- 35
 #-------------------------------------------------------------------------------
 ##################### Save the whole occurrence dataframe ######################
 #-------------------------------------------------------------------------------

@@ -26,7 +26,7 @@ do
 		for O in Notoungulata Other_SANUs Rodentia Xenarthra Metatheria
 		do
 			python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/../results/$s/$ss/6-Order_level/$O/pyrate_mcmc_logs
-			Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/../results/$s/$ss/6-Order_level/$O/pyrate_mcmc_logs/ESS_summary.txt "$PWD"/../results/$s/$ss/6-Order_level/$O	/pyrate_mcmc_logs/ESS_plot.png
+			Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/../results/$s/$ss/6-Order_level/$O/pyrate_mcmc_logs/ESS_summary.txt "$PWD"/../results/$s/$ss/6-Order_level/$O/pyrate_mcmc_logs/ESS_plot.png
 		done
 	done
 done
