@@ -83,7 +83,7 @@ Stenotatus	extinct	16.3	18
 Stenotatus	extinct	16.3	18
 Clypeotherium	extinct	24.2	29.4
 Glyptatelus	extinct	24.2	29.4
-? Eocoleophorus	extinct	38	38.2
+? Eocoleophorus	extinct	35	38.2
 Asterostemma	extinct	16.3	18
 Clypeotherium	extinct	24.2	29.4
 Cochlops	extinct	20.1	21
@@ -105,8 +105,8 @@ Eucinepeltus	extinct	16.3	18
 Glyptatelus	extinct	24.2	29.4
 Glyptatelus	extinct	24.2	29.4
 Glyptatelus	extinct	24.2	29.4
-Glyptatelus	extinct	38	38.2
-Lomaphorelus	extinct	38	38.2
+Glyptatelus	extinct	35	38.2
+Lomaphorelus	extinct	35	38.2
 Palaeopeltis	extinct	24.2	29.4
 Palaeopeltis	extinct	24.2	29.4
 Palaeopeltis	extinct	24.2	29.4
@@ -365,9 +365,9 @@ Kramadolops	extinct	31.3	33.6
 Kramadolops	extinct	48	50
 Kramadolops	extinct	28.1	33.9
 Kramadolops	extinct	28.4	33.9
-Kramadolops	extinct	38	38.2
-Kramadolops	extinct	38	38.2
-Kramadolops	extinct	38	38.2
+Kramadolops	extinct	35	38.2
+Kramadolops	extinct	35	38.2
+Kramadolops	extinct	35	38.2
 Kramadolops	extinct	28.4	33.9
 Polydolops	extinct	50	51
 Polydolops	extinct	38	41.2
@@ -397,7 +397,7 @@ Polydolops	extinct	48	50
 Polydolops	extinct	38	41.2
 Polydolops	extinct	48	50
 Polydolops	extinct	48	50
-Polydolops	extinct	38	38.2
+Polydolops	extinct	35	38.2
 Polydolops	extinct	38	41.2
 Polydolops	extinct	41.3	47.8
 Polydolops	extinct	41.3	47.8

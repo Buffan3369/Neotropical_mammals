@@ -175,7 +175,7 @@ Eomakhaira	extinct	31.3	33.6
 Andinogale	extinct	24.2	29.4
 Angelocabrerus	extinct	39	41.6
 Argyrolestes	extinct	33.9	45
-Chlorocyon	extinct	38	37.4
+Chlorocyon	extinct	35	37.4
 Lycopsis	extinct	16.3	17.5
 Lycopsis	extinct	16.3	17.5
 Lycopsis	extinct	16.3	17.5
@@ -204,7 +204,7 @@ Plesiofelis	extinct	33.9	37.2
 Plesiofelis	extinct	33.9	37.2
 Plesiofelis	extinct	33.9	41.2
 Procladosictis	extinct	38	41.3
-Procladosictis	extinct	38	38.2
+Procladosictis	extinct	35	38.2
 Prothylacynus	extinct	16.3	17.5
 Prothylacynus	extinct	16.3	17.5
 Prothylacynus	extinct	16.3	17.5

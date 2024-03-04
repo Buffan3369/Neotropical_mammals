@@ -7,9 +7,9 @@ Trigonostylops	extinct	37.71	47.8
 Parastegosimpsonia	extinct	31.3	37.2
 Parastegosimpsonia	extinct	31.3	33.6
 Parastegosimpsonia	extinct	31.3	33.6
-Pseudostegotherium	extinct	38	38.2
-Stegosimpsonia	extinct	38	38.2
-? Eocoleophorus	extinct	38	38.2
+Pseudostegotherium	extinct	35	38.2
+Stegosimpsonia	extinct	35	38.2
+? Eocoleophorus	extinct	35	38.2
 Parapropalaehoplophorus	extinct	20.1	21
 Scirrotherium	extinct	16.3	20
 Yuruatherium	extinct	31.3	33.6

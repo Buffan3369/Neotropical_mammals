@@ -274,9 +274,9 @@ Kramadolops_fissuratus	extinct	31.3	33.6
 Kramadolops_hernandezi	extinct	48	50
 Kramadolops_maximus	extinct	28.1	33.9
 Kramadolops_mayoi	extinct	28.4	33.9
-Kramadolops_mayoi	extinct	38	38.2
-Kramadolops_mayoi	extinct	38	38.2
-Kramadolops_mayoi	extinct	38	38.2
+Kramadolops_mayoi	extinct	35	38.2
+Kramadolops_mayoi	extinct	35	38.2
+Kramadolops_mayoi	extinct	35	38.2
 Kramadolops_mckennai	extinct	28.4	33.9
 Pliodolops_kamektsen	extinct	50	51
 Pliodolops_primulus	extinct	38	41.2
@@ -306,7 +306,7 @@ Polydolops_thomasi	extinct	48	50
 Polydolops_thomasi	extinct	38	41.2
 Polydolops_thomasi	extinct	48	50
 Polydolops_thomasi	extinct	48	50
-Polydolops_thomasi	extinct	38	38.2
+Polydolops_thomasi	extinct	35	38.2
 Polydolops_thomasi	extinct	38	41.2
 Polydolops_thomasi	extinct	41.3	47.8
 Polydolops_thomasi	extinct	41.3	47.8
@@ -507,7 +507,7 @@ Eomakhaira_molossus	extinct	31.3	33.6
 Andinogale_sallensis	extinct	24.2	29.4
 Angelocabrerus_daptes	extinct	39	41.6
 Argyrolestes_peralestinus	extinct	33.9	45
-Chlorocyon_phantasma	extinct	38	37.4
+Chlorocyon_phantasma	extinct	35	37.4
 Lycopsis_torresi	extinct	16.3	17.5
 Lycopsis_torresi	extinct	16.3	17.5
 Lycopsis_torresi	extinct	16.3	17.5
@@ -536,7 +536,7 @@ Plesiofelis_schlosseri	extinct	33.9	37.2
 Plesiofelis_schlosseri	extinct	33.9	37.2
 Plesiofelis_schlosseri	extinct	33.9	41.2
 Procladosictis	extinct	38	41.3
-Procladosictis_anomala	extinct	38	38.2
+Procladosictis_anomala	extinct	35	38.2
 Prothylacynus_patagonicus	extinct	16.3	17.5
 Prothylacynus_patagonicus	extinct	16.3	17.5
 Prothylacynus_patagonicus	extinct	16.3	17.5

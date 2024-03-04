@@ -83,7 +83,7 @@ Stenotatus_patagonicus	extinct	16.3	18
 Stenotatus_patagonicus	extinct	16.3	18
 Clypeotherium	extinct	24.2	29.4
 Glyptatelus_tatusinus	extinct	24.2	29.4
-? Eocoleophorus_glyptodontoides	extinct	38	38.2
+? Eocoleophorus_glyptodontoides	extinct	35	38.2
 Asterostemma_depressa	extinct	16.3	18
 Clypeotherium_magnum	extinct	24.2	29.4
 Cochlops	extinct	20.1	21
@@ -105,8 +105,8 @@ Eucinepeltus_complicatus	extinct	16.3	18
 Glyptatelus	extinct	24.2	29.4
 Glyptatelus	extinct	24.2	29.4
 Glyptatelus	extinct	24.2	29.4
-Glyptatelus_fractus	extinct	38	38.2
-Lomaphorelus_depstus	extinct	38	38.2
+Glyptatelus_fractus	extinct	35	38.2
+Lomaphorelus_depstus	extinct	35	38.2
 Palaeopeltis_inornatus	extinct	24.2	29.4
 Palaeopeltis_inornatus	extinct	24.2	29.4
 Palaeopeltis_inornatus	extinct	24.2	29.4
@@ -365,9 +365,9 @@ Kramadolops_fissuratus	extinct	31.3	33.6
 Kramadolops_hernandezi	extinct	48	50
 Kramadolops_maximus	extinct	28.1	33.9
 Kramadolops_mayoi	extinct	28.4	33.9
-Kramadolops_mayoi	extinct	38	38.2
-Kramadolops_mayoi	extinct	38	38.2
-Kramadolops_mayoi	extinct	38	38.2
+Kramadolops_mayoi	extinct	35	38.2
+Kramadolops_mayoi	extinct	35	38.2
+Kramadolops_mayoi	extinct	35	38.2
 Kramadolops_mckennai	extinct	28.4	33.9
 Pliodolops_kamektsen	extinct	50	51
 Pliodolops_primulus	extinct	38	41.2
@@ -397,7 +397,7 @@ Polydolops_thomasi	extinct	48	50
 Polydolops_thomasi	extinct	38	41.2
 Polydolops_thomasi	extinct	48	50
 Polydolops_thomasi	extinct	48	50
-Polydolops_thomasi	extinct	38	38.2
+Polydolops_thomasi	extinct	35	38.2
 Polydolops_thomasi	extinct	38	41.2
 Polydolops_thomasi	extinct	41.3	47.8
 Polydolops_thomasi	extinct	41.3	47.8
