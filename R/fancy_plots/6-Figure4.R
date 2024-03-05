@@ -284,6 +284,7 @@ fig4b <- ggplot(data = PLOT_DF_herbi, aes(x = factor(param), y = value)) +
   # theme aesthetics
   theme(axis.title = element_text(size = 18),
         axis.text = element_text(size = 18),
+        axis.ticks.y = element_line(linewidth = 0),
         legend.position = "none",
         strip.text.x = element_text(size = 18),
         strip.text.y = element_text(size = 18),
