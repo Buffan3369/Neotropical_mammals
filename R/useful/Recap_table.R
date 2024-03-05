@@ -6,7 +6,8 @@
 
 library(tidyverse)
 
-tbl <- readRDS("./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
+#tbl <- readRDS("./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
+tbl <- readRDS("./data_2023/SPECIES_LISTS/7-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
 # Non-Na orders
 full_odr <- unique(tbl$order)[!is.na(unique(tbl$order))]
 # Assess number of occ, singleton and proportion of singleton per order
@@ -62,4 +63,5 @@ final_df <- final_df %>%
   add_column(prop_singl_gen = prop_singl_gen, .after = "n_singl_gen") %>%
   add_column(prop_singl_sp = prop_singl_sp, .after = "n_singl_sp")
 # save
-write.csv(final_df, "./data_2023/recap_tbl_EOT.csv", row.names = FALSE)
+#write.csv(final_df, "./data_2023/recap_tbl_EOT.csv", row.names = FALSE)
+write.csv(final_df, "./data_2023/recap_tbl_EOT_extended.csv", row.names = FALSE)
