@@ -183,6 +183,7 @@ noto_death <- TsTe_noto2 %>%
   # Save
 turnov_gen <- ggarrange2(noto_death, noto_birth, ncol = 2)
 ggsave("./figures/Figure_3/Noto_turnover.pdf", turnov_gen, height = 10, width = 20)
+ggsave("./figures/Figure_3/Noto_turnover.png", turnov_gen, height = 10, width = 20, dpi = 400)
 
   # Families: table with each genus and its associated family
 # Monophyletic families, according to Billet et al. (2011)
@@ -228,6 +229,7 @@ noto_fam <- spl %>%
         axis.text.y = element_text(size = 10))
 
 ggsave("./figures/Figure_3/Noto_turnover_families.pdf", noto_fam, height = 7, width = 10)
+ggsave("./figures/Figure_3/Noto_turnover_families.png", noto_fam, height = 7, width = 10, dpi = 400)
 
 ## Xenarthra -------------------------------------------------------------------
 rm(species_list_idx, noto_genera, noto_birth, noto_death, TsTe_noto, TsTe_noto1, TsTe_noto2)
