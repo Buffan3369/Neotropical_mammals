@@ -188,7 +188,7 @@ Norm_tot <- sapply(X = 1:length(Div_tot),
                    })
 cumul_occ_norm <- data.frame(time = c(L_kept[[1]][1], L_kept[[1]], L_smoothed[[1]][1], L_smoothed[[1]]),
                              norm_occ = Norm_tot,
-                             salma = c(rep("kept", length(Div_tot)), rep("smoothed", length(Div_tot))))
+                             salma = c(rep("kept", length(L_div_kept[[2]])), rep("smoothed", length(L_div_smoothed[[2]]))))
     #proper plot
 cumul_diversity_restricted <- cumul_occ_norm %>% 
   filter(time >= 23.03 & time <= 56) %>%
@@ -198,7 +198,7 @@ cumul_diversity_restricted <- cumul_occ_norm %>%
   geom_line(linewidth = 2) +
   scale_colour_manual(values = c("#d95f0e", "#54278f")) +
   labs(x = NULL,
-       y = "Cumulative normalised nb. of occurrences") +
+       y = "Cumulative nb. of occurrences / gen. richness") +
   theme(axis.title.x = element_text(size = 20),
         axis.title.y = element_text(size = 20),
         axis.text = element_text(size = 15),
@@ -265,11 +265,6 @@ q_plots <- Q_data %>%
 
 ## arrange and save
 
-par(mfrow = c(1,2))
-plot(x = cumul_occ_norm$time[which(cumul_occ_norm$salma == "kept")], cumul_occ_norm$norm_occ[which(cumul_occ_norm$salma == "kept")], type = "l")
-plot(x = cumul_occ_norm$time[which(cumul_occ_norm$salma == "smoothed")], cumul_occ_norm$norm_occ[which(cumul_occ_norm$salma == "smoothed")], type = "l")
-
-
 p <- ggarrange(cumul_plot_restricted, q_plots, ncol = 1, labels = c("(A)", "(B)"), font.label = list(size = 18))
 ggsave("./figures/supp_figs/Occurrence_q_rates/cumulative_occ_and_preservation.pdf",
        plot = p,
@@ -278,6 +273,19 @@ ggsave("./figures/supp_figs/Occurrence_q_rates/cumulative_occ_and_preservation.p
        unit = "mm")
 ggsave("./figures/supp_figs/Occurrence_q_rates/cumulative_occ_and_preservation.png",
        plot = p,
+       height = 350,
+       width = 450,
+       unit = "mm",
+       dpi = 400)
+
+p_norm <- ggarrange(cumul_diversity_restricted, q_plots, ncol = 1, labels = c("(A)", "(B)"), font.label = list(size = 18))
+ggsave("./figures/supp_figs/Occurrence_q_rates/cumulative_norm_occ_and_preservation.pdf",
+       plot = p_norm,
+       height = 350,
+       width = 450,
+       unit = "mm")
+ggsave("./figures/supp_figs/Occurrence_q_rates/cumulative_norm_occ_and_preservation.png",
+       plot = p_norm,
        height = 350,
        width = 450,
        unit = "mm",
