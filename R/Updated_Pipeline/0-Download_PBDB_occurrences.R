@@ -3,6 +3,8 @@
 # Author: Lucas Buffan
 # Date: 2023-12-11
 # Aim: Download Cenozoic South American genus-level Mammalia occurrences (PBDB)
+# Note: Raw dataset used in the study (downloaded on 11/2023) con be found here:
+#      "./data_2023/SPECIES_LISTS/1-Raw_Cnz_SA_Mammals.csv"
 ################################################################################
 
 pbdb_api = paste0("https://paleobiodb.org/data1.2/occs/list.csv",
