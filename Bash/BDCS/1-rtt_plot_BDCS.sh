@@ -1,11 +1,13 @@
 #!/bin/bash
 
-#python ~/PyRate/PyRate.py -plot ../../results/BDCS/SALMA_smoothed/genus-level/1-Full/pyrate_mcmc_logs/ -tag TsTe -b 20
-#mv *.r ../../results/BDCS/SALMA_smoothed/genus-level/1-Full/combined_logs
-Rscript ~/Documents/GitHub/CorsaiR/R/Plot_rates.r "BDS" \
-					"../../results/BDCS/SALMA_smoothed/genus-level/1-Full/combined_logs/TsTe_good_format_0__BDS_marginal_rates_RTT.r" \
-					"../../results/SALMA_smoothed/genus-level/1-Full/LTT/per_replicate/" \
-					"../../results/SALMA_smoothed/genus-level/1-Full/Q_SHIFTS/Parsed_Q_rates.csv" \
-					"../../figures/BDCS/RTT_LTT_Q_all_genera.png" \
-					"~/Documents/GitHub/CorsaiR/R/"
-			  	      
+for dir in SALMA_kept/genus_level/1-Full/BDS_5M
+#SALMA_kept/genus_level/1-Full/BDS SALMA_smoothed/genus_level/1-Full/BDS SALMA_smoothed/genus_level/1-Full/BDS_5M
+do
+	#Combine logs
+	python ~/PyRate/PyRate.py -combLog ../../results_EXTENDED/$dir/pyrate_mcmc_logs -tag mcmc -b 10
+	python ~/PyRate/PyRate.py -combLog ../../results_EXTENDED/$dir/pyrate_mcmc_logs -tag marginal_rates -b 10
+	mkdir -p ../../results_EXTENDED/$dir/combined_logs
+	mv ../../results_EXTENDED/$dir/pyrate_mcmc_logs/combined_* ../../results_EXTENDED/$dir/combined_logs
+	#Plot RTT
+	python ~/PyRate/PyRate.py -plot2 ../../results_EXTENDED/$dir/combined_logs -b 10
+done
