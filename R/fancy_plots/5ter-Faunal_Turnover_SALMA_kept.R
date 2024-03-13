@@ -1,5 +1,5 @@
 ################################################################################
-# Name: 5bis-Faunal_Turnover.R
+# Name: 5ter-Faunal_Turnover_SALMA_kept.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
 # Aim: Script for Ts/Te plots per family and genera for different groups
@@ -27,23 +27,25 @@ Ori_ext <- function(fam, gen_fam_tbl, TsTe_tbl, time = c("Ts", "Te")){
 }
 
 # GEOSCALES
-  # First geoscale
+# First geoscale
 gsc1 <- deeptime::epochs
 gsc1 <- gsc1 %>% filter(min_age < 56)
-  # Set second geoscale
-gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
-gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
+# Set second geoscale
+gsc2 <- read_xlsx("./data_2023/time_bins/SALMA_EOT.xlsx")
+gsc2 <- gsc2 %>% 
+  rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name") %>%
+  mutate(min_age = sapply(min_age, as.numeric), max_age = sapply(max_age, as.numeric))
 
 ## NOTOUNGULATA ----------------------------------------------------------------
-  # TsTe info
-TsTe_noto <- read.table("./results/SALMA_smoothed/genus_level/6-Order_level/Notoungulata/LTT/combined_10_KEEP_se_est.txt",
+# TsTe info
+TsTe_noto <- read.table("./results/SALMA_kept/genus_level/6-Order_level/Notoungulata/LTT/combined_9_KEEP_se_est.txt",
                         header = TRUE)
-species_list_idx <- read.table("./data_2023/PyRate/SALMA_smoothed/genus_level/5-Order_level/Notoungulata_EOT_gen_occ_SALMA_smoothed_TaxonList.txt",
+species_list_idx <- read.table("./data_2023/PyRate/RESTRICTED/SALMA_kept/genus_level/5-Order_level/Notoungulata_EOT_gen_occ_SALMA_kept_TaxonList.txt",
                                header = TRUE)
 TsTe_noto <- TsTe_noto %>% 
   mutate(genus = species_list_idx$Species)
-  
-  ## 1) Ts-arranged genus plot
+
+## 1) Ts-arranged genus plot
 TsTe_noto1 <- TsTe_noto %>% 
   arrange(ts) %>%
   mutate(family = sapply(X = genus, FUN = function(gen){
@@ -58,7 +60,7 @@ TsTe_noto1 <- TsTe_noto %>%
   })) %>%
   mutate(family = factor(family, levels = c("Homalodotheriidae", "Hegetotheriidae", 
                                             "Mesotheriidae", "Toxodontidae", "Others")))
-  # add colour vector for y axis
+# add colour vector for y axis
 TsTe_noto1 <- TsTe_noto1 %>%
   mutate(y_colour = sapply(X = 1:nrow(TsTe_noto1), FUN = function(i){
     fam <- as.character(TsTe_noto1$family[i])
@@ -78,7 +80,7 @@ TsTe_noto1 <- TsTe_noto1 %>%
       return("black")
     }
   }))
-  # proper plot
+# proper plot
 noto_birth <- TsTe_noto1 %>% 
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
   geom_segment(aes(x = ts, xend = te, colour = family), linewidth = 0.8) +
@@ -113,7 +115,7 @@ noto_birth <- TsTe_noto1 %>%
         axis.text.x = element_text(size = 15),
         legend.key=element_rect(fill="white"))
 
-  ## 2) Te-arranged genus plot
+## 2) Te-arranged genus plot
 TsTe_noto2 <- TsTe_noto %>% 
   arrange(te) %>%
   mutate(family = sapply(X = genus, FUN = function(gen){
@@ -180,12 +182,12 @@ noto_death <- TsTe_noto2 %>%
         axis.text.x = element_text(size = 15),
         legend.key=element_rect(fill="white"))
 
-  # Save
+# Save
 turnov_gen <- ggarrange2(noto_death, noto_birth, ncol = 2)
-ggsave("./figures/Figure_3/Noto_turnover.pdf", turnov_gen, height = 10, width = 20)
-ggsave("./figures/Figure_3/Noto_turnover.png", turnov_gen, height = 10, width = 20, dpi = 400)
+ggsave("./figures/supp_figs/Fig_turnover/SALMA_kept/Noto_turnover_SALMA_kept.pdf", turnov_gen, height = 10, width = 20)
+ggsave("./figures/supp_figs/Fig_turnover/SALMA_kept/Noto_turnover_SALMA_kept.png", turnov_gen, height = 10, width = 20, dpi = 400)
 
-  # Families: table with each genus and its associated family
+# Families: table with each genus and its associated family
 # Monophyletic families, according to Billet et al. (2011)
 monophyl <- c("Homalodotheriidae", "Leontiniidae", "Toxodontidae",
               "Interatheriidae", "Mesotheriidae", "Hegetotheriidae")
@@ -195,7 +197,7 @@ noto_genera <- spl %>%
   group_by(family, genus) %>%
   distinct(genus)
 
-  # 3) Families plot
+# 3) Families plot
 noto_fam <- spl %>%
   filter(order == "Notoungulata") %>%
   distinct(family) %>%
@@ -228,27 +230,27 @@ noto_fam <- spl %>%
         axis.text.x = element_text(size = 15),
         axis.text.y = element_text(size = 10))
 
-ggsave("./figures/supp_figs/Fig_turnover/SALMA_smoothed/Noto_turnover_families.pdf", noto_fam, height = 7, width = 10)
-ggsave("./figures/supp_figs/Fig_turnover/SALMA_smoothed/Noto_turnover_families.png", noto_fam, height = 7, width = 10, dpi = 400)
+ggsave("./figures/supp_figs/Fig_turnover/SALMA_kept/Noto_turnover_families_SALMA_kept.pdf", noto_fam, height = 7, width = 10)
+ggsave("./figures/supp_figs/Fig_turnover/SALMA_kept/Noto_turnover_families_SALMA_kept.png", noto_fam, height = 7, width = 10, dpi = 400)
 
 ## Xenarthra -------------------------------------------------------------------
 rm(species_list_idx, noto_genera, noto_birth, noto_death, TsTe_noto, TsTe_noto1, TsTe_noto2)
-TsTe_xen <- read.table("./results/SALMA_smoothed/genus_level/6-Order_level/Xenarthra/LTT/combined_10_KEEP_se_est.txt", header = T)
-species_list_idx <- read.table("./data_2023/PyRate/SALMA_smoothed/genus_level/5-Order_level/Xenarthra_EOT_gen_occ_SALMA_smoothed_TaxonList.txt", header = T)
+TsTe_xen <- read.table("./results/SALMA_kept/genus_level/6-Order_level/Xenarthra/LTT/per_replicate/Xenarthra_EOT_gen_occ_SALMA_kept_1_Grj_KEEP_se_est.txt", header = T)
+species_list_idx <- read.table("./data_2023/PyRate/RESTRICTED/SALMA_kept/genus_level/5-Order_level/Xenarthra_EOT_gen_occ_SALMA_kept_TaxonList.txt", header = T)
 TsTe_xen <-TsTe_xen %>% mutate(genus = species_list_idx$Species)
-  
-  ## 1) Ts-arranged genus plot
+
+## 1) Ts-arranged genus plot
 TsTe_xen %>% 
   arrange(ts) %>%
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
   geom_segment(aes(x = ts, xend = te)) +
   scale_x_reverse(breaks = seq(from = 25, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Genus") +
-  # geom_rect(aes(ymin = 46.5, ymax = 65.5, xmin = 35, xmax = 38.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 56, x = 39, label = "(1)", size = 7, colour = "#08519c") +
-  # geom_rect(aes(ymin = 30.5, ymax = 46.5, xmin = 30, xmax = 34.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 38, x = 35, label = "(2)", size = 7, colour = "#08519c") +
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
+  # add silhouette
+  add_phylopic(x = 50, y = 5, name = "Propalaehoplophorus australis", ysize = 4) +
+  annotate(geom = "text", x = 50, y = 2, label = "Xenarthra", size = 6) +
+  #ultimate customs
   annotate(geom = "text", x = 35, y = 36.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +
   coord_geo(pos = list("bottom", "bottom"),
@@ -266,10 +268,9 @@ TsTe_xen %>%
   geom_segment(aes(x = ts, xend = te)) +
   scale_x_reverse(breaks = seq(from = 25, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Genus") +
-  # geom_rect(aes(ymin = 46.5, ymax = 65.5, xmin = 35, xmax = 38.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 56, x = 39, label = "(1)", size = 7, colour = "#08519c") +
-  # geom_rect(aes(ymin = 30.5, ymax = 46.5, xmin = 30, xmax = 34.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 38, x = 35, label = "(2)", size = 7, colour = "#08519c") +
+  # add silhouette
+  add_phylopic(x = 50, y = 5, name = "Propalaehoplophorus australis", ysize = 4) +
+  annotate(geom = "text", x = 50, y = 2, label = "Xenarthra", size = 6) +
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
   annotate(geom = "text", x = 35, y = 36.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +
@@ -296,7 +297,7 @@ spl %>%
   arrange(Ts) %>% 
   ggplot(aes(y = fct_inorder(family), yend = fct_inorder(family))) +
   geom_segment(aes(x = Ts, xend = Te), linewidth = 2) +
-#  scale_colour_manual(values = c("black", "grey60")) +
+  #  scale_colour_manual(values = c("black", "grey60")) +
   scale_x_reverse(breaks = seq(from = 25, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Family", colour = NULL) +
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
