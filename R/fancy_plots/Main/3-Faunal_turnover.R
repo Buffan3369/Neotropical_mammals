@@ -1,8 +1,9 @@
 ################################################################################
-# Name: 5bis-Faunal_Turnover.R
+# Name: 3-Faunal_Turnover.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
-# Aim: Script for Ts/Te plots per family and genera for different groups
+# Aim: Script for Ts/Te plots per family and genera for different groups (SALMA
+#       smoothed)
 ################################################################################
 
 library(tidyverse)

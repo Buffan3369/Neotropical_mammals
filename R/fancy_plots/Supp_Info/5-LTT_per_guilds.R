@@ -1,8 +1,8 @@
 ################################################################################
-# Name: 5-Figure3.R
+# Name: 5-LTT_per_guilds.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
-# Aim: Script for figure 3 (multiple LTT plot per ecomorphotype).
+# Aim: Script for multiple LTT plot per ecomorphotypes.
 ################################################################################
 
 ## Source helper functions from CorsaiR and additional facilities --------------

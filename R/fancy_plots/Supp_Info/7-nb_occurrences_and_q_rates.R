@@ -1,5 +1,5 @@
 ################################################################################
-# Name: 3-Figure1.R
+# Name: 7-nb_occurrences_and_q_rates.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
 # Aim: Script for representing cumulative number of occurrences and estimated

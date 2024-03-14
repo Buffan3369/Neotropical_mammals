@@ -1,9 +1,8 @@
 ################################################################################
-# Name: 6-Figure4.R
+# Name: 4-Figure4.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
-# Aim: Script for figure 4 (MBD results full Eocene post-EOT + Oligocene, 
-#      and probaly herbivores).
+# Aim: Script for figure 4 (MBD results full Eocene post-EOT + Oligocene).
 ################################################################################
 
 library(tidyverse)

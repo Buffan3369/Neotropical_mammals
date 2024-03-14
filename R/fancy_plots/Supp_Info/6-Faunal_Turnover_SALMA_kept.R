@@ -1,8 +1,9 @@
 ################################################################################
-# Name: 5ter-Faunal_Turnover_SALMA_kept.R
+# Name: 6-Faunal_Turnover_SALMA_kept.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
-# Aim: Script for Ts/Te plots per family and genera for different groups
+# Aim: Script for Ts/Te plots per family and genera for different groups with 
+#       SALMA kept.
 ################################################################################
 
 library(tidyverse)
@@ -240,7 +241,7 @@ species_list_idx <- read.table("./data_2023/PyRate/RESTRICTED/SALMA_kept/genus_l
 TsTe_xen <-TsTe_xen %>% mutate(genus = species_list_idx$Species)
 
 ## 1) Ts-arranged genus plot
-TsTe_xen %>% 
+xen_birth <- TsTe_xen %>% 
   arrange(ts) %>%
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
   geom_segment(aes(x = ts, xend = te)) +
@@ -262,7 +263,7 @@ TsTe_xen %>%
             xlim = c(24, 53))
 
 ## 2) Te-arranged genus plot
-TsTe_xen %>% 
+xen_death <- TsTe_xen %>% 
   arrange(te) %>%
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
   geom_segment(aes(x = ts, xend = te)) +
@@ -288,7 +289,7 @@ xen_genera <- spl %>%
   group_by(family, genus) %>%
   distinct(genus)
 
-spl %>%
+xen_families <- spl %>%
   filter(order %in% c("Cingulata", "Pilosa")) %>%
   distinct(family) %>%
   filter(!is.na(family)) %>%
@@ -310,6 +311,12 @@ spl %>%
             height = unit(1.5, "line"),
             size = "auto",
             xlim = c(24, 53))
+
+# Save
+turnov_gen_xen <- ggarrange2(, noto_birth, ncol = 2)
+ggsave("./figures/supp_figs/Fig_turnover/SALMA_kept/Noto_turnover_SALMA_kept.pdf", turnov_gen, height = 10, width = 20)
+ggsave("./figures/supp_figs/Fig_turnover/SALMA_kept/Noto_turnover_SALMA_kept.png", turnov_gen, height = 10, width = 20, dpi = 400)
+
 
 ## Metatheria ------------------------------------------------------------------
 rm(species_list_idx, xen_genera, TsTe_xen)

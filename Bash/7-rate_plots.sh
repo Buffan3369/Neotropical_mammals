@@ -14,7 +14,7 @@ do
 #			out_freq=../figures/Sensitivity_analyses/Mustersan_38.2_35/freq_rate_shifts_${s}_${ss}_${ana}.png
 #			acc=~/Documents/GitHub/CorsaiR/R/
 #			#execute plotting function
-#			Rscript ../R/fancy_plots/2-Plot_rates.r "RJMCMC" $rtt $ltt $q $out_plot $out_freq $acc
+#			Rscript ../R/fancy_plots/Supp_Info/2-Plot_rates.r "RJMCMC" $rtt $ltt $q $out_plot $out_freq $acc
 #		done
 #		## Tropical / Extratropical
 #		for T in Tropical Extratropical
@@ -26,7 +26,7 @@ do
 #			out_freq=../figures/Sensitivity_analyses/Mustersan_38.2_35/freq_rate_shifts_${s}_${ss}_$T.png
 #			acc=~/Documents/GitHub/CorsaiR/R/
 #			#execute plotting function
-#			Rscript ../R/fancy_plots/2-Plot_rates.r "RJMCMC" $rtt $ltt $q $out_plot $out_freq $acc
+#			Rscript ../R/fancy_plots/Supp_Info/2-Plot_rates.r "RJMCMC" $rtt $ltt $q $out_plot $out_freq $acc
 #		done
 #		## Ecomorphotype
 #		for E in carnivore herbivore omnivore insectivore
@@ -38,7 +38,7 @@ do
 #			out_freq=../figures/Sensitivity_analyses/Mustersan_38.2_35/freq_rate_shifts_${s}_${ss}_$E.png
 #			acc=~/Documents/GitHub/CorsaiR/R/
 #			#execute plotting function
-#			Rscript ../R/fancy_plots/2-Plot_rates.r "RJMCMC" $rtt $ltt $q $out_plot $out_freq $acc
+#			Rscript ../R/fancy_plots/Supp_Info/2-Plot_rates.r "RJMCMC" $rtt $ltt $q $out_plot $out_freq $acc
 #		done
 		## "Order-level" (Phylogenetic assignment)
 		for O in Notoungulata Other_SANUs Rodentia Xenarthra Metatheria
@@ -50,7 +50,7 @@ do
 			out_freq=../figures/Sensitivity_analyses/Mustersan_38.2_35/freq_rate_shifts_${s}_${ss}_$O.png
 			acc=~/Documents/GitHub/CorsaiR/R/
 			#execute plotting function
-			Rscript ../R/fancy_plots/2-Plot_rates.r "RJMCMC" $rtt $ltt $q $out_plot $out_freq $acc
+			Rscript ../R/fancy_plots/Supp_Info/2-Plot_rates.r "RJMCMC" $rtt $ltt $q $out_plot $out_freq $acc
 		done
 	done
 done

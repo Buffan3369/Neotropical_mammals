@@ -1,8 +1,9 @@
 ################################################################################
-# Name: 5-Figure2.R
+# Name: 4-Figure2_RJMCMC.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
-# Aim: Script for figure 2, diversity and diversification per "order".
+# Aim: Script for figure 2, diversity and diversification per "order", 
+#       with diversification rates estimated with RJMCMC.
 ################################################################################
 
 ## Source helper functions from CorsaiR and additional facilities --------------

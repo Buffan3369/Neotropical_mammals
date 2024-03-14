@@ -1,8 +1,8 @@
 ################################################################################
-# Name: 3-Figure1.R
+# Name: 3-Figure1_RJMCMC.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
-# Aim: Script for figure 1.
+# Aim: Script for figure 1 with diversification rates estimated with RJMCMC.
 ################################################################################
 
 ## Source helper functions from CorsaiR and additional facilities --------------
