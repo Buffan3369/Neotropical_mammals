@@ -39,5 +39,6 @@ data_2023/simulated_data/
 Supp_Mat/
 paleoTropics/
 R/deprecated/
+Bash/deprecated/
 #mac files
 .DS_Store
