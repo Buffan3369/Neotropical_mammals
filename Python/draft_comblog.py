@@ -161,7 +161,7 @@ def comb_bds_extended(path_to_files,
     # headers of these files and their respective shapes
     heads = list(np.array(next(open(f)).split()) for f in file_temp)
     shapes = list(np.shape(h)[0] for h in heads)
-    # if some runs inferred one more rate shift than others
+    # if some runs inferred one more shift than others (per rate)
     if len(np.unique(shapes)) == 2:
         h = 0
         #positions of the runs with a lower number of rate shifts
@@ -170,8 +170,8 @@ def comb_bds_extended(path_to_files,
         higher = np.where(shapes == np.unique(shapes)[1])[0]
         #name of the colmuns missing in some runs ( "mu_i" and "lambda_i" in mcmc.logs) => reversed to facilitate insertion in the table
         missing = [i for i in heads[higher[0]] if i not in heads[lower[0]]][::-1]
-        #name of the columns after which we'll add the missing ones ("mu_(i-1)" and "lambda_(i-1)" in mcmc.logs)
-        missing_prev = [el.split("_")[0] + "_" + str(int(el.split("_")[1])-1) for el in missing]
+        #name of the columns after which we'll add the missing ones ("mu_0" and "lambda_0" in mcmc.logs)
+        missing_prev = [el.split("_")[0] + "_0" for el in missing]
         for i in range(len(file_temp)):
             tmp_df = pd.read_csv(file_temp[i], sep="\t")
             # remove burn-in
@@ -192,7 +192,6 @@ def comb_bds_extended(path_to_files,
         comb.to_csv(outfile, index=False, sep="\t")
     else:
         comb_log_files(path_to_files, burnin, tag, resample, col_tag)
-
 
 
 path_to_files="Documents/GitHub/PhD/Chapter_1/results_EXTENDED/SALMA_smoothed/genus_level/1-Full/BDS/pyrate_mcmc_logs"
