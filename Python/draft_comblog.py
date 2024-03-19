@@ -174,11 +174,11 @@ def comb_bds_extended(path_to_files,
         missing_prev = [el.split("_")[0] + "_0" for el in missing]
         for i in range(len(file_temp)):
             tmp_df = pd.read_csv(file_temp[i], sep="\t")
-            # remove burn-in
-            tmp_df = tmp_df[:][int(burnin):]
-            # remove undesired columns (not specified in col_tag)
-            if len(col_tag) > 0:
-                tmp_df = tmp_df.drop(col_tag, axis = 1)
+            # if we are with mcmc logs, remove burn-in and undesired columns (specified in col_tag)
+            if tag == "mcmc":
+                tmp_df = tmp_df[:][int(burnin):]
+                if len(col_tag) > 0:
+                    tmp_df = tmp_df.drop(col_tag, axis = 1)
             if i in lower: # if we have to add "missing" rates
                 for j in range(len(missing)):
                     idx = tmp_df.columns.get_loc(missing_prev[j])
@@ -190,11 +190,39 @@ def comb_bds_extended(path_to_files,
             h += 1
         outfile = "%s/combined_%s_%s.log" % (path_to_files, len(file_temp), tag)
         comb.to_csv(outfile, index=False, sep="\t")
+    elif len(np.unique(shapes)) > 2 and tag == "marginal_rates":
+        h = 0
+        #apply cutoff for to remove additional rate estimations (l_n, m_n, r_n where n > len(at least one file))
+        minimal_idx = np.where(np.array(shapes) == min(shapes))[0]
+        #read one random dataset with the smallest number of keys, and extract this number
+        df_pif = pd.read_csv(file_temp[minimal_idx[0]], sep="\t")
+        df_pif = df_pif.filter(like = "l_")
+        col_min = df_pif.keys()
+        n_min = int(col_min[-1].split("_")[1])
+        # Loop
+        for i in range(len(file_temp)):
+            tmp_df = pd.read_csv(file_temp[i], sep="\t")
+            tmp_lam = tmp_df.filter(like = "l_")
+            n_max_tmp = int(tmp_lam.keys()[-1].split("_")[1])
+            if n_max_tmp > n_min:
+                # get the range of supplementary columns (_(n_min+1), _(n_min+2), ...)
+                to_drop = range(n_min+1, n_max_tmp+1)
+                for n in to_drop:
+                    tmp_df = tmp_df.drop(tmp_df.filter(regex='_'+str(n)).columns, axis=1)
+            if h == 0:
+                comb = tmp_df
+            else:
+                comb = pd.concat([comb, tmp_df], axis = 0)
+            h += 1
+        outfile = "%s/combined_%s_%s.log" % (path_to_files, len(file_temp), tag)
+        comb.to_csv(outfile, index=False, sep="\t")
+
     else:
         comb_log_files(path_to_files, burnin, tag, resample, col_tag)
 
 
-path_to_files="Documents/GitHub/PhD/Chapter_1/results_EXTENDED/SALMA_smoothed/genus_level/1-Full/BDS/pyrate_mcmc_logs"
+
+path_to_files="Documents/GitHub/PhD/Chapter_1/results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/BDCS/Extratropical/pyrate_mcmc_logs"
 burnin=10
 tag="marginal_rates"
 
