@@ -90,6 +90,13 @@ for(pth in paths){
     annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     # EOT line
     geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) # EOT
+  if(i == 1){
+    rtt_plt <- rtt_plt +
+      annotate(geom = "segment", x = 47, xend = 50, y = 0.4, yend = 0.4, colour = "#08519c", linewidth = 1) +
+      annotate(geom = "text", x = 43, y = 0.4, label = "Origination rate", size = 5) +
+      annotate(geom = "segment", x = 47, xend = 50, y = 0.37, yend = 0.37, colour = "#a50f15", linewidth = 1) +
+      annotate(geom = "text", x = 43, y = 0.37, label = "Extinction rate ", size = 5)
+  }
   
   ## Add to plot list
   list_plots[[i]] <- rtt_plt
