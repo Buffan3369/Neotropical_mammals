@@ -1,8 +1,8 @@
 ################################################################################
-# Name: 3-Figure1_RJMCMC_kept.R
+# Name: 3-Figure1_BDCS_kept.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
-# Aim: Script for figure 1 with diversification rates estimated with RJMCMC, 
+# Aim: Script for figure 1 with diversification rates estimated with BDCS, 
 #       SALMA kept.
 ################################################################################
 
@@ -13,19 +13,30 @@ library("readxl")
 library("ggpubr")
 
 ## Figure 1 --------------------------------------------------------------------
-paths <- c("./results_EXTENDED/SALMA_kept/genus_level/1-Full/MH_sampler/",
-           "./results_EXTENDED/SALMA_kept/species_level/1-Full/MH_sampler/",
-           "./results_EXTENDED/SALMA_kept/genus_level/4-Tropical_Extratropical/RJMCMC/Extratropical/",
-           "./results_EXTENDED/SALMA_kept/genus_level/4-Tropical_Extratropical/RJMCMC/Tropical/")
+# path to rtt files
+rtt_paths <- c("./results_EXTENDED/SALMA_kept/genus_level/1-Full/BDS/",
+               "./results_EXTENDED/SALMA_kept/species_level/1-Full/BDCS/",
+               "./results_EXTENDED/SALMA_kept/genus_level/4-Tropical_Extratropical/BDCS/Extratropical/",
+               "./results_EXTENDED/SALMA_kept/genus_level/4-Tropical_Extratropical/BDCS/Tropical/")
+# path to ltt files
+ltt_path <- c("./results_EXTENDED/SALMA_kept/genus_level/1-Full/MH_sampler/",
+              "./results_EXTENDED/SALMA_kept/species_level/1-Full/MH_sampler/",
+              "./results_EXTENDED/SALMA_kept/genus_level/4-Tropical_Extratropical/RJMCMC/Extratropical/",
+              "./results_EXTENDED/SALMA_kept/genus_level/4-Tropical_Extratropical/RJMCMC/Tropical/")
+# second GTS
 gsc2 <- read_xlsx("./data_2023/time_bins/SALMA_EOT.xlsx")
 gsc2 <- gsc2 %>% 
   rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name") %>%
   mutate(min_age = sapply(min_age, as.numeric), max_age = sapply(max_age, as.numeric))
+# deviation for BDS rates
+delta <- 0.3
+# plot list
 plot_list1 <- list()
 i <- 0
 j <- 0
-for(pth in paths){
-  rtt_tbl <- extract_rtt(path = paste0(pth, "combined_logs/RTT_plots.r"), ana = "RJMCMC")
+for(k in 1:4){
+  rtt_file <- list.files(paste0(rtt_paths[k], "combined_logs/"), pattern = "_RTT.r") #character of length 1
+  rtt_tbl <- extract_rtt(path = paste0(rtt_paths[k], "combined_logs/", rtt_file), ana = "BDS")
   # in case doesn't go far enough
   if(max(rtt_tbl$time) < 52){
     rtt_tbl$time[nrow(rtt_tbl)] <- 52
@@ -40,6 +51,19 @@ for(pth in paths){
   x.axis <- FALSE
   xlim <- c(52, 24)
   display_gts <- FALSE
+  # adjust age of shifts
+  s <- 0 # just for extra-tropical
+  if(k == 3){
+    s <- 1
+  }
+  rtt_tbl$time[which(rtt_tbl$time == 49-s)] <- 47.8 + delta
+  rtt_tbl$time[which(rtt_tbl$time == 48-s)] <- 47.8 - delta
+  rtt_tbl$time[which(rtt_tbl$time == 39-s)] <- 37.71 + delta
+  rtt_tbl$time[which(rtt_tbl$time == 38-s)] <- 37.71 - delta
+  rtt_tbl$time[which(rtt_tbl$time == 35-s)] <- 33.9 + delta
+  rtt_tbl$time[which(rtt_tbl$time == 34-s)] <- 33.9 - delta
+  rtt_tbl$time[which(rtt_tbl$time == 29-s)] <- 27.8 + delta
+  rtt_tbl$time[which(rtt_tbl$time == 28-s)] <- 27.8 - delta
   # gts stuff
   i <- i+1
   if(i >= 10){
@@ -52,14 +76,15 @@ for(pth in paths){
   # diversification rates plot ---------
   rtt_plt <- rtt_plot(data = rtt_tbl,
                       type = "SpEx",
-                      y_limits = c(0, 1.1),
+                      y_limits = c(0, 0.55),
                       x_lab = x_lab,
                       stage_x_breaks = FALSE,
                       manual_x_breaks = seq(25, 50, 5),
+                      y_breaks = seq(0, 0.5, 0.1),
                       axes.labelsize=15,
                       ticks.labelsize = 12,
                       restrict_y = TRUE,
-                      restrict_thr = 1.1,
+                      restrict_thr = 0.55,
                       ori_col="#08519c",
                       ext_col="#a50f15",
                       display_gts = display_gts,
@@ -80,13 +105,13 @@ for(pth in paths){
   #add labels in the first line  
   if(i == 1){
     rtt_plt <- rtt_plt +
-      annotate(geom = "segment", x = 47, xend = 50, y = 1, yend = 1, colour = "#08519c", linewidth = 1) +
-      annotate(geom = "text", x = 41.5, y = 1, label = "Origination rate", size = 5) +
-      annotate(geom = "segment", x = 47, xend = 50, y = 0.9, yend = 0.9, colour = "#a50f15", linewidth = 1) +
-      annotate(geom = "text", x = 41.5, y = 0.9, label = "Extinction rate ", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 1.05, label = "EOT", size = 7, colour = "red") +
-      geom_text(aes(x = 51.5, y = 0.7, label = "EECO"), angle = 90, colour = "bisque4") +
-      geom_text(aes(x = 41.25, y = 0.7, label = "MECO"), angle = 90, colour = "bisque4")
+      annotate(geom = "segment", x = 47, xend = 50, y = 0.5, yend = 0.5, colour = "#08519c", linewidth = 1) +
+      annotate(geom = "text", x = 41.5, y = 0.5, label = "Origination rate", size = 5) +
+      annotate(geom = "segment", x = 47, xend = 50, y = 0.45, yend = 0.45, colour = "#a50f15", linewidth = 1) +
+      annotate(geom = "text", x = 41.5, y = 0.45, label = "Extinction rate ", size = 5) +
+      annotate(geom = "text", x = 31.5, y = 0.5, label = "EOT", size = 7, colour = "red") +
+      geom_text(aes(x = 51.5, y = 0.35, label = "EECO"), angle = 90, colour = "bisque4") +
+      geom_text(aes(x = 41.25, y = 0.35, label = "MECO"), angle = 90, colour = "bisque4")
   }
   plot_list1[[i+j]] <- rtt_plt
   #add blank element to plot list
@@ -103,9 +128,9 @@ for(pth in paths){
   net_plt <- rtt_plot(data = rtt_tbl,
                       type = "net",
                       x_lab = x_lab,
-                      y_breaks = seq(-1.2, 1.2, 0.3),
-                      y_limits = c(-1.1, 1.1),
-                      restrict_thr = 1.1,
+                      y_breaks = seq(-0.5, 0.5, 0.1),
+                      y_limits = c(-0.55, 0.55),
+                      restrict_thr = 0.55,
                       stage_x_breaks = FALSE,
                       manual_x_breaks = seq(25, 50, 5),
                       axes.labelsize=15,
@@ -128,12 +153,11 @@ for(pth in paths){
   #add labels in the first line  
   if(i == 2){
     net_plt <- net_plt +
-      annotate(geom = "segment", x = 47, xend = 50, y = 0.9, yend = 0.9, colour = "#504A4B", linewidth = 1) +
-      annotate(geom = "text", x = 40.5, y = 0.81, label = "Net diversification\n rate", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 1, label = "EOT", size = 7, colour = "red") +
-      geom_text(aes(x = 51.5, y = -0.9, label = "EECO"), angle = 90, colour = "bisque4") +
-      geom_text(aes(x = 41.25, y = -0.9, label = "MECO"), angle = 90, colour = "bisque4")
-    
+      annotate(geom = "segment", x = 47, xend = 50, y = 0.4, yend = 0.4, colour = "#504A4B", linewidth = 1) +
+      annotate(geom = "text", x = 40.5, y = 0.4, label = "Net diversification\n rate", size = 5) +
+      annotate(geom = "text", x = 31.5, y = 0.5, label = "EOT", size = 7, colour = "red") +
+      geom_text(aes(x = 51.5, y = -0.45, label = "EECO"), angle = 90, colour = "bisque4") +
+      geom_text(aes(x = 41.25, y = -0.45, label = "MECO"), angle = 90, colour = "bisque4")
   }
   plot_list1[[i+j]] <- net_plt
   #add blank element to plot list
@@ -147,8 +171,8 @@ for(pth in paths){
     xlim <- NULL
     display_gts <- TRUE
   }
-  ltt <- list.files(paste0(pth, "LTT/"), pattern = "se_est_ltt.txt")
-  ltt_tbl <- read.table(paste0(pth, "LTT/", ltt), header = TRUE)
+  ltt <- list.files(paste0(ltt_path[k], "LTT/"), pattern = "se_est_ltt.txt")
+  ltt_tbl <- read.table(paste0(ltt_path[k], "LTT/", ltt), header = TRUE)
   ltt_tbl <- ltt_tbl %>%
     rename("Age" = time, "Diversity" = diversity, "min_Diversity" = m_div, "max_Diversity" = M_div) %>%
     filter(Age > 24 & Age < 52)
@@ -204,13 +228,13 @@ fig1 <- ggarrange(plotlist = plot_list1, nrow = 4, ncol = 5,
                   hjust = -0.4, 
                   font.label = list(size = 18))
 
-ggsave("./figures/supp_figs/RTT_LTT/RJMCMC_kept/backbone_rj_kept_genus.pdf",
+ggsave("./figures/supp_figs/RTT_LTT/BDCS_kept/backbone_BDCS_kept.pdf",
        plot = fig1,
        height = 400,
        width = 400,
        units = "mm")
 
-ggsave("./figures/supp_figs/RTT_LTT/RJMCMC_kept/backbone_rj_kept_genus.png",
+ggsave("./figures/supp_figs/RTT_LTT/BDCS_kept/backbone_BDCS_kept.png",
        plot = fig1,
        height = 400,
        width = 400,

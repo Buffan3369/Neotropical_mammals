@@ -13,10 +13,10 @@ library("readxl")
 library("ggpubr")
 
 ## Figure 1 --------------------------------------------------------------------
-paths <- c("./results/SALMA_smoothed/genus_level/1-Full/",
-           "./results/SALMA_smoothed/species_level/1-Full/",
-           "./results/SALMA_smoothed/genus_level/4-Tropical_Extratropical/Extratropical/",
-           "./results/SALMA_smoothed/genus_level/4-Tropical_Extratropical/Tropical/")
+paths <- c("./results_EXTENDED/SALMA_smoothed/genus_level/1-Full/MH_sampler/",
+           "./results_EXTENDED/SALMA_smoothed/species_level/1-Full/MH_sampler/",
+           "./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Extratropical/",
+           "./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Tropical/")
 gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
 gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
 #gsc2$abbr[which(gsc2$name == "Early Eocene")] <- "" #otherwise doesn't fit in the plot
@@ -146,8 +146,11 @@ for(pth in paths){
     xlim <- NULL
     display_gts <- TRUE
   }
-  ltt_tbl <- extract_ltt(paste0(pth, "LTT/per_replicate/"))
-  ltt_tbl <- ltt_tbl %>% filter(Age > 24 & Age < 52)
+  ltt <- list.files(paste0(pth, "LTT/"), pattern = "se_est_ltt.txt")
+  ltt_tbl <- read.table(paste0(pth, "LTT/", ltt), header = TRUE)
+  ltt_tbl <- ltt_tbl %>%
+    rename("Age" = time, "Diversity" = diversity, "min_Diversity" = m_div, "max_Diversity" = M_div) %>%
+    filter(Age > 24 & Age < 52)
   # plotting adjustments
   ltt_tbl$Age[1] <- 24
   ltt_tbl$Age[nrow(ltt_tbl)] <- 52
@@ -200,13 +203,13 @@ fig1 <- ggarrange(plotlist = plot_list1, nrow = 4, ncol = 5,
                   hjust = -0.4, 
                   font.label = list(size = 18))
 
-ggsave("./figures/supp_figs/RTT_LTT/RJMCMC_smoothed/backbone.pdf",
+ggsave("./figures/supp_figs/RTT_LTT/RJMCMC_smoothed/backbone_rj_smoothed_genus.pdf",
        plot = fig1,
        height = 400,
        width = 400,
        units = "mm")
 
-ggsave("./figures/supp_figs/RTT_LTT/RJMCMC_smoothed/backbone.png",
+ggsave("./figures/supp_figs/RTT_LTT/RJMCMC_smoothed/backbone_rj_smoothed_genus.png",
        plot = fig1,
        height = 400,
        width = 400,
