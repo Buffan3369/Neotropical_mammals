@@ -13,7 +13,7 @@ library(rphylopic)
 library(readxl)
 
 # Open species List
-spl <- readRDS("./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
+spl <- readRDS("./data_2023/SPECIES_LISTS/7-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
 
 # Function returning estimated age boundaries of a family
 Ori_ext <- function(fam, gen_fam_tbl, TsTe_tbl, time = c("Ts", "Te")){
@@ -37,13 +37,25 @@ gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval
 
 ## NOTOUNGULATA ----------------------------------------------------------------
   # TsTe info
-TsTe_noto <- read.table("./results/SALMA_smoothed/genus_level/6-Order_level/Notoungulata/LTT/combined_10_KEEP_se_est.txt",
+TsTe_noto <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/6-Order_level/Notoungulata/BDCS/TsTe_Notoungulata_SALMA_smoothed_genus_level.txt",
                         header = TRUE)
-species_list_idx <- read.table("./data_2023/PyRate/SALMA_smoothed/genus_level/5-Order_level/Notoungulata_EOT_gen_occ_SALMA_smoothed_TaxonList.txt",
+species_list_idx <- read.table("./data_2023/PyRate/EXTENDED/SALMA_smoothed/genus_level/5-Order_level/Notoungulata_EOT_gen_occ_SALMA_smoothed_TaxonList.txt",
                                header = TRUE)
+
+Ts_noto <- TsTe_noto %>% 
+  select(matches("ts")) 
+Te_noto <- TsTe_noto %>% 
+  select(matches("te"))
+
 TsTe_noto <- TsTe_noto %>% 
-  mutate(genus = species_list_idx$Species)
-  
+  mutate(mean_ts = rowMeans(Ts_noto),
+         mean_te = rowMeans(Te_noto),
+         genus = species_list_idx$Species) %>%
+  select(genus, mean_ts, mean_te) %>%
+  rename(ts = "mean_ts", te = "mean_te") %>% 
+  filter(ts > 23.03)
+rm(Ts_noto, Te_noto)
+
   ## 1) Ts-arranged genus plot
 TsTe_noto1 <- TsTe_noto %>% 
   arrange(ts) %>%
@@ -84,7 +96,7 @@ noto_birth <- TsTe_noto1 %>%
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
   geom_segment(aes(x = ts, xend = te, colour = family), linewidth = 0.8) +
   scale_colour_manual(values = c("#49006a", "#ae017e", "#f768a1", "#9e9ac8", "black")) +
-  scale_x_reverse(breaks = seq(from = 25, to = 50, by = 5)) +
+  scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Genus", colour = "Family") +
   # add silhouette
   add_phylopic(x = 49.2, y = 11, name = "Trigonostylops", ysize = 8) +
@@ -107,7 +119,7 @@ noto_birth <- TsTe_noto1 %>%
             center_end_labels = TRUE,
             height = unit(1.5, "line"),
             size = "auto",
-            xlim = c(24, 53)) +
+            xlim = c(23.03, 53)) +
   theme(axis.text.y = element_text(size = 6, colour = TsTe_noto1$y_colour),
         axis.title.x = element_text(size = 18),
         axis.title.y = element_text(size = 18),
@@ -151,7 +163,7 @@ noto_death <- TsTe_noto2 %>%
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
   geom_segment(aes(x = ts, xend = te, colour = family), linewidth = 0.8) +
   scale_colour_manual(values = c("#993404", "#fe9929", "#fc9272", "black")) +
-  scale_x_reverse(breaks = seq(from = 25, to = 50, by = 5)) +
+  scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Genus", colour = "Family") + 
   # add silhouette
   add_phylopic(x = 49.2, y = 11, name = "Trigonostylops", ysize = 8) +
@@ -174,7 +186,7 @@ noto_death <- TsTe_noto2 %>%
             center_end_labels = TRUE,
             height = unit(1.5, "line"),
             size = "auto",
-            xlim = c(24, 53)) +
+            xlim = c(23.03, 53)) +
   theme(axis.text.y = element_text(size = 6, colour = TsTe_noto2$y_colour),
         axis.title.x = element_text(size = 18),
         axis.title.y = element_text(size = 18),
@@ -184,7 +196,7 @@ noto_death <- TsTe_noto2 %>%
   # Save
 turnov_gen <- ggarrange2(noto_death, noto_birth, ncol = 2)
 ggsave("./figures/Figure_3/Noto_turnover.pdf", turnov_gen, height = 10, width = 20)
-ggsave("./figures/Figure_3/Noto_turnover.png", turnov_gen, height = 10, width = 20, dpi = 400)
+ggsave("./figures/Figure_3/Noto_turnover.png", turnov_gen, height = 10, width = 20, dpi = 600)
 
   # Families: table with each genus and its associated family
 # Monophyletic families, according to Billet et al. (2011)
@@ -200,7 +212,7 @@ noto_genera <- spl %>%
 noto_fam <- spl %>%
   filter(order == "Notoungulata") %>%
   distinct(family) %>%
-  filter(!is.na(family)) %>%
+  filter(!is.na(family), family %in% c("Homalodontotheridae", "Perutheriidae") == FALSE) %>% # Perutheriids and Homalodontotherids are just represented by a single occ
   mutate(Ts = sapply(X = family, FUN = Ori_ext, gen_fam_tbl = noto_genera, TsTe_tbl = TsTe_noto, time = "Ts"),
          Te = sapply(X = family, FUN = Ori_ext, gen_fam_tbl = noto_genera, TsTe_tbl = TsTe_noto, time = "Te"),
          phyl = ifelse(family %in% monophyl, "Monophyletic", "Non-monophyletic")) %>% 
@@ -229,8 +241,8 @@ noto_fam <- spl %>%
         axis.text.x = element_text(size = 15),
         axis.text.y = element_text(size = 10))
 
-ggsave("./figures/supp_figs/Fig_turnover/SALMA_smoothed/Noto_turnover_families.pdf", noto_fam, height = 7, width = 10)
-ggsave("./figures/supp_figs/Fig_turnover/SALMA_smoothed/Noto_turnover_families.png", noto_fam, height = 7, width = 10, dpi = 400)
+ggsave("./figures/Figure_3/Noto_families.pdf", noto_fam, height = 7, width = 10)
+ggsave("./figures/Figure_3/Noto_families.png", noto_fam, height = 7, width = 10, dpi = 400)
 
 ## Xenarthra -------------------------------------------------------------------
 rm(species_list_idx, noto_genera, noto_birth, noto_death, TsTe_noto, TsTe_noto1, TsTe_noto2)

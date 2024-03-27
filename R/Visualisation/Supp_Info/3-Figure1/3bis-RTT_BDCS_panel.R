@@ -99,3 +99,4 @@ for(pth in paths){
 ## Assemble and save -----------------------------------------------------------
 tot <-  ggarrange(plotlist = list_plots, nrow = 2, ncol = 2)
 ggsave("./figures/supp_figs/rtt_BDCS.pdf", height = 300, width = 350, units = "mm")
+ggsave("./figures/supp_figs/rtt_BDCS.png", height = 300, width = 350, units = "mm", dpi = 600)
