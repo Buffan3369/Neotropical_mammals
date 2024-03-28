@@ -32,7 +32,7 @@ plant_processed <- data.frame(Age = seq(from = 23, to = 56, by = 0.5),
 #plot(x = plt$Age, y = plt$Div)
 
 write.table(x = plant_processed,
-            file = "./data_2023/MBD/processed_environment_predictors/1-Cenozoic_Plant_Diversity_500ky_step.txt",
+            file = "./data_2023/MBD/processed_environment_predictors_EOT/1-Cenozoic_Plant_Diversity_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -56,7 +56,7 @@ for(i in 2:66){
 # title("Interpolated data")
 write.table(data.frame(Age = seq(from = 0, to = 66, by = 0.5),
                        Altitude = interpol_av_el),
-            file = "./data_2023/MBD/processed_environment_predictors/2-Andes_mean_elevations_no_basins_500ky_step.txt",
+            file = "./data_2023/MBD/processed_environment_predictors_EOT/2-Andes_mean_elevations_no_basins_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -72,7 +72,7 @@ selected_indices <- sapply(X = seq(from = 0, to = 66, by = 0.5), FUN = select_cl
 Temp_Cnz <- Temp_Cnz[selected_indices, ]
 Temp_Cnz$Age <- sapply(X = Temp_Cnz$Age, FUN = round, digits = 1)
 write.table(Temp_Cnz,
-            file = "./data_2023/MBD/processed_environment_predictors/3-Cenozoic_Temp_500ky_step.txt",
+            file = "./data_2023/MBD/processed_environment_predictors_EOT/3-Cenozoic_Temp_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -94,7 +94,7 @@ selected_indices <- sapply(X = seq(0, 66, 0.5), FUN = select_closer, age_vect = 
 d13_C <- data.frame(Age = seq(0, 66, 0.5),
                     d13C_atmospheric = full_data$Foram.benth.δ13C....PDB...VPDB.CorrAdjusted.[selected_indices])
 write.table(x = d13_C,
-            file = "./data_2023/MBD/processed_environment_predictors/4-Atmospheric_delta13_C_500ky_step.txt",
+            file = "./data_2023/MBD/processed_environment_predictors_EOT/4-Atmospheric_delta13_C_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -141,7 +141,7 @@ while(i < nrow(interpolated-1)){
 selected_indices <- 100 * seq(from = 0, to = 66, by = 0.5) + 1
 colnames(interpolated) <- c("Age", "d13C_organic")
 write.table(x = interpolated[selected_indices,],
-            file = "./data_2023/MBD/processed_environment_predictors/5-organic_carbon_500ky_step.txt",
+            file = "./data_2023/MBD/processed_environment_predictors_EOT/5-organic_carbon_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -197,7 +197,7 @@ for(pos in rev(to_add)){
 
 write.table(x = data.frame(Age = seq(from = 0, to = 66, by = .5),
                            Sea_level = sel_sea_lvl),
-            file = "./data_2023/MBD/processed_environment_predictors/6-sea_level_500ky_step.txt",
+            file = "./data_2023/MBD/processed_environment_predictors_EOT/6-sea_level_500ky_step.txt",
             sep = "\t",
             row.names = FALSE,
             quote = FALSE)
@@ -258,17 +258,17 @@ for(order in c("Astrapotheria", "Carnivora", "Didelphimorphia", "Litopterna", "N
   interpolated$Diversity <- interpolated$Diversity / maxD
   #Save
   write.table(x = interpolated,
-              file = paste0("./data_2023/MBD/processed_environment_predictors/", order, "_diversity_ltt_500ky_step.txt"),
+              file = paste0("./data_2023/MBD/processed_environment_predictors_EOT/", order, "_diversity_ltt_500ky_step.txt"),
               sep = "\t",
               quote = FALSE,
               row.names = FALSE)
 }
 
 ## scale and restrict correlates to EOT ----------------------------------------
-for(file in list.files("./data_2023/MBD/processed_environment_predictors/", pattern = ".txt")){
+for(file in list.files("./data_2023/MBD/processed_environment_predictors_EOT/", pattern = ".txt")){
   pt_split <- strsplit(file, split = "\\.")[[1]]
-  save.name <- paste0("./data_2023/MBD/processed_environment_predictors/SCALED/", pt_split[1], "_EOT_SCALED.txt")
-  cov <- read.table(paste0("./data_2023/MBD/processed_environment_predictors/", file), sep = "\t", header = TRUE)
+  save.name <- paste0("./data_2023/MBD/processed_environment_predictors_EOT/SCALED/", pt_split[1], "_EOT_SCALED.txt")
+  cov <- read.table(paste0("./data_2023/MBD/processed_environment_predictors_EOT/", file), sep = "\t", header = TRUE)
   #scale (center/reduce)
   cov[,2] <- scale(cov[,2])
   #only select EOT values
