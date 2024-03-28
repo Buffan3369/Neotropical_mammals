@@ -10,7 +10,7 @@ source("./R/useful/helper_functions.R") # contains tax_dict and sp_to_udsc
 
 # Reference database containing orders for each species/genus
 occdf <- readRDS("./data_2023/SPECIES_LISTS/4-Fully_cleaned_Cnz_SA_mammals_SALMA_kept_Tropics_Diet.RDS")
-occdf$accepted_name <- sapply(X = occdf$accepted_name, FUN = spc_to_udsc) #convert spaces to hyphens
+occdf$accepted_name <- sapply(X = occdf$accepted_name, FUN = spc_to_udsc) #convert spaces to underscores
 occdf$genus <- sapply(X = occdf$genus, FUN = spc_to_udsc)
 
 # Taxon lists in species and genus-level analyses
@@ -21,10 +21,7 @@ gen_ref$order <- sapply(X = gen_ref$Species, FUN = function(x){unique(occdf$orde
 
 # Loop across the four outputs
 for(salma in c("SALMA_kept", "SALMA_smoothed")){
-  for(lvl in c("species_level", "genus_level")){
-    if(lvl == "species_level" & salma == "SALMA_smoothed"){
-      next
-    }
+  for(lvl in c("genus_level", "species_level")){
     # choose reference
     if(lvl == "species_level"){
       ref <- sp_ref
