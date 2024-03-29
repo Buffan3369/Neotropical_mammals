@@ -246,82 +246,86 @@ ggsave("./figures/Figure_3/Noto_families.png", noto_fam, height = 7, width = 10,
 
 ## Xenarthra -------------------------------------------------------------------
 rm(species_list_idx, noto_genera, noto_birth, noto_death, TsTe_noto, TsTe_noto1, TsTe_noto2)
-TsTe_xen <- read.table("./results/SALMA_smoothed/genus_level/6-Order_level/Xenarthra/LTT/combined_10_KEEP_se_est.txt", header = T)
-species_list_idx <- read.table("./data_2023/PyRate/SALMA_smoothed/genus_level/5-Order_level/Xenarthra_EOT_gen_occ_SALMA_smoothed_TaxonList.txt", header = T)
-TsTe_xen <-TsTe_xen %>% mutate(genus = species_list_idx$Species)
+TsTe_xen <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/6-Order_level/Xenarthra/BDCS/TsTe_Xenarthra_SALMA_smoothed_genus_level.txt", header = T)
+species_list_idx <- read.table("./data_2023/PyRate/EXTENDED/SALMA_smoothed/genus_level/5-Order_level/Xenarthra_EOT_gen_occ_SALMA_smoothed_TaxonList.txt",
+                               header = TRUE)
+species_list_idx <- species_list_idx[-which(species_list_idx$Species == "Octodontotherium"),] # for some reason, disappeared
+
+# Assess mean Ts and Te across replicates, and add "genus" column 
+Ts_xen <- TsTe_xen %>% 
+  select(matches("ts")) 
+Te_xen <- TsTe_xen %>% 
+  select(matches("te"))
+TsTe_xen <- TsTe_xen %>% 
+  mutate(mean_ts = rowMeans(Ts_xen),
+         mean_te = rowMeans(Te_xen),
+         genus = species_list_idx$Species) %>%
+  select(genus, mean_ts, mean_te) %>%
+  rename(ts = "mean_ts", te = "mean_te") %>% 
+  filter(ts > 23.03) %>%
+  arrange(genus)
+rm(Ts_xen, Te_xen)
+# Add family, subfamily and tribe info
+supp <- read.csv("./data_2023/xenarthra_genera_EOT.csv", header = TRUE)
+supp <- supp %>% filter(genus != "Octodontotherium")
+TsTe_xen <- TsTe_xen %>% add_column(family = supp$family, subfamily = supp$subfamily, tribe = supp$tribe, .before = "ts")
   
   ## 1) Ts-arranged genus plot
-TsTe_xen %>% 
+TsTe_xen1 <- TsTe_xen %>% 
   arrange(ts) %>%
+  mutate(subfamily = sapply(X = subfamily, FUN = function(sf){
+    if(sf %in% c("Dasypodinae", "Euphractinae")){
+      return(sf)
+    }
+    else{
+      return("Others")
+    }
+  })) %>%
+  mutate(subfamily = factor(subfamily, levels = c("Dasypodinae", "Euphractinae", "Others"))) %>%
+  mutate(y_colour = sapply(X = subfamily, FUN = function(sf){
+    if(sf == "Dasypodinae"){
+      return("#bf812d")
+    }
+    else if(sf == "Euphractinae"){
+      return("#35978f")
+    }
+    else{
+      return("black")
+    }
+  })) 
+
+Turnov_xen <- TsTe_xen1 %>% 
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
-  geom_segment(aes(x = ts, xend = te)) +
-  scale_x_reverse(breaks = seq(from = 25, to = 50, by = 5)) +
-  labs(x = "Time (Ma)", y = "Genus") +
-  # geom_rect(aes(ymin = 46.5, ymax = 65.5, xmin = 35, xmax = 38.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 56, x = 39, label = "(1)", size = 7, colour = "#08519c") +
-  # geom_rect(aes(ymin = 30.5, ymax = 46.5, xmin = 30, xmax = 34.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 38, x = 35, label = "(2)", size = 7, colour = "#08519c") +
+  geom_segment(aes(x = ts, xend = te, colour = subfamily), linewidth = 0.8) +
+  scale_colour_manual(values = c("#993404", "#35978f", "black")) +
+  scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
+  labs(x = "Time (Ma)", y = "Genus", colour = "Sub-Family") + 
+  # add silhouette
+  add_phylopic(x = 49.2, y = 6, name = "Propalaehoplophorus australis", ysize = 5) +
+  annotate(geom = "text", x = 49, y = 2, label = "Xenarthra", size = 4) +
+  # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
-  annotate(geom = "text", x = 35, y = 36.5, label = " ") +
+  annotate(geom = "text", x = 32.5, y = 34, label = "EOT", size = 7, colour = "red") +
+  # Artificially extend plotting window
+  annotate(geom = "text", x = 35, y = 38.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +
+  # GTS  
   coord_geo(pos = list("bottom", "bottom"),
             dat = list(gsc2, gsc1),
             abbrv = list(T, F),
             center_end_labels = TRUE,
             height = unit(1.5, "line"),
             size = "auto",
-            xlim = c(24, 53))
+            xlim = c(23.03, 53)) +
+  theme(axis.text.y = element_text(size = 6, colour = TsTe_xen1$y_colour),
+        axis.title.x = element_text(size = 18),
+        axis.title.y = element_text(size = 18),
+        axis.text.x = element_text(size = 15),
+        legend.key=element_rect(fill="white"))
 
-## 2) Te-arranged genus plot
-TsTe_xen %>% 
-  arrange(te) %>%
-  ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
-  geom_segment(aes(x = ts, xend = te)) +
-  scale_x_reverse(breaks = seq(from = 25, to = 50, by = 5)) +
-  labs(x = "Time (Ma)", y = "Genus") +
-  # geom_rect(aes(ymin = 46.5, ymax = 65.5, xmin = 35, xmax = 38.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 56, x = 39, label = "(1)", size = 7, colour = "#08519c") +
-  # geom_rect(aes(ymin = 30.5, ymax = 46.5, xmin = 30, xmax = 34.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 38, x = 35, label = "(2)", size = 7, colour = "#08519c") +
-  geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
-  annotate(geom = "text", x = 35, y = 36.5, label = " ") +
-  annotate(geom = "text", x = 35, y = 0.5, label = " ") +
-  coord_geo(pos = list("bottom", "bottom"),
-            dat = list(gsc2, gsc1),
-            abbrv = list(T, F),
-            center_end_labels = TRUE,
-            height = unit(1.5, "line"),
-            size = "auto",
-            xlim = c(24, 53))
+ggsave("./figures/Figure_3/Xen_turnover.pdf", Turnov_xen, height = 10, width = 10)
+ggsave("./figures/Figure_3/Xen_turnover.png", Turnov_xen, height = 10, width = 10, dpi = 600)
 
-## 3) Families
-xen_genera <- spl %>% 
-  filter(order %in% c("Cingulata", "Pilosa")) %>%
-  group_by(family, genus) %>%
-  distinct(genus)
-
-spl %>%
-  filter(order %in% c("Cingulata", "Pilosa")) %>%
-  distinct(family) %>%
-  filter(!is.na(family)) %>%
-  mutate(Ts = sapply(X = family, FUN = Ori_ext, gen_fam_tbl = xen_genera, TsTe_tbl = TsTe_xen, time = "Ts"),
-         Te = sapply(X = family, FUN = Ori_ext, gen_fam_tbl = xen_genera, TsTe_tbl = TsTe_xen, time = "Te")) %>% 
-  arrange(Ts) %>% 
-  ggplot(aes(y = fct_inorder(family), yend = fct_inorder(family))) +
-  geom_segment(aes(x = Ts, xend = Te), linewidth = 2) +
-#  scale_colour_manual(values = c("black", "grey60")) +
-  scale_x_reverse(breaks = seq(from = 25, to = 50, by = 5)) +
-  labs(x = "Time (Ma)", y = "Family", colour = NULL) +
-  geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
-  annotate(geom = "text", x = 35, y = 9.5, label = " ") +
-  annotate(geom = "text", x = 35, y = 0.5, label = " ") +
-  coord_geo(pos = list("bottom", "bottom"),
-            dat = list(gsc2, gsc1),
-            abbrv = list(T, F),
-            center_end_labels = TRUE,
-            height = unit(1.5, "line"),
-            size = "auto",
-            xlim = c(24, 53))
 
 ## Metatheria ------------------------------------------------------------------
 rm(species_list_idx, xen_genera, TsTe_xen)
