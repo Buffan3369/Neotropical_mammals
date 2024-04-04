@@ -74,6 +74,8 @@ Added one occurrence of *Sparassocynus maimarai* from the Maimará formation, Ma
 *Clenia brevis* was excluded from the *Clenia* genus by Goin and Abello (2013) [@goin2013]. Hence, we rename the genus *aff_Clenia*.
 
 # Notoungulata
+All occurrences referred to as *Bryanpattersonia nesodontoides* were synonimised with *Archaeotypotherium propithecus* according to [@croft2003large].  
+All occurrences referred to as *Bryanpattersonia sulcidens* were renamed *Protarchaeohyrax gracilis* according to [@croft2003large].  
 
 #No order
 *Wirunodon chanku* (coll. nb. 149523, [@goin2004]) age range was set to Early Oligocene (28.7-33.9 Ma).
