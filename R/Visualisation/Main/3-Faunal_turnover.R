@@ -53,13 +53,13 @@ TsTe_noto <- TsTe_noto %>%
          genus = species_list_idx$Species) %>%
   select(genus, mean_ts, mean_te) %>%
   rename(ts = "mean_ts", te = "mean_te") %>% 
-  filter(ts > 23.03)
+  filter(ts > 23.03, genus != "Bryanpattersonia") #too late to re-run everything, we just exclude this artefactual genus
 rm(Ts_noto, Te_noto)
 
   ## 1) Ts-arranged genus plot
 TsTe_noto1 <- TsTe_noto %>% 
   arrange(ts) %>%
-  mutate(family = sapply(X = genus, FUN = function(gen){
+  mutate(family = sapply(X = TsTe_noto$genus, FUN = function(gen){
     idx <- which(spl$genus == gen)
     fam <- unique(spl$family[idx])
     if(fam %in% c("Homalodotheriidae", "Hegetotheriidae", "Mesotheriidae", "Toxodontidae")){
