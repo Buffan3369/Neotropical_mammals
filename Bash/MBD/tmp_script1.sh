@@ -1,0 +1,1 @@
+python3 ~/PyRate/PyRateMBD.py -d ../../results_EXTENDED/MBD/SALMA_kept/genus_level/6-Order_level/Notoungulata/post_EECO/*.txt -var ../../data_2023/MBD/processed_predictors_EXTENDED -m 0 -j $1 -minT 33.9 -maxT 51 -n 10000000 -s 10000

@@ -34,7 +34,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     tste <- list.files(path = tste_dir, pattern = "_se_est.txt")[1]
     tste_ttl <- read.table(paste(tste_dir, tste, sep = "/"),
                            header = TRUE)
-    tste_ttl <- tste_ttl %>% add_column(tax = ref$order)
+    tste_ttl <- tste_ttl %>% add_column(tax = ref$order, genus = ref$Species)
     for(odr in keys(tax_dict)){
       tmp_tste_odr <- tste_ttl %>%
         filter(tax %in% values(tax_dict[odr])) %>% 
