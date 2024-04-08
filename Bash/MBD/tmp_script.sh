@@ -1,1 +1,1 @@
-python3 ~/PyRate/PyRateMBD.py -d ../../results/MBD/1-Full/late_phase/Combined_TsTe_from_replicates.txt -var ../../data_2023/MBD/processed_environment_predictors -m 0 -j $1 -minT 40 -maxT 52 -n 10000000 -s 10000
+python3 ~/PyRate/PyRateMBD.py -d ../../results_EXTENDED/MBD/SALMA_smoothed/genus_level/1-Full/Oligocene_only/*.txt -var ../../data_2023/MBD/processed_predictors_EXTENDED -m 0 -j $1 -minT 23.03 -maxT 33.9 -n 10000000 -s 10000

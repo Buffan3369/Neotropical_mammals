@@ -14,7 +14,31 @@ select_closer <- function(int_age, age_vect){
   return(which.min(diff))
 }
 
-## Plant diversity (from Jaramillo et al. (2006)) -------------------------------------------------------------------
+## Temporal patterns on the relative abundance of open habitats in Patagonia (Solórzano et Nuñez 2021) --------------
+p_open <- read_xlsx("./data_2023/MBD/vegetation_openness.xlsx")
+interpol_op <- approx(x = p_open$Age[1:2], y = p_open$P_open[1:2], n=3)$y
+for(i in 2:49){
+  interpol_op <- c(interpol_op,
+                   approx(x = p_open$Age[i:(i+1)], y = p_open$P_open[i:(i+1)], n=3)$y[-c(1)])
+}
+p_op_int <- data.frame(Age = seq(0, 49, 0.5),
+                       P_open = interpol_op)
+write.table.lucas(p_op_int,
+                  "./data_2023/MBD/processed_predictors_EXTENDED/7-habitat_openness_Stromberg_Palazzesi_500ky.txt")
+
+## Relative Leaf Area Index (Dunn et al. 2015) -----------------------------------------------------------------------
+rLAI <- read_xlsx("./data_2023/MBD/rLAI.xlsx")
+interpol_rlai <- approx(x = rLAI$Age[1:2], y = rLAI$rLAI[1:2], n=3)$y
+for(i in 2:38){
+  interpol_rlai <- c(interpol_rlai,
+                     approx(x = rLAI$Age[i:(i+1)], y = rLAI$rLAI[i:(i+1)], n=3)$y[-c(1)])
+}
+rlai_int <- data.frame(Age = seq(11, 49, 0.5),
+                       rLAI = interpol_rlai)
+write.table.lucas(rlai_int,
+                  "./data_2023/MBD/processed_predictors_EXTENDED/8-rLAI.txt")
+
+## Plant diversity (from Jaramillo et al. (2006)) --------------------------------------------------------------------
 plant_raw <- read.table("./data_2023/MBD/raw_environment_correlates/Cnz_Plant_diversity_Jaramillo_2006.txt", header = TRUE)
 selected_indices <- sapply(X = seq(from = 15, to = 66, by = 0.5),
                            FUN = select_closer,

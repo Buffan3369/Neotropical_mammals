@@ -352,10 +352,57 @@ TsTe_met <-TsTe_met %>%
 rm(Ts_met, Te_met)
 
 TsTe_met <- TsTe_met %>%
-  add_column(suborder = sapply(X = TsTe_met$genus, FUN = function(x){syst$suborder[which(syst$genus == x)]}),
-             superfamily = sapply(X = TsTe_met$genus, FUN = function(x){syst$superfamily[which(syst$genus == x)]}),
-             family = sapply(X = TsTe_met$genus, FUN = function(x){syst$family[which(syst$genus == x)]}),
+  add_column(retained_scale = sapply(X = TsTe_met$genus, FUN = function(x){syst$retained_scale[which(syst$genus == x)]}),
              .before = "genus")
+
+TsTe_met1 <- TsTe_met %>% 
+  arrange(mean_ts) %>%
+  mutate(retained_scale1 = sapply(X = retained_scale, FUN = function(x){
+    if(is.na(x)){
+      return("Others")
+    }
+    else if(x == "Didelphidae"){
+      return("Others")
+    }
+    else{
+      return(x)
+    }
+  })) %>%
+  mutate(retained_scale = factor(retained_scale, levels = c("Microbiotheria", "Caenolestidae", "Palaeothetoidea",
+                                                            "Argyrolagidae", "Bonapartherioidea", "Polydolopidae",
+                                                            "Borhyaenoidea", "Hathliacynidae"))) 
+
+
+%>%
+  mutate(y_colour = sapply(X = retained_scale, FUN = function(x){
+    if(x == "Microbiotheria"){
+      return("#238443")
+    }
+    else if(x == "Caenolestidae"){
+      return("#034e7b")
+    }
+    else if(x == "Palaeothetoidea"){
+      return("#3690c0")
+    }
+    else if(x == "Argyrolagidae"){
+      return("#4a1486")
+    }
+    else if(x == "Bonapartherioidea"){
+      return("#7a0177")
+    }
+    else if(x == "Polydolopidae"){
+      return("#df65b0")
+    }
+    else if(x == "Borhyaenoidea"){
+      return("#b10026")
+    }
+    else if(x == "Hathliacynidae"){
+      return("#fd8d3c")
+    }
+    else{
+      return("black")
+    }
+  })) 
 
 ## 1) Ts-arranged genus plot
 TsTe_met %>% 
