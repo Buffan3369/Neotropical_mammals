@@ -354,26 +354,10 @@ rm(Ts_met, Te_met)
 TsTe_met <- TsTe_met %>%
   add_column(retained_scale = sapply(X = TsTe_met$genus, FUN = function(x){syst$retained_scale[which(syst$genus == x)]}),
              .before = "genus")
+# avoid blanks
+TsTe_met$retained_scale[which(TsTe_met$retained_scale %in% c("", "Didelphidae"))] <- "Others"
 
-TsTe_met1 <- TsTe_met %>% 
-  arrange(mean_ts) %>%
-  mutate(retained_scale1 = sapply(X = retained_scale, FUN = function(x){
-    if(is.na(x)){
-      return("Others")
-    }
-    else if(x == "Didelphidae"){
-      return("Others")
-    }
-    else{
-      return(x)
-    }
-  })) %>%
-  mutate(retained_scale = factor(retained_scale, levels = c("Microbiotheria", "Caenolestidae", "Palaeothetoidea",
-                                                            "Argyrolagidae", "Bonapartherioidea", "Polydolopidae",
-                                                            "Borhyaenoidea", "Hathliacynidae"))) 
-
-
-%>%
+TsTe_met <- TsTe_met %>% 
   mutate(y_colour = sapply(X = retained_scale, FUN = function(x){
     if(x == "Microbiotheria"){
       return("#238443")
@@ -381,7 +365,7 @@ TsTe_met1 <- TsTe_met %>%
     else if(x == "Caenolestidae"){
       return("#034e7b")
     }
-    else if(x == "Palaeothetoidea"){
+    else if(x == "Palaeothentoidea"){
       return("#3690c0")
     }
     else if(x == "Argyrolagidae"){
@@ -402,41 +386,52 @@ TsTe_met1 <- TsTe_met %>%
     else{
       return("black")
     }
-  })) 
-
+  }))
+TsTe_met$retained_scale <- factor(TsTe_met$retained_scale, levels = c("Microbiotheria", 
+                                                                      "Caenolestidae", "Palaeothentoidea",
+                                                                      "Argyrolagidae", "Bonapartherioidea", "Polydolopidae",
+                                                                      "Borhyaenoidea", "Hathliacynidae",
+                                                                      "Others"))
 ## 1) Ts-arranged genus plot
 TsTe_met %>% 
-  arrange(ts) %>%
+  arrange(mean_ts) %>%
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
-  geom_segment(aes(x = ts, xend = te)) +
-  scale_x_reverse() +
-  labs(x = "Time (Ma)", y = "Genus") +
-  # geom_rect(aes(ymin = 46.5, ymax = 65.5, xmin = 35, xmax = 38.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 56, x = 39, label = "(1)", size = 7, colour = "#08519c") +
-  # geom_rect(aes(ymin = 30.5, ymax = 46.5, xmin = 30, xmax = 34.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 38, x = 35, label = "(2)", size = 7, colour = "#08519c") +
+  geom_segment(aes(x = mean_ts, xend = mean_te, colour = retained_scale)) +
+  # colours
+  scale_colour_manual(values = c("#238443", "#034e7b", "#3690c0", "#4a1486",
+                                 "#7a0177", "#df65b0", "#b10026", "#fd8d3c", "black")) +
+  scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
+  labs(x = "Time (Ma)", y = "Genus", colour = "Sub-Family") + 
+  # add silhouette
+  add_phylopic(x = 49.2, y = 5, name = "Marmosa", ysize = 4) +
+  annotate(geom = "text", x = 49, y = 2, label = "Metatheria", size = 4) +
+  # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
-  annotate(geom = "text", x = 35, y = 36.5, label = " ") +
+  annotate(geom = "text", x = 31.5, y = 34, label = "EOT", size = 7, colour = "red") +
+  # Artificially extend plotting window
+  annotate(geom = "text", x = 35, y = 38.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +
+  # GTS  
   coord_geo(pos = list("bottom", "bottom"),
             dat = list(gsc2, gsc1),
             abbrv = list(T, F),
             center_end_labels = TRUE,
             height = unit(1.5, "line"),
             size = "auto",
-            xlim = c(24, 53))
+            xlim = c(23.03, 53)) +
+  theme(axis.text.y = element_text(size = 6, colour = TsTe_met$y_colour),
+        axis.title.x = element_text(size = 18),
+        axis.title.y = element_text(size = 18),
+        axis.text.x = element_text(size = 15),
+        legend.key=element_rect(fill="white"))
 
 ## 2) Te-arranged genus plot
 TsTe_met %>% 
-  arrange(te) %>%
+  arrange(mean_te) %>%
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
-  geom_segment(aes(x = ts, xend = te)) +
+  geom_segment(aes(x = mean_ts, xend = mean_te, colour = retained_scale)) +
   scale_x_reverse(breaks = seq(from = 25, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Genus") +
-  # geom_rect(aes(ymin = 46.5, ymax = 65.5, xmin = 35, xmax = 38.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 56, x = 39, label = "(1)", size = 7, colour = "#08519c") +
-  # geom_rect(aes(ymin = 30.5, ymax = 46.5, xmin = 30, xmax = 34.5), fill = "transparent", colour = "#08519c", linewidth = 0.7) +
-  # annotate(geom = "text", y = 38, x = 35, label = "(2)", size = 7, colour = "#08519c") +
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
   annotate(geom = "text", x = 35, y = 36.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +
