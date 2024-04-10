@@ -49,7 +49,6 @@ TsTe_xen <- TsTe_xen %>% add_column(family = supp$family, subfamily = supp$subfa
 
 ## 1) Ts-arranged genus plot
 TsTe_xen1 <- TsTe_xen %>% 
-  arrange(ts) %>%
   mutate(subfamily = sapply(X = subfamily, FUN = function(sf){
     if(sf %in% c("Dasypodinae", "Euphractinae")){
       return(sf)
@@ -58,10 +57,9 @@ TsTe_xen1 <- TsTe_xen %>%
       return("Others")
     }
   })) %>%
-  mutate(subfamily = factor(subfamily, levels = c("Dasypodinae", "Euphractinae", "Others"))) %>%
   mutate(y_colour = sapply(X = subfamily, FUN = function(sf){
     if(sf == "Dasypodinae"){
-      return("#bf812d")
+      return("#993404")
     }
     else if(sf == "Euphractinae"){
       return("#35978f")
@@ -69,20 +67,23 @@ TsTe_xen1 <- TsTe_xen %>%
     else{
       return("black")
     }
-  })) 
+  })) %>%
+  arrange(subfamily, ts)
+
+TsTe_xen1$subfamily <- factor(TsTe_xen1$subfamily, levels = c("Others", "Dasypodinae", "Euphractinae"))
 
 Turnov_xen <- TsTe_xen1 %>% 
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
   geom_segment(aes(x = ts, xend = te, colour = subfamily), linewidth = 0.8) +
-  scale_colour_manual(values = c("#993404", "#35978f", "black")) +
+  scale_colour_manual(values = c("black",  "#993404", "#35978f")) +
   scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Genus", colour = "Sub-Family") + 
   # add silhouette
-  add_phylopic(x = 49.2, y = 5, name = "Propalaehoplophorus australis", ysize = 4) +
-  annotate(geom = "text", x = 49, y = 2, label = "Xenarthra", size = 4) +
+  add_phylopic(x = 49.2, y = 9, name = "Propalaehoplophorus australis", ysize = 4) +
+  annotate(geom = "text", x = 49, y = 6, label = "Xenarthra", size = 4) +
   # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
-  annotate(geom = "text", x = 31.5, y = 34, label = "EOT", size = 7, colour = "red") +
+  annotate(geom = "text", x = 31.5, y = 36, label = "EOT", size = 7, colour = "red") +
   # Artificially extend plotting window
   annotate(geom = "text", x = 35, y = 38.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +
@@ -102,3 +103,4 @@ Turnov_xen <- TsTe_xen1 %>%
 
 ggsave("./figures/Figure_3/Xen_turnover.pdf", Turnov_xen, height = 7, width = 8.5)
 ggsave("./figures/Figure_3/Xen_turnover.png", Turnov_xen, height = 7, width = 8.5, dpi = 600)
+
