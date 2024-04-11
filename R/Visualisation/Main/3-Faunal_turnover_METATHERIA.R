@@ -11,23 +11,7 @@ library(ggpubr)
 library(rphylopic)
 library(readxl)
 
-enlarge_output_pane <- function(height. = 700, width. = 1300){
-  
-  # detect current output pane dimensions
-  dim_px <- grDevices::dev.size("px")
-  
-  # if detected width is less than 'width.', widen output pane with RStudio's layoutZoomRightColumn command
-  if(dim_px[1] < width.){ rstudioapi::executeCommand("layoutZoomRightColumn") }
-  
-  # if detected height is less than 'height.', switch to Viewer windom and set height
-  if(dim_px[2] < height.){
-    
-    viewer <- getOption("viewer")
-    viewer("http://localhost:8100", height = height.)
-    
-  }
-  
-}
+source("./R/useful/helper_functions.R")
 
 # Open species List
 spl <- readRDS("./data_2023/SPECIES_LISTS/7-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
@@ -41,12 +25,18 @@ gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
 gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
 
 # DATA Preprocessing
-TsTe_met <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/6-Order_level/Metatheria/BDCS/TsTe_Metatheria_SALMA_smoothed_genus_level.txt", header = T)
-species_list_idx <- read.table("./data_2023/PyRate/EXTENDED/SALMA_smoothed/genus_level/5-Order_level/Metatheria_EOT_gen_occ_SALMA_smoothed_TaxonList.txt", header = T)
-species_list_idx <- species_list_idx %>% 
-  filter(Species != "Gaylordia") %>% 
-  mutate(order = sapply(X = Species, FUN = function(x){unique(spl$order[which(spl$genus == x)])}),
-         family = sapply(X = Species, FUN = function(x){unique(spl$family[which(spl$genus == x)])}))
+  # Reference dataset for taxonomic equivalents
+ref <- read.table("./data_2023/PyRate/EXTENDED/SALMA_kept/genus_level/1-Full/Full_EOT_gen_occ_SALMA_kept_TaxonList.txt", header = TRUE)
+ref$order <- sapply(X = ref$Species, FUN = function(x){unique(spl$order[which(spl$genus == x)])})
+  # Full TsTe table
+TsTe_ttl <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/1-Full/MH_sampler/LTT/Full_EOT_gen_occ_SALMA_smoothed_10_Grj_KEEP_se_est.txt",
+                       header = TRUE)
+TsTe_ttl <- TsTe_ttl %>%
+  add_column(order = ref$order, genus = ref$Species)
+  # Extract metatherians
+TsTe_met <- TsTe_ttl %>%
+  filter(order %in% tax_dict$Metatheria)
+
 #higher-level taxonomy
 syst <- read.csv("./data_2023/systematics/metatheria_genera_EOT.csv")
 # add relevant info
@@ -56,9 +46,7 @@ Te_met <- TsTe_met %>%
   select(matches("te"))
 TsTe_met <-TsTe_met %>%
   mutate(mean_ts = rowMeans(Ts_met),
-         mean_te = rowMeans(Te_met),
-         genus = species_list_idx$Species,
-         order = species_list_idx$order) %>% 
+         mean_te = rowMeans(Te_met)) %>% 
   select(order, genus, mean_ts, mean_te)
 
 rm(Ts_met, Te_met)
@@ -142,7 +130,7 @@ TsTe_met_pol <- TsTe_met_pol %>%
     }
   }))
 TsTe_met_pol$retained_scale[which(TsTe_met_pol$retained_scale == "Other_Polydolopimorphia")] <- "Others"
-TsTe_met_pol$retained_scale <- factor(TsTe_met_pol$retained_scale, levels = c("Argyrolagoidea", "Bonapartherioidea", "Polydolopiformes", "Others"))
+TsTe_met_pol$retained_scale <- factor(TsTe_met_pol$retained_scale, levels = c("Others", "Argyrolagoidea", "Bonapartherioidea", "Polydolopiformes"))
 
 #plot
 Pol_plot <- TsTe_met_pol %>%
@@ -152,7 +140,7 @@ Pol_plot <- TsTe_met_pol %>%
   annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   geom_segment(aes(x = mean_ts, xend = mean_te, colour = retained_scale)) +
   # colours
-  scale_colour_manual(values = c("#4a1486", "#df65b0", "#4eb3d3", "black")) +
+  scale_colour_manual(values = c("black", "#4a1486", "#df65b0", "#4eb3d3")) +
   scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = NULL, colour = NULL) + 
   # add silhouette
@@ -184,7 +172,6 @@ Pol_plot <- TsTe_met_pol %>%
 TsTe_met_Pau <- TsTe_met
 TsTe_met_Pau <- TsTe_met_Pau %>% 
   filter(mean_ts >= 23.03 & retained_scale %in% c("Caenolestoidea", "Palaeothentoidea", "Other_Paucituberculata")) %>%
-  arrange(retained_scale, mean_ts) %>%
   mutate(y_colour = sapply(X = retained_scale, FUN = function(x){
     if(x == "Caenolestoidea"){
       return("#034e7b")
@@ -195,7 +182,9 @@ TsTe_met_Pau <- TsTe_met_Pau %>%
     else{
       return("black")
     }
-  }))
+  })) %>% 
+arrange(retained_scale, mean_ts)
+
 TsTe_met_Pau$retained_scale[which(TsTe_met_Pau$retained_scale == "Other_Paucituberculata")] <- "Others"
 TsTe_met_Pau$retained_scale <- factor(TsTe_met_Pau$retained_scale, levels = c("Others", "Palaeothentoidea", "Caenolestoidea"))
 
@@ -279,6 +268,24 @@ Mi_plot <- TsTe_met_Mi %>%
         legend.key=element_rect(fill="white"))
 
 ## Assemble and save -----------------------------------------------------------
+# Stackoverflow's function to enlarge pane
+enlarge_output_pane <- function(height. = 700, width. = 1300){
+  
+  # detect current output pane dimensions
+  dim_px <- grDevices::dev.size("px")
+  
+  # if detected width is less than 'width.', widen output pane with RStudio's layoutZoomRightColumn command
+  if(dim_px[1] < width.){ rstudioapi::executeCommand("layoutZoomRightColumn") }
+  
+  # if detected height is less than 'height.', switch to Viewer windom and set height
+  if(dim_px[2] < height.){
+    
+    viewer <- getOption("viewer")
+    viewer("http://localhost:8100", height = height.)
+    
+  }
+  
+}
 enlarge_output_pane()
 metatheria <- ggarrange(Pau_plot, Pol_plot, Spar_plot, Mi_plot)
 enlarge_output_pane()
