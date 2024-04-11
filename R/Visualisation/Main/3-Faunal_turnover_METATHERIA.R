@@ -114,7 +114,6 @@ Spar_plot <- TsTe_met_spar %>%
 TsTe_met_pol <- TsTe_met
 TsTe_met_pol <- TsTe_met_pol %>% 
   filter(mean_ts >= 23.03 & retained_scale %in% c("Argyrolagoidea", "Bonapartherioidea", "Polydolopiformes", "Other_Polydolopimorphia")) %>%
-  arrange(retained_scale, mean_ts) %>%
   mutate(y_colour = sapply(X = retained_scale, FUN = function(x){
     if(x == "Argyrolagoidea"){
       return("#4a1486")
@@ -128,7 +127,20 @@ TsTe_met_pol <- TsTe_met_pol %>%
     else{
       return("black")
     }
-  }))
+  })) %>% 
+  mutate(i = sapply(X = retained_scale, FUN = function(x){
+    if(x == "Argyrolagoidea"){
+      return(1)
+    }
+    else if(x == "Bonapartherioidea"){
+      return(2)
+    }
+    else if(x == "Polydolopiformes"){
+      return(3)
+    }
+    else{return(4)}
+  })) %>% 
+  arrange(i, mean_ts)
 TsTe_met_pol$retained_scale[which(TsTe_met_pol$retained_scale == "Other_Polydolopimorphia")] <- "Others"
 TsTe_met_pol$retained_scale <- factor(TsTe_met_pol$retained_scale, levels = c("Others", "Argyrolagoidea", "Bonapartherioidea", "Polydolopiformes"))
 
@@ -148,7 +160,7 @@ Pol_plot <- TsTe_met_pol %>%
   annotate(geom = "text", x = 48.5, y = 1, label = "Polydolopimorphia", size = 4) +
   # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
-  annotate(geom = "text", x = 31.5, y = nrow(TsTe_met_pol)-1, label = "EOT", size = 8, colour = "red") +
+  annotate(geom = "text", x = 31.5, y = nrow(TsTe_met_pol)-2, label = "EOT", size = 8, colour = "red") +
   # Artificially extend plotting window
   annotate(geom = "text", x = 35, y = nrow(TsTe_met_pol)+0.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +
@@ -183,8 +195,16 @@ TsTe_met_Pau <- TsTe_met_Pau %>%
       return("black")
     }
   })) %>% 
-arrange(retained_scale, mean_ts)
-
+  mutate(i = sapply(X = retained_scale, FUN = function(x){
+    if(x == "Caenolestoidea"){
+      return(1)
+    }
+    else if(x == "Palaeothentoidea"){
+      return(2)
+    }
+    else{return(3)}
+  })) %>% 
+  arrange(i, mean_ts)
 TsTe_met_Pau$retained_scale[which(TsTe_met_Pau$retained_scale == "Other_Paucituberculata")] <- "Others"
 TsTe_met_Pau$retained_scale <- factor(TsTe_met_Pau$retained_scale, levels = c("Others", "Palaeothentoidea", "Caenolestoidea"))
 
@@ -200,11 +220,11 @@ Pau_plot <- TsTe_met_Pau %>%
   scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Genus", colour = NULL) + 
   # add silhouette
-  add_phylopic(x = 49, y = nrow(TsTe_met_Pau)-2, name = "Caenolestes fuliginosus", ysize = 2) +
-  annotate(geom = "text", x = 48.7, y = nrow(TsTe_met_Pau)-3.5, label = "Paucituberculata", size = 4) +
+  add_phylopic(x = 49, y = nrow(TsTe_met_Pau)-3, name = "Caenolestes fuliginosus", ysize = 2) +
+  annotate(geom = "text", x = 48.7, y = nrow(TsTe_met_Pau)-4.5, label = "Paucituberculata", size = 4) +
   # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
-  annotate(geom = "text", x = 36.5, y = nrow(TsTe_met_Pau)-1, label = "EOT", size = 8, colour = "red") +
+  annotate(geom = "text", x = 31, y = nrow(TsTe_met_Pau)-1, label = "EOT", size = 8, colour = "red") +
   # Artificially extend plotting window
   annotate(geom = "text", x = 35, y = nrow(TsTe_met_Pau)+0.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +
@@ -247,7 +267,7 @@ Mi_plot <- TsTe_met_Mi %>%
   annotate(geom = "text", x = 48.5, y = 0.8, label = "Microbiotheria", size = 4) +
   # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
-  annotate(geom = "text", x = 31.5, y = nrow(TsTe_met_Mi)-0.5, label = "EOT", size = 8, colour = "red") +
+  annotate(geom = "text", x = 31.5, y = nrow(TsTe_met_Mi), label = "EOT", size = 8, colour = "red") +
   # Artificially extend plotting window
   annotate(geom = "text", x = 35, y = nrow(TsTe_met_Mi)+0.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +
