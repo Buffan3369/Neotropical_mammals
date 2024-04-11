@@ -220,8 +220,8 @@ Pau_plot <- TsTe_met_Pau %>%
   scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Genus", colour = NULL) + 
   # add silhouette
-  add_phylopic(x = 49, y = nrow(TsTe_met_Pau)-3, name = "Caenolestes fuliginosus", ysize = 2) +
-  annotate(geom = "text", x = 48.7, y = nrow(TsTe_met_Pau)-4.5, label = "Paucituberculata", size = 4) +
+  add_phylopic(x = 49, y = nrow(TsTe_met_Pau)-5.5, name = "Caenolestes fuliginosus", ysize = 2) +
+  annotate(geom = "text", x = 48.7, y = nrow(TsTe_met_Pau)-7, label = "Paucituberculata", size = 4) +
   # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
   annotate(geom = "text", x = 31, y = nrow(TsTe_met_Pau)-1, label = "EOT", size = 8, colour = "red") +

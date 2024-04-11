@@ -11,6 +11,8 @@ library(ggpubr)
 library(rphylopic)
 library(readxl)
 
+source("./R/useful/helper_functions.R")
+
 # Open species List
 spl <- readRDS("./data_2023/SPECIES_LISTS/7-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
 
@@ -23,10 +25,17 @@ gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
 gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
 
 # DATA PROCESSING AND PLOTTING 
-TsTe_xen <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/6-Order_level/Xenarthra/BDCS/TsTe_Xenarthra_SALMA_smoothed_genus_level.txt", header = T)
-species_list_idx <- read.table("./data_2023/PyRate/EXTENDED/SALMA_smoothed/genus_level/5-Order_level/Xenarthra_EOT_gen_occ_SALMA_smoothed_TaxonList.txt",
-                               header = TRUE)
-species_list_idx <- species_list_idx[-which(species_list_idx$Species == "Octodontotherium"),] # for some reason, disappeared
+  # Reference dataset for taxonomic equivalents
+ref <- read.table("./data_2023/PyRate/EXTENDED/SALMA_kept/genus_level/1-Full/Full_EOT_gen_occ_SALMA_kept_TaxonList.txt", header = TRUE)
+ref$order <- sapply(X = ref$Species, FUN = function(x){unique(spl$order[which(spl$genus == x)])})
+  # Full TsTe table
+TsTe_ttl <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/1-Full/MH_sampler/LTT/Full_EOT_gen_occ_SALMA_smoothed_10_Grj_KEEP_se_est.txt",
+                       header = TRUE)
+TsTe_ttl <- TsTe_ttl %>%
+  add_column(order = ref$order, genus = ref$Species)
+# Extract metatherians
+TsTe_xen <- TsTe_ttl %>%
+  filter(order %in% tax_dict$Xenarthra)
 
 # Assess mean Ts and Te across replicates, and add "genus" column 
 Ts_xen <- TsTe_xen %>% 
@@ -35,8 +44,7 @@ Te_xen <- TsTe_xen %>%
   select(matches("te"))
 TsTe_xen <- TsTe_xen %>% 
   mutate(mean_ts = rowMeans(Ts_xen),
-         mean_te = rowMeans(Te_xen),
-         genus = species_list_idx$Species) %>%
+         mean_te = rowMeans(Te_xen)) %>%
   select(genus, mean_ts, mean_te) %>%
   rename(ts = "mean_ts", te = "mean_te") %>% 
   filter(ts > 23.03) %>%
@@ -44,10 +52,10 @@ TsTe_xen <- TsTe_xen %>%
 rm(Ts_xen, Te_xen)
 # Add family, subfamily and tribe info
 supp <- read.csv("./data_2023/systematics/xenarthra_genera_EOT.csv", header = TRUE)
-supp <- supp %>% filter(genus != "Octodontotherium")
+supp <- supp %>% filter(genus %in% c("?_Eocoleophorus", "Octodontotherium") == FALSE)
 TsTe_xen <- TsTe_xen %>% add_column(family = supp$family, subfamily = supp$subfamily, tribe = supp$tribe, .before = "ts")
 
-## 1) Ts-arranged genus plot
+## Plot
 TsTe_xen1 <- TsTe_xen %>% 
   mutate(subfamily = sapply(X = subfamily, FUN = function(sf){
     if(sf %in% c("Dasypodinae", "Euphractinae")){
