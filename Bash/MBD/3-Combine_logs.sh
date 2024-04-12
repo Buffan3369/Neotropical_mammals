@@ -22,10 +22,10 @@ do
 	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full/post_EECO -tag _KEEP -b 10
 	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full/Oligocene_only -tag _KEEP -b 10
 	# Order level
-	for odr in Notoungulata Other_SANUs Rodentia Metatheria Xenarthra
-	do
-		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr -tag _KEEP -b 10
-		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr/post_EECO -tag _KEEP -b 10
-		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr/Oligocene_only -tag _KEEP -b 10
-	done
+#	for odr in Notoungulata Other_SANUs Rodentia Metatheria Xenarthra
+#	do
+#		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr -tag _KEEP -b 10
+#		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr/post_EECO -tag _KEEP -b 10
+#		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr/Oligocene_only -tag _KEEP -b 10
+#	done
 done

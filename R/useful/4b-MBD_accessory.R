@@ -145,15 +145,16 @@ out_table_MBD <- function(dir, interval){
 
 ## Plotting function -----------------------------------------------------------
 MBD.plot <- function(PLOT_DF, SIGNIF_DF,
-                     x_breaks = seq(from = 0, to = 6, by = 1),
-                     x_ticks,
+                     x_breaks = seq(from = 0, to = 8, by = 1),
+                     x_labels,
                      x_lab = NULL,
                      y_lab = "Correlation coefficient",
                      fill = NULL,
                      rate.labs,
                      int.labs,
                      vjust.star.ori = 0.1,
-                     vjust.star.ext = 0.1){
+                     vjust.star.ext = 0.1,
+                     time_facetting = TRUE){
   p <- ggplot(data = PLOT_DF, aes(x = factor(param), y = value)) +
   # axes
   scale_y_continuous(limits = c(min(SIGNIF_DF$min_val-1), 
@@ -162,14 +163,18 @@ MBD.plot <- function(PLOT_DF, SIGNIF_DF,
                    labels = x_labels) +
   labs(x = x_lab,
        y = y_lab,
-       fill = fill) +
-  # bands
-  annotate(geom = "rect", xmin = -Inf, xmax = 1.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
-  annotate(geom = "rect", xmin = 2.5, xmax = 3.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
-  annotate(geom = "rect", xmin = 4.5, xmax = 5.5, ymin = -Inf, ymax = Inf, fill = "grey95") +
-  annotate(geom = "rect", xmin = 6.5, xmax = Inf, ymin = -Inf, ymax = Inf, fill = "grey95") +
+       fill = fill)
+
+  # add grey bands
+  nvar <- length(unique(PLOT_DF$col)) / 2
+  i <- 1
+  p <- p + annotate(geom = "rect", xmin = -Inf, xmax = i+0.5, ymin = -Inf, ymax = Inf, fill = "grey95")
+  while(i <= nvar - 2){
+    p <- p + annotate(geom = "rect", xmin = i + 1.5, xmax = i + 2.5, ymin = -Inf, ymax = Inf, fill = "grey95")
+    i <- i + 2
+  }
   # violins
-  geom_violin(adjust = .75, draw_quantiles = c(0.025, 0.5, 0.975), scale = "width", aes(fill = factor(signif_col))) +
+  p <- p + geom_violin(adjust = .75, draw_quantiles = c(0.025, 0.5, 0.975), scale = "width", aes(fill = factor(signif_col))) +
   scale_fill_manual(values = c("#fcbba1", "#a50f15", "#9ecae1", "#08519c")) + # non-significant correlation coefficients are displayed in light colours
   geom_hline(yintercept = 0, linetype = "dashed", colour = "grey60") +
   # significance star
@@ -191,7 +196,12 @@ MBD.plot <- function(PLOT_DF, SIGNIF_DF,
         strip.background = element_rect(colour = "black", fill = "bisque2"),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.5)) +
-  coord_flip() +
-  facet_grid(interval~rate, labeller = labeller(rate = rate.labs, interval = int.labs))
+  coord_flip()
+  if(time_facetting){
+    p <- p + facet_grid(interval~rate, labeller = labeller(rate = rate.labs, interval = int.labs))
+  }
+  else{
+    p <- p + facet_grid(.~rate, labeller = labeller(rate = rate.labs))
+  }
   return(p)
 }
