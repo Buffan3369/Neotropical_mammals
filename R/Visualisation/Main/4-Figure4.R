@@ -39,9 +39,9 @@ for(salma in c("SALMA_smoothed")){
       SIGNIF_DF <- data.frame(param = NA, rate = NA, col = NA, max_val = NA, min_val = NA, star_pos = NA, interval = NA)
       for(trt in c("post_EECO", "Oligocene_only")){
         int <- ifelse(trt == "post_EECO", "Eocene", "Oligocene")
-        dir <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir, trt)
-        plot_df <- out_table_MBD(dir, interval = int)[[1]]
-        signif_df <- out_table_MBD(dir, interval = int)[[2]]
+        rid <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir, trt)
+        plot_df <- out_table_MBD(rid, interval = int)[[1]]
+        signif_df <- out_table_MBD(rid, interval = int)[[2]]
         # Extend the big berthas
         PLOT_DF <- rbind.data.frame(PLOT_DF, plot_df)
         SIGNIF_DF <- rbind.data.frame(SIGNIF_DF, signif_df)
@@ -63,19 +63,24 @@ for(salma in c("SALMA_smoothed")){
     # loop across orders
     if(strsplit(dir, split = "-")[[1]][1] == "6"){
       # initialise large tables
-      PLOT_DF <- data.frame(param = NA, rate = NA, col = NA, signif_col = NA, value = NA, interval = NA)
-      SIGNIF_DF <- data.frame(param = NA, rate = NA, col = NA, max_val = NA, min_val = NA, star_pos = NA, interval = NA)
+      PLOT_DF1 <- data.frame(param = NA, rate = NA, col = NA, signif_col = NA, value = NA, interval = NA)
+      SIGNIF_DF1 <- data.frame(param = NA, rate = NA, col = NA, max_val = NA, min_val = NA, star_pos = NA, interval = NA)
       for(odr in c("Notoungulata")){
         for(trt in c("", "post_EECO/", "Oligocene_only/")){
-        dir <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir, odr, "/", trt)
-        plot_df <- out_table_MBD(dir, interval = int)[[1]]
-        signif_df <- out_table_MBD(dir, interval = int)[[2]]
+        rid <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir, odr, "/", trt)
+        plot_df1 <- out_table_MBD(rid, interval = int)[[1]]
+        signif_df1 <- out_table_MBD(rid, interval = int)[[2]]
         # Extend the big berthas
-        PLOT_DF <- rbind.data.frame(PLOT_DF, plot_df)
-        SIGNIF_DF <- rbind.data.frame(SIGNIF_DF, signif_df)
+        PLOT_DF1 <- rbind.data.frame(PLOT_DF1, plot_df1)
+        SIGNIF_DF1 <- rbind.data.frame(SIGNIF_DF1, signif_df1)
         # plot
+        MBD_viol1 <- MBD.plot(PLOT_DF = PLOT_DF1,
+                              SIGNIF_DF = SIGNIF_DF1,
+                              x_labels = c(values(covar_idx)),
+                              rate.labs = rate.labs,
+                              int.labs = c("Eocene", "Oligocene"))
         ggsave(paste0("./figures/Figure_4/", odr,"_", salma, ".pdf"),
-               plot = MBD_viol,
+               plot = MBD_viol1,
                height = 300,
                width = 400,
                units = "mm")
