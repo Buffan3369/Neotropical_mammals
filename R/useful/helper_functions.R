@@ -20,7 +20,7 @@ write.table.lucas <- function(...){
 tax_dict <- hash::hash("Notoungulata" = "Notoungulata",
                        "Rodentia" = "Rodentia",
                        "Xenarthra" = c("Cingulata", "Pilosa"),
-                       "Other_SANUs" = c("Litopterna", "Xenungulata", "Pyrotheria", "Astrapotheria"),
+                       "Other_SANUs" = c("Litopterna", "Xenungulata", "Pyrotheria", "Astrapotheria", "SANU"), #SANU is used for members of the Didolodontidae family, unresolved affinity (but we know they're SANUs)
                        "Metatheria" = c("Dasyuromorphia", "Microbiotheria", "Didelphimorphia",
                                         "Paucituberculata", "Polydolopimorphia", "Sparassodonta")
                        )

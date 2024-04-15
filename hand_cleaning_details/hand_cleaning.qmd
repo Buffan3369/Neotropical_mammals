@@ -62,11 +62,14 @@ Based on [@marivaux2020], we added a new occurrence of Marmosa in the TAR-31 loc
 Added one occurrence of *Thylamys cf. colombianus* from the TAR-31 locality of Shapaja, Peru [@stutz2022].  
 Added one occurrence of *Sparassocynus maimarai* from the Maimará formation, Maimará locality, Jujuy, Argentina [@candela2023].
 
-# Litopterna
+# Didolontidae (SANU family with uncertain affinity)
 
 *Archaeohyracotherium mediale* (*Didolodontidae*, coll. nb. 176164, [@simpson1967]) was synonymised with *Asmithwoodwardia subtrigona* (*Protolipternidae*) by Gelfo (2006)[@gelfo2006].  
 *Argyrolambda conidens* was synonymised with *Didolodus multicuspis* [@gelfo2006].  
-*Didolodus sp.* (coll. nb. 199563, [@antoine2021]) was removed as associated to "unidentified *Didolontidae*" in the paper.
+*Didolodus sp.* (coll. nb. 199563, [@antoine2021]) was removed as associated to "unidentified *Didolontidae*" in the paper.  
+
+# Litopterna
+
 *Enneoconus parvidens* (coll. nb. 176164, [@simpson1948]) was synonymised with *Ernestokokenia nitida* by Gelfo (2006)[@gelfo2006].
 
 # Microbiotheria
