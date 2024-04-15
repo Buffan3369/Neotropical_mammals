@@ -220,8 +220,8 @@ Pau_plot <- TsTe_met_Pau %>%
   scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Genus", colour = NULL) + 
   # add silhouette
-  add_phylopic(x = 49, y = nrow(TsTe_met_Pau)-5.5, name = "Caenolestes fuliginosus", ysize = 2) +
-  annotate(geom = "text", x = 48.7, y = nrow(TsTe_met_Pau)-7, label = "Paucituberculata", size = 4) +
+  add_phylopic(x = 48.5, y = nrow(TsTe_met_Pau)-6, name = "Caenolestes fuliginosus", ysize = 2) +
+  annotate(geom = "text", x = 48.2, y = nrow(TsTe_met_Pau)-7.5, label = "Paucituberculata", size = 4) +
   # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
   annotate(geom = "text", x = 31, y = nrow(TsTe_met_Pau)-1, label = "EOT", size = 8, colour = "red") +
@@ -291,4 +291,5 @@ Mi_plot <- TsTe_met_Mi %>%
 enlarge_output_pane()
 metatheria <- ggarrange(Pau_plot, Pol_plot, Spar_plot, Mi_plot)
 enlarge_output_pane()
-ggsave("./figures/Figure_3/Metatheria_turnover.pdf", metatheria, height = 300, width = 300, units = "mm")
+ggsave("./figures/Figure_3/Metatheria_turnover.png", metatheria, height = 300, width = 350, units = "mm", dpi = 600)
+ggsave("./figures/Figure_3/Metatheria_turnover.pdf", metatheria, height = 300, width = 350, units = "mm")

@@ -129,7 +129,7 @@ noto_birth <- TsTe_noto1 %>%
             height = unit(1.5, "line"),
             size = "auto",
             xlim = c(23.03, 53)) +
-  theme(axis.text.y = element_text(size = 6, colour = TsTe_noto1$y_colour),
+  theme(axis.text.y = element_text(face = "italic", size = 6, colour = TsTe_noto1$y_colour),
         axis.title.x = element_text(size = 18),
         axis.title.y = element_text(size = 18),
         axis.text.x = element_text(size = 15),
@@ -199,7 +199,7 @@ noto_death <- TsTe_noto2 %>%
             height = unit(1.5, "line"),
             size = "auto",
             xlim = c(23.03, 53)) +
-  theme(axis.text.y = element_text(size = 6, colour = TsTe_noto2$y_colour),
+  theme(axis.text.y = element_text(face = "italic", size = 6, colour = TsTe_noto2$y_colour),
         axis.title.x = element_text(size = 18),
         axis.title.y = element_text(size = 18),
         axis.text.x = element_text(size = 15),
