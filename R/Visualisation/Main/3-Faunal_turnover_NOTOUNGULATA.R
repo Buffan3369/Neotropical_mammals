@@ -12,6 +12,8 @@ library(ggpubr)
 library(rphylopic)
 library(readxl)
 
+source("./R/useful/helper_functions.R")
+
 # Open species List
 spl <- readRDS("./data_2023/SPECIES_LISTS/7-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
 
@@ -35,12 +37,19 @@ gsc1 <- gsc1 %>% filter(min_age < 56)
 gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
 gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
 
-## NOTOUNGULATA ----------------------------------------------------------------
-  # TsTe info
-TsTe_noto <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/6-Order_level/Notoungulata/BDCS/TsTe_Notoungulata_SALMA_smoothed_genus_level.txt",
-                        header = TRUE)
-species_list_idx <- read.table("./data_2023/PyRate/EXTENDED/SALMA_smoothed/genus_level/5-Order_level/Notoungulata_EOT_gen_occ_SALMA_smoothed_TaxonList.txt",
-                               header = TRUE)
+# DATA Preprocessing
+# Reference dataset for taxonomic equivalents
+ref <- read.table("./data_2023/PyRate/EXTENDED/SALMA_kept/genus_level/1-Full/Full_EOT_gen_occ_SALMA_kept_TaxonList.txt", header = TRUE)
+ref$order <- sapply(X = ref$Species, FUN = function(x){unique(spl$order[which(spl$genus == x)])})
+ref$family <- sapply(X = ref$Species, FUN = function(x){unique(spl$family[which(spl$genus == x)])})
+# Full TsTe table
+TsTe_ttl <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/1-Full/MH_sampler/LTT/Full_EOT_gen_occ_SALMA_smoothed_10_Grj_KEEP_se_est.txt",
+                       header = TRUE)
+TsTe_ttl <- TsTe_ttl %>%
+  add_column(order = ref$order, family = ref$family, genus = ref$Species)
+# Extract notoungulates
+TsTe_noto <- TsTe_ttl %>%
+  filter(order %in% tax_dict$Notoungulata)
 
 Ts_noto <- TsTe_noto %>% 
   select(matches("ts")) 
@@ -49,19 +58,15 @@ Te_noto <- TsTe_noto %>%
 
 TsTe_noto <- TsTe_noto %>% 
   mutate(mean_ts = rowMeans(Ts_noto),
-         mean_te = rowMeans(Te_noto),
-         genus = species_list_idx$Species) %>%
-  select(genus, mean_ts, mean_te) %>%
+         mean_te = rowMeans(Te_noto)) %>%
+  select(genus, family, mean_ts, mean_te) %>%
   rename(ts = "mean_ts", te = "mean_te") %>% 
   filter(ts > 23.03, genus != "Bryanpattersonia") #too late to re-run everything, we just exclude this artefactual genus
 rm(Ts_noto, Te_noto)
 
   ## 1) Ts-arranged genus plot
-TsTe_noto1 <- TsTe_noto %>% 
-  arrange(ts) %>%
-  mutate(family = sapply(X = TsTe_noto$genus, FUN = function(gen){
-    idx <- which(spl$genus == gen)
-    fam <- unique(spl$family[idx])
+TsTe_noto1 <- TsTe_noto %>%
+  mutate(family = sapply(X = TsTe_noto$family, FUN = function(fam){
     if(fam %in% c("Homalodotheriidae", "Hegetotheriidae", "Mesotheriidae", "Toxodontidae")){
       return(fam)
     }
@@ -70,7 +75,8 @@ TsTe_noto1 <- TsTe_noto %>%
     }
   })) %>%
   mutate(family = factor(family, levels = c("Homalodotheriidae", "Hegetotheriidae", 
-                                            "Mesotheriidae", "Toxodontidae", "Others")))
+                                            "Mesotheriidae", "Toxodontidae", "Others"))) %>% 
+  arrange(ts)
   # add colour vector for y axis
 TsTe_noto1 <- TsTe_noto1 %>%
   mutate(y_colour = sapply(X = 1:nrow(TsTe_noto1), FUN = function(i){
@@ -94,6 +100,9 @@ TsTe_noto1 <- TsTe_noto1 %>%
   # proper plot
 noto_birth <- TsTe_noto1 %>% 
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
+  annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   geom_segment(aes(x = ts, xend = te, colour = family), linewidth = 0.8) +
   scale_colour_manual(values = c("#49006a", "#ae017e", "#f768a1", "#9e9ac8", "black")) +
   scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
@@ -128,7 +137,6 @@ noto_birth <- TsTe_noto1 %>%
 
   ## 2) Te-arranged genus plot
 TsTe_noto2 <- TsTe_noto %>% 
-  arrange(te) %>%
   mutate(family = sapply(X = genus, FUN = function(gen){
     idx <- which(spl$genus == gen)
     fam <- unique(spl$family[idx])
@@ -140,7 +148,8 @@ TsTe_noto2 <- TsTe_noto %>%
     }
   })) %>%
   mutate(family = factor(family, levels = c("Archaeopithecidae", "Oldfieldthomasiidae", 
-                                            "Notostylopidae", "Others"))) 
+                                            "Notostylopidae", "Others")))  %>%
+  arrange(te)
 
 TsTe_noto2 <- TsTe_noto2 %>% 
   mutate(y_colour = sapply(X = 1:nrow(TsTe_noto2), FUN = function(i){
@@ -161,6 +170,9 @@ TsTe_noto2 <- TsTe_noto2 %>%
 
 noto_death <- TsTe_noto2 %>% 
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
+  annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   geom_segment(aes(x = ts, xend = te, colour = family), linewidth = 0.8) +
   scale_colour_manual(values = c("#993404", "#fe9929", "#fc9272", "black")) +
   scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
@@ -194,6 +206,7 @@ noto_death <- TsTe_noto2 %>%
         legend.key=element_rect(fill="white"))
 
   # Save
+enlarge_output_pane()
 turnov_gen <- ggarrange2(noto_death, noto_birth, ncol = 2)
 ggsave("./figures/Figure_3/Noto_turnover.pdf", turnov_gen, height = 10, width = 20)
 ggsave("./figures/Figure_3/Noto_turnover.png", turnov_gen, height = 10, width = 20, dpi = 600)
@@ -218,6 +231,9 @@ noto_fam <- spl %>%
          phyl = ifelse(family %in% monophyl, "Monophyletic", "Non-monophyletic")) %>% 
   arrange(Ts) %>% 
   ggplot(aes(y = fct_inorder(family), yend = fct_inorder(family))) +
+  annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   geom_segment(aes(x = Ts, xend = Te, colour = phyl), linewidth = 2) +
   scale_colour_manual(values = c("black", "grey60")) +
   # add silhouette
@@ -241,5 +257,6 @@ noto_fam <- spl %>%
         axis.text.x = element_text(size = 15),
         axis.text.y = element_text(size = 10))
 
+enlarge_output_pane()
 ggsave("./figures/Figure_3/Noto_families.pdf", noto_fam, height = 7, width = 10)
 ggsave("./figures/Figure_3/Noto_families.png", noto_fam, height = 7, width = 10, dpi = 400)
