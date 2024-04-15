@@ -59,7 +59,6 @@ TsTe_met <- TsTe_met %>%
 TsTe_met_spar <- TsTe_met
 TsTe_met_spar <- TsTe_met_spar %>% 
   filter(mean_ts >= 23.03 & retained_scale %in% c("Borhyaenoidea", "Hathliacynidae", "Other_Sparassodonta")) %>%
-  arrange(retained_scale, mean_ts) %>%
   mutate(y_colour = sapply(X = retained_scale, FUN = function(x){
     if(x == "Borhyaenoidea"){
       return("#3378ff")
@@ -70,7 +69,9 @@ TsTe_met_spar <- TsTe_met_spar %>%
     else{
       return("black")
     }
-  }))
+  })) %>%
+  arrange(retained_scale, mean_ts)
+
 TsTe_met_spar$retained_scale[which(TsTe_met_spar$retained_scale == "Other_Sparassodonta")] <- "Others"
 TsTe_met_spar$retained_scale <- factor(TsTe_met_spar$retained_scale, levels = c("Others", "Hathliacynidae", "Borhyaenoidea"))
 
@@ -103,7 +104,7 @@ Spar_plot <- TsTe_met_spar %>%
             size = "auto",
             xlim = c(23.03, 53)) +
   theme(axis.text.y = element_text(face = "italic", size = 9, colour = TsTe_met_spar$y_colour),
-        axis.title.x = element_text(size = 18),
+        axis.title.x = element_text(size = 18, vjust = -0.75),
         axis.title.y = element_text(size = 18),
         axis.text.x = element_text(size = 15),
         panel.background = element_rect(fill = "grey95"),
@@ -173,7 +174,7 @@ Pol_plot <- TsTe_met_pol %>%
             size = "auto",
             xlim = c(23.03, 53)) +
   theme(axis.text.y = element_text(face = "italic", size = 9, colour = TsTe_met_pol$y_colour),
-        axis.title.x = element_text(size = 18),
+        axis.title.x = element_text(size = 18, vjust = -0.75),
         axis.title.y = element_text(size = 18),
         axis.text.x = element_text(size = 15),
         panel.background = element_rect(fill = "grey95"),
@@ -237,7 +238,7 @@ Pau_plot <- TsTe_met_Pau %>%
             size = "auto",
             xlim = c(23.03, 53)) +
   theme(axis.text.y = element_text(face = "italic", size = 9, colour = TsTe_met_Pau$y_colour),
-        axis.title.x = element_text(size = 18),
+        axis.title.x = element_text(size = 18, vjust = -0.75),
         axis.title.y = element_text(size = 18),
         axis.text.x = element_text(size = 15),
         panel.background = element_rect(fill = "grey95"),
@@ -280,7 +281,7 @@ Mi_plot <- TsTe_met_Mi %>%
             size = "auto",
             xlim = c(23.03, 53)) +
   theme(axis.text.y = element_text(face = "italic", size = 9, colour = TsTe_met_Mi$y_colour),
-        axis.title.x = element_text(size = 18),
+        axis.title.x = element_text(size = 18, vjust = -0.75),
         axis.title.y = element_text(size = 18),
         axis.text.x = element_text(size = 15),
         panel.background = element_rect(fill = "grey95"),
