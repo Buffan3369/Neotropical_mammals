@@ -288,24 +288,6 @@ Mi_plot <- TsTe_met_Mi %>%
         legend.key=element_rect(fill="white"))
 
 ## Assemble and save -----------------------------------------------------------
-# Stackoverflow's function to enlarge pane
-enlarge_output_pane <- function(height. = 700, width. = 1300){
-  
-  # detect current output pane dimensions
-  dim_px <- grDevices::dev.size("px")
-  
-  # if detected width is less than 'width.', widen output pane with RStudio's layoutZoomRightColumn command
-  if(dim_px[1] < width.){ rstudioapi::executeCommand("layoutZoomRightColumn") }
-  
-  # if detected height is less than 'height.', switch to Viewer windom and set height
-  if(dim_px[2] < height.){
-    
-    viewer <- getOption("viewer")
-    viewer("http://localhost:8100", height = height.)
-    
-  }
-  
-}
 enlarge_output_pane()
 metatheria <- ggarrange(Pau_plot, Pol_plot, Spar_plot, Mi_plot)
 enlarge_output_pane()
