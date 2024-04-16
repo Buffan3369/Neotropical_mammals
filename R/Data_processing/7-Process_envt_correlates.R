@@ -8,50 +8,28 @@
 library(tidyverse)
 source("./R/useful/helper_functions.R")
 
-## Function to select the closest 'age_vect' element to the integer 'int_age' --------------------------------------
-select_closer <- function(int_age, age_vect){
-  diff <- sapply(X = age_vect, FUN = function(x){return(abs(x-int_age))})
-  return(which.min(diff))
-}
-
-## Temporal patterns on the relative abundance of open habitats in Patagonia (Solórzano et Nuñez 2021) --------------
-p_open <- read_xlsx("./data_2023/MBD/vegetation_openness.xlsx")
-interpol_op <- approx(x = p_open$Age[1:2], y = p_open$P_open[1:2], n=3)$y
-for(i in 2:49){
-  interpol_op <- c(interpol_op,
-                   approx(x = p_open$Age[i:(i+1)], y = p_open$P_open[i:(i+1)], n=3)$y[-c(1)])
-}
-p_op_int <- data.frame(Age = seq(0, 49, 0.5),
-                       P_open = interpol_op)
-write.table.lucas(p_op_int,
-                  "./data_2023/MBD/processed_predictors_EXTENDED/7-habitat_openness_Stromberg_Palazzesi_500ky.txt")
-
-## Relative Leaf Area Index (Dunn et al. 2015) -----------------------------------------------------------------------
-rLAI <- read_xlsx("./data_2023/MBD/rLAI.xlsx")
-interpol_rlai <- approx(x = rLAI$Age[1:2], y = rLAI$rLAI[1:2], n=3)$y
-for(i in 2:38){
-  interpol_rlai <- c(interpol_rlai,
-                     approx(x = rLAI$Age[i:(i+1)], y = rLAI$rLAI[i:(i+1)], n=3)$y[-c(1)])
-}
-rlai_int <- data.frame(Age = seq(11, 49, 0.5),
-                       rLAI = interpol_rlai)
-write.table.lucas(rlai_int,
-                  "./data_2023/MBD/processed_predictors_EXTENDED/8-rLAI.txt")
-
 ## Plant diversity (from Jaramillo et al. (2006)) --------------------------------------------------------------------
 plant_raw <- read.table("./data_2023/MBD/raw_environment_correlates/Cnz_Plant_diversity_Jaramillo_2006.txt", header = TRUE)
-selected_indices <- sapply(X = seq(from = 15, to = 66, by = 0.5),
+selected_indices <- sapply(X = seq(from = 23, to = 56, by = 0.5),
                            FUN = select_closer,
                            age_vect = plant_raw$Age)
-plant_processed <- data.frame(Age = seq(from = 15, to = 66, by = 0.5),
+plant_processed <- data.frame(Age = seq(from = 23, to = 56, by = 0.5),
                               Plant_diversity = plant_raw$Div[selected_indices])
 ### Verification ###
 # par(mfrow = c(1,2))
 # plot(x = plant_processed$Age, plant_processed$Plant_diversity, xlim = c(15, 90))
 # plot(x = plant_raw$Age, y = plant_raw$Div)
 
+# Full dataset
 write.table.lucas(x = plant_processed,
-                  file = "./data_2023/MBD/processed_predictors_EXTENDED/1-Plant_Diversity_Palaeoc_Mioc_500ky_step.txt")
+                  file = "./data_2023/MBD/processed_predictors_full/1-Plant_Diversity_Eoc_Olig_500ky_step.txt")
+# post_EECO dataset
+write.table.lucas(x = plant_processed %>% filter(Age <= 51 & Age >= 34),
+                  file = "./data_2023/MBD/processed_predictors_post_EECO/1-Plant_Diversity_post_EECO_500ky_step.txt")
+# Oligocene dataset
+write.table.lucas(x = plant_processed %>% filter(Age <= 34 & Age >= 23),
+                  file = "./data_2023/MBD/processed_predictors_Oligocene_only/1-Plant_Diversity_Oligocene_only_500ky_step.txt")
+
 
 ## Andean Uplift (from Boschman (2021)) -----------------------------------------------------------------------------
 Uplift <- read.table("./data_2023/MBD/raw_environment_correlates/andean_uplift/Andes_mean_elevations_no_basins_ALL.txt",
@@ -71,9 +49,18 @@ for(i in 2:66){
 # title("Original data")
 # plot(x = seq(from = 0, to = 66, by = 0.5), y = interpol_av_el)
 # title("Interpolated data")
-write.table.lucas(data.frame(Age = seq(from = 0, to = 66, by = 0.5),
-                             Altitude = interpol_av_el),
-                  file = "./data_2023/MBD/processed_predictors_EXTENDED/2-Andes_mean_elevations_no_basins_500ky_step.txt")
+Andes <- data.frame(Age = seq(from = 0, to = 66, by = 0.5),
+                    Altitude = interpol_av_el)
+# Full dataset
+write.table.lucas(Andes %>% filter(Age >= 23 & Age <= 56),
+                  file = "./data_2023/MBD/processed_predictors_full/2-Andes_mean_elevations_Eoc_Olig_500ky_step.txt")
+# post_EECO dataset
+write.table.lucas(x = Andes %>% filter(Age <= 51 & Age >= 34),
+                  file = "./data_2023/MBD/processed_predictors_post_EECO/2-Andes_mean_elevations_post_EECO_500ky_step.txt")
+# Oligocene dataset
+write.table.lucas(x = Andes %>% filter(Age <= 34 & Age >= 23),
+                  file = "./data_2023/MBD/processed_predictors_Oligocene_only/2-Andes_mean_elevations_Oligocene_only_500ky_step.txt")
+
 
 
 ## Palaeotemperature (assembled by Boschman and Condamine 2022 using Cenozoic data from Westerhold et al. 2020) ----------------
@@ -91,78 +78,17 @@ Temp_Cnz1$Age <- sapply(X = Temp_Cnz1$Age, FUN = round, digits = 1)
 # title("Original data")
 # plot(x = Temp_Cnz1$Age, y = Temp_Cnz1$Temperature)
 # title("Subsampled data")
-write.table.lucas(Temp_Cnz,
-                  file = "./data_2023/MBD/processed_predictors_EXTENDED/3-Cenozoic_Temp_500ky_step.txt")
 
-## Delta 13 C (from Westerhold et al. 2020) ------------------------------------------------------------------------------------
-full_data <- read.table("./data_2023/MBD/raw_environment_correlates/atmospheric_carbon_d13C/Westerhold-etal_2020/datasets/TableS33.tab",
-                        sep = "\t",
-                        fill = TRUE,
-                        header = TRUE)
-#Visualise different corrections
-# par(mfrow = c(2,2))
-# plot(full_data$Tuned.time..Ma., full_data$Foram.benth.δ13C....PDB...VPDB.)
-# plot(full_data$Tuned.time..Ma., full_data$Foram.benth.δ13C....PDB...VPDB.Corr.)
-# plot(full_data$Tuned.time..Ma., full_data$Foram.benth.δ13C....PDB...VPDB.CorrAdjusted.)
-# plot(full_data$Tuned.time..Ma., full_data$Foram.benth.δ13C....PDB...smoothLoess10.)
+# Full dataset
+write.table.lucas(Temp_Cnz1 %>% filter(Age >= 23 & Age <= 56),
+                  file = "./data_2023/MBD/processed_predictors_full/3-Temperature_Eoc_Olig_500ky_step.txt")
+# post_EECO dataset
+write.table.lucas(x = Temp_Cnz1 %>% filter(Age <= 51 & Age >= 34),
+                  file = "./data_2023/MBD/processed_predictors_post_EECO/3-Temperature_post_EECO_500ky_step.txt")
+# Oligocene dataset
+write.table.lucas(x = Temp_Cnz1 %>% filter(Age <= 34 & Age >= 23),
+                  file = "./data_2023/MBD/processed_predictors_Oligocene_only/3-Temperature_Oligocene_only_500ky_step.txt")
 
-#Write and save a dataset of the covariate with a 500ky time step
-selected_indices <- sapply(X = seq(0, 66, 0.5), FUN = select_closer, age_vect = full_data$Tuned.time..Ma.)
-d13_C <- data.frame(Age = seq(0, 66, 0.5),
-                    d13C_atmospheric = full_data$Foram.benth.δ13C....PDB...VPDB.CorrAdjusted.[selected_indices])
-write.table.lucas(x = d13_C,
-                  file = "./data_2023/MBD/processed_predictors_EXTENDED/4-Atmospheric_delta13_C_500ky_step.txt")
-
-## Organic d13C from Falkowski et al. (2005) and Katz et al. (2005) -------------------------------------------------------------
-d13C_org <- read.table("./data_2023/MBD/raw_environment_correlates/organic_carbon/organic_carbon.txt",
-                       sep = "\t",
-                       fill = TRUE,
-                       header = TRUE)
-d13C_org <- d13C_org[-which(d13C_org$Age > 66.15),]
-#interpolate every 10ky
-interpolated <- data.frame(Age = c(NA), C13organic = c(NA))
-for(t in seq(from = 0, to = 66.15, by = 0.01)){
-  if(t %in% d13C_org$Age){
-    ind <- which(d13C_org$Age == t)
-    interpolated <- rbind(interpolated, 
-                          d13C_org[ind,])
-  }
-  else{
-    interpolated <- rbind(interpolated,
-                          c(t, NA))
-  }
-}
-interpolated <- interpolated[-c(1),]
-row.names(interpolated) <- 1:nrow(interpolated)
-
-i = 1
-while(i < nrow(interpolated-1)){
-  if(is.na(interpolated$C13organic[i])){ #i is the first na postition
-    D = 0
-    while(is.na(interpolated$C13organic[i+D])){
-      D = D+1
-    }
-    interpolated$C13organic[i:(i+D-1)] <- approx(x = c(interpolated$Age[(i-1)], interpolated$Age[(i+D)]),
-                                                 y = c(interpolated$C13organic[(i-1)], interpolated$C13organic[(i+D)]),
-                                                 n = D)$y
-    i = i+D
-  }
-  else{
-    i = i+1
-  }
-}
-#now downscale at a 500ky resolution
-selected_indices <- 100 * seq(from = 0, to = 66, by = 0.5) + 1
-colnames(interpolated) <- c("Age", "d13C_organic")
-final <- interpolated[selected_indices,]
-### Verification ###
-# par(mfrow = c(1,2))
-# plot(x = d13C_org$Age, y = d13C_org$C13organic)
-# title("Original data")
-# plot(x = final$Age, y = final$d13C_organic)
-# title("Scaled data")
-write.table.lucas(x = final,
-                  file = "./data_2023/MBD/processed_predictors_EXTENDED/5-organic_carbon_500ky_step.txt")
 
 ## Global sea level (from Miller et al. 2020) -----------------------------------------------------------------------------------
 sea_lvl <- read.table("./data_2023/MBD/raw_environment_correlates/sea_level/Miller_2020_sea_level_data.txt",
@@ -189,5 +115,51 @@ slvl <- data.frame(Age = ages,
 # plot(x = slvl$Age, y = slvl$Sea_level)
 # title("Scaled data")
 
-write.table.lucas(x = slvl,
-                  file = "./data_2023/MBD/processed_predictors_EXTENDED/6-sea_level_500ky_step.txt")
+# Full dataset
+write.table.lucas(x = slvl %>% filter(Age >= 23 & Age <= 56),
+                  file = "./data_2023/MBD/processed_predictors_full/4-sea_level_Eoc_Olig_500ky_step.txt")
+# post_EECO dataset
+write.table.lucas(x = slvl %>% filter(Age <= 51 & Age >= 34),
+                  file = "./data_2023/MBD/processed_predictors_post_EECO/4-sea_level_post_EECO_500ky_step.txt")
+# Oligocene dataset
+write.table.lucas(x = slvl %>% filter(Age <= 34 & Age >= 23),
+                  file = "./data_2023/MBD/processed_predictors_Oligocene_only/4-sea_level_Oligocene_only_500ky_step.txt")
+
+
+## Temporal patterns on the relative abundance of open habitats in Patagonia (Solórzano et Nuñez 2021 from Strömberg et al. 2013) ------------
+p_open <- read_xlsx("./data_2023/MBD/raw_environment_correlates/vegetation_openness.xlsx")
+interpol_op <- approx(x = p_open$Age[1:2], y = p_open$P_open[1:2], n=3)$y
+for(i in 2:49){
+  interpol_op <- c(interpol_op,
+                   approx(x = p_open$Age[i:(i+1)], y = p_open$P_open[i:(i+1)], n=3)$y[-c(1)])
+}
+p_op_int <- data.frame(Age = seq(0, 49, 0.5),
+                       P_open = interpol_op)
+# Full dataset
+write.table.lucas(x = p_op_int %>% filter(Age >= 23 & Age <= 56),
+                  file = "./data_2023/MBD/processed_predictors_full/5-habitat_openness_Eoc_Olig_500ky.txt")
+# post_EECO dataset
+write.table.lucas(x = p_op_int %>% filter(Age <= 51 & Age >= 34),
+                  file = "./data_2023/MBD/processed_predictors_post_EECO/5-habitat_openness_post_EECO_500ky.txt")
+# Oligocene dataset
+write.table.lucas(x = p_op_int %>% filter(Age <= 34 & Age >= 23),
+                  file = "./data_2023/MBD/processed_predictors_Oligocene_only/5-habitat_openness_Oligocene_only_500ky.txt")
+
+## Relative Leaf Area Index (Dunn et al. 2015) -----------------------------------------------------------------------
+rLAI <- read_xlsx("./data_2023/MBD/raw_environment_correlates/rLAI.xlsx")
+interpol_rlai <- approx(x = rLAI$Age[1:2], y = rLAI$rLAI[1:2], n=3)$y
+for(i in 2:38){
+  interpol_rlai <- c(interpol_rlai,
+                     approx(x = rLAI$Age[i:(i+1)], y = rLAI$rLAI[i:(i+1)], n=3)$y[-c(1)])
+}
+rlai_int <- data.frame(Age = seq(11, 49, 0.5),
+                       rLAI = interpol_rlai)
+# Full dataset
+write.table.lucas(x = rlai_int %>% filter(Age >= 23 & Age <= 56),
+                  file = "./data_2023/MBD/processed_predictors_full/6-rLAI_Eoc_Olig.txt")
+# post_EECO dataset
+write.table.lucas(x = rlai_int %>% filter(Age <= 51 & Age >= 34),
+                  file = "./data_2023/MBD/processed_predictors_post_EECO/6-rLAI_post_EECO.txt")
+# Oligocene dataset
+write.table.lucas(x = rlai_int %>% filter(Age <= 34 & Age >= 23),
+                  file = "./data_2023/MBD/processed_predictors_Oligocene_only/6-rLAI_Oligocene_only.txt")
