@@ -16,6 +16,12 @@ write.table.lucas <- function(...){
               ...)
 }
 
+## Function to select the closest 'age_vect' element to the integer 'int_age' --------------------------------------
+select_closer <- function(int_age, age_vect){
+  diff <- sapply(X = age_vect, FUN = function(x){return(abs(x-int_age))})
+  return(which.min(diff))
+}
+
 ## Taxonomic grouping dictionary -----------------------------------------------
 tax_dict <- hash::hash("Notoungulata" = "Notoungulata",
                        "Rodentia" = "Rodentia",
