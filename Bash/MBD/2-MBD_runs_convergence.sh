@@ -15,7 +15,8 @@
 #done
 
 dir=../../results_EXTENDED/MBD
-for s in SALMA_kept/genus_level SALMA_smoothed/genus_level
+for s in SALMA_smoothed/genus_level
+#SALMA_kept/genus_level 
 do
 	# Full
 	python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/1-Full -ana "MBD"
@@ -25,7 +26,8 @@ do
 	python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/1-Full/Oligocene_only -ana "MBD"
 	Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/1-Full/Oligocene_only/ESS_summary.txt "$PWD"/$dir/$s/1-Full/Oligocene_only/ESS_plot.png
 	# Order level
-	for odr in Notoungulata Other_SANUs Rodentia Metatheria Xenarthra
+	for odr in Notoungulata 
+	#Other_SANUs Rodentia Metatheria Xenarthra
 	do
 		python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/6-Order_level/$odr -ana "MBD"
 		Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/6-Order_level/$odr/ESS_summary.txt "$PWD"/$dir/$s/6-Order_level/$odr/ESS_plot.png
