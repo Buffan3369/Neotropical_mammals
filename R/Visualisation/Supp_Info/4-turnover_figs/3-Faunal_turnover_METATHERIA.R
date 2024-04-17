@@ -157,8 +157,8 @@ Pol_plot <- TsTe_met_pol %>%
   scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = NULL, colour = NULL) + 
   # add silhouette
-  add_phylopic(x = 49, y = 2.5, name = "Marmosa", ysize = 2) +
-  annotate(geom = "text", x = 48.5, y = 1, label = "Polydolopimorphia", size = 4) +
+  add_phylopic(x = 49, y = 4, name = "Marmosa", ysize = 3) +
+  annotate(geom = "text", x = 48.5, y = 2, label = "Polydolopimorphia", size = 4) +
   # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
   annotate(geom = "text", x = 31.5, y = nrow(TsTe_met_pol)-2, label = "EOT", size = 8, colour = "red") +
@@ -258,9 +258,7 @@ Mi_plot <- TsTe_met_Mi %>%
   annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
-  geom_segment(aes(x = mean_ts, xend = mean_te, colour = retained_scale)) +
-  # colours
-  scale_colour_manual(values = c("#fe9929")) +
+  geom_segment(aes(x = mean_ts, xend = mean_te), colour = "#fe9929") +
   scale_x_reverse(breaks = seq(from = 23.03, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = NULL, colour = NULL) + 
   # add silhouette

@@ -78,7 +78,6 @@ for(salma in c("SALMA_smoothed")){
   }
 }
 
-
 ## Loop for time-faceted panels ------------------------------------------------
 for(salma in c("SALMA_smoothed")){
   for(dir in dirs){
@@ -145,5 +144,4 @@ for(salma in c("SALMA_smoothed")){
     }
   }
 }
-
 

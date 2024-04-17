@@ -28,7 +28,8 @@ tax_dict <- hash::hash("Notoungulata" = "Notoungulata",
                        "Xenarthra" = c("Cingulata", "Pilosa"),
                        "Other_SANUs" = c("Litopterna", "Xenungulata", "Pyrotheria", "Astrapotheria", "SANU"), #SANU is used for members of the Didolodontidae family, unresolved affinity (but we know they're SANUs)
                        "Metatheria" = c("Dasyuromorphia", "Microbiotheria", "Didelphimorphia",
-                                        "Paucituberculata", "Polydolopimorphia", "Sparassodonta")
+                                        "Paucituberculata", "Polydolopimorphia", "Sparassodonta",
+                                        "Groeberida", "Basal_Marsupialia")
                        )
 
 ## Function to replace a space by an underscore --------------------------------

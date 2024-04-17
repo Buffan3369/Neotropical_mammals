@@ -177,7 +177,7 @@ All *Rattus rattus* occurrences, as introduced by humans.
 # Sparassodonta 
 
 Cleaning was highly based on Tarquini et al. 2022 [@tarquini2022].
-In addition, we removed our single *Argyrolestes peralestinus* occurrence (coll. nb. 176285, [@marshall1978]) as nomen nubidum [@prevosti2018]
+In addition, we removed our single *Argyrolestes peralestinus* occurrence (coll. nb. 176285, [@marshall1978]) as nomen nubidum [@prevosti2018].
 
 # Xenungulata
 

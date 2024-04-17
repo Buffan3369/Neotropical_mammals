@@ -52,7 +52,6 @@ TsTe_xen <- TsTe_xen %>%
 rm(Ts_xen, Te_xen)
 # Add family, subfamily and tribe info
 supp <- read.csv("./data_2023/systematics/xenarthra_genera_EOT.csv", header = TRUE)
-supp <- supp %>% filter(genus %in% c("?_Eocoleophorus", "Octodontotherium") == FALSE)
 TsTe_xen <- TsTe_xen %>% add_column(family = supp$family, subfamily = supp$subfamily, tribe = supp$tribe, .before = "ts")
 
 ## Plot
@@ -91,7 +90,7 @@ Turnov_xen <- TsTe_xen1 %>%
   annotate(geom = "text", x = 49, y = 6, label = "Xenarthra", size = 4) +
   # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
-  annotate(geom = "text", x = 31.5, y = 36, label = "EOT", size = 7, colour = "red") +
+  annotate(geom = "text", x = 31.5, y = nrow(TsTe_xen)-2, label = "EOT", size = 7, colour = "red") +
   # Artificially extend plotting window
   annotate(geom = "text", x = 35, y = 38.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +

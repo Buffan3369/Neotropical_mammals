@@ -1,5 +1,5 @@
 ################################################################################
-# Name: 3-Faunal_Turnover_RODENTIA.R
+# Name: 3-Faunal_turnover_RODENTIA.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
 # Aim: Script for Ts/Te plots rodents
