@@ -64,3 +64,10 @@ enlarge_output_pane <- function(height. = 700, width. = 1300){
     
   }
 }
+
+## Function to assess Jaccard's similarity index based on two assemblages ------
+jaccard <- function(a, b) {
+  intersection = length(intersect(a, b))
+  union = length(a) + length(b) - intersection
+  return (intersection/union)
+}
