@@ -63,11 +63,6 @@ TsTe_noto <- TsTe_noto %>%
   rename(ts = "mean_ts", te = "mean_te") %>% 
   filter(ts > 23.03, genus != "Bryanpattersonia") #too late to re-run everything, we just exclude this artefactual genus
 rm(Ts_noto, Te_noto)
-# Percentage of genera that crossed the EOT
-prop_survival <- (length(which(TsTe_noto$ts >= 33.9 & TsTe_noto$te <= 33.9))) / length(which(TsTe_noto$ts >= 33.9))
-# Without the five guys that go extinct before 33 Ma (supposingly at the EOT)
-prop_survival1 <- (length(which(TsTe_noto$ts >= 33.9 & TsTe_noto$te <= 33.9))-5) / length(which(TsTe_noto$ts >= 33.9))
-cat()
 
   ## 1) Ts-arranged genus plot
 TsTe_noto1 <- TsTe_noto %>%
