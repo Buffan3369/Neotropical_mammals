@@ -102,7 +102,7 @@ Spar_plot <- TsTe_met_spar %>%
             center_end_labels = TRUE,
             height = unit(1.5, "line"),
             size = "auto",
-            xlim = c(23.03, 53)) +
+            xlim = c(53, 2.03)) +
   theme(axis.text.y = element_text(face = "italic", size = 9, colour = TsTe_met_spar$y_colour),
         axis.title.x = element_text(size = 18, vjust = -0.75),
         axis.title.y = element_text(size = 18),
@@ -172,7 +172,7 @@ Pol_plot <- TsTe_met_pol %>%
             center_end_labels = TRUE,
             height = unit(1.5, "line"),
             size = "auto",
-            xlim = c(23.03, 53)) +
+            xlim = c(53, 23.03)) +
   theme(axis.text.y = element_text(face = "italic", size = 9, colour = TsTe_met_pol$y_colour),
         axis.title.x = element_text(size = 18, vjust = -0.75),
         axis.title.y = element_text(size = 18),
@@ -236,7 +236,7 @@ Pau_plot <- TsTe_met_Pau %>%
             center_end_labels = TRUE,
             height = unit(1.5, "line"),
             size = "auto",
-            xlim = c(23.03, 53)) +
+            xlim = c(53, 23.03)) +
   theme(axis.text.y = element_text(face = "italic", size = 9, colour = TsTe_met_Pau$y_colour),
         axis.title.x = element_text(size = 18, vjust = -0.75),
         axis.title.y = element_text(size = 18),
@@ -277,7 +277,7 @@ Mi_plot <- TsTe_met_Mi %>%
             center_end_labels = TRUE,
             height = unit(1.5, "line"),
             size = "auto",
-            xlim = c(23.03, 53)) +
+            xlim = c(53, 23.03)) +
   theme(axis.text.y = element_text(face = "italic", size = 9, colour = TsTe_met_Mi$y_colour),
         axis.title.x = element_text(size = 18, vjust = -0.75),
         axis.title.y = element_text(size = 18),
