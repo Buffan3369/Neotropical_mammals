@@ -71,3 +71,24 @@ jaccard <- function(a, b) {
   union = length(a) + length(b) - intersection
   return (intersection/union)
 }
+
+## Function to assess Bray-Curtis dissimilarity index between two assemblages --
+bray_curtis <- function(a1, a2, round=FALSE, d=NULL){ #a1 and a2 should be two-columns dataframes, one for the taxon, the other for its abundance
+  all_tax <- unique(c(a1[,1], a2[,1]))[[1]]
+  minSum <- 0
+  for(tax in all_tax){
+    if(tax %in% a1[,1][[1]] & tax %in% a2[,1][[1]]){ # if not in either of the two assemblages, minSum will be added 0
+      val_a1 <- a1[which(a1[,1] == tax),2]
+      val_a2 <- a2[which(a2[,1] == tax),2]
+      minSum <- minSum + min(val_a2, val_a1)
+    }
+  }
+  BC <- 1 - (2*minSum) / (sum(a1[,2])+sum(a2[,2]))
+  if(round){
+    return(round(BC, digits = d))
+  }
+  else{
+    return(BC)
+  }
+}
+

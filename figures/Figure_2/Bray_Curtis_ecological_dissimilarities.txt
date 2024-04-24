@@ -1,0 +1,6 @@
+"Early_Eocene"	"Mid_Eocene"	"Late_Eocene"	"Early_Oliogcene"	"Late_Oligocene"
+"Early_Eocene"	0	0.114	0.165	0.133	0.253
+"Mid_Eocene"	0.114	0	0.057	0.067	0.184
+"Late_Eocene"	0.165	0.057	0	0.061	0.185
+"Early_Oliogcene"	0.133	0.067	0.061	0	0.168
+"Late_Oligocene"	0.253	0.184	0.185	0.168	0

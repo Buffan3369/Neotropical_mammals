@@ -57,7 +57,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     for(odr in keys(tax_dict)){
       tmp_tste_odr <- tste_ttl %>%
         filter(tax %in% values(tax_dict[odr])) %>%
-        select(!c("tax"))
+        select(!c("tax", "genus", "diet"))
       write.table.lucas(file = paste0("./results_EXTENDED/", salma, "/", lvl, "/6-Order_level/", odr, "/BDCS/TsTe_", odr, "_", salma, "_", lvl, ".txt"),
                         x = tmp_tste_odr)
       write.table.lucas(file = paste0("./results_EXTENDED/", salma, "/", lvl, "/6-Order_level/", odr, "/BDCS_5M/TsTe_", odr, "_", salma, "_", lvl, ".txt"),
@@ -67,7 +67,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     for(dt in c("herbivore", "carnivore", "omnivore", "insectivore")){
       tmp_tste_diet <- tste_ttl %>%
         filter(diet == dt) %>% 
-        select(!c("tax"))
+        select(!c("tax", "genus", "diet"))
       write.table.lucas(file = paste0("./results_EXTENDED/", salma, "/", lvl, "/5-Ecomorphotype/TsTe_", dt, "_", salma, "_", lvl, ".txt"),
                         x = tmp_tste_diet)
       write.table.lucas(file = paste0("./results_EXTENDED/", salma, "/", lvl, "/5-Ecomorphotype/TsTe_", dt, "_", salma, "_", lvl, ".txt"),
