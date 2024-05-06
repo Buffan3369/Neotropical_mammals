@@ -215,7 +215,7 @@ fig3 <- ggarrange(plotlist = plot_list1, nrow = 2, ncol = 5,
                   hjust = 0,
                   font.label = list(size = 18))
 
-ggsave("./figures/supp_figs/RTT_LTT_trop_etrop.pdf",
+ggsave("./figures/supp_figs/RTT_LTT_trop_etrop_RJMCMC.pdf",
        plot = fig3,
        height = 200,
        width = 400,
