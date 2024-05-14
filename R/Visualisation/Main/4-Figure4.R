@@ -103,7 +103,9 @@ for(salma in c("SALMA_smoothed")){
                            x_breaks = 0:6,
                            x_labels = c(values(covar_idx)),
                            rate.labs = rate.labs,
-                           int.labs = c("Eocene", "Oligocene"))
+                           int.labs = c("Eocene", "Oligocene"),
+                           vjust.star.ori = 0.4,
+                           vjust.star.ext = 0.4)
       ggsave(paste0("./figures/Figure_4_new/Full_", salma, ".pdf"),
              plot = MBD_viol,
              height = 300,

@@ -112,8 +112,8 @@ out_table_MBD <- function(dir, interval){
       summarise(max_val = max(density(value)[[1]]),
                 min_val = min(density(value)[[1]])) %>% 
       mutate(star_pos = ifelse(abs(max_val) >= abs(min_val), 
-                               max_val + sign(max_val)*0.5,
-                               min_val + sign(min_val)*0.5))
+                               max_val + sign(max_val),
+                               min_val + sign(min_val)))
     
   }
   signif_df <- signif_df %>% add_column(interval = rep(interval, nrow(signif_df)))
@@ -186,7 +186,7 @@ MBD.plot <- function(PLOT_DF, SIGNIF_DF,
             vjust = rep(c(vjust.star.ext, #extinction star
                           vjust.star.ori), #origination star
                         (nrow(SIGNIF_DF)/2)),
-            size = 10) +
+            size = 15) +
   # theme aesthetics
   theme(axis.title = element_text(size = 18),
         axis.text.x = element_text(size = 18, vjust = 0.2),
