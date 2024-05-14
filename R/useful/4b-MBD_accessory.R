@@ -8,7 +8,9 @@
 library(tidyverse)
 
 ## Function to get plotting dataset --------------------------------------------
-out_table_MBD <- function(dir, interval){
+out_table_MBD <- function(dir, #where the MBD log files are stored 
+                          interval #time interval covered
+                          ){
   # MCMC recap table
   recap_tbl <- read.table(paste0(dir, "/ESS_summary.txt"), 
                           sep = "\t", header = TRUE)

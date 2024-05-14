@@ -35,8 +35,9 @@ for(salma in c("SALMA_smoothed")){
     if(strsplit(dir, split = "-")[[1]][1] == "1"){
       int <- ifelse("EOT")
       rid <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir)
-      plot_df <- out_table_MBD(rid, interval = int)[[1]]
-      signif_df <- out_table_MBD(rid, interval = int)[[2]]
+      tmp <- out_table_MBD(rid, interval = int)
+      plot_df <- tmp[[1]]
+      signif_df <- tmp[[2]]
       #plot
       MBD_viol <- MBD.plot(PLOT_DF = plot_df,
                            SIGNIF_DF = signif_df,
@@ -57,8 +58,9 @@ for(salma in c("SALMA_smoothed")){
       for(odr in c("Notoungulata")){
         int <- "EOT"
         rid <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir, odr)
-        plot_df1 <- out_table_MBD(rid, interval = int)[[1]]
-        signif_df1 <- out_table_MBD(rid, interval = int)[[2]]
+        tmp <- out_table_MBD(rid, interval = int)
+        plot_df1 <-tmp[[1]]
+        signif_df1 <- tmp[[2]]
         # plot
         MBD_viol1 <- MBD.plot(PLOT_DF = plot_df1,
                               SIGNIF_DF = signif_df1,
@@ -82,36 +84,37 @@ for(salma in c("SALMA_smoothed")){
 for(salma in c("SALMA_smoothed")){
   for(dir in dirs){
     # full
-    # if(strsplit(dir, split = "-")[[1]][1] == "1"){
-    #   # initialise large tables
-    #   PLOT_DF <- data.frame(param = NA, rate = NA, col = NA, signif_col = NA, value = NA, interval = NA)
-    #   SIGNIF_DF <- data.frame(param = NA, rate = NA, col = NA, max_val = NA, min_val = NA, star_pos = NA, interval = NA)
-    #   for(trt in c("post_EECO", "Oligocene_only")){
-    #     int <- ifelse(trt == "post_EECO", "Eocene", "Oligocene")
-    #     rid <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir, trt)
-    #     plot_df <- out_table_MBD(rid, interval = int)[[1]]
-    #     signif_df <- out_table_MBD(rid, interval = int)[[2]]
-    #     # Extend the big berthas
-    #     PLOT_DF <- rbind.data.frame(PLOT_DF, plot_df)
-    #     SIGNIF_DF <- rbind.data.frame(SIGNIF_DF, signif_df)
-    #   }
-    #   PLOT_DF <- PLOT_DF[-c(1),]
-    #   SIGNIF_DF <- SIGNIF_DF[-c(1),]
-    #   #plot
-    #   MBD_viol <- MBD.plot(PLOT_DF = PLOT_DF,
-    #                        SIGNIF_DF = SIGNIF_DF,
-    #                        x_breaks = 0:6,
-    #                        x_labels = c(values(covar_idx)),
-    #                        rate.labs = rate.labs,
-    #                        int.labs = c("Eocene", "Oligocene"),
-    #                        vjust.star.ori = 0.4,
-    #                        vjust.star.ext = 0.4)
-    #   ggsave(paste0("./figures/Figure_4_new/Full_", salma, ".pdf"),
-    #          plot = MBD_viol,
-    #          height = 300,
-    #          width = 400,
-    #          units = "mm")
-    # }
+    if(strsplit(dir, split = "-")[[1]][1] == "1"){
+      # initialise large tables
+      PLOT_DF <- data.frame(param = NA, rate = NA, col = NA, signif_col = NA, value = NA, interval = NA)
+      SIGNIF_DF <- data.frame(param = NA, rate = NA, col = NA, max_val = NA, min_val = NA, star_pos = NA, interval = NA)
+      for(trt in c("post_EECO", "Oligocene_only")){
+        int <- ifelse(trt == "post_EECO", "Eocene", "Oligocene")
+        rid <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir, trt)
+        tmp <- out_table_MBD(rid, interval = int)
+        plot_df1 <-tmp[[1]]
+        signif_df1 <- tmp[[2]]
+        # Extend the big berthas
+        PLOT_DF <- rbind.data.frame(PLOT_DF, plot_df)
+        SIGNIF_DF <- rbind.data.frame(SIGNIF_DF, signif_df)
+      }
+      PLOT_DF <- PLOT_DF[-c(1),]
+      SIGNIF_DF <- SIGNIF_DF[-c(1),]
+      #plot
+      MBD_viol <- MBD.plot(PLOT_DF = PLOT_DF,
+                           SIGNIF_DF = SIGNIF_DF,
+                           x_breaks = 0:6,
+                           x_labels = c(values(covar_idx)),
+                           rate.labs = rate.labs,
+                           int.labs = c("Eocene", "Oligocene"),
+                           vjust.star.ori = 0.4,
+                           vjust.star.ext = 0.4)
+      ggsave(paste0("./figures/Figure_4_new/Full_", salma, ".pdf"),
+             plot = MBD_viol,
+             height = 300,
+             width = 400,
+             units = "mm")
+    }
     # loop across orders
     if(strsplit(dir, split = "-")[[1]][1] == "6"){
       for(odr in c("Notoungulata")){
@@ -121,8 +124,9 @@ for(salma in c("SALMA_smoothed")){
       for(trt in c("post_EECO/", "Oligocene_only/")){
         int <- ifelse(trt == "post_EECO/", "Eocene", "Oligocene")
         rid <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir, odr, "/", trt)
-        plot_df1 <- out_table_MBD(rid, interval = int)[[1]]
-        signif_df1 <- out_table_MBD(rid, interval = int)[[2]]
+        tmp <- out_table_MBD(rid, interval = int)
+        plot_df1 <-tmp[[1]]
+        signif_df1 <- tmp[[2]]
         # Extend the big berthas
         PLOT_DF1 <- rbind.data.frame(PLOT_DF1, plot_df1)
         SIGNIF_DF1 <- rbind.data.frame(SIGNIF_DF1, signif_df1)
@@ -148,4 +152,3 @@ for(salma in c("SALMA_smoothed")){
     }
   }
 }
-
