@@ -189,7 +189,8 @@ MBD.plot <- function(PLOT_DF, SIGNIF_DF,
             size = 10) +
   # theme aesthetics
   theme(axis.title = element_text(size = 18),
-        axis.text = element_text(size = 18),
+        axis.text.x = element_text(size = 18, vjust = 0.2),
+        axis.text.y = element_text(size = 18, hjust = 0.5),
         legend.position = "none",
         strip.text.x = element_text(size = 18),
         strip.text.y = element_text(size = 18),

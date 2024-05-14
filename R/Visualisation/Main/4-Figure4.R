@@ -12,11 +12,11 @@ source("./R/useful/4b-MBD_accessory.R")
 
 ## Define covariable names -----------------------------------------------------
 covar_idx <- hash("0" = "Self-diversity",
-                "1" = "Plant_diversity",
-                "2" = "Andes_elevation",
-                "3" = "Temperature",
-                "4" = "Sea_level",
-                "5" = "Habitat_openness",
+                "1" = "Plant Diversity",
+                "2" = "Andes Elevation",
+                "3" = "Global Temperature",
+                "4" = "Sea Level",
+                "5" = "Habitat Openness",
                 "6" = "rLAI")
 
 ## Set strip labels for plots --------------------------------------------------
