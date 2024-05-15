@@ -17,7 +17,7 @@ covar_idx <- hash("0" = "Self-diversity",
                 "3" = "Global Temperature",
                 "4" = "Sea Level",
                 "5" = "Habitat Openness",
-                "6" = "rLAI")
+                "6" = "Forest Density")
 
 ## Set strip labels for plots --------------------------------------------------
 rate.labs <- c("Extinction rate", "Origination rate")
@@ -92,8 +92,8 @@ for(salma in c("SALMA_smoothed")){
         int <- ifelse(trt == "post_EECO", "Eocene", "Oligocene")
         rid <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir, trt)
         tmp <- out_table_MBD(rid, interval = int)
-        plot_df1 <-tmp[[1]]
-        signif_df1 <- tmp[[2]]
+        plot_df <-tmp[[1]]
+        signif_df <- tmp[[2]]
         # Extend the big berthas
         PLOT_DF <- rbind.data.frame(PLOT_DF, plot_df)
         SIGNIF_DF <- rbind.data.frame(SIGNIF_DF, signif_df)
