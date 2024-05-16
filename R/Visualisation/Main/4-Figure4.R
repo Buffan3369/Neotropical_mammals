@@ -33,7 +33,7 @@ for(salma in c("SALMA_smoothed")){
   for(dir in dirs){
     # full
     if(strsplit(dir, split = "-")[[1]][1] == "1"){
-      int <- ifelse("EOT")
+      int <- NA
       rid <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir)
       tmp <- out_table_MBD(rid, interval = int)
       plot_df <- tmp[[1]]
