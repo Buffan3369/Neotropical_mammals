@@ -7,10 +7,8 @@
 
 library(tidyverse)
 
-## Function to get plotting dataset --------------------------------------------
-out_table_MBD <- function(dir, #where the MBD log files are stored 
-                          interval #time interval covered
-                          ){
+## Function to get posterior distribution of G and SW
+get_post <- function(dir, param = c("G", "W", "mean_SW")){
   # MCMC recap table
   recap_tbl <- read.table(paste0(dir, "/ESS_summary.txt"), 
                           sep = "\t", header = TRUE)
@@ -19,16 +17,29 @@ out_table_MBD <- function(dir, #where the MBD log files are stored
     recap_tbl <- recap_tbl[-which(recap_tbl$ESS_posterior < 200), ]
   }
   n_conv <- nrow(recap_tbl) #number of runs that converged, useful as in the name of the combined mcmc.log file
-  #add the mean row in last position
-  recap_tbl[nrow(recap_tbl)+1, ] <- apply(X = recap_tbl, MARGIN = 2, FUN = mean, na.rm = TRUE)
-  #subset mean Shrinkage Weights (SW)
-  mean_SW <- recap_tbl %>% select(starts_with("Mean_W"))
+  if(param == "mean_SW"){
+    #add the mean row in last position
+    recap_tbl[nrow(recap_tbl)+1, ] <- apply(X = recap_tbl, MARGIN = 2, FUN = mean, na.rm = TRUE)
+    #subset mean Shrinkage Weights (SW)
+    mean_SW <- recap_tbl %>% select(starts_with("Mean_W"))
+    return(mean_SW)
+  }
+  else{
+    #Open combined mcmc.log file and retain the distributions of the selected G
+    mcmcLog <- read.table(paste0(dir, "/combined_", n_conv, "_KEEP.log"),
+                          header = TRUE, sep = "\t")
+    mcmcLog <- mcmcLog %>% select(starts_with(param)) #only retain correlation parameters
+    return(mcmcLog)
+  }
+}
+
+## Function to get plotting dataset --------------------------------------------
+out_table_MBD <- function(dir, #where the MBD log files are stored 
+                          interval #time interval covered
+                          ){
   
-  #Open combined mcmc.log file and retain the distributions of the selected G
-  mcmcLog <- read.table(paste0(dir, "/combined_", n_conv, "_KEEP.log"),
-                        header = TRUE, sep = "\t")
-  mcmcLog <- mcmcLog %>% select(starts_with("G")) #only retain correlation parameters
-  
+  mcmcLog <- get_post(dir, param = "G")
+  mean_SW <- get_post(dir, param = "mean_SW")
   ## 1) get column names of the SW > 0.5 ---------------------------------------
   ns_names <- colnames(mean_SW)[which(mean_SW[nrow(mean_SW), ] < 0.5)] #remember that the last one is the total
   mean_SW_sign <- mean_SW[, !(colnames(mean_SW) %in% ns_names)]
@@ -43,14 +54,13 @@ out_table_MBD <- function(dir, #where the MBD log files are stored
   #subset
   if(length(corr_vbl) == 0){ # if no variable found with SW > 0.5, don't go further
     cat("\nNo significant correlation coefficient found.\n")
-    recap_tbl_sign <- NULL
   }
   if(length(corr_vbl) > 0){
     mcmcLog_sign <- mcmcLog %>% select(all_of(corr_vbl))
     # 2) check if zero is in the 95% HPD
     zeros <- c()
     for(G in colnames(mcmcLog_sign)){
-      #5 and 95% quantiles of the distribution
+      #2.5 and 975.% quantiles of the distribution
       Q <- as.numeric(quantile(mcmcLog_sign[, G], probs = c(0.025, 0.975)))
       if(length(unique(sign(Q))) > 1){ #if these boundaries have different signs, i.e. 0 is in 95% HPD
         small_abs <- min(abs(Q))
