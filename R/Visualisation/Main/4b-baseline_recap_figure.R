@@ -35,18 +35,27 @@ Temp_Cnz <- read.table("./data_2023/MBD/raw_environment_correlates/palaeotempera
                        sep = "\t",
                        header = TRUE)
 t_plot <- Temp_Cnz %>% 
-  filter(Age < 52 & Age > 24) %>%
+  filter(Age < 52 & Age > 33.9) %>%
   ggplot(aes(x = Age, y = Temperature)) +
   geom_line(colour = "#045a8d") +
+  labs(y = "Average temperature (°C)") +
   scale_x_reverse() +
+  scale_y_continuous(breaks = seq(15, 30, 2.5)) +
   theme(panel.grid.minor = element_blank(),
         panel.background = element_blank(),
-        axis.line = element_line(colour = "black")) +
+        axis.line = element_line(colour = "#045a8d"),
+        axis.text = element_text(colour = "#045a8d"),
+        axis.title.y = element_text(colour = "#045a8d")) +
   # Temporal bands
   annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0)
 
+ggsave("./figures/Figure_4_new/temp_plot.pdf",
+       plot = t_plot,
+       height = 100,
+       width = 150,
+       units = "mm")
 
 ## LTT plot --------------------------------------------------------------------
 ltt_path <- "./results_EXTENDED/SALMA_smoothed/genus_level/1-Full/MH_sampler/LTT/Full_EOT_gen_occ_SALMA_smoothed_10_Grj_KEEP_se_est_ltt.txt"
@@ -63,7 +72,7 @@ ltt.plot <- ltt_plot(ltt_tbl,
                      axes.labelsize=15,
                      ticks.labelsize = 12,
                      x_lab = "Time (Ma)",
-                     y_lab = NULL,
+                     y_lab = "Diversity (nb. genera)",
                      y_breaks = seq(0,(round(max(ltt_tbl$Diversity), -1) + 10),20), 
                      y_limits = c(40,(round(max(ltt_tbl$Diversity), -1) + 12)),
                      display_gts = TRUE,
@@ -83,3 +92,9 @@ ltt.plot <- ltt_plot(ltt_tbl,
   annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0)
+
+ggsave("./figures/Figure_4_new/LTT_plot.pdf",
+       plot = ltt.plot,
+       height = 150,
+       width = 150,
+       units = "mm")
