@@ -26,17 +26,35 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="361.33157"
-     inkscape:cy="584.0702"
-     inkscape:window-width="1920"
-     inkscape:window-height="1043"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
+     inkscape:zoom="1"
+     inkscape:cx="266.5"
+     inkscape:cy="418.5"
+     inkscape:window-width="1850"
+     inkscape:window-height="1016"
+     inkscape:window-x="70"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="g351951" />
   <defs
      id="defs2">
+    <rect
+       x="614.27646"
+       y="656.2553"
+       width="217.3237"
+       height="70.229141"
+       id="rect18938" />
+    <rect
+       x="603.28772"
+       y="658.79431"
+       width="42.029068"
+       height="51.715599"
+       id="rect11500" />
+    <rect
+       x="611.7746"
+       y="650.57795"
+       width="102.64835"
+       height="47.868289"
+       id="rect9094" />
     <rect
        x="773.34546"
        y="767.48187"
@@ -842,6 +860,42 @@
        width="110.63304"
        height="47.314438"
        id="rect91193-4-0-20" />
+    <rect
+       x="532.75146"
+       y="625.25952"
+       width="187.83466"
+       height="50.974167"
+       id="rect79434-36" />
+    <rect
+       x="532.75146"
+       y="625.25952"
+       width="86.777102"
+       height="50.657211"
+       id="rect79434-36-5" />
+    <rect
+       x="614.27649"
+       y="656.25531"
+       width="217.3237"
+       height="70.229141"
+       id="rect18938-2" />
+    <rect
+       x="614.27649"
+       y="656.25531"
+       width="217.3237"
+       height="70.229141"
+       id="rect18938-6" />
+    <rect
+       x="614.27649"
+       y="656.25531"
+       width="217.3237"
+       height="70.229141"
+       id="rect18938-8" />
+    <rect
+       x="468.99771"
+       y="254.47325"
+       width="110.63304"
+       height="47.314438"
+       id="rect91193-4-0-9" />
   </defs>
   <g
      inkscape:label="Calque 1"
@@ -859,9 +913,9 @@
          style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect4882);fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="465.00586"
            y="106.06445"
-           id="tspan32813"><tspan
+           id="tspan53264"><tspan
              dx="0 26.914062 24.511719"
-             id="tspan32811">Raw</tspan></tspan></text>
+             id="tspan53262">Raw</tspan></tspan></text>
       <g
          id="g351951"
          inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/PhD/Chapter_1/figures/Fig_pipeline/Figure_S2.png"
@@ -951,9 +1005,9 @@
            inkscape:export-ydpi="600"><tspan
              x="507.73438"
              y="-29.341767"
-             id="tspan32817"><tspan
+             id="tspan53268"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32815">Raw occurrence data</tspan></tspan></text>
+               id="tspan53266">Raw occurrence data</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,-4.1766974,39.334661)"
@@ -966,14 +1020,14 @@
            inkscape:export-ydpi="600"><tspan
              x="514.894"
              y="-32.175105"
-             id="tspan32821"><tspan
+             id="tspan53272"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32819">Cleaned occurrence </tspan></tspan><tspan
+               id="tspan53270">Cleaned occurrence </tspan></tspan><tspan
              x="582.6787"
              y="-8.788382"
-             id="tspan32825"><tspan
+             id="tspan53276"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32823">data</tspan></tspan></text>
+               id="tspan53274">data</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,-34.303556,66.033275)"
@@ -986,14 +1040,14 @@
            inkscape:export-ydpi="600"><tspan
              x="519.10243"
              y="-32.175105"
-             id="tspan32829"><tspan
+             id="tspan53280"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32827">SALMAs smoothed to </tspan></tspan><tspan
+               id="tspan53278">SALMAs smoothed to </tspan></tspan><tspan
              x="566.20371"
              y="-8.788382"
-             id="tspan32833"><tspan
+             id="tspan53284"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32831">Sub-Epoch</tspan></tspan></text>
+               id="tspan53282">Sub-Epoch</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,-30.803615,89.136458)"
@@ -1006,9 +1060,9 @@
            inkscape:export-ydpi="600"><tspan
              x="526.71845"
              y="-32.175105"
-             id="tspan32837"><tspan
+             id="tspan53288"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32835">Genus-level dataset</tspan></tspan></text>
+               id="tspan53286">Genus-level dataset</tspan></tspan></text>
         <rect
            style="fill:#87deaa;fill-opacity:1;stroke:none;stroke-width:0.23693;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
            id="rect32087-3-2-8-4"
@@ -1045,9 +1099,9 @@
            inkscape:export-ydpi="600"><tspan
              x="554.91571"
              y="-32.175105"
-             id="tspan32841"><tspan
+             id="tspan53292"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32839">SALMAs kept</tspan></tspan></text>
+               id="tspan53290">SALMAs kept</tspan></tspan></text>
         <path
            style="fill:none;stroke:#000000;stroke-width:0.176667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
            d="m 101.80406,14.270925 v 13.89708"
@@ -1065,9 +1119,9 @@
            inkscape:export-ydpi="600"><tspan
              x="457.47656"
              y="135.7207"
-             id="tspan32845"><tspan
+             id="tspan53296"><tspan
                style="font-weight:bold"
-               id="tspan32843">(1)</tspan></tspan></text>
+               id="tspan53294">(1)</tspan></tspan></text>
         <path
            style="fill:none;stroke:#000000;stroke-width:0.176667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-2)"
            d="m 101.80414,40.595554 v 13.89708"
@@ -1085,7 +1139,7 @@
            inkscape:export-ydpi="600"><tspan
              x="274.60938"
              y="543.00391"
-             id="tspan32847">or</tspan></text>
+             id="tspan53298">or</tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,20.200328,-0.41722)"
@@ -1096,9 +1150,9 @@
            inkscape:export-ydpi="600"><tspan
              x="468.99805"
              y="272.16797"
-             id="tspan32851"><tspan
+             id="tspan53302"><tspan
                style="font-weight:bold"
-               id="tspan32849">(2)</tspan></tspan></text>
+               id="tspan53300">(2)</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,48.372166,25.200955)"
@@ -1109,9 +1163,9 @@
            inkscape:export-ydpi="600"><tspan
              x="468.99805"
              y="272.16797"
-             id="tspan32855"><tspan
+             id="tspan53306"><tspan
                style="font-weight:bold"
-               id="tspan32853">(3)</tspan></tspan></text>
+               id="tspan53304">(3)</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,-11.585602,141.0549)"
@@ -1122,9 +1176,22 @@
            inkscape:export-ydpi="600"><tspan
              x="468.99805"
              y="272.16797"
-             id="tspan32859"><tspan
+             id="tspan53310"><tspan
                style="font-weight:bold"
-               id="tspan32857">(5)</tspan></tspan></text>
+               id="tspan53308">(5)</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.17638912,0,0,0.17638857,96.467559,111.84856)"
+           id="text91191-1-6-20"
+           style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect91193-4-0-9);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/PhD/Chapter_1/figures/Fig_pipeline/Figure_S2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             x="468.99805"
+             y="272.16797"
+             id="tspan53314"><tspan
+               style="font-weight:bold"
+               id="tspan53312">(9)</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,20.213973,105.07436)"
@@ -1135,9 +1202,9 @@
            inkscape:export-ydpi="600"><tspan
              x="468.99805"
              y="272.16797"
-             id="tspan32863"><tspan
+             id="tspan53318"><tspan
                style="font-weight:bold"
-               id="tspan32861">(4)</tspan></tspan></text>
+               id="tspan53316">(4)</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,55.042499,141.05452)"
@@ -1148,9 +1215,9 @@
            inkscape:export-ydpi="600"><tspan
              x="468.99805"
              y="272.16797"
-             id="tspan32867"><tspan
+             id="tspan53322"><tspan
                style="font-weight:bold"
-               id="tspan32865">(8)</tspan></tspan></text>
+               id="tspan53320">(8)</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,-50.873192,185.13352)"
@@ -1161,9 +1228,9 @@
            inkscape:export-ydpi="600"><tspan
              x="468.99805"
              y="272.16797"
-             id="tspan32871"><tspan
+             id="tspan53326"><tspan
                style="font-weight:bold"
-               id="tspan32869">(6)</tspan></tspan></text>
+               id="tspan53324">(6)</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,-14.558805,185.13371)"
@@ -1174,9 +1241,9 @@
            inkscape:export-ydpi="600"><tspan
              x="468.99805"
              y="272.16797"
-             id="tspan32875"><tspan
+             id="tspan53330"><tspan
                style="font-weight:bold"
-               id="tspan32873">(7)</tspan></tspan></text>
+               id="tspan53328">(7)</tspan></tspan></text>
         <path
            style="fill:none;stroke:#000000;stroke-width:0.176388px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
            d="m 95.471799,67.566832 -13.664417,7.88913"
@@ -1222,9 +1289,9 @@
            inkscape:export-ydpi="600"><tspan
              x="-131.94141"
              y="531.01367"
-             id="tspan32879"><tspan
+             id="tspan53334"><tspan
                style="font-style:italic;font-family:sans-serif, Rasa;-inkscape-font-specification:'sans-serif, Rasa'"
-               id="tspan32877">Full data</tspan></tspan></text>
+               id="tspan53332">Full data</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,80.609594,15.737972)"
@@ -1235,9 +1302,9 @@
            inkscape:export-ydpi="600"><tspan
              x="-131.94141"
              y="526.01367"
-             id="tspan32883"><tspan
+             id="tspan53338"><tspan
                style="font-style:italic;font-family:sans-serif, Rasa;-inkscape-font-specification:'sans-serif, Rasa'"
-               id="tspan32881">Removing singletons</tspan></tspan></text>
+               id="tspan53336">Removing singletons</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,113.6709,15.737972)"
@@ -1248,9 +1315,9 @@
            inkscape:export-ydpi="600"><tspan
              x="-131.94141"
              y="526.01367"
-             id="tspan32887"><tspan
+             id="tspan53342"><tspan
                style="font-style:italic;font-family:sans-serif, Rasa;-inkscape-font-specification:'sans-serif, Rasa'"
-               id="tspan32885">Spatial scaling</tspan></tspan></text>
+               id="tspan53340">Spatial scaling</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,137.52131,15.737972)"
@@ -1261,9 +1328,9 @@
            inkscape:export-ydpi="600"><tspan
              x="-131.94141"
              y="526.01367"
-             id="tspan32891"><tspan
+             id="tspan53346"><tspan
                style="font-style:italic;font-family:sans-serif, Rasa;-inkscape-font-specification:'sans-serif, Rasa'"
-               id="tspan32889">Tropical/Extratropical</tspan></tspan></text>
+               id="tspan53344">Tropical/Extratropical</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,177.12919,15.479191)"
@@ -1274,9 +1341,9 @@
            inkscape:export-ydpi="600"><tspan
              x="-131.94141"
              y="526.01367"
-             id="tspan32895"><tspan
+             id="tspan53350"><tspan
                style="font-style:italic;font-family:sans-serif, Rasa;-inkscape-font-specification:'sans-serif, Rasa'"
-               id="tspan32893">&quot;Diet&quot;</tspan></tspan></text>
+               id="tspan53348">&quot;Diet&quot;</tspan></tspan></text>
         <g
            id="g1939"
            transform="matrix(0.66666755,0,0,0.66666545,33.489054,1.6984631)"
@@ -2343,9 +2410,9 @@
            inkscape:export-ydpi="600"><tspan
              x="521.74314"
              y="-32.175105"
-             id="tspan32899"><tspan
+             id="tspan53354"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32897">Species-level dataset</tspan></tspan></text>
+               id="tspan53352">Species-level dataset</tspan></tspan></text>
         <path
            d="m 167.95629,127.09502 c -0.18908,0.0212 -0.2888,0.0456 -0.47364,0.11759 -0.0884,0.0343 -0.14581,0.0536 -0.19521,0.0654 -0.0804,0.0193 -0.0884,0.0193 -0.19473,-0.01 -0.0423,-0.0113 -0.0691,-0.016 -0.0936,-0.016 -0.0339,0 -0.0357,5.4e-4 -0.0724,0.0245 -0.0211,0.0132 -0.048,0.0339 -0.0602,0.0456 l -0.0225,0.0212 v 0.10207 0.10254 l -0.0151,10e-4 c -0.0146,0.001 -0.0174,0.005 -0.0508,0.0696 -0.0465,0.0898 -0.0654,0.12041 -0.10725,0.17403 -0.0348,0.0442 -0.0353,0.0447 -0.0969,0.0771 -0.0339,0.0179 -0.0795,0.0385 -0.10113,0.0457 -0.0367,0.0127 -0.0451,0.0137 -0.11007,0.0137 -0.0701,0 -0.0705,0 -0.0621,0.009 0.008,0.009 0.008,0.009 -0.0645,0.009 -0.0593,0 -0.0837,-0.003 -0.12887,-0.0113 -0.0311,-0.007 -0.0931,-0.016 -0.13829,-0.0216 -0.0452,-0.005 -0.0974,-0.0141 -0.11571,-0.0193 -0.024,-0.007 -0.0484,-0.009 -0.0917,-0.009 -0.0362,0 -0.0682,-0.003 -0.0842,-0.007 -0.0334,-0.009 -0.0329,-0.009 -0.0315,0.003 0.001,0.008 -0.003,0.0113 -0.0221,0.0169 -0.0217,0.006 -0.0273,0.005 -0.0682,-0.003 -0.0249,-0.005 -0.0663,-0.0132 -0.0917,-0.0174 -0.0259,-0.004 -0.0484,-0.008 -0.0499,-0.009 -0.001,-10e-4 -0.0141,-0.006 -0.0273,-0.0113 l -0.0245,-0.01 0.007,0.0141 0.007,0.0137 -0.0174,0.005 c -0.0245,0.007 -0.0668,0.006 -0.11477,-10e-4 -0.0687,-0.0113 -0.13546,-0.0137 -0.2446,-0.008 -0.11146,0.005 -0.16086,0.0113 -0.31231,0.0339 -0.24882,0.0372 -0.45953,0.0983 -0.64203,0.18674 -0.15286,0.0739 -0.24365,0.135 -0.36218,0.24366 -0.0362,0.0334 -0.0771,0.0597 -0.11289,0.0729 l -0.0305,0.0113 0.0198,10e-4 c 0.0113,0.001 0.0202,0.003 0.0202,0.003 0,0.009 -0.0137,0.0277 -0.0278,0.0372 -0.0197,0.0137 -0.0668,0.0311 -0.0847,0.0311 -0.0117,5.3e-4 -0.0117,5.3e-4 -0.003,0.007 0.005,0.004 0.0108,0.008 0.0127,0.008 0.002,10e-4 0.005,0.008 0.007,0.016 0.003,0.0141 0.002,0.0151 -0.0461,0.0419 -0.0715,0.0405 -0.0974,0.0602 -0.11759,0.0908 l -0.0179,0.0268 0.0123,10e-4 c 0.0113,0.001 0.0123,0.003 0.009,0.0165 -0.004,0.0212 -0.0179,0.0334 -0.0546,0.048 -0.0291,0.0118 -0.0329,0.0146 -0.0329,0.0254 0,0.009 -0.008,0.0202 -0.0287,0.0404 -0.0155,0.0155 -0.0348,0.0372 -0.0423,0.048 l -0.0141,0.0202 h 0.0117 c 0.0104,0 0.0113,10e-4 0.008,0.0103 -0.003,0.006 -0.0221,0.0292 -0.0437,0.0517 -0.0357,0.0376 -0.0414,0.0414 -0.0569,0.0414 h -0.0175 v 0.0259 c 0,0.0254 0,0.0259 -0.0136,0.0259 -0.0113,0 -0.016,0.004 -0.0268,0.0221 -0.007,0.0127 -0.0273,0.0385 -0.0452,0.0579 l -0.0325,0.0353 0.0146,10e-4 0.0145,0.001 -0.0399,0.0381 c -0.0221,0.0207 -0.0405,0.0395 -0.0405,0.0419 0,0.003 0.007,0.004 0.016,0.004 0.0127,0 0.0169,0.003 0.0197,0.0103 0.003,0.009 -0.005,0.0193 -0.0607,0.072 l -0.064,0.0611 -10e-4,0.0259 c -0.001,0.0249 -0.003,0.0263 -0.0188,0.0343 -0.01,0.005 -0.0179,0.0108 -0.0179,0.0132 0,0.003 0.006,0.0108 0.0141,0.0193 l 0.0141,0.0155 -0.0555,0.0541 c -0.0527,0.0517 -0.11853,0.12324 -0.11853,0.12888 0,0.001 0.004,0.003 0.009,0.003 0.009,0 0.009,5.3e-4 -0.001,0.0145 -0.005,0.008 -0.0202,0.0202 -0.032,0.0273 -0.0174,0.0108 -0.0273,0.0226 -0.0489,0.0597 -0.0155,0.0259 -0.0348,0.0555 -0.0433,0.0663 -0.009,0.0108 -0.016,0.0207 -0.016,0.0221 0,0.001 0.005,0.003 0.0117,0.003 0.007,0 0.0117,0.001 0.0117,0.002 0,0.0108 -0.0188,0.0385 -0.0419,0.0616 -0.024,0.0231 -0.0287,0.0305 -0.0287,0.0437 v 0.016 l 0.0123,-0.008 c 0.0108,-0.007 0.01,-0.004 -0.008,0.0221 -0.0301,0.0461 -0.0536,0.0959 -0.0705,0.14722 -0.008,0.0259 -0.0259,0.0673 -0.039,0.0917 -0.0179,0.0339 -0.0235,0.0489 -0.0225,0.0621 0,0.0108 -0.003,0.0263 -0.0104,0.04 -0.0151,0.0301 -0.0221,0.0503 -0.0499,0.14487 -0.0465,0.15805 -0.071,0.29963 -0.071,0.41064 0,0.0404 0.003,0.0875 0.005,0.10443 0.002,0.0169 0.007,0.0645 0.0117,0.10583 0.0127,0.12371 0.0235,0.15711 0.10959,0.33633 0.0503,0.10489 0.0983,0.1604 0.28175,0.3255 0.10536,0.095 0.24599,0.16934 0.40827,0.21732 0.21777,0.0635 0.31137,0.0851 0.52915,0.12229 0.14111,0.0245 0.20978,0.0311 0.32501,0.0311 0.11054,0 0.20038,0.008 0.48306,0.0423 0.20602,0.0254 0.47836,0.0583 0.60536,0.0734 0.0569,0.007 0.15052,0.0202 0.2079,0.0305 0.10018,0.0174 0.45624,0.0992 0.49998,0.11477 0.0117,0.004 0.0823,0.0268 0.15664,0.0499 0.0748,0.0235 0.16039,0.0522 0.19049,0.0639 0.0305,0.0113 0.0898,0.0339 0.13264,0.0494 0.0428,0.0155 0.0955,0.0367 0.11759,0.0471 0.0536,0.0249 0.30809,0.13358 0.38381,0.16369 0.0334,0.0137 0.0884,0.0362 0.12182,0.0503 0.11148,0.0475 0.17216,0.0654 0.31044,0.0908 0.14346,0.0259 0.23566,0.0377 0.29962,0.0377 0.0842,0 0.24458,-0.0343 0.35418,-0.0753 0.12653,-0.0475 0.16227,-0.0659 0.16227,-0.0837 0,-0.0108 -0.001,-0.0113 -0.0217,-0.008 -0.0117,0.001 -0.0437,0.01 -0.0715,0.0188 -0.1143,0.0357 -0.23425,0.0536 -0.38193,0.0574 -0.0889,0.002 -0.111,0.001 -0.13876,-0.005 -0.0179,-0.004 -0.0847,-0.0188 -0.14816,-0.0324 -0.1096,-0.024 -0.11901,-0.0268 -0.1952,-0.0607 -0.0437,-0.0197 -0.111,-0.0527 -0.14911,-0.0734 -0.0988,-0.0536 -0.31137,-0.15993 -0.37769,-0.18862 -0.0311,-0.0137 -0.13452,-0.0583 -0.23048,-0.0997 -0.0955,-0.0414 -0.21637,-0.0945 -0.2681,-0.11807 -0.19379,-0.0875 -0.50705,-0.18204 -0.79021,-0.23848 -0.0673,-0.0132 -0.15286,-0.0315 -0.19048,-0.04 -0.056,-0.0132 -0.0983,-0.0183 -0.23048,-0.0301 -0.16981,-0.0146 -0.20932,-0.0174 -0.47506,-0.0334 -0.33866,-0.0202 -0.71118,-0.08 -0.93931,-0.15052 -0.0941,-0.0287 -0.12559,-0.0414 -0.22106,-0.0866 -0.21166,-0.10066 -0.21966,-0.10489 -0.27564,-0.1557 -0.0762,-0.0696 -0.17262,-0.20649 -0.18673,-0.26623 -0.003,-0.0141 -0.0164,-0.0645 -0.0297,-0.11242 l -0.0231,-0.087 -10e-4,-0.12464 v -0.12466 l 0.0151,-0.0471 c 0.008,-0.0259 0.0414,-0.10818 0.0734,-0.18298 l 0.0583,-0.13594 0.0508,-0.0663 c 0.0517,-0.0668 0.079,-0.0936 0.21166,-0.20602 0.04,-0.0339 0.0541,-0.0423 0.096,-0.0593 0.0263,-0.0108 0.0508,-0.0198 0.0536,-0.0198 0.003,0 0.0197,0.009 0.0381,0.0207 0.0249,0.0155 0.0583,0.0471 0.12983,0.1209 0.0531,0.055 0.12275,0.12323 0.15521,0.15145 0.0555,0.048 0.0607,0.0545 0.0931,0.10819 0.0188,0.0315 0.048,0.0837 0.0654,0.11571 0.0268,0.0503 0.0334,0.0597 0.0517,0.0706 0.0113,0.007 0.056,0.0353 0.0988,0.063 0.0673,0.0437 0.087,0.0541 0.13734,0.072 0.0551,0.0197 0.0635,0.0212 0.12041,0.024 0.0607,0.003 0.13029,-0.004 0.22437,-0.0197 0.0329,-0.006 0.0419,-0.005 0.0917,0.003 0.048,0.008 0.0611,0.0127 0.0988,0.0329 0.04,0.0212 0.0456,0.0231 0.0753,0.0231 0.0174,-5.3e-4 0.0456,-0.003 0.0625,-0.007 0.0169,-0.004 0.0414,-0.007 0.055,-0.007 0.0235,0 0.0254,-10e-4 0.04,-0.0207 0.008,-0.0117 0.0179,-0.0207 0.0202,-0.0202 0.005,0.001 0.0541,-0.0292 0.0541,-0.0339 0,-0.002 -0.006,-0.0132 -0.0141,-0.0254 -0.0137,-0.0216 -0.0137,-0.0221 -0.003,-0.0221 0.005,0 0.0225,0.003 0.0377,0.007 0.0145,0.003 0.0268,0.005 0.0268,0.004 0,-0.002 -0.008,-0.0151 -0.0188,-0.0297 -0.0104,-0.0151 -0.0187,-0.0277 -0.0187,-0.0292 0,-0.001 0.009,-0.001 0.0211,5.3e-4 0.0117,0.001 0.0212,0.001 0.0212,-5.3e-4 0,-0.002 -0.005,-0.0145 -0.0127,-0.0287 -0.0113,-0.0235 -0.0151,-0.0268 -0.0457,-0.0414 -0.0297,-0.0137 -0.0395,-0.016 -0.0875,-0.0183 -0.0494,-0.003 -0.0583,-0.005 -0.10254,-0.0225 -0.0414,-0.0164 -0.0616,-0.0216 -0.12935,-0.0311 -0.0447,-0.007 -0.11289,-0.0145 -0.15193,-0.0183 l -0.0715,-0.007 -0.12605,-0.0856 c -0.0696,-0.0471 -0.12841,-0.0875 -0.13077,-0.0898 -0.003,-0.002 0.008,-0.001 0.0235,0.003 0.0724,0.0169 0.29961,0.04 0.39133,0.04 0.0508,0 0.0583,-0.001 0.0988,-0.016 l 0.0442,-0.016 0.0381,0.0113 c 0.0343,0.0108 0.0513,0.0122 0.15852,0.016 0.0659,0.002 0.15474,0.007 0.19756,0.01 0.055,0.004 0.0945,0.004 0.1364,0.001 0.0847,-0.007 0.25164,0.008 0.31513,0.0263 0.0245,0.008 0.0621,0.0151 0.0833,0.0164 0.0353,0.003 0.0381,0.003 0.0357,-0.005 -0.002,-0.007 0.003,-0.009 0.0348,-0.0137 0.0202,-0.003 0.0565,-0.0103 0.0804,-0.016 l 0.0442,-0.0103 -0.0207,-0.0183 c -0.0179,-0.0155 -0.0188,-0.0179 -0.008,-0.016 0.007,0.001 0.0277,0.004 0.0471,0.005 l 0.0348,0.003 -0.0348,-0.0372 c -0.0607,-0.0645 -0.14722,-0.10207 -0.30573,-0.13359 -0.0574,-0.0113 -0.08,-0.0137 -0.14205,-0.0137 -0.0404,0 -0.0785,-0.002 -0.0847,-0.004 -0.006,-0.003 -0.0362,-0.0146 -0.0673,-0.0268 -0.031,-0.0122 -0.0625,-0.0263 -0.0696,-0.0315 l -0.0137,-0.009 0.0207,-0.0141 c 0.0113,-0.008 0.0409,-0.0255 0.0659,-0.0395 l 0.0456,-0.0263 0.0367,0.008 c 0.0202,0.004 0.0748,0.0127 0.12087,0.0193 0.079,0.0108 0.0964,0.0117 0.28693,0.0117 0.17638,0 0.22106,-0.001 0.34147,-0.0117 0.0978,-0.008 0.15805,-0.016 0.20461,-0.0259 0.15239,-0.032 0.36406,-0.0705 0.38946,-0.0705 0.008,0 0.008,0.001 -0.001,0.0127 -0.005,0.007 -0.009,0.0132 -0.008,0.0137 10e-4,0.001 0.0268,-0.007 0.0574,-0.0169 0.0649,-0.0217 0.0682,-0.0221 0.0649,-0.009 -0.003,0.0103 -0.006,0.0113 0.0536,-0.0127 0.003,-0.001 0.0123,0.001 0.0202,0.007 0.0141,0.008 0.0151,0.008 0.0296,-5.3e-4 0.009,-0.005 0.0297,-0.0151 0.0475,-0.0221 l 0.0325,-0.0137 0.0159,0.0122 c 0.0231,0.0175 0.0419,0.0452 0.0659,0.0955 0.0113,0.024 0.0263,0.0522 0.0329,0.0621 l 0.0123,0.0183 0.0155,-0.0118 0.0155,-0.0118 0.01,0.0273 c 0.009,0.0249 0.0123,0.0287 0.0343,0.0395 0.0137,0.007 0.0339,0.0198 0.0447,0.0292 0.0113,0.009 0.0217,0.0169 0.023,0.0169 0.001,0 0.007,-0.007 0.0141,-0.0141 0.006,-0.008 0.0132,-0.0141 0.0151,-0.0141 0.002,0 0.007,0.0127 0.0123,0.0282 0.007,0.0245 0.0117,0.0305 0.0357,0.0494 0.0151,0.0118 0.0428,0.0301 0.0616,0.0405 0.0188,0.0108 0.0442,0.0268 0.056,0.0353 0.0249,0.0183 0.0263,0.0188 0.0377,0.008 0.007,-0.007 0.009,-0.005 0.0217,0.01 0.007,0.009 0.0339,0.032 0.0588,0.0499 0.0249,0.0183 0.056,0.0452 0.0691,0.0597 0.04,0.0461 0.095,0.0908 0.12746,0.10302 0.0254,0.009 0.0376,0.0108 0.0922,0.0108 0.0433,0 0.0776,0.003 0.11102,0.009 0.0343,0.007 0.0677,0.009 0.11428,0.009 0.0593,0 0.0696,0.001 0.10113,0.0123 l 0.0353,0.0127 0.0179,-0.0108 c 0.0117,-0.007 0.0174,-0.0137 0.0174,-0.0212 0,-0.008 0.003,-0.0113 0.0146,-0.0137 0.0287,-0.005 0.0776,-0.003 0.11148,0.007 0.0447,0.0123 0.0602,0.0118 0.0814,-0.003 0.009,-0.007 0.0301,-0.0151 0.0457,-0.0183 0.0235,-0.005 0.032,-0.005 0.0522,-5.3e-4 l 0.024,0.006 v -0.0282 -0.0277 l 0.0164,0.002 c 0.009,0.001 0.0165,0.001 0.0165,5.4e-4 0,-0.004 -0.0457,-0.0753 -0.0517,-0.08 -0.0385,-0.0311 -0.0385,-0.0311 -0.11194,-0.0343 -0.0621,-0.003 -0.072,-0.005 -0.0974,-0.0165 -0.0263,-0.0122 -0.0343,-0.0132 -0.11288,-0.0169 -0.0465,-0.002 -0.12982,-0.009 -0.18485,-0.0155 l -0.10019,-0.0118 -0.0395,-0.0315 c -0.0357,-0.0282 -0.0457,-0.04 -0.0922,-0.10865 -0.0503,-0.0743 -0.0532,-0.08 -0.0851,-0.16746 -0.0235,-0.0649 -0.0409,-0.10301 -0.0607,-0.135 -0.0259,-0.0423 -0.0277,-0.0475 -0.0329,-0.0894 -0.008,-0.0715 -0.008,-0.0729 0.0484,-0.12842 0.0268,-0.0263 0.0696,-0.0706 0.0945,-0.0983 l 0.0456,-0.0499 0.0165,0.005 c 0.0188,0.005 0.0532,0.0437 0.071,0.0795 0.0132,0.0263 0.0151,0.0659 0.004,0.1096 -0.0113,0.0471 -0.0113,0.0471 0.0207,0.0311 l 0.0273,-0.0141 0.004,0.0423 c 0.004,0.0377 0.004,0.0442 -0.004,0.0565 -0.0137,0.0225 -0.0108,0.0475 0.008,0.0743 0.0193,0.0273 0.0188,0.0381 -0.004,0.0922 -0.007,0.0179 -0.0132,0.0372 -0.0123,0.0433 0.001,0.01 0.003,0.009 0.0414,-0.0127 0.0217,-0.0127 0.04,-0.0226 0.0405,-0.0221 0,5.3e-4 -0.001,0.0123 -0.003,0.0259 -0.007,0.0385 -0.005,0.0405 0.0207,0.0207 0.016,-0.0122 0.0278,-0.0268 0.0391,-0.0485 0.0207,-0.0414 0.0508,-0.12888 0.0607,-0.1778 0.007,-0.0377 0.007,-0.0405 -0.002,-0.087 -0.005,-0.0268 -0.0225,-0.0861 -0.0381,-0.13266 -0.0155,-0.0461 -0.0334,-0.10536 -0.0395,-0.1317 -0.008,-0.0343 -0.0179,-0.0579 -0.0348,-0.087 l -0.0231,-0.04 0.006,-0.0489 c 0.004,-0.0269 0.009,-0.0517 0.0127,-0.056 0.0475,-0.0555 0.0804,-0.0997 0.0992,-0.1317 0.0207,-0.0362 0.0225,-0.0423 0.0273,-0.0866 0.006,-0.0635 0.007,-0.0649 0.0197,-0.048 l 0.0113,0.0141 0.005,-0.0212 c 0.003,-0.0118 0.007,-0.0255 0.008,-0.0305 0.001,-0.005 0.0108,-0.0212 0.0207,-0.0353 0.009,-0.0141 0.0202,-0.0353 0.0235,-0.0471 0.003,-0.0118 0.0141,-0.0325 0.0245,-0.0461 0.01,-0.0141 0.0221,-0.0376 0.0263,-0.0527 0.0137,-0.048 0.14015,-0.25353 0.21025,-0.34149 0.0207,-0.0259 0.0503,-0.0649 0.0654,-0.087 0.0207,-0.0297 0.0372,-0.0471 0.0673,-0.0701 0.0423,-0.032 0.087,-0.0866 0.16182,-0.19521 0.0287,-0.0414 0.0527,-0.0677 0.12041,-0.13264 l 0.0842,-0.0809 0.10818,-0.063 c 0.16369,-0.0955 0.1811,-0.10866 0.27,-0.19897 0.0508,-0.0522 0.0936,-0.0908 0.1237,-0.11242 0.0663,-0.0471 0.10442,-0.0898 0.12653,-0.14018 0.0155,-0.0357 0.0175,-0.0447 0.0175,-0.0785 0,-0.0353 -0.001,-0.04 -0.0151,-0.0602 -0.008,-0.0123 -0.0151,-0.0225 -0.0151,-0.0225 0,-5.4e-4 -0.0828,-0.0137 -0.1839,-0.0292 -0.16227,-0.0255 -0.19943,-0.0297 -0.31984,-0.0362 -0.1002,-0.005 -0.17028,-0.0127 -0.26482,-0.0263 -0.10348,-0.0146 -0.16228,-0.0202 -0.30009,-0.0277 -0.0941,-0.005 -0.17826,-0.009 -0.18673,-0.009 -0.008,5.3e-4 -0.0786,0.008 -0.15616,0.0164 z"
            id="path5127"
@@ -2384,9 +2451,9 @@
            inkscape:export-ydpi="600"><tspan
              x="852.91797"
              y="621.93747"
-             id="tspan32903"><tspan
+             id="tspan53358"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32901">Omnivorous</tspan></tspan></text>
+               id="tspan53356">Omnivorous</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,9.9633826,12.288438)"
@@ -2397,9 +2464,9 @@
            inkscape:export-ydpi="600"><tspan
              x="852.91797"
              y="621.93747"
-             id="tspan32907"><tspan
+             id="tspan53362"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32905">Carnivorous</tspan></tspan></text>
+               id="tspan53360">Carnivorous</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,-3.2205404,19.73014)"
@@ -2410,9 +2477,9 @@
            inkscape:export-ydpi="600"><tspan
              x="852.91797"
              y="621.93747"
-             id="tspan32911"><tspan
+             id="tspan53366"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32909">Herbivorous</tspan></tspan></text>
+               id="tspan53364">Herbivorous</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.17638912,0,0,0.17638857,8.1517726,25.108436)"
@@ -2423,9 +2490,9 @@
            inkscape:export-ydpi="600"><tspan
              x="852.91797"
              y="621.93747"
-             id="tspan32915"><tspan
+             id="tspan53370"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32913">Instectivorous</tspan></tspan></text>
+               id="tspan53368">Instectivorous</tspan></tspan></text>
         <path
            style="fill:none;stroke:#000000;stroke-width:0.176;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            d="m 37.475699,143.12889 c -0.04221,18.27684 63.216131,0.0124 68.336331,18.31066 5.28346,-18.21323 67.72565,-0.0283 67.73915,-18.15064"
@@ -2444,44 +2511,46 @@
            inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/PhD/Chapter_1/figures/Fig_pipeline/Figure_S2.png"
            inkscape:export-xdpi="600"
            inkscape:export-ydpi="600"><tspan
-             x="313.44066"
+             x="313.33487"
              y="640.36783"
-             id="tspan32927"><tspan
+             id="tspan53384"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32917">Times of origination and extinction (T</tspan><tspan
-               style="font-family:Rasa;-inkscape-font-specification:Rasa;baseline-shift:sub"
-               id="tspan32919">s</tspan><tspan
+               id="tspan53372">Times of origination and extinction (</tspan><tspan
+               style="font-style:italic"
+               id="tspan53374">T</tspan><tspan
+               style="font-style:italic;font-family:Rasa;-inkscape-font-specification:Rasa;baseline-shift:sub"
+               id="tspan53376">s</tspan><tspan
+               style="font-style:italic;font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan53378">, T</tspan><tspan
+               style="font-style:italic;font-family:Rasa;-inkscape-font-specification:Rasa;baseline-shift:sub"
+               id="tspan53380">e</tspan><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32921">, T</tspan><tspan
-               style="font-family:Rasa;-inkscape-font-specification:Rasa;baseline-shift:sub"
-               id="tspan32923">e</tspan><tspan
-               style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32925">)
+               id="tspan53382">)
 </tspan></tspan><tspan
              x="340.04325"
              y="659.73673"
-             id="tspan32937"><tspan
-               style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32929">Preservation parameters (</tspan><tspan
-               style="font-style:italic"
-               id="tspan32931">q(t), </tspan><tspan
-               style="font-style:italic"
-               id="tspan32933">α</tspan><tspan
-               style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32935">)
+             id="tspan53394"><tspan
+   style="font-family:Rasa;-inkscape-font-specification:Rasa"
+   id="tspan53386">Preservation p</tspan>arameters (<tspan
+   style="font-style:italic"
+   id="tspan53388">q(t), </tspan><tspan
+   style="font-style:italic"
+   id="tspan53390">α</tspan>)<tspan
+   style="font-family:Rasa;-inkscape-font-specification:Rasa"
+   id="tspan53392">
 </tspan></tspan><tspan
              x="309.22266"
              y="679.10562"
-             id="tspan32941"><tspan
+             id="tspan53398"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32939">
+               id="tspan53396">
 </tspan></tspan><tspan
              x="309.22266"
              y="680.51822"
-             id="tspan32945"><tspan
+             id="tspan53402"><tspan
                dx="0 7.7519732 5.7422056 6.4826469 5.8782158 6.4826469 5.8933182 6.5884247 6.5732918 5.1075134 4.0648727 7.0719681 7.9937668 3.2639923 7.4799728 6.6337662 5.7270737 6.6337585 11.711098 6.5581894 4.956398 6.4826508 5.7875061"
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32943">Preservation parameters</tspan></tspan></text>
+               id="tspan53400">Preservation parameters</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,101.57589,23.10322)"
@@ -2494,15 +2563,15 @@
            inkscape:export-ydpi="600"><tspan
              x="143.12696"
              y="711.40036"
-             id="tspan32949"><tspan
+             id="tspan53406"><tspan
                style="font-weight:bold;font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32947">Environment-dependent 
+               id="tspan53404">Environment-dependent 
 </tspan></tspan><tspan
              x="133.11704"
              y="733.61758"
-             id="tspan32953"><tspan
+             id="tspan53410"><tspan
                style="font-weight:bold;font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32951">diversification (MBD model)</tspan></tspan></text>
+               id="tspan53408">diversification (MBD model)</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,-78.02351,-8.5727469)"
@@ -2513,9 +2582,35 @@
            inkscape:export-ydpi="600"><tspan
              x="532.75195"
              y="660.65039"
-             id="tspan32957"><tspan
+             id="tspan53414"><tspan
                style="font-weight:bold;font-size:17.3333px;font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32955">Diversity analyses accounting for preservation</tspan></tspan></text>
+               id="tspan53412">Diversity analyses accounting for preservation</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,16.986062,-8.8176849)"
+           id="text79432-7"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect79434-36);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/PhD/Chapter_1/figures/Fig_pipeline/Figure_S2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             x="532.75195"
+             y="660.65039"
+             id="tspan53418"><tspan
+               style="font-weight:bold;font-size:17.3333px;font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan53416">Age-Dependent Extinction</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,29.382114,-3.9983653)"
+           id="text79432-7-3"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect79434-36-5);fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/PhD/Chapter_1/figures/Fig_pipeline/Figure_S2.png"
+           inkscape:export-xdpi="600"
+           inkscape:export-ydpi="600"><tspan
+             x="532.75195"
+             y="660.65039"
+             id="tspan53422"><tspan
+               style="font-weight:bold;font-size:17.3333px;font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan53420">(ADE model)</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,-110.38613,36.530639)"
@@ -2526,9 +2621,9 @@
            inkscape:export-ydpi="600"><tspan
              x="532.75195"
              y="660.65039"
-             id="tspan32961"><tspan
+             id="tspan53426"><tspan
                style="font-weight:bold;font-size:17.3333px;font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32959">Diversification analyses</tspan></tspan></text>
+               id="tspan53424">Diversification analyses</tspan></tspan></text>
         <path
            style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
            d="m 44.941267,226.41763 -9.84789,17.05704"
@@ -2555,14 +2650,14 @@
            inkscape:export-ydpi="600"><tspan
              x="458.03073"
              y="841.46353"
-             id="tspan32965"><tspan
+             id="tspan53430"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32963">Constrained rate shifts </tspan></tspan><tspan
+               id="tspan53428">Constrained rate shifts </tspan></tspan><tspan
              x="485.93329"
              y="860.83243"
-             id="tspan32969"><tspan
+             id="tspan53434"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32967">(BDCS model) </tspan></tspan></text>
+               id="tspan53432">(BDCS model) </tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,-63.50165,25.145641)"
@@ -2575,14 +2670,14 @@
            inkscape:export-ydpi="600"><tspan
              x="461.86142"
              y="841.46353"
-             id="tspan32973"><tspan
+             id="tspan53438"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32971">Model-estimated rate </tspan></tspan><tspan
+               id="tspan53436">Model-estimated rate </tspan></tspan><tspan
              x="457.90979"
              y="860.83243"
-             id="tspan32977"><tspan
+             id="tspan53442"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32975">shifts (RJMCMC model)</tspan></tspan></text>
+               id="tspan53440">shifts (RJMCMC model)</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,-96.518686,22.497957)"
@@ -2595,24 +2690,24 @@
            inkscape:export-ydpi="600"><tspan
              x="467.79348"
              y="738.55142"
-             id="tspan32981"><tspan
+             id="tspan53446"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32979">Origination and extinction rates </tspan></tspan><tspan
+               id="tspan53444">Origination and extinction rates </tspan></tspan><tspan
              x="465.8079"
              y="757.92032"
-             id="tspan32995"><tspan
+             id="tspan53460"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32983">through time (resp. </tspan><tspan
+               id="tspan53448">through time (resp. </tspan><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32985">λ</tspan><tspan
+               id="tspan53450">λ</tspan><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32987">(</tspan><tspan
+               id="tspan53452">(</tspan><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32989">t</tspan><tspan
+               id="tspan53454">t</tspan><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32991">) </tspan><tspan
+               id="tspan53456">) </tspan><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32993">and µ(t) )</tspan></tspan></text>
+               id="tspan53458">and µ(t) )</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,-4.5479193,2.0286555)"
@@ -2623,31 +2718,31 @@
            inkscape:export-ydpi="600"><tspan
              x="482.27148"
              y="841.30338"
-             id="tspan33015"><tspan
+             id="tspan53480"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan32997">Set of </tspan><tspan
+               id="tspan53462">Set of </tspan><tspan
                style="font-style:italic"
-               id="tspan32999">n</tspan><tspan
+               id="tspan53464">n</tspan><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan33001"> environmental covariates </tspan><tspan
+               id="tspan53466"> environmental covariates </tspan><tspan
                style="font-style:italic"
-               id="tspan33003">[E</tspan><tspan
+               id="tspan53468">[E</tspan><tspan
                style="font-style:italic;font-size:65%;font-family:Rasa;-inkscape-font-specification:Rasa;baseline-shift:sub"
-               id="tspan33005">1</tspan><tspan
+               id="tspan53470">1</tspan><tspan
                style="font-style:italic;font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan33007">(t), ..., E</tspan><tspan
+               id="tspan53472">(t), ..., E</tspan><tspan
                style="font-style:italic;font-size:65%;font-family:Rasa;-inkscape-font-specification:Rasa;baseline-shift:sub"
-               id="tspan33009">n</tspan><tspan
+               id="tspan53474">n</tspan><tspan
                style="font-style:italic"
-               id="tspan33011">(t)]</tspan><tspan
+               id="tspan53476">(t)]</tspan><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan33013">
+               id="tspan53478">
 </tspan></tspan><tspan
              x="482.27148"
              y="860.67227"
-             id="tspan33019"><tspan
+             id="tspan53484"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan33017">
+               id="tspan53482">
 </tspan></tspan></text>
         <g
            id="g200701"
@@ -24993,9 +25088,9 @@
            inkscape:export-ydpi="600"><tspan
              x="675.45117"
              y="690.68814"
-             id="tspan33023"><tspan
+             id="tspan53488"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan33021">The relative contribution of each variable is assessed</tspan></tspan></text>
+               id="tspan53486">The relative contribution of each variable is assessed</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,-81.775499,25.721665)"
@@ -25006,28 +25101,28 @@
            inkscape:export-ydpi="600"><tspan
              x="773.3457"
              y="780.8522"
-             id="tspan33033"><tspan
+             id="tspan53498"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan33025">Environment-dependent rates </tspan><tspan
+               id="tspan53490">Environment-dependent rates </tspan><tspan
                style="font-style:italic"
-               id="tspan33027">λ</tspan><tspan
+               id="tspan53492">λ</tspan><tspan
                style="font-style:italic"
-               id="tspan33029">[</tspan><tspan
+               id="tspan53494">[</tspan><tspan
                style="font-style:italic"
-               id="tspan33031">E1(t), ..., </tspan></tspan><tspan
+               id="tspan53496">E1(t), ..., </tspan></tspan><tspan
              x="773.3457"
              y="800.2211"
-             id="tspan33045"><tspan
+             id="tspan53510"><tspan
                style="font-style:italic"
-               id="tspan33035">En(t)</tspan><tspan
+               id="tspan53500">En(t)</tspan><tspan
                style="font-style:italic"
-               id="tspan33037">] </tspan><tspan
+               id="tspan53502">] </tspan><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan33039"> </tspan><tspan
+               id="tspan53504"> </tspan><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan33041">and </tspan><tspan
+               id="tspan53506">and </tspan><tspan
                style="font-style:italic"
-               id="tspan33043">µ[E1(t), ..., En(t)]</tspan></tspan></text>
+               id="tspan53508">µ[E1(t), ..., En(t)]</tspan></tspan></text>
         <path
            style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
            d="M 90.429622,180.37611 66.60061,204.20513"
@@ -25042,6 +25137,56 @@
            inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/PhD/Chapter_1/figures/Fig_pipeline/Figure_S2.png"
            inkscape:export-xdpi="600"
            inkscape:export-ydpi="600" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,-10.797218,-5.2374931)"
+           id="text11498"
+           style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect11500);fill:#000000;fill-opacity:1;stroke:none"><tspan
+             x="603.28711"
+             y="682.3887"
+             id="tspan53512">+</tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,0.17985046,-1.2066487)"
+           id="text18936"
+           style="font-style:normal;font-weight:normal;font-size:15.1111px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18938);fill:#000000;fill-opacity:1;stroke:none"><tspan
+             x="614.27734"
+             y="669.62564"
+             id="tspan53526"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan53514">Longevities (</tspan><tspan
+               style="font-style:italic"
+               id="tspan53516">s = T</tspan><tspan
+               style="font-style:italic;font-size:65%;baseline-shift:sub"
+               id="tspan53518">s</tspan><tspan
+               style="font-style:italic"
+               id="tspan53520"> - T</tspan><tspan
+               style="font-style:italic;font-size:65%;baseline-shift:sub"
+               id="tspan53522">e</tspan><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan53524">)</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,-8.9061766,3.6774807)"
+           id="text18936-7"
+           style="font-style:normal;font-weight:normal;font-size:15.1111px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18938-8);fill:#000000;fill-opacity:1;stroke:none"><tspan
+             x="614.27734"
+             y="670.23363"
+             id="tspan53542"><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan53528">Extinction probabilities </tspan><tspan
+               style="font-style:italic"
+               id="tspan53530">µ(s</tspan><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan53532">, </tspan><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan53534">𝜙</tspan><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan53536">, </tspan><tspan
+               style="font-family:Rasa;-inkscape-font-specification:Rasa"
+               id="tspan53538">𝜓</tspan><tspan
+               style="font-style:italic"
+               id="tspan53540">)</tspan></tspan></text>
       </g>
     </g>
   </g>
