@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.87"
-     inkscape:cx="244.65241"
-     inkscape:cy="228.60963"
+     inkscape:zoom="1.3222897"
+     inkscape:cx="368.67867"
+     inkscape:cy="201.54434"
      inkscape:window-width="1850"
      inkscape:window-height="1016"
      inkscape:window-x="70"
@@ -22028,30 +22028,30 @@
     </g>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-2.8755512,0.37054829)"
+       transform="matrix(0.26458333,0,0,0.26458333,-0.75888443,7.2497153)"
        id="text44339"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect44341);fill:#000000;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect44341);fill:#000000;fill-opacity:1;stroke:none"
        inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/PhD/Chapter_1/figures/Figure_3/Figure3.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600"><tspan
          x="633.09766"
-         y="96.367188"
-         id="tspan44999"><tspan
-           style="font-size:13.3333px;font-family:Rasa;-inkscape-font-specification:Rasa"
-           id="tspan44997">Extratropical</tspan></tspan></text>
+         y="70.414092"
+         id="tspan15847"><tspan
+           style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+           id="tspan15845">Extratropical</tspan></tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-0.33422356,36.943349)"
+       transform="matrix(0.26458333,0,0,0.26458333,1.2532764,43.82252)"
        id="text44339-6"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect44341-3);fill:#000000;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect44341-3);fill:#000000;fill-opacity:1;stroke:none"
        inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/PhD/Chapter_1/figures/Figure_3/Figure3.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600"><tspan
          x="633.09766"
-         y="96.367188"
-         id="tspan45003"><tspan
-           style="font-size:13.3333px;font-family:Rasa;-inkscape-font-specification:Rasa"
-           id="tspan45001">Tropical</tspan></tspan></text>
+         y="70.414092"
+         id="tspan15851"><tspan
+           style="font-family:Helvetica;-inkscape-font-specification:Helvetica"
+           id="tspan15849">Tropical</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-13.600074,23.787468)"
@@ -22062,9 +22062,9 @@
        inkscape:export-ydpi="600"><tspan
          x="114.26367"
          y="37.476533"
-         id="tspan45007"><tspan
+         id="tspan15855"><tspan
            style="font-weight:bold;fill:#08519c"
-           id="tspan45005">*</tspan></tspan></text>
+           id="tspan15853">*</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-11.542569,49.701445)"
@@ -22075,9 +22075,9 @@
        inkscape:export-ydpi="600"><tspan
          x="114.26367"
          y="37.476533"
-         id="tspan45011"><tspan
+         id="tspan15859"><tspan
            style="font-weight:bold;fill:#08519c"
-           id="tspan45009">*</tspan></tspan></text>
+           id="tspan15857">*</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,1.8769256,23.787082)"
@@ -22088,9 +22088,9 @@
        inkscape:export-ydpi="600"><tspan
          x="114.26367"
          y="37.476533"
-         id="tspan45015"><tspan
+         id="tspan15863"><tspan
            style="font-weight:bold;fill:#08519c"
-           id="tspan45013">*</tspan></tspan></text>
+           id="tspan15861">*</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,1.8769256,27.155819)"
@@ -22101,9 +22101,9 @@
        inkscape:export-ydpi="600"><tspan
          x="114.26367"
          y="37.476533"
-         id="tspan45019"><tspan
+         id="tspan15867"><tspan
            style="font-weight:bold"
-           id="tspan45017">*</tspan></tspan></text>
+           id="tspan15865">*</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-11.601619,52.777427)"
@@ -22114,9 +22114,9 @@
        inkscape:export-ydpi="600"><tspan
          x="114.26367"
          y="37.476533"
-         id="tspan45023"><tspan
+         id="tspan15871"><tspan
            style="font-weight:bold"
-           id="tspan45021">*</tspan></tspan></text>
+           id="tspan15869">*</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,13.201571,52.777082)"
@@ -22127,8 +22127,8 @@
        inkscape:export-ydpi="600"><tspan
          x="114.26367"
          y="37.476533"
-         id="tspan45027"><tspan
+         id="tspan15875"><tspan
            style="font-weight:bold"
-           id="tspan45025">*</tspan></tspan></text>
+           id="tspan15873">*</tspan></tspan></text>
   </g>
 </svg>
