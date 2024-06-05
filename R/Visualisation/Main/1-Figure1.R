@@ -290,3 +290,17 @@ fig_1 <- ggarrange(tot_plot,
           labels = c("(A)", NA), ncol = 2, heights = c(3, 3), widths = c(1.7, 1), hjust = -0.1)
 
 ggsave("./figures/Figure_1/FINAL_FIG_1.pdf", fig_1, width = 210, height = 297, units = "mm")
+
+
+## Additional quantification: number of lineages lost between the mid Eocene and the Early Oligocene
+  # Genera
+g_48 <- ltt_tbl$Diversity[240] # age: 48.01337 Ma
+g_32 <- ltt_tbl$Diversity[81] # age: 32.07574 Ma
+  # Species
+ltt_pth_sp <- "./results_EXTENDED/SALMA_smoothed/species_level/1-Full/MH_sampler/LTT/Full_EOT_sp_occ_SALMA_smoothed_12_Grj_KEEP_se_est_ltt.txt"
+ltt_tbl_sp <- read.table(ltt_pth_sp, header = TRUE)
+sp_48 <- ltt_tbl_sp$diversity[346] # age: 48.08234 Ma
+sp_32 <- ltt_tbl_sp$diversity[186] # age: 32.02970 Ma
+  # Show the results
+cat(paste0("Number of lost genera: ", round(g_48-g_32), "\n"))
+cat(paste0("Number of lost species: ", round(sp_48-sp_32)))
