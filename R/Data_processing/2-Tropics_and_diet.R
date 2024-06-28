@@ -9,7 +9,8 @@
 ################################################################################
 
 library(tidyverse)
-library(raster)
+library(palaeoverse)
+library(terra)
 library(sp)
 library(hash)
 
@@ -61,41 +62,33 @@ closest <- function(lat, ref_lats){
   DisT <- abs(ref_lats - lat)
   return(which.min(DisT))
 }
+
+# reproject Ignacio's maps using the WGS84 projection
+# for(t in seq(from = 5, to = 60, by = 5)){
+#   input <- paste0("./paleoTropics/paleoTropics/Ma_", (t-5), "_moll.grd")
+#   out <- paste0("./paleoTropics/paleoTropics_WGS84/Ma_", (t-5), "_WGS84.tif")
+#   gdalwarp(srcfile = input, dstfile = out, t_srs = "EPSG:4326")
+# }
+
   #crazy loop
 occdf$loc <- NA #loc will be either "E" for "Extra tropical" or "T" for "Tropical"
 for(t in seq(from = 5, to = 60, by = 5)){
+  # Open corresponding tropical/extratropical map
+  corr_map <- terra::rast(paste0("./paleoTropics/paleoTropics_WGS84/Ma_", (t-5), "_WGS84.tif"))
+  # Indices of the corresponding occurrences
   idx <- which((occdf$age < t) & (is.na(occdf$loc)))
-  corr_map <- raster(paste0("./paleoTropics/paleoTropics/Ma_", (t-5), "_moll.grd"))
-  # Super weird coordinates => retrieve proportionality factor with true things in degrees
-  ext <- extent(corr_map)
-  f_long <- ext[2]/180
-  f_lat <- ext[4]/90
-  # Build spatial data point object
-  xy <- cbind(occdf$p_lng[idx]*f_long, occdf$p_lat[idx]*f_lat)
-  xy[,1] <- sapply(X = xy[,1], FUN = function(x){return(x+10*f_long)})
-  sp <- SpatialPoints(xy, proj4string = crs(corr_map))
-  # plot(corr_map)
-  # plot(sp, add = TRUE) 
-  val <- raster::extract(corr_map, sp, method = 'bilinear')
-  xyz <- cbind(xy, val)
-  # Backtrace and attribute to NAs the value of the closest cell in terms of lat
-  ref_lats <- xyz[which(is.na(xyz[,3]) == FALSE),2]
-  for(dx in which(is.na(xyz[,3]))){
-    closest_idx <- closest(xyz[dx,2], ref_lats)
-    subst <- xyz[which(xyz[,2] == ref_lats[closest_idx]) ,3][1]
-    xyz[dx,3] <- subst
-  }
-  occdf$loc[idx] <- xyz[,3]  
+  # Build spatial data vector 
+  xy <- cbind(occdf$p_lng[idx], occdf$p_lat[idx])
+  sp <- terra::vect(xy, crs = crs(corr_map))
+  #plot(corr_map)
+  #plot(sp, add = TRUE)
+  # Extract values from the raster  
+  val <- terra::extract(corr_map, sp, method = 'bilinear')
+  xyz <- cbind(xy, val[,2])
+  occdf$loc[idx] <- xyz[,3]
 }
 occdf$loc[which(occdf$loc > 1)] <- "E" #Extra-tropical
 occdf$loc[which(occdf$loc == 1)] <- "T"
-
-# Backtrace samples from Shapaja (for some reasons, assigned as Extra-tropical whereas not)
-# nb. easy to verify by hand :
-#       1. Extract all samples from Shapaja (Tar-X) => coll nb. 199560 and 199562
-#       2. Re-do the pipeline in the loop using the 40 Ma climate map for these specific samples
-#       3. They are all assigned tropical, whereas (for some reason) it's not the case when using the loop
-occdf$loc[which(occdf$collection_no %in% c(199560, 199562))] <- 'T'
 
 # Indicative message
 cat("Proportion of Tropical occurrences:", round(length(which(occdf$loc == "T"))/nrow(occdf), digits = 2), "\n")
