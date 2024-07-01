@@ -25,3 +25,16 @@ spl$min_ma[idx] <- 27.82
 spl$max_ma[idx] <- 37.71
 
 saveRDS(spl, "9-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_smoothed_Tropics_Diet-CTA-TAR-Olig.RDS")
+
+## Prepare Pyrate input --------------------------------------------------------
+source("~/PyRate/pyrate_utilities.r")
+source("./R/useful/helper_functions.R")
+# Write and save occdf
+gen_lvl <- spl %>%
+  select(genus, gen_lvl_status, min_ma, max_ma) %>%
+  rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
+write.table.lucas(x = gen_lvl,
+                  file = "./data_2023/PyRate/EXTENDED/SALMA_smoothed/genus_level/1-Full/Full_extended_TAR_CTA_redated.txt")
+# Extract ages
+extract.ages("./data_2023/PyRate/EXTENDED/SALMA_smoothed/genus_level/1-Full/Full_extended_TAR_CTA_redated.txt",
+             replicates = 20)
