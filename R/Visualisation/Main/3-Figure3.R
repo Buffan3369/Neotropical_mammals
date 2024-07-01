@@ -240,4 +240,112 @@ ggsave("./figures/Figure_3/RTT_LTT_trop_etrop.pdf",
        height = 200,
        width = 400,
        units = "mm")
-      
+
+
+
+## Plot tropical LTT with Contamana and Shapaja's occurrences assigned a Priabonian-Rupelian age (to fit with Campbell et al. (2021))
+  # get equivalences between indices and taxon names
+source("./R/useful/helper_functions.R")
+occdf <- readRDS("./data_2023/SPECIES_LISTS/9-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_smoothed_Tropics_Diet-CTA-TAR-Olig.RDS")
+trop <- unique(occdf$genus[which(occdf$loc == "T")])
+trop <- sapply(trop, spc_to_udsc)
+
+taxlist <- read.table("./data_2023/PyRate/EXTENDED/SALMA_smoothed/genus_level/1-Full/Full_extended_TAR_CTA_redated_TaxonList.txt",
+                      header = TRUE)
+corr_idx <- which(taxlist$Species %in% trop)
+  # select tropical's TsTe
+div_tot <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/1bis-Full_CTA_TAR_redated/LTT/Full_extended_TAR_CTA_redated_10_Grj_KEEP_se_est.txt",
+                      header = TRUE)
+div_trop <- div_tot[corr_idx,]
+write.table.lucas(div_trop, "./results_EXTENDED/SALMA_smoothed/genus_level/1bis-Full_CTA_TAR_redated/trop_only/LTT/trop_ltt_redated.txt")
+
+  ## bash: python ~/PyRate/PyRate.py -d ./LTT/trop_ltt_redated.txt -ltt 1
+
+## Plot LTT
+ltt_tbl_trop_redated <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/1bis-Full_CTA_TAR_redated/trop_only/LTT/trop_ltt_redated_ltt.txt", header = TRUE)
+ltt_tbl_trop_redated <- ltt_tbl_trop_redated %>%
+  rename("Age" = time, "Diversity" = diversity, "min_Diversity" = m_div, "max_Diversity" = M_div) %>%
+  filter(Age > 24 & Age < 52)
+# plotting adjustments
+ltt_tbl_trop_redated$Age[1] <- 24
+ltt_tbl_trop_redated$Age[nrow(ltt_tbl_trop_redated)] <- 52
+# plot
+ltt_plot_trop_redated <- ltt_plot(ltt_tbl_trop_redated,
+                     stage_x_breaks = FALSE,
+                     manual_x_breaks = seq(25, 50, 5),
+                     axes.labelsize=15,
+                     ticks.labelsize = 12,
+                     x_lab = "Time (Ma)",
+                     y_lab = NULL,
+                     y_breaks = seq(0, 30, 10), 
+                     y_limits = c(0, 35),
+                     display_gts = TRUE,
+                     xlim = xlim,
+                     avg_col = "#006d2c",
+                     ribbon_col = "#74c476",
+                     plot.border = FALSE,
+                     display_EECO_MECO = TRUE,
+                     several_gts = TRUE,
+                     geoscale = gsc1_bis,
+                     geoscale2 = gsc2_bis,
+                     geoscale_height = unit(1, "line"),
+                     geoscale_labelsize = 4,
+                     abbr = list(TRUE, FALSE),
+                     main = "Considering Campbell et al. (2021)") +
+  # Temporal bands
+  annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) + #EOT
+  annotate(geom = "segment", x = 42.5, xend = 45, y = 110, yend = 110, colour = "#006d2c", linewidth = 1) +
+  annotate(geom = "text", x = 39.25, y = 110, label = "Diversity", size = 5) +
+  annotate(geom = "text", x = 31.5, y = 115, label = "EOT", size = 7, colour = "red") +
+  geom_text(aes(x = 51.5, y = 18, label = "EECO"), angle = 90, colour = "bisque4") +
+  geom_text(aes(x = 41.25, y = 18, label = "MECO"), angle = 90, colour = "bisque4")
+
+
+## Tropical non-redated
+
+ltt_tbl_trop <- read.table("./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Tropical/LTT/Tropical_EOT_gen_occ_SALMA_smoothed_10_Grj_KEEP_se_est_ltt.txt", header = TRUE)
+ltt_tbl_trop <- ltt_tbl_trop %>%
+  rename("Age" = time, "Diversity" = diversity, "min_Diversity" = m_div, "max_Diversity" = M_div) %>%
+  filter(Age > 24 & Age < 52)
+# plotting adjustments
+ltt_tbl_trop$Age[1] <- 24
+ltt_tbl_trop$Age[nrow(ltt_tbl_trop)] <- 52
+# plot
+ltt_plot_trop <- ltt_plot(ltt_tbl_trop,
+                          stage_x_breaks = FALSE,
+                          manual_x_breaks = seq(25, 50, 5),
+                          axes.labelsize=15,
+                          ticks.labelsize = 12,
+                          x_lab = "Time (Ma)",
+                          y_breaks = seq(0, 30, 10), 
+                          y_limits = c(0, 35),
+                          display_gts = TRUE,
+                          xlim = xlim,
+                          avg_col = "#006d2c",
+                          ribbon_col = "#74c476",
+                          plot.border = FALSE,
+                          display_EECO_MECO = TRUE,
+                          several_gts = TRUE,
+                          geoscale = gsc1_bis,
+                          geoscale2 = gsc2_bis,
+                          geoscale_height = unit(1, "line"),
+                          geoscale_labelsize = 4,
+                          abbr = list(TRUE, FALSE),
+                          main = "Original ages") +
+  # Temporal bands
+  annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
+  geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) + #EOT
+  annotate(geom = "segment", x = 42.5, xend = 45, y = 110, yend = 110, colour = "#006d2c", linewidth = 1) +
+  annotate(geom = "text", x = 39.25, y = 110, label = "Diversity", size = 5) +
+  annotate(geom = "text", x = 31.5, y = 115, label = "EOT", size = 7, colour = "red") +
+  geom_text(aes(x = 51.5, y = 18, label = "EECO"), angle = 90, colour = "bisque4") +
+  geom_text(aes(x = 41.25, y = 18, label = "MECO"), angle = 90, colour = "bisque4")
+
+## Combine and save
+p <- ggarrange(ltt_plot_trop, ltt_plot_trop_redated, ncol = 2, labels = c("(A)", "(B)"))
+ggsave("./figures/supp_figs/CTA_TAR_redated/compared_LTTs.pdf", p, height = 200, width = 400, units = "mm")

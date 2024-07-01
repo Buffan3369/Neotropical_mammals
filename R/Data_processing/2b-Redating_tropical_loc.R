@@ -24,7 +24,7 @@ idx <- which(spl$locality %in% all_loc)
 spl$min_ma[idx] <- 27.82
 spl$max_ma[idx] <- 37.71
 
-saveRDS(spl, "9-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_smoothed_Tropics_Diet-CTA-TAR-Olig.RDS")
+saveRDS(spl, "./data_2023/SPECIES_LISTS/9-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_smoothed_Tropics_Diet-CTA-TAR-Olig.RDS")
 
 ## Prepare Pyrate input --------------------------------------------------------
 source("~/PyRate/pyrate_utilities.r")
