@@ -101,27 +101,27 @@ tot_plot <- TsTe_ttl %>%
   scale_x_reverse(breaks = seq(from = 25, to = 50, by = 5), labels = seq(from = 25, to = 50, by = 5)) +
   labs(x = "Time (Ma)", y = "Genera") +
   # delimit groups with rectangles and add Jaccard's similarities
-     # Notoungulates
+  # Notoungulates
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Notoungulata[1], ymax = MinMax$Notoungulata[2], fill = "#addd8e", alpha = 0.3) +
   add_phylopic(x = 50, y = MinMax$Notoungulata[1]+18, name = "Trigonostylops", ysize = 11) +
   annotate(geom = "text", x = 50, y = MinMax$Notoungulata[1]+5, label = "Notoungulata", size = 3) +
   annotate(geom = "text", x = 25, y = MinMax$Notoungulata[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Notoungulata")]), size = 4, fontface = "bold") +
-    # Other SANUs
+  # Other SANUs
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Other_SANUs[1], ymax = MinMax$Other_SANUs[2], fill = "#fa9fb5", alpha = 0.3) +
   add_phylopic(x = 50, y = MinMax$Other_SANUs[1]+16, name = "Protheosodon coniferus", ysize = 12) +
   annotate(geom = "text", x = 50, y = MinMax$Other_SANUs[1]+5, label = "Other SANUs", size = 3) +
   annotate(geom = "text", x = 25, y = MinMax$Other_SANUs[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Other_SANUs")]), size = 4, fontface = "bold") +
-    # Rodentia
+  # Rodentia
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Rodentia[1], ymax = MinMax$Rodentia[2], fill = "#7fcdbb", alpha = 0.3) +
   add_phylopic(x = 50, y = MinMax$Rodentia[1]+16, name = "Spalacopus cyanus", ysize = 12) +
   annotate(geom = "text", x = 50, y = MinMax$Rodentia[1]+5, label = "Rodentia", size = 3) +
   annotate(geom = "text", x = 25, y = MinMax$Rodentia[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Rodentia")]), size = 4, fontface = "bold") +
-    # Xenarthra
+  # Xenarthra
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Xenarthra[1], ymax = MinMax$Xenarthra[2], fill = "#fec44f", alpha = 0.3) +
   add_phylopic(x = 50, y = MinMax$Xenarthra[1]+15, name = "Propalaehoplophorus australis", ysize = 10) +
   annotate(geom = "text", x = 50, y = MinMax$Xenarthra[1]+5, label = "Xenarthra", size = 3) +
   annotate(geom = "text", x = 25, y = MinMax$Xenarthra[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Xenarthra")]), size = 4, fontface = "bold") +
-    # Metatheria
+  # Metatheria
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Metatheria[1], ymax = MinMax$Metatheria[2], fill = "#bcbddc", alpha = 0.3) +
   add_phylopic(x = 50, y = MinMax$Metatheria[1]+19, name = "Marmosa", ysize = 18) +
   annotate(geom = "text", x = 50, y = MinMax$Metatheria[1]+5, label = "Metatheria", size = 3) +
@@ -150,7 +150,7 @@ tot_plot <- TsTe_ttl %>%
         panel.background = element_blank())
 
 ## Display diversification rates -----------------------------------------------
-  # 1) RTT plot
+# 1) RTT plot
 source("~/Documents/GitHub/CorsaiR/R/1-extract_param_from_PyRate_outputs.R")
 source("~/Documents/GitHub/CorsaiR/R/2-plotting_facilities.R")
 rtt_path <- "./results_EXTENDED/SALMA_smoothed/genus_level/1-Full/BDS/combined_logs/combined_10_marginal_rates_RTT.r"
@@ -212,7 +212,7 @@ rtt_plt <- rtt_plot(data = rtt_tbl,
   annotate(geom = "text", x = 37.71, y = 0.33, label = "*", colour = "#08519c", size = 15) +
   annotate(geom = "text", x = 37.71, y = 0.28, label = "*", colour = "#a50f15", size = 15)
 
-  # 2) Net plot
+# 2) Net plot
 net_plt <- rtt_plot(data = rtt_tbl,
                     type = "net",
                     x_lab = NULL,
@@ -238,7 +238,7 @@ net_plt <- rtt_plot(data = rtt_tbl,
   annotate(geom = "segment", x = 47, xend = 50, y = 0.35, yend = 0.35, colour = "#504A4B", linewidth = 1) +
   annotate(geom = "text", x = 40.5, y = 0.35, label = "Net diversification\n rate", size = 3)
 
-  # 3) LTT
+# 3) LTT
 ltt_tbl <- read.table(ltt_path, header = TRUE)
 ltt_tbl <- ltt_tbl %>%
   rename("Age" = time, "Diversity" = diversity, "min_Diversity" = m_div, "max_Diversity" = M_div) %>%
@@ -286,21 +286,26 @@ ltt.plot <- ltt_plot(ltt_tbl,
 plotlist <- list(rtt_plt, NULL, net_plt, NULL, ltt.plot)
 
 fig_1 <- ggarrange(tot_plot,
-          ggarrange(plotlist = plotlist, ncol = 1, heights = c(1, 0.1, 1, 0.1, 1.3), labels = c("(B)", NA, "(C)", NA, "(D)"), hjust = -0.3), 
-          labels = c("(A)", NA), ncol = 2, heights = c(3, 3), widths = c(1.7, 1), hjust = -0.1)
+                   ggarrange(plotlist = plotlist, ncol = 1, heights = c(1, 0.1, 1, 0.1, 1.3), labels = c("(B)", NA, "(C)", NA, "(D)"), hjust = -0.3), 
+                   labels = c("(A)", NA), ncol = 2, heights = c(3, 3), widths = c(1.7, 1), hjust = -0.1)
 
 ggsave("./figures/Figure_1/FINAL_FIG_1.pdf", fig_1, width = 210, height = 297, units = "mm")
 
 
 ## Additional quantification: number of lineages lost between the mid Eocene and the Early Oligocene
-  # Genera
+# Genera
 g_48 <- ltt_tbl$Diversity[240] # age: 48.01337 Ma
+g_35 <- ltt_tbl$Diversity[111] # age: 34.98260 Ma
 g_32 <- ltt_tbl$Diversity[81] # age: 32.07574 Ma
-  # Species
+# Species
 ltt_pth_sp <- "./results_EXTENDED/SALMA_smoothed/species_level/1-Full/MH_sampler/LTT/Full_EOT_sp_occ_SALMA_smoothed_12_Grj_KEEP_se_est_ltt.txt"
 ltt_tbl_sp <- read.table(ltt_pth_sp, header = TRUE)
 sp_48 <- ltt_tbl_sp$diversity[346] # age: 48.08234 Ma
+sp_35 <- ltt_tbl_sp$diversity[216] # age: 35.03957 Ma
 sp_32 <- ltt_tbl_sp$diversity[186] # age: 32.02970 Ma
   # Show the results
-cat(paste0("Number of lost genera: ", round(g_48-g_32), "\n"))
-cat(paste0("Number of lost species: ", round(sp_48-sp_32)))
+cat(paste0("Number of genera lost between mid-Eocene and Early Oligocene: ", round(g_48-g_32), " (", round((g_48-g_32)/g_48*100), "%)\n"))
+cat(paste0("Number of genera lost 1My before and after the EOT: ", round(g_35-g_32), " (", round((g_35-g_32)/g_35*100), "%)\n"))
+
+cat(paste0("Number of species lost between mid-Eocene and Early Oligocene: ", round(sp_48-sp_32), " (", round((sp_48-sp_32)/sp_48*100), "%)\n"))
+cat(paste0("Number of species lost 1My before and after the EOT: ", round(sp_35-sp_32), " (", round((sp_35-sp_32)/sp_35*100), "%)\n"))
