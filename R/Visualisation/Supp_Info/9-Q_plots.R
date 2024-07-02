@@ -2,7 +2,7 @@
 # Name: 9-Q_plots.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
-# Aim: Same as Figure 3 but with RJMCMC.
+# Aim: Plot Q rates.
 ################################################################################
 
   ## Utilities
