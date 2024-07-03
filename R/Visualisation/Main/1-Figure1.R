@@ -38,6 +38,11 @@ gsc1 <- gsc1 %>% filter(min_age < 56)
 # Set second geoscale
 gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
 gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
+# SALMA scale
+gsc3 <- read_xlsx("./data_2023/time_bins/SALMA_EOT.xlsx")
+gsc3 <- gsc3 %>% 
+  rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name") %>%
+  mutate(min_age = sapply(min_age, as.numeric), max_age = sapply(max_age, as.numeric))
 
 # DATA Preprocessing
 # Reference dataset for taxonomic equivalents
@@ -133,12 +138,12 @@ tot_plot <- TsTe_ttl %>%
   annotate(geom = "text", x = 35, y = nrow(TsTe_ttl)+0.5, label = " ") +
   annotate(geom = "text", x = 35, y = 0.5, label = " ") +
   # GTS
-  coord_geo(pos = list("bottom", "bottom"),
-            dat = list(gsc2, gsc1),
-            abbrv = list(T, F),
+  coord_geo(pos = list("bottom", "bottom", "bottom"),
+            dat = list(gsc3, gsc2, gsc1),
+            abbrv = list(T, T, F),
             lwd = 0.35,
             center_end_labels = TRUE,
-            height = unit(1, "line"),
+            height = unit(0.75, "line"),
             size = "auto",
             xlim = c(53, 23.03)) +
   theme(axis.text.y = element_blank(),
@@ -252,6 +257,9 @@ gsc1_bis$min_age[1] <- 24
 gsc2_bis <- gsc2 %>% filter(max_age <= 56)
 gsc2_bis$max_age[nrow(gsc2_bis)] <- 52
 gsc2_bis$min_age[1] <- 24
+gsc3_bis <- gsc3 %>% filter(max_age > 24 & min_age < 52)
+gsc3_bis$min_age[1] <- 24
+
 #plot
 ltt.plot <- ltt_plot(ltt_tbl,
                      stage_x_breaks = FALSE,
@@ -272,9 +280,10 @@ ltt.plot <- ltt_plot(ltt_tbl,
                      several_gts = TRUE,
                      geoscale = gsc1_bis,
                      geoscale2 = gsc2_bis,
-                     geoscale_height = unit(1, "line"),
-                     geoscale_labelsize = 4,
-                     abbr = list(TRUE, FALSE)) +
+                     geoscale3 = gsc3_bis,
+                     geoscale_height = unit(0.75, "line"),
+                     geoscale_labelsize = "auto",
+                     abbr = list(TRUE, TRUE, FALSE)) +
   # Temporal bands
   annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
@@ -296,7 +305,7 @@ ggsave("./figures/Figure_1/FINAL_FIG_1.pdf", fig_1, width = 210, height = 297, u
 # Genera
 g_48 <- ltt_tbl$Diversity[240] # age: 48.01337 Ma
 g_35 <- ltt_tbl$Diversity[111] # age: 34.98260 Ma
-g_32 <- ltt_tbl$Diversity[81] # age: 32.07574 Ma
+g_32 <- ltt_tbl$Diversity[81]  # age: 32.07574 Ma
 # Species
 ltt_pth_sp <- "./results_EXTENDED/SALMA_smoothed/species_level/1-Full/MH_sampler/LTT/Full_EOT_sp_occ_SALMA_smoothed_12_Grj_KEEP_se_est_ltt.txt"
 ltt_tbl_sp <- read.table(ltt_pth_sp, header = TRUE)
