@@ -8,28 +8,17 @@
 ## Source helper functions from CorsaiR and additional facilities --------------
 source("~/Documents/GitHub/CorsaiR/R/1-extract_param_from_PyRate_outputs.R")
 source("~/Documents/GitHub/CorsaiR/R/2-plotting_facilities.R")
+source("./R/useful/load_gts.R") # load geological timescales
 library("readxl")
 library("ggpubr")
 
 ## Figure 1 --------------------------------------------------------------------
 # path to rtt files
-rtt_paths <- c("./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/BDCS/Extratropical/",
-               "./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/BDCS/Tropical/")
+rtt_paths <- c("./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/BDCS/Tropical/",
+               "./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/BDCS/Extratropical/")
 # path to ltt files
-ltt_path <- c("./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Extratropical/",
-              "./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Tropical/")
-# first GTS
-gsc1 <- deeptime::epochs
-# second GTS
-gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
-gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
-# weird GTS modification for plotting
-gsc1_bis <- gsc1[5:6,]
-gsc1_bis$max_age[nrow(gsc1_bis)] <- 52
-gsc1_bis$min_age[1] <- 24
-gsc2_bis <- gsc2[12:16,]
-gsc2_bis$max_age[nrow(gsc2_bis)] <- 52
-gsc2_bis$min_age[1] <- 24
+ltt_path <- c("./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Tropical/",
+              "./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Extratropical/")
 # deviation for BDS rates
 delta <- 0.2
 # plot list
@@ -55,7 +44,7 @@ for(k in 1:2){
   display_gts <- FALSE
   # adjust age of shifts
   s <- 0 # just for extra-tropical
-  if(k == 1){
+  if(k == 2){
     s <- 1
   }
   rtt_tbl$time[which(rtt_tbl$time == 49-s)] <- 47.8 + delta
@@ -97,22 +86,26 @@ for(k in 1:2){
                       several_gts = TRUE,
                       geoscale = gsc1_bis,
                       geoscale2 = gsc2_bis,
-                      geoscale_height = unit(1, "line"),
-                      abbr = list(TRUE, FALSE)) +
+                      geoscale3 = gsc3_bis,
+                      geoscale_height = unit(.75, "line"),
+                      abbr = list(TRUE, TRUE, FALSE)) +
     # Temporal bands
     annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     # EOT line
     geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) # EOT
-  #add labels in the first line  
+  #add labels in the first line
   if(i == 1){
+    rtt_plt <- rtt_plt +
+      annotate(geom = "text", x = 31.5, y = 0.52, label = "EOT", size = 7, colour = "red")
+  }
+  if(i == 4){
     rtt_plt <- rtt_plt +
       annotate(geom = "segment", x = 47, xend = 50, y = 0.5, yend = 0.5, colour = "#08519c", linewidth = 1) +
       annotate(geom = "text", x = 41.5, y = 0.5, label = "Origination rate", size = 5) +
       annotate(geom = "segment", x = 47, xend = 50, y = 0.45, yend = 0.45, colour = "#a50f15", linewidth = 1) +
       annotate(geom = "text", x = 41.5, y = 0.45, label = "Extinction rate ", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 0.5, label = "EOT", size = 7, colour = "red") +
       geom_text(aes(x = 51.5, y = 0.35, label = "EECO"), angle = 90, colour = "bisque4") +
       geom_text(aes(x = 41.25, y = 0.35, label = "MECO"), angle = 90, colour = "bisque4")
   }
@@ -147,19 +140,23 @@ for(k in 1:2){
                       several_gts = TRUE,
                       geoscale = gsc1_bis,
                       geoscale2 = gsc2_bis,
-                      geoscale_height = unit(1, "line"),
-                      abbr = list(TRUE, FALSE)) +
+                      geoscale3 = gsc3_bis,
+                      geoscale_height = unit(.75, "line"),
+                      abbr = list(TRUE, TRUE, FALSE)) +
     # Temporal bands
     annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) # EOT
-  #add labels in the first line  
+  #add labels in the first line
   if(i == 2){
+    net_plt <- net_plt +
+      annotate(geom = "text", x = 31.5, y = 0.4, label = "EOT", size = 7, colour = "red")
+  }
+  if(i == 5){
     net_plt <- net_plt +
       annotate(geom = "segment", x = 47, xend = 50, y = 0.35, yend = 0.35, colour = "#504A4B", linewidth = 1) +
       annotate(geom = "text", x = 40.5, y = 0.35, label = "Net diversification\n rate", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 0.4, label = "EOT", size = 7, colour = "red") +
       geom_text(aes(x = 51.5, y = -0.325, label = "EECO"), angle = 90, colour = "bisque4") +
       geom_text(aes(x = 41.25, y = -0.325, label = "MECO"), angle = 90, colour = "bisque4")
   }
@@ -169,9 +166,9 @@ for(k in 1:2){
   plot_list1[[i+j]] <- NULL
   # LTT plot --------------------------
   i <- i+1
-  lgth_break <- 20
+  lgth_break <- 10
   if(k == 2){
-    lgth_break <- 10
+    lgth_break <- 20
   }
   if(i >= 4){
     x_lab <- "Time (Ma)"
@@ -206,20 +203,23 @@ for(k in 1:2){
                        several_gts = TRUE,
                        geoscale = gsc1_bis,
                        geoscale2 = gsc2_bis,
-                       geoscale_height = unit(1, "line"),
-                       geoscale_labelsize = 4,
-                       abbr = list(TRUE, FALSE)) +
+                       geoscale3 = gsc3_bis,
+                       geoscale_height = unit(.75, "line"),
+                       abbr = list(TRUE, TRUE, FALSE)) +
     # Temporal bands
     annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) #EOT
-  #add labels in the first line  
+  #add labels in the first line
   if(i == 3){
+    ltt.plot <- ltt.plot +
+      annotate(geom = "text", x = 31.5, y = 40, label = "EOT", size = 7, colour = "red")
+  }
+  if(i == 6){
     ltt.plot <- ltt.plot +
       annotate(geom = "segment", x = 42.5, xend = 45, y = 110, yend = 110, colour = "#006d2c", linewidth = 1) +
       annotate(geom = "text", x = 39.25, y = 110, label = "Diversity", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 115, label = "EOT", size = 7, colour = "red") +
       geom_text(aes(x = 51.5, y = 18, label = "EECO"), angle = 90, colour = "bisque4") +
       geom_text(aes(x = 41.25, y = 18, label = "MECO"), angle = 90, colour = "bisque4")
     
@@ -288,9 +288,10 @@ ltt_plot_trop_redated <- ltt_plot(ltt_tbl_trop_redated,
                      several_gts = TRUE,
                      geoscale = gsc1_bis,
                      geoscale2 = gsc2_bis,
-                     geoscale_height = unit(1, "line"),
+                     geoscale3 = gsc3_bis,
                      geoscale_labelsize = 4,
-                     abbr = list(TRUE, FALSE),
+                     geoscale_height = unit(.75, "line"),
+                     abbr = list(TRUE, TRUE, FALSE),
                      main = "Considering Campbell et al. (2021)") +
   # Temporal bands
   annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
@@ -331,9 +332,10 @@ ltt_plot_trop <- ltt_plot(ltt_tbl_trop,
                           several_gts = TRUE,
                           geoscale = gsc1_bis,
                           geoscale2 = gsc2_bis,
-                          geoscale_height = unit(1, "line"),
+                          geoscale3 = gsc3_bis,
+                          geoscale_height = unit(.75, "line"),
+                          abbr = list(TRUE, TRUE, FALSE),
                           geoscale_labelsize = 4,
-                          abbr = list(TRUE, FALSE),
                           main = "Original ages") +
   # Temporal bands
   annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +

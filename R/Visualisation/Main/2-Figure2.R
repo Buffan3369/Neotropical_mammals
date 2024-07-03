@@ -171,19 +171,7 @@ hm <- BC_df1 %>%
         panel.border = element_rect(fill="transparent"))
 ggsave("./figures/Figure_2/Bray_Curtis_heatmap.pdf", hm, height = 100, width = 100, units="mm")
 ## Actual plot -----------------------------------------------------------------
-# First geoscale
-gsc1 <- deeptime::epochs
-gsc1 <- gsc1 %>% filter(min_age < 56)
-# Set second geoscale
-gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
-gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
-# Weird modifications for plotting
-gsc1_bis <- gsc1
-gsc1_bis$max_age[nrow(gsc1_bis)] <- 52
-gsc1_bis$min_age[1] <- 24
-gsc2_bis <- gsc2 %>% filter(max_age <= 56)
-gsc2_bis$max_age[nrow(gsc2_bis)] <- 52
-gsc2_bis$min_age[1] <- 24
+source("./R/useful/load_gts.R") # load geological timescales
 # Plot
 fig2 <- ggplot(data = plt_dataframe, aes(x = Age, y = Diversity, colour = Diet)) +
   # Aesthetics
@@ -231,9 +219,9 @@ fig2 <- ggplot(data = plt_dataframe, aes(x = Age, y = Diversity, colour = Diet))
         legend.position = "none",
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.25)) +
   # GTS
-  coord_geo(pos = list("bottom", "bottom"),
-            dat = list(gsc2_bis, gsc1_bis),
-            abbrv = list(T, F),
+  coord_geo(pos = list("bottom", "bottom", "bottom"),
+            dat = list(gsc3_bis, gsc2_bis, gsc1_bis),
+            abbrv = list(T, T, F),
             center_end_labels = TRUE,
             height = unit(1.5, "line"),
             size = "auto",
@@ -245,11 +233,3 @@ ggsave("./figures/Figure_2/LTT_per_guilds.pdf",
        height = 200,
        width = 300,
        units = "mm")
-
-ggsave("./figures/Figure_2/LTT_per_guilds.png",
-       plot = fig2,
-       height = 200,
-       width = 300,
-       units = "mm",
-       dpi = 400)
-

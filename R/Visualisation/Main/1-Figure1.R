@@ -12,6 +12,7 @@ library(rphylopic)
 library(readxl)
 
 source("./R/useful/helper_functions.R")
+source("./R/useful/load_gts.R") # load geological timescales
 
 ## 1-LONGEVITY PLOT ------------------------------------------------------------
 
@@ -30,19 +31,6 @@ Ori_ext <- function(fam, gen_fam_tbl, TsTe_tbl, time = c("Ts", "Te")){
     return(min(TsTe_tmp$te))
   }
 }
-
-# GEOSCALES
-# First geoscale
-gsc1 <- deeptime::epochs
-gsc1 <- gsc1 %>% filter(min_age < 56)
-# Set second geoscale
-gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
-gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
-# SALMA scale
-gsc3 <- read_xlsx("./data_2023/time_bins/SALMA_EOT.xlsx")
-gsc3 <- gsc3 %>% 
-  rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name") %>%
-  mutate(min_age = sapply(min_age, as.numeric), max_age = sapply(max_age, as.numeric))
 
 # DATA Preprocessing
 # Reference dataset for taxonomic equivalents
@@ -250,15 +238,6 @@ ltt_tbl <- ltt_tbl %>%
   filter(Age > 24 & Age < 52)
 ltt_tbl$Age[1] <- 24
 ltt_tbl$Age[nrow(ltt_tbl)] <- 52
-# weird modification for plotting
-gsc1_bis <- gsc1
-gsc1_bis$max_age[nrow(gsc1_bis)] <- 52
-gsc1_bis$min_age[1] <- 24
-gsc2_bis <- gsc2 %>% filter(max_age <= 56)
-gsc2_bis$max_age[nrow(gsc2_bis)] <- 52
-gsc2_bis$min_age[1] <- 24
-gsc3_bis <- gsc3 %>% filter(max_age > 24 & min_age < 52)
-gsc3_bis$min_age[1] <- 24
 
 #plot
 ltt.plot <- ltt_plot(ltt_tbl,

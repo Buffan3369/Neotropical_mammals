@@ -13,22 +13,7 @@ library(readxl)
 
 source("./R/useful/helper_functions.R")
 source("~/Documents/GitHub/CorsaiR/R/2-plotting_facilities.R")
-
-## Geoscales -------------------------------------------------------------------
-# First geoscale
-gsc1 <- deeptime::epochs
-gsc1 <- gsc1 %>% filter(min_age < 56)
-# Set second geoscale
-gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
-gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
-# weird modification for plotting
-gsc1_bis <- gsc1
-gsc1_bis$max_age[nrow(gsc1_bis)] <- 52
-gsc1_bis$min_age[1] <- 24
-gsc2_bis <- gsc2 %>% filter(max_age <= 56)
-gsc2_bis$max_age[nrow(gsc2_bis)] <- 52
-gsc2_bis$min_age[1] <- 24
-
+source("./R/useful/load_gts.R") #load GTS
 
 ## Load and plot temperature data ----------------------------------------------
 Temp_Cnz <- read.table("./data_2023/MBD/raw_environment_correlates/palaeotemperature/merged_veizer_westerhold_Ts.txt",
@@ -85,9 +70,9 @@ ltt.plot <- ltt_plot(ltt_tbl,
                      several_gts = TRUE,
                      geoscale = gsc1_bis,
                      geoscale2 = gsc2_bis,
-                     geoscale_height = unit(1, "line"),
-                     geoscale_labelsize = 4,
-                     abbr = list(TRUE, FALSE)) +
+                     geoscale3 = gsc3_bis,
+                     geoscale_height = unit(.75, "line"),
+                     abbr = list(TRUE, TRUE, FALSE)) +
   # Temporal bands
   annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
