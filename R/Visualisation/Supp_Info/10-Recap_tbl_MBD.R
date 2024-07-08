@@ -7,6 +7,8 @@
 
 source("./R/useful/4b-MBD_accessory.R")
 
+library(hash)
+
 ## Define covariable names -----------------------------------------------------
 covar_idx <- hash("0" = "Self-diversity",
                   "1" = "Plant Diversity",
@@ -26,17 +28,23 @@ for(salma in c("SALMA_smoothed")){
     rid <- paste0("./results_EXTENDED/MBD/", salma, "/genus_level/", dir, "/")
     # 2.5, 50 and 97.5% quantiles for G coefficients
     G_post <- get_post(rid, param = "G")
-    mid_qG <- apply(G_post, MARGIN = 2, FUN = function(x){as.numeric(quantile(x, probs = c(0.5)))})
+    mid_qG <- apply(G_post, MARGIN = 2, FUN = function(x){
+      val <- as.numeric(quantile(x, probs = c(0.5)))
+      return(round(val, digits = 3))
+      })
     HPD_G <- apply(G_post, MARGIN = 2, FUN = function(x){
       q <- as.numeric(quantile(x, probs = c(0.025, 0.975)))
-      return(paste0("[", q[1], "; ", q[2], "]"))
+      return(paste0("[", round(q[1], digits = 3), "; ", round(q[2], digits = 3), "]"))
       })
     # 2.5, 50 and 97.5% quantiles for W coefficients
     W_post <- get_post(rid, param = "W")
-    mid_qW <- apply(W_post, MARGIN = 2, FUN = function(x){as.numeric(quantile(x, probs = c(0.5)))})    
+    mid_qW <- apply(W_post, MARGIN = 2, FUN = function(x){
+      val <- as.numeric(quantile(x, probs = c(0.5)))
+      return(round(val, digits = 3))
+    })    
     HPD_W <- apply(W_post, MARGIN = 2, FUN = function(x){
       q <- as.numeric(quantile(x, probs = c(0.025, 0.975)))
-      return(paste0("[", q[1], "; ", q[2], "]"))
+      return(paste0("[", round(q[1], digits = 3), "; ", round(q[2], digits = 3), "]"))
     })
     # merge all
     merged <- data.frame(Covar = values(covar_idx),
