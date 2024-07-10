@@ -64,4 +64,4 @@ final_df <- final_df %>%
   add_column(prop_singl_sp = prop_singl_sp, .after = "n_singl_sp")
 # save
 #write.csv(final_df, "./data_2023/recap_tbl_EOT.csv", row.names = FALSE)
-write.csv(final_df, "./data_2023/recap_tbl_EOT_extended.csv", row.names = FALSE)
+write.csv(final_df, "./manuscript/Supp_Mat/supp_tbl/recap_tbl_EOT_extended.csv", row.names = FALSE)
