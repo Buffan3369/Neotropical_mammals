@@ -1,0 +1,7 @@
+<script>
+// Iterate over figure caption element
+$( "figure.figure > figcaption.figure-caption" ).each(function(){
+  // store numeric variable and replace by bold version
+  $(this).html($(this).text().replace(/^(Fig\.\s\d{1,2})/, function($1) {return "<b>" + $1 + "</b>";}));
+});
+</script>
