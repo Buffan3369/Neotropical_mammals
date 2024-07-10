@@ -6,6 +6,7 @@
 ################################################################################
 
 library(tidyverse)
+library(readxl)
 source("./R/useful/helper_functions.R")
 
 ## Plant diversity (from Jaramillo et al. (2006)) --------------------------------------------------------------------
