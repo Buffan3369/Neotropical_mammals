@@ -26,6 +26,7 @@
 *.app
 .Rproj.user
 .Rhistory
+.RData
 R/deprecated
 BDT/
 PPTEST/
