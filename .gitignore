@@ -25,19 +25,14 @@
 *.out
 *.app
 .Rproj.user
-#Rhistory
 .Rhistory
-#Unuseful/heavy folders
-data_2020/
-results/
-R/pipeline_from_2020_data/
-R/pipeline_from_scratch/
+R/deprecated
+BDT/
+PPTEST/
+former_results/
 results/
 results_EXTENDED/
-former_results/
 data_2023/simulated_data/
 paleoTropics/
-R/deprecated/
 Bash/deprecated/
-#mac files
-.DS_Store
+
