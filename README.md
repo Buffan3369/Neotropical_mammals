@@ -1,3 +1,5 @@
-### Investigating Neotropical Mammal diversification dynamics throughout the Cenozoic
+### The Fate of South America's endemic mammal fauna in response to the most dramatic Cenozoic climate disruption
 
-We downloaded all South American Mammalia occurrence from [The Paleobiology Database](https://paleobiodb.org/classic/displayDownloadGenerator) by specifying as many options as we thought was useful to us. Details on dataset management procedures can be foud in the **1-download_preprocess.R** script.
+This repository contains the analytical pipeline that goes with the study "The Fate of South America's endemic mammal fauna in response to the most dramatic Cenozoic climate disruption" (*in prep.*).
+
+![](./figures/Figure1/FINAL_FIG_1_cplt.pdf)

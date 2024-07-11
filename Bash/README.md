@@ -7,4 +7,4 @@ The pipeline is organised in the following way:
 	4. Synthetise preservation rates across each retained replicate
 	5. [EVENTUALLY] Overall plot : RTT, LTT and Q_rates
 
-Inside the `simulations` folder, you will find the same analysis philosophy, but with simulated data.
+Inside the other folders, you will find the same analysis philosophy, but with different data.
