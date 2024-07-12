@@ -1,8 +1,9 @@
 ################################################################################
-# Name: 6bis-Split_TsTe_interval.R
+# Name: 6-Split_TsTe_interval.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
-# Aim: Split TsTe tables according to the three periods tested in the MBD model.
+# Aim: Split TsTe tables according to the three periods tested in the MBD model
+#   i.e., Full Eocene-Oligocene, post-EECO, Oligocene.
 ################################################################################
 
 library(tidyverse)

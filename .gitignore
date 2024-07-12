@@ -40,6 +40,14 @@ data_2023/PyRate/cleaning_through_time/
 data_2023/PyRate/ceate_fold.sh
 data_2023/PyRate/scp.sh
 data_2023/PyRate/RESTRICTED
+# Useless figures
+figures/Figure_4_old/
+figures/MBD_outputs/
+figures/MBD_outputs_fragmentation/
+figures/Bulk/
+figures/simulations/
+figures/BDCS/
+
 # deprecated
 hand_cleaning_details/
 README.html

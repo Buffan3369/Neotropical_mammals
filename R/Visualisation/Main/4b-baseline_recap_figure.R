@@ -36,7 +36,7 @@ t_plot <- Temp_Cnz %>%
   annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0)
 
-ggsave("./figures/Figure_4_new/temp_plot.pdf",
+ggsave("./figures/Main/Figure_4/temp_plot.pdf",
        plot = t_plot,
        height = 100,
        width = 150,
@@ -78,7 +78,7 @@ ltt.plot <- ltt_plot(ltt_tbl,
   annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
   annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0)
 
-ggsave("./figures/Figure_4_new/LTT_plot.pdf",
+ggsave("./figures/Main/Figure_4/LTT_plot.pdf",
        plot = ltt.plot,
        height = 150,
        width = 150,

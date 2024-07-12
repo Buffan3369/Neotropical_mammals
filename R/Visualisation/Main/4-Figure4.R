@@ -47,7 +47,7 @@ for(salma in c("SALMA_smoothed")){
                            vjust.star.ori = 0.4,
                            vjust.star.ext = 0.4,
                            time_facetting = FALSE)
-      ggsave(paste0("./figures/Figure_4_new/Full_", salma, "_COMPLETE.pdf"),
+      ggsave(paste0("./figures/Main/Figure_4/Full_", salma, "_COMPLETE.pdf"),
              plot = MBD_viol,
              height = 150,
              width = 350,
@@ -70,7 +70,7 @@ for(salma in c("SALMA_smoothed")){
                               vjust.star.ori = 0.4,
                               vjust.star.ext = 0.4,
                               time_facetting = FALSE)
-        ggsave(paste0("./figures/Figure_4_new/", odr,"_", salma, "_COMPLETE.pdf"),
+        ggsave(paste0("./figures/Main/Figure_4/", odr,"_", salma, "_COMPLETE.pdf"),
                plot = MBD_viol1,
                height = 150,
                width = 350,
@@ -109,7 +109,7 @@ for(salma in c("SALMA_smoothed")){
                            int.labs = c("Eocene", "Oligocene"),
                            vjust.star.ori = 0.4,
                            vjust.star.ext = 0.4)
-      ggsave(paste0("./figures/Figure_4_new/Full_", salma, ".pdf"),
+      ggsave(paste0("./figures/Main/Figure_4/Full_", salma, ".pdf"),
              plot = MBD_viol,
              height = 300,
              width = 400,
@@ -143,7 +143,7 @@ for(salma in c("SALMA_smoothed")){
                             vjust.star.ori = 0.4,
                             vjust.star.ext = 0.4,
                             int.labs = c("Eocene", "Oligocene"))
-      ggsave(paste0("./figures/Figure_4_new/", odr,"_", salma, ".pdf"),
+      ggsave(paste0("./figures/Main/Figure_4/", odr,"_", salma, ".pdf"),
              plot = MBD_viol1,
              height = 300,
              width = 400,
