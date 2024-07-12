@@ -8,8 +8,8 @@ format:
       - left=20mm
     link-citations: true
 authors:
-  - Lucas Buffan$^{1,*}$, Fabien L. Condamine^1^, Narla S. Stutz^1^, François Pujos^2^, Pierre-Olivier Antoine^1^
-  - Laurent Marivaux^1^
+  - Lucas Buffan$^{1,*}$, Fabien L. Condamine$^1$, Narla S. Stutz$^1$, François Pujos$^2$, Pierre-Olivier Antoine$^1$
+  - Laurent Marivaux$^1$
 mainfont: LiberationSans
 bibliography: Supp_refs.bib
 csl: pnas.csl
@@ -23,8 +23,8 @@ editor:
   markdown: 
     wrap: sentence
 ---
-| ^1^ Institut des Sciences de l’Evolution de Montpellier, Université de Montpellier, CNRS, IRD, Place Eugène Bataillon, 34095 Montpellier cedex 5, France
-| ^2^ IANIGLA, CCT–CONICET–Mendoza, Avenida Ruiz Leal s/n, Parque General San Martín, 5500 Mendoza, Argentina
+| $^1$ Institut des Sciences de l’Evolution de Montpellier, Université de Montpellier, CNRS, IRD, Place Eugène Bataillon, 34095 Montpellier cedex 5, France
+| $^2$ IANIGLA, CCT–CONICET–Mendoza, Avenida Ruiz Leal s/n, Parque General San Martín, 5500 Mendoza, Argentina
 | 
 | * **Corresponding author**: Lucas.Buffan@umontpellier.fr
 |
@@ -33,7 +33,7 @@ editor:
 
 - Extended Materials and Methods
 - Manual cleaning details
-- Supp. Figures 1 to 39
+- Supp. Figures 1 to 40
 - Supp. Tables 1 to 8
 - SI references
 
@@ -570,6 +570,15 @@ knitr::include_graphics(path = "../../figures/supp_figs/jaccard_through_time.pdf
 
 knitr::include_graphics(path = "../../figures/supp_figs/evt_vbl_plot.pdf")
 ```
+
+```{r, echo=FALSE}
+#| label: figs40
+#| fig-cap: Convergence of our main PyRate runs.
+
+knitr::include_graphics(path = "../../results_EXTENDED/SALMA_smoothed/genus_level/1-Full/MH_sampler/pyrate_mcmc_logs/ESS_plot.png")
+```
+\clearpage
+We displayed the ESS of the model posterior probability for all the 20 replicates we ran (A). ESS greater than 200 (first-scale indicator of a run that converged, $n=11$) are displayed in green. The proportion of origination and extinction times (resp. $T_S$ and $T_E$) that converged (*i.e*., with ESS > 200) are shown in, for each of our 20 replicates (B). The plot (C) is artefactual as it shows the posterior estimates of the mean death age of our group, together with their lower and upped boundaries of the 95% HPD interval. However, we excluded on purpose the occurrences older that 60 My.
 
 \clearpage
 # Supplementary tables
