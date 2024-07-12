@@ -19,7 +19,7 @@ In this repository, you will find the analytical framework that we developed alo
 
 *Not that this repository does not contain any data. To find the data associated with this study, please download this Figshare repository: [](https://figshare.com/XXX). Then, merge the resulting `data_2023/` folder within the root of this repository.*
 
-`paleoTropics` contains the palaeo-biome maps with a 5-My time step produced by Scotese et al. (2021)[^1] processed by Quintero et al. (2023)[^2] so they finally only divide the world into tropical and extratropical areas.
+* `/paleoTropics/` contains the palaeo-biome maps with a 5-My time step produced by Scotese et al. (2021)^1 processed by Quintero et al. (2023)^2 so they finally only divide the world into tropical and extratropical areas.
 -------
 ## Workflow
 
@@ -27,5 +27,7 @@ Additional scripts for data analysis can be found in the [CorsaiR](https://githu
 
 -------
 References:
-> [^1] C. R. Scotese, H. Song, B. J. W. Mills, D. G. van der Meer, Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Sci. Rev. 215, 103503 (2021).
-> [^2] I. Quintero, M. J. Landis, W. Jetz, H. Morlon, The build-up of the present-day tropical diversity of tetrapods. Proc. Natl. Acad. Sci. 120, e2220672120 (2023).
+<small>
+<sup>1</sup> C. R. Scotese, H. Song, B. J. W. Mills, D. G. van der Meer, Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Sci. Rev. 215, 103503 (2021).    
+<sup>2</sup> I. Quintero, M. J. Landis, W. Jetz, H. Morlon, The build-up of the present-day tropical diversity of tetrapods. Proc. Natl. Acad. Sci. 120, e2220672120 (2023).
+</small>

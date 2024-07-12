@@ -38,7 +38,7 @@ data_2023/homogenised_taxo.csv
 data_2023/recap_tbl_EOT.csv
 # deprecated
 hand_cleaning_details/
-
+README.html
 R/deprecated
 R/hypso_playaround.R
 # other heavy stuff
