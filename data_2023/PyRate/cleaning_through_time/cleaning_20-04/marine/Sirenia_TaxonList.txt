@@ -1,8 +1,0 @@
-Species	Status
-Dioplotherium	extinct
-Metaxytherium	extinct
-Nanosiren	extinct
-Potamosiren	extinct
-Ribodon	extinct
-Rytiodus	extinct
-Trichechus	extant

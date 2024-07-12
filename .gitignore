@@ -36,6 +36,10 @@ data_2023/extant_mammals.csv
 data_2023/raw_taxo.xlsx
 data_2023/homogenised_taxo.csv
 data_2023/recap_tbl_EOT.csv
+data_2023/PyRate/cleaning_through_time/
+data_2023/PyRate/ceate_fold.sh
+data_2023/PyRate/scp.sh
+data_2023/PyRate/RESTRICTED
 # deprecated
 hand_cleaning_details/
 README.html

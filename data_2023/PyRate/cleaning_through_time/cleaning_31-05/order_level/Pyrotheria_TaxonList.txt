@@ -1,9 +1,0 @@
-Species	Status
-Baguatherium	extinct
-Colombitherium	extinct
-Griphodon	extinct
-Hondonadia	extinct
-Propyrotherium	extinct
-Proticia	extinct
-Pyrotherium	extinct
-Rosendolops	extinct

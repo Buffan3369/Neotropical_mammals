@@ -1,4 +1,0 @@
-Species	Status
-Equus	extant
-Hippidion	extinct
-Tapirus	extant
