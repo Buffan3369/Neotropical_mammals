@@ -1,6 +1,5 @@
 # The Fate of South America's endemic mammal fauna in response to the most dramatic Cenozoic climate disruption
 
-<p style='text-align: justify;'>
 
 Authors: [Lucas Buffan](lucas.buffan@umontpellier.fr), Fabien L. Condamine, Narla S. Stutz, François Pujos, Pierre-Olivier Antoine, Laurent Marivaux.
 
@@ -34,7 +33,7 @@ In this repository, you will find the analytical framework that we developed alo
 * `/figures/` is divided into two sub-folders
     * `/figures/Main/` contains the four panels of the main text
     * `/figures/supp_figs/` contains all the figures present in the Supporting Information Appendix.
-* 
+* `/manuscript/` contains the manuscript and supporting information.
 * `/paleoTropics/` contains the palaeo-biome maps with a 5-My time step produced by Scotese et al. (2021)<sup>1</sup> processed by Quintero et al. (2023)<sup>2</sup> so they finally only divide the world into tropical and extratropical areas.
 
 
@@ -52,5 +51,3 @@ References:
 <sup>1</sup> C. R. Scotese, H. Song, B. J. W. Mills, D. G. van der Meer, Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Sci. Rev. 215, 103503 (2021). <br>
 <sup>2</sup> I. Quintero, M. J. Landis, W. Jetz, H. Morlon, The build-up of the present-day tropical diversity of tetrapods. Proc. Natl. Acad. Sci. 120, e2220672120 (2023).
 </small>
-
-</p>
