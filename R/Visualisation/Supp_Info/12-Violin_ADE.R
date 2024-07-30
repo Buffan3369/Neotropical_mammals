@@ -43,4 +43,7 @@ full %>%
   ggplot(mapping = aes(x = x, y = w_shape, colour = phase)) +
   geom_violin(draw_quantiles = c(0.025, 0.5, 0.975)) +
   geom_hline(yintercept = 1) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()) +
   coord_flip()
