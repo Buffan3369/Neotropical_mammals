@@ -33,7 +33,7 @@ editor:
 
 - Extended Materials and Methods
 - Manual cleaning details
-- Supp. Figures 1 to 40
+- Supp. Figures 1 to 41
 - Supp. Tables 1 to 8
 - SI references
 
@@ -381,7 +381,7 @@ knitr::include_graphics(path = "../../figures/supp_figs/rtt_BDCS.pdf")
 ```{r, echo=FALSE}
 #| label: figs8
 #| fig-cap: "Diversification and diversity dynamics of South American Mammals from the Early Eocene to the Late Oligocene. Trends are represented for all genera (A-C), all species (D-F), extratropical (G-I) and tropical genera (J-L). Light orange bands represent the Early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated as EECO and MECO. Blue and red stars respectively represent significant shifts in origination and extinction rates."
-knitr::include_graphics(path = "../../figures/Figure_1/Figure1.pdf")
+knitr::include_graphics(path = "../../figures/Main/Figure_1/Figure1.pdf")
 ```
 
 ```{r, echo=FALSE}
@@ -537,13 +537,13 @@ knitr::include_graphics(path = "../../figures/supp_figs/CTA_TAR_redated/compared
 ```{r, echo=FALSE}
 #| label: figs34
 #| fig-cap: "Bayesian estimation of correlation parameters on origination (blue) and extinction (red) rates with palaeoenvironmental covariates by considering our dataset as a whole throughout our study period. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by vertical lines, respectively from left to right. The interval between the leftmost and the rightmost vertical line of each parameter is therefore its 95% Highest Posterior Density (HPD) interval. Significant correlation coefficients, *i.e*., having shrinkage weights > 0.5 and not including 0 in their 95% HPD are highlighted by stars and darker shades."
-knitr::include_graphics(path = "../../figures/Figure_4_new/Full_SALMA_smoothed_COMPLETE.pdf")
+knitr::include_graphics(path = "../../figures/Main/Figure_4/Full_SALMA_smoothed_COMPLETE.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs35
 #| fig-cap: "Bayesian estimation of correlation parameters on origination (blue) and extinction (red) rates with palaeoenvironmental covariates by constraining our analyses to notoungulate taxa. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by vertical lines, respectively from left to right. The interval between the leftmost and the rightmost vertical line of each parameter is therefore its 95% Highest Posterior Density (HPD) interval. Significant correlation coefficients, *i.e*., having shrinkage weights > 0.5 and not including 0 in their 95% HPD are highlighted by stars and darker shades."
-knitr::include_graphics(path = "../../figures/Figure_4_new/Noto_panel_with_silhouette.pdf")
+knitr::include_graphics(path = "../../figures/Main/Figure_4/Noto_panel_with_silhouette.pdf")
 ```
 
 ```{r, echo=FALSE}
