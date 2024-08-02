@@ -34,7 +34,7 @@ editor:
 - Extended Materials and Methods
 - Manual cleaning details
 - Supp. Figures 1 to 41
-- Supp. Tables 1 to 8
+- Supp. Tables 1 to 9
 - SI references
 
 **Other supporting materials for this manuscript include the following:**
@@ -122,7 +122,7 @@ This model assumes that taxon extinction probability is only a function of its a
 The presence (or not) of an ADE in our data is given by the value of the shape ($\phi$) parameter of the Weibull function: if $\phi>1$, extinction probability increases with taxon age; if $\phi<1$ extinction probability decreases with taxon age; and if $\phi=1$, no ADE can be characterized.
 In practice, we consider that the shape parameter significantly differs from one when one is not included in its 95% HPD.
 We ensured to fit this model within time windows with a relatively constant extinction rate.
-As we only retrieved one significant shift in extinction rate around 39 Ma (**Fig 1** and **S8-11**), we therefore investigated the effect of the ADE between 56 and 39 Ma, and between 39 and 23.03 Ma (`-filter` option).
+As we only retrieved one significant shift in extinction rate around 39 Ma (**Fig 1** and **S8-11**), we therefore investigated the effect of the ADE between 56 and 39 Ma, and between 39 and 23.03 Ma (`-filter` option) (**Fig S41**).
 Just like in the previous section, we set a time-variable preservation process (`-qShift` option) and allowed for preservation rate heterogeneity across taxa (`-mG` option).
 We ran the model for 40 million MCMC generations and sampled every 40,000 iterations.
 Parameters were considered convergent when their ESS was above 200.
@@ -580,6 +580,13 @@ knitr::include_graphics(path = "../../results_EXTENDED/SALMA_smoothed/genus_leve
 \clearpage
 We displayed the ESS of the model posterior probability for all the 20 replicates we ran (A). ESS greater than 200 (first-scale indicator of a run that converged, $n=11$) are displayed in green. The proportion of origination and extinction times (resp. $T_S$ and $T_E$) that converged (*i.e*., with ESS > 200) are shown in, for each of our 20 replicates (B). The plot (C) is artefactual as it shows the posterior estimates of the mean death age of our group, together with their lower and upped boundaries of the 95% HPD interval. However, we excluded on purpose the occurrences older that 60 My.
 
+```{r, echo=FALSE}
+#| label: figs41
+#| fig-cap: Posterior estimate of the shape parameter of the Weibull distribution for the analyses of the Early and late occurrence datasets, with constant extinction rate. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by black horizontal lines, respectively from bottom to top.
+
+knitr::include_graphics(path = "../../figures/supp_figs/ADE/Fig_s41.pdf")
+```
+
 \clearpage
 # Supplementary tables
 ```{r, echo=FALSE}
@@ -709,6 +716,16 @@ colnames(tbl_ext) <- c('Covariate', '$G_{\\mu}$', '$G_{\\mu}$ 95% HPD', '$w_{G, 
 knitr::kable(tbl_ext, align = 'c')
 ```
 
+```{r, echo=FALSE}
+#| label: tbl9
+#| tbl-cap: Median estimates and associated 90 and 95% Highest Posterior Density (HPD) intervals of the Weibull shape parameters for the Age-Dependent Extinction analysis of the "early" and "late" datasets (cf. Fig. S41). We can see that one is included in the 95% HPD of both parameters. However, in the case of the "late" dataset, the upper boundary of the 95% HPD is almost equal to one, and one is not included in the 90% HPD of the parameter, meaning that at least 90% of the distribution differs from one, which we judge large enough to claim for a significant effect of genus age on its extinction probability.
+#| 
+tbl <- read.table("../../figures/supp_figs/ADE/recap_tbl_w_shape.txt", header = T, sep = "\t")
+# Better header
+colnames(tbl) <- c('Phase', 'Median estimate', '95% HPD', '90% HPD')
+# Display
+knitr::kable(tbl, align = 'c')
+```
 \clearpage
 # SI References
 
