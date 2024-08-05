@@ -12,7 +12,7 @@ This repository contains the analytical pipeline that goes with the study "The F
 -------
 
 ## Study details
-This study aims at exploring the diversification dynamics of South American Mammals (SAM) and their likely drivers throughout the Eocene-Oligocene interval (*ca.* 56 $-$ 23 Ma), a period encompassing drastic environmental changes, in particular the Eocene-Oligocene Transition.    
+This study aims at exploring the diversification dynamics of South American Mammals (SAM) and their likely drivers throughout the Eocene--Oligocene interval (*ca.* 56 $-$ 23 Ma), a period encompassing drastic environmental changes, in particular the Eocene-Oligocene Transition.    
 For that purpose, we rely on a densely-revised fossil occurrence database and the cutting-edge Bayesian frameworks of diversification inference from fossil data implemented in [PyRate](https://github.com/dsilvestro/PyRate.git).    
 In this repository, you will find the analytical framework that we developed along this work.
 
@@ -20,7 +20,7 @@ In this repository, you will find the analytical framework that we developed alo
 
 ## Repository structure
 
-*Note that this repository does not contain any data output (only figures). To find the data associated with this study, (i.e., occurrence datasets), please download this Figshare repository: <https://doi.org/10.6084/m9.figshare.26495989>. Then, rename the resulting `/Occurrence_data/` folder as  `/SPECIES_LISTS/` and merge it within the `/data_2023/` folder of this repository`*   
+*Note that this repository does not contain any data output (only figures). To find the data associated with this study, (i.e., occurrence datasets), please download this Figshare repository: <https://doi.org/10.6084/m9.figshare.26495989>. Then, rename the resulting `/Occurrence_data/` folder as  `/SPECIES_LISTS/` and merge it within the `/data_2023/` folder of this repository*   
 *Also, importantly, due to size limitations, we could not make the outputs from the PyRate software available (e.g. mcmc log files), but they are fully available under request.*
 
 * `/data_2023/` contains "light" data, *i.e*,. [environment predictors](https://github.com/Buffan3369/Neotropical_mammals/tree/main/data_2023/MBD) for MBD analyses, [PyRate inputs](https://github.com/Buffan3369/Neotropical_mammals/tree/main/data_2023/PyRate/EXTENDED), [time bins](https://github.com/Buffan3369/Neotropical_mammals/tree/main/data_2023/time_bins) and some minor things related to systematics.
