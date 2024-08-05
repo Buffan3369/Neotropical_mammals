@@ -39,9 +39,8 @@ editor:
 
 **Other supporting materials for this manuscript include the following:**
 
-- Raw occurrence data (Raw.RDS)
-- Cleaned occurrence data (Cleaned.RDS)
-- Dataset S1
+- Dataset S1 (cleaned fossil occurrence dataset with SALMA kept)
+- Dataset S2 (cleaned fossil occurrence dataset with SALMA smoothed)
   
 \newpage
 # Supplementary text
@@ -61,7 +60,7 @@ Then, based on the literature and the expertise of the co-authors, we manually r
 This “manual cleaning” aimed at correcting errors in the database, mostly regarding the age range and the taxonomic assignment (*e.g*., synonymized genus names, typos, missing elements of open nomenclature) of each occurrence (**Fig. S2**).
 We intended to make this step as clear as possible by documenting most of the changes we made, and why (*see Manual Occurrence Cleaning part*).
 Finally, in order to decrease the number of parameters to estimate, we restricted our dataset to the late Paleocene-Early Miocene (60--16 Ma).
-The final dataset comprised 3,384 occurrences, including 529 genera and 1,108 identified species (see **Tab. S1** for a more detailed description of the data).
+The final dataset comprised 3,384 occurrences, including 529 genera and 1,108 identified species (see **Tab. S1** for a more detailed description of the data). Occurrence data can be found in **Datasets S1** and **S2**.
 
 ### Further input treatments
 
@@ -137,14 +136,14 @@ It ranges from zero to one, and the closer it gets to one, the more similar the 
 Conversely, we compared sub-epoch-level functional compositions of the mammal assemblages by using the Bray-Curtis dissimilarity index, accounting for variations in relative abundance among the four trophic classes we defined based on dental ecomorphotypes (carnivorous, herbivorous, omnivorous, and insectivorous).
 Considering two assemblages $A$ and $B$, $p$ classes (here, $p=4$), and $n(A,i)$ and $n(B,i)$ the respective numbers of taxa belonging to the class $i$ within the assemblages $A$ and $B$, this index is expressed as: $$BC = 1- \frac{2\sum^p_{i=1}min(n(A, i), n(B, i))}{\sum^p_{i=1}(n(A, i) + n(B, i))}$$ It also ranges from zero to one, but in that case, values closer to one indicate increasingly dissimilar assemblages.
 
-### Multivariate Birth Death (MBD) model
+### Multivariate Birth Death (MBD) model and Selection of environmental variables
 
 To assess the impact of environmental factors on the diversification patterns of SAMs during the EOT, we ran a Multivariate Birth-Death (MBD) model in PyRate @lehtonen_environmentally_2017.
 This model carries out two independent correlations involving a set of environmental covariates (that can be biotic and/or abiotic) and diversification rates newly-estimated from empirical $T_s$ and $T_e$: one with the origination rate ($\lambda$), and the other with the extinction rate ($\mu$).
 Each variable is therefore assigned to two correlation coefficients, one for the correlation with $\lambda$ ($G_{\lambda, i}$, where $i$ is the index of the variable in the set of covariates) and the other for the correlation with $\mu$ ($G_{\mu, i}$).
 An MCMC algorithm jointly estimates baseline origination and extinction rates and all the $G_{\lambda}$ and $G_{\mu}$, while controlling for over-parameterization.
 Each $G_{\lambda,i}$ and $G_{\mu,i}$ is assigned a shrinkage weight ($w(G_{\lambda,i})$ or $w(G_{\mu,i})$), ranging between 0 and 1, testing its significance -- hence, the significance of the correlation itself.
-A correlation of coefficient $G_{\lambda, 1}$ is considered significant if $w(G_{\lambda, 1}) > 0.5$ and if the 95% Highest Posterior Density (HPD) interval of $G_{\lambda, 1}$ does not include 0.
+A correlation of coefficient $G_{\lambda, 1}$ is considered significant if $w(G_{\lambda, 1}) > 0.5$ and if a sufficiently high proportion of its posterior density does not overlap with 0.
 We selected seven abiotic and one biotic variable that appeared relevant to our case study (**Tab. S2**).
 The abiotic variables included two global and four local-scale ones.
 Temperature is known for being a major actor in the diversification of a wide range of clades [*e.g*., @condamine_assessing_2019].
@@ -582,7 +581,7 @@ We displayed the ESS of the model posterior probability for all the 20 replicate
 
 ```{r, echo=FALSE}
 #| label: figs41
-#| fig-cap: Posterior estimate of the shape parameter of the Weibull distribution for the analyses of the Early and late occurrence datasets, with constant extinction rate. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by black horizontal lines, respectively from bottom to top.
+#| fig-cap: Posterior estimate of the shape parameter of the Weibull distribution for the ADE analyses of the 'Early' and 'Late' occurrence datasets, with constant extinction rate. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by black horizontal lines, respectively from bottom to top.
 
 knitr::include_graphics(path = "../../figures/supp_figs/ADE/Fig_s41.pdf")
 ```
