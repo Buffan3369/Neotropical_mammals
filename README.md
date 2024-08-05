@@ -12,7 +12,7 @@ This repository contains the analytical pipeline that goes with the study "The F
 -------
 
 ## Study details
-This study aims at exploring the diversification dynamics of South American Mammals (SAM) and their likely drivers throughout the Eocene--Oligocene interval (*ca.* 56 $-$ 23 Ma), a period encompassing drastic environmental changes, in particular the Eocene-Oligocene Transition.    
+This study aims at exploring the diversification dynamics of South American Mammals (SAM) and their likely drivers throughout the Eocene$-$Oligocene interval (*ca.* 56 $-$ 23 Ma), a period encompassing drastic environmental changes, in particular the Eocene-Oligocene Transition.    
 For that purpose, we rely on a densely-revised fossil occurrence database and the cutting-edge Bayesian frameworks of diversification inference from fossil data implemented in [PyRate](https://github.com/dsilvestro/PyRate.git).    
 In this repository, you will find the analytical framework that we developed along this work.
 
