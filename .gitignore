@@ -29,6 +29,8 @@
 .RData
 # Useless data
 data_2023/simulated_data/
+data_2023/SPECIES_LISTS/
+data_2023/systematics/
 data_2023/cleaning_Xenarthra/
 data_2023/Noto_hypso/
 data_2023/1-fragmentation_cenozoic_500ky_step.txt
