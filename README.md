@@ -39,12 +39,6 @@ In this repository, you will find the analytical framework that we developed alo
 
 -------
 
-## Workflow
-
-Additional scripts for processing PyRate's outputs (*i.e*., automatised convergence checks, automatised preservation model tests, plotting facilities) can be found in the [CorsaiR](https://github.com/Alexis-Marion/CorsaiR) repository.
-
--------
-
 References:    
 
 <small>
