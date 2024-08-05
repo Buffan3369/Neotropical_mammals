@@ -20,7 +20,8 @@ In this repository, you will find the analytical framework that we developed alo
 
 ## Repository structure
 
-*Note that this repository does not contain any data output (only figures). To find the data associated with this study, (e.g., occurrence datasets, PyRate mcmc log files), please download this Figshare repository: https://figshare.com/XXX. Then, merge the resulting `/results_EXTENDED/` folder within the root of this repository, and the `/SPECIES_LISTS/` folder within the `/data_2023/` folder.*
+*Note that this repository does not contain any data output (only figures). To find the data associated with this study, (i.e., occurrence datasets), please download this Figshare repository: <https://doi.org/10.6084/m9.figshare.26495989>. Then, rename the resulting `/Occurrence_data/` folder as  `/SPECIES_LISTS/` and merge it within the `/data_2023/` folder of this repository`*   
+*Also, importantly, due to size limitations, we could not make the outputs from the PyRate software available (e.g. mcmc log files), but they are fully available under request.*
 
 * `/data_2023/` contains "light" data, *i.e*,. [environment predictors](https://github.com/Buffan3369/Neotropical_mammals/tree/main/data_2023/MBD) for MBD analyses, [PyRate inputs](https://github.com/Buffan3369/Neotropical_mammals/tree/main/data_2023/PyRate/EXTENDED), [time bins](https://github.com/Buffan3369/Neotropical_mammals/tree/main/data_2023/time_bins) and some minor things related to systematics.
 * `/PPTEST/` contains the output of our preservation model tests.

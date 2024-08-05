@@ -39,9 +39,8 @@ editor:
 
 **Other supporting materials for this manuscript include the following:**
 
-- Dataset S1 (cleaned fossil occurrence dataset with SALMA kept)
-- Dataset S2 (cleaned fossil occurrence dataset with SALMA smoothed)
-  
+- Raw and cleaned occurrence data (<https://doi.org/10.6084/m9.figshare.26495989>)
+
 \newpage
 # Supplementary text
 ## 1. Extended Materials and methods
@@ -60,7 +59,7 @@ Then, based on the literature and the expertise of the co-authors, we manually r
 This “manual cleaning” aimed at correcting errors in the database, mostly regarding the age range and the taxonomic assignment (*e.g*., synonymized genus names, typos, missing elements of open nomenclature) of each occurrence (**Fig. S2**).
 We intended to make this step as clear as possible by documenting most of the changes we made, and why (*see Manual Occurrence Cleaning part*).
 Finally, in order to decrease the number of parameters to estimate, we restricted our dataset to the late Paleocene-Early Miocene (60--16 Ma).
-The final dataset comprised 3,384 occurrences, including 529 genera and 1,108 identified species (see **Tab. S1** for a more detailed description of the data). Occurrence data can be found in **Datasets S1** and **S2**.
+The final dataset comprised 3,384 occurrences, including 529 genera and 1,108 identified species (see **Tab. S1** for a more detailed description of the data). Occurrence data can be found at <https://doi.org/10.6084/m9.figshare.26495989>.
 
 ### Further input treatments
 
