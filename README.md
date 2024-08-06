@@ -4,7 +4,7 @@
 Authors: [Lucas Buffan](lucas.buffan@umontpellier.fr), Fabien L. Condamine, Narla S. Stutz, François Pujos, Pierre-Olivier Antoine, Laurent Marivaux.
 
 To cite the paper: <br>
-> L. Buffan, F. L. Condamine, N. S. Stutz, F. Pujos, P-O. Antoine, L. Marivaux (202X). The Fate of South America's endemic mammal fauna in response to the most dramatic Cenozoic climate disruption.
+> L. Buffan, F. L. Condamine, N. S. Stutz, F. Pujos, P.-O. Antoine, L. Marivaux (202X). The Fate of South America's endemic mammal fauna in response to the most dramatic Cenozoic climate disruption.
 
 This repository contains the analytical pipeline that goes with the study "The Fate of South America's endemic mammal fauna in response to the most dramatic Cenozoic climate disruption" (*in prep.*).
 
