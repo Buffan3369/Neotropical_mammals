@@ -12,7 +12,7 @@ This repository contains the analytical pipeline that goes with the study "The F
 -------
 
 ## Study details
-This study aims at exploring the diversification dynamics of South American Mammals (SAM) and their likely drivers throughout the Eocene$-$Oligocene interval (*ca.* 56 $-$ 23 Ma), a period encompassing drastic environmental changes, in particular the Eocene-Oligocene Transition.    
+This study aims at exploring the diversification dynamics of South American Mammals (SAM) and their likely drivers throughout the Eocene $-$ Oligocene interval (*ca.* 56 $-$ 23 Ma), a period encompassing drastic environmental changes, in particular the Eocene-Oligocene Transition.    
 For that purpose, we rely on a densely-revised fossil occurrence database and the cutting-edge Bayesian frameworks of diversification inference from fossil data implemented in [PyRate](https://github.com/dsilvestro/PyRate.git).    
 In this repository, you will find the analytical framework that we developed along this work.
 
@@ -26,7 +26,7 @@ In this repository, you will find the analytical framework that we developed alo
 * `/data_2023/` contains "light" data, *i.e*,. [environment predictors](https://github.com/Buffan3369/Neotropical_mammals/tree/main/data_2023/MBD) for MBD analyses, [PyRate inputs](https://github.com/Buffan3369/Neotropical_mammals/tree/main/data_2023/PyRate/EXTENDED), [time bins](https://github.com/Buffan3369/Neotropical_mammals/tree/main/data_2023/time_bins) and some minor things related to systematics.
 * `/PPTEST/` contains the output of our preservation model tests.
 * `/R/` contains all the scripts used to process and analyse the data, and to make the figures. It is divided into two principal subfolders. 
-    * `/R/Data_processing/` contains all the scripts that we used to process the input data. 
+    * `/R/Data_processing/` contains all the scripts that we used to process the input data, including computer-supervised cleaning. 
     * `/R/Visualisation/` contains all the scripts we used to make the figures.
     * Additionally, the `/R/useful/` folder contains helper scripts for data processing and visualisation.
 * `/Bash/` contains the shell scripts used to run the analyses.

@@ -724,6 +724,18 @@ colnames(tbl) <- c('Phase', 'Median estimate', '95% HPD', '90% HPD')
 # Display
 knitr::kable(tbl, align = 'c')
 ```
+
+
+**Supp. Table **10: Size of the different climate zones ('Tropical Affinity') and Dental Ecomorphotypes ('Diet') categories, expressed in number of occurrences, genera and species.
+
+|                      |  **Tropical** | **Affinity**    |              |      | **Diet**|              |
+|----------------------|----------|--------------|--------------|------------|-------------|--------------|
+|                      | Tropical | Extratropical| Carnivorous  | Herbivorous| Omnivorous  | Insectivorous|
+| Nb. occurrences      | 158      | 3226         | 220          | 2301       | 573         | 290          |
+| Nb. genera           | 78       | 470          | 31           | 324        | 116         | 57           |
+| Nb. species          | 116      | 1005         | 51           | 698        | 232         | 127          |
+
+
 \clearpage
 # SI References
 
