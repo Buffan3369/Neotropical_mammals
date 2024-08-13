@@ -12,7 +12,6 @@ library(deeptime)
 # GEOSCALES
 # First geoscale (epochs)
 gsc1 <- deeptime::epochs
-gsc1 <- gsc1 %>% filter(min_age < 56)
 # Set second geoscale (sub-epochs)
 gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
 gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
