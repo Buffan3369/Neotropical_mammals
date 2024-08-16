@@ -230,8 +230,12 @@ Added one occurrence of *Sparassocynus maimarai* from the Maimará formation, Ma
 *Clenia brevis* was excluded from the *Clenia* genus by ref. [@goin2013]. Hence, we rename the genus aff. *Clenia*.
 
 ### Notoungulata
-All occurrences referred to as *Bryanpattersonia nesodontoides* were synonimised with *Archaeotypotherium propithecus* according to [@croft2003large].  
-All occurrences referred to as *Bryanpattersonia sulcidens* were renamed *Protarchaeohyrax gracilis* according to [@croft2003large].  
+All occurrences referred to as *Bryanpattersonia nesodontoides* were synonimised with *Archaeotypotherium propheticus* according to [@croft2003large].  
+All occurrences referred to as *Bryanpattersonia sulcidens* were renamed *Protarchaeohyrax gracilis* according to [@croft2003large].
+All occurrences of *Anisotemnus distentus* were assigned to Middle Eocene (37.71-47.8 Ma) according to [@shockey2007morphological].
+Removed two occurrences of *Archaeotypotherium propheticus* (coll. nb. 176286), absent from the original publication [@simpson1967].
+Age range of *Coelostylodon florentinoameghinoi* and *C. caroloameghinoi* (coll. nb. 13779) was set to Barrancan (39-41.7 Ma), in line with the original reference.
+Assign all *Eomorphippus obscurus* occurrences described in Simpson [@simpson1967] (coll. nb. 38653) a Mustersan age (35-38.2 Ma).
 
 ### Paucituberculata
 
