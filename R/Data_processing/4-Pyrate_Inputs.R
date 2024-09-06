@@ -74,7 +74,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
       rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
     write.table.lucas(x = tmp,
                       file = paste0(paste0("./data_2023/PyRate/RESTRICTED/", salma, "/genus_level/4-Ecomorphotype/", dt, "_EOT_gen_occ_", salma, ".txt")))
-    extract.ages(paste0(paste0("./data_2023/PyRate/RESTRICTED/", salma, "/genus_level/4-Ecomorphotype/", dt, "_EOT_gen_occ_", salma, ".txt")),
+    extract.ages(paste0("./data_2023/PyRate/RESTRICTED/", salma, "/genus_level/4-Ecomorphotype/", dt, "_EOT_gen_occ_", salma, ".txt"),
                  replicates = 10)
   }
   ### Order (10 replicates) ###
@@ -88,7 +88,7 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     write.table.lucas(x = tmp_odr,
                       file = paste0(paste0("./data_2023/PyRate/RESTRICTED/", salma, "/genus_level/5-Order_level/", odr, "_EOT_gen_occ_", salma, ".txt")))
     # Extract ages
-    extract.ages(paste0(paste0("./data_2023/PyRate/RESTRICTED/", salma, "/genus_level/5-Order_level/", odr, "_EOT_gen_occ_", salma, ".txt")),
+    extract.ages(paste0("./data_2023/PyRate/RESTRICTED/", salma, "/genus_level/5-Order_level/", odr, "_EOT_gen_occ_", salma, ".txt"),
                  replicates = 10)
   }
   

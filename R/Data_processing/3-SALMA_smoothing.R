@@ -13,7 +13,13 @@ library(palaeoverse)
 ## Load data -------------------------------------------------------------------
 SubEpochs <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
 SubEpochs$bin <- 1:nrow(SubEpochs) #add 'bin' columns for `bin_time`
+SubEpochs$min_ma <- sapply(X = 1:nrow(SubEpochs), FUN = function(x){return((SubEpochs$max_ma[x] + SubEpochs$min_ma[x])/2)})
+
 SALMA_EOT <- read_xlsx("./data_2023/time_bins/SALMA_EOT.xlsx")
+SALMA_EOT$min_ma <- sapply(X = SALMA_EOT$min_ma, FUN = as.numeric)
+SALMA_EOT$max_ma <- sapply(X = SALMA_EOT$max_ma, FUN = as.numeric)
+SALMA_EOT$mid_ma <- sapply(X = 1:nrow(SALMA_EOT), FUN = function(x){return((SALMA_EOT$max_ma[x] + SALMA_EOT$min_ma[x])/2)})
+
 species_list <- readRDS("./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
 species_list_ext <- readRDS("./data_2023/SPECIES_LISTS/7-Fully_cleaned_EOT_extended_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
 SPLs <- list(species_list, species_list_ext)
@@ -22,8 +28,7 @@ rm(species_list, species_list_ext)
 ## Bin SALMAs with the Sub-Epochs they most overlap with -----------------------
 binning <- palaeoverse::bin_time(occdf = data.frame(max_ma = SALMA_EOT$max_ma,
                                                     min_ma = SALMA_EOT$min_ma),
-                                 bins = SubEpochs,
-                                 method = "majority")
+                                 bins = SubEpochs[10:19,])
 SALMA_EOT_Sub_epoch <- sapply(X = binning$bin_assignment,
                               FUN = function(x){
                                 return(SubEpochs$interval_name[which(SubEpochs$bin == x)])

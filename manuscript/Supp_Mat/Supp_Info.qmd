@@ -175,6 +175,9 @@ Therefore, we argue that although powerful statistical tools exist, tackling mac
 
 In this part, we provide some details on the Cenozoic fossil occurrence cleaning effort we carried out. All co-authors were involved in this part, and some changes have not been documented. Our raw and final datasets can be found attached with this manuscript. Computer-supervised cleaning steps are documented in our GitHub repository (<https://github.com/Buffan3369/Neotropical_mammals.git>).
 
+The age ranges of the occurrences belonging to the Paso del Sapo fauna (Western Patagonia, *"Sapoan fauna"* SALMA) were set close to the Ypresian--Lutetian boundary. More precisely, occurrences from the *La Barda* or the *Laguna fría* localities were respectively set to 45-47 Ma and 48-49 Ma [@tejedor2009].    
+Occurrences assigned to the former *Casamayoran* SALMA were re-assigned to a Middle Eocene age (37.71-47.8 Ma), except when more precision was provided in subsequent studies (*i.e.,* radiochronological dating)
+
 ### Artiodactyla
 
 *Palaeolama* sp. (coll. nb. 213138, [@rusconi1949]), *Lama castelnaudi* (coll. nb. 213136, [@rusconi1949]) and *Palaeolama weddeli* (coll. nb. 213136, [@rusconi1949]) age ranges were set to Early Pleistocene, according to [@pascual1965].  
@@ -186,7 +189,7 @@ All occurrences of *Cervus gouazoubira* were renamed *Mazama gouazoubira*.
 ### Astrapotheria
 
 *Grypolophodon imperfectus* (coll. nb. 176290, [@simpson1967]) was removed as nomen dubium.  
-*Parastrapotherium holmbergi* (coll. nb. 176290, [@roth1904]) formation was set to Sarmiento, stage to Deseadan-Colehuehuappian, and age range to 20--29 Ma.  
+*Parastrapotherium holmbergi* (coll. nb. 176290, [@roth1904]) formation was set to Sarmiento, stage to Deseadan--Colehuehuappian, and age range to 20--29 Ma.  
 *Xenastrapotherium* sp. (coll. nb. 55602, [@frailey1986]) and *Xenastrapotherium amazonense* (coll. nb. 55602, [@ribeiro2013]) were reassigned to Laventan stage (11.8--13.8 Ma) according [@goillot2011].  
 *Notorhinus denticulatus* (coll. nb. 176290, [@roth1904]) removed as nomen dubium.
 *Astrapotherium* (coll. nb. 50074, [@tournouer1903]) re-assigned to Santacrucian.
