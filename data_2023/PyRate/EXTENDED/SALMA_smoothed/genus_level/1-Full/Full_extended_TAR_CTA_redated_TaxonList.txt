@@ -14,15 +14,12 @@ Acrocyon	extinct
 Acyon	extinct
 Adelphomys	extinct
 Adianthus	extinct
-Adiantoides	extinct
 Adiastaltus	extinct
 Adinotherium	extinct
 aff._Tarapotomys	extinct
 Albertogaudrya	extinct
-Allalmeia	extinct
 Altitypotherium	extinct
 Ameghinomys	extinct
-Amilnedwardsia	extinct
 Amphidolops	extinct
 Anantiosodon	extinct
 Anargyrolagus	extinct
@@ -66,7 +63,6 @@ Austropediomys	extinct
 Baguatherium	extinct
 Balsayacuy	extinct
 Banderomys	extinct
-Baraguatherium	extinct
 Bardalestes	extinct
 Barrancatatus	extinct
 Bergqvistherium	extinct
@@ -75,7 +71,6 @@ Boleatherium	extinct
 Bonapartherium	extinct
 Boreastylops	extinct
 Borhyaena	extinct
-Brachystephanus	extinct
 Branisamyopsis	extinct
 Branisamys	extinct
 Branisella	extinct
@@ -99,19 +94,12 @@ Carolozittelia	extinct
 Caviocricetus	extinct
 Cephalomyopsis	extinct
 Cephalomys	extinct
-cf._Abderites	extinct
 cf._Cachiyacuy	extinct
+cf._Coquenia	extinct
 cf._Eoespina	extinct
-cf._Griphodon_1	extinct
-cf._Griphodon_2	extinct
-cf._Griphodon_3	extinct
-cf._Griphodon_4	extinct
 cf._Hapalops	extinct
-cf._Perulestes_1	extinct
-cf._Perulestes_2	extinct
+cf._Itaboraidelphys	extinct
 cf._Pozomys	extinct
-cf._Proargyrolagus_1	extinct
-cf._Proargyrolagus_2	extinct
 cf._Tarapotomys	extinct
 Chachapoyamys	extinct
 Chambiramys	extinct
@@ -127,7 +115,6 @@ Clenia	extinct
 Clypeotherium	extinct
 Cochilius	extinct
 Cochlops	extinct
-Coelostylodon	extinct
 Colbertia	extinct
 Colhuelia	extinct
 Colombitherium	extinct
@@ -149,7 +136,6 @@ Didolodus	extinct
 Diogenesia	extinct
 Distylophorus	extinct
 Dolichocebus	extinct
-Dolichostylodon	extinct
 Doryperimys	extinct
 Draconomys	extinct
 Dudumus	extinct
@@ -220,7 +206,6 @@ Heteroglyphis	extinct
 Heterolophodon	extinct
 Hilarcotherium	extinct
 Holomegalonyx	extinct
-Homalodontotherium	extinct
 Homalodotherium	extinct
 Homalostylops	extinct
 Homunculus	extinct
@@ -264,13 +249,11 @@ Loncolicu	extinct
 Lophiodolodus	extinct
 Loretomys	extinct
 Luantus	extinct
-Lumbreratherium	extinct
 Lycopsis	extinct
 Machlydotherium	extinct
 Maddenia	extinct
 Marmosopsis	extinct
 Martinmiguelia	extinct
-Maruchito	extinct
 Maxschlosseria	extinct
 Mayomys	extinct
 Mazzonicebus	extinct
@@ -339,7 +322,6 @@ Parastrapotherium	extinct
 Paroctodontotherium	extinct
 Parutaetus	extinct
 Parvimico	extinct
-Pascualhyrax	extinct
 Pascualihippus	extinct
 Patagonhippus	extinct
 Patagonia	extinct
@@ -363,7 +345,6 @@ Perutherium	extinct
 Phanomys	extinct
 Pharsophorus	extinct
 Phonocdromus	extinct
-Phoradiadius	extinct
 Picturotherium	extinct
 Picunia	extinct
 Pilchenia	extinct
@@ -392,7 +373,6 @@ Proborhyaena	extinct
 Procaroloameghinia	extinct
 Procladosictis	extinct
 Proectocion	extinct
-Proeocoleophorus	extinct
 Proeutatus	extinct
 Progaleopithecus	extinct
 Progarzonia	extinct
@@ -432,6 +412,7 @@ Pseudohegetotherium	extinct
 Pseudolops	extinct
 Pseudonotictis	extinct
 Pseudopachyrucos	extinct
+Pseudoprepotherium	extinct
 Pseudostegotherium	extinct
 Pseudothylacynus	extinct
 Pternoconius	extinct
@@ -481,7 +462,6 @@ Sipalocyon	extinct
 Soriacebus	extinct
 Soriamys	extinct
 Spaniomys	extinct
-Sparnotheriodon	extinct
 Stegosimpsonia	extinct
 Stegotherium	extinct
 Steiromys	extinct
@@ -529,7 +509,6 @@ Willidewu	extinct
 Wirunodon	extinct
 Woodburnodon	extinct
 Xenastrapotherium	extinct
-Xenostephanus	extinct
 Xesmodon	extinct
 Xylechimys	extinct
 Xyophorus	extinct

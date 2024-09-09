@@ -32,7 +32,10 @@ source("./R/useful/helper_functions.R")
 # Write and save occdf
 gen_lvl <- spl %>%
   select(genus, gen_lvl_status, min_ma, max_ma) %>%
-  rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
+  rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma") %>%
+  mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+  filter(!(is.na(min_age) | is.na(max_age)))
+
 write.table.lucas(x = gen_lvl,
                   file = "./data_2023/PyRate/EXTENDED/SALMA_smoothed/genus_level/1-Full/Full_extended_TAR_CTA_redated.txt")
 # Extract ages

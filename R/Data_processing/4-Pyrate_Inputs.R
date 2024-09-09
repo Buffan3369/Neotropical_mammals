@@ -177,7 +177,9 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
   #prepare data
   gen_lvl <- occdf %>%
     select(genus, gen_lvl_status, min_ma, max_ma) %>%
-    rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
+    rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma") %>%
+    mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+    filter(!(is.na(min_age) | is.na(max_age)))
   #save
   write.table.lucas(x = gen_lvl,
                     file = paste0("./data_2023/PyRate/EXTENDED/", salma, "/genus_level/1-Full/Full_EOT_gen_occ_", salma, ".txt"))
@@ -191,7 +193,9 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     distinct(genus) %>%
     ungroup() %>%
     select(genus, gen_lvl_status, min_ma, max_ma) %>%
-    rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
+    rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma") %>%
+    mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+    filter(!(is.na(min_age) | is.na(max_age)))
   #save
   write.table.lucas(x = gen_lvl_scaled,
                     file = paste0("./data_2023/PyRate/EXTENDED/", salma, "/genus_level/2-Spatially_scaled/spatially_scaled_EOT_gen_occ_", salma, ".txt"))
@@ -203,11 +207,15 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
   trop <- occdf %>%
     filter(loc == "T") %>%
     select(genus, gen_lvl_status, min_ma, max_ma) %>%
-    rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
+    rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma") %>%
+    mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+    filter(!(is.na(min_age) | is.na(max_age)))
   Etrop <- occdf %>%
     filter(loc == "E") %>%
     select(genus, gen_lvl_status, min_ma, max_ma) %>%
-    rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
+    rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma") %>%
+    mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+    filter(!(is.na(min_age) | is.na(max_age)))
   #save
   write.table.lucas(x = trop,
                     file = paste0("./data_2023/PyRate/EXTENDED/", salma, "/genus_level/3-Tropical_Extratropical/Tropical_EOT_gen_occ_", salma, ".txt"))
@@ -223,7 +231,10 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     tmp <- occdf %>%
       filter(diet == dt) %>%
       select(genus, gen_lvl_status, min_ma, max_ma) %>%
-      rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
+      rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma") %>%
+      mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+      filter(!(is.na(min_age) | is.na(max_age)))
+    
     write.table.lucas(x = tmp,
                       file = paste0(paste0("./data_2023/PyRate/EXTENDED/", salma, "/genus_level/4-Ecomorphotype/", dt, "_EOT_gen_occ_", salma, ".txt")))
     extract.ages(paste0(paste0("./data_2023/PyRate/EXTENDED/", salma, "/genus_level/4-Ecomorphotype/", dt, "_EOT_gen_occ_", salma, ".txt")),
@@ -235,7 +246,9 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     tmp_odr <- occdf %>% 
       filter(order %in% values(tax_dict[odr])) %>% 
       select(genus, gen_lvl_status, min_ma, max_ma) %>% 
-      rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma")
+      rename(Species = "genus", Status = "gen_lvl_status", min_age = "min_ma", max_age = "max_ma") %>%
+      mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+      filter(!(is.na(min_age) | is.na(max_age)))
     # Save
     write.table.lucas(x = tmp_odr,
                       file = paste0(paste0("./data_2023/PyRate/EXTENDED/", salma, "/genus_level/5-Order_level/", odr, "_EOT_gen_occ_", salma, ".txt")))
@@ -249,7 +262,9 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
   #prepare data
   sp_lvl <- occdf %>%
     select(accepted_name, status, min_ma, max_ma) %>%
-    rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
+    rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma") %>%
+    mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+    filter(!(is.na(min_age) | is.na(max_age)))
   #save
   write.table.lucas(x = sp_lvl,
                     file = paste0("./data_2023/PyRate/EXTENDED/", salma, "/species_level/1-Full/Full_EOT_sp_occ_", salma, ".txt"))
@@ -263,7 +278,9 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     distinct(accepted_name) %>%
     ungroup() %>%
     select(accepted_name, status, min_ma, max_ma) %>%
-    rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
+    rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma") %>%
+    mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+    filter(!(is.na(min_age) | is.na(max_age)))
   #save
   write.table.lucas(x = sp_lvl_scaled,
                     file = paste0("./data_2023/PyRate/EXTENDED/", salma, "/species_level/2-Spatially_scaled/spatially_scaled_EOT_sp_occ_", salma, ".txt"))
@@ -275,11 +292,15 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
   sp_trop <- occdf %>%
     filter(loc == "T") %>%
     select(accepted_name, status, min_ma, max_ma) %>%
-    rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
+    rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma") %>%
+    mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+    filter(!(is.na(min_age) | is.na(max_age)))
   sp_Etrop <- occdf %>%
     filter(loc == "E") %>%
     select(accepted_name, status, min_ma, max_ma) %>%
-    rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
+    rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma") %>%
+    mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+    filter(!(is.na(min_age) | is.na(max_age)))
   #save
   write.table.lucas(x = sp_trop,
                     file = paste0("./data_2023/PyRate/EXTENDED/", salma, "/species_level/3-Tropical_Extratropical/Tropical_EOT_sp_occ_", salma, ".txt"))
@@ -295,7 +316,10 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     tmp <- occdf %>%
       filter(diet == dt) %>%
       select(accepted_name, status, min_ma, max_ma) %>%
-      rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
+      rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma") %>%
+      mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+      filter(!(is.na(min_age) | is.na(max_age)))
+    
     write.table.lucas(x = tmp,
                       file = paste0("./data_2023/PyRate/EXTENDED/", salma, "/species_level/4-Ecomorphotype/", dt, "_EOT_sp_occ_", salma, ".txt"))
     extract.ages(paste0("./data_2023/PyRate/EXTENDED/", salma, "/species_level/4-Ecomorphotype/", dt, "_EOT_sp_occ_", salma, ".txt"),
@@ -307,7 +331,10 @@ for(salma in c("SALMA_kept", "SALMA_smoothed")){
     tmp_odr <- occdf %>% 
       filter(order %in% values(tax_dict[odr])) %>% 
       select(accepted_name, status, min_ma, max_ma) %>% 
-      rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma")
+      rename(Species = "accepted_name", Status = "status", min_age = "min_ma", max_age = "max_ma") %>%
+      mutate(min_age = as.numeric(min_age), max_age = as.numeric(max_age)) %>% 
+      filter(!(is.na(min_age) | is.na(max_age)))
+    
     # Save
     write.table.lucas(x = tmp_odr,
                       file = paste0(paste0("./data_2023/PyRate/EXTENDED/", salma, "/species_level/5-Order_level/", odr, "_EOT_sp_occ_", salma, ".txt")))
