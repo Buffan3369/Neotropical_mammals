@@ -109,3 +109,23 @@ for(chosen_list in SPLs){
   i <- i + 1
 }
 
+## Assess the proportion of Palaeogene data produced by our co-authors ---------
+rm(list = ls())
+
+spl_EO <- readRDS("./data_2023/SPECIES_LISTS/5-Fully_cleaned_EOT_SA_Mammals_SALMA_kept_Tropics_Diet.RDS")
+ref <- spl_EO$primary_reference
+
+home_made <- function(paper){
+  s <- 0
+  wds <- strsplit(paper, split = " ")[[1]]
+  if("Antoine" %in% wds | "Antoine." %in% wds | "Antoine," %in% wds |
+     "Marivaux" %in% wds | "Marivaux." %in% wds | "Marivaux," %in% wds |
+     "Pujos" %in% wds | "Pujos." %in% wds | "Pujos," %in% wds){
+    s <- 1
+  }
+  return(s)
+}
+
+pro_ref <- sapply(ref, FUN = home_made)
+final_prop <- round(sum(pro_ref)/length(ref), digits = 2)
+cat(paste0("Co-authors of this paper contributed to ", final_prop*100, "% of the occurrence data used in this study."))
