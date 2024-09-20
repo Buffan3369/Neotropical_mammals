@@ -27,13 +27,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.99999999"
-     inkscape:cx="245"
-     inkscape:cy="284.5"
-     inkscape:window-width="1850"
-     inkscape:window-height="1016"
-     inkscape:window-x="70"
-     inkscape:window-y="27"
+     inkscape:zoom="4"
+     inkscape:cx="410.375"
+     inkscape:cy="412"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="g82807" />
   <defs
@@ -2206,9 +2206,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="102.42578"
-             id="tspan4376"><tspan
+             id="tspan2319"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4374">Oligocene</tspan></tspan></text>
+               id="tspan2317">Oligocene</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0,0.75000002,0.75000002,0,587.95161,384.67828)"
@@ -2219,9 +2219,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="98.886719"
-             id="tspan4380"><tspan
+             id="tspan2323"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4378">Early</tspan></tspan></text>
+               id="tspan2321">Early</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0,0.75000002,0.75000002,0,587.95261,214.68163)"
@@ -2232,12 +2232,12 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="98.886719"
-             id="tspan4384"><tspan
+             id="tspan2327"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4382">Early</tspan></tspan></text>
+               id="tspan2325">Early</tspan></tspan></text>
         <text
            xml:space="preserve"
-           transform="matrix(0,0.75000002,0.75000002,0,587.95261,294.17427)"
+           transform="matrix(0,0.75000002,0.75000002,0,587.95261,283.67427)"
            id="text6676-5-7"
            style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6678-7-2);fill:#000000;fill-opacity:1;stroke:none"
            inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/Neotropical_mammals/figures/methods_figure/SALMA_SubEpochs.png"
@@ -2245,9 +2245,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="98.886719"
-             id="tspan4388"><tspan
+             id="tspan2331"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4386">Mid</tspan></tspan></text>
+               id="tspan2329">Middle</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0,0.75000002,0.75000002,0,586.93261,428.04325)"
@@ -2258,9 +2258,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="98.886719"
-             id="tspan4392"><tspan
+             id="tspan2335"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4390">Late</tspan></tspan></text>
+               id="tspan2333">Late</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,501.85422,676.24922)"
@@ -2271,9 +2271,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="96.527314"
-             id="tspan4396"><tspan
+             id="tspan2339"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4394">Des.</tspan></tspan></text>
+               id="tspan2337">Des.</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,555.46734,644.24729)"
@@ -2284,9 +2284,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="96.527314"
-             id="tspan4400"><tspan
+             id="tspan2343"><tspan
                style="font-style:italic;font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4398">&quot;La Cantera Fauna&quot;</tspan></tspan></text>
+               id="tspan2341">&quot;La Cantera Fauna&quot;</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,500.12496,630.18625)"
@@ -2297,9 +2297,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="96.527314"
-             id="tspan4404"><tspan
+             id="tspan2347"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4402">Ting.</tspan></tspan></text>
+               id="tspan2345">Ting.</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0,0.75000002,0.75000002,0,586.93261,346.77653)"
@@ -2310,9 +2310,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="98.886719"
-             id="tspan4408"><tspan
+             id="tspan2351"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4406">Late</tspan></tspan></text>
+               id="tspan2349">Late</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0,0.75000002,0.75000002,0,556.36065,262.66467)"
@@ -2323,9 +2323,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="102.42578"
-             id="tspan4412"><tspan
+             id="tspan2355"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4410">Eocene</tspan></tspan></text>
+               id="tspan2353">Eocene</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,499.05816,595.81143)"
@@ -2336,9 +2336,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="96.527314"
-             id="tspan4416"><tspan
+             id="tspan2359"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4414">Must.</tspan></tspan></text>
+               id="tspan2357">Must.</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,500.74057,566.12767)"
@@ -2349,9 +2349,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="96.527314"
-             id="tspan4420"><tspan
+             id="tspan2363"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4418">Barr.</tspan></tspan></text>
+               id="tspan2361">Barr.</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,498.45296,528.30848)"
@@ -2362,9 +2362,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="96.527314"
-             id="tspan4424"><tspan
+             id="tspan2367"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4422">Vacan</tspan></tspan></text>
+               id="tspan2365">Vacan</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,498.54664,483.83949)"
@@ -2375,9 +2375,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="96.527314"
-             id="tspan4428"><tspan
+             id="tspan2371"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4426">Rioch.</tspan></tspan></text>
+               id="tspan2369">Rioch.</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,501.21078,463.87179)"
@@ -2388,9 +2388,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="96.527314"
-             id="tspan4432"><tspan
+             id="tspan2375"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4430">Itab.</tspan></tspan></text>
+               id="tspan2373">Itab.</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,498.20232,503.99282)"
@@ -2401,9 +2401,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="96.527314"
-             id="tspan4436"><tspan
+             id="tspan2379"><tspan
                style="font-style:italic;font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4434">&quot;S. F.&quot;</tspan></tspan></text>
+               id="tspan2377">&quot;S. F.&quot;</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,367.32347,756.50458)"
@@ -2414,9 +2414,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4440"><tspan
+             id="tspan2383"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4438">23.03</tspan></tspan></text>
+               id="tspan2381">23.03</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.7178,746.60346)"
@@ -2427,9 +2427,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4444"><tspan
+             id="tspan2387"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4442">24.2</tspan></tspan></text>
+               id="tspan2385">24.2</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,475.10342,704.4647)"
@@ -2440,9 +2440,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4448"><tspan
+             id="tspan2391"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4446">29.4</tspan></tspan></text>
+               id="tspan2389">29.4</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.74716,698.65221)"
@@ -2453,9 +2453,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4452"><tspan
+             id="tspan2395"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4450">30.6</tspan></tspan></text>
+               id="tspan2393">30.6</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.70126,691.31657)"
@@ -2466,9 +2466,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4456"><tspan
+             id="tspan2399"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4454">30.8</tspan></tspan></text>
+               id="tspan2397">30.8</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,475.19592,686.07149)"
@@ -2479,9 +2479,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4460"><tspan
+             id="tspan2403"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4458">31.3</tspan></tspan></text>
+               id="tspan2401">31.3</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,475.19713,670.57753)"
@@ -2492,9 +2492,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4464"><tspan
+             id="tspan2407"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4462">33.6</tspan></tspan></text>
+               id="tspan2405">33.6</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.87824,656.89058)"
@@ -2505,9 +2505,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4468"><tspan
+             id="tspan2411"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4466">35</tspan></tspan></text>
+               id="tspan2409">35</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.63773,633.19106)"
@@ -2518,9 +2518,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4472"><tspan
+             id="tspan2415"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4470">38.2</tspan></tspan></text>
+               id="tspan2413">38.2</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.59532,626.63792)"
@@ -2531,9 +2531,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4476"><tspan
+             id="tspan2419"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4474">39</tspan></tspan></text>
+               id="tspan2417">39</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.05699,604.96731)"
@@ -2544,9 +2544,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4480"><tspan
+             id="tspan2423"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4478">41.7</tspan></tspan></text>
+               id="tspan2421">41.7</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.53566,586.16724)"
@@ -2557,9 +2557,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4484"><tspan
+             id="tspan2427"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4482">44</tspan></tspan></text>
+               id="tspan2425">44</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.78493,570.23484)"
@@ -2570,9 +2570,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4488"><tspan
+             id="tspan2431"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4486">46</tspan></tspan></text>
+               id="tspan2429">46</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,475.13785,562.14603)"
@@ -2583,9 +2583,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4492"><tspan
+             id="tspan2435"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4490">47</tspan></tspan></text>
+               id="tspan2433">47</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.33165,545.90931)"
@@ -2596,9 +2596,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4496"><tspan
+             id="tspan2439"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4494">49</tspan></tspan></text>
+               id="tspan2437">49</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.63084,537.77977)"
@@ -2609,9 +2609,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4500"><tspan
+             id="tspan2443"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4498">50</tspan></tspan></text>
+               id="tspan2441">50</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.65277,529.8131)"
@@ -2622,9 +2622,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4504"><tspan
+             id="tspan2447"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4502">51</tspan></tspan></text>
+               id="tspan2445">51</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.55473,521.56355)"
@@ -2635,9 +2635,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4508"><tspan
+             id="tspan2451"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4506">52</tspan></tspan></text>
+               id="tspan2449">52</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,474.567,505.44507)"
@@ -2648,9 +2648,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4512"><tspan
+             id="tspan2455"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4510">54</tspan></tspan></text>
+               id="tspan2453">54</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,367.23845,717.22516)"
@@ -2661,9 +2661,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4516"><tspan
+             id="tspan2459"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4514">27.82</tspan></tspan></text>
+               id="tspan2457">27.82</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,369.63904,667.99987)"
@@ -2674,9 +2674,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4520"><tspan
+             id="tspan2463"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4518">33.9</tspan></tspan></text>
+               id="tspan2461">33.9</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,367.17445,637.26905)"
@@ -2687,9 +2687,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4524"><tspan
+             id="tspan2467"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4522">37.71</tspan></tspan></text>
+               id="tspan2465">37.71</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,369.90281,555.91135)"
@@ -2700,9 +2700,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4528"><tspan
+             id="tspan2471"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4526">41.2</tspan></tspan></text>
+               id="tspan2469">41.2</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,374.55285,488.95378)"
@@ -2713,9 +2713,9 @@
            inkscape:export-ydpi="400"><tspan
              x="305.89062"
              y="161.83792"
-             id="tspan4532"><tspan
+             id="tspan2475"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4530">56</tspan></tspan></text>
+               id="tspan2473">56</tspan></tspan></text>
         <path
            style="fill:none;stroke:#333333;stroke-width:0.255118;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            d="m 701.92991,575.24516 1.0406,3.88718 h 0.43993"
@@ -2754,9 +2754,9 @@
            inkscape:export-ydpi="400"><tspan
              x="72.146484"
              y="209.26565"
-             id="tspan4536"><tspan
+             id="tspan2479"><tspan
                style="font-family:Rasa;-inkscape-font-specification:Rasa"
-               id="tspan4534">Time (Ma)</tspan></tspan></text>
+               id="tspan2477">Time (Ma)</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,450.53636,424.95764)"
@@ -2767,9 +2767,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="94.167999"
-             id="tspan4540"><tspan
+             id="tspan2483"><tspan
                style="font-weight:bold"
-               id="tspan4538">ICC bins</tspan></tspan></text>
+               id="tspan2481">ICC bins</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,-0.75000002,493.38919,425.0979)"
@@ -2780,9 +2780,9 @@
            inkscape:export-ydpi="400"><tspan
              x="236.32617"
              y="94.167999"
-             id="tspan4544"><tspan
+             id="tspan2487"><tspan
                style="font-weight:bold"
-               id="tspan4542">SALMAs</tspan></tspan></text>
+               id="tspan2485">SALMAs</tspan></tspan></text>
       </g>
       <text
          xml:space="preserve"

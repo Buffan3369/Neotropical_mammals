@@ -9,6 +9,8 @@
 ## Source helper functions from CorsaiR and additional facilities --------------
 source("~/Documents/GitHub/CorsaiR/R/1-extract_param_from_PyRate_outputs.R")
 source("~/Documents/GitHub/CorsaiR/R/2-plotting_facilities.R")
+source("./R/useful/load_gts.R") # load geological timescales
+
 library("readxl")
 library("ggpubr")
 library("hash")
@@ -29,9 +31,6 @@ sil <- hash("Notoungulata" = "Trigonostylops",
 # dummy dataset for silhouette plot
 df <- data.frame(x = seq(1,10,10),
                  y = rnorm(n = 10, mean = 10))
-# geoscale
-gsc2 <- read_xlsx("./data_2023/time_bins/EarlyMidLate_epochs.xlsx")
-gsc2 <- gsc2 %>% rename(min_age = "min_ma", max_age = "max_ma", name = "interval_name")
 plot_list <- list()
 i <- 0
 j <- 0
@@ -59,11 +58,17 @@ for(pth in paths){
   rtt_tbl$time[which(rtt_tbl$time == 28)] <- 27.8 - delta
   # gts stuff
   i <- i+1
-  if(i >= 10){
+  if(i >= 17){
     x_lab <- "Time (Ma)"
     x.axis <- TRUE
     xlim <- NULL
     display_gts <- TRUE
+  }
+  
+  # Fix rodent issue
+  p_split <- strsplit(pth, split = "/")[[1]]
+  if(p_split[length(p_split)] == "Rodentia"){
+    rtt_tbl <- rtt_tbl[-nrow(rtt_tbl), ]
   }
   
   # diversification rates plot ---------
@@ -80,13 +85,14 @@ for(pth in paths){
                       restrict_thr = 0.55,
                       ori_col="#08519c",
                       ext_col="#a50f15",
-                      display_gts = display_gts,
                       xlim = xlim,
                       plot.border = FALSE,
                       x.axis = x.axis,
                       display_EECO_MECO = TRUE,
-                      several_gts = TRUE,
-                      geoscale2 = gsc2,
+                      display_gts = display_gts,
+                      several_gts = TRUE,                     
+                      geoscale = gsc1_bis,
+                      geoscale2 = gsc2_bis,
                       geoscale_height = unit(1, "line"),
                       abbr = list(TRUE, FALSE)) +
     # Temporal bands
@@ -112,7 +118,7 @@ for(pth in paths){
   plot_list[[i+j]] <- NULL
   # net rate plot ---------------------
   i <- i+1
-  if(i >= 10){
+  if(i >= 17){
     x_lab <- "Time (Ma)"
     x.axis <- TRUE
     xlim <- NULL
@@ -129,13 +135,14 @@ for(pth in paths){
                       axes.labelsize=15,
                       ticks.labelsize = 12,
                       net_col="#252525",
-                      display_gts = display_gts,
                       xlim = xlim,
                       plot.border = FALSE,
                       x.axis = x.axis,
                       display_EECO_MECO = TRUE,
-                      several_gts = TRUE,
-                      geoscale2 = gsc2,
+                      display_gts = display_gts,
+                      several_gts = TRUE,                     
+                      geoscale = gsc1_bis,
+                      geoscale2 = gsc2_bis,
                       geoscale_height = unit(1, "line"),
                       abbr = list(TRUE, FALSE)) +
     # Temporal bands
@@ -172,6 +179,10 @@ for(pth in paths){
   # plotting adjustments
   ltt_tbl$Age[1] <- 24
   ltt_tbl$Age[nrow(ltt_tbl)] <- 52
+  if(p_split[length(p_split)] == "Rodentia"){
+    ltt_tbl <- ltt_tbl[-nrow(ltt_tbl), ]
+  }
+  
   # plot
   ltt.plot <- ltt_plot(ltt_tbl,
                        stage_x_breaks = FALSE,
@@ -181,15 +192,16 @@ for(pth in paths){
                        x_lab = x_lab,
                        y_breaks = seq(0,(round(max(ltt_tbl$Diversity), -1) + 10),20), 
                        y_limits = c(0,(round(max(ltt_tbl$Diversity), -1) + 20)),
-                       display_gts = display_gts,
                        xlim = xlim,
                        avg_col = "#006d2c",
                        ribbon_col = "#74c476",
                        plot.border = FALSE,
                        x.axis = x.axis,
                        display_EECO_MECO = TRUE,
-                       several_gts = TRUE,
-                       geoscale2 = gsc2,
+                       display_gts = display_gts,
+                       several_gts = TRUE,                     
+                       geoscale = gsc1_bis,
+                       geoscale2 = gsc2_bis,
                        geoscale_height = unit(1, "line"),
                        geoscale_labelsize = 4,
                        abbr = list(TRUE, FALSE)) +
@@ -244,14 +256,7 @@ fig2 <- ggarrange(plotlist = plot_list, nrow = 5, ncol = 7,
                   hjust = -0.4, 
                   font.label = list(size = 18))
 
-ggsave("./figures/Figure_2/Figure2_extended.png",
-       plot = fig2,
-       height = 500,
-       width = 600,
-       units = "mm",
-       dpi = 300)
-
-ggsave("./figures/Figure_2/Figure2_extended.pdf",
+ggsave("./figures/supp_figs/RTT_LTT/RTT_LTT_five_groups_BDCS.pdf",
        plot = fig2,
        height = 500,
        width = 600,

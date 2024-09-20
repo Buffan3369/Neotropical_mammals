@@ -84,18 +84,11 @@ ggsave("./figures/supp_figs/q_rates/Full_genus_q_panel.pdf",
        width = 240,
        units = "mm")
 
-ggsave("./figures/supp_figs/q_rates/Full_genus_q_panel.png",
-       plot = q_panel,
-       height = 120,
-       width = 240,
-       units = "mm",
-       dpi = 600)
-
 ### 2) Q_plots across latitude -------------------------------------------------
 rm(kew, q_panel, q.plt, list_plots)
 list_plots <- list()
 i <- -1
-for(loc in c("Extratropical", "Tropical")){
+for(loc in c("Tropical", "Extratropical")){
   for(salma in c("kept", "smoothed")){
     i <- i + 2
     kew <- read.table(paste0("./results_EXTENDED/SALMA_", salma, 

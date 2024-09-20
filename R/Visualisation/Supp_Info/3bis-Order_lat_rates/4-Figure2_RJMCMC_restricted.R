@@ -9,6 +9,8 @@
 ## Source helper functions from CorsaiR and additional facilities --------------
 source("~/Documents/GitHub/CorsaiR/R/1-extract_param_from_PyRate_outputs.R")
 source("~/Documents/GitHub/CorsaiR/R/2-plotting_facilities.R")
+source("./R/useful/load_gts.R") # load geological timescales
+
 library("readxl")
 library("ggpubr")
 library("hash")
@@ -36,10 +38,6 @@ i <- 0
 j <- 0
 for(pth in paths){
   rtt_tbl <- extract_rtt(path = paste0(pth, "combined_logs/RTT_plots.r"), ana = "RJMCMC")
-  # in case doesn't go far enough
-  if(max(rtt_tbl$time) < 52){
-    rtt_tbl$time[nrow(rtt_tbl)] <- 52
-  }
   # restrict plotting window
   rtt_tbl <- rtt_tbl %>% filter(time > 24 & time <= 52)
   # adjustments for plotting window
@@ -59,6 +57,13 @@ for(pth in paths){
     display_gts <- TRUE
   }
   
+  # Fix rodent issue
+  p_split <- strsplit(pth, split = "/")[[1]]
+  if(p_split[length(p_split)] == "Rodentia"){
+    rtt_tbl <- rtt_tbl[-nrow(rtt_tbl), ]
+  }
+  
+  
   # diversification rates plot ---------
   rtt_plt <- rtt_plot(data = rtt_tbl,
                       type = "SpEx",
@@ -72,13 +77,14 @@ for(pth in paths){
                       restrict_thr = 1.1,
                       ori_col="#08519c",
                       ext_col="#a50f15",
-                      display_gts = display_gts,
                       xlim = xlim,
                       plot.border = FALSE,
                       x.axis = x.axis,
                       display_EECO_MECO = TRUE,
-                      several_gts = TRUE,
-                      geoscale2 = gsc2,
+                      display_gts = display_gts,
+                      several_gts = TRUE,                     
+                      geoscale = gsc1_bis,
+                      geoscale2 = gsc2_bis,
                       geoscale_height = unit(1, "line"),
                       abbr = list(TRUE, FALSE)) +
     #additional customs
@@ -120,13 +126,14 @@ for(pth in paths){
                       axes.labelsize=15,
                       ticks.labelsize = 12,
                       net_col="#252525",
-                      display_gts = display_gts,
                       xlim = xlim,
                       plot.border = FALSE,
                       x.axis = x.axis,
                       display_EECO_MECO = TRUE,
-                      several_gts = TRUE,
-                      geoscale2 = gsc2,
+                      display_gts = display_gts,
+                      several_gts = TRUE,                     
+                      geoscale = gsc1_bis,
+                      geoscale2 = gsc2_bis,
                       geoscale_height = unit(1, "line"),
                       abbr = list(TRUE, FALSE)) +
     annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
@@ -160,6 +167,11 @@ for(pth in paths){
   # plotting adjustments
   ltt_tbl$Age[1] <- 24
   ltt_tbl$Age[nrow(ltt_tbl)] <- 52
+  
+  if(p_split[length(p_split)] == "Rodentia"){
+    ltt_tbl <- ltt_tbl[-nrow(ltt_tbl), ]
+  }
+  
   # plot
   ltt.plot <- ltt_plot(ltt_tbl,
                        stage_x_breaks = FALSE,
@@ -169,15 +181,16 @@ for(pth in paths){
                        x_lab = x_lab,
                        y_breaks = seq(0,(round(max(ltt_tbl$Diversity), -1) + 10),20), 
                        y_limits = c(0,(round(max(ltt_tbl$Diversity), -1) + 20)),
-                       display_gts = display_gts,
                        xlim = xlim,
                        avg_col = "#006d2c",
                        ribbon_col = "#74c476",
                        plot.border = FALSE,
                        x.axis = x.axis,
                        display_EECO_MECO = TRUE,
-                       several_gts = TRUE,
-                       geoscale2 = gsc2,
+                       display_gts = display_gts,
+                       several_gts = TRUE,                     
+                       geoscale = gsc1_bis,
+                       geoscale2 = gsc2_bis,
                        geoscale_height = unit(1, "line"),
                        geoscale_labelsize = 4,
                        abbr = list(TRUE, FALSE)) +
@@ -232,14 +245,8 @@ fig2 <- ggarrange(plotlist = plot_list, nrow = 5, ncol = 7,
                   hjust = -0.4, 
                   font.label = list(size = 18))
 
-ggsave("./figures/Figure_2/Figure2.png",
-       plot = fig2,
-       height = 500,
-       width = 600,
-       units = "mm",
-       dpi = 300)
 
-ggsave("./figures/Figure_2/Figure2.pdf",
+ggsave("./figures/supp_figs/RTT_LTT/RTT_LTT_five_groups_RJMCMC.pdf",
        plot = fig2,
        height = 500,
        width = 600,

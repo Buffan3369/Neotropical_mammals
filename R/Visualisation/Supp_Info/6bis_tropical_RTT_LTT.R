@@ -13,8 +13,8 @@ library("ggpubr")
 
 ## Figure 1 --------------------------------------------------------------------
 # path to diversification rates and diversity files
-paths <- c("./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Extratropical/",
-           "./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Tropical/")
+paths <- c("./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Tropical/",
+           "./results_EXTENDED/SALMA_smoothed/genus_level/4-Tropical_Extratropical/RJMCMC/Extratropical/")
 # first GTS
 gsc1 <- deeptime::epochs
 # second GTS
@@ -85,14 +85,17 @@ for(k in 1:2){
     annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     # EOT line
     geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) # EOT
-  #add labels in the first line  
+  #add labels in the first line
   if(i == 1){
+    rtt_plt <- rtt_plt +
+      annotate(geom = "text", x = 36, y = 0.52, label = "EOT", size = 7, colour = "red")
+  }
+  if(i == 4){
     rtt_plt <- rtt_plt +
       annotate(geom = "segment", x = 47, xend = 50, y = 0.5, yend = 0.5, colour = "#08519c", linewidth = 1) +
       annotate(geom = "text", x = 41.5, y = 0.5, label = "Origination rate", size = 5) +
       annotate(geom = "segment", x = 47, xend = 50, y = 0.45, yend = 0.45, colour = "#a50f15", linewidth = 1) +
       annotate(geom = "text", x = 41.5, y = 0.45, label = "Extinction rate ", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 0.5, label = "EOT", size = 7, colour = "red") +
       geom_text(aes(x = 51.5, y = 0.35, label = "EECO"), angle = 90, colour = "bisque4") +
       geom_text(aes(x = 41.25, y = 0.35, label = "MECO"), angle = 90, colour = "bisque4")
   }
@@ -134,12 +137,15 @@ for(k in 1:2){
     annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) # EOT
-  #add labels in the first line  
+  #add labels in the first line
   if(i == 2){
+    net_plt <- net_plt +
+      annotate(geom = "text", x = 31.5, y = 0.4, label = "EOT", size = 7, colour = "red")
+  }
+  if(i == 5){
     net_plt <- net_plt +
       annotate(geom = "segment", x = 47, xend = 50, y = 0.35, yend = 0.35, colour = "#504A4B", linewidth = 1) +
       annotate(geom = "text", x = 40.5, y = 0.35, label = "Net diversification\n rate", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 0.4, label = "EOT", size = 7, colour = "red") +
       geom_text(aes(x = 51.5, y = -0.325, label = "EECO"), angle = 90, colour = "bisque4") +
       geom_text(aes(x = 41.25, y = -0.325, label = "MECO"), angle = 90, colour = "bisque4")
   }
@@ -194,12 +200,15 @@ for(k in 1:2){
     annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey10", ymin = -Inf, ymax = Inf, alpha = 0.1, linewidth = 0) +
     geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) #EOT
-  #add labels in the first line  
+  #add labels in the first line
   if(i == 3){
+    ltt.plot <- ltt.plot +
+      annotate(geom = "text", x = 31.5, y = 40, label = "EOT", size = 7, colour = "red")
+  }
+  if(i == 6){
     ltt.plot <- ltt.plot +
       annotate(geom = "segment", x = 42.5, xend = 45, y = 110, yend = 110, colour = "#006d2c", linewidth = 1) +
       annotate(geom = "text", x = 39.25, y = 110, label = "Diversity", size = 5) +
-      annotate(geom = "text", x = 31.5, y = 115, label = "EOT", size = 7, colour = "red") +
       geom_text(aes(x = 51.5, y = 18, label = "EECO"), angle = 90, colour = "bisque4") +
       geom_text(aes(x = 41.25, y = 18, label = "MECO"), angle = 90, colour = "bisque4")
     

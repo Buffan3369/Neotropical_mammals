@@ -154,7 +154,7 @@ We therefore included two regional proxies for land opening: Patagonian patterns
 Each abiotic correlate was subsampled or interpolated to a 500 ky time step.
 In addition, we tested for diversity-dependence effects that could either come from the diversity of the tested clade itself (self-diversity, `-rmDD 0` option) or other clades (allowing to hypothesize possible inter-clade interactions).
 As we expected environmental dissimilarities between the Eocene and the Oligocene at the continent scale, especially in high latitudes (where most of our occurrences come from), we did not expect Eocene and Oligocene faunas to have the same environmental constraints.
-That is why, in addition to searching for environment signature in the diversification pattern across all our study period, we also decoupled trends among post-Early Eocene Climate Optimum Eocene faunas (51--33.9 Ma), and Oligocene faunas (33.9--23.03 Ma).
+That is why, in addition to searching for environment signature in the diversification pattern across all our study period, we also decoupled trends among post-early Eocene Climate Optimum Eocene faunas (51--33.9 Ma), and Oligocene faunas (33.9--23.03 Ma).
 Each MBD model was run across 10,000,000 iterations, sampling every 10,000.
 We only carried out exponential correlations (`-m 0` option).
 Convergence of the parameters was assessed using the pymc 5.9.2 Python library @wiecki_pymc-devspymc_2023, and parameters were considered convergent if their ESS were greater than 200.
@@ -194,11 +194,11 @@ All occurrences of *Cervus gouazoubira* were renamed *Mazama gouazoubira*.
 *Notorhinus denticulatus* (coll. nb. 176290, [@roth1904]) removed as nomen dubium.
 *Astrapotherium* (coll. nb. 50074, [@tournouer1903]) re-assigned to Santacrucian.
 
-### Basal Metatheria
-*Wirunodon chanku* (coll. nb. 149523, [@goin2004]) age range was set to Early Oligocene (28.7--33.9 Ma).
-The three occurrences of the *Rumiodon* genus were attributed to Early Oligocene (28.7--33.9 Ma)
-All occurrences of the *Protodidelphis* genus were attributed to Late Palaeocene-Early Eocene (47.8--59.2 Ma), just like all occurrences from the *Carolopaulacoutoia* and *Didelphopsis* genera.  
-*Marmosopsis* sp. (coll. nb. 133039, [@tejedor2009]) age range was set to Late Palaeocene-Early Eocene (47.8--59.2 Ma).  
+### Stem Metatheria
+*Wirunodon chanku* (coll. nb. 149523, [@goin2004]) age range was set to early Oligocene (28.7--33.9 Ma).
+The three occurrences of the *Rumiodon* genus were attributed to early Oligocene (28.7--33.9 Ma)
+All occurrences of the *Protodidelphis* genus were attributed to late Paleocene-early Eocene (47.8--59.2 Ma), just like all occurrences from the *Carolopaulacoutoia* and *Didelphopsis* genera.  
+*Marmosopsis* sp. (coll. nb. 133039, [@tejedor2009]) age range was set to Late Paleocene-early Eocene (47.8--59.2 Ma).  
 
 ### Carnivora
 
@@ -213,20 +213,20 @@ Added one occurrence of *Eosclerocalyptus* (6.4--6.6 Ma), *Doellotatus chapadmal
 
 Added one occurrence of the extant genus *Chacodelphys* [@teta2006].  
 All occurrences assigned to the *Micoureus* genus were re-assigned to the *Marmosa* genus, the former being a sub-genus of the latter [@stutz2022].  
-Based on [@marivaux2020], we added a new occurrence of *Marmosa* in the TAR-31 locality of Shapaja, Peru, Middle-Late Miocene (11.67--15.63 Ma).  
-*Paradidelphys* sp. (coll. nb. 157795, [@reguero2011]) was synonymised with *Thylophorops* [@goin1996].  
+Based on [@marivaux2020], we added a new occurrence of *Marmosa* in the TAR-31 locality of Shapaja, Peru, late Middle Miocene (11.67--15.63 Ma).  
+*Paradidelphys* sp. (coll. nb. 157795, [@reguero2011]) was synonimized with *Thylophorops* [@goin1996].  
 Added one occurrence of *Thylamys *cf. *colombianus* from the TAR-31 locality of Shapaja, Peru [@stutz2022].  
 Added one occurrence of *Sparassocynus maimarai* from the Maimará formation, Maimará locality, Jujuy, Argentina [@candela2023].
 
 ### Didolontidae (SANU family with uncertain affinity)
 
-*Archaeohyracotherium mediale* (*Didolodontidae*, coll. nb. 176164, [@simpson1967]) was synonymised with *Asmithwoodwardia subtrigona* (*Protolipternidae*) by ref. [@gelfo2006].  
-*Argyrolambda conidens* was synonymised with *Didolodus multicuspis* [@gelfo2006].  
-*Didolodus* sp. (coll. nb. 199563, [@antoine_biotic_2021]) was removed as associated to "unidentified *Didolontidae*" in the paper.  
+*Archaeohyracotherium mediale* (Didolodontidae, coll. nb. 176164, [@simpson1967]) was synonimized with *Asmithwoodwardia subtrigona* (Protolipternidae) by ref. [@gelfo2006].  
+*Argyrolambda conidens* was synonimized with *Didolodus multicuspis* [@gelfo2006].  
+*Didolodus* sp. (coll. nb. 199563, [@antoine_biotic_2021]) was removed as associated to "unidentified Didolontidae" in the paper.  
 
 ### Litopterna
 
-*Enneoconus parvidens* (coll. nb. 176164, [@simpson1948]) was synonymised with *Ernestokokenia nitida* by ref. [@gelfo2006].
+*Enneoconus parvidens* (coll. nb. 176164, [@simpson1948]) was synonimized with *Ernestokokenia nitida* by ref. [@gelfo2006].
 
 ### Microbiotheria
 
@@ -245,7 +245,7 @@ Assign all *Eomorphippus obscurus* occurrences described in Simpson [@simpson196
 *Acdestodon* genus was synonimised with *Acdestis* [@abello2007].
 Added one occurrence aff. *Palaeothentes* from the TAR-31 locality of Shapaja, Peru [@stutz2022].
 *Propalaeothentes* was synonimised with *Palaeothentes* [@abello2007].
-Added *Palaeopanorthus primus* from the Colhuehuappuian of Chubut, Argentina [@abello2007].
+Added *Palaeopanorthus primus* from the Colhuehuappian of Chubut, Argentina [@abello2007].
 
 ### Perissodactyla
 
@@ -258,7 +258,7 @@ Added *Palaeopanorthus primus* from the Colhuehuappuian of Chubut, Argentina [@a
 *Equus caballus* (coll. nb. 73842, [@oliver1935]) time range was set to Pleistocene by [@canto2010].  
 *Equus santaeelenae* (coll. nb. 144922, 145506, [@pujos2004]) time ranges were adjusted to Late Pleistocene.  
 *Hippidium (Plagiohippus)* (coll. nb. 71304, [@reig1957]) name was set to *Hippidion* [@alberdi1992].  
-*Hypohippidium humahuaquense* (coll. nb. 210722, [@de1957]) was synonymised with *Hippidion devillei* by [@alberdi1992]
+*Hypohippidium humahuaquense* (coll. nb. 210722, [@de1957]) was synonimized with *Hippidion devillei* by [@alberdi1992]
 *Hippidion* sp. (coll. nb. 73842, [@oliver1935]; coll. nb. 199157, [@cione1996]; coll. nb. 53926, [@rusconi1934], 2 occurrences) time ranges were adjusted to Pleistocene.  
 *Tapirus (Tapilarum)* (coll. nb. 53928, [@rusconi1934]) name was shortened to *Tapirus*, and age set to Early Pleistocene.  
 *Tapirus oliverasi* (coll. nb. 146534, [@ubilla1983]) species name was removed as doubtful [@holanda2012], occurrence therefore renamed *Tapirus*.
@@ -271,22 +271,22 @@ Added one occurrence of *Proscelidodon* (Upper Miocene-Lower Pliocene) and one c
 ### Polydolopimorphia
 
 *Chulpasia* sp. (coll. nb. 132938, [@sige2004]) was removed as only one record of *Chulpasia* (species *mattaueri*) has been found in Peru.  
-*Groeberia minoprioi* (coll. nb. 92669, [@simpson1962]) age range was set to Late Eocene-Early Oligocene (27.82--37.71 Ma).
+*Groeberia minoprioi* (coll. nb. 92669, [@simpson1962]) age range was set to late Eocene-early Oligocene (27.82--37.71 Ma).
 *Patagonia peregrina* (coll. nb. 27311, [@goin2013]) age range was set to Chattian (23.03--27.82 Ma).
 All occurrences of *Polydolops clavulus* were renamed *Archaeodolops clavulus*, according to [@chornogubsky2021]. Added one occurence of *Archaeodolops clavulus*, according to the same paper.  
 All occurrences of *Proargyrolagus bolivianus* were attributed to the Salla formation, Bolivia. Hence, their age boundaries were restricted to 24.5--26 Ma.  
-*Amphidolops serrula* (coll. nb. 13779, [@ameghino1902]) was re-assigned to Late Palaeocene (oldest recorded Polydolopid).  
+*Amphidolops serrula* (coll. nb. 13779, [@ameghino1902]) was re-assigned to Late Paleocene (oldest recorded Polydolopid).  
 *Polydolops* sp. (coll. nb. 14208, [@marshall1982]) was removed as age boundaries (Early Miocene) were way outside known boundaries for records of this genus (Middle Eocene).  
-Added occurrence from a newly described genus of the Prepidolopidae family from the TAR-74 locality of San Martín, named *Prepidolopidae gen_A* [@antoine_biotic_2021].
+Added occurrence from a newly described genus of the Prepidolopidae family from the TAR-74 locality of San Martín, named Prepidolopidae *gen_A* [@antoine_biotic_2021].
 
 ### Primates
 
-Ages of Deseadian Soriacebines *Branisella* and *Canaanimico* were restricted to the 24.5--26 Ma interval according to [@marivaux2016].
+Ages of Deseadian soriacebines *Branisella* and *Canaanimico* were restricted to the 24.5--26 Ma interval according to [@marivaux2016].
 
 ### Proboscidea
 
 *Mastotherium hyodon* (coll. nb. 142016, [@boule1920] and 145181, [@schneider1927]) genus named was set to *Cuvieronius*.   
-*Stegomastodon* sp. (coll. nb. 211646, [@ubilla2009]) was synonymised with *Notiomastodon platensis*.  
+*Stegomastodon* sp. (coll. nb. 211646, [@ubilla2009]) was synonimized with *Notiomastodon platensis*.  
 All mentions of *Mammut* were removed.
 *Notiomastodon platensis* (coll. nb. 144515, [@campbell2000]), formerly described as *Amahuacatherium peruvianum* was removed as its age was questioned in [@negri2009].
 
@@ -294,25 +294,26 @@ All mentions of *Mammut* were removed.
 Re-assigned the four occurrences of *Griphodon* described in refs. [@antoine_biotic_2021, @antoine2016] as cf. *Griphodon* sp1 to sp4.
 
 ### Rodentia 
+We should mention that all the rodents considered in this study belong to the order Caviomorpha, and arrived in the South American landmass in the middle Eocene @antoine2012.
 ***Added Occurrences***    
 *Ricardomys longidens*, Laventan age, San Martín department, Peru [@boivin2021].  
 *Microscleromys* sp. (two occurrences), *Microscleromys cribriphilus*, *Microscleromys paradoxalis*, *Microsteiromys jacobsi*, *Nuyuyomys chinqaska*, *Scleromys*, Laventan age, San Martín department, Peru [@boivin2021].  
 *Balsayacuy* sp., Rupelian age (restricted to the 27.82--31.1 Ma interval), Departamento de Ucayali, Santa Rosa locality, Peru [@arnal2022]. Described as an occurrence of *Balsayacuy huallagaensis*, but species attribution doubtful. Hence, restricted to genus level. From the same paper (same locality and same age), we also add one occurrence of *Shapajamys minor*, one of *Ucayalimys amahuacensis* and one of *Vucetichimys pterilophodonica*.  
 *Erethizon* sp., Vorohuean (Marplatan) age, Uquía formation, Quebrada de Humahuaca locality, Jujuy state, Argentina [@reguero2007].  
-*Eoincamys valverdei* and *Tarapotomys subandinus*, Early Oligocene of resp. TAR-72 and TAR-22, San Martín, Peru [@boivin2018].  
+*Eoincamys valverdei* and *Tarapotomys subandinus*, early Oligocene of respectively TAR-72 and TAR-22, San Martín, Peru [@boivin2018].  
 *?Palaeocavia* (5.8--5.9 Ma), *Pithanotomys? solisae* (5.8--5.9 Ma), *Pithanotomys* sp. (5.8--5.9 Ma) *Palaeocavia* sp. (5.9--6.0 Ma) and *Palaeocavia humahuaquense* (6.4--6.6 Ma) from the Maimará formation, Maimará locality, Jujuy, Argentina [@candela2023].  
 
 
 ***Corrections***    
-*Cachiyacuy contamanensis* (coll. nb. 149523, [@arnal2020]) was renamed *Cachiyacuy* sp. as taxonomic assignation under debate. Two *Cachiyacuy contamanensis* occurrences from the same collection, same paper, were renamed cf. *Cachiyacuy contamanensis*, for the same reason.  
+*Cachiyacuy contamanensis* (coll. nb. 149523, [@arnal2020]) was renamed *Cachiyacuy* sp. as taxonomic assignation is under debate. Two *Cachiyacuy contamanensis* occurrences from the same collection, same paper, were renamed cf. *Cachiyacuy contamanensis*, for the same reason.  
 *Kichkasteiromys raimondii*: age range set to 34--35 Ma.  
-Time boundaries of *Cachiyacuy *cf. *contamanensis* and *Cachiyacuy contamanensis* (coll. nbs. 207061 and 207062, [@assemat2019]) were set to Priabonian (33.9--37.2 Ma). Same for *Cachiyacuy *cf. *kummeli*, *Eoespina* and cf. *Eoespina* (coll. nb. 207062, 207062 and 207065, [@assemat2019]) Remaning occurrences of the genus *Cachiyacuy* (four in total) were set to Late Eocene (33.9--41.2 Ma).  
+Time boundaries of *Cachiyacuy *cf. *contamanensis* and *Cachiyacuy contamanensis* (coll. nbs. 207061 and 207062, [@assemat2019]) were set to Priabonian (33.9--37.2 Ma). Same for *Cachiyacuy *cf. *kummeli*, *Eoespina* and cf. *Eoespina* (coll. nb. 207062, 207062 and 207065, [@assemat2019]) Remaining occurrences of the genus *Cachiyacuy* (four in total) were set to late Eocene (33.9--41.2 Ma).  
 *Canaanimys maquiensis* (coll. nb. 149523, [@arnal2020]) was renamed *Canaanimys* sp. as taxonomic assignation under debate.    
 Time boundaries of four *Cachiyacuy kummeli* occurrences (coll. nb. 144474, [@antoine2012]; 176136, [@boivin2017], 207067 and 207062 [@assemat2019]) were set to Bartonian-Priabonian (33.9--41.2 Ma). Same for *Eobranisamys* sp. (coll. nb. 176151, [@boivin2017]) and for all occurrences from the 144474 collection, including one *Chachapoyamys *cf. *kathetos* [@boivin2021], one *Eoespina* sp. [@antoine2012], one *Canaanimys maquiensis* [@antoine2012] and one *Eobranisamys javierpardoi* [@boivin2017].      
 Ages of all occurrences from the collection 149523 were restricted to Rupelian. These included two cf. *Cachiyacuy kummeli* occurrences [@arnal2020], one *Canaanimys* sp. [@arnal2020], one *Eobranisamys riverai*, one *Eobranisamys romeropittmanae*, one *Eoespina woodi*, one *Eoincamys ameghinoi*, one *Eoincamys pascuali*, one *Eopicure kraglievichi*, one *Eosachacui lavocati*, one *Eosallamys paulacoutoi*, one *Eosallamys simpsoni* [@frailey2004], one *Pozomys* sp., two *Pozomys ucayalensis* [@arnal2020], one *Eodelphomys almeidacomposi*, one *Eopululo wigmorei* [@frailey2004].  
 Ages of two *Sallamys pascuali* occurrences (coll. nb. 95688, [@lavocat1976]; 133539, [@patterson1982]), three *Branisamys luribayensis* (coll. nb. 95688 [@lavocat1976]; 95688 [@hartenberger1975]; 133539 [@patterson1982]) were sharpened to the 25--26 Ma interval.  
 Ages of one *Pozomys ucayalensis* (coll. nb. 176129, [@boivin2017]) were set to Bartonian-Priabonian (33.9--41.2 Ma). 
-Ages of two *Eoespina* sp. occurrences (coll. nb. 176140, [@boivin2017]) was restricted to Late Eocene.  
+Ages of two *Eoespina* sp. occurrences (coll. nb. 176140, [@boivin2017]) was restricted to late Eocene.  
 Ages of one *Eoespina* and one cf. *Eoespina* occurrence (coll. nb. 207062 and 207065, [@assemat2019]) were set to Rupelian.  
 *Eoincamys pascuali* (coll. nb. 207064, [@assemat2019]) was renamed *Eonincamys* sp.
 Age range of all Late Oligocene occurrences from the Salla formation, La Paz, Bolivia, was set to 24.5--26 Ma.
@@ -324,7 +325,7 @@ Names of all *Eumysops chapalmalensis* occurrences were set to *Eumysops chapadm
 *Canaanimys* sp. (coll. nb. 176136, [@antoine2016]), taxonomic revision [@boivin2021].  
 *Canaanimys maquiensis* (two occurrences, coll. nb. 207066 and 207067, [@assemat2019]), taxonomic revision [@boivin2021].  
 *Chachapoyamys kathetos* (coll. nb. 207067, [@boivin2021]), re-assigned to *C. *cf. *kathetos* (doublon) [@boivin2021].  
-Four Brazilian occurrences of the genera *Eobranisamys* (two) and *Eoincamys* (two) with absurd ages (coll. nb. 57989, [@kerber2017]; coll. nb. 217834, [@lacerda2021]).  
+Four Brazilian occurrences of the genera *Eobranisamys* (two) and *Eoincamys* (two) with ages for being rework (coll. nb. 57989, [@kerber2017]; coll. nb. 217834, [@lacerda2021]).  
 *Tarapotomys* sp. (2 occurrences) (coll. nb. 199560, [@boivin2018]; coll. nb. 199563, [@antoine_biotic_2021]), respectively re-described as aff. *Tarapotomys* sp. and *Tarapotomys subandinus* in [@boivin2021].  
 *Incamys bolivianus* (coll. nb. 95688, [@lavocat1976]), doulon.  
 *Asteromys bolivianus* (coll. nb. 133591, [@perez2019]), doublon.  
@@ -339,7 +340,7 @@ In addition, we removed our single *Argyrolestes peralestinus* occurrence (coll.
 
 ```{r, echo=FALSE}
 #| label: figs1
-#| fig-cap: "Time bins used in this study. Bins representing International Chronostratigraphic Chart 2022 (ICC bins) geological epochs (leftmost vertical band) and sub-epochs (middle vertical band), and representing South American Mammal Ages (SALMAs, rightmost vertical band) are depicted. SALMA boundaries were determined from Dunn et al. (2013), Woodburne et al. (2014) and Kouvari (2023). Note that an absolute estimate does not exist for the majority of them. Black rectangles stand for gaps in the South American mammalian fossil record. *Abbreviations for SALMAs. Des: Deseadan, Ting: Tinguirirican, Must: Mustersan, Barr: Barrancan, “S. F.” : “Sapoan Fauna”, Rioch: Riochian, Itab: Itaboraian.*"
+#| fig-cap: "Time bins used in this study. Bins representing International Chronostratigraphic Chart 2022 (ICC bins) geological epochs (leftmost vertical band) and sub-epochs (middle vertical band), and representing South American Mammal Ages (SALMAs, rightmost vertical band) are depicted. SALMA boundaries were determined from Dunn et al. (2013), Woodburne et al. (2014) and Kouvari (2023). Note that an absolute estimate does not exist for the majority of them. Black rectangles stand for gaps in the South American mammalian fossil record. *Abbreviations for SALMAs. Des: Deseadan, Ting: Tinguirirican, Must: Mustersan, Barr: Barrancan, “S. F.” : “Sapoan Fauna”, Rioch: Riochican, Itab: Itaboraian.*"
 knitr::include_graphics(path = "../../figures/supp_figs/Fig_S1_SALMA_scale/SALMA_SubEpochs.png")
 ```
 
@@ -349,7 +350,7 @@ knitr::include_graphics(path = "../../figures/supp_figs/Fig_S1_SALMA_scale/SALMA
 knitr::include_graphics(path = "../../figures/supp_figs/Fig_pipeline/methods_figure.pdf")
 ```
 \clearpage
-We downloaded our data on The Paleobiology Database (<https://paleobiodb.org/>). We made sure to match each occurrences’ time range with the boundaries of its corresponding interval, either being a geological stage/epoch (55% of our occurrences) or a South American Land Mammal Age (SALMA) (45% of our occurrences). Then, we cleaned the data, verifying for each occurrence its age range, taxonomic name (correcting synonyms), restoring missing elements of open nomenclature (*eg*., “?”, “cf.”, “aff.”), removing duplicates and adding eventually newly-published data (1). Afterwards, occurrences associated to a SALMA were either binned to their corresponding sub-Epoch (‘SALMA smoothed to Sub-Epoch’) @figs1 or left as they were (‘SALMA kept’) (2). We also both analysed diversification patterns at the species and the genus level (3). Several subsettings were tested, considering (i) full data, (ii) data without singletons, (iii) spatially scaled data, (iv) tropical partitioning and (v) “diet” (based on dental ecomorphotype). Once subsetted, each individual occurrence dataset was used as an input for our diversity inference accounting for preservation (4). Then, we proceeded to the diversification inference, either by (5) fitting birth-death models with constrained rate shifts (BDCS) (6) and model-estimated rate shifts (RJMCMC) (7) or by fitting environment-dependent multivariate birth-death models (MBD) (8). Last, we fitted an age-dependent extinction (ADE) model to our occurrence data within two time frames with constant extinction rate (9).
+We downloaded our data on The Paleobiology Database (<https://paleobiodb.org/>). We made sure to match each occurrences’ time range with the boundaries of its corresponding interval, either being a geological stage/epoch (55% of our occurrences) or a South American Land Mammal Age (SALMA) (45% of our occurrences). Then, we cleaned the data, verifying for each occurrence its age range, taxonomic name (correcting synonyms), restoring missing elements of open nomenclature (*eg*., “?”, “cf.”, “aff.”), removing duplicates and adding eventually newly-published data (1). Afterwards, occurrences associated to a SALMA were either binned to their corresponding sub-Epoch (‘SALMA smoothed to Sub-Epoch’) @figs1 or left as they were (‘SALMA kept’) (2). We also both analyzed diversification patterns at the species and the genus level (3). Several subsettings were tested, considering (i) full data, (ii) data without singletons, (iii) spatially scaled data, (iv) tropical partitioning and (v) “diet” (based on dental ecomorphotype). Once subsetted, each individual occurrence dataset was used as an input for our diversity inference accounting for preservation (4). Then, we proceeded to the diversification inference, either by (5) fitting birth-death models with constrained rate shifts (BDCS) (6) and model-estimated rate shifts (RJMCMC) (7) or by fitting environment-dependent multivariate birth-death models (MBD) (8). Last, we fitted an age-dependent extinction (ADE) model to our occurrence data within two time frames with constant extinction rate (9).
 
 ```{r, echo=FALSE}
 #| label: figs3
@@ -379,79 +380,79 @@ knitr::include_graphics(path = "../../figures/supp_figs/PPtest/Fig_S6.pdf")
 
 ```{r, echo=FALSE}
 #| label: figs7
-#| fig-cap: "Diversification rates of our full dataset after (or not) smoothing SALMAs to their corresponding sub-Epochs, estimated under the BDCS model with two different time bins for rate shifts. Origination rates are displayed in blue and extinction rates in red. Solid lines show average rates, and shaded areas their corresponding 95% HPD. Light brown vertical bands respectively display the Early Eocene Climate Optimum (EECO, 53-51 Ma) and the Mid-Eocene Climate Optimum (MECO, 42-41 Ma)."
+#| fig-cap: "Diversification rates of our full dataset after (or not) smoothing SALMAs to their corresponding sub-Epochs, estimated under the BDCS model with two different time bins for rate shifts. Origination rates are displayed in blue and extinction rates in red. Solid lines show average rates, and shaded areas their corresponding 95% HPD. Light brown vertical bands respectively display the early Eocene Climate Optimum (EECO, 53-51 Ma) and the Mid-Eocene Climate Optimum (MECO, 42-41 Ma)."
 knitr::include_graphics(path = "../../figures/supp_figs/rtt_BDCS.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs8
-#| fig-cap: "Diversification and diversity dynamics of South American Mammals from the Early Eocene to the Late Oligocene. Trends are represented for all genera (A-C), all species (D-F), extratropical (G-I) and tropical genera (J-L). Light orange bands represent the Early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated as EECO and MECO. Blue and red stars respectively represent significant shifts in origination and extinction rates."
+#| fig-cap: "Diversification and diversity dynamics of South American Mammals from the early Eocene to the Late Oligocene. Trends are represented for all genera (A-C), all species (D-F), extratropical (G-I) and tropical genera (J-L). Light orange bands represent the early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated as EECO and MECO. Blue and red stars respectively represent significant shifts in origination and extinction rates."
 knitr::include_graphics(path = "../../figures/Main/Figure_1/Figure1.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs9
-#| fig-cap: "Diversification and diversity dynamics of South American Mammals from the Early Eocene to the Late Oligocene without binning SALMAs to their corresponding sub-epochs. Trends are represented for all genera (A-C), all species (D-F), extratropical (G-I) and tropical genera (J-L). Light orange bands represent the Early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated as EECO and MECO. Blue and red stars respectively represent significant shifts in origination and extinction rates."
+#| fig-cap: "Diversification and diversity dynamics of South American Mammals from the early Eocene to the Late Oligocene without binning SALMAs to their corresponding sub-epochs. Trends are represented for all genera (A-C), all species (D-F), extratropical (G-I) and tropical genera (J-L). Light orange bands represent the early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated as EECO and MECO. Blue and red stars respectively represent significant shifts in origination and extinction rates."
 knitr::include_graphics(path = "../../figures/supp_figs/RTT_LTT/BDCS_kept/Figure1_BDCS_kept.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs10
-#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the Early Eocene to the Late Oligocene (SALMAs binned to their corresponding Sub-Epochs). Trends are represented for all genera (A-C), all species (D-F), extratropical (G-I) and tropical genera (J-L). Light orange bands represent the Early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated as EECO and MECO. Blue and red stars respectively represent significant shifts in origination and extinction rates."
+#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the early Eocene to the Late Oligocene (SALMAs binned to their corresponding Sub-Epochs). Trends are represented for all genera (A-C), all species (D-F), extratropical (G-I) and tropical genera (J-L). Light orange bands represent the early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated as EECO and MECO. Blue and red stars respectively represent significant shifts in origination and extinction rates."
 knitr::include_graphics(path = "../../figures/supp_figs/RTT_LTT/RJMCMC_smoothed/Figure1.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs11
-#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the Early Eocene to the Late Oligocene (without binning SALMAs to their corresponding Sub-Epochs). Trends are represented for all genera (A-C), all species (D-F), extratropical (G-I) and tropical genera (J-L). Light orange bands represent the Early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated as EECO and MECO. Blue and red stars respectively represent significant shifts in origination and extinction rates."
+#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the early Eocene to the Late Oligocene (without binning SALMAs to their corresponding Sub-Epochs). Trends are represented for all genera (A-C), all species (D-F), extratropical (G-I) and tropical genera (J-L). Light orange bands represent the early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated as EECO and MECO. Blue and red stars respectively represent significant shifts in origination and extinction rates."
 knitr::include_graphics(path = "../../figures/supp_figs/RTT_LTT/RJMCMC_kept/Figure1_RJMCMC_kept.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs12
-#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the Early Eocene to the Late Oligocene after removing singletons (SALMA smoothed)."
+#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the early Eocene to the Late Oligocene after removing singletons (SALMA smoothed)."
 knitr::include_graphics(path = "../../figures/supp_figs/RTT_LTT/Singleton_panel_smoothed.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs13
-#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the Early Eocene to the Late Oligocene after removing singletons (SALMA kept)."
+#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the early Eocene to the Late Oligocene after removing singletons (SALMA kept)."
 knitr::include_graphics(path = "../../figures/supp_figs/RTT_LTT/Singleton_panel_kept.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs14
-#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the Early Eocene to the Late Oligocene after  subsetting our dataset to unique locality-lineage combinations (SALMA smoothed)."
+#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the early Eocene to the Late Oligocene after  subsetting our dataset to unique locality-lineage combinations (SALMA smoothed)."
 knitr::include_graphics(path = "../../figures/supp_figs/RTT_LTT/Spatially_scaled_panel_smoothed.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs15
-#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the Early Eocene to the Late Oligocene after  subsetting our dataset to unique locality-lineage combinations (SALMA kept)."
+#| fig-cap: "Diversification (estimated with RJMCMC) and diversity dynamics of South American Mammals from the early Eocene to the Late Oligocene after  subsetting our dataset to unique locality-lineage combinations (SALMA kept)."
 knitr::include_graphics(path = "../../figures/supp_figs/RTT_LTT/Spatially_scaled_panel_kept.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs16
-#| fig-cap: "Genus-level diversity and diversification dynamics of five mammal groups from the Early Eocene to the Late Oligocene. Diversification trends are analysed under the BDCS algorithm using the origination and extinction times inferred by the analysis of the full dataset. Trends are represented for notoungulates (A-C), all the other native ungulates (“Other_SANUs”, *i.e*., Litopterna, Astrapotheria, Pyrotheria, Xenungulata) (D-F), rodents (G-I), xenarthrans (J-L) and metatherians (M-O). Light orange bands represent the Early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated EECO and MECO."
+#| fig-cap: "Genus-level diversity and diversification dynamics of five mammal groups from the early Eocene to the Late Oligocene. Diversification trends are analyzed under the BDCS algorithm using the origination and extinction times inferred by the analysis of the full dataset. Trends are represented for notoungulates (A-C), all the other native ungulates (“Other_SANUs”, *i.e*., Litopterna, Astrapotheria, Pyrotheria, Xenungulata) (D-F), rodents (G-I), xenarthrans (J-L) and metatherians (M-O). Light orange bands represent the early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated EECO and MECO."
 knitr::include_graphics(path = "../../figures/supp_figs/RTT_LTT/RTT_LTT_five_groups_BDCS.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs17
-#| fig-cap: "Genus-level diversity and diversification dynamics (inferred with RJMCMC) of five mammal groups from the Early Eocene to the Late Oligocene. Diversification trends are analysed under the RJMCMC algorithm (de-novo estimation of origination and extinction times). Trends are represented for notoungulates (A-C), all the other native ungulates (“Other_SANUs”, *i.e*., Litopterna, Astrapotheria, Pyrotheria, Xenungulata) (D-F), rodents (G-I), xenarthrans (J-L) and metatherians (M-O). Light orange bands represent the Early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated EECO and MECO."
+#| fig-cap: "Genus-level diversity and diversification dynamics (inferred with RJMCMC) of five mammal groups from the early Eocene to the Late Oligocene. Diversification trends are analyzed under the RJMCMC algorithm (de-novo estimation of origination and extinction times). Trends are represented for notoungulates (A-C), all the other native ungulates (“Other_SANUs”, *i.e*., Litopterna, Astrapotheria, Pyrotheria, Xenungulata) (D-F), rodents (G-I), xenarthrans (J-L) and metatherians (M-O). Light orange bands represent the early Eocene (53-51 Ma) and the Mid-Eocene (~41 Ma) Climate Optima, respectively abbreviated EECO and MECO."
 knitr::include_graphics(path = "../../figures/supp_figs/RTT_LTT/RTT_LTT_five_groups_RJMCMC.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs18
-#| fig-cap: "Metatherian genera longevity across the Eocene-Oligocene. Each panel represents a phylogenetic order, within which each genera are coloured based on their superfamily. Following Antoine et al. (2021), we chose to nest the superfamily Argyrolagoidea inside Polydolopimorphia, but we know that this phylogenetic placement is under debate (see Beck et al. (2017))."
+#| fig-cap: "Metatherian genera longevity across the Eocene-Oligocene. Each panel represents a phylogenetic order, within which each genera are colored based on their superfamily. Following Antoine et al. (2021), we chose to nest the superfamily Argyrolagoidea inside Polydolopimorphia, but we know that this phylogenetic placement is under debate (see Beck (2017))."
 knitr::include_graphics(path = "../../figures/supp_figs/Fig_turnover/SALMA_smoothed/Metatheria_turnover.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs19
-#| fig-cap: "Notoungulate genera longevity across the Eocene-Oligocene. Both plots display the exact same information. On the left panel, genera were organised by increasing age of extinction, and we highlighted with colours members from three basal families going extinct near the EOT (Oldfieldthomasiidae, Archaeopithecidae and Notostylopidae). Conversely, on the right panel, genera were organised by increasing age of origination, and we highlighted with colours members of families originating near the EOT (Homalodotheriidae, Hegetotheriidae, Mesotheriidae, Toxodontidae)."
+#| fig-cap: "Notoungulate genera longevity across the Eocene-Oligocene. Both plots display the exact same information. On the left panel, genera were organised by increasing age of extinction, and we highlighted with colors members from three basal families going extinct near the EOT (Oldfieldthomasiidae, Archaeopithecidae and Notostylopidae). Conversely, on the right panel, genera were organised by increasing age of origination, and we highlighted with colors members of families originating near the EOT (Homalodotheriidae, Hegetotheriidae, Mesotheriidae, Toxodontidae)."
 knitr::include_graphics(path = "../../figures/supp_figs/Fig_turnover/SALMA_smoothed/Noto_turnover.pdf")
 ```
 
@@ -463,7 +464,7 @@ knitr::include_graphics(path = "../../figures/supp_figs/Fig_turnover/SALMA_smoot
 
 ```{r, echo=FALSE}
 #| label: figs21
-#| fig-cap: "Xenarthran genera longevity across the Eocene-Oligocene. Genera were coloured based on their affinity with two cingulate subfamilies: Dasypodinae and Euphractinae."
+#| fig-cap: "Xenarthran genera longevity across the Eocene-Oligocene. Genera were colored based on their affinity with two cingulate subfamilies: Dasypodinae and Euphractinae."
 knitr::include_graphics(path = "../../figures/supp_figs/Fig_turnover/SALMA_smoothed/Xen_turnover.pdf")
 ```
 
@@ -475,13 +476,13 @@ knitr::include_graphics(path = "../../figures/supp_figs/Fig_turnover/SALMA_smoot
 
 ```{r, echo=FALSE}
 #| label: figs23
-#| fig-cap: "South American Native Ungulate genera longevity across the Eocene-Oligocene (without Notoungulata). Each panel represents a taxonomic order, within which genera are coloured based on their family."
+#| fig-cap: "South American Native Ungulate genera longevity across the Eocene-Oligocene (without Notoungulata). Each panel represents a taxonomic order, within which genera are colored based on their family."
 knitr::include_graphics(path = "../../figures/supp_figs/Fig_turnover/SALMA_smoothed/SANU_turnover.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs24
-#| fig-cap: Diversity and diversification dynamics (inferred with RJMCMC) of South American mammal genera between the Eocene and the Oligocene arranged by latitude. Trends are assessed for the extratropical (A-C) and tropical (D-F) realms. Origination and extinction rates are respectively depicted in blue and red (A and D). Stars indicate significant rate shifts. Their net difference, being the net diversification rate, is represented in black (B and E). Diversity through time is plotted in green (C and F). The maps on the right show the localities of our extratropical (top) and tropical (bottom) occurrences. Light brown vertical bands indicate two key climate events, the Early Eocene Climate Optimum (EECO, *ca.* 53--51 Ma) and the Middle Eocene Climate Optimum (MECO, *ca.* 41.5--41 Ma).
+#| fig-cap: Diversity and diversification dynamics (inferred with RJMCMC) of South American mammal genera between the Eocene and the Oligocene arranged by latitude. Trends are assessed for the tropical (A-C) and extratropical (D-F) realms. Origination and extinction rates are respectively depicted in blue and red (A and D). Stars indicate significant rate shifts. Their net difference, being the net diversification rate, is represented in black (B and E). Diversity through time is plotted in green (C and F). The maps on the right show the localities of our extratropical (top) and tropical (bottom) occurrences. Light brown vertical bands indicate two key climate events, the early Eocene Climate Optimum (EECO, *ca.* 53--51 Ma) and the Middle Eocene Climate Optimum (MECO, *ca.* 41.5--41 Ma).
 knitr::include_graphics(path = "../../figures/supp_figs/RTT_LTT_trop_etrop_RJMCMC.pdf")
 ```
 
@@ -529,13 +530,13 @@ knitr::include_graphics(path = "../../figures/supp_figs/q_rates/Trop_etrop_genus
 
 ```{r, echo=FALSE}
 #| label: figs32
-#| fig-cap: "Diversification, diversity and preservation trends inferred from the full genus-level dataset (SALMA kept) after extending in the Early Oligocene the age range East-Amazonian occurrences from localities in the regions of Contamana and Tarapoto originally assigned to an Eocene age, according to Campbell et al. (2021)"
+#| fig-cap: "Diversification, diversity and preservation trends inferred from the full genus-level dataset (SALMA kept) after extending in the early Oligocene the age range western Amazonian occurrences from localities in the regions of Contamana and Tarapoto originally assigned to an Eocene age, according to Campbell et al.'s (2021) 'reverse tip-dating' inferences on concerned localities, further amalgamated as local faunas."
 knitr::include_graphics(path = "../../figures/supp_figs/CTA_TAR_redated/RTT_LTT_Q.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs33
-#| fig-cap: "Diversity trends among tropical taxa obtained after extending in the Early Oligocene the age range East-Amazonian occurrences from localities in the regions of Contamana and Tarapoto originally assigned to an Eocene age, according to Campbell et al. (2021) (B) or not (A)."
+#| fig-cap: "Diversity trends among tropical taxa obtained after extending in the early Oligocene the age range East-Amazonian occurrences from localities in the regions of Contamana and Tarapoto originally assigned to an Eocene age, according to Campbell et al.'s (2021) hypotheses (B) or not (A)."
 knitr::include_graphics(path = "../../figures/supp_figs/CTA_TAR_redated/compared_LTTs.pdf")
 ```
 
@@ -583,7 +584,7 @@ knitr::include_graphics(path = "../../figures/supp_figs/evt_vbl_plot.pdf")
 knitr::include_graphics(path = "../../results_EXTENDED/SALMA_smoothed/genus_level/1-Full/MH_sampler/pyrate_mcmc_logs/ESS_plot.png")
 ```
 \clearpage
-We displayed the ESS of the model posterior probability for all the 20 replicates we ran (A). ESS greater than 200 (first-scale indicator of a run that converged, $n=11$) are displayed in green. The proportion of origination and extinction times (resp. $T_S$ and $T_E$) that converged (*i.e*., with ESS > 200) are shown in, for each of our 20 replicates (B). The plot (C) is artefactual as it shows the posterior estimates of the mean death age of our group, together with their lower and upped boundaries of the 95% HPD interval. However, we excluded on purpose the occurrences older that 60 My.
+We displayed the ESS of the model posterior probability for all the 20 replicates we ran (A). ESS greater than 200 (first-scale indicator of a run that converged, $n=11$) are displayed in green. The proportion of origination and extinction times (resp. $T_S$ and $T_E$) that converged (*i.e*., with ESS > 200) are shown in, for each of our 20 replicates (B). The plot (C) is artefactual as it shows the posterior estimates of the mean death age of our group, together with their lower and upper boundaries of the 95% HPD interval. However, we excluded on purpose the occurrences older that 60 My.
 
 ```{r, echo=FALSE}
 #| label: figs41
@@ -609,6 +610,7 @@ convert_bold <- function(el){
 #| tbl-cap: "Number of occurrences (n_occ), of genera (n_gen), of species (n_sp), of singleton (*i.e*., genera or species only represented by a single occurrence, n_singl_gen and n_singl_sp respectively) and proportion of singletons (prop_singl_gen and prop_singl_sp) per order. The 96 occurrences (49 genera) without specified order are not displayed here, but counted in the ‘Total’ row."
 
 tbl <- read.csv("./supp_tbl/recap_tbl_EOT_extended.csv")
+tbl$order[which(tbl$order == "Basal_Marsupialia")] <- "Stem Metatheria"
 tbl[nrow(tbl),] <- sapply(tbl[nrow(tbl),], FUN = convert_bold)
 knitr::kable(tbl, align = 'c')
 ```
