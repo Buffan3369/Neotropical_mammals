@@ -29,9 +29,7 @@ coord_ref <- raw %>%
   distinct(collection_no)
   #Associate each collection to its coordinates
 occdf <- occdf %>%
-  left_join(coord_ref)
-  #Backtrace (for newly-entered occurrences, without collection number)
-source("./R/useful/2b-Trop_N_Diet_helper.R")
+  left_join(coord_ref) 
 
 ## Create mid_ma column (mid age, for palaeorotation) --------------------------
 occdf$age <- sapply(X = 1:nrow(occdf),
@@ -39,13 +37,16 @@ occdf$age <- sapply(X = 1:nrow(occdf),
                       M <- (occdf$max_ma[x] + occdf$min_ma[x])/2
                       return(M)
                     })
+# filter out NAs
+occdf <- occdf %>%
+  filter(!(is.na(lng) | is.na(lat) | is.na(age)))
 
 ## Palaeorotate using the PALEOMAP Global Plate Model --------------------------
 to_rot <- data.frame(lng = occdf$lng,
                      lat = occdf$lat,
                      age = occdf$age,
                      genus = occdf$genus)
-to_rot <- palaeorotate(occdf = to_rot,
+tr <- palaeorotate(occdf = to_rot,
                        lng = "lng",
                        lat = "lat",
                        age = "age",
@@ -53,7 +54,7 @@ to_rot <- palaeorotate(occdf = to_rot,
                        method = "point",
                        uncertainty = FALSE)
 occdf <- occdf %>% 
-  add_column(p_lng = to_rot$p_lng, p_lat = to_rot$p_lat, .after = "lat") %>% 
+  add_column(p_lng = tr$p_lng, p_lat = tr$p_lat, .after = "lat") %>% 
   filter(!(is.na(p_lat))) #filter out the 3 occurrences we couldn't palaeorotate
 
 ## Proceed to actual tropical assignment ---------------------------------------
@@ -94,6 +95,9 @@ occdf$loc[which(occdf$loc == 1)] <- "T"
 cat("Proportion of Tropical occurrences:", round(length(which(occdf$loc == "T"))/nrow(occdf), digits = 2), "\n")
 cat("Proportion of Extra-tropical occurrences:", round(length(which(occdf$loc == "E"))/nrow(occdf), digits = 2), "\n")
 cat("Proportion of occurrences with unassigned affinity:", round(length(which(is.na(occdf$loc)))/nrow(occdf), digits = 2), "\n")
+
+#Backtrace (for newly-entered occurrences, without collection number)
+source("./R/useful/2b-Trop_N_Diet_helper.R")
 
 #-------------------------------------------------------------------------------
 ############################# 'Diet' Assignment ################################
@@ -136,6 +140,8 @@ occdf$diet[which(occdf$genus == "Callicebus")] <- "frugivore"
 
 ## Small correction for Mustersan's age boundaries
 occdf$min_ma[which(occdf$stage == 'Mustersan')] <- 35
+
+
 #-------------------------------------------------------------------------------
 ##################### Save the whole occurrence dataframe ######################
 #-------------------------------------------------------------------------------
