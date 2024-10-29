@@ -163,7 +163,41 @@ write.table.lucas(x = rlai_int %>% filter(Age <= 51 & Age >= 34),
 write.table.lucas(x = rlai_int %>% filter(Age <= 34 & Age >= 23),
                   file = "./data_2023/MBD/processed_predictors_Oligocene_only/6-rLAI_Oligocene_only.txt")
 
+#### Andes 38 zones ------------------------------------------------------------
+full_andes <- read_xlsx("./data_2023/MBD/raw_environment_correlates/Andes_38_zones/Andes_mean_elevations.xlsx")
+full_andes <- full_andes[seq(2, nrow(full_andes), by = 2),]
+full_andes$Falcon <- as.numeric(full_andes$Falcon)
+# Northern tectonic regions
+North <- c("santa_marta_massif", "maracaibo", "merida_venezuelan", "EC.N", "Garzon", "Falcon", "Perija.Santander",
+           "Venezuelan_coastal_ranges", "CC.N", "Quebradagrande", "WC.N", "onshore_forearc_N", "middle_magdalena_valley_basin",
+           "San_Lucas", "coastal_cordillera.NC", "WC.NC", "EC.NC", "Subandes.NC", "coastal_cordillera.C")
+# Southern tectonic regions
+South <- c("WC.C", "Altiplano", "western_Puna", "eastern_Puna", "EC.C", "Subandes.C", "Santa_Barbara", "coastal_cordillera.SC",
+           "Main_cordillera.SC", "Frontal_cordillera.SC", "Precordillera.SC", "Sierras_Pampeanas", "Longitudinal_valley.S", 
+           "Main_Cordillera.S", "east_Patagonia_high", "San_Jorge_Gulf", "Austral", "Neuquen")
+# Averaging
+av_nth <- apply(full_andes[, -c(1, North)], MARGIN = 1, FUN = mean, na.rm = T)
+av_sth <- apply(full_andes[, -c(1, North)], MARGIN = 1, FUN = mean, na.rm = T)
 
+par(mfrow = c(1, 2))
+plot(full_andes$age, av_nth, type = "l", main = "North", col = "red")
+for(col in North){
+  lines(x = full_andes$age, y = full_andes[, col][[1]])
+}
+plot(full_andes$age, av_sth, type = "l", main = "South", col = "red")
+for(col in North){
+  lines(x = full_andes$age, y = full_andes[, col][[1]])
+}
+
+
+
+interpol_nth <- approx(x = northern_andes$Age[1:2], y = average_elevation$Altitude[1:2], n=3)$y
+for(i in 2:66){
+  interpol_av_el <- c(interpol_av_el,
+                      approx(x = average_elevation$Age[i:(i+1)], y = average_elevation$Altitude[i:(i+1)], n=3)$y[-c(1)])
+}
+
+southern_andes <- full_andes %>% select(age, all_of(South))
 #### Environment variable plot for SI Appendix ---------------------------------
 library(deeptime)
 library(ggpubr)
@@ -281,4 +315,5 @@ ggsave("./figures/supp_figs/evt_vbl_plot.pdf",
        height = 150,
        width = 210,
        units = "mm")
+
 
