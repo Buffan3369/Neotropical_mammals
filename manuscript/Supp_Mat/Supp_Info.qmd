@@ -6,9 +6,12 @@ format:
     papersize: letter
     geometry: 
       - left=20mm
+      - right=20mm
+      - bottom=25mm
+      - top=25mm
     link-citations: true
 authors:
-  - Lucas Buffan$^{1,*}$, Fabien L. Condamine$^1$, Narla S. Stutz$^1$, François Pujos$^2$, Pierre-Olivier Antoine$^1$
+  - Lucas Buffan$^{1,*}$, Fabien L. Condamine$^1$, Narla S. Stutz$^1$, François Pujos$^2$, Pierre-Olivier Antoine$^1$,
   - Laurent Marivaux$^1$
 mainfont: LiberationSans
 bibliography: Supp_refs.bib
@@ -391,13 +394,10 @@ Last, we fitted an age-dependent extinction (ADE) model to our occurrence data w
 
 ```{r, echo=FALSE}
 #| label: figs3
-#| fig-cap: "Map of the fossil-bearing localities considered in this study (435 collections). A major part of them are located close to the Andes. Present-day elevation data were taken from Boschman (2021)."
+#| fig-cap: Map of the fossil-bearing localities considered in this study (435 collections). A major part of them are located close to the Andes. Present-day elevation data were taken from Boschman (2021).
 knitr::include_graphics(path = "../../figures/supp_figs/Fig_S2_occurrences_map.pdf")
 ```
 
-\clearpage
-
-These collections comprise a total of 3384 retained occurrences, including 156 of palaeotropical affinity (in green, 43 collections) and 3326 of extra-palaeotropical affinity (in brown, 391 collections).
 
 ```{r, echo=FALSE}
 #| label: figs4

@@ -50,7 +50,8 @@ p <- nw %>%
   labs(x = "Longitude", y = "Latitude", fill = "Elevation (m)", colour = NULL) +
   theme(panel.grid.major = element_line(linetype = 3, colour = "black", linewidth = 0.1),
         panel.grid.minor = element_line(linetype = 3, colour = "black", linewidth = 0.1),
-        panel.background = element_rect(fill = "#f0f0f0"))
+        panel.background = element_rect(fill = "#f0f0f0"),
+        plot.margin=grid::unit(c(0,0,0,0), "mm"))
 
 ## Save ------------------------------------------------------------------------
-ggsave("./figures/supp_figs/Fig_S2_occurrences_map.pdf", plot = p, height = 9, width = 7)
+ggsave("./figures/supp_figs/Fig_S2_occurrences_map.pdf", plot = p, height = 10, width = 8)
