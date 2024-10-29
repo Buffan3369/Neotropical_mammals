@@ -37,6 +37,10 @@ occdf$age <- sapply(X = 1:nrow(occdf),
                       M <- (occdf$max_ma[x] + occdf$min_ma[x])/2
                       return(M)
                     })
+
+#Backtrace (for newly-entered occurrences, without collection number)
+source("./R/useful/2b-Trop_N_Diet_helper.R")
+
 # filter out NAs
 occdf <- occdf %>%
   filter(!(is.na(lng) | is.na(lat) | is.na(age)))
@@ -95,9 +99,6 @@ occdf$loc[which(occdf$loc == 1)] <- "T"
 cat("Proportion of Tropical occurrences:", round(length(which(occdf$loc == "T"))/nrow(occdf), digits = 2), "\n")
 cat("Proportion of Extra-tropical occurrences:", round(length(which(occdf$loc == "E"))/nrow(occdf), digits = 2), "\n")
 cat("Proportion of occurrences with unassigned affinity:", round(length(which(is.na(occdf$loc)))/nrow(occdf), digits = 2), "\n")
-
-#Backtrace (for newly-entered occurrences, without collection number)
-source("./R/useful/2b-Trop_N_Diet_helper.R")
 
 #-------------------------------------------------------------------------------
 ############################# 'Diet' Assignment ################################
