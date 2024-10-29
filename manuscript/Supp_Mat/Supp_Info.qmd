@@ -391,7 +391,7 @@ Last, we fitted an age-dependent extinction (ADE) model to our occurrence data w
 
 ```{r, echo=FALSE}
 #| label: figs3
-#| fig-cap: "Map of the fossil-bearing localities considered in this study (435 collections). Present-day elevation data were taken from Boschman (2021)."
+#| fig-cap: "Map of the fossil-bearing localities considered in this study (435 collections). A major part of them are located close to the Andes. Present-day elevation data were taken from Boschman (2021)."
 knitr::include_graphics(path = "../../figures/supp_figs/Fig_S2_occurrences_map.pdf")
 ```
 
