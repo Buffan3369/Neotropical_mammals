@@ -55,3 +55,26 @@ p <- nw %>%
 
 ## Save ------------------------------------------------------------------------
 ggsave("./figures/supp_figs/Fig_S2_occurrences_map.pdf", plot = p, height = 10, width = 8)
+
+## Plot map without occurrences ------------------------------------------------
+map <- nw %>%
+  # Extract South America 
+  filter(ECO_NAM %in% c("North_Mesoamerica", "Nearctic", "South_Mesoamerica", "Carribean") == F) %>%
+  # Merge extracted polygons
+  st_union() %>% 
+  # Plot
+  ggplot() + 
+  geom_sf(lwd=0) +
+  geom_tile(data = r.df, aes(x = lon, y = lat, fill = elev)) +
+  scale_fill_continuous(low = "#fee391", high = "#662506") +
+  theme(axis.line=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank(),
+        axis.title=element_blank(),
+        legend.position = "none",
+        panel.background = element_rect(fill = "transparent"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.margin=grid::unit(c(0,0,0,0), "mm"))
+
+ggsave("./figures/supp_figs/andes_geo_strat/map.png", plot = map, height = 120, width = 50, units = "mm", dpi = 600)

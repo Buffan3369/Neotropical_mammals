@@ -16,6 +16,15 @@ write.table.lucas <- function(...){
               ...)
 }
 
+## Fancy theme for plots -------------------------------------------------------
+theme_lucas <- function(...){
+  theme(panel.background = element_blank(),
+        panel.border = element_rect(linewidth = .75, colour = "black", fill = NA),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        plot.title = element_text(size = 12, hjust = 0.5),
+        ...)
+}
 ## Function to select the closest 'age_vect' element to the integer 'int_age' --------------------------------------
 select_closer <- function(int_age, age_vect){
   diff <- sapply(X = age_vect, FUN = function(x){return(abs(x-int_age))})

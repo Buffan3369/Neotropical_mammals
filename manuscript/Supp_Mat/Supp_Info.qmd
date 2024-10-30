@@ -30,11 +30,14 @@ editor:
 | $^1$ Institut des Sciences de l’Evolution de Montpellier, Université de Montpellier, CNRS, IRD, Place Eugène Bataillon, 34095 Montpellier cedex 5, France
 | 
 | 
+| 
 | $^2$ IANIGLA, CCT–CONICET–Mendoza, Avenida Ruiz Leal s/n, Parque General San Martín, 5500 Mendoza, Argentina
 | 
 | 
 | 
+| 
 | \* **Corresponding author**: Lucas.Buffan\@umontpellier.fr
+| 
 | 
 | 
 | 
@@ -394,10 +397,9 @@ Last, we fitted an age-dependent extinction (ADE) model to our occurrence data w
 
 ```{r, echo=FALSE}
 #| label: figs3
-#| fig-cap: Map of the fossil-bearing localities considered in this study (435 collections). A major part of them are located close to the Andes. Present-day elevation data were taken from Boschman (2021).
+#| fig-cap: Map of the fossil-bearing localities considered in this study (435 collections). A major part of them are located close to the Andes. Present-day elevation data were taken from Boschman @boschman_andean_2021.
 knitr::include_graphics(path = "../../figures/supp_figs/Fig_S2_occurrences_map.pdf")
 ```
-
 
 ```{r, echo=FALSE}
 #| label: figs4
@@ -618,6 +620,13 @@ knitr::include_graphics(path = "../../figures/supp_figs/evt_vbl_plot.pdf")
 
 ```{r, echo=FALSE}
 #| label: figs40
+#| fig-cap: Paleoelevation history of the two main Andean domains we defined based on latitude and uplift history, adapted from Boschman @boschman_andean_2021.
+
+knitr::include_graphics(path = "../../figures/supp_figs/andes_geo_strat/figs42_andes.pdf")
+```
+
+```{r, echo=FALSE}
+#| label: figs41
 #| fig-cap: Convergence of our main PyRate runs.
 
 knitr::include_graphics(path = "../../results_EXTENDED/SALMA_smoothed/genus_level/1-Full/MH_sampler/pyrate_mcmc_logs/ESS_plot.png")
@@ -632,7 +641,7 @@ The plot (C) is artefactual as it shows the posterior estimates of the mean deat
 However, we excluded on purpose the occurrences older that 60 My.
 
 ```{r, echo=FALSE}
-#| label: figs41
+#| label: figs42
 #| fig-cap: Posterior estimate of the shape parameter of the Weibull distribution for the ADE analyses of the 'Early' and 'Late' occurrence datasets, with constant extinction rate. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by black horizontal lines, respectively from bottom to top.
 
 knitr::include_graphics(path = "../../figures/supp_figs/ADE/Fig_s41.pdf")

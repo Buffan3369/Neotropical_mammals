@@ -7,6 +7,9 @@
 
 library(tidyverse)
 library(readxl)
+library(ggplot2)
+library(deeptime)
+library(ggpubr)
 source("./R/useful/helper_functions.R")
 
 ## Plant diversity (from Jaramillo et al. (2006)) --------------------------------------------------------------------
@@ -163,7 +166,7 @@ write.table.lucas(x = rlai_int %>% filter(Age <= 51 & Age >= 34),
 write.table.lucas(x = rlai_int %>% filter(Age <= 34 & Age >= 23),
                   file = "./data_2023/MBD/processed_predictors_Oligocene_only/6-rLAI_Oligocene_only.txt")
 
-#### Andes 38 zones ------------------------------------------------------------
+## Andes 38 zones ------------------------------------------------------------
 full_andes <- read_xlsx("./data_2023/MBD/raw_environment_correlates/Andes_38_zones/Andes_mean_elevations.xlsx")
 full_andes <- full_andes[seq(2, nrow(full_andes), by = 2),]
 full_andes$Falcon <- as.numeric(full_andes$Falcon)
@@ -176,40 +179,80 @@ South <- c("WC.C", "Altiplano", "western_Puna", "eastern_Puna", "EC.C", "Subande
            "Main_cordillera.SC", "Frontal_cordillera.SC", "Precordillera.SC", "Sierras_Pampeanas", "Longitudinal_valley.S", 
            "Main_Cordillera.S", "east_Patagonia_high", "San_Jorge_Gulf", "Austral", "Neuquen")
 # Averaging
-av_nth <- apply(full_andes[, -c(1, North)], MARGIN = 1, FUN = mean, na.rm = T)
-av_sth <- apply(full_andes[, -c(1, North)], MARGIN = 1, FUN = mean, na.rm = T)
+av_nth <- apply(full_andes[, North], MARGIN = 1, FUN = mean, na.rm = T)
+av_sth <- apply(full_andes[, South], MARGIN = 1, FUN = mean, na.rm = T)
 
-par(mfrow = c(1, 2))
-plot(full_andes$age, av_nth, type = "l", main = "North", col = "red")
-for(col in North){
-  lines(x = full_andes$age, y = full_andes[, col][[1]])
+# Interpolating and saving
+  # North
+interpol_nth <- approx(x = full_andes$age[1:2], y = av_nth[1:2], n=3)$y
+for(i in 2:length(av_nth)){
+  interpol_nth <- c(interpol_nth,
+                    approx(x = full_andes$age[i:(i+1)], y = av_nth[i:(i+1)], n=3)$y[-c(1)])
 }
-plot(full_andes$age, av_sth, type = "l", main = "South", col = "red")
-for(col in North){
-  lines(x = full_andes$age, y = full_andes[, col][[1]])
+f_north <- data.frame(Age = seq(from = 0, to = 80, by = 0.5),
+                      Elevation = interpol_nth)
+write.table.lucas(f_north, "./data_2023/MBD/NORTH_processed_predictors/2-Andes_mean_elev_LOWLAT_500ky_step.txt")
+  # South
+interpol_sth <- approx(x = full_andes$age[1:2], y = av_sth[1:2], n=3)$y
+for(i in 2:length(av_sth)){
+  interpol_sth <- c(interpol_sth,
+                    approx(x = full_andes$age[i:(i+1)], y = av_sth[i:(i+1)], n=3)$y[-c(1)])
 }
+f_south <- data.frame(Age = seq(from = 0, to = 80, by = 0.5),
+                      Elevation = interpol_sth)
+write.table.lucas(f_south, "./data_2023/MBD/SOUTH_processed_predictors/2-Andes_mean_elev_HIGHLAT_500ky_step.txt")
 
+# Plotting
+  # Base
+# par(mfrow = c(1, 2))
+# plot(full_andes$age, av_nth, type = "l", main = "North", col = "red")
+# for(col in North){
+#   lines(x = full_andes$age, y = full_andes[, col][[1]])
+# }
+# plot(full_andes$age, av_sth, type = "l", main = "South", col = "red")
+# for(col in South){
+#   lines(x = full_andes$age, y = full_andes[, col][[1]])
+# }
+  # ggplot2
+north_data <- full_andes %>%
+  select(age, all_of(North)) %>%
+  pivot_longer(cols = -age, names_to = "Locality", values_to = "Elevation") %>%
+  mutate(Region = "Low latitude") %>%
+  filter(age >= 23 & age <= 56)
 
+south_data <- full_andes %>%
+  select(age, all_of(South)) %>%
+  pivot_longer(cols = -age, names_to = "Locality", values_to = "Elevation") %>%
+  mutate(Region = "High latitude") %>%
+  filter(age >= 23 & age <= 56)
 
-interpol_nth <- approx(x = northern_andes$Age[1:2], y = average_elevation$Altitude[1:2], n=3)$y
-for(i in 2:66){
-  interpol_av_el <- c(interpol_av_el,
-                      approx(x = average_elevation$Age[i:(i+1)], y = average_elevation$Altitude[i:(i+1)], n=3)$y[-c(1)])
-}
+  # Combine north and south data
+plot_data <- bind_rows(north_data, south_data)
 
-southern_andes <- full_andes %>% select(age, all_of(South))
-#### Environment variable plot for SI Appendix ---------------------------------
-library(deeptime)
-library(ggpubr)
+  # Create a data frame for the mean values to overlay
+mean_data <- data.frame(
+  age = full_andes$age,
+  Mean = c(av_nth, av_sth),
+  Region = rep(c("Low latitude", "High latitude"), each = length(av_nth))
+)
+mean_data <- mean_data %>% filter(age >= 23 & age <= 56)
 
-theme_lucas <- function(...){
-  theme(panel.background = element_blank(),
-        panel.border = element_rect(linewidth = .75, colour = "black", fill = NA),
-        axis.text = element_text(size = 8),
-        axis.title = element_text(size = 9),
-        plot.title = element_text(size = 12, hjust = 0.5),
-        ...)
-}
+  # Plot
+p <- ggplot(plot_data, aes(x = age, y = Elevation)) +
+  scale_x_reverse() +
+  geom_line(aes(group = Locality), color = "#3690c0", alpha = 0.5) +  # Lines for each locality
+  geom_line(data = mean_data, aes(x = age, y = Mean), color = "#045a8d", linewidth = 1.7)+  # Mean line in red
+  facet_wrap(~Region, ncol = 2) +  # Separate panels for North and South
+  labs(x = "Time (Ma)", y = "Elevation (m)") +
+  theme_lucas(strip.background = element_rect(colour = "black", fill = "bisque2")) +
+  coord_geo(dat = "epochs", abbrv = FALSE, size = 2.5, height = unit(1, "line")) +
+  annotate(geom = "rect", xmin = 47.8, xmax = Inf, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.2, linewidth = 0) +
+  annotate(geom = "rect", xmin = 33.9, xmax = 37.71, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.2, linewidth = 0) +
+  annotate(geom = "rect", xmin = -Inf, xmax = 27.8, fill = "grey50", ymin = -Inf, ymax = Inf, alpha = 0.2, linewidth = 0)
+
+ggsave("./figures/supp_figs/andes_geo_strat/elevation_panel.pdf", plot = p, height = 90, width = 140, units = "mm")
+
+## Environment variable plot for SI Appendix ---------------------------------
 # Temperature
 temp <- Temp_Cnz1 %>% 
   filter(Age > 24 & Age < 56) %>%
