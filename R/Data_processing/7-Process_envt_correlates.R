@@ -166,7 +166,7 @@ write.table.lucas(x = rlai_int %>% filter(Age <= 51 & Age >= 34),
 write.table.lucas(x = rlai_int %>% filter(Age <= 34 & Age >= 23),
                   file = "./data_2023/MBD/processed_predictors_Oligocene_only/6-rLAI_Oligocene_only.txt")
 
-## Andes 38 zones ------------------------------------------------------------
+## Andes 38 zones --------------------------------------------------------------
 full_andes <- read_xlsx("./data_2023/MBD/raw_environment_correlates/Andes_38_zones/Andes_mean_elevations.xlsx")
 full_andes <- full_andes[seq(2, nrow(full_andes), by = 2),]
 full_andes$Falcon <- as.numeric(full_andes$Falcon)
@@ -191,7 +191,9 @@ for(i in 2:length(av_nth)){
 }
 f_north <- data.frame(Age = seq(from = 0, to = 80, by = 0.5),
                       Elevation = interpol_nth)
-write.table.lucas(f_north, "./data_2023/MBD/NORTH_processed_predictors/2-Andes_mean_elev_LOWLAT_500ky_step.txt")
+f_north_EOT <- f_north %>% filter(Age >= 23 & Age <= 56)
+write.table.lucas(f_north_EOT,
+                  "./data_2023/MBD/NORTH_processed_predictors/2-Andes_mean_elev_LOWLAT_500ky_step.txt")
   # South
 interpol_sth <- approx(x = full_andes$age[1:2], y = av_sth[1:2], n=3)$y
 for(i in 2:length(av_sth)){
@@ -200,7 +202,9 @@ for(i in 2:length(av_sth)){
 }
 f_south <- data.frame(Age = seq(from = 0, to = 80, by = 0.5),
                       Elevation = interpol_sth)
-write.table.lucas(f_south, "./data_2023/MBD/SOUTH_processed_predictors/2-Andes_mean_elev_HIGHLAT_500ky_step.txt")
+f_south_EOT <- f_south %>% filter(Age >= 23 & Age <= 56)
+write.table.lucas(f_south_EOT,
+                  "./data_2023/MBD/SOUTH_processed_predictors/2-Andes_mean_elev_HIGHLAT_500ky_step.txt")
 
 # Plotting
   # Base

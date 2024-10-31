@@ -15,19 +15,25 @@
 
 
 dir=../../results_EXTENDED/MBD
-for s in SALMA_smoothed/genus_level
-#SALMA_kept/genus_level 
+#for s in SALMA_smoothed/genus_level
+##SALMA_kept/genus_level 
+#do
+#	# Full
+#	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full -tag _KEEP -b 10
+#	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full/post_EECO -tag _KEEP -b 10
+#	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full/Oligocene_only -tag _KEEP -b 10
+#	# Order level
+#	for odr in Notoungulata 
+#	#Other_SANUs Rodentia Metatheria Xenarthra
+#	do
+#		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr -tag _KEEP -b 10
+#		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr/post_EECO -tag _KEEP -b 10
+#		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr/Oligocene_only -tag _KEEP -b 10
+#	done
+#done
+
+
+for lat in LOWLAT HIGHLAT
 do
-	# Full
-	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full -tag _KEEP -b 10
-	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full/post_EECO -tag _KEEP -b 10
-	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full/Oligocene_only -tag _KEEP -b 10
-	# Order level
-	for odr in Notoungulata 
-	#Other_SANUs Rodentia Metatheria Xenarthra
-	do
-		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr -tag _KEEP -b 10
-		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr/post_EECO -tag _KEEP -b 10
-		python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/6-Order_level/$odr/Oligocene_only -tag _KEEP -b 10
-	done
+	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff/$lat -tag _KEEP -b 10
 done

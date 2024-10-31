@@ -620,7 +620,7 @@ knitr::include_graphics(path = "../../figures/supp_figs/evt_vbl_plot.pdf")
 
 ```{r, echo=FALSE}
 #| label: figs40
-#| fig-cap: Paleoelevation history of the two main Andean domains we defined based on latitude and uplift history, adapted from Boschman @boschman_andean_2021.
+#| fig-cap: Paleoelevation history of the two main Andean domains we defined based on latitude and uplift history, adapted from Boschman @boschman_andean_2021. Thick lines represent each domain's average elevation, and thin lines show each individual regions considered. More details available in Boschman @boschman_andean_2021 and Boschman & Condamine @boschman_mountain_2022.
 
 knitr::include_graphics(path = "../../figures/supp_figs/andes_geo_strat/figs42_andes.pdf")
 ```

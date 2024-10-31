@@ -15,25 +15,31 @@
 #done
 
 dir=../../results_EXTENDED/MBD
-for s in SALMA_smoothed/genus_level
-#SALMA_kept/genus_level 
+#for s in SALMA_smoothed/genus_level
+##SALMA_kept/genus_level 
+#do
+#	# Full
+#	python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/1-Full -ana "MBD"
+#	Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/1-Full/ESS_summary.txt "$PWD"/$dir/$s/1-Full/ESS_plot.png
+#	python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/1-Full/post_EECO -ana "MBD"
+#	Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/1-Full/post_EECO/ESS_summary.txt "$PWD"/$dir/$s/1-Full/post_EECO/ESS_plot.png
+#	python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/1-Full/Oligocene_only -ana "MBD"
+#	Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/1-Full/Oligocene_only/ESS_summary.txt "$PWD"/$dir/$s/1-Full/Oligocene_only/ESS_plot.png
+#	# Order level
+#	for odr in Notoungulata 
+#	#Other_SANUs Rodentia Metatheria Xenarthra
+#	do
+#		python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/6-Order_level/$odr -ana "MBD"
+#		Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/6-Order_level/$odr/ESS_summary.txt "$PWD"/$dir/$s/6-Order_level/$odr/ESS_plot.png
+#		python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/6-Order_level/$odr/post_EECO -ana "MBD"
+#		Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/6-Order_level/$odr/post_EECO/ESS_summary.txt "$PWD"/$dir/$s/6-Order_level/$odr/post_EECO/ESS_plot.png
+#		python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/6-Order_level/$odr/Oligocene_only -ana "MBD"
+#		Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/6-Order_level/$odr/Oligocene_only/ESS_summary.txt "$PWD"/$dir/$s/6-Order_level/$odr/Oligocene_only/ESS_plot.png
+#	done
+#done
+
+for lat in LOWLAT HIGHLAT
 do
-	# Full
-	python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/1-Full -ana "MBD"
-	Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/1-Full/ESS_summary.txt "$PWD"/$dir/$s/1-Full/ESS_plot.png
-	python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/1-Full/post_EECO -ana "MBD"
-	Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/1-Full/post_EECO/ESS_summary.txt "$PWD"/$dir/$s/1-Full/post_EECO/ESS_plot.png
-	python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/1-Full/Oligocene_only -ana "MBD"
-	Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/1-Full/Oligocene_only/ESS_summary.txt "$PWD"/$dir/$s/1-Full/Oligocene_only/ESS_plot.png
-	# Order level
-	for odr in Notoungulata 
-	#Other_SANUs Rodentia Metatheria Xenarthra
-	do
-		python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/6-Order_level/$odr -ana "MBD"
-		Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/6-Order_level/$odr/ESS_summary.txt "$PWD"/$dir/$s/6-Order_level/$odr/ESS_plot.png
-		python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/6-Order_level/$odr/post_EECO -ana "MBD"
-		Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/6-Order_level/$odr/post_EECO/ESS_summary.txt "$PWD"/$dir/$s/6-Order_level/$odr/post_EECO/ESS_plot.png
-		python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir "$PWD"/$dir/$s/6-Order_level/$odr/Oligocene_only -ana "MBD"
-		Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r "$PWD"/$dir/$s/6-Order_level/$odr/Oligocene_only/ESS_summary.txt "$PWD"/$dir/$s/6-Order_level/$odr/Oligocene_only/ESS_plot.png
-	done
+	python ~/Documents/GitHub/CorsaiR/Python/assess_run_convergence.py -dir $dir/SALMA_smoothed/genus_level/andes_diff/$lat -ana "MBD"
+	Rscript ~/Documents/GitHub/CorsaiR/R/plot_ess.r $dir/SALMA_smoothed/genus_level/andes_diff/$lat/ESS_summary.txt $dir/SALMA_smoothed/genus_level/andes_diff/$lat/ESS_plot.png
 done
