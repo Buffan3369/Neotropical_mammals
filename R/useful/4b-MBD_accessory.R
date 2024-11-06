@@ -185,9 +185,14 @@ MBD.plot <- function(PLOT_DF, SIGNIF_DF,
     p <- p + annotate(geom = "rect", xmin = i + 1.5, xmax = i + 2.5, ymin = -Inf, ymax = Inf, fill = "grey95")
     i <- i + 2
   }
+  palette <- c("#fcbba1", "#a50f15", "#9ecae1", "#08519c") # non-significant correlation coefficients are displayed in light colours
+  # if no variable is significant
+  if(length(unique(PLOT_DF$signif_col)) == 2){
+    palette <- c("#fcbba1", "#9ecae1")
+  } 
   # violins
   p <- p + geom_violin(adjust = .75, draw_quantiles = c(0.025, 0.5, 0.975), scale = "width", aes(fill = factor(signif_col))) +
-  scale_fill_manual(values = c("#fcbba1", "#a50f15", "#9ecae1", "#08519c")) + # non-significant correlation coefficients are displayed in light colours
+  scale_fill_manual(values = palette) +
   geom_hline(yintercept = 0, linetype = "dashed", colour = "grey60") +
   # significance star
   geom_text(data = SIGNIF_DF,

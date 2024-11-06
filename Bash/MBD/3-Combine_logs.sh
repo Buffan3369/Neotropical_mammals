@@ -36,4 +36,6 @@ dir=../../results_EXTENDED/MBD
 for lat in LOWLAT HIGHLAT
 do
 	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff/$lat -tag _KEEP -b 10
+	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff/$lat/post_EECO -tag _KEEP -b 10
+	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff/$lat/Oligocene_only -tag _KEEP -b 10
 done
