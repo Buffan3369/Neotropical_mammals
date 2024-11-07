@@ -2,7 +2,7 @@
 # Name: 13-MBD_andes_strat.R
 # Author: Lucas Buffan
 # Contact: lucas.l.buffan@gmail.com
-# Aim: Script for MBD violin with stratified andean uplift.
+# Aim: Script for MBD violin with stratified andean uplift.wc
 ################################################################################
 
 library(hash)
