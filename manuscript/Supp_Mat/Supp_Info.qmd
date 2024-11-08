@@ -31,12 +31,15 @@ editor:
 | 
 | 
 | 
+| 
 | $^2$ IANIGLA, CCT–CONICET–Mendoza, Avenida Ruiz Leal s/n, Parque General San Martín, 5500 Mendoza, Argentina
 | 
 | 
 | 
 | 
+| 
 | \* **Corresponding author**: Lucas.Buffan\@umontpellier.fr
+| 
 | 
 | 
 | 
@@ -59,7 +62,11 @@ editor:
 
 # Supplementary text
 
-## 1. Extended Materials and methods
+## 1. What is a mass extinction?
+
+The expression "mass extinction" has been historically introduced to characterize the punctual-in-time dramatic diversity drop-downs that could be drawn from the first global-scale compilations of the marine fossil record @sepkoski1981phanerozoic. It is now admitted that, given a taxonomic group, a mass extinction event can be defined as a global loss of the majority of the lineages belonging to this group, occurring within a short time period @raup1982mass. The timeframe of a mass extinction is always considered as geologically instantaneous, meaning that it occurs on a timescale ($\approx 10^3 - 10^5$ years) below the resolution of the records used to study them (i.e., fossils, $\approx 10^6$ years) @hull2015rarity.
+
+## 2. Extended Materials and methods
 
 ### Fossil data compilation
 
@@ -190,7 +197,7 @@ Most of these errors could not have been detected, and further corrected, withou
 The need for occurrence data revision was already illustrated by ref. @moharrek2022diversification, who pointed out significant differences when carrying out diversification analyses from uncleaned and cleaned occurrence data.
 Therefore, we argue that although powerful statistical tools exist, tackling macroevolutionary issues cannot be done without preliminary biological knowledge on the focal group.
 
-## 2. Manual cleaning details
+## 3. Manual cleaning details
 
 In this part, we provide some details on the Paleogene fossil occurrence cleaning effort we carried out.
 All co-authors were involved in this part, and some changes have not been documented.
@@ -622,7 +629,7 @@ knitr::include_graphics(path = "../../figures/supp_figs/evt_vbl_plot.pdf")
 #| label: figs40
 #| fig-cap: Paleoelevation history of the two main Andean domains we defined based on latitude and uplift history, adapted from Boschman @boschman_andean_2021. Thick lines represent each domain's average elevation, and thin lines show each individual regions considered. More details available in Boschman @boschman_andean_2021 and Boschman & Condamine @boschman_mountain_2022.
 
-knitr::include_graphics(path = "../../figures/supp_figs/andes_geo_strat/figs42_andes.pdf")
+knitr::include_graphics(path = "../../figures/supp_figs/andes_geo_strat/figs40_andes.pdf")
 ```
 
 ```{r, echo=FALSE}
