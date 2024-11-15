@@ -16,12 +16,20 @@
 
 dir=../../results_EXTENDED/MBD
 #for s in SALMA_smoothed/genus_level
-##SALMA_kept/genus_level 
+#SALMA_kept/genus_level 
 #do
-#	# Full
-#	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full -tag _KEEP -b 10
+	# Full default PyRate partitioning
 #	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full/post_EECO -tag _KEEP -b 10
 #	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full/Oligocene_only -tag _KEEP -b 10
+	# Full conservative partitioning
+#	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full_conservative_partitioning -tag _KEEP -b 10
+#	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full_conservative_partitioning/post_EECO -tag _KEEP -b 10
+#	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full_conservative_partitioning/Oligocene_only -tag _KEEP -b 10
+	# Full stringent partitioning
+#	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full_stringent_partitioning -tag _KEEP -b 10
+#	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full_stringent_partitioning/post_EECO -tag _KEEP -b 10
+#	python ~/PyRate/PyRate.py -combLog "$PWD"/$dir/$s/1-Full_stringent_partitioning/Oligocene_only -tag _KEEP -b 10
+
 #	# Order level
 #	for odr in Notoungulata 
 #	#Other_SANUs Rodentia Metatheria Xenarthra
@@ -33,9 +41,21 @@ dir=../../results_EXTENDED/MBD
 #done
 
 
-for lat in LOWLAT HIGHLAT
+
+for lat in HIGHLAT LOWLAT
 do
-	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff/$lat -tag _KEEP -b 10
+	# Default partitioning
 	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff/$lat/post_EECO -tag _KEEP -b 10
-	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff/$lat/Oligocene_only -tag _KEEP -b 10
+	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff/$lat/Oligocene_only -tag _KEEP -b 10	
+	# Conservative partitioning
+#	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff_conservative/$lat -tag _KEEP -b 10
+#	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff_conservative/$lat/post_EECO -tag _KEEP -b 10
+#	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff_conservative/$lat/Oligocene_only -tag _KEEP -b 10
+#	# Stringent_partitioning
+#	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff_stringent/$lat -tag _KEEP -b 10
+#	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff_stringent/$lat/post_EECO -tag _KEEP -b 10
+#	python ~/PyRate/PyRate.py -combLog $dir/SALMA_smoothed/genus_level/andes_diff_stringent/$lat/Oligocene_only -tag _KEEP -b 10
 done
+
+
+

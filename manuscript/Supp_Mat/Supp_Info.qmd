@@ -64,7 +64,7 @@ editor:
 
 ## 1. What is a mass extinction?
 
-The expression "mass extinction" has been historically introduced to characterize the punctual-in-time dramatic diversity drop-downs that could be drawn from the first global-scale compilations of the marine fossil record @sepkoski1981phanerozoic. It is now admitted that, given a taxonomic group, a mass extinction event can be defined as a global loss of the majority of the lineages belonging to this group, occurring within a short time period @raup1982mass. The timeframe of a mass extinction is always considered as geologically instantaneous, meaning that it occurs on a timescale ($\approx 10^3 - 10^5$ years) below the resolution of the records used to study them (i.e., fossils, $\approx 10^6$ years) @hull2015rarity.
+The expression "mass extinction" has been historically introduced to characterize the punctual-in-time dramatic diversity drop-downs that could be drawn from the first global-scale compilations of the marine fossil record @sepkoski1981phanerozoic. It is now admitted that, given a taxonomic group, a mass extinction event can be defined as a global loss of the majority of the lineages belonging to this group, occurring within a short time period @raup1982mass. The time frame of a mass extinction is always considered as geologically instantaneous, meaning that it occurs on a timescale ($\approx 10^3 - 10^5$ years) below the resolution of the records used to study them (i.e., fossils, $\approx 10^6$ years) @hull2015rarity.
 
 ## 2. Extended Materials and methods
 
@@ -404,7 +404,7 @@ Last, we fitted an age-dependent extinction (ADE) model to our occurrence data w
 
 ```{r, echo=FALSE}
 #| label: figs3
-#| fig-cap: Map of the fossil-bearing localities considered in this study (435 collections). A major part of them are located close to the Andes. Present-day elevation data were taken from Boschman @boschman_andean_2021.
+#| fig-cap: Map of the fossil-bearing localities considered in this study (435 collections). A major part of them are located close to or high in the Andes in their current conformation. In contrast, very few low-latitude localities are situated in the lower Amazon and the Orinoco basins, or on the Guianese and Brazilian shields, mostly due to the nature of local sedimentary cover or lack thereof. Present-day elevation data were taken from Boschman @boschman_andean_2021.
 knitr::include_graphics(path = "../../figures/supp_figs/Fig_S2_occurrences_map.pdf")
 ```
 
@@ -591,13 +591,13 @@ knitr::include_graphics(path = "../../figures/supp_figs/CTA_TAR_redated/compared
 ```{r, echo=FALSE}
 #| label: figs34
 #| fig-cap: "Bayesian estimation of correlation parameters on origination (blue) and extinction (red) rates with palaeoenvironmental covariates by considering our dataset as a whole throughout our study period. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by vertical lines, respectively from left to right. The interval between the leftmost and the rightmost vertical line of each parameter is therefore its 95% Highest Posterior Density (HPD) interval. Significant correlation coefficients, *i.e*., having shrinkage weights > 0.5 and not including 0 in their 95% HPD are highlighted by stars and darker shades."
-knitr::include_graphics(path = "../../figures/Main/Figure_4/Full_SALMA_smoothed_COMPLETE.pdf")
+knitr::include_graphics(path = "../../figures/supp_figs/MBD_alternative_partitioning/Full_SALMA_smoothed_stringent_COMPLETE.pdf")
 ```
 
 ```{r, echo=FALSE}
 #| label: figs35
 #| fig-cap: "Bayesian estimation of correlation parameters on origination (blue) and extinction (red) rates with palaeoenvironmental covariates by constraining our analyses to notoungulate taxa. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by vertical lines, respectively from left to right. The interval between the leftmost and the rightmost vertical line of each parameter is therefore its 95% Highest Posterior Density (HPD) interval. Significant correlation coefficients, *i.e*., having shrinkage weights > 0.5 and not including 0 in their 95% HPD are highlighted by stars and darker shades."
-knitr::include_graphics(path = "../../figures/Main/Figure_4/Noto_panel_with_silhouette.pdf")
+knitr::include_graphics(path = "../../figures/supp_figs/MBD_alternative_partitioning/Noto_panel_with_silhouette.pdf")
 ```
 
 ```{r, echo=FALSE}
@@ -629,7 +629,7 @@ knitr::include_graphics(path = "../../figures/supp_figs/evt_vbl_plot.pdf")
 #| label: figs40
 #| fig-cap: Paleoelevation history of the two main Andean domains we defined based on latitude and uplift history, adapted from Boschman @boschman_andean_2021. Thick lines represent each domain's average elevation, and thin lines show each individual regions considered. More details available in Boschman @boschman_andean_2021 and Boschman & Condamine @boschman_mountain_2022.
 
-knitr::include_graphics(path = "../../figures/supp_figs/andes_geo_strat/figs40_andes.pdf")
+knitr::include_graphics(path = "../../figures/supp_figs/andes_geo_strat/figs40_andes_and_MBD.pdf")
 ```
 
 ```{r, echo=FALSE}
