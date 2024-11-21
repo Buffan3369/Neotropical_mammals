@@ -103,8 +103,8 @@ idx_s.append(np.intersect1d(ind_clade_i,ind_sp))
 idx_e.append(np.intersect1d(ind_clade_i,ind_ex))
 
 ## Filter out events out of the user-specified time range ---------------------
-max_T = 52
-min_T = 33.9
+max_T = 34
+min_T = 23
 
 # Indices (i.e. rank) of all events occurring after max_T
 index_temp = np.arange(0,len(all_Times)) 
@@ -139,3 +139,6 @@ index_events_included = np.intersect1d(M_index_events_included, m_index_events_i
 index_included_sp_times = np.intersect1d(m_index_included_sp_times, M_index_included_sp_times)
 index_included_ex_times = np.intersect1d(m_index_included_ex_times, M_index_included_ex_times)
 
+
+
+print(len(index_included_ex_times) + len(index_included_sp_times))
