@@ -19,9 +19,7 @@ covar_idx <- hash("0" = "Self-diversity",
                   "6" = "Forest Density")
 
 ## Directories -----------------------------------------------------------------
-dirs <- c("1-Full", "1-Full/post_EECO", "1-Full/Oligocene_only", "6-Order_level/Notoungulata",
-          "6-Order_level/Notoungulata/post_EECO", "6-Order_level/Notoungulata/Oligocene_only")
-
+dirs <- c("1-Full_stringent_partitioning", "1-Full_stringent_partitioning/post_EECO", "1-Full_stringent_partitioning/Oligocene_only")
 ## Loop for full-time panels ---------------------------------------------------
 for(salma in c("SALMA_smoothed")){
   for(dir in dirs){

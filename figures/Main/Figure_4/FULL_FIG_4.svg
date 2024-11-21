@@ -23,15 +23,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="290.62089"
-     inkscape:cy="760.13979"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="573.11005"
+     inkscape:cy="840.39641"
      inkscape:window-width="1850"
      inkscape:window-height="1016"
      inkscape:window-x="70"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g6569" />
+     inkscape:current-layer="g8806" />
   <defs
      id="defs2">
     <rect
@@ -1112,6 +1112,33 @@
       <path
          d="m 1102.73,46.92 h 25.65 v 383.43 h -25.65 z"
          id="path13068" />
+    </clipPath>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Send-36-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path9738-7-6" />
+    </marker>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2750">
+      <rect
+         style="fill:#bc5fd3;fill-opacity:0.4;stroke-width:1.39524;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect2752"
+         width="12.679387"
+         height="12.364739"
+         x="1373.0432"
+         y="-105.50159"
+         ry="1.9151602"
+         transform="matrix(0.90165018,-0.43246613,0.43247138,0.90164766,0,0)" />
     </clipPath>
   </defs>
   <g
@@ -3342,7 +3369,7 @@
              style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect13684-6);fill:#ff0000;fill-opacity:1;stroke:none"><tspan
                x="255.49805"
                y="35.154267"
-               id="tspan8213">EOT</tspan></text>
+               id="tspan4079">EOT</tspan></text>
           <path
              style="fill:none;stroke:#045a8d;stroke-width:2.985;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-3)"
              d="m 992.53265,-877.22537 14.86725,-29.48378"
@@ -4432,40 +4459,15 @@
             </g>
           </g>
           <path
-             style="fill:none;stroke:#a50f15;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.25, 1.125;stroke-dashoffset:0;stroke-opacity:1"
+             style="fill:none;stroke:#a50f15;stroke-width:2.98580624;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
              d="m 1101.7692,-876.5612 88.9938,40.85587"
              id="path2162" />
-          <g
-             id="g2563"
-             transform="matrix(0.14058859,-0.30223583,0.30223868,0.14058724,1092.7947,-877.19763)"
-             clip-path="url(#clipPath2906)"
-             style="fill:#a50f15;fill-opacity:1;stroke:#a50f15;stroke-opacity:1">
-            <g
-               id="g2565"
-               style="fill:#a50f15;fill-opacity:1;stroke:#a50f15;stroke-opacity:1">
-              <g
-                 id="g2567"
-                 style="fill:#a50f15;fill-opacity:1;stroke:#a50f15;stroke-opacity:1">
-                <path
-                   d="M 9.777,190.102 V 10.844"
-                   style="fill:#a50f15;fill-opacity:1;stroke:#a50f15;stroke-width:7.49999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                   id="path2575" />
-              </g>
-            </g>
-            <g
-               id="g2577"
-               style="fill:#a50f15;fill-opacity:1;stroke:#a50f15;stroke-opacity:1">
-              <g
-                 id="g2579"
-                 transform="rotate(90)"
-                 style="fill:#a50f15;fill-opacity:1;stroke:#a50f15;stroke-opacity:1">
-                <path
-                   d="M 25.285,-0.703 0.703,-9.742 25.285,-18.781 c -3.926,5.336 -3.902,12.636 0,18.078 z"
-                   style="fill:#a50f15;fill-opacity:1;fill-rule:evenodd;stroke:#a50f15;stroke-width:1.40625;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                   id="path2593" />
-              </g>
-            </g>
-          </g>
+          <path
+             style="fill:none;stroke:#a50f15;stroke-width:2.985;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-36-3)"
+             d="m 1215.9792,-656.88267 -14.8673,-29.48378"
+             id="path18926-5-7"
+             clip-path="url(#clipPath2750)"
+             transform="matrix(0.77869997,-0.62739181,0.62740118,0.77869997,591.46678,408.90866)" />
         </g>
         <text
            xml:space="preserve"
@@ -4474,9 +4476,9 @@
            style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18160-3-8);fill:#000000;fill-opacity:1;stroke:none"><tspan
              x="847.61133"
              y="483.79297"
-             id="tspan8217"><tspan
+             id="tspan4083"><tspan
                style="font-weight:bold;fill:#a50f15"
-               id="tspan8215">+</tspan></tspan></text>
+               id="tspan4081">+</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,0.75000002,341.4719,-407.53067)"
@@ -4484,9 +4486,9 @@
            style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18160-3-8-6);fill:#000000;fill-opacity:1;stroke:none"><tspan
              x="847.61133"
              y="483.79297"
-             id="tspan8221"><tspan
+             id="tspan4087"><tspan
                style="font-weight:bold;fill:#a50f15"
-               id="tspan8219">+</tspan></tspan></text>
+               id="tspan4085">+</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.75000002,0,0,0.75000002,127.92225,-465.56582)"
@@ -4494,9 +4496,9 @@
            style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18160-6);fill:#000000;fill-opacity:1;stroke:none"><tspan
              x="847.61133"
              y="483.79297"
-             id="tspan8225"><tspan
+             id="tspan4091"><tspan
                style="font-weight:bold;fill:#045a8d"
-               id="tspan8223">+</tspan></tspan></text>
+               id="tspan4089">+</tspan></tspan></text>
         <g
            id="g6883">
           <path
@@ -4520,9 +4522,9 @@
              style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18160-7-9);fill:#000000;fill-opacity:1;stroke:none"><tspan
                x="847.61133"
                y="483.79297"
-               id="tspan8229"><tspan
+               id="tspan4095"><tspan
                  style="font-weight:bold;fill:#045a8d"
-                 id="tspan8227">-</tspan></tspan></text>
+                 id="tspan4093">-</tspan></tspan></text>
         </g>
       </g>
       <text
@@ -4532,9 +4534,9 @@
          style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8479);fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="21.220703"
            y="47.414062"
-           id="tspan8233"><tspan
+           id="tspan4099"><tspan
              style="font-weight:bold;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold'"
-             id="tspan8231">(A)</tspan></tspan></text>
+             id="tspan4097">(A)</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.75000002,0,0,0.75000002,-70.674819,-11.11562)"
@@ -4542,35 +4544,31 @@
          style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8479-3);fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="21.220703"
            y="47.414062"
-           id="tspan8237"><tspan
+           id="tspan4103"><tspan
              style="font-weight:bold;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold'"
-             id="tspan8235">(B)</tspan></tspan></text>
+             id="tspan4101">(B)</tspan></tspan></text>
     </g>
-    <g
-       id="g3848">
-      <path
-         style="fill:none;stroke:#a50f15;stroke-width:2.9535;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 1.5;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#StopM-2)"
-         d="m 1181.9133,-971.77899 c -17.1087,-36.54881 39.8929,-34.32991 21.1555,-1.37933"
-         id="path1098"
-         sodipodi:nodetypes="cc"
-         inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/PhD/ECTE_2024/arrow.png"
-         inkscape:export-xdpi="400"
-         inkscape:export-ydpi="400"
-         transform="matrix(0.43003301,0,0,0.43003621,-353.65359,606.48292)" />
-      <text
-         xml:space="preserve"
-         transform="matrix(0.26458333,0,0,0.26458333,-66.261615,55.373442)"
-         id="text18158-56-9-8"
-         style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18160-3-2-2);fill:#000000;fill-opacity:1;stroke:none"><tspan
-           x="847.61133"
-           y="483.79297"
-           id="tspan8241"><tspan
-             style="font-weight:bold;fill:#a50f15"
-             id="tspan8239">-</tspan></tspan></text>
-      <path
-         style="fill:none;stroke:#a50f15;stroke-width:0.65;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-         d="m 161.20876,186.57861 4.99765,2.83255"
-         id="path3724" />
-    </g>
+    <path
+       style="fill:none;stroke:#a50f15;stroke-width:1.27011006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#StopM-2)"
+       d="m 154.60814,188.58277 c -7.3573,-15.71732 17.15527,-14.76311 9.09757,-0.59317"
+       id="path1098"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/lucas.buffan/Documents/GitHub/PhD/ECTE_2024/arrow.png"
+       inkscape:export-xdpi="400"
+       inkscape:export-ydpi="400" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-66.261615,55.373442)"
+       id="text18158-56-9-8"
+       style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18160-3-2-2);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="847.61133"
+         y="483.79297"
+         id="tspan4107"><tspan
+           style="font-weight:bold;fill:#a50f15"
+           id="tspan4105">-</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#a50f15;stroke-width:0.65;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 161.20876,186.57861 4.99765,2.83255"
+       id="path3724" />
   </g>
 </svg>

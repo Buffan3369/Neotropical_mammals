@@ -651,7 +651,14 @@ However, we excluded on purpose the occurrences older that 60 My.
 #| label: figs42
 #| fig-cap: Posterior estimate of the shape parameter of the Weibull distribution for the ADE analyses of the 'Early' and 'Late' occurrence datasets, with constant extinction rate. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by black horizontal lines, respectively from bottom to top.
 
-knitr::include_graphics(path = "../../figures/supp_figs/ADE/Fig_s41.pdf")
+knitr::include_graphics(path = "../../figures/supp_figs/ADE/Fig_s42.pdf")
+```
+
+```{r, echo=FALSE}
+#| label: figs43
+#| fig-cap: Scheme of the way we assigned each lineage a time interval (defined by its minimal and maximal boundaries, resp. $minT$ and $maxT$). Each lineage is depicted with a black horizontal line, connecting the average estimates of its $T_s$ and $T_e$ across all PyRate replicates **(A)**. We filtered out all the lineages that were not strictly included within the [$minT$, $maxT$] interval **(B)**. Then, we fitted the MBD model ($\theta$ being the set of estimated parameters of the model and $E$ the matrix of the time-series environment predictors restricted to the desired interval) to this truncated dataset, avoiding spurious correlation (*i.e.,* outside the [$minT$, $maxT$] range) **(C)**.
+
+knitr::include_graphics(path = "../../figures/supp_figs/partitioning_scheme/fig_s43.pdf")
 ```
 
 \clearpage
@@ -697,7 +704,7 @@ knitr::kable(tbl)
 #| label: tbl3
 #| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the origination rate ($G_{\lambda}$) for our full Eocene (52-33.9 Ma) dataset, and their associated Shrinkage weights ($w_{\lambda}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $w_{\lambda}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold. In the case of temperature, the proportion of the posterior distribution of  the associated $G_{\lambda}$ below 0 is around 0.0348. Although this is larger than 0.025, we consider it small enough to claim for a significant correlation.
 
-tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_post_EECO.txt", header = T, sep = "\t")
+tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_stringent_partitioning_post_EECO.txt", header = T, sep = "\t")
 # Only retain correlations with origination rate
 tbl_orig <- tbl[, 1:5]
 # Turn to bold significant correlations
@@ -714,11 +721,13 @@ knitr::kable(tbl_orig, align = 'c')
 
 ```{r, echo=FALSE}
 #| label: tbl4
-#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the extinction rate ($G_{\mu}$) for our full Eocene (52-33.9 Ma) dataset, and their associated Shrinkage weights ($w_{\mu}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval.
+#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the extinction rate ($G_{\mu}$) for our full Eocene (52-33.9 Ma) dataset, and their associated Shrinkage weights ($w_{\mu}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $w_{\lambda}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
 
-tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_post_EECO.txt", header = T, sep = "\t")
+tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_stringent_partitioning_post_EECO.txt", header = T, sep = "\t")
 # Only retain correlations with extinction rate
 tbl_ext <- tbl[, c(1, 6:9)]
+# Turn to bold significant correlations
+tbl_ext[3,] <- sapply(tbl_ext[3,], FUN = convert_bold) #andean uplift
 # Better header
 colnames(tbl_ext) <- c('Covariate', '$G_{\\mu}$', '$G_{\\mu}$ 95% HPD', '$w_{G, \\mu}$', '$w_{G, \\mu}$ 95% HPD')
 # Display
@@ -731,7 +740,7 @@ knitr::kable(tbl_ext, align = 'c')
 #| label: tbl5
 #| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the origination rate ($G_{\lambda}$) for our full Oligocene (33.9-23.03 Ma) dataset, and their associated Shrinkage weights ($G_{\mu}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval.
 
-tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_Oligocene_only.txt", header = T, sep = "\t")
+tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_stringent_partitioning_Oligocene_only.txt", header = T, sep = "\t")
 # Only retain correlations with extinction rate
 tbl_orig <- tbl[, 1:5]
 # Better header
@@ -747,7 +756,7 @@ knitr::kable(tbl_orig, align = 'c')
 #| label: tbl6
 #| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the extinction rate ($G_{\mu}$) for our full Oligocene (33.9-23.03 Ma) dataset, and their associated Shrinkage weights ($w_{\mu}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $w_{\mu}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold. In the case of Andean elevation, the proportion of the posterior distribution of the associated $G_{\mu}$ below 0 is around 0.045. Although this is larger than 0.025, we consider it small enough to claim for a significant correlation.
 
-tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_Oligocene_only.txt", header = T, sep = "\t")
+tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_stringent_partitioning_Oligocene_only.txt", header = T, sep = "\t")
 # Only retain correlations with extinction rate
 tbl_ext <- tbl[, c(1, 6:9)]
 # Turn to bold significant correlations
@@ -763,9 +772,9 @@ knitr::kable(tbl_ext, align = 'c')
 
 ```{r, echo=FALSE}
 #| label: tbl7
-#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the origination rate ($G_{\lambda}$) for our full dataset (56-23.03 Ma), and their associated Shrinkage weights ($w_{\lambda}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $G_{\lambda}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
+#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the origination rate ($G_{\lambda}$) for our full dataset, and their associated Shrinkage weights ($w_{\lambda}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $G_{\lambda}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
 #| 
-tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_complete.txt", header = T, sep = "\t")
+tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_stringent_partitioning_complete.txt", header = T, sep = "\t")
 # Only retain correlations with extinction rate
 tbl_orig <- tbl[, c(1:5)]
 # Turn to bold significant correlations
@@ -773,7 +782,7 @@ tbl_orig[1,] <- sapply(tbl_orig[1,], FUN = convert_bold) #self-diversity
 # Better header
 colnames(tbl_orig) <- c('Covariate', '$G_{\\mu}$', '$G_{\\mu}$ 95% HPD', '$w_{G, \\mu}$', '$w_{G, \\mu}$ 95% HPD')
 # Display
-knitr::kable(tbl_ext, align = 'c')
+knitr::kable(tbl_orig, align = 'c')
 ```
 
 | 
@@ -781,13 +790,14 @@ knitr::kable(tbl_ext, align = 'c')
 
 ```{r, echo=FALSE}
 #| label: tbl8
-#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the origination rate ($G_{\mu}$) for our full dataset (56-23.03 Ma), and their associated Shrinkage weights ($w_{\mu}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $G_{\mu}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
+#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the origination rate ($G_{\mu}$) for our full dataset, and their associated Shrinkage weights ($w_{\mu}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $G_{\mu}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
 #| 
-tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_complete.txt", header = T, sep = "\t")
+tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_stringent_partitioning_complete.txt", header = T, sep = "\t")
 # Only retain correlations with extinction rate
 tbl_ext <- tbl[, c(1, 6:9)]
 # Turn to bold significant correlations
 tbl_ext[1,] <- sapply(tbl_ext[1,], FUN = convert_bold) #self-diversity
+tbl_ext[3,] <- sapply(tbl_ext[3,], FUN = convert_bold) #andes
 # Better header
 colnames(tbl_ext) <- c('Covariate', '$G_{\\mu}$', '$G_{\\mu}$ 95% HPD', '$w_{G, \\mu}$', '$w_{G, \\mu}$ 95% HPD')
 # Display
