@@ -64,7 +64,7 @@ editor:
 
 ## 1. What is a mass extinction?
 
-The expression "mass extinction" has been historically introduced to characterize the punctual-in-time dramatic diversity drop-downs that could be drawn from the first global-scale compilations of the marine fossil record @sepkoski1981phanerozoic. It is now admitted that, given a taxonomic group, a mass extinction event can be defined as a global loss of the majority of the lineages belonging to this group, occurring within a short time period @raup1982mass. The time frame of a mass extinction is always considered as geologically instantaneous, meaning that it occurs on a timescale ($\approx 10^3 - 10^5$ years) below the resolution of the records used to study them (i.e., fossils, $\approx 10^6$ years) @hull2015rarity.
+The expression "mass extinction" has been historically introduced to characterize the punctual-in-time dramatic diversity drop-downs that could be drawn from the first global-scale compilations of the marine fossil record @sepkoski1981phanerozoic. It is now admitted that, given a taxonomic group, a mass extinction event can be defined as a global loss of the majority of the lineages belonging to this group, occurring within a short time period @raup1982mass. The time frame of a mass extinction is always considered as geologically instantaneous, meaning that it occurs on a timescale ($\approx 10^3 - 10^5$ years) below the resolution of the records used to study them (*i.e.,* fossils, $\approx 10^6$ years) @hull2015rarity.
 
 ## 2. Extended Materials and methods
 
@@ -596,7 +596,7 @@ knitr::include_graphics(path = "../../figures/supp_figs/MBD_alternative_partitio
 
 ```{r, echo=FALSE}
 #| label: figs35
-#| fig-cap: "Bayesian estimation of correlation parameters on origination (blue) and extinction (red) rates with palaeoenvironmental covariates by constraining our analyses to notoungulate taxa. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by vertical lines, respectively from left to right. The interval between the leftmost and the rightmost vertical line of each parameter is therefore its 95% Highest Posterior Density (HPD) interval. Significant correlation coefficients, *i.e*., having shrinkage weights > 0.5 and not including 0 in their 95% HPD are highlighted by stars and darker shades."
+#| fig-cap: "Bayesian estimation of correlation parameters on origination (blue) and extinction (red) rates with palaeoenvironmental covariates by constraining our analyses to notoungulate genera. 2.5%, 50% and 97.5% quantiles are indicated in the distribution of each parameter by vertical lines, respectively from left to right. The interval between the leftmost and the rightmost vertical line of each parameter is therefore its 95% Highest Posterior Density (HPD) interval. Significant correlation coefficients, *i.e*., having shrinkage weights > 0.5 and not including 0 in their 95% HPD are highlighted by stars and darker shades."
 knitr::include_graphics(path = "../../figures/supp_figs/MBD_alternative_partitioning/Noto_panel_with_silhouette.pdf")
 ```
 
@@ -627,7 +627,8 @@ knitr::include_graphics(path = "../../figures/supp_figs/evt_vbl_plot.pdf")
 
 ```{r, echo=FALSE}
 #| label: figs40
-#| fig-cap: Paleoelevation history of the two main Andean domains we defined based on latitude and uplift history, adapted from Boschman @boschman_andean_2021. Thick lines represent each domain's average elevation, and thin lines show each individual regions considered. More details available in Boschman @boschman_andean_2021 and Boschman & Condamine @boschman_mountain_2022.
+#| fig-cap: Paleoelevation of the two main Andean domains we defined based on latitude and uplift history, adapted from Boschman @boschman_andean_2021. Thick lines represent each domain's average elevation, and thin lines show each individual region considered. More details available in Boschman @boschman_andean_2021 and Boschman & Condamine @boschman_mountain_2022. Low and high latitudes are respectively shown in light pink and light green. [Right side] Posterior estimates of the Multivariate Birth-Death (MBD) correlation parameters on origination (blue) and extinction (red) with paleoenvironment variables. We separately analyzed post-EECO (52−33.9 Ma, “Eocene”) and Oligocene (33.9−23.03 Ma) faunas, splitted by latitude, with high latitudes (extratropical) shown at the top and low latitudes (tropical) at the bottom. On the right side of each MBD panel are represented the number of taxa considered in each condition.
+
 
 knitr::include_graphics(path = "../../figures/supp_figs/andes_geo_strat/figs40_andes_and_MBD.pdf")
 ```
@@ -790,7 +791,7 @@ knitr::kable(tbl_orig, align = 'c')
 
 ```{r, echo=FALSE}
 #| label: tbl8
-#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the origination rate ($G_{\mu}$) for our full dataset, and their associated Shrinkage weights ($w_{\mu}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $G_{\mu}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
+#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the extinction rate ($G_{\mu}$) for our full dataset, and their associated Shrinkage weights ($w_{\mu}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $G_{\mu}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
 #| 
 tbl <- read.table("../../figures/supp_figs/tables_MBD/1-Full_stringent_partitioning_complete.txt", header = T, sep = "\t")
 # Only retain correlations with extinction rate
@@ -804,8 +805,79 @@ colnames(tbl_ext) <- c('Covariate', '$G_{\\mu}$', '$G_{\\mu}$ 95% HPD', '$w_{G, 
 knitr::kable(tbl_ext, align = 'c')
 ```
 
+\clearpage
 ```{r, echo=FALSE}
 #| label: tbl9
+#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the origination rate ($G_{\lambda}$) for our high latitudes (extratropical) dataset during the Eocene, and their associated Shrinkage weights ($w_{\lambda}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $G_{\lambda}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
+#| 
+tbl <- read.table("../../figures/supp_figs/tables_MBD/HIGHLAT_andes_diff_post_EECO.txt", header = T, sep = "\t")
+# Only retain correlations with origination rate
+tbl_ext <- tbl[, c(1:5)]
+# Turn to bold significant correlations
+tbl_ext[1,] <- sapply(tbl_ext[1,], FUN = convert_bold) #self-diversity
+# Better header
+colnames(tbl_ext) <- c('Covariate', '$G_{\\lambda}$', '$G_{\\lambda}$ 95% HPD', '$w_{G, \\lambda}$', '$w_{G, \\lambda}$ 95% HPD')
+# Display
+knitr::kable(tbl_ext, align = 'c')
+```
+
+| 
+| 
+
+```{r, echo=FALSE}
+#| label: tbl10
+#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the extinction rate ($G_{\mu}$) for our high latitudes (extratropical) dataset during the Eocene, and their associated Shrinkage weights ($w_{\mu}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $G_{\mu}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
+#| 
+tbl <- read.table("../../figures/supp_figs/tables_MBD/HIGHLAT_andes_diff_post_EECO.txt", header = T, sep = "\t")
+# Only retain correlations with extinction rate
+tbl_ext <- tbl[, c(1, 6:9)]
+# Turn to bold significant correlations
+tbl_ext[3,] <- sapply(tbl_ext[3,], FUN = convert_bold) # andes
+# Better header
+colnames(tbl_ext) <- c('Covariate', '$G_{\\mu}$', '$G_{\\mu}$ 95% HPD', '$w_{G, \\mu}$', '$w_{G, \\mu}$ 95% HPD')
+# Display
+knitr::kable(tbl_ext, align = 'c')
+```
+
+\clearpage
+```{r, echo=FALSE}
+#| label: tbl11
+#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the origination rate ($G_{\lambda}$) for our high latitudes (extratropical) dataset during the Oligocene, and their associated Shrinkage weights ($w_{\lambda}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $G_{\lambda}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
+#| 
+tbl <- read.table("../../figures/supp_figs/tables_MBD/HIGHLAT_andes_diff_Oligocene_only.txt", header = T, sep = "\t")
+# Only retain correlations with origination rate
+tbl_ext <- tbl[, c(1:5)]
+# Turn to bold significant correlations
+tbl_ext[6,] <- sapply(tbl_ext[6,], FUN = convert_bold) #habitat openness
+# Better header
+colnames(tbl_ext) <- c('Covariate', '$G_{\\lambda}$', '$G_{\\lambda}$ 95% HPD', '$w_{G, \\lambda}$', '$w_{G, \\lambda}$ 95% HPD')
+# Display
+knitr::kable(tbl_ext, align = 'c')
+```
+
+| 
+| 
+
+```{r, echo=FALSE}
+#| label: tbl12
+#| tbl-cap: Posterior estimates of the multivariate birth-death correlation parameters with the extinction rate ($G_{\mu}$) for our high latitudes (extratropical) dataset during the Oligocene, and their associated Shrinkage weights ($w_{\mu}$). Median estimates are shown along with their 95% Highest Posterior Density (HPD) interval. Significant correlations, *i.e*., having a $G_{\mu}$ larger than 0.5 and of which the 95% HPD of the associated coefficients do not overlap 0 are shown in bold.
+#| 
+tbl <- read.table("../../figures/supp_figs/tables_MBD/HIGHLAT_andes_diff_Oligocene_only.txt", header = T, sep = "\t")
+# Only retain correlations with extinction rate
+tbl_ext <- tbl[, c(1, 6:9)]
+# Turn to bold significant correlations
+tbl_ext[1,] <- sapply(tbl_ext[1,], FUN = convert_bold) # self-diversity
+tbl_ext[2,] <- sapply(tbl_ext[2,], FUN = convert_bold) # plant diversity
+tbl_ext[7,] <- sapply(tbl_ext[7,], FUN = convert_bold) # rLAI
+# Better header
+colnames(tbl_ext) <- c('Covariate', '$G_{\\mu}$', '$G_{\\mu}$ 95% HPD', '$w_{G, \\mu}$', '$w_{G, \\mu}$ 95% HPD')
+# Display
+knitr::kable(tbl_ext, align = 'c')
+```
+
+\clearpage
+```{r, echo=FALSE}
+#| label: tbl13
 #| tbl-cap: Median estimates and associated 90 and 95% Highest Posterior Density (HPD) intervals of the Weibull shape parameters for the Age-Dependent Extinction analysis of the "early" and "late" datasets (cf. Fig. S41). We can see that one is included in the 95% HPD of both parameters. However, in the case of the "late" dataset, the upper boundary of the 95% HPD is almost equal to one, and one is not included in the 90% HPD of the parameter, meaning that at least 90% of the distribution differs from one, which we judge large enough to claim for a significant effect of genus age on its extinction probability.
 #| 
 tbl <- read.table("../../figures/supp_figs/ADE/recap_tbl_w_shape.txt", header = T, sep = "\t")
@@ -815,7 +887,10 @@ colnames(tbl) <- c('Phase', 'Median estimate', '95% HPD', '90% HPD')
 knitr::kable(tbl, align = 'c')
 ```
 
-**Supp. Table** 10: Size of the different climate zones ('Tropical Affinity') and Dental Ecomorphotypes ('Diet') categories, expressed in number of occurrences, genera and species.
+| 
+|
+
+**Supp. Table** 14: Size of the different climate zones ('Tropical Affinity') and Dental Ecomorphotypes ('Diet') categories, expressed in number of occurrences, genera and species.
 
 |   | **Tropical** | **Affinity** |   |   | **Diet** |   |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|

@@ -19,7 +19,9 @@ covar_idx <- hash("0" = "Self-diversity",
                   "6" = "Forest Density")
 
 ## Directories -----------------------------------------------------------------
-dirs <- c("1-Full_stringent_partitioning", "1-Full_stringent_partitioning/post_EECO", "1-Full_stringent_partitioning/Oligocene_only")
+dirs <- c(
+  #"1-Full_stringent_partitioning", "1-Full_stringent_partitioning/post_EECO", "1-Full_stringent_partitioning/Oligocene_only",
+          "andes_diff_stringent/HIGHLAT/post_EECO", "andes_diff_stringent/HIGHLAT/Oligocene_only")
 ## Loop for full-time panels ---------------------------------------------------
 for(salma in c("SALMA_smoothed")){
   for(dir in dirs){
@@ -63,7 +65,7 @@ for(salma in c("SALMA_smoothed")){
       else{
         fix <- suf[2]
       }
-      write.table(merged, paste0("./figures/supp_figs/tables_MBD/", suf[1], "_", fix, ".txt"), sep = "\t", 
+      write.table(merged, paste0("./figures/supp_figs/tables_MBD/", suf[2], "_", fix, ".txt"), sep = "\t", 
                   quote = FALSE, row.names = FALSE)
     }
     if(strsplit(dir, split = "-")[[1]][1] == "6"){
@@ -74,6 +76,10 @@ for(salma in c("SALMA_smoothed")){
         fix <- suf[3]
       }
       write.table(merged, paste0("./figures/supp_figs/tables_MBD/", suf[2], "_", fix, ".txt"), sep = "\t", 
+                  quote = FALSE, row.names = FALSE)
+    }
+    if(suf[1] == "andes_diff_stringent"){
+      write.table(merged, paste0("./figures/supp_figs/tables_MBD/HIGHLAT_andes_diff_", suf[length(suf)], ".txt"), sep = "\t", 
                   quote = FALSE, row.names = FALSE)
     }
   }
