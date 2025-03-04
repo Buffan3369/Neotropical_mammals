@@ -76,9 +76,19 @@ enlarge_output_pane <- function(height. = 700, width. = 1300){
 
 ## Function to assess Jaccard's similarity index based on two assemblages ------
 jaccard <- function(a, b) {
-  intersection = length(intersect(a, b))
-  union = length(a) + length(b) - intersection
+  intersection <- length(intersect(a, b))
+  union <- length(a) + length(b) - intersection
   return (intersection/union)
+}
+
+## Function to assess corrected Forbes' index (Alroy 2015) btwn 2 assemblages --
+forbes_c <- function(a1, a2, scaling=3/2){
+  a <- length(intersect(a1, a2)) # number of species in common
+  b <- length(a1) - a # number of species strictly belonging to assemblage 1
+  c <- length(a2) - a # number of species strictly belonging to assemblage 2
+  n <- a + b + c # total number of species
+  F <- a*(n+sqrt(n)) / (a*(n+sqrt(n)) + scaling*b*c) # corrected Forbes index
+  return(F)
 }
 
 ## Function to assess Bray-Curtis dissimilarity index between two assemblages --
@@ -94,10 +104,8 @@ bray_curtis <- function(a1, a2, round=FALSE, d=NULL){ #a1 and a2 should be two-c
   }
   BC <- 1 - (2*minSum) / (sum(a1[,2])+sum(a2[,2]))
   if(round){
-    return(round(BC, digits = d))
+    BC <- round(BC, digits = d)
   }
-  else{
-    return(BC)
-  }
+  return(BC)
 }
 

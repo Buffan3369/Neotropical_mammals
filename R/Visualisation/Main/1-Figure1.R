@@ -82,6 +82,16 @@ JI <- data.frame(group = keys(tax_dict),
                                 Olig_gen <-  sub$genus[which(sub$te <= 33.9)]
                                 return(round(jaccard(Eoc_gen, Olig_gen), digits = 2))
                               }))
+# compute corrected Forbes index (same as Jaccard but less subject to sampling issues)
+FI <- data.frame(group = keys(tax_dict),
+                 forb = sapply(X = keys(tax_dict),
+                              FUN = function(x){
+                                sub <- TsTe_ttl %>% filter(class == x)
+                                Eoc_gen <- sub$genus[which(sub$ts >= 33.9)]
+                                Olig_gen <-  sub$genus[which(sub$te <= 33.9)]
+                                return(round(forbes_c(Eoc_gen, Olig_gen), digits = 2))
+                              }))
+
 # plot
 tot_plot <- TsTe_ttl %>% 
   ggplot(aes(y = fct_inorder(genus), yend = fct_inorder(genus))) +
@@ -98,27 +108,32 @@ tot_plot <- TsTe_ttl %>%
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Notoungulata[1], ymax = MinMax$Notoungulata[2], fill = "#addd8e", alpha = 0.3) +
   add_phylopic(x = 50, y = MinMax$Notoungulata[1]+18, name = "Trigonostylops", ysize = 11) +
   annotate(geom = "text", x = 50, y = MinMax$Notoungulata[1]+5, label = "Notoungulata", size = 3) +
-  annotate(geom = "text", x = 25, y = MinMax$Notoungulata[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Notoungulata")]), size = 4, fontface = "bold") +
+  annotate(geom = "text", x = 26.5, y = MinMax$Notoungulata[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Notoungulata")], ", ",
+                                                                               "F=",FI$forb[which(FI$group == "Notoungulata")]), size = 4, fontface = "bold") +
   # Other SANUs
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Other_SANUs[1], ymax = MinMax$Other_SANUs[2], fill = "#fa9fb5", alpha = 0.3) +
   add_phylopic(x = 50, y = MinMax$Other_SANUs[1]+16, name = "Protheosodon coniferus", ysize = 12) +
   annotate(geom = "text", x = 50, y = MinMax$Other_SANUs[1]+5, label = "Other SANUs", size = 3) +
-  annotate(geom = "text", x = 25, y = MinMax$Other_SANUs[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Other_SANUs")]), size = 4, fontface = "bold") +
+  annotate(geom = "text", x = 26.5, y = MinMax$Other_SANUs[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Other_SANUs")], ", ",
+                                                                              "F=",FI$forb[which(FI$group == "Other_SANUs")]), size = 4, fontface = "bold") +
   # Rodentia
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Rodentia[1], ymax = MinMax$Rodentia[2], fill = "#7fcdbb", alpha = 0.3) +
   add_phylopic(x = 50, y = MinMax$Rodentia[1]+16, name = "Spalacopus cyanus", ysize = 12) +
   annotate(geom = "text", x = 50, y = MinMax$Rodentia[1]+5, label = "Rodentia", size = 3) +
-  annotate(geom = "text", x = 25, y = MinMax$Rodentia[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Rodentia")]), size = 4, fontface = "bold") +
+  annotate(geom = "text", x = 25, y = MinMax$Rodentia[2]-8, label = paste0("J=",JI$jac[which(JI$group == "Rodentia")], ",\n",
+                                                                           "F=",FI$forb[which(FI$group == "Rodentia")]), size = 4, fontface = "bold") +
   # Xenarthra
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Xenarthra[1], ymax = MinMax$Xenarthra[2], fill = "#fec44f", alpha = 0.3) +
   add_phylopic(x = 50, y = MinMax$Xenarthra[1]+15, name = "Propalaehoplophorus australis", ysize = 10) +
   annotate(geom = "text", x = 50, y = MinMax$Xenarthra[1]+5, label = "Xenarthra", size = 3) +
-  annotate(geom = "text", x = 25, y = MinMax$Xenarthra[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Xenarthra")]), size = 4, fontface = "bold") +
+  annotate(geom = "text", x = 26.5, y = MinMax$Xenarthra[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Xenarthra")], ", ",
+                                                                            "F=",FI$forb[which(FI$group == "Xenarthra")]), size = 4, fontface = "bold") +
   # Metatheria
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Metatheria[1], ymax = MinMax$Metatheria[2], fill = "#bcbddc", alpha = 0.3) +
   add_phylopic(x = 50, y = MinMax$Metatheria[1]+19, name = "Marmosa", ysize = 18) +
   annotate(geom = "text", x = 50, y = MinMax$Metatheria[1]+5, label = "Metatheria", size = 3) +
-  annotate(geom = "text", x = 25, y = MinMax$Metatheria[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Metatheria")]), size = 4, fontface = "bold") +
+  annotate(geom = "text", x = 26.5, y = MinMax$Metatheria[2]-4, label = paste0("J=",JI$jac[which(JI$group == "Metatheria")], ", ",
+                                                                             "F=",FI$forb[which(FI$group == "Metatheria")]), size = 4, fontface = "bold") +
   # EOT line
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) +
   annotate(geom = "text", x = 32, y = nrow(TsTe_ttl)-4, label = "EOT", size = 5, colour = "red") +
@@ -277,7 +292,7 @@ fig_1 <- ggarrange(tot_plot,
                    ggarrange(plotlist = plotlist, ncol = 1, heights = c(1, 0.1, 1, 0.1, 1.3), labels = c("(B)", NA, "(C)", NA, "(D)"), hjust = -0.3), 
                    labels = c("(A)", NA), ncol = 2, heights = c(3, 3), widths = c(1.7, 1), hjust = -0.1)
 
-ggsave("./figures/Figure_1/FINAL_FIG_1.pdf", fig_1, width = 210, height = 297, units = "mm")
+ggsave("./figures/Main/Figure_1/FINAL_FIG_1.pdf", fig_1, width = 210, height = 297, units = "mm")
 
 
 ## Additional quantification: number of lineages lost between the mid Eocene and the Early Oligocene
