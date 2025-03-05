@@ -226,13 +226,13 @@ fig1 <- ggarrange(plotlist = plot_list1, nrow = 4, ncol = 5,
                   hjust = -0.4, 
                   font.label = list(size = 18))
 
-ggsave("./figures/Figure_1/backbone_bdcs.pdf",
+ggsave("./figures/supp_figs/RTT_LTT/BDCS_smoothed/backbone_bdcs.pdf",
        plot = fig1,
        height = 400,
        width = 400,
        units = "mm")
 
-ggsave("./figures/Figure_1/backbone_bdcs.png",
+ggsave("./figures/supp_figs/RTT_LTT/BDCS_smoothed/backbone_bdcs.png",
        plot = fig1,
        height = 400,
        width = 400,
