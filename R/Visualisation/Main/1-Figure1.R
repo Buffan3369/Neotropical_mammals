@@ -118,7 +118,7 @@ tot_plot <- TsTe_ttl %>%
                                                                               "F=",FI$forb[which(FI$group == "Other_SANUs")]), size = 4, fontface = "bold") +
   # Rodentia
   annotate(geom = "rect", xmin = -Inf, xmax = Inf, ymin = MinMax$Rodentia[1], ymax = MinMax$Rodentia[2], fill = "#7fcdbb", alpha = 0.3) +
-  add_phylopic(x = 50, y = MinMax$Rodentia[1]+16, name = "Spalacopus cyanus", ysize = 12) +
+  add_phylopic(x = 50, y = MinMax$Rodentia[1]+16, name = "Chinchilla chinchilla", ysize = 11) +
   annotate(geom = "text", x = 50, y = MinMax$Rodentia[1]+5, label = "Rodentia", size = 3) +
   annotate(geom = "text", x = 25, y = MinMax$Rodentia[2]-8, label = paste0("J=",JI$jac[which(JI$group == "Rodentia")], ",\n",
                                                                            "F=",FI$forb[which(FI$group == "Rodentia")]), size = 4, fontface = "bold") +
@@ -211,8 +211,8 @@ rtt_plt <- rtt_plot(data = rtt_tbl,
   geom_vline(xintercept = 33.9, linetype="dashed", color = "red", linewidth = 0.8) + # EOT
   annotate(geom = "segment", x = 47, xend = 50, y = 0.48, yend = 0.48, colour = "#08519c", linewidth = 1) +
   annotate(geom = "text", x = 41.5, y = 0.48, label = "Origination rate", size = 3) +
-  annotate(geom = "segment", x = 47, xend = 50, y = 0.43, yend = 0.43, colour = "#a50f15", linewidth = 1) +
-  annotate(geom = "text", x = 41.5, y = 0.43, label = "Extinction rate ", size = 3) +
+  annotate(geom = "segment", x = 47, xend = 50, y = 0.445, yend = 0.445, colour = "#a50f15", linewidth = 1) +
+  annotate(geom = "text", x = 41.5, y = 0.445, label = "Extinction rate ", size = 3) +
   annotate(geom = "text", x = 30.5, y = 0.525, label = "EOT", size = 5, colour = "red") +
   geom_text(aes(x = 51.5, y = 0.35, label = "EECO"), angle = 90, colour = "bisque4") +
   geom_text(aes(x = 41.25, y = 0.35, label = "MECO"), angle = 90, colour = "bisque4") +
